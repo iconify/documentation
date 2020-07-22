@@ -1,0 +1,39 @@
+{
+	"name": "@iconify/documentation",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Iconify documentation",
+	"scripts": {
+		"compile": "tsc -b",
+		"build:docs": "node build-docs",
+		"build:docs-local": "node build-docs --local",
+		"build:docs-live": "node build-docs --live",
+		"build:style": "node build-style",
+		"watch:style": "node watch-style",
+		"build:bundle": "node build-bundle",
+		"build": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs",
+		"build-local": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs-local",
+		"build-live": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs-live"
+	},
+	"keywords": [],
+	"author": "Iconify OÜ",
+	"license": "Apache 2.0",
+	"devDependencies": {
+		"@iconify/json": "^1.1.181",
+		"@iconify/json-tools": "^1.0.9",
+		"@iconify/tools": "^1.3.13",
+		"@types/cheerio": "^0.22.18",
+		"@types/highlightjs": "^9.12.0",
+		"@types/markdown-it": "^10.0.1",
+		"@types/node": "^14.0.13",
+		"cheerio": "^1.0.0-rc.3",
+		"highlight.js": "^9.18.1",
+		"i": "^0.3.6",
+		"markdown-it": "^10.0.0",
+		"node-sass": "^4.13.1",
+		"nodemon": "^2.0.2",
+		"npm": "^6.14.5",
+		"typescript": "^3.9.5",
+		"yaml": "^1.7.2"
+	}
+}
