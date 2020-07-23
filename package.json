@@ -4,16 +4,10 @@
 	"private": true,
 	"description": "Iconify documentation",
 	"scripts": {
-		"compile": "tsc -b",
-		"build:docs": "node build-docs",
-		"build:docs-local": "node build-docs --local",
-		"build:docs-live": "node build-docs --live",
-		"build:style": "node build-style",
-		"watch:style": "node watch-style",
-		"build:bundle": "node build-bundle",
-		"build": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs",
-		"build-local": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs-local",
-		"build-live": "npm run compile && npm run build:bundle && npm run build:style && npm run build:docs-live"
+		"build:lib": "tsc -b",
+		"build": "node build",
+		"build-local": "node build --local",
+		"build-live": "node build --live"
 	},
 	"keywords": [],
 	"author": "Iconify OÜ",

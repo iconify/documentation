@@ -1,0 +1,413 @@
+$process-full: 1000px;
+$process-side: 320px;
+$process-animation-width: $process-side;
+$process-animation-height: 64px;
+
+.docs-process {
+	dl {
+		display: block;
+		margin: 0;
+		padding: 0 0 ($base-spacing-unit * 2) 24px;
+		position: relative;
+		clear: both;
+		counter-increment: docs-process;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			border-left: 2px solid palette('gray', 100);
+		}
+		&:last-child {
+			padding-bottom: 0;
+			margin-bottom: ($base-spacing-unit * 4);
+		}
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	dt {
+		margin: 0;
+		padding: 0 0 $base-spacing-unit;
+		position: relative;
+		&:before {
+			content: counter(docs-process);
+			position: absolute;
+			left: -24px;
+			top: 0;
+			width: 24px;
+			text-align: center;
+			font-size: 16px;
+			font-family: $code-font-family;
+			line-height: 24px;
+			margin-top: 0;
+			margin-left: -11px;
+			background: palette('purple', $link-shade);
+			color: palette('gray', 0);
+			box-shadow: 0 0 0 4px palette('gray', $body-background-shade);
+			border-radius: 50%;
+		}
+
+		// Code samples
+		.code-blocks {
+			margin: 0;
+		}
+		.code-block-content {
+			padding: 3px 7px;
+		}
+
+		// Icons list
+		.inline-code {
+			padding-left: 7px;
+			padding-right: 7px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	dd {
+		margin: 0 0;
+		padding: 0 0 ($base-spacing-unit * 2);
+
+		p {
+			margin: 8px 0 0;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	// Counter position and colors
+	dl {
+		// &:first-child dt:before {
+		// 	top: 12px;
+		// }
+		&:nth-child(4n + 2) dt:before {
+			background: palette('blue', $link-shade);
+		}
+		&:nth-child(4n + 3) dt:before {
+			background: palette('cyan', $link-shade);
+		}
+		&:nth-child(4n + 4) dt:before {
+			background: palette('green', $link-shade);
+		}
+	}
+
+	// Full width
+	@media (min-width: $process-full) {
+		dl {
+			padding-left: 0;
+			&:before {
+				left: $process-side + 24px;
+			}
+		}
+		dt {
+			float: left;
+			width: $process-side;
+			&:before {
+				left: $process-side + 24px;
+			}
+		}
+		dd {
+			margin-left: $process-side + 48px;
+		}
+	}
+}
+
+// Animation
+$process-arrow-middle-length: 200;
+$process-arrow-sides-length: 10;
+
+.api-animation {
+	// Config
+	$process-icon-spacing: 16px;
+	$process-icon-offset: 4px;
+	$process-icon-set-width: $process-icon-spacing * 2 + $icon-size -
+		$process-icon-offset;
+	$computers-left: $process-animation-width - $process-icon-set-width;
+
+	$process-arrow-width: 192px;
+	$process-arrow-height: 16px;
+	$process-arrow-top: 8px;
+
+	$icon-animation-step: 0.1s; // from line-md
+	$icon-2-animation-delay: 0.4s; // delay for top icon
+	$set-2-animation-delay: 0.8s; // delay for all icons in second set
+	$set-animation-breakpoints: (0, 2, 4, 6, 8); // breakpoints used in icons
+
+	$api-animations: (0, 1); // available animation sets
+	$api-animations-delay: 3s; // delay for second animation block
+
+	$process-arrow-middle-duration: 0.8s;
+	$process-arrow-sides-duration: 0.2s;
+	$process-arrow-delay: 1.6s;
+	$process-arrow-2-delay: $process-arrow-delay + 0.4s;
+
+	$process-text-duration: 0.5s;
+	$process-text-set-delay: 0.6s;
+	$process-text-arrows-delay: 0.8s;
+
+	// Main
+	position: relative;
+	width: $process-animation-width;
+	height: $process-animation-height;
+
+	.clouds,
+	.computers {
+		position: relative;
+	}
+
+	.animated-set {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: $process-icon-set-width;
+		&--computers {
+			left: $computers-left;
+		}
+		.iconify {
+			font-size: $icon-size;
+			line-height: 1em;
+			position: absolute;
+			color: palette('gray', 600);
+
+			[fill-opacity] {
+				fill: palette('gray', 0);
+				fill-opacity: 1;
+			}
+		}
+		p {
+			top: $icon-size * 2 - $process-icon-offset;
+		}
+	}
+
+	// Text
+	p {
+		position: absolute;
+		left: 0;
+		right: 0;
+		text-align: center;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		font-size: $small-font-size;
+		line-height: 20px;
+		color: $text-dimmed-color;
+		opacity: 0;
+		animation: process-text $process-text-duration forwards;
+	}
+
+	// Icon positions
+	.icon1 {
+		top: $process-icon-spacing + $process-icon-offset;
+		left: 0;
+	}
+	.icon2 {
+		top: 0;
+		left: $process-icon-spacing - $process-icon-offset;
+	}
+	.icon3 {
+		top: $process-icon-spacing;
+		left: $process-icon-spacing * 2 - $process-icon-offset;
+	}
+
+	// Icon colors
+	.animated-set--clouds {
+		.icon1 {
+			color: palette('blue', 600);
+		}
+		.icon3 {
+			color: palette('green', 600);
+		}
+	}
+
+	.animated-set--computers {
+		.icon1 {
+			color: palette('blue-gray', 600);
+		}
+		.icon3 {
+			color: palette('cyan', 600);
+		}
+	}
+
+	// Arrows
+	.animated-arrows {
+		position: absolute;
+		left: ($process-side - $process-arrow-width) / 2;
+		width: $process-arrow-width;
+		top: 0;
+		p {
+			top: $process-arrow-top + $process-arrow-height * 2 - 4px;
+		}
+	}
+	&--1 {
+		.animated-arrows {
+			top: 12px;
+			p {
+				top: -12px;
+			}
+		}
+	}
+
+	.animated-arrow {
+		color: palette('gray', 300);
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: $process-arrow-top;
+	}
+
+	.arrow-middle {
+		animation: process-arrow-middle $process-arrow-middle-duration forwards;
+		stroke-dasharray: #{$process-arrow-middle-length};
+		stroke-dashoffset: #{$process-arrow-middle-length};
+		opacity: 0;
+	}
+	.arrow-sides {
+		animation: process-arrow-sides $process-arrow-sides-duration forwards;
+		stroke-dasharray: #{$process-arrow-sides-length};
+		stroke-dashoffset: #{$process-arrow-sides-length};
+		opacity: 0;
+	}
+
+	.animated-arrow--2 {
+		// color: palette('gray', 200);
+		top: $process-arrow-height + $process-arrow-top;
+	}
+
+	// Animation delays
+	@each $counter in $api-animations {
+		$prefix: if($counter == 0, #{&}, #{&}--#{$counter});
+		@at-root {
+			#{$prefix} {
+				// Arrows
+				.animated-arrows {
+					p {
+						animation-delay: $process-text-arrows-delay + $process-arrow-delay +
+							$api-animations-delay * $counter;
+					}
+				}
+
+				.arrow-middle {
+					animation-delay: $process-arrow-delay + $api-animations-delay *
+						$counter;
+				}
+				.arrow-sides {
+					animation-delay: $process-arrow-middle-duration + $process-arrow-delay +
+						$api-animations-delay * $counter;
+				}
+
+				.animated-arrow--2 {
+					.arrow-middle {
+						animation-delay: $process-arrow-2-delay + $api-animations-delay *
+							$counter;
+					}
+					.arrow-sides {
+						animation-delay: $process-arrow-middle-duration +
+							$process-arrow-2-delay + $api-animations-delay * $counter;
+					}
+				}
+
+				// Icons
+				.animated-set {
+					p {
+						animation-delay: $process-text-set-delay + $api-animations-delay *
+							$counter;
+					}
+					&--second p {
+						animation-delay: $set-2-animation-delay + $process-text-set-delay +
+							$api-animations-delay * $counter;
+					}
+				}
+
+				@each $bp in $set-animation-breakpoints {
+					@if ($counter > 0) {
+						.il-md-delay-#{$bp} {
+							animation-delay: $icon-animation-step *
+								$bp +
+								$api-animations-delay *
+								$counter;
+						}
+					}
+
+					.icon2 {
+						.il-md-delay-#{$bp} {
+							animation-delay: $icon-2-animation-delay +
+								$icon-animation-step *
+								$bp +
+								$api-animations-delay *
+								$counter;
+						}
+					}
+
+					.animated-set--second {
+						.il-md-delay-#{$bp} {
+							animation-delay: $set-2-animation-delay +
+								$icon-animation-step *
+								$bp +
+								$api-animations-delay *
+								$counter;
+						}
+
+						.icon2 {
+							.il-md-delay-#{$bp} {
+								animation-delay: $set-2-animation-delay +
+									$icon-2-animation-delay +
+									$icon-animation-step *
+									$bp +
+									$api-animations-delay *
+									$counter;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes process-arrow-middle {
+	0% {
+		stroke-dashoffset: #{$process-arrow-middle-length};
+		opacity: 0;
+	}
+	1% {
+		stroke-dashoffset: #{$process-arrow-middle-length};
+		opacity: 1;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes process-arrow-sides {
+	0% {
+		stroke-dashoffset: #{$process-arrow-sides-length};
+		opacity: 0;
+	}
+	1% {
+		stroke-dashoffset: #{$process-arrow-sides-length};
+		opacity: 1;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes process-text {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

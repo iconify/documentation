@@ -1,0 +1,173 @@
+.code-blocks {
+	margin: 4px 0 8px;
+	padding: 0;
+
+	code {
+		display: block;
+		margin: 0;
+		padding: 0;
+		font-family: $code-font-family;
+		font-size: $code-font-size;
+		line-height: $code-line-height;
+		color: $code-color;
+		word-wrap: break-word;
+		@media (max-width: $mq-medium) {
+		}
+	}
+}
+
+.code-block {
+	&-title,
+	&-content,
+	&-hint {
+		border: 1px solid $code-border-color;
+	}
+
+	&-title {
+		padding: 8px 16px;
+		color: $code-title-color;
+		background: $code-title-background;
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
+		border-bottom-width: 0;
+	}
+
+	&-content {
+		padding: 8px 12px;
+		background: $code-background;
+		border-top-width: 0;
+		border-bottom-width: 0;
+		position: relative;
+		@media (max-width: $mq-medium) {
+			padding: 8px;
+		}
+	}
+
+	&-hint {
+		padding: 8px 16px;
+		color: $code-hint-color;
+		background: $code-hint-background;
+		font-size: $small-font-size;
+		line-height: $small-line-height;
+		border-top-style: dashed;
+		border-bottom-width: 0;
+	}
+
+	// Borders on top and bottom
+	&:first-child {
+		.code-block-title,
+		.code-block-content--without-title {
+			border-top-width: 1px;
+			border-top-left-radius: $code-border-radius;
+			border-top-right-radius: $code-border-radius;
+		}
+	}
+
+	.code-block-content--without-title {
+		border-top-width: 1px;
+	}
+
+	&:last-child {
+		.code-block-content--without-hint,
+		.code-block-hint {
+			border-bottom-width: 1px;
+			border-bottom-left-radius: $code-border-radius;
+			border-bottom-right-radius: $code-border-radius;
+		}
+	}
+
+	// Copy code
+	&-copy {
+		position: absolute;
+		right: 4px;
+		top: 3px;
+		padding: 4px;
+		font-size: $icon-size;
+		line-height: 1em;
+		display: none;
+
+		// color: $text-muted-color;
+		background: rgba($code-background, 0.5);
+		border-radius: 3px;
+
+		transition: color 0.2s ease;
+		transition-property: color, background-color;
+
+		svg {
+			display: block;
+		}
+
+		// Theme colors
+		@include all-themes(color, 'link');
+		.website-docs & {
+			&:hover {
+				background: rgba($code-background, 0.8);
+				color: palette($link-hover-palette, $link-hover-shade);
+			}
+		}
+	}
+
+	// Copy notice
+	&-notice {
+		position: absolute;
+		display: block;
+		right: 32px;
+		top: 5px;
+		padding: 2px 8px;
+		white-space: nowrap;
+		pointer-events: none;
+
+		font-size: $small-font-size;
+		line-height: $icon-size;
+		color: $success-notice-text;
+
+		background: $success-notice-background;
+		border-radius: 3px;
+
+		animation: show-code-notice 2s ease;
+
+		svg {
+			float: left;
+			font-size: $icon-size;
+			line-height: 1em;
+			margin-right: 4px;
+		}
+	}
+
+	// Hover button
+	&-content:hover &-copy,
+	&-title:hover + &-content &-copy {
+		display: block;
+	}
+}
+
+.code-block--demo {
+	p {
+		margin: 4px 0;
+	}
+}
+
+@keyframes show-code-notice {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.inline-code {
+	display: inline-block;
+	margin: -1px 2px;
+	padding: 0 3px;
+	color: $code-color;
+	background: $code-background;
+	// box-shadow: 0 0 0 1px $code-border-color;
+	border: 1px dashed $code-border-color;
+}

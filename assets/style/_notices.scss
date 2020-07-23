@@ -1,0 +1,87 @@
+// Notice
+.notice {
+	display: block;
+	margin: 8px 0 16px;
+	padding: 16px 16px 16px (24px + $icon-size);
+
+	color: $text-dimmed-color;
+	background: palette($body-palette, 0);
+	border: 2px solid mix($big-notice-color, palette($body-palette, 0), 25%);
+	border-radius: $big-notice-border-radius;
+	position: relative;
+
+	animation: notice-fade-in 1.5s ease-out;
+
+	&:first-child {
+		margin-top: 32px;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+		+ p {
+			margin-top: 4px;
+		}
+	}
+
+	p.notice-header {
+		font-size: $medium-font-size;
+		line-height: $medium-line-height;
+		+ p {
+			margin-top: 8px;
+		}
+	}
+
+	a {
+		color: $big-notice-color;
+		text-decoration: underline;
+		&:hover,
+		&:focus {
+			color: palette($link-hover-palette, $link-hover-shade);
+			text-decoration: underline;
+		}
+	}
+
+	svg {
+		color: $big-notice-icon-color;
+		font-size: $icon-size;
+		line-height: 1em;
+		position: absolute;
+		top: 50%;
+		left: 12px;
+		margin-top: (0 - $icon-size) / 2;
+	}
+
+	&--legacy {
+		border-color: mix($legacy-notice-color, palette($body-palette, 0), 25%);
+		svg,
+		a {
+			color: $legacy-notice-color;
+		}
+	}
+
+	&--warning {
+		border-color: mix($warning-notice-color, palette($body-palette, 0), 25%);
+		svg,
+		a {
+			color: $warning-notice-color;
+		}
+	}
+
+	&--gray {
+		border-color: mix($gray-notice-color, palette($body-palette, 0), 25%);
+		svg,
+		a {
+			color: $gray-notice-color;
+		}
+	}
+}
+
+@keyframes notice-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

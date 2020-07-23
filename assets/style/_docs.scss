@@ -1,0 +1,22 @@
+// Links
+a {
+	// Theme colors
+	@include all-themes(color, 'link');
+	.website-docs &:hover,
+	&:hover .hljs-linkable {
+		color: palette($link-hover-palette, $link-hover-shade);
+	}
+
+	&.subtle {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Lists
+li {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}

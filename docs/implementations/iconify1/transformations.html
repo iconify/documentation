@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Transformations</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Transformations</h1>
+<div class="notice notice--legacy">
+	<span class="iconify-inline" data-icon="line-md:alert"></span>
+	<p>This article is for outdated Iconify SVG Framework version 1.0.</p>
+	<p>
+		Documentation for the latest version
+		<a href="../svg-framework/">is available here</a>.
+	</p>
+</div><p>You can transform icons by adding <span class="hljs-inline-prop">data-rotate</span> and <span class="hljs-inline-prop">data-flip</span> attributes.</p>
+<p>Transformations are done by changing icon contents using SVG transformations, not by CSS transformations. This is done to assure that icon remains within its bounding box and you can apply additional CSS transformations on SVG element.</p>
+<p>Possible transformations:</p>
+<ul>
+<li>Rotations: 90&#xB0;, 180&#xB0;, 270&#xB0;</li>
+<li>Horizontal and vertical flip</li>
+</ul>
+<section class="content-section content-section--2"><H1 id="rotate" class="heading--2">Rotating icon <a href="#rotate" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To rotate icon add <span class="hljs-inline-prop">data-rotate</span> attribute. Value can be in degrees: <span class="hljs-inline-attr">data-rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> or as numbers: <span class="hljs-inline-attr">data-rotate</span>=<span class="hljs-string">&quot;1&quot;</span> (where 1 = 90deg, 2 = 180deg, 3 = 270deg).</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglObyByb3RhdGlvbjoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImxpbmUtbWQ6Z2l0aHViLXR3b3RvbmUiPjwvc3Bhbj4KPC9wPgo8cD4KCTkwJmRlZzsgcm90YXRpb246Cgk8c3BhbgoJCWNsYXNzPSJpY29uaWZ5IgoJCWRhdGEtaWNvbj0ibGluZS1tZDpnaXRodWItdHdvdG9uZSIKCQlkYXRhLXJvdGF0ZT0iOTBkZWciCgk+PC9zcGFuPgo8L3A+CjxwPgoJMTgwJmRlZzsgcm90YXRpb246Cgk8c3BhbgoJCWNsYXNzPSJpY29uaWZ5IgoJCWRhdGEtaWNvbj0ibGluZS1tZDpnaXRodWItdHdvdG9uZSIKCQlkYXRhLXJvdGF0ZT0iMTgwZGVnIgoJPjwvc3Bhbj4KPC9wPgo8cD4KCTI3MCZkZWc7IHJvdGF0aW9uOgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeSIKCQlkYXRhLWljb249ImxpbmUtbWQ6Z2l0aHViLXR3b3RvbmUiCgkJZGF0YS1yb3RhdGU9IjI3MGRlZyIKCT48L3NwYW4+CjwvcD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;No rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;90<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;180<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;270<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;270deg&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo sample-big"><p>
+	No rotation:
+	<span class="iconify-inline" data-icon="line-md:github-twotone"></span>
+</p>
+<p>
+	90&#xB0; rotation:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-rotate="90deg"></span>
+</p>
+<p>
+	180&#xB0; rotation:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-rotate="180deg"></span>
+</p>
+<p>
+	270&#xB0; rotation:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-rotate="270deg"></span>
+</p>
+</div></div></div></div><p>Rotating icon at different angle, such as <span class="hljs-inline-attr">data-rotate</span>=<span class="hljs-string">&quot;45deg&quot;</span> will not work. Only <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees rotations are supported. Unlike CSS transformation, Iconify rotations are done by rotating icon inside SVG element and adjusting viewBox. So for example 24x16 icon rotated by 90 degrees will change dimensions to 16x24.</p><p>You can use style on SVG element or container element to rotate icon at custom angle.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flipping icon <a href="#flip" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To flip icon add <span class="hljs-inline-prop">data-flip</span> attribute. Value is &quot;<span class="hljs-string">horizontal</span>&quot; or &quot;<span class="hljs-string">vertical</span>&quot;. If you want both, use &quot;<span class="hljs-string">horizontal,vertical</span>&quot; or rotate icon by <span class="hljs-number">180</span> degrees.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglObyBmbGlwOgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibGluZS1tZDpnaXRodWItdHdvdG9uZSI+PC9zcGFuPgo8L3A+CjxwPgoJSG9yaXpvbnRhbDoKCTxzcGFuCgkJY2xhc3M9Imljb25pZnkiCgkJZGF0YS1pY29uPSJsaW5lLW1kOmdpdGh1Yi10d290b25lIgoJCWRhdGEtZmxpcD0iaG9yaXpvbnRhbCIKCT48L3NwYW4+CjwvcD4KPHA+CglWZXJ0aWNhbDoKCTxzcGFuCgkJY2xhc3M9Imljb25pZnkiCgkJZGF0YS1pY29uPSJsaW5lLW1kOmdpdGh1Yi10d290b25lIgoJCWRhdGEtZmxpcD0idmVydGljYWwiCgk+PC9zcGFuPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBhbmQgdmVydGljYWw6Cgk8c3BhbgoJCWNsYXNzPSJpY29uaWZ5IgoJCWRhdGEtaWNvbj0ibGluZS1tZDpnaXRodWItdHdvdG9uZSIKCQlkYXRhLWZsaXA9Imhvcml6b250YWwsIHZlcnRpY2FsIgoJPjwvc3Bhbj4KCShzYW1lIGFzIDE4MCZkZWc7IHJvdGF0aW9uKQo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;No flip:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Horizontal:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Vertical:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;vertical&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Horizontal and vertical:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:github-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;horizontal, vertical&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;(same as 180<span class="hljs-symbol">&amp;deg;</span> rotation)<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo sample-big"><p>
+	No flip:
+	<span class="iconify-inline" data-icon="line-md:github-twotone"></span>
+</p>
+<p>
+	Horizontal:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-flip="horizontal"></span>
+</p>
+<p>
+	Vertical:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-flip="vertical"></span>
+</p>
+<p>
+	Horizontal and vertical:
+	<span class="iconify-inline" data-icon="line-md:github-twotone" data-flip="horizontal, vertical"></span>
+	(same as 180&#xB0; rotation)
+</p>
+</div></div></div></div><p>You can use both rotation and flip on icon. Icon is flipped first, then rotated.</p></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Implementations<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG Framework 1.0<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline-vs-block.html">Inline and Block Modes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./custom-dimensions.html">Dimensions and Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./transformations.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-aliases.html">Icon Aliases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./rtl-support.html">RTL Support</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./functions.html">Iconify Functions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

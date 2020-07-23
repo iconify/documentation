@@ -1,0 +1,93 @@
+// Media queries
+$mq-medium: 600px;
+
+// Spacing
+$base-spacing-unit: 8px;
+
+// Fonts
+$font-family: 'PT Sans', 'Open Sans', 'Droid Sans', sans-serif;
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$nav-font-size: 20px;
+$nav-line-height: 32px;
+
+$nav-small-font-size: 18px;
+$nav-small-line-height: 28px;
+
+$small-font-size: 14px;
+$small-line-height: 22px;
+
+$medium-font-size: 18px;
+$medium-line-height: 26px;
+
+$large-font-size: 22px;
+$large-line-height: 32px;
+
+$code-font-family: 'PT Mono', monospace;
+$code-font-size: 14px;
+$code-line-height: 22px;
+
+// Body
+$body-palette: 'gray';
+$body-background-shade: 50;
+$body-background: palette($body-palette, $body-background-shade);
+
+$page-width-padding: ($base-spacing-unit * 2);
+$page-width-padding-medium: ($base-spacing-unit * 3);
+
+// $link-palette: 'blue';
+$link-shade: 600;
+$link-hover-palette: 'red';
+$link-hover-shade: $link-shade;
+
+$text-color: palette('gray', 800);
+$text-muted-color: palette('gray', 400);
+$text-dimmed-color: palette('gray', 600);
+$text-faint-color: palette('gray', 200);
+
+// Header and logo
+$logo-width: 164px;
+$logo-height: 40px;
+
+// Navigation
+$navigation-link-padding-sides: $base-spacing-unit;
+
+// Icons
+$icon-size: 24px;
+
+// Headings
+$h1-font-size: 24px;
+$h1-line-height: 32px;
+$h2-font-size: 20px;
+$h2-line-height: 28px;
+$h3-font-size: 18px;
+$h3-line-height: 26px;
+
+// Code
+$code-palette: 'gray';
+$code-background: palette($code-palette, 0);
+$code-color: $text-dimmed-color;
+$code-border-color: palette($code-palette, 100);
+$code-border-radius: 5px;
+$code-title-background: palette($code-palette, 25);
+$code-title-color: $text-muted-color;
+$code-hint-background: palette($code-palette, 25);
+$code-hint-color: $text-dimmed-color;
+
+// Notice
+$success-notice-background: palette('green', 600);
+$success-notice-text: palette('green', 0);
+
+// Big notice
+$big-notice-color: palette('gray', 600);
+$big-notice-icon-color: palette('red', 600);
+$legacy-notice-color: palette('blue-gray', 600);
+$warning-notice-color: palette('red', 600);
+$gray-notice-color: palette('gray', 600);
+$big-notice-border-radius: 5px;
+
+// Documents navigation
+$navigation-width: 220px;
+$navigation-visible-width: 800px;
+$navigation-button-size: 32px;

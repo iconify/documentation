@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Converting SVG set to Iconify JSON with Iconify Tools</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Converting SVG set to Iconify JSON</h1>
+<p>This example shows how to convert directory full of SVG files to Iconify JSON format.</p>
+<div class="notice notice--legacy">
+	<span class="iconify-inline" data-icon="line-md:alert"></span>
+	<p>
+		This documentation is for version 1 of Iconify Tools. It was developed
+		during early Iconify development, before Iconify development switched to
+		TypeScript, so it is not fully compatible with TypeScript. Rewriting Iconify
+		Tools with TypeScript is in todo list.
+	</p>
+</div><p>As a source, lets take Material Design icons from <a href="https://github.com/Templarian/MaterialDesign-SVG" target="_blank">Templarian/MaterialDesign-SVG</a> repository that is also available as <span class="hljs-inline-package hljs-linkable">@mdi/svg</span> NPM package.</p>
+<p>Initialize project by running these commands:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bnBtIGluaXQKbnBtIGluc3RhbGwgQGljb25pZnkvdG9vbHMgQG1kaS9zdmcgLS1zYXZlCg=="><code class="highlight hljs">npm init<br>
+npm install @iconify/tools @mdi/svg --save<br>
+</code></div></div></div><p>Then create file <span class="hljs-inline-file">convert-mdi.js</span> and put this content:</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">convert-mdi.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="J3VzZSBzdHJpY3QnOwoKY29uc3QgcGF0aCA9IHJlcXVpcmUoJ3BhdGgnKTsKY29uc3QgdXRpbCA9IHJlcXVpcmUoJ3V0aWwnKTsKY29uc3QgdG9vbHMgPSByZXF1aXJlKCdAaWNvbmlmeS90b29scycpOwoKLyoKICAgIExvY2F0ZSBkaXJlY3Rvcnkgd2hlcmUgU1ZHIGZpbGVzIGFyZQoKICAgIEljb25zIGFyZSBsb2NhdGVkICBpbiBkaXJlY3RvcnkgInN2ZyIgaW4gQG1kaS9zdmcgcGFja2FnZQoKICAgIHJlcXVpcmUucmVzb2x2ZSBsb2NhdGVzIHBhY2thZ2UuanNvbgogICAgcGF0aC5kaXJuYW1lIHJlbW92ZXMgcGFja2FnZS5qc29uIGZyb20gcmVzdWx0LCByZXR1cm5pbmcgb25seSBkaXJlY3RvcnkKICAgICsgJy9zdmcnIGFkZHMgJ3N2ZycgZGlyZWN0b3J5IHRvIHJlc3VsdAoqLwpsZXQgc291cmNlID0gcGF0aC5kaXJuYW1lKHJlcXVpcmUucmVzb2x2ZSgnQG1kaS9zdmcvcGFja2FnZS5qc29uJykpICsgJy9zdmcnOwoKLy8gVGFyZ2V0IGZpbGUgbmFtZQpsZXQgdGFyZ2V0ID0gX19kaXJuYW1lICsgJy9tZGkuanNvbic7CgovLyBWYXJpYWJsZSB0byBzdG9yZSBjb2xsZWN0aW9uCmxldCBjb2xsZWN0aW9uOwoKLy8gT3B0aW9ucyBmb3IgU1ZHTyBvcHRpbWl6YXRpb24KbGV0IFNWR09PcHRpb25zID0gewoJY29udmVydFNoYXBlVG9QYXRoOiB0cnVlLAoJbWVyZ2VQYXRoczogZmFsc2UsCn07CgovKioKICogSW1wb3J0IGRpcmVjdG9yeQogKi8KdG9vbHMKCS5JbXBvcnREaXIoc291cmNlLCB7CgkJcHJlZml4OiAnbWRpJywKCX0pCgkudGhlbigocmVzdWx0KSA9PiB7CgkJLy8gQ29weSByZWZlcmVuY2Ugc28gaXQgY2FuIGJlIHVzZWQgaW4gY2hhaW4gb2YgcHJvbWlzZXMKCQkvLyBjb2xsZWN0aW9uIGlzIGluc3RhbmNlIG9mIHRvb2xzLkNvbGxlY3Rpb24gY2xhc3MKCQljb2xsZWN0aW9uID0gcmVzdWx0OwoKCQljb25zb2xlLmxvZygnSW1wb3J0ZWQnLCBjb2xsZWN0aW9uLmxlbmd0aCgpLCAnaWNvbnMuJyk7CgoJCS8vIE9wdGltaXplIFNWRyBmaWxlcwoJCS8vCgkJLy8gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgpIGl0ZXJhdGVzIGFsbCBpY29ucyBpbiBjb2xsZWN0aW9uIGFuZCBydW5zCgkJLy8gcHJvbWlzZSBmb3IgZWFjaCBpY29uLCBvbmUgYXQgYSB0aW1lLgoJCXJldHVybiBjb2xsZWN0aW9uLnByb21pc2VFYWNoKAoJCQkoc3ZnLCBrZXkpID0+CgkJCQluZXcgUHJvbWlzZSgoZnVsZmlsbCwgcmVqZWN0KSA9PiB7CgkJCQkJdG9vbHMKCQkJCQkJLlNWR08oc3ZnLCBTVkdPT3B0aW9ucykKCQkJCQkJLnRoZW4oKHJlcykgPT4gewoJCQkJCQkJZnVsZmlsbChyZXMpOwoJCQkJCQl9KQoJCQkJCQkuY2F0Y2goKGVycikgPT4gewoJCQkJCQkJcmVqZWN0KCdFcnJvciBvcHRpbWl6aW5nIGljb24gJyArIGtleSArICdcbicgKyB1dGlsLmZvcm1hdChlcnIpKTsKCQkJCQkJfSk7CgkJCQl9KSwKCQkJdHJ1ZQoJCSk7Cgl9KQoJLnRoZW4oKCkgPT4gewoJCS8vIENsZWFuIHVwIHRhZ3MKCQlyZXR1cm4gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQkJKHN2Zywga2V5KSA9PgoJCQkJbmV3IFByb21pc2UoKGZ1bGZpbGwsIHJlamVjdCkgPT4gewoJCQkJCXRvb2xzCgkJCQkJCS5UYWdzKHN2ZykKCQkJCQkJLnRoZW4oKHJlcykgPT4gewoJCQkJCQkJZnVsZmlsbChyZXMpOwoJCQkJCQl9KQoJCQkJCQkuY2F0Y2goKGVycikgPT4gewoJCQkJCQkJcmVqZWN0KAoJCQkJCQkJCSdFcnJvciBjaGVja2luZyB0YWdzIGluIGljb24gJyArIGtleSArICdcbicgKyB1dGlsLmZvcm1hdChlcnIpCgkJCQkJCQkpOwoJCQkJCQl9KTsKCQkJCX0pLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gTW92ZSBpY29ucyBvcmlnaW4gdG8gMCwwCgkJLy8gVGhpcyBpcyBub3QgbmVlZGVkIGZvciBtb3N0IGNvbGxlY3Rpb25zLCBidXQgaXRzIHVzZWZ1bCB0byBrbm93IGhvdyB0byBkbyBpdAoJCWxldCBwcm9taXNlcyA9IFtdOwoJCWNvbGxlY3Rpb24uZm9yRWFjaCgoc3ZnLCBrZXkpID0+IHsKCQkJaWYgKHN2Zy50b3AgIT09IDAgfHwgc3ZnLmxlZnQgIT09IDApIHsKCQkJCWxldCBib2R5ID0gc3ZnLmdldEJvZHkoKTsKCQkJCWlmIChib2R5LmluZGV4T2YoJzxkZWZzJykgIT09IC0xKSB7CgkJCQkJLy8gRG8gbm90IHVzZSB0aGlzIG1ldGhvZCB0byBtb3ZlIGljb25zIHdpdGggPGRlZnM+IHRhZ3MgLSBzb21ldGltZXMgcmVzdWx0cyBjb3VsZCBiZSB3cm9uZwoJCQkJCXJldHVybjsKCQkJCX0KCgkJCQlsZXQgY29udGVudCA9ICc8c3ZnJzsKCQkJCWNvbnRlbnQgKz0gJyB3aWR0aD0iJyArIHN2Zy53aWR0aCArICciJzsKCQkJCWNvbnRlbnQgKz0gJyBoZWlnaHQ9IicgKyBzdmcuaGVpZ2h0ICsgJyInOwoJCQkJY29udGVudCArPSAnIHZpZXdCb3g9IjAgMCAnICsgc3ZnLndpZHRoICsgJyAnICsgc3ZnLmhlaWdodCArICciJzsKCQkJCWNvbnRlbnQgKz0gJyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPlxuJzsKCQkJCWNvbnRlbnQgKz0KCQkJCQknPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoJyArCgkJCQkJKDAgLSBzdmcubGVmdCkgKwoJCQkJCScgJyArCgkJCQkJKDAgLSBzdmcudG9wKSArCgkJCQkJJykiPicgKwoJCQkJCWJvZHkgKwoJCQkJCSc8L2c+JzsKCQkJCWNvbnRlbnQgKz0gJzwvc3ZnPic7CgoJCQkJc3ZnLmxvYWQoY29udGVudCk7CgkJCQlwcm9taXNlcy5wdXNoKAoJCQkJCW5ldyBQcm9taXNlKChmdWxmaWxsLCByZWplY3QpID0+IHsKCQkJCQkJLy8gVXNlIFNWR08gdG8gb3B0aW1pemUgaWNvbi4gSXQgd2lsbCBnZXQgYXBwbHkgdHJhbnNmb3JtYXRpb24gdG8gc2hhcGVzCgkJCQkJCXRvb2xzCgkJCQkJCQkuU1ZHTyhzdmcsIFNWR09PcHRpb25zKQoJCQkJCQkJLnRoZW4oKHJlcykgPT4gewoJCQkJCQkJCWZ1bGZpbGwocmVzKTsKCQkJCQkJCX0pCgkJCQkJCQkuY2F0Y2goKGVycikgPT4gewoJCQkJCQkJCXJlamVjdCgKCQkJCQkJCQkJJ0Vycm9yIGNoYW5naW5nIGljb24gb3JpZ2luIGZvciAnICsKCQkJCQkJCQkJCWtleSArCgkJCQkJCQkJCQknXG4nICsKCQkJCQkJCQkJCXV0aWwuZm9ybWF0KGVycikKCQkJCQkJCQkpOwoJCQkJCQkJfSk7CgkJCQkJfSkKCQkJCSk7CgkJCX0KCQl9KTsKCQlyZXR1cm4gUHJvbWlzZS5hbGwocHJvbWlzZXMpOwoJfSkKCS50aGVuKCgpID0+IHsKCQkvLyBDaGFuZ2UgY29sb3IgdG8gImN1cnJlbnRDb2xvciIgdG8gYWxsIGljb25zCgkJLy8gVXNlIHRoaXMgb25seSBmb3IgbW9ub3RvbmUgY29sbGVjdGlvbnMKCQlsZXQgb3B0aW9ucyA9IHsKCQkJZGVmYXVsdDogJ2N1cnJlbnRDb2xvcicsIC8vIGNoYW5nZSBhbGwgY29sb3JzIHRvICJjdXJyZW50Q29sb3IiCgkJCWFkZDogJ2N1cnJlbnRDb2xvcicsIC8vIGFkZCAiY3VycmVudENvbG9yIiB0byBzaGFwZXMgdGhhdCBhcmUgbWlzc2luZyBjb2xvciB2YWx1ZQoJCX07CgoJCS8qCgkJLy8gRm9yIGljb25zIHRoYXQgaGF2ZSBwYWxldHRlIHVzZSB0aGlzIGluc3RlYWQ6CgkJbGV0IG9wdGlvbnMgPSB7CgkJCWFkZDogJ2N1cnJlbnRDb2xvcicsCiAgICAgICAgfTsKICAgICAgICAqLwoKCQlyZXR1cm4gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQkJKHN2ZykgPT4gdG9vbHMuQ2hhbmdlUGFsZXR0ZShzdmcsIG9wdGlvbnMpLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gRXhwb3J0IEpTT04gY29sbGVjdGlvbgoJCWNvbnNvbGUubG9nKCdFeHBvcnRpbmcgY29sbGVjdGlvbiB0bycsIHRhcmdldCk7CgkJcmV0dXJuIHRvb2xzLkV4cG9ydEpTT04oY29sbGVjdGlvbiwgdGFyZ2V0LCB7CgkJCW9wdGltaXplOiB0cnVlLAoJCX0pOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs"><span class="hljs-meta">&apos;use strict&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);<br>
+<span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;util&apos;</span>);<br>
+<span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
+<br>
+<span class="hljs-comment">/*<br>
+ &#xA0; &#xA0;Locate directory where SVG files are<br>
+<br>
+ &#xA0; &#xA0;Icons are located &#xA0;in directory &quot;svg&quot; in @mdi/svg package<br>
+<br>
+ &#xA0; &#xA0;require.resolve locates package.json<br>
+ &#xA0; &#xA0;path.dirname removes package.json from result, returning only directory<br>
+ &#xA0; &#xA0;+ &apos;/svg&apos; adds &apos;svg&apos; directory to result<br>
+*/</span><br>
+<span class="hljs-keyword">let</span> source = path.dirname(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;@mdi/svg/package.json&apos;</span>)) + <span class="hljs-string">&apos;/svg&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Target file name</span><br>
+<span class="hljs-keyword">let</span> target = __dirname + <span class="hljs-string">&apos;/mdi.json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Variable to store collection</span><br>
+<span class="hljs-keyword">let</span> collection;<br>
+<br>
+<span class="hljs-comment">// Options for SVGO optimization</span><br>
+<span class="hljs-keyword">let</span> SVGOOptions = {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">convertShapeToPath</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">mergePaths</span>: <span class="hljs-literal">false</span>,<br>
+};<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Import directory<br>
+ */</span><br>
+tools<br>
+ &#xA0; &#xA0;.ImportDir(source, {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Copy reference so it can be used in chain of promises</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// collection is instance of tools.Collection class</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;collection = result;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Imported&apos;</span>, collection.length(), <span class="hljs-string">&apos;icons.&apos;</span>);<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Optimize SVG files</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">//</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// collection.promiseEach() iterates all icons in collection and runs</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// promise for each icon, one at a time.</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.SVGO(svg, SVGOOptions)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<span class="hljs-string">&apos;Error optimizing icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.format(err));<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Clean up tags</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.Tags(svg)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;Error checking tags in icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.format(err)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Move icons origin to 0,0</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// This is not needed for most collections, but its useful to know how to do it</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> promises = [];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;collection.forEach(<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (svg.top !== <span class="hljs-number">0</span> || svg.left !== <span class="hljs-number">0</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> body = svg.getBody();<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (body.indexOf(<span class="hljs-string">&apos;&lt;defs&apos;</span>) !== <span class="hljs-number">-1</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Do not use this method to move icons with &lt;defs&gt; tags - sometimes results could be wrong</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> content = <span class="hljs-string">&apos;&lt;svg&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content += <span class="hljs-string">&apos; width=&quot;&apos;</span> + svg.width + <span class="hljs-string">&apos;&quot;&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content += <span class="hljs-string">&apos; height=&quot;&apos;</span> + svg.height + <span class="hljs-string">&apos;&quot;&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content += <span class="hljs-string">&apos; viewBox=&quot;0 0 &apos;</span> + svg.width + <span class="hljs-string">&apos; &apos;</span> + svg.height + <span class="hljs-string">&apos;&quot;&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content += <span class="hljs-string">&apos; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;\n&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content +=<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;g transform=&quot;translate(&apos;</span> +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;(<span class="hljs-number">0</span> - svg.left) +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos; &apos;</span> +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;(<span class="hljs-number">0</span> - svg.top) +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;)&quot;&gt;&apos;</span> +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;body +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;/g&gt;&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;content += <span class="hljs-string">&apos;&lt;/svg&gt;&apos;</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;svg.load(content);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;promises.push(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Use SVGO to optimize icon. It will get apply transformation to shapes</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.SVGO(svg, SVGOOptions)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;Error changing icon origin for &apos;</span> +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;key +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;\n&apos;</span> +<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;util.format(err)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(promises);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Change color to &quot;currentColor&quot; to all icons</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Use this only for monotone collections</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> options = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">default</span>: <span class="hljs-string">&apos;currentColor&apos;</span>, <span class="hljs-comment">// change all colors to &quot;currentColor&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">add</span>: <span class="hljs-string">&apos;currentColor&apos;</span>, <span class="hljs-comment">// add &quot;currentColor&quot; to shapes that are missing color value</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">/*<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;// For icons that have palette use this instead:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;let options = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;add: &apos;currentColor&apos;,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;*/</span><br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> tools.ChangePalette(svg, options),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export JSON collection</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exporting collection to&apos;</span>, target);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> tools.ExportJSON(collection, target, {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">optimize</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>Then run:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bm9kZSBjb252ZXJ0LW1kaQo="><code class="highlight hljs">node convert-mdi<br>
+</code></div></div></div><p>Prepared project is available in <a href="https://github.com/iconify/tools/tree/demo/convert-mdi" target="_blank">Iconify Tools GitHub repository</a>.</p>
+<section class="content-section content-section--2"><H1 id="how-does-it-work" class="heading--2">How does it work? <a href="#how-does-it-work" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are comments in code above that explain what is going on.</p><p>Process is simple:</p><ol>
+<li><span class="hljs-name">tools.ImportDir()</span> imports all icons from directory &quot;<span class="hljs-string">svg</span>&quot; of <span class="hljs-inline-package hljs-linkable">@mdi/svg</span> package.</li>
+<li><span class="hljs-name">tools.SVGO()</span> is used to optimize icons.</li>
+<li><span class="hljs-name">tools.Tags()</span> is used to validate and clean up icons.</li>
+<li>Then icons&apos; origin is moved to 0,0 and <span class="hljs-name">tools.SVO()</span> is used again to optimize icons.</li>
+<li><span class="hljs-name">tools.ChangePalette()</span> is used to add &quot;<span class="hljs-string">currentColor</span>&quot; to shapes that are missing colors and change existing color to &quot;<span class="hljs-string">currentColor</span>&quot; (colored icons use different sets of options, see comments in code).</li>
+<li><span class="hljs-name">tools.ExportJSON()</span> is used to export collection to JSON file.</li>
+</ol><p>Steps 2, 3 and 4 are actually useless for this example because MDI icons are all well coded, but they are included in example because some SVG sets do require them.</p><p>Also see <a href="./import-fa-pro.html">how to import Font Awesome Pro</a>. It is a bit more complex because it imports multiple icon sets at once, but it is also cleaner because it does not include unnecessary steps.</p></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="handling-errors-when-processing-icons" class="heading--2">Handling errors when processing icons <a href="#handling-errors-when-processing-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>In code in this tutorial, if script encounters error, it will throw exception.</p><p>But what if you want bad file to be simply ignored? Then you can change <span class="hljs-inline-prop">stopOnError</span> parameter to <span class="hljs-name">promiseEeach()</span> to false or replace <span class="hljs-name">reject()</span> with <span class="hljs-name">fulfill()</span> while also removing bad icon.</p><p>For example, this is code that optimizes icons:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkoc3ZnLCBrZXkpID0+CgkJbmV3IFByb21pc2UoKGZ1bGZpbGwsIHJlamVjdCkgPT4gewoJCQl0b29scwoJCQkJLlNWR08oc3ZnLCBTVkdPT3B0aW9ucykKCQkJCS50aGVuKChyZXMpID0+IHsKCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQl9KQoJCQkJLmNhdGNoKChlcnIpID0+IHsKCQkJCQlyZWplY3QoJ0Vycm9yIG9wdGltaXppbmcgaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikpOwoJCQkJfSk7CgkJfSksCgl0cnVlCik7Cg=="><code class="highlight hljs"><span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.SVGO(svg, SVGOOptions)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<span class="hljs-string">&apos;Error optimizing icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.format(err));<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+);<br>
+</code></div></div></div><p>And this is same code that instead of throwing error simply removes bad icon:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkoc3ZnLCBrZXkpID0+CgkJbmV3IFByb21pc2UoKGZ1bGZpbGwsIHJlamVjdCkgPT4gewoJCQl0b29scwoJCQkJLlNWR08oc3ZnLCBTVkdPT3B0aW9ucykKCQkJCS50aGVuKChyZXMpID0+IHsKCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQl9KQoJCQkJLmNhdGNoKChlcnIpID0+IHsKCQkJCQljb25zb2xlLmVycm9yKCdFcnJvciBvcHRpbWl6aW5nIGljb24gJyArIGtleSwgZXJyKTsKCQkJCQljb2xsZWN0aW9uLnJlbW92ZShrZXkpOwoJCQkJCWZ1bGZpbGwobnVsbCk7CgkJCQl9KTsKCQl9KSwKCWZhbHNlCik7Cg=="><code class="highlight hljs"><span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.SVGO(svg, SVGOOptions)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Error optimizing icon &apos;</span> + key, err);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;collection.remove(key);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(<span class="hljs-literal">null</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0;<span class="hljs-literal">false</span><br>
+);<br>
+</code></div></div></div></section>
+
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Development Tools<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Tools<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./import.html">Importing Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./export.html">Exporting Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./manipulation.html">Manipulating Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./examples.html">Examples<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./import-mdi.html">Import MDI</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./import-fa-pro.html">Import FontAwesome Pro</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./import-font.html">Import Icon Font</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify JSON Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

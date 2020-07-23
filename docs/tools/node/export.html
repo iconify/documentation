@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Exporting icons with Iconify Tools</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Exporting icons with Iconify Tools</h1>
+<p>Iconify Tools is a NPM package for manipulating icons. See <a href="./">Iconify Tools documentation</a>.</p>
+<div class="notice notice--legacy">
+	<span class="iconify-inline" data-icon="line-md:alert"></span>
+	<p>
+		This documentation is for version 1 of Iconify Tools. It was developed
+		during early Iconify development, before Iconify development switched to
+		TypeScript, so it is not fully compatible with TypeScript. Rewriting Iconify
+		Tools with TypeScript is in todo list.
+	</p>
+</div><p>There are several exporters available in Iconify Tools.</p>
+<section class="content-section content-section--2"><H1 id="export-svg" class="heading--2">Exporting as SVG <a href="#export-svg" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-name">ExportSVG</span> exports one icon to file.</p><p>Parameters:</p><ol>
+<li><span class="hljs-name">SVG</span> instance.</li>
+<li>File name.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRTVkcoc3ZnLCAnZmlsZW5hbWUuc3ZnJykKCS50aGVuKCgpID0+IHsKCQljb25zb2xlLmxvZygnRXhwb3J0ZWQhJyk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xA0; &#xA0;.ExportSVG(svg, <span class="hljs-string">&apos;filename.svg&apos;</span>)<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exported!&apos;</span>);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="export-dir" class="heading--2">Exporting collection to directory <a href="#export-dir" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-name">ExportDir</span> exports collection to directory as individual SVG files.</p><p>Parameters:</p><ol>
+<li><span class="hljs-name">Collection</span> instance.</li>
+<li>Directory name.</li>
+<li>Optional options object.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnREaXIoY29sbGVjdGlvbiwgJ291dHB1dCcpCgkudGhlbigoY291bnQpID0+IHsKCQljb25zb2xlLmxvZygnRXhwb3J0ZWQgJyArIGNvdW50ICsgJyBmaWxlcycpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xA0; &#xA0;.ExportDir(collection, <span class="hljs-string">&apos;output&apos;</span>)<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">count</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exported &apos;</span> + count + <span class="hljs-string">&apos; files&apos;</span>);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>Available options (third parameter):</p><ul>
+<li><span class="hljs-inline-prop">includePrefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If <span class="hljs-literal">true</span>, exported files will include icon set prefix. The default value is <span class="hljs-literal">true</span>.</li>
+<li><span class="hljs-inline-prop">prefixAsDirectory</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If <span class="hljs-literal">true</span>, icon name will have this format: &quot;<span class="hljs-string">prefix/icon.svg</span>&quot;. If <span class="hljs-literal">false</span>, icon name will have this format: &quot;<span class="hljs-string">prefix-icon.svg</span>&quot;. Only works if <span class="hljs-inline-prop">includePrefix</span> is enabled. The default value is <span class="hljs-literal">false</span>.</li>
+<li><span class="hljs-inline-prop">customPrefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> (or <span class="hljs-literal">false</span> if disabled). Overrides prefix. Only works if <span class="hljs-inline-prop">includePrefix</span> is enabled.</li>
+<li><span class="hljs-inline-prop">exportFilename</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback function to get filename for exported icon. See <span class="hljs-inline-file">src/export/dir.js</span> for example.</li>
+</ul></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="export-json" class="heading--2">Exporting to Iconify JSON <a href="#export-json" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify JSON format is used to store icon sets in Iconify. It is used everywhere in Iconify: in Iconify API, in Iconify SVG framework, various components.</p><p>Why JSON format? Because it is easy to read and parse, it can contain many icons, it can contain custom metadata such as tags and categories, it is easy to store multiple variations or aliases of the same icon.</p><p>Function <span class="hljs-name">ExportJSON</span> exports collection to JSON file. This is the main export function in Iconify Tools, entire package was designed to import various formats and export them as JSON icon sets.</p><p>Parameters:</p><ol>
+<li><span class="hljs-name">Collection</span> instance.</li>
+<li>Target filename.</li>
+<li>Optional options object.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRKU09OKGNvbGxlY3Rpb24sICdmaWxlbmFtZS5qc29uJykKCS50aGVuKChqc29uKSA9PiB7CgkJY29uc29sZS5sb2coJ0V4cG9ydGVkIGNvbGxlY3Rpb24uIEpTT04gZGF0YTogJyArIEpTT04uc3RyaW5naWZ5KGpzb24pKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
+ &#xA0; &#xA0;.ExportJSON(collection, <span class="hljs-string">&apos;filename.json&apos;</span>)<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">json</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exported collection. JSON data: &apos;</span> + <span class="hljs-built_in">JSON</span>.stringify(json));<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>Some of available options (third parameter):</p><ul>
+<li><span class="hljs-inline-prop">optimize</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If enabled, JSON data will be optimized to reduce file size. The default value is <span class="hljs-literal">false</span>.</li>
+<li><span class="hljs-inline-prop">minify</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If disabled, output will be pretty, making it easy to read. The default value is <span class="hljs-literal">false</span>.</li>
+</ul><p>There are other options, but they are very specific to importers. See source code for details.</p></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="export-png" class="heading--2">Exporting to PNG <a href="#export-png" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-name">ExportPNG</span> export collection to PNG files.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew. It is also not optimal because it sometimes creates rough edges.</p><ol>
+<li><span class="hljs-name">SVG</span> or <span class="hljs-name">Collection</span> instance.</li>
+<li>Target filename (for <span class="hljs-name">SVG</span> instance) or directory (for <span class="hljs-name">Collection</span> instance).</li>
+<li>Optional options object.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRQTkcoc3ZnLCAnZmlsZW5hbWUucG5nJywgewoJCS8vIG9wdGlvbnMgb2JqZWN0IGhlcmUKCX0pCgkudGhlbigoKSA9PiB7CgkJY29uc29sZS5sb2coJ0V4cG9ydGVkIGZpbGVuYW1lLnBuZycpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xA0; &#xA0;.ExportPNG(svg, <span class="hljs-string">&apos;filename.png&apos;</span>, {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// options object here</span><br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exported filename.png&apos;</span>);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>Options object (third parameter) has following properties:</p><ul>
+<li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-prop">height</span>: dimensions of PNG image. Default = same as SVG dimensions.</li>
+<li><span class="hljs-inline-prop">color</span>: color for monotone images that use &quot;<span class="hljs-string">currentColor</span>&quot; (see <span class="hljs-name">ChangePalette</span> function). Default = &quot;<span class="hljs-string">#000</span>&quot;.</li>
+<li><span class="hljs-inline-prop">background</span>: background color, default = &quot;<span class="hljs-string">transparent</span>&quot;.</li>
+</ul><p>When exporting big collections, this function will take a while to export everything.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="export-example" class="heading--2">ImportJSON and ExportDir example <a href="#export-example" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This example imports Iconify JSON file and exports icons as individual files:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">export.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="J3VzZSBzdHJpY3QnOwoKY29uc3QgZnMgPSByZXF1aXJlKCdmcycpOwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBTb3VyY2UgZmlsZQpjb25zdCBzb3VyY2VGaWxlID0gX19kaXJuYW1lICsgJy9tZGkuanNvbic7CgovLyBUYXJnZXQgZGlyZWN0b3J5CmNvbnN0IHRhcmdldERpciA9IF9fZGlybmFtZSArICcvb3V0cHV0JzsKCi8vIENyZWF0ZSBkaXJlY3RvcnkgZm9yIGV4cG9ydAp0cnkgewoJZnMubWtkaXJTeW5jKHRhcmdldERpcik7Cn0gY2F0Y2ggKGVycikgewoJLy8gRG8gbm90aGluZy4gQXNzdW1lIGRpcmVjdG9yeSBoYXMgYmVlbiBjcmVhdGVkCn0KCi8vIEltcG9ydCBzb3VyY2UgZmlsZQp0b29scwoJLkltcG9ydEpTT04oc291cmNlRmlsZSkKCS50aGVuKChjb2xsZWN0aW9uKSA9PiB7CgkJLy8gRXhwb3J0IGNvbGxlY3Rpb24gdG8gdGFyZ2V0IGRpcmVjdG9yeQoJCXJldHVybiB0b29scy5FeHBvcnREaXIoY29sbGVjdGlvbiwgdGFyZ2V0RGlyLCB7CgkJCWluY2x1ZGVQcmVmaXg6IGZhbHNlLCAvLyBTZXQgdG8gdHJ1ZSB0byBpbmNsdWRlICdtZGktJyBwcmVmaXggaW4gaWNvbiBuYW1lcwoJCQlpbmNsdWRlQWxpYXNlczogdHJ1ZSwKCQl9KTsKCX0pCgkudGhlbigocmVzdWx0KSA9PiB7CgkJY29uc29sZS5sb2coJ0V4cG9ydGVkICcgKyByZXN1bHQgKyAnIGljb25zLicpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs"><span class="hljs-meta">&apos;use strict&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);<br>
+<span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Source file</span><br>
+<span class="hljs-keyword">const</span> sourceFile = __dirname + <span class="hljs-string">&apos;/mdi.json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Target directory</span><br>
+<span class="hljs-keyword">const</span> targetDir = __dirname + <span class="hljs-string">&apos;/output&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create directory for export</span><br>
+<span class="hljs-keyword">try</span> {<br>
+ &#xA0; &#xA0;fs.mkdirSync(targetDir);<br>
+} <span class="hljs-keyword">catch</span> (err) {<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Do nothing. Assume directory has been created</span><br>
+}<br>
+<br>
+<span class="hljs-comment">// Import source file</span><br>
+tools<br>
+ &#xA0; &#xA0;.ImportJSON(sourceFile)<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export collection to target directory</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> tools.ExportDir(collection, targetDir, {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">includePrefix</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Set to true to include &apos;mdi-&apos; prefix in icon names</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">includeAliases</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exported &apos;</span> + result + <span class="hljs-string">&apos; icons.&apos;</span>);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>This code will convert <span class="hljs-inline-file">mdi.json</span> to individual SVG files that will be saved in directory <span class="hljs-inline-file">output</span>.</p><p>In addition to Iconify Tools, JSON icon set can be exported to SVG using <a href="../json/export.html">Iconify JSON Tools</a>.</p></section>
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Development Tools<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Tools<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./import.html">Importing Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./export.html">Exporting Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./manipulation.html">Manipulating Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./examples.html">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify JSON Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

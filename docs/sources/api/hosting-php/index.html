@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css" />
+		<title>Iconify API: PHP</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Iconify API: PHP</h1>
+<p>There are 2 versions of Iconify API:</p>
+<ul>
+<li><a href="../hosting-js/">Node.js version</a>.</li>
+<li>PHP version.</li>
+</ul>
+<p>This documentation is for the PHP version of <a href="../">Iconify API</a>.</p>
+<p><a href="../hosting-js/">Node.js version of Iconify API</a> is harder to use, but it is preferred solution. It is slightly faster than the PHP version because all collections are loaded only once.</p>
+<section class="content-section content-section--2"><H1 id="requirements" class="heading--2">Requirements <a href="#requirements" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Server software requirements:</p><ul>
+<li>PHP 5.6 or newer version.</li>
+<li>Apache web server with <span class="hljs-inline-prop">mod_rewrite</span> enabled. It might be possible with other server software too if you can configure rewrite rules for it.</li>
+<li>Files must be writable by same user that runs PHP scripts to allow writing to &quot;<span class="hljs-string">cache</span>&quot; and &quot;<span class="hljs-string">git-repos</span>&quot; directories.</li>
+<li>If you are using function to synchronize repositories, make sure Git (version 2.x) is installed and is accessible from command line.</li>
+<li>Do not install API in sub-directory of application that relies on <span class="hljs-inline-prop">mod_rewrite</span> to avoid conflicts.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="installation" class="heading--2">Installation <a href="#installation" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Clone or download Iconify API from GitHub: <a href="https://github.com/iconify/api.php" target="_blank">https://github.com/iconify/api.php</a>.</p><p>Then you need to install dependencies. It is rather straightforward process if you are familiar with using Composer. If you are not familiar with Composer, it might be worth to learn it because almost all modern PHP frameworks use it, so you are very likely to encounter Composer again.</p><ul>
+<li>Download and install Composer from <a href="https://getcomposer.org" target="_blank">getcomposer.org</a>.</li>
+<li>Run <span class="inline-code inline-code--bash">composer install --no-dev</span> to install all dependencies (see Composer documentation).</li>
+</ul><p>Then upload it all to your website.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="custom-icons" class="heading--2">Custom icons <a href="#custom-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you want to host custom icons, add your custom icons in directory &quot;<span class="hljs-string">json</span>&quot;. Make sure file name matches icons prefix (for icons with prefix &quot;<span class="hljs-string">custom-icons</span>&quot; file should be named &quot;<span class="hljs-string">custom-icons.json</span>&quot;).</p></section>
+
+<section class="content-section content-section--2"><H1 id="configuration" class="heading--2">Configuration <a href="#configuration" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>API does not require configuring, but if you do want to customize installation, there are several configuration options available.</p><p>See <a href="./config.html">PHP API configuration options</a>.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="cors" class="heading--2">CORS headers <a href="#cors" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>CORS stands for Cross-Origin Resource Sharing. API needs to send CORS headers to allow other websites read API responses.</p><p>Without CORS headers modern browsers will ignore API response.</p><p>You need to configure this in Apache by adding this to configuration:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SGVhZGVyIGFsd2F5cyBzZXQgQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luICIqIgpIZWFkZXIgYWx3YXlzIHNldCBBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzICJHRVQsIE9QVElPTlMiCkhlYWRlciBhbHdheXMgc2V0IEFjY2Vzcy1Db250cm9sLUFsbG93LUhlYWRlcnMgIk9yaWdpbiwgWC1SZXF1ZXN0ZWQtV2l0aCwgQ29udGVudC1UeXBlLCBBY2NlcHQsIEFjY2VwdC1FbmNvZGluZyIKSGVhZGVyIGFsd2F5cyBzZXQgQWNjZXNzLUNvbnRyb2wtTWF4LUFnZSAiODY0MDAiCg=="><code class="highlight hljs"><span class="hljs-attribute"><span class="hljs-nomarkup">Header</span></span> always set Access-Control-Allow-Origin <span class="hljs-string">&quot;*&quot;</span><br>
+<span class="hljs-attribute"><span class="hljs-nomarkup">Header</span></span> always set Access-Control-Allow-Methods <span class="hljs-string">&quot;GET, OPTIONS&quot;</span><br>
+<span class="hljs-attribute"><span class="hljs-nomarkup">Header</span></span> always set Access-Control-Allow-Headers <span class="hljs-string">&quot;Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding&quot;</span><br>
+<span class="hljs-attribute"><span class="hljs-nomarkup">Header</span></span> always set Access-Control-Max-Age <span class="hljs-string">&quot;86400&quot;</span><br>
+</code></div></div></div></section>
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="../hosting.html">Hosting API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./">PHP</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="../hosting-js/">Node.js</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../bundles/">Bundled Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

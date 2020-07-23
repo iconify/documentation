@@ -1,0 +1,127 @@
+/develop/:
+  title: For Developers
+  children:
+    /sources/:
+      title: Sources
+      children:
+        ./api/:
+          title: Iconify API
+          children:
+            ./hosting.html:
+              title: Hosting API
+              children:
+                ./hosting-php/: PHP
+                ./hosting-js/: Node.js
+            ./queries.html:
+              title: API Queries
+              wip: true
+        ./bundles/:
+          title: Bundled Icons
+          wip: true
+        ./npm/:
+          title: Icon Components
+          wip: true
+    /implementations/:
+      title: Implementations
+      children:
+        ./svg-framework/:
+          title: SVG Framework
+          wip: true
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html:
+              title: Inline Icons
+              wip: true
+            ./without-api.html: No API
+            ./functions.html:
+              title: Functions
+              wip: true
+              children:
+                add-collection.html:
+                  title: addCollection
+                  wip: true
+                add-icon.html:
+                  title: addIcon
+                  wip: true
+        ./iconify1/:
+          title: SVG Framework 1.0
+          hidden: true
+          children:
+            ./inline-vs-block.html: Inline and Block Modes
+            ./custom-dimensions.html: Dimensions and Alignment
+            ./transformations.html: Transformations
+            ./icon-aliases.html: Icon Aliases
+            ./rtl-support.html: RTL Support
+            ./functions.html: Iconify Functions
+            ./svg-data.html:
+              title: Getting SVG Data
+              hidden: true
+        ./components/:
+          title: Components
+          wip: true
+          children:
+            ../react/:
+              title: React
+              wip: true
+            ../react-with-api/:
+              title: React with API
+              wip: true
+            ../svelte/:
+              title: Svelte
+              wip: true
+            ../vue/:
+              title: Vue
+              wip: true
+        ./css.html:
+          title: Iconify in CSS
+          wip: true
+          hidden: true
+/design/:
+  title: For Designers
+  children:
+    ./figma/:
+      title: Figma Plug-In
+    ./sketch/:
+      title: Sketch Plug-In
+    ./adobe-xd/:
+      title: Adobe XD Plug-In
+      wip: true
+/integrate/:
+  title: Integration
+  wip: true
+  children:
+    /icon-finder/:
+      title: Icon Finder
+      wip: true
+/code/:
+  title: Code
+  children:
+    /tools/:
+      title: Development Tools
+      children:
+        ./node/:
+          title: Iconify Tools
+          children:
+            ./import.html: Importing Icons
+            ./export.html: Exporting Icons
+            ./manipulation.html: Manipulating Icons
+            ./examples.html:
+              title: Examples
+              children:
+                ./import-mdi.html: Import MDI
+                ./import-fa-pro.html: Import FontAwesome Pro
+                ./import-font.html: Import Icon Font
+        ./json/:
+          title: Iconify JSON Tools
+          children:
+            ./collection.html: Collection Class
+            ./svg.html: SVG Class
+            ./export.html: Export Icons
+    /types/:
+      title: Iconify Types
+      children:
+        ./iconify-icon.html: IconifyIcon
+        ./iconify-json.html: IconifyJSON
+        ./iconify-alias.html: IconifyAlias

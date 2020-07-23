@@ -1,0 +1,84 @@
+// Heading
+h1,
+h2,
+h1.heading--2,
+h3,
+h1.heading--3,
+h4,
+h1.heading--4,
+h5,
+h1.heading--5,
+h6,
+h1.heading--6 {
+	margin: ($base-spacing-unit * 4) 0 ($base-spacing-unit * 2);
+	padding: 0;
+	font-size: $h3-font-size;
+	line-height: $h3-line-height;
+	font-weight: normal;
+	color: palette('gray', $link-shade);
+	border-bottom: 2px solid #e7e7e7;
+}
+
+h1 {
+	// margin-top: ($base-spacing-unit * 4);
+	font-size: $h1-font-size;
+	line-height: $h1-line-height;
+	color: palette('blue-gray', $link-shade);
+	border-bottom: none;
+	// border-bottom: 2px solid #dadfe2;
+}
+
+h2,
+h1.heading--2 {
+	// margin-top: ($base-spacing-unit * 3);
+	font-size: $h2-font-size;
+	line-height: $h2-line-height;
+	color: palette('green', $link-shade);
+	border-bottom: 2px solid #e5ebe5;
+}
+
+h3,
+h1.heading--3 {
+	color: palette('deep-purple', $link-shade);
+	border-bottom: 2px solid #e6e4ea;
+}
+
+h4,
+h1.heading--4 {
+	// color: palette('red', $link-shade);
+	// border-bottom: 2px solid palette('red', 100);
+}
+
+// Link inside heading
+a.link-back {
+	display: none;
+	float: right;
+	width: 32px;
+	margin: 0;
+	padding: 0 0 0 8px;
+	text-align: center;
+	text-decoration: none;
+	color: $text-muted-color;
+	svg {
+		font-size: $icon-size;
+		line-height: 1em;
+	}
+}
+
+// Heading that is followed by another heading
+// Should be avoided in documentation, but might exist
+h1.heading--empty {
+	border-bottom-width: 0;
+	// margin-bottom: 0;
+	+ section > h1:first-child {
+		margin-top: 0;
+	}
+}
+
+// Link
+h1:hover .link-back {
+	display: block;
+	&:hover {
+		color: palette($link-hover-palette, $link-hover-shade);
+	}
+}

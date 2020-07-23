@@ -1,0 +1,69 @@
+.sample-big {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+// Show icon size using box-shadow
+.highlight-box .iconify {
+	box-shadow: 0 0 0 1px #e00;
+}
+
+// Iconify 1 and 2
+.iconify-index-color {
+	@import './samples/iconify/index-color';
+}
+
+// Iconify 1
+.iconify1-index-size-attr {
+	@import './samples/iconify1/index-size-attr';
+}
+
+.iconify1-index-size-em {
+	@import './samples/iconify1/index-size-em';
+}
+
+.iconify1-index-size-fail {
+	@import './samples/iconify1/index-size-fail';
+}
+
+.iconify1-index-transform-flip {
+	@import './samples/iconify1/index-transform-flip';
+}
+
+.iconify1-index-transform-rotate {
+	@import './samples/iconify1/index-transform-rotate';
+}
+
+.iconify1-index-transform-rotate-comparison {
+	@import './samples/iconify1/index-transform-rotate-comparison';
+}
+
+.iconify1-inline-block {
+	@import './samples/iconify1/inline-block';
+}
+
+.iconify1-size-demo {
+	@import './samples/iconify1/size-demo';
+}
+
+.iconify1-size-demo-fixed-size {
+	@import './samples/iconify1/size-demo-fixed-dimensions';
+}
+
+// Iconify 2
+.iconify2-size-demo {
+	@import './samples/iconify/size-demo';
+}
+
+// Common
+.css-demo1 {
+	@import './samples/common/css-demo1';
+}
+
+.css-rotation {
+	@import './samples/common/css-rotation';
+}
+
+.css-flip {
+	@import './samples/common/css-flip';
+}

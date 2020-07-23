@@ -18,11 +18,11 @@ Then you can build documentation:
 npm build
 ```
 
-Build process will put all HTML files in directory `_html`.
+Build process will put all HTML files in directory `docs`.
 
 ## Sources
 
-Source files are written in Markdown and are stored in directory `docs/pages`.
+Source files are written in Markdown and are stored in directory `documents/pages`.
 
 Main entry file for each directory is `index.md`.
 
@@ -38,7 +38,7 @@ Stylesheet is compiled using SASS compiler, JavaScript files from `assets/js` ar
 
 If you have forked this repository, made some changes and built HTML files, Git repository will include compiled HTML files. Repository is hosted on GitHub Pages, therefore it must include HTML files that GitHub Pages can serve.
 
-If you have made modifications to your fork, then tried to merge it with the latest version of original repository, you might have Git merge conflicts in `_html`. Do not bother with resolving them, just resolve all conflicts (if there are any) in `docs` directory and run `npm run build` to overwrite everything in `_html`.
+If you have made modifications to your fork, then tried to merge it with the latest version of original repository, you might have Git merge conflicts in `docs`. Do not bother with resolving them, just resolve all conflicts (if there are any) in `documents` directory and run `npm run build` to overwrite everything in `docs`.
 
 ## Markdown
 
@@ -82,7 +82,7 @@ Available types:
 
 Instead of writing code in Markdown files, many documents use external code.
 
-Most of the external code files are stored in `docs/code`. Stylesheets used in `css` property could also be located in `assets/styles/samples`.
+Most of the external code files are stored in `documents/code`. Stylesheets used in `css` property, could also be located in `assets/styles/samples`.
 
 External code is written as YAML code block with various properties. The only mandatory property is "src", other properties are optional.
 
@@ -124,7 +124,7 @@ Properties for stylesheet:
 - cssTitle: title for stylesheet.
 - cssHint: hint for stylesheet.
 
-Stylesheet code is displayed below main code, but in the same container. File can be located in `docs/code/` or in `assets/styles/samples/`.
+Stylesheet code is displayed below main code, but in the same container. File can be located in `documents/code/` or in `assets/styles/samples/`.
 
 Properties for demo:
 
@@ -147,7 +147,7 @@ Extra chunks of code are often used to display several code samples that should 
 
 To avoid repeating same text over and over again, parser supports partial documents.
 
-Partial documents can be in Markdown and in HTML format, they are located in `docs/partial`.
+Partial documents can be in Markdown and in HTML format, they are located in `documents/partial`.
 
 Partial files are included in documents using inline code that starts with "include": `include notices/iconify1`. See Iconify SVG Framework 1 documentation for examples.
 
@@ -175,7 +175,7 @@ All links in documentation must be relative to current page. Link to Markdown fi
 
 Links to images are absolute, relative to "assets/images" directory. For example "/foo/bar.png" will be changed to "assets/images/foo/bar.png" and then changed to relative link for current page.
 
-Partial files can include absolute links. Logic is similar to images: links are relative to root directory used for pages: "docs/pages".
+Partial files can include absolute links. Logic is similar to images: links are relative to root directory used for pages: "documents/pages".
 
 There is no auto-linking for URLs. If you want to turn text into a link, create a link. For example, https://github.com/iconify/ will not change to link (though most Markdown parsers do auto-link it, so you are probably seeing a link when reading this).
 

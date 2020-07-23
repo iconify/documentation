@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Building Custom Budget Content Delivery Network</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Custom budget CDN for Iconify API</h1>
+<p>This tutorial is a part of <a href="./hosting.html">Iconify API hosting instructions</a>.</p>
+<p>What is CDN? CDN is short for content delivery network. It is set of servers spread out across the globe, that deliver content to visitor as fast as possible. AnyCast DNS connects visitors to the closest server.</p>
+<p>This tutorial is intended to be used if you are setting up your custom <a href="./">Iconify API</a> and want to take advantage of CDN.</p>
+<section class="content-section content-section--2"><H1 id="stateless-cdn" class="heading--2">Stateless CDN <a href="#stateless-cdn" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This tutorial is intended for stateless CDN.</p><p>Stateless means every request does not have a state. That is, request does not depend on previous request, so if visitor is connected to different edge server than he visited before, it wouldn&apos;t make any difference.</p><p>Iconify API is stateless. It does not allow visitors to store anything, it does not track anything, it does not send any cookies. There is no central server and each API server is separate from other servers.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="setting-up-edge-servers" class="heading--2">Setting up edge servers <a href="#setting-up-edge-servers" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>First, you need to create multiple origin servers in various parts of the world.</p><p>All servers need to be configured to serve exactly the same data for exactly the same host name. So you need to configure multiple identical servers. There are plenty of tools that can automate this process, however they are not part of this tutorial.</p><p>For tutorial on how to set up hosting for Iconify API, see <a href="./hosting.html">hosting tutorial</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="route53" class="heading--2">Route53 <a href="#route53" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>After setting up multiple servers, you want to direct users to the closest server.</p><p>Adding multiple &quot;<span class="hljs-string">A</span>&quot; records to your domain won&apos;t achieve that. You need AnyCast DNS.</p><p>AnyCast DNS is expensive. Very expensive. What if you don&apos;t have thousands of dollars to spend? Good news is there is one alternative solution: Amazon&apos;s Route53 latency routing.</p><p>Route53 latency routing works by redirecting visitor to the closest Amazon datacenter.</p><p>What if you are not hosting your websites at Amazon datacenters? You can host at datacenters not far from Amazon (same country or state), which is more than good enough to redirect visitors to the closest of your servers.</p><section class="content-section content-section--3"><H1 id="setting-up-route53" class="heading--3">Setting up Route53 <a href="#setting-up-route53" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
+<li>You need an AWS account. Sign up at <a href="https://aws.amazon.com" target="_blank">AWS main page</a>.</li>
+<li>Go to <a href="https://console.aws.amazon.com/route53/home?region=eu-central-1" target="_blank">Route53 page</a> (sign in if needed).</li>
+<li>Click &quot;<span class="hljs-string">Hosted Zones</span>&quot; link, click on your domain or create a new zone.</li>
+</ul><p>Then you need to add records for each server you have in your CDN. Click &quot;<span class="hljs-string">Create Record Set</span>&quot;, enter subdomain name in &quot;<span class="hljs-string">Name</span>&quot; field, enter IP address in &quot;<span class="hljs-string">Value</span>&quot; field, in &quot;<span class="hljs-string">Routing Policy</span>&quot; field select &quot;<span class="hljs-string">Latency</span>&quot;. That last part is very important: that makes it possible to redirect visitors to the closest server based on latency. Select region closest to your server&apos;s physical location, enter something in &quot;<span class="hljs-string">Set ID</span>&quot; field.</p><p>If you are running script on AWS service, instead of entering IP select click &quot;<span class="hljs-string">Yes</span>&quot; for &quot;<span class="hljs-string">Alias</span>&quot; option and select AWS instance.</p><p><img src="../../assets/images/hosting/route53-new-record.png" alt="Adding a new record to Route53"></p><p>Click &quot;<span class="hljs-string">Create</span>&quot; button to add that record.</p><p>Create several more records for your other servers. For each record enter the same subdomain, but different IP and different region.</p><p>By the time you are finished it should look like this:</p><p><img src="../../assets/images/hosting/route53-records.png" alt="Route53 records"></p><p>Notice there are 3 records for &quot;<span class="hljs-string">icons.simplesvg.com</span>&quot; pointing to different IP addresses with different region set up.</p><p>That&apos;s it. When visiting <span class="hljs-inline-link">icons.simplesvg.com</span>, user will be redirected to one of 3 IPs: 1.2.3.4, 2.3.4.5, 3.4.5.6 depending on which AWS datacenter is the closest. It is precise enough to create a budget custom CDN.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./hosting.html">Hosting API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./hosting-php/">PHP</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./hosting-js/">Node.js</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../bundles/">Bundled Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

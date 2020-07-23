@@ -1,0 +1,278 @@
+.docs-container {
+	display: flex;
+	overflow: hidden;
+	> article {
+		width: 100%;
+	}
+}
+
+.docs-navigation {
+	margin-left: 16px;
+	padding: 16px 0;
+	&--no-button {
+		padding-top: 32px;
+	}
+	@media (min-width: $navigation-visible-width) {
+		padding-top: 32px;
+	}
+}
+
+// Navigation layout
+.docs-navigation-content {
+	box-shadow: 0 2px 8px $body-background;
+	border: 2px solid $code-border-color;
+	border-radius: $code-border-radius;
+	padding: 4px 0;
+	background: palette('gray', 0);
+}
+
+// Navigation section
+.docs-navigation-section {
+	display: block;
+	list-style: none;
+	margin: 0 0 8px;
+	padding: 0;
+	border-left: 0px solid theme($default_theme, 'nav-border');
+
+	.docs-navigation-link a {
+		text-decoration: none;
+		display: block;
+	}
+
+	.docs-navigation-link a,
+	&:hover .docs-navigation-link a,
+	li.docs-navigation-link--active a {
+		color: theme($default_theme, 'link');
+
+		svg {
+			color: theme($default_theme, 'nav-arrow');
+		}
+	}
+
+	.docs-navigation-link--1 a,
+	&:hover .docs-navigation-link--1 a,
+	li.docs-navigation-link--1.docs-navigation-link--active a,
+	.docs-navigation-link--2 a,
+	&:hover .docs-navigation-link--2 a,
+	li.docs-navigation-link--2.docs-navigation-link--active a,
+	.docs-navigation-link--3 a,
+	&:hover .docs-navigation-link--3 a,
+	li.docs-navigation-link--3.docs-navigation-link--active a,
+	.docs-navigation-link--4 a,
+	&:hover .docs-navigation-link--4 a,
+	li.docs-navigation-link--4.docs-navigation-link--active a {
+		color: theme($default_theme, 'nav-secondary');
+	}
+
+	@media (min-width: $navigation-visible-width) {
+		border-left-width: 2px;
+	}
+
+	@each $theme, $color in $themes_map {
+		@if $theme != $default_theme {
+			&--#{$theme} {
+				border-left-color: theme($theme, 'nav-border');
+
+				.docs-navigation-link a,
+				&:hover .docs-navigation-link a,
+				li.docs-navigation-link--active a {
+					color: theme($theme, 'link');
+					svg {
+						color: theme($theme, 'nav-arrow');
+					}
+				}
+
+				.docs-navigation-link--1 a,
+				&:hover .docs-navigation-link--1 a,
+				li.docs-navigation-link--1.docs-navigation-link--active a,
+				.docs-navigation-link--2 a,
+				&:hover .docs-navigation-link--2 a,
+				li.docs-navigation-link--2.docs-navigation-link--active a,
+				.docs-navigation-link--3 a,
+				&:hover .docs-navigation-link--3 a,
+				li.docs-navigation-link--3.docs-navigation-link--active a,
+				.docs-navigation-link--4 a,
+				&:hover .docs-navigation-link--4 a,
+				li.docs-navigation-link--4.docs-navigation-link--active a {
+					color: theme($theme, 'nav-secondary');
+				}
+			}
+		}
+	}
+
+	.docs-navigation-link {
+		&--1 a,
+		&--2 a,
+		&--3 a,
+		&--4 a {
+			color: $text-dimmed-color;
+			svg {
+				color: $text-muted-color;
+			}
+		}
+	}
+
+	li.docs-navigation-link {
+		a {
+			&:hover {
+				color: palette($link-hover-palette, $link-hover-shade);
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// Link
+.docs-navigation-link {
+	display: block;
+	margin: 0;
+	padding: 0 8px;
+
+	border: 1px solid transparent;
+	border-width: 1px 0;
+
+	&--toggle {
+		padding-right: $icon-size + 8px;
+		position: relative;
+	}
+
+	&--1 {
+		padding-left: 16px;
+		font-size: 14px;
+	}
+	&--2 {
+		padding-left: 24px;
+		font-size: 14px;
+	}
+	&--3 {
+		padding-left: 32px;
+		font-size: 14px;
+	}
+	&--4 {
+		padding-left: 44px;
+		font-size: 14px;
+	}
+
+	svg {
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		font-size: $icon-size;
+		line-height: 1em;
+		margin-top: -0.5em;
+		display: none;
+	}
+
+	&--selected {
+		background: palette('gray', 25);
+		border-color: palette($code-palette, 100);
+	}
+
+	// Link: see code above, wrapped in few selectors to override colors for normal links
+	a {
+	}
+}
+
+// Toggle
+.docs-navigation-button {
+	a {
+		display: block;
+		padding: ($navigation-button-size - $icon-size) / 2;
+	}
+	svg {
+		font-size: $icon-size;
+		line-height: 1em;
+	}
+}
+
+// Hidden navigation
+.docs-navigation-content-wrapper,
+.docs-navigation-content {
+	width: $navigation-width;
+}
+.docs-navigation-content-wrapper {
+	// overflow: hidden;
+	width: $navigation-button-size;
+}
+.docs-navigation-content {
+	position: relative;
+	z-index: 2;
+	margin-left: $navigation-width + 8px;
+	transition: margin-left 0.5s ease;
+	&:focus-within {
+		display: none;
+	}
+
+	// Arrow icons
+	&:hover,
+	&:focus-within {
+		svg {
+			display: block;
+		}
+	}
+}
+
+// Visible via JS
+.docs-navigation--visible.docs-navigation--has-button {
+	.docs-navigation-content {
+		margin-left: $navigation-button-size - $navigation-width;
+	}
+}
+
+// Visible navigation
+.docs-navigation--visible {
+	.docs-navigation-content-wrapper {
+		// overflow: visible;
+	}
+	.docs-navigation-content {
+		margin-left: 0;
+		&:focus-within {
+			display: block;
+		}
+	}
+}
+
+// Visible because of big window
+@media (min-width: $navigation-visible-width) {
+	.docs-navigation-content-wrapper {
+		overflow: visible;
+		width: $navigation-width;
+	}
+	.docs-navigation-content {
+		margin-left: 0 !important;
+		box-shadow: none;
+		border-radius: 0;
+		border-width: 0;
+		padding: 0;
+		background: transparent;
+		&:focus-within {
+			display: block;
+		}
+	}
+	.docs-navigation-section {
+		padding-left: 7px;
+	}
+	.docs-navigation-link {
+		border-width: 1px;
+
+		&--1 {
+			padding-left: 8px;
+			margin-left: 8px;
+		}
+		&--2 {
+			padding-left: 8px;
+			margin-left: 20px;
+		}
+		&--3 {
+			padding-left: 8px;
+			margin-left: 32px;
+		}
+		&--4 {
+			padding-left: 8px;
+			margin-left: 44px;
+		}
+	}
+	.docs-navigation-button {
+		display: none;
+	}
+}

@@ -1,0 +1,127 @@
+// Media queries
+$mq-medium: 600px;
+
+// Spacing
+$base-spacing-unit: 8px;
+
+// Fonts
+$font-family: 'PT Sans', 'Open Sans', 'Droid Sans', sans-serif;
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$nav-font-size: 20px;
+$nav-line-height: 32px;
+
+$nav-small-font-size: 18px;
+$nav-small-line-height: 28px;
+
+$small-font-size: 14px;
+$small-line-height: 22px;
+
+$medium-font-size: 18px;
+$medium-line-height: 26px;
+
+$large-font-size: 22px;
+$large-line-height: 32px;
+
+// Body
+$body-palette: 'gray';
+$body-background-shade: 50;
+
+$page-width-padding: ($base-spacing-unit * 2);
+$page-width-padding-medium: ($base-spacing-unit * 3);
+
+$link-palette: 'blue';
+$link-shade: 600;
+$link-hover-palette: 'red';
+$link-hover-shade: $link-shade;
+
+$text-color: palette('gray', 800);
+$text-muted-color: palette('gray', 400);
+$text-dimmed-color: palette('gray', 600);
+$text-faint-color: palette('gray', 200);
+
+// Header and logo
+$logo-width: 164px;
+$logo-height: 40px;
+
+// Navigation
+$navigation-link-padding-sides: $base-spacing-unit;
+
+// Inputs
+$input-border-radius: 5px;
+$input-border-color: palette('gray', 100);
+$input-border-hover-color: palette('gray', 150);
+$input-background-color: palette('gray', 0);
+$input-color: palette('gray', 600);
+$input-hover-color: palette('gray', 600);
+
+// Rotated colors
+$rotation-shades: (
+	'purple',
+	'teal',
+	'orange',
+	'blue-gray',
+	'green',
+	'indigo',
+	'brown',
+	'deep-purple',
+	'pink',
+	'cyan',
+	'light-green',
+	'blue',
+	'red',
+	'light-blue'
+);
+$rotation-shades-short: (
+	'blue',
+	'green',
+	'purple',
+	'teal',
+	'blue-gray',
+	'indigo',
+	'pink',
+	'cyan',
+	'light-green',
+	'light-blue',
+	'red'
+);
+
+// Inputs (copy from search)
+$input-focus-color: $input-color;
+$input-placeholder-color: $text-faint-color;
+$input-placeholder-icon-color: palette('gray', 300);
+$input-hover-border-color: $input-border-hover-color;
+$input-focus-border-color: $input-border-hover-color;
+
+$input-padding-sides: ($base-spacing-unit * 1.5);
+$input-padding-top: $base-spacing-unit;
+$input-padding: $input-padding-top $input-padding-sides;
+
+// Check boxes and radio
+$checkbox-checked-color: palette('green', 600);
+//$checkbox-checked-color: palette('green', 0);
+//$checkbox-checked-background-color: palette('green', 600);
+//$checkbox-checked-border-color: $checkbox-checked-background-color;
+
+$checkbox-unchecked-color: palette('red', 600);
+//$checkbox-unchecked-color: palette('gray', 0);
+//$checkbox-unchecked-background-color: palette('gray', 250);
+//$checkbox-unchecked-border-color: $checkbox-unchecked-background-color;
+
+$radio-checked-color: palette('green', 600);
+//$radio-checked-color: palette('green', 0);
+//$radio-checked-background-color: palette('green', 600);
+//$radio-checked-border-color: $radio-checked-background-color;
+
+$radio-unchecked-color: palette('red', 600);
+//$radio-unchecked-color: palette('gray', 0);
+//$radio-unchecked-background-color: palette('gray', 250);
+//$radio-unchecked-border-color: $radio-unchecked-background-color;
+
+// Tabs
+$tab-border-color: palette('gray', 100);
+
+// Notice
+$notice-background: palette('yellow', 325);
+$notice-color: palette('yellow', 1000);

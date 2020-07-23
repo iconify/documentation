@@ -1,0 +1,32 @@
+{
+	"mode": "development",
+	"html": {
+		"header": "",
+		"footer": ""
+	},
+	"iconify1": {
+		"version": {
+			"major": "1",
+			"full": "1.0.7"
+		}
+	},
+	"iconify2": {
+		"version": {
+			"major": "2",
+			"full": "2.0.0-beta.3"
+		}
+	},
+	"counters": {
+		"sets": "80",
+		"icons": "60,000",
+		"icons-short": "60k"
+	},
+	"icons": {
+		"hash": "line-md:hash-small",
+		"chevron-left": "line-md:chevron-small-double-left",
+		"chevron-right": "line-md:chevron-small-double-right"
+	},
+	"links": {
+		"iconify": "https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"
+	}
+}

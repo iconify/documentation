@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Iconify API Queries</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<aside class="notice notice--gray">
+	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
+	<p class="notice-header">Work in progress!</p>
+	<p>
+		New Iconify documentation is currently in development.
+	</p>
+	<p>
+		There are missing and incomplete documents. Documentation is updated daily.
+	</p>
+</aside><h1>Iconify API queries</h1>
+<p>This tutorial is for developers that want to create their own tools to access Iconify API.</p>
+<p>Iconify API has several types of queries:</p>
+<ul>
+<li>Query to retrieve icon data.</li>
+<li>Query to render SVG.</li>
+<li>Administrative queries.</li>
+<li>Search queries.</li>
+</ul>
+<p>Documentation below is not complete. For now it just lists queries, more details will be added later.</p>
+<section class="content-section content-section--2"><H1 id="jsonp-responses" class="heading--2">JSONP responses <a href="#jsonp-responses" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>API supports JSON and JSONP responses.</p><p>JSON response returns data in JSON format:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJInByZWZpeCI6ICJtZGkiLAoJImljb25zIjogewoJCSJhY2NvdW50LWJveCI6IHsKCQkJImJvZHkiOiAiPHBhdGggZD1cIk02IDE3YzAtMiA0LTMuMSA2LTMuMXM2IDEuMSA2IDMuMXYxSDZtOS05YTMgMyAwIDAgMS0zIDNhMyAzIDAgMCAxLTMtM2EzIDMgMCAwIDEgMy0zYTMgMyAwIDAgMSAzIDNNMyA1djE0YTIgMiAwIDAgMCAyIDJoMTRhMiAyIDAgMCAwIDItMlY1YTIgMiAwIDAgMC0yLTJINWEyIDIgMCAwIDAtMiAyelwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0sCgkJImFjY291bnQtY2FzaCI6IHsKCQkJImJvZHkiOiAiPHBhdGggZD1cIk0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3pcIiBmaWxsPVwiY3VycmVudENvbG9yXCIvPiIKCQl9LAoJCSJhY2NvdW50IjogewoJCQkiYm9keSI6ICI8cGF0aCBkPVwiTTEyIDRhNCA0IDAgMCAxIDQgNGE0IDQgMCAwIDEtNCA0YTQgNCAwIDAgMS00LTRhNCA0IDAgMCAxIDQtNG0wIDEwYzQuNDIgMCA4IDEuNzkgOCA0djJINHYtMmMwLTIuMjEgMy41OC00IDgtNHpcIiBmaWxsPVwiY3VycmVudENvbG9yXCIvPiIKCQl9LAoJCSJob21lIjogewoJCQkiYm9keSI6ICI8cGF0aCBkPVwiTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1elwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0KCX0sCgkid2lkdGgiOiAyNCwKCSJoZWlnaHQiOiAyNAp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;icons&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;account-box&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;account-cash&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;account&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;home&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;width&quot;</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;height&quot;</span>: <span class="hljs-number">24</span><br>
+}<br>
+</code></div><div class="code-block-hint">/mdi.json?icons=account-box,account-cash,account,home&amp;pretty=1</div></div></div><p>JSONP response is similar to JSON, but it returns a JavaScript file. JSON response is wrapped in a callback. What&apos;s the point of JSONP? No need to deal with CORS settings, easy to use, works with very old browsers. Just set up a global callback in visitor&apos;s browser, add <span class="hljs-inline-tag hljs-linkable">&lt;script&gt;</span> tag and wait for callback to be called.</p><p><a href="../../implementations/iconify1/">Iconify SVG Framework version 1.0</a> uses JSONP to retrieve icon data. Newer versions use Fetch API, but with JSONP as a backup for browsers that do not support Fetch API.</p><p>Example of a JSONP response:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCSdhY2NvdW50LWJveCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNNiAxN2MwLTIgNC0zLjEgNi0zLjFzNiAxLjEgNiAzLjF2MUg2bTktOWEzIDMgMCAwIDEtMyAzYTMgMyAwIDAgMS0zLTNhMyAzIDAgMCAxIDMtM2EzIDMgMCAwIDEgMyAzTTMgNXYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ySDVhMiAyIDAgMCAwLTIgMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudC1jYXNoJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdob21lJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs">Iconify.addCollection({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-box&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-cash&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;home&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div><div class="code-block-hint">/mdi.js?icons=account-box,account-cash,account,home&amp;pretty=1&amp;callback=Iconify.addCollection</div></div></div><p>By default, API will return JSON data. If you want a JSONP response, do this:</p><ul>
+<li>Add <span class="hljs-inline-prop">callback</span> parameter.</li>
+<li>If query ends with &quot;<span class="hljs-string">.json</span>&quot;, replace it with &quot;<span class="hljs-string">.js</span>&quot; (this is used in queries to retrieve icon data).</li>
+</ul><p>Examples:</p><ul>
+<li>JSON query: <span class="hljs-inline-link">/mdi.js?icons=home&amp;callback=Iconify.addCollection</span></li>
+<li>JSONP query: <span class="hljs-inline-link">/mdi.json?icons=home</span></li>
+</ul></section>
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="common-parameters" class="heading--2">Common parameters <a href="#common-parameters" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All JSON and JSONP queries have several common parameters:</p><ul>
+<li><span class="hljs-inline-prop">callback</span> is used for JSONP queries. It is mandatory for most JSONP queries.</li>
+<li><span class="hljs-inline-prop">pretty</span> is used to format JSON data, making it easy to read. Set to <span class="hljs-number">1</span> or <span class="hljs-literal">true</span> to enable.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="query-to-retrieve-icon-data" class="heading--2">Query to retrieve icon data <a href="#query-to-retrieve-icon-data" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To retrieve icon data, use <span class="hljs-inline-link">{prefix}.json?icons={icons}</span>.</p><p>Replace &quot;<span class="hljs-string">{prefix}</span>&quot; with icon set prefix.</p><p>You cannot request data for multiple icon sets in same query. It is one query per icon set.</p><p>Number of icons per query is not limited, however be aware that browsers have limit on URL length. Iconify implementations, such as <a href="../../implementations/svg-framework/">Iconify SVG Framework</a>, limit URL length to 500. If URL is longer than 500 characters, API query is split into multiple queries.</p><p>Parameters:</p><ul>
+<li><span class="hljs-inline-prop">icons</span> is list of icons, without prefix. Separate icon names with comma. It is better to sort icon names alphabetically to make sure they are always requested in the same order. This way there is a chance browser will find matching query in cache and return cached response.</li>
+</ul><p>Examples:</p><ul>
+<li><span class="hljs-inline-link">/mdi.json?icons=account-box,account-cash,account,home</span></li>
+<li><span class="hljs-inline-link">/fa-regular.js?icons=circle,check-circle,comments,dot-circle&amp;pretty=1&amp;callback=Iconify.addCollection</span></li>
+</ul><p>API returns <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> object.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJInByZWZpeCI6ICJ1aWwiLAoJImljb25zIjogewoJCSJsb2NrIjogewoJCQkiYm9keSI6ICI8cGF0aCBkPVwiTTE3IDlWN0E1IDUgMCAwIDAgNyA3djJhMyAzIDAgMCAwLTMgM3Y3YTMgMyAwIDAgMCAzIDNoMTBhMyAzIDAgMCAwIDMtM3YtN2EzIDMgMCAwIDAtMy0zek05IDdhMyAzIDAgMCAxIDYgMHYySDl6bTkgMTJhMSAxIDAgMCAxLTEgMUg3YTEgMSAwIDAgMS0xLTF2LTdhMSAxIDAgMCAxIDEtMWgxMGExIDEgMCAwIDEgMSAxelwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0sCgkJImxvY2stb3Blbi1hbHQiOiB7CgkJCSJib2R5IjogIjxwYXRoIGQ9XCJNMTIgMTNhMS40OSAxLjQ5IDAgMCAwLTEgMi42MVYxN2ExIDEgMCAwIDAgMiAwdi0xLjM5QTEuNDkgMS40OSAwIDAgMCAxMiAxM3ptNS00SDlWN2EzIDMgMCAwIDEgNS4xMi0yLjEzYTMuMDggMy4wOCAwIDAgMSAuNzggMS4zOGExIDEgMCAxIDAgMS45NC0uNWE1LjA5IDUuMDkgMCAwIDAtMS4zMS0yLjI5QTUgNSAwIDAgMCA3IDd2MmEzIDMgMCAwIDAtMyAzdjdhMyAzIDAgMCAwIDMgM2gxMGEzIDMgMCAwIDAgMy0zdi03YTMgMyAwIDAgMC0zLTN6bTEgMTBhMSAxIDAgMCAxLTEgMUg3YTEgMSAwIDAgMS0xLTF2LTdhMSAxIDAgMCAxIDEtMWgxMGExIDEgMCAwIDEgMSAxelwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0KCX0sCgkid2lkdGgiOiAyNCwKCSJoZWlnaHQiOiAyNCwKCSJub3RfZm91bmQiOiBbImNha2UiXQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;uil&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;icons&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;lock&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M17 9V7A5 5 0 0 0 7 7v2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3zM9 7a3 3 0 0 1 6 0v2H9zm9 12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;lock-open-alt&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M12 13a1.49 1.49 0 0 0-1 2.61V17a1 1 0 0 0 2 0v-1.39A1.49 1.49 0 0 0 12 13zm5-4H9V7a3 3 0 0 1 5.12-2.13a3.08 3.08 0 0 1 .78 1.38a1 1 0 1 0 1.94-.5a5.09 5.09 0 0 0-1.31-2.29A5 5 0 0 0 7 7v2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3zm1 10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;width&quot;</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;height&quot;</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;not_found&quot;</span>: [<span class="hljs-string">&quot;cake&quot;</span>]<br>
+}<br>
+</code></div><div class="code-block-hint">/uil.json?icons=cake,lock,lock-open-alt&amp;pretty=1</div></div></div></section>
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="other-queries" class="heading--2">Other queries <a href="#other-queries" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Other queries will be added to documentation later.</p><p>Queries to get SVG:</p><ul>
+<li><span class="hljs-inline-link">/{prefix}/{name}.svg</span> will render SVG. It has many parameters: <span class="hljs-inline-prop">width</span>, <span class="hljs-inline-prop">height</span>, <span class="hljs-inline-prop">color</span> and many others. Special parameters are <span class="hljs-inline-prop">box=1</span> to add empty rectangle that matches <span class="hljs-inline-prop">viewBox</span> and <span class="hljs-inline-prop">download=1</span> that will add headers that will force browser to download icon.</li>
+</ul><p>Icon finder queries:</p><ul>
+<li><span class="hljs-inline-link">/collections</span> will return list of available collections.</li>
+<li><span class="hljs-inline-link">/collection?prefix={prefix}</span> will return list of icons in a collection.</li>
+<li><span class="hljs-inline-link">/search?query={query}</span> will search icons. By default, API will return only up to 64 results, you can set limit up to 999 by adding <span class="hljs-inline-prop">limit</span> parameter. You can also set prefixes that you want to search by adding <span class="hljs-inline-prop">prefixes</span> parameter with comma separated list of prefixes.</li>
+</ul></section>
+
+
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../bundles/">Bundled Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

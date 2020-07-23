@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css" />
+		<title>Iconify API</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Iconify API</h1>
+<p>Iconify API serves icon data to visitors.</p>
+<section class="content-section content-section--2"><H1 id="concept" class="heading--2">How does it work? <a href="#concept" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="docs-process">
+	<dl>
+		<dt>
+			<p>
+				<span class="inline-code"><code>mdi:home</code></span>
+				<span class="inline-code"><code>mdi:alert</code></span>
+			</p>
+		</dt>
+		<dd>
+			Implementation (<a href="../../implementations/svg-framework/">SVG Framework</a>, <a href="../../implementations/react-with-api/">React with API</a>,
+			etc...) has names of icons that it must render. Icon names are passed as
+			parameters to components or as placeholder element&apos;s attribute.
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--0">
+	<div class="animated-set animated-set--second animated-set--clouds">
+		<span class="iconify icon1" data-icon="line-md:cloud-twotone"></span>
+		<span class="iconify icon2" data-icon="line-md:cloud-twotone"></span>
+		<span class="iconify icon3" data-icon="line-md:cloud-down-twotone"></span>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<span class="iconify animated-arrow" data-height="auto" data-icon="assets:animation-arrow"></span>
+		<span class="iconify animated-arrow animated-arrow--2" data-height="auto" data-icon="assets:animation-arrow"></span>
+		<p>Icon Names</p>
+	</div>
+	<div class="animated-set animated-set--first animated-set--computers">
+		<span class="iconify icon1" data-icon="line-md:laptop-twotone"></span>
+		<span class="iconify icon2" data-icon="line-md:computer-twotone"></span>
+		<span class="iconify icon3" data-icon="line-md:laptop-twotone"></span>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>Implementation requests data for icons from Iconify API.</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--1">
+	<div class="animated-set animated-set--first animated-set--clouds">
+		<span class="iconify icon1" data-icon="line-md:cloud-twotone"></span>
+		<span class="iconify icon2" data-icon="line-md:cloud-twotone"></span>
+		<span class="iconify icon3" data-icon="line-md:cloud-down-twotone"></span>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<span class="iconify animated-arrow" data-height="auto" data-icon="assets:animation-arrow" data-flip="horizontal"></span>
+		<span class="iconify animated-arrow animated-arrow--2" data-height="auto" data-icon="assets:animation-arrow" data-flip="horizontal"></span>
+		<p>Icon Data</p>
+	</div>
+	<div class="animated-set animated-set--second animated-set--computers">
+		<span class="iconify icon1" data-icon="line-md:laptop-twotone"></span>
+		<span class="iconify icon2" data-icon="line-md:computer-twotone"></span>
+		<span class="iconify icon3" data-icon="line-md:laptop-twotone"></span>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>API sends data for requested icons.</p>
+			<p>
+				API hosts thousands of icons, but sends only data for icons that
+				implementation has requested.
+			</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>
+				&lt;p&gt;<span class="hljs-string">&lt;svg class=&quot;iconify iconify-inline&quot; data-icon=&quot;mdi:home&quot;
+					style=&quot;vertical-align: -0.125em&quot; height=&quot;1em&quot;
+					<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;</span>
+				Home&lt;/p&gt;<br>
+				&lt;div class=&quot;alert&quot;&gt;<br>
+				&#xA0;
+				<span class="hljs-string">&lt;svg class=&quot;iconify&quot; data-icon=&quot;mdi:alert&quot; height=&quot;1em&quot;
+					<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;</span>
+				Important alert!<br>
+				&lt;/div&gt;
+			</code></div></div></div>
+		</dt>
+		<dd>
+			Implementation renders SVG using data it retrieved from Iconify API.
+		</dd>
+	</dl>
+</div></section>
+<section class="content-section content-section--2"><H1 id="thousands-of-icons" class="heading--2">Thousands of icons <a href="#thousands-of-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>When you are using an icon font, font contains all icons, even ones you do not need. That limits number of icons that a font can have.</p><p>When you are using Iconify implementation that relies on Iconify API, such as <a href="../../implementations/svg-framework/">SVG Framework</a> or <a href="../../implementations/components/">Iconify components with API support</a>, implementation requests data only for icons that are used on the current page. Iconify API sends only data for icons that implementation has requested.</p><p>Because implementations do not load icons they do not need, Iconify API can host many icons. Visitors do not waste bandwidth loading icons they do not see.</p><section class="content-section content-section--3"><H1 id="iconify-public-api" class="heading--3">Iconify public API <a href="#iconify-public-api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, Iconify implementations use Iconify public API.</p><p>Iconify public API offers over 80 icon sets that include over 60k icons. All icons are from free icon sets.</p><p>To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within 1/10 of a second. Iconify implementations also cache loaded icons in browser cache and/or browser storage, so icon data needs to be loaded only once.</p></section><section class="content-section content-section--3"><H1 id="custom-api" class="heading--3">Custom API <a href="#custom-api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="https://github.com/iconify/api.js" target="_blank">API is open source</a>, which means you can host your own API on your servers. That allows you to have full control over servers or to host your own icon sets.</p><p>All icons available on Iconify public API are available on GitHub, which means you can easily setup your own Iconify API instead of relying on third party servers.</p><p>You can also use Iconify API software to host custom or premium icon sets.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="documentation" class="heading--2">Documentation <a href="#documentation" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Available documentation for Iconify API:</p><ul>
+<li><a href="./hosting.html">Hosting Iconify API</a> explains how to setup API on your server.</li>
+</ul></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../bundles/">Bundled Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.3/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>
