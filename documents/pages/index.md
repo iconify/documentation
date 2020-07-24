@@ -14,7 +14,7 @@ This documentation is split into several parts.
 
 ## Iconify for developers {#for-developers}
 
-Iconify for developers section explains how to use Iconify icons in your project. Iconify is designed to be very flexible.
+[Iconify for developers section](./develop/index.md) explains how to use Iconify icons in your project. Iconify is designed to be very flexible.
 
 Developers section is split into two parts: [sources](./sources/index.md) and [implementations](./implementations/index.md). Source provides icon data. Implementation renders icon data.
 
@@ -24,7 +24,7 @@ Most of the documentation assumes you have some familiarity with Iconify. If you
 
 You can use Iconify with any icons.
 
-By default, Iconify includes over 60k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets.
+By default, Iconify includes over 60k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets. You can browse all icons by [clicking "Browse Icons" link in navigation](https://iconify.design/icon-sets/).
 
 [Sources section](./sources/index.md) explains where implementations (such as SVG framework or React component) get icon data, show various ways to retrieve icon data.
 
@@ -46,7 +46,7 @@ In addition to SVG framework, Iconify offers components for several popular fram
 
 ## Iconify for designers {#for-designers}
 
-["For designers" section](./design/index.md) is for UI designers.
+[For designers section](./design/index.md) is for UI designers.
 
 Iconify offers plug-ins for popular software:
 

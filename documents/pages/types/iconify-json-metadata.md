@@ -1,0 +1,190 @@
+```yaml
+title: Iconify JSON Metadata
+types:
+  IconifyIcon: './iconify-icon.md'
+  IconifyAlias: './iconify-alias.md'
+  IconifyJSON: './iconify-json.md'
+```
+
+# IconifyJSON metadata
+
+`[type]IconifyJSON` can also contain additional data that is used for displaying icons list:
+
+- Icon set info.
+- Categories. Each icon can belong to multiple categories.
+- Themes. They are used for variations of the same icon that have different start or end part.
+- Characters map. This is used for icons imported from icon fonts.
+
+## Information
+
+Information is stored in `[prop]info` object.
+
+In TypeScript info is represented by type `[type]IconifyInfo` that can be imported from `[npm]@iconify/types`.
+
+This is a simple object with various properties. Required properties are:
+
+- `[prop]name`.
+- `[prop]author.name`.
+- `[prop]license.title`.
+- `[prop]samples`.
+- `[prop]palette`.
+
+All other properties are optional.
+
+List of properties:
+
+- `[prop]name`, `[type]string`: icon set name.
+- `[prop]total`, `[type]number`: number of icons. It counts all icons + aliases that have transformations. Aliases that do not have any transformations should not be counted.
+- `[prop]version`, `[type]string`: icon set version.
+- `[prop]author`, `[type]object`: icon set author information:
+  - `[prop]name`, `[type]string`: author name.
+  - `[prop]url`, `[type]string`: link to author's website or icon set repository.
+- `[prop]license`, `[type]object` licence information:
+  - `[prop]title`, `[type]string`: licence as human-readable text.
+  - `[prop]spdx`, `[type]string`: SPDX identifier.
+  - `[prop]url`, `[type]string`: link to licence text.
+- `[prop]samples`, `[type]string[]`: list of icons that should be used for samples. List should contain 3 icons.
+- `[prop]height`, `[type]number or number[]`: icon grid as number or array of numbers.
+- `[prop]displayHeight`, `[type]number`: display height for samples: 16-24. If `[prop]height` is a number and within 16-24 range, you can skip `[prop]displayHeight`.
+- `[prop]category`, `[type]string`: category this icon set belongs to in icon sets list.
+- `[prop]palette`, `[type]boolean` icon set palette. All icons in an icon set must be either monotone (must use `[str]currentColor` for fill and stroke) or with predefined palette that cannot be modified. Set to `[bool]true` if icons have predefined palette, to `[bool]false` if icons use `[str]currentColor`.
+
+Example:
+
+```json
+{
+	"info": {
+		"name": "Dashicons",
+		"total": 343,
+		"author": {
+			"name": "WordPress",
+			"url": "https://github.com/WordPress/dashicons"
+		},
+		"license": {
+			"title": "GPL 2.0",
+			"spdx": "GPL-2.0-only",
+			"url": "http://www.gnu.org/licenses/gpl-2.0.html"
+		},
+		"version": "0.9.0",
+		"samples": ["shortcode", "businessperson", "editor-expand"],
+		"height": 20,
+		"category": "General",
+		"palette": false
+	}
+}
+```
+
+## Categories
+
+Categories are stored in `[prop]categories` object.
+
+In TypeScript categories are represented by type `[type]IconifyCategories` that can be imported from `[npm]@iconify/types`.
+
+This is a simple object, where key is category name, value is array of icons names that belong to that category.
+
+Example:
+
+```json
+{
+	"categories": {
+		"Accessibility": ["accessible-icon"],
+		"Audio & Video": ["youtube"],
+		"Communication": ["bluetooth", "bluetooth-b"],
+		"Currency": ["bitcoin", "btc", "ethereum", "gg", "gg-circle"],
+		"Games": [
+			"playstation",
+			"steam",
+			"steam-square",
+			"steam-symbol",
+			"twitch",
+			"xbox"
+		]
+	}
+}
+```
+
+## Themes: prefixes and suffixes {#themes}
+
+Themes are used to display variations of the same icon that have different prefix or suffix. It is similar to categories, but instead of listing every icon, data contains only prefixes or suffixes.
+
+Themes are stored in `[prop]themes` object.
+
+In TypeScript themes are represented by type `[type]IconifyThemes` that can be imported from `[npm]@iconify/types`.
+
+Theme is an object, where key is unique identifier for theme, value contains theme title and either prefix or suffix. Theme cannot contain both prefix and suffix, it must have only one of properties.
+
+Example of prefixes used in Box Icons:
+
+```json
+{
+	"themes": {
+		"bxl": {
+			"title": "Logos",
+			"prefix": "bxl-"
+		},
+		"bx": {
+			"title": "Regular",
+			"prefix": "bx-"
+		},
+		"bxs": {
+			"title": "Solid",
+			"prefix": "bxs-"
+		}
+	}
+}
+```
+
+In an example above, all icons that start with `[str]bxl-` belong to `[str]Logos` theme, all icons that start with `[str]bx-` belong to `[str]Regular` theme and all icons that start with `[str]bxs-` belong to `[str]Solid` theme.
+
+Prefix must end with `[str]-`.
+
+Example of suffixes used in Ant Design Icons:
+
+```json
+{
+	"themes": {
+		"filled": {
+			"title": "Filled",
+			"suffix": "-filled"
+		},
+		"outlined": {
+			"title": "Outlined",
+			"suffix": "-outlined"
+		},
+		"twotone": {
+			"title": "TwoTone",
+			"suffix": "-twotone"
+		}
+	}
+}
+```
+
+In an example above, all icons that end with `[str]-filled` belong to `[str]Filled` theme, all icons that end with `[str]-outlined` belong to `[str]Outlined` theme and all icons that end with `[str]-twotone` belong to `[str]TwoTone` theme.
+
+Suffix must start with `[str]-`.
+
+## Characters map {#chars}
+
+Characters map is stored in `[prop]chars` object.
+
+In TypeScript characters are represented by type `[type]IconifyChars` that can be imported from `[npm]@iconify/types`.
+
+This is a simple object, where key is character code in hexadecimal form, value is name of icon.
+
+Example:
+
+```json
+{
+	"chars": {
+		"e007": "firefox-browser",
+		"e013": "ideal",
+		"e01a": "microblog",
+		"e01e": "pied-piper-square",
+		"e049": "unity",
+		"e052": "dailymotion",
+		"e055": "instagram-square",
+		"e056": "mixer",
+		"e057": "shopify"
+	}
+}
+```

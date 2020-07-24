@@ -100,3 +100,11 @@ extra:
     title: 'Without default values:'
     hint: 'Both examples are identical, first example has default values, second example does not.'
 ```
+
+## Metadata
+
+`[type]IconifyJSON` can also contain additional data that is used for displaying icons list.
+
+This is optional data that has no effect on rendering icons, so it was moved to a separate document.
+
+See [IconifyJSON metadata](./iconify-json-metadata.md) for details.

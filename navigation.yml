@@ -123,5 +123,8 @@
       title: Iconify Types
       children:
         ./iconify-icon.html: IconifyIcon
-        ./iconify-json.html: IconifyJSON
+        ./iconify-json.html:
+          title: IconifyJSON
+          children:
+            ./iconify-json-metadata.html: Metadata
         ./iconify-alias.html: IconifyAlias
