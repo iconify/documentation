@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css" />
-		<title>Inline Icons in Iconify SVG Framework</title>
+		<title>Iconify SVG Framework Optimizations</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -84,18 +84,23 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents. Documentation is updated daily.
-	</p>
-</aside><h1>Inline icons</h1>
+					<h1>SVG framework optimizations</h1>
 <p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
-<p>TODO</p>
+<section class="content-section content-section--2"><H1 id="header-vs-footer" class="heading--2">Placing script in head section or footer? <a href="#header-vs-footer" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most site optimization tutorials tell you that you should put scripts in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>. What about Iconify? You can put Iconify script in head section (between <span class="hljs-inline-tag hljs-linkable">&lt;head&gt;</span> and <span class="hljs-inline-tag hljs-linkable">&lt;/head&gt;</span>) or in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>.</p><p>So what&apos;s the difference?</p><section class="content-section content-section--3"><H1 id="script-footer" class="heading--3">Putting Iconify in footer <a href="#script-footer" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you put link to Iconify in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>, it will load after entire page has been loaded, not blocking rendering. That&apos;s good for page loading speed.</p><p>However, it also means icon placeholders won&apos;t be replaced until entire page has been loaded. Iconify cannot start doing its thing until it has loaded.</p></section><section class="content-section content-section--3"><H1 id="script-header" class="heading--3">Putting Iconify in head section <a href="#script-header" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you put link to Iconify in head section (between <span class="hljs-inline-tag hljs-linkable">&lt;head&gt;</span> and <span class="hljs-inline-tag hljs-linkable">&lt;/head&gt;</span>), it will load immediately. Downside is, any script tag placed in head section blocks page rendering until script has loaded.</p><p>Iconify SVG framework is rather small (about 30kb uncompressed), delivered from fast CloudFlare CDN. It takes fraction of second to load.</p><p>Benefit of placing Iconify script in head section is, it can start replacing icons right away. That means, if you have a large page, icons will be replaced as soon as part of document loads instead of waiting for an entire document to load.</p></section><section class="content-section content-section--3"><H1 id="script-conclusion" class="heading--3">Conclusion <a href="#script-conclusion" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are pros and cons for each method. You should decide for yourself instead of blindly relying on recommendations from online website checkers. Online website checkers don&apos;t know what script does and how it works, so they always recommend putting all scripts in footer.</p><p>If your pages are small, probably better to put script in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>. For example, this website has it in footer.</p><p>If your pages are large, dynamically generated, such as forum pages, it might be better to put script in head section. Forum pages might take several seconds to load, by placing script in head section, you make sure visitors see icons as soon as possible.</p><p>If you are experiencing flickering during load (page loads, then renders, then icons are replaced), you probably should move Iconify SVG framework script to head section.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				</article>
 				<nav
@@ -112,10 +117,10 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Inline Icons</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./functions.html">Functions</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./optimizations.html">Optimizations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">

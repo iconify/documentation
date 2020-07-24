@@ -45,6 +45,8 @@
                 add-icon.html:
                   title: addIcon
                   wip: true
+            ./optimizations.html:
+              title: Optimizations
         ./iconify1/:
           title: SVG Framework 1.0
           hidden: true
