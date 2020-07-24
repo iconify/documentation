@@ -93,10 +93,10 @@
 		<a href="./">SVG framework or one of components</a>.
 	</p>
 </div><p>If you are migrating from font, you might be used to adding icons by adding pseudo elements to stylesheet, something like this:</p>
-<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="LndoYXRldmVyOmFmdGVyIHsKCWNvbnRlbnQ6ICdcZjAxNSc7Cglmb250LWZhbWlseTogRm9udEF3ZXNvbWU7Cn0K"><code class="highlight hljs"><span class="hljs-string">.whatever:after</span> <span class="hljs-string">{</span><br>
- &#xA0; &#xA0;<span class="hljs-attr">content:</span> <span class="hljs-string">&apos;\f015&apos;</span><span class="hljs-string">;</span><br>
- &#xA0; &#xA0;<span class="hljs-attr">font-family:</span> <span class="hljs-string">FontAwesome;</span><br>
-<span class="hljs-string">}</span><br>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="LndoYXRldmVyOmFmdGVyIHsKCWNvbnRlbnQ6ICdcZjAxNSc7Cglmb250LWZhbWlseTogRm9udEF3ZXNvbWU7Cn0K"><code class="highlight hljs"><span class="hljs-selector-class">.whatever</span><span class="hljs-selector-pseudo">:after</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">content</span>: <span class="hljs-string">&apos;\f015&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-family</span>: FontAwesome;<br>
+}<br>
 </code></div></div></div><p>It can be done with Iconify too, but it is a bit harder and not recommended.</p>
 <p>Iconify API can generate background images that you can use in stylesheet. You can use it as content for pseudo elements or as background images:</p>
 <div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="LyogU1ZHIGFzIHBzZXVkbyBlbGVtZW50J3MgY29udGVudCAqLwouc29tZS1pdGVtOmFmdGVyIHsKCWNvbnRlbnQ6IHVybCgnaHR0cHM6Ly9hcGkuaWNvbmlmeS5kZXNpZ24vZmEtc29saWQvaG9tZS5zdmc/Y29sb3I9JTIzYmEzMzI5JmhlaWdodD0xNicpOwp9CgovKiBTVkcgYXMgcHNldWRvIGVsZW1lbnQncyBiYWNrZ3JvdW5kIGltYWdlICovCi5hbm90aGVyLWl0ZW06YWZ0ZXIgewoJY29udGVudDogJyc7Cgl3aWR0aDogMWVtOwoJaGVpZ2h0OiAxZW07CglkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CgliYWNrZ3JvdW5kOiB1cmwoJ2h0dHBzOi8vYXBpLmljb25pZnkuZGVzaWduL2ZhLXNvbGlkL2hvbWUuc3ZnP2NvbG9yPSUyM2JhMzMyOScpCgkJbm8tcmVwZWF0IGNlbnRlciBjZW50ZXIgLyBjb250YWluOwp9CgovKiBTVkcgYXMgYmFja2dyb3VuZCBpbWFnZSAqLwoudGhpcmQtaXRlbSB7CgliYWNrZ3JvdW5kOiB1cmwoJ2h0dHBzOi8vYXBpLmljb25pZnkuZGVzaWduL2ZhLXNvbGlkL2hvbWUuc3ZnP2NvbG9yPSUyM2JhMzMyOScpCgkJbm8tcmVwZWF0IGNlbnRlciBjZW50ZXIgLyBjb250YWluOwp9Cg=="><code class="highlight hljs"><span class="hljs-comment">/* SVG as pseudo element&apos;s content */</span><br>

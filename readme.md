@@ -20,6 +20,12 @@ npm build
 
 Build process will put all HTML files in directory `docs`.
 
+Do not commit changes that aren't ready for production. To build production documentation, which will include Google Analytics code, run this:
+
+```bash
+npm run build-live
+```
+
 ## Sources
 
 Source files are written in Markdown and are stored in directory `documents/pages`.

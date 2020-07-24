@@ -9,7 +9,7 @@ wip: true
 
 If you are migrating from font, you might be used to adding icons by adding pseudo elements to stylesheet, something like this:
 
-```yml
+```css
 .whatever:after {
 	content: '\f015';
 	font-family: FontAwesome;

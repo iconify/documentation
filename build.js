@@ -77,13 +77,23 @@ Object.keys(compile).forEach((key) => {
 	}
 });
 
+// Done
+const done = () => {
+	if (params.indexOf('--live') === -1) {
+		console.log(
+			'\nDo not commit changes! Documents were generated in development mode.\nTo build production version that should be published, run "npm run build-live"\n'
+		);
+	}
+};
+
 /**
  * Run next command
  */
 const next = () => {
 	const item = commands.shift();
 	if (item === void 0) {
-		process.exit(0);
+		done();
+		return;
 	}
 
 	if (item.cwd === void 0) {

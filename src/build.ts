@@ -202,10 +202,10 @@ export function build() {
 		}
 	});
 
-	// Exit with error if there are errors
-	if (hasInvalidLinks || hasInvalidFiles) {
-		// Exit only when production mode is enabled
-		if (rawReplacements.mode !== 'development') {
+	// Check mode
+	if (rawReplacements.mode !== 'development') {
+		// Exit with error if there are errors
+		if (hasInvalidLinks || hasInvalidFiles) {
 			process.exit(1);
 		}
 	}
