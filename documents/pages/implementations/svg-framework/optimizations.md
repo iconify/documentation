@@ -9,7 +9,12 @@ replacements:
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 
-## Placing script in head section or footer? {#header-vs-footer}
+This tutorial has several parts:
+
+- [Where to place script tag](#header-vs-footer).
+- [How to optimize loading icons](#loading).
+
+## Where to place script tag? {#header-vs-footer}
 
 Most site optimization tutorials tell you that you should put scripts in footer before `[tag]</body>`. What about Iconify? You can put Iconify script in head section (between `[tag]<head>` and `[tag]</head>`) or in footer before `[tag]</body>`.
 
@@ -38,3 +43,38 @@ If your pages are small, probably better to put script in footer before `[tag]</
 If your pages are large, dynamically generated, such as forum pages, it might be better to put script in head section. Forum pages might take several seconds to load, by placing script in head section, you make sure visitors see icons as soon as possible.
 
 If you are experiencing flickering during load (page loads, then renders, then icons are replaced), you probably should move Iconify SVG framework script to head section.
+
+## How to optimize loading icons {#loading}
+
+Iconify SVG framework is fast, but you can make it even faster by helping Iconify figure out what icons to load.
+
+There are several ways to improve icon loading:
+
+### Pre-loading icons
+
+If your page is likely to display additional icons after initial page load, such as AJAX forms or React/Angular application, you can tell Iconify SVG framework to pre-load those icons. Then, when your script will display those icons, Iconify would already have data for those icons retrieved from API.
+
+This also helps to reduce number of API queries. Loading icons in bulk is faster than loading them one by one.
+
+To pre-load icons add this code anywhere after including Iconify script:
+
+```yaml
+src: iconify1/preload.html
+title: 'For Iconify SVG Framework 1.0:'
+hint: Function preloadImages was renamed to loadIcons in 2.0. See <a href="./functions.html">functions list</a>.
+extra:
+  - src: implementations/iconify/preload.html
+    title: 'For Iconify SVG Framework 2.0:'
+```
+
+Argument to `[func]loadIcons` (or `[func]preloadImages` for version 1.0) is an array of icons you want to load.
+
+To use this function, make sure either Iconify is placed in footer before `[tag]</body>` or put it in bundle with SVG framework. Otherwise, SVG framework might be loaded faster than your script, scan DOM and get shorter list of icons to retrieve, splitting it into multiple API queries.
+
+### Bundle icons
+
+If in your development process you are creating script bundles, where you put everything you need, including Iconify SVG framework, you should consider adding icon data to your bundle.
+
+This will reduce number of HTTP queries and it will make sure icon data is available instantly.
+
+See [bundled icons page](../../sources/bundles/index.md) for details.
