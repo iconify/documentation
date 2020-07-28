@@ -50,6 +50,19 @@ const preloadIcons = {
 		'cloud-down-twotone',
 		'computer-twotone',
 		'laptop-twotone',
+		// partials/visual-blocks/bundle.html (re-using footer)
+		'home-twotone-alt',
+		'github',
+		'document-list',
+		'document-code',
+		'image-twotone',
+		'chevron-small-double-left',
+		'alert',
+		'hash-small',
+		'cloud-twotone',
+		'cloud-down-twotone',
+		'computer-twotone',
+		'laptop-twotone',
 	],
 };
 

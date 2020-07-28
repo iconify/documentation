@@ -18,6 +18,18 @@
         ./bundles/:
           title: Bundled Icons
           wip: true
+          children:
+            ./api.html: Using Iconify API
+            ./json-tools.html: Using JSON Tools
+            ./svg-framework.html:
+              title: SVG Framework
+              wip: true
+            ./react.html:
+              title: Components (React)
+              wip: true
+            ./examples.html:
+              title: Examples
+              wip: true
         ./npm/:
           title: Icon Components
           wip: true
