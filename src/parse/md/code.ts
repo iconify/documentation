@@ -172,6 +172,26 @@ export function renderCode(context: MDContext, md: md) {
 	}
 
 	/**
+	 * Clean code
+	 */
+	function cleanupCode(lang: string, str: string): string {
+		switch (lang) {
+			case 'php':
+				if (
+					str.trim().slice(0, 5) === '<?php' &&
+					str.trim().slice(-2) === '?>'
+				) {
+					// Remove <?php and ?>
+					str = str.trim();
+					str = str.slice(5, str.length - 2).trim();
+				}
+				break;
+		}
+
+		return str;
+	}
+
+	/**
 	 * Highlight syntax in code
 	 */
 	function highlightCode(lang: string, str: string) {
@@ -185,20 +205,6 @@ export function renderCode(context: MDContext, md: md) {
 				throw new Error(
 					`Bad language for code block in ${context.filename}: ${lang}`
 				);
-			}
-
-			// Change content
-			switch (lang) {
-				case 'php':
-					if (
-						str.trim().slice(0, 5) === '<?php' &&
-						str.trim().slice(-2) === '?>'
-					) {
-						// Remove <?php and ?>
-						str = str.trim();
-						str = str.slice(5, str.length - 2).trim();
-					}
-					break;
 			}
 
 			// Parse code
@@ -229,6 +235,10 @@ export function renderCode(context: MDContext, md: md) {
 		code: string,
 		hint: string
 	) {
+		// Change content
+		code = cleanupCode(lang, code);
+
+		// Add tab
 		tabs.push({
 			type,
 			title,
