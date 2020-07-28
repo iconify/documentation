@@ -11,6 +11,7 @@ import { fileToURL } from '../navigation/helpers';
 import { renderNavigation } from '../navigation/render';
 import { absoluteToRelative } from '../urls';
 import { parsePartial } from './partial';
+import { hashes } from '../hashes';
 
 // Hash to use to break browser cache
 const hash = '' + Math.round(Date.now() / 1000);
@@ -76,7 +77,7 @@ export function buildHTML(
 	}
 
 	// Generate replacements
-	const replacements = {
+	const replacements: Record<string, string> = {
 		'${hash}': hash,
 		'${root}': absoluteToRelative(item.filename, '/'),
 		'${assets}': absoluteToRelative(item.filename, '/assets'),
@@ -86,6 +87,13 @@ export function buildHTML(
 		'${theme-class}': theme ? ' theme-' + theme : '',
 		'${navigation}': navigation,
 	};
+
+	// Add hashes for parameters
+	Object.keys(hashes).forEach((key) => {
+		const attr = key as keyof typeof hashes;
+		const value = hashes[attr];
+		replacements['?${hash-' + key + '}'] = value === '' ? '' : '?' + value;
+	});
 
 	// Get wrapper
 	if (wrappers[pageType] === void 0) {

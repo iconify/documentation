@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="${assets}/style.css" />
+		<link rel="stylesheet" href="${assets}/style.css?${hash-css}" />
 		<title>${title}</title>
 		${html.header}
 	</head>
@@ -135,7 +135,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="${assets}/bundle.js"></script>
+		<script src="${assets}/bundle.js?${hash-bundle}"></script>
 		<script src="${links.iconify}"></script>
 		${html.footer}
 	</body>
