@@ -122,8 +122,9 @@
               title: Examples
               children:
                 ./import-mdi.html: Import MDI
-                ./import-fa-pro.html: Import FontAwesome Pro
+                ./import-fa-pro.html: FontAwesome Pro
                 ./import-font.html: Import Icon Font
+                ./bundle.html: Icons Bundle
         ./json/:
           title: Iconify JSON Tools
           children:

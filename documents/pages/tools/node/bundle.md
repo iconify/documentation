@@ -1,29 +1,19 @@
 ```yaml
-title: 'Icon Bundle Examples: SVG Framework'
-navigation: ./index.md
-standalone: true
+title: Creating Icon Bundle with Iconify Tools
 replacements:
   - code: '/2/2.0.0/'
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
-types:
-  IconifyJSON: '../../../types/iconify-json.md'
 ```
 
-# Bundling custom icons for SVG Framework
+# Creating icon bundle with Iconify Tools
 
-This article is a part of [Iconify icon bundles code examples](./index.md).
+This example show how to create icon bundles for SVG framework from SVG files. It uses [Iconify Tools](./index.md) to import SVG, clean them up, optimize and export to bundle.
 
-This example show how to create icon bundles for SVG framework from SVG files. It uses [Iconify Tools](../../../tools/node/index.md) to import SVG, clean them up, optimize and export to bundle.
+For more information about icon bundles, see [icon bundles documentation](../../sources/bundles/index.md).
 
 ## Instructions
 
-Installation:
-
-```bash
-npm install --save-dev @iconify/tools
-```
-
-Usage:
+Configure script:
 
 - Change variable `[var]target` to correct location of bundle.
 - Change variable `[var]source` to correct location of SVG files.
@@ -33,8 +23,6 @@ Usage:
 ```yaml
 src: sources/bundles/bundle-svg-tools.js
 ```
-
-Part of code is taken from [Iconify Tools import examples](../../../tools/node/import-mdi.md).
 
 ## Usage in HTML
 
