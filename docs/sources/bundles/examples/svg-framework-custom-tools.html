@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2a47" />
+		<title>Icon Bundle Examples: SVG Framework</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>Bundling custom icons for SVG Framework</h1>
+<p>This article is a part of <a href="./">Iconify icon bundles code examples</a>.</p>
+<p>This example show how to create icon bundles for SVG framework from custom icon sets. It uses <a href="../../../tools/node/">Iconify Tools</a> to import SVG, clean them up, optimize and export to bundle.</p>
+<section class="content-section content-section--2"><H1 id="instructions" class="heading--2">Instructions <a href="#instructions" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Installation:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwo="><code class="highlight hljs">npm install --save-dev @iconify/tools<br>
+</code></div></div></div><p>Usage:</p><ul>
+<li>Change variable <span class="hljs-inline-var">target</span> to correct location of bundle.</li>
+<li>Change variable <span class="hljs-inline-var">source</span> to correct location of SVG files.</li>
+<li>Optionally change <span class="hljs-inline-var">prefix</span> to prefix you want to use for imported icons and <span class="hljs-inline-var">preload</span> to change bundle behavior.</li>
+<li>Run script.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYW4gYWR2YW5jZWQgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqIEl0IGNyZWF0ZXMgYSBidW5kbGUgZnJvbSBhbGwgU1ZHIGZpbGVzIGluIGEgZGlyZWN0b3J5LgogKgogKiBUaGlzIGV4YW1wbGUgdXNlcyBJY29uaWZ5IFRvb2xzIHRvIGNvbnZlcnQgaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdC4KICogRm9yIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiB2aXNpdCBodHRwczovL2RvY3MuaWNvbmlmeS5kZXNpZ24vdG9vbHMvbm9kZS8KICovCmNvbnN0IGZzID0gcmVxdWlyZSgnZnMnKTsKCi8vIEluc3RhbGxhdGlvbjogbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBUcnVlIGlmIGJ1bmRsZSBzaG91bGQgdXNlIEljb25pZnlQcmVsb2FkLgovLyBGYWxzZSBpZiBidW5kbGUgc2hvdWxkIHVzZSBJY29uaWZ5LmFkZENvbGxlY3Rpb24uCi8vIFNlZSBidW5kbGVzIGZvciBTVkcgZnJhbWV3b3JrIGZvciBkZXRhaWxzLgpjb25zdCBwcmVsb2FkID0gdHJ1ZTsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KY29uc3QgdGFyZ2V0ID0gX19kaXJuYW1lICsgJy9hc3NldHMvaWNvbnMtYnVuZGxlLmpzJzsKCi8vIFNWRyBmaWxlcyBsb2NhdGlvbgpjb25zdCBzb3VyY2UgPSBfX2Rpcm5hbWUgKyAnL3N2Zyc7CgovLyBQcmVmaXggdG8gdXNlIGZvciBjdXN0b20gaWNvbnMKY29uc3QgcHJlZml4ID0gJ2N1c3RvbSc7CgovLyBJbXBvcnQgaWNvbnMKbGV0IGNvbGxlY3Rpb247CnRvb2xzCgkuSW1wb3J0RGlyKHNvdXJjZSkKCS50aGVuKChyZXN1bHQpID0+IHsKCQljb2xsZWN0aW9uID0gcmVzdWx0OwoKCQkvLyBTZXQgcHJlZml4CgkJY29sbGVjdGlvbi5wcmVmaXggPSBwcmVmaXg7CgoJCS8vIE9wdGlvbnMgZm9yIFNWR08gb3B0aW1pemF0aW9uCgkJbGV0IFNWR09PcHRpb25zID0gewoJCQljb252ZXJ0U2hhcGVUb1BhdGg6IHRydWUsCgkJCW1lcmdlUGF0aHM6IHRydWUsCgkJfTsKCgkJLy8gT3B0aW1pemUgU1ZHIGZpbGVzCgkJLy8KCQkvLyBjb2xsZWN0aW9uLnByb21pc2VFYWNoKCkgaXRlcmF0ZXMgYWxsIGljb25zIGluIGNvbGxlY3Rpb24gYW5kIHJ1bnMKCQkvLyBwcm9taXNlIGZvciBlYWNoIGljb24sIG9uZSBhdCBhIHRpbWUuCgkJcmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJCShzdmcsIGtleSkgPT4KCQkJCW5ldyBQcm9taXNlKChmdWxmaWxsLCByZWplY3QpID0+IHsKCQkJCQl0b29scwoJCQkJCQkuU1ZHTyhzdmcsIFNWR09PcHRpb25zKQoJCQkJCQkudGhlbigocmVzKSA9PiB7CgkJCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQkJCX0pCgkJCQkJCS5jYXRjaCgoZXJyKSA9PiB7CgkJCQkJCQlyZWplY3QoJ0Vycm9yIG9wdGltaXppbmcgaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikpOwoJCQkJCQl9KTsKCQkJCX0pLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gQ2xlYW4gdXAgdGFncwoJCXJldHVybiBjb2xsZWN0aW9uLnByb21pc2VFYWNoKAoJCQkoc3ZnLCBrZXkpID0+CgkJCQluZXcgUHJvbWlzZSgoZnVsZmlsbCwgcmVqZWN0KSA9PiB7CgkJCQkJdG9vbHMKCQkJCQkJLlRhZ3Moc3ZnKQoJCQkJCQkudGhlbigocmVzKSA9PiB7CgkJCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQkJCX0pCgkJCQkJCS5jYXRjaCgoZXJyKSA9PiB7CgkJCQkJCQlyZWplY3QoCgkJCQkJCQkJJ0Vycm9yIGNoZWNraW5nIHRhZ3MgaW4gaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikKCQkJCQkJCSk7CgkJCQkJCX0pOwoJCQkJfSksCgkJCXRydWUKCQkpOwoJfSkKCS50aGVuKCgpID0+IHsKCQkvLyBDaGFuZ2UgY29sb3IgdG8gImN1cnJlbnRDb2xvciIgdG8gYWxsIGljb25zCgkJLy8gVXNlIHRoaXMgb25seSBmb3IgbW9ub3RvbmUgY29sbGVjdGlvbnMKCQlsZXQgb3B0aW9ucyA9IHsKCQkJZGVmYXVsdDogJ2N1cnJlbnRDb2xvcicsIC8vIGNoYW5nZSBhbGwgY29sb3JzIHRvICJjdXJyZW50Q29sb3IiCgkJCWFkZDogJ2N1cnJlbnRDb2xvcicsIC8vIGFkZCAiY3VycmVudENvbG9yIiB0byBzaGFwZXMgdGhhdCBhcmUgbWlzc2luZyBjb2xvciB2YWx1ZQoJCX07CgoJCS8qCgkJLy8gRm9yIGljb25zIHRoYXQgaGF2ZSBwYWxldHRlIHVzZSB0aGlzIGluc3RlYWQ6CgkJbGV0IG9wdGlvbnMgPSB7CgkJCWFkZDogJ2N1cnJlbnRDb2xvcicsCiAgICAgICAgfTsKICAgICAgICAqLwoKCQlyZXR1cm4gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQkJKHN2ZykgPT4gdG9vbHMuQ2hhbmdlUGFsZXR0ZShzdmcsIG9wdGlvbnMpLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigocmVzKSA9PiB7CgkJLy8gRXhwb3J0IHRvIEpTT04KCQlyZXR1cm4gdG9vbHMuRXhwb3J0SlNPTihjb2xsZWN0aW9uLCBudWxsLCB7CgkJCW9wdGltaXplOiB0cnVlLAoJCX0pOwoJfSkKCS50aGVuKChqc29uKSA9PiB7CgkJLy8gRXhwb3J0IHRvIGJ1bmRsZQoJCWNvbnN0IHRleHQgPSBKU09OLnN0cmluZ2lmeShqc29uKTsKCQljb25zdCBvdXRwdXQgPSBwcmVsb2FkCgkJCT8gJ0ljb25pZnlQcmVsb2FkID0gWycgKyB0ZXh0ICsgJ107XG4nCgkJCTogJ0ljb25pZnkuYWRkQ29sbGVjdGlvbignICsgdGV4dCArICcpO1xuJzsKCgkJLy8gU2F2ZSB0byBmaWxlCgkJZnMud3JpdGVGaWxlU3luYyh0YXJnZXQsIG91dHB1dCwgJ3V0ZjgnKTsKCgkJY29uc29sZS5sb2coYFNhdmVkICR7dGFyZ2V0fSAoJHtvdXRwdXQubGVuZ3RofSBieXRlcylgKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs"><span class="hljs-comment">/**<br>
+ * This is an advanced example for creating icon bundles for Iconify SVG Framework.<br>
+ * It creates a bundle from all SVG files in a directory.<br>
+ *<br>
+ * This example uses Iconify Tools to convert icons to Iconify JSON format.<br>
+ * For Iconify Tools documentation visit https://docs.iconify.design/tools/node/<br>
+ */</span><br>
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Installation: npm install --save-dev @iconify/tools</span><br>
+<span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// True if bundle should use IconifyPreload.</span><br>
+<span class="hljs-comment">// False if bundle should use Iconify.addCollection.</span><br>
+<span class="hljs-comment">// See bundles for SVG framework for details.</span><br>
+<span class="hljs-keyword">const</span> preload = <span class="hljs-literal">true</span>;<br>
+<br>
+<span class="hljs-comment">// File to save bundle to</span><br>
+<span class="hljs-keyword">const</span> target = __dirname + <span class="hljs-string">&apos;/assets/icons-bundle.js&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// SVG files location</span><br>
+<span class="hljs-keyword">const</span> source = __dirname + <span class="hljs-string">&apos;/svg&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Prefix to use for custom icons</span><br>
+<span class="hljs-keyword">const</span> prefix = <span class="hljs-string">&apos;custom&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icons</span><br>
+<span class="hljs-keyword">let</span> collection;<br>
+tools<br>
+ &#xA0; &#xA0;.ImportDir(source)<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;collection = result;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Set prefix</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;collection.prefix = prefix;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Options for SVGO optimization</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> SVGOOptions = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">convertShapeToPath</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">mergePaths</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Optimize SVG files</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">//</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// collection.promiseEach() iterates all icons in collection and runs</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// promise for each icon, one at a time.</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.SVGO(svg, SVGOOptions)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<span class="hljs-string">&apos;Error optimizing icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.format(err));<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Clean up tags</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;tools<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.Tags(svg)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill(res);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;Error checking tags in icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.format(err)<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Change color to &quot;currentColor&quot; to all icons</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Use this only for monotone collections</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> options = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">default</span>: <span class="hljs-string">&apos;currentColor&apos;</span>, <span class="hljs-comment">// change all colors to &quot;currentColor&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">add</span>: <span class="hljs-string">&apos;currentColor&apos;</span>, <span class="hljs-comment">// add &quot;currentColor&quot; to shapes that are missing color value</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">/*<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;// For icons that have palette use this instead:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;let options = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;add: &apos;currentColor&apos;,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;*/</span><br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> tools.ChangePalette(svg, options),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export to JSON</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> tools.ExportJSON(collection, <span class="hljs-literal">null</span>, {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">optimize</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">json</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export to bundle</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> text = <span class="hljs-built_in">JSON</span>.stringify(json);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> output = preload<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;? <span class="hljs-string">&apos;IconifyPreload = [&apos;</span> + text + <span class="hljs-string">&apos;];\n&apos;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;: <span class="hljs-string">&apos;Iconify.addCollection(&apos;</span> + text + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Save to file</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</span>);<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Saved <span class="hljs-subst">${target}</span> (<span class="hljs-subst">${output.length}</span> bytes)`</span>);<br>
+ &#xA0; &#xA0;})<br>
+ &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
+ &#xA0; &#xA0;});<br>
+</code></div></div></div><p>Part of code is taken from <a href="../../../tools/node/import-mdi.html">Iconify Tools import examples</a>.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="usage-in-html" class="heading--2">Usage in HTML <a href="#usage-in-html" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If <span class="hljs-inline-var">preload</span> is set to <span class="hljs-literal">true</span>, bundle generated by script above must be included before SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9wcmVsb2FkLWljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+CgkJPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4wLWJldGEuNC9pY29uaWZ5Lm1pbi5qcyI+PC9zY3JpcHQ+Cgk8L2hlYWQ+Cgk8Ym9keT4KCQk8IS0tIGNvbnRlbnQgaGVyZSAtLT4KCTwvYm9keT4KPC9odG1sPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/preload-icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.0-beta.4/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- content here --&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br>
+</code></div><div class="code-block-hint">Loading bundle before SVG framework in head section.</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8Ym9keT4KCQk8IS0tIGNvbnRlbnQgaGVyZSAtLT4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9wcmVsb2FkLWljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+CgkJPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4wLWJldGEuNC9pY29uaWZ5Lm1pbi5qcyI+PC9zY3JpcHQ+Cgk8L2JvZHk+CjwvaHRtbD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- content here --&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/preload-icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.0-beta.4/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br>
+</code></div><div class="code-block-hint">Loading bundle before SVG framework in footer.</div></div></div><p>If <span class="hljs-inline-var">preload</span> is set to <span class="hljs-literal">false</span>, bundle generated by script above must be included after SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jb2RlLmljb25pZnkuZGVzaWduLzIvMi4wLjAtYmV0YS40L2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9pY29ucy1idW5kbGUuanMiPjwvc2NyaXB0PgoJPC9oZWFkPgoJPGJvZHk+CgkJPCEtLSBjb250ZW50IGhlcmUgLS0+Cgk8L2JvZHk+CjwvaHRtbD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.0-beta.4/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- content here --&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br>
+</code></div><div class="code-block-hint">Loading bundle after SVG framework in head section.</div></div></div></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../api/">Iconify API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../api.html">Using Iconify API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../json-tools.html">Using JSON Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svg-framework.html">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react.html">Components (React)</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?3e18"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.4/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

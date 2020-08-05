@@ -22,6 +22,7 @@ Examples for creating bundles for SVG Framework:
 
 - [Basic bundle example](./svg-framework-simple.md) (Node.js and PHP).
 - [Bundling custom icons](./svg-framework-custom.md) (Node.js and PHP).
+- [Bundling custom icons using Iconify Tools](./svg-framework-custom-tools.md) (Node.js only).
 
 ...TODO
 
