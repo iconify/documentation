@@ -24,6 +24,10 @@
             ./svg-framework.html:
               title: SVG Framework
               wip: true
+              children:
+                ./svg-framework-bundler.html:
+                  title: Module Bundler
+                  wip: true
             ./react.html:
               title: Components (React)
               wip: true

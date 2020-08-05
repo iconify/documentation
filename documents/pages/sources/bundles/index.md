@@ -14,7 +14,7 @@ wip: true
 
 ## Offline use
 
-Icon bundles is the easiest way to make Iconify implementations that rely on API, such as [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md), work without internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.
+Icon bundle is the easiest way to make Iconify implementations that rely on API, such as [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md), work without the internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.
 
 ## Speed up loading
 
@@ -26,8 +26,8 @@ Icon bundles can be used to speed up loading.
 
 You need to:
 
-1. Generate JSON icon data for bundles.
-2. Wrap JSON in function that loads icon data or assign it to a variable.
+1. Generate icon data for bundle. This is done by extracting data for a few icons from a big icon set.
+2. Wrap data in a function that loads icon data or assign it to a variable.
 
 Icon data is a `[type]IconifyJSON` object, like this:
 
@@ -35,7 +35,9 @@ Icon data is a `[type]IconifyJSON` object, like this:
 src: sources/api/mdi.json
 ```
 
-You need to wrap that data in a function or assign it to a variable. This part is different for different [Iconify implementations](../../implementations/index.md). For example, for [Iconify SVG framework](../../implementations/svg-framework/index.md) callback is `[func]Iconify.addCollection`:
+This is the same format that is used to store an icon set, but without metadata and contains only icons that you need.
+
+You need to wrap that data in a function or assign it to a variable. This step is different for different [Iconify implementations](../../implementations/index.md). For example, in bundles for [SVG framework](./svg-framework.md) function name is `[func]Iconify.addCollection`:
 
 ```yaml
 src: sources/api/mdi.js
@@ -44,7 +46,7 @@ src: sources/api/mdi.js
 Each set of data can include only icons from one icon set. If you want to bundle icons from multiple icon sets, you need to repeat same process for each icon set. The only exception is using `[var]IconifyPreload` for SVG framework, which can be used with an array of data sets (see below).
 
 ```yaml
-src: sources/api/mix.js
+src: sources/bundles/mix.js
 ```
 
 ## Generating icon bundle data {#data}
@@ -60,12 +62,14 @@ You need to make sure icon bundle is loaded before implementation attempts to re
 
 ### SVG framework
 
-SVG framework has 2 ways of adding icon bundles:
+SVG framework supports 2 ways of adding icon bundles:
 
-- Loading bundles before loading Iconify.
-- Loading bundles after loading Iconify.
+- Loading icon bundles before loading Iconify.
+- Loading icon bundles after loading Iconify.
 
 See [bundles for SVG framework](./svg-framework.md) for details.
+
+If you are using a module bundler to bundle SVG framework and you have some code that uses SVG framework, it becomes a bit more complex because you need to make sure code is executed in a specific order. See [SVG framework with module bundler](./svg-framework-bundler.md).
 
 ### Components
 

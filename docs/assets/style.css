@@ -1925,6 +1925,10 @@ h1:hover .link-back:hover {
 	border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
 }
 
+.hljs-inline-var {
+	color: #0277ac;
+}
+
 .sample-big {
 	font-size: 24px;
 	line-height: 32px;
@@ -2657,6 +2661,14 @@ h1:hover .link-back:hover {
 	margin-bottom: 0;
 }
 
+@media (min-width: 600px) {
+	.visual-block dd {
+		clear: none;
+		margin-left: 264px;
+		padding-top: 0;
+	}
+}
+
 .visual-block--bundle dt p {
 	left: 0;
 	right: 0;
@@ -2667,6 +2679,7 @@ h1:hover .link-back:hover {
 }
 
 .visual-block--bundle .bundle-bg {
+	color: #cacaca;
 	animation: visual-block-bundle-bg 1.5s forwards;
 	stroke-dasharray: 764px;
 	stroke-dashoffset: 764px;
@@ -2742,14 +2755,6 @@ h1:hover .link-back:hover {
 	left: 172px;
 	top: 116px;
 	color: #1769aa;
-}
-
-@media (min-width: 600px) {
-	.visual-block dd {
-		clear: none;
-		margin-left: 264px;
-		padding-top: 0;
-	}
 }
 
 @keyframes visual-block-bundle-bg {

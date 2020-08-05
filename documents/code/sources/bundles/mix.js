@@ -1,4 +1,4 @@
-// Bundle few icons from Material Design Icons
+// Load few icons from Material Design Icons
 Iconify.addCollection({
 	prefix: 'mdi',
 	icons: {
@@ -15,7 +15,7 @@ Iconify.addCollection({
 	height: 24,
 });
 
-// Bundle few icons from Unicons
+// Load few icons from Unicons
 Iconify.addCollection({
 	prefix: 'uil',
 	icons: {

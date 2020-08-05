@@ -44,5 +44,5 @@ Example, using `[func]Iconify.addCollection` for a callback that is used in SVG 
 `[url]https://api.iconify.design/uil.js?icons=home,lock,lock-open-alt&pretty=1&callback=Iconify.addCollection`
 
 ```yaml
-src: sources/api/uil.js
+src: sources/bundles/uil.js
 ```
