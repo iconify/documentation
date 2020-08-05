@@ -214,6 +214,15 @@ export function renderCode(context: MDContext, md: md) {
 				console.error(err);
 				throw new Error(`Error parsing code block in ${context.filename}.`);
 			}
+
+			// Fix errors
+			switch (lang) {
+				case 'php':
+					code = replaceAll(code, {
+						'<span class="hljs-doctag">@iconify</span>': '@iconify',
+					});
+					break;
+			}
 		}
 
 		// Replace tabs, spaces and new lines

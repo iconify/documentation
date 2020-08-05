@@ -20,7 +20,8 @@ Preferred method is JavaScript. If you are creating web pages, you are working w
 
 Examples for creating bundles for SVG Framework:
 
-- [Basic bundle example](./svg-framework-simple.md).
+- [Basic bundle example](./svg-framework-simple.md) (Node.js and PHP).
+- [Bundling custom icons](./svg-framework-custom.md) (Node.js and PHP).
 
 ...TODO
 
