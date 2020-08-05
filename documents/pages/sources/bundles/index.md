@@ -5,7 +5,6 @@ replacements:
     value: '${counters.icons-short}'
 types:
   IconifyJSON: '../../types/iconify-json.md'
-wip: true
 ```
 
 # Icon bundles
@@ -69,8 +68,6 @@ SVG framework supports 2 ways of adding icon bundles:
 
 See [bundles for SVG framework](./svg-framework.md) for details.
 
-If you are using a module bundler to bundle SVG framework and you have some code that uses SVG framework, it becomes a bit more complex because you need to make sure code is executed in a specific order. See [SVG framework with module bundler](./svg-framework-bundler.md).
-
 ### Components
 
 Components that support Iconify API, expose method `[func]addCollection()`. You need to use that method to import icon bundles.
@@ -79,4 +76,4 @@ See [bundles for React component](./react.md) for details.
 
 ## Examples
 
-Check out [code examples](./examples.md) for full examples.
+Check out [code examples](./examples/index.md) for full examples.

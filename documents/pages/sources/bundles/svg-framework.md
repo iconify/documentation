@@ -5,7 +5,6 @@ replacements:
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
 types:
   IconifyJSON: '../../types/iconify-json.md'
-wip: true
 ```
 
 # Icon bundles for Iconify SVG framework
@@ -16,6 +15,8 @@ This tutorial is a part of [Iconify icon bundles tutorial](./index.md).
 
 - Loading icon bundles before loading Iconify.
 - Loading icon bundles after loading Iconify.
+
+If you want to skip boring explanation, scroll down to ["How to automate build process" section](#automation).
 
 ## Including SVG framework {#script}
 
@@ -28,12 +29,6 @@ You can bundle SVG framework and icons, then link to a big bundle:
 ```
 
 If you bundle SVG framework and icons, you can use any method of including icon bundle.
-
-### Webpack, Rollup {#module-bundler}
-
-If you are using a module bundler to bundle SVG framework and you have some code that uses SVG framework, it becomes a bit more complex because you need to make sure code is executed in a specific order.
-
-See [SVG framework with module bundler](./svg-framework-bundler.md).
 
 ### Separate files
 
@@ -99,3 +94,13 @@ Example:
 ```yaml
 src: sources/bundles/mix.js
 ```
+
+## How to automate build process? {#automation}
+
+Build process is simple:
+
+1. Get icon data.
+2. Wrap it in a callback.
+3. Optional: bundle it with SVG framework.
+
+See [examples](./examples/index.md) for scripts you can use.

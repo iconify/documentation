@@ -17,21 +17,14 @@
               wip: true
         ./bundles/:
           title: Bundled Icons
-          wip: true
           children:
             ./api.html: Using Iconify API
             ./json-tools.html: Using JSON Tools
-            ./svg-framework.html:
-              title: SVG Framework
-              wip: true
-              children:
-                ./svg-framework-bundler.html:
-                  title: Module Bundler
-                  wip: true
+            ./svg-framework.html: SVG Framework
             ./react.html:
               title: Components (React)
               wip: true
-            ./examples.html:
+            ./examples/:
               title: Examples
               wip: true
         ./npm/:

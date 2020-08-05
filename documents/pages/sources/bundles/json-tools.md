@@ -73,4 +73,4 @@ extra:
 
 This step is different for different Iconify implementations. See [icon bundles tutorial](./index.md#callbacks) for details.
 
-Also check out [code examples](./examples.md) for full examples.
+Also check out [code examples](./examples/index.md) for full examples.
