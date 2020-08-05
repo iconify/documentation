@@ -64,6 +64,13 @@ export function parseFile(
 				throw new Error(`Unexpected redirect in ${file}`);
 			}
 			hasRedirect = true;
+
+			if (metadata.redirect.slice(-3) === '.md') {
+				// Redirects must redirect to .html file
+				throw new Error(
+					`Redirects should be to HTML files. Found MD redirect in ${file}`
+				);
+			}
 		}
 
 		// Attempt to get title from first heading

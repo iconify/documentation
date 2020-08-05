@@ -1,3 +1,3 @@
 ```yaml
-redirect: ./examples/index.md
+redirect: ./examples/
 ```
