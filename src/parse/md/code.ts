@@ -218,6 +218,7 @@ export function renderCode(context: MDContext, md: md) {
 			// Fix errors
 			switch (lang) {
 				case 'php':
+				case 'js':
 					code = replaceAll(code, {
 						'<span class="hljs-doctag">@iconify</span>': '@iconify',
 					});
