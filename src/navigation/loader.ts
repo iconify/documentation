@@ -15,6 +15,7 @@ export interface YamlNavigationItemValue {
 	title: string; // Item title
 	wip?: boolean; // True if work in progress
 	hidden?: boolean; // True if item is hidden
+	separator?: boolean; // True if line should be placed above navigation item
 	children?: Record<string, string | YamlNavigationItemValue>; // Value is item title (for items that do not contain child items and do not need additional properties) or object
 }
 
@@ -26,8 +27,14 @@ export const defaultYamlNavigationItem: Required<YamlNavigationItemValue> = {
 	title: '',
 	wip: false,
 	hidden: false,
+	separator: false,
 	children: {},
 };
+
+/**
+ * List of extra styles for navigation item
+ */
+export type NavigationItemStyles = 'separator';
 
 /**
  * Navigation item
@@ -39,6 +46,7 @@ export interface NavigationItem {
 	hidden: boolean;
 	theme: Theme;
 	level: number;
+	styles: NavigationItemStyles[];
 	children: NavigationItem[];
 	parent?: NavigationItem;
 }
@@ -82,6 +90,7 @@ function parseString(
 		hidden: false,
 		theme,
 		level,
+		styles: [],
 		children: [],
 		parent,
 	};
@@ -116,6 +125,12 @@ function parseObject(
 		throw new Error(`'Missing theme for: ${filename}`);
 	}
 
+	// Styles
+	const styles: NavigationItemStyles[] = [];
+	if (item.separator) {
+		styles.push('separator');
+	}
+
 	// Create item
 	const result: NavigationItem = {
 		url,
@@ -124,6 +139,7 @@ function parseObject(
 		hidden: item.hidden === true,
 		theme,
 		level,
+		styles,
 		children: [],
 		parent,
 	};

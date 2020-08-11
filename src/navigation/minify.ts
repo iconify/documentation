@@ -1,4 +1,4 @@
-import { NavigationItem, navigationTree } from './loader';
+import { NavigationItem, navigationTree, NavigationItemStyles } from './loader';
 import { Theme } from '../themes';
 
 /**
@@ -9,6 +9,7 @@ export interface MinifiedNavigationItem {
 	url: string;
 	hidden?: boolean;
 	theme?: Theme;
+	styles?: NavigationItemStyles[];
 	children?: MinifiedNavigationItem[];
 }
 
@@ -30,6 +31,9 @@ function minifyNavigation(
 	}
 	if (item.theme !== parentTheme) {
 		newItem.theme = item.theme;
+	}
+	if (item.styles.length) {
+		newItem.styles = item.styles;
 	}
 
 	// Child items

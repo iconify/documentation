@@ -57,6 +57,11 @@ export function renderNavigation(data: PrepareNavigationResult): string {
 			className += ' ' + linkClass + '--active';
 		}
 
+		// Styles
+		item.styles.forEach((style) => {
+			className += ' ' + linkClass + '--' + style;
+		});
+
 		// Render children
 		let children = '';
 		if (item.children.length) {

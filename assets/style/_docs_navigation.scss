@@ -127,6 +127,7 @@
 	display: block;
 	margin: 0;
 	padding: 0 8px;
+	position: relative;
 
 	border: 1px solid transparent;
 	border-width: 1px 0;
@@ -163,9 +164,35 @@
 		display: none;
 	}
 
+	// Separator before link
+	&--separator {
+		margin-top: 2px;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -2px;
+			height: 0;
+			box-sizing: content-box;
+			border-top: 2px dotted palette($code-palette, 100);
+		}
+	}
+
+	// Selected link
 	&--selected {
 		background: palette('gray', 25);
+		border-style: solid;
 		border-color: palette($code-palette, 100);
+	}
+
+	// Disable separator
+	&--selected,
+	&--selected + &--separator {
+		margin-top: 0;
+		&:before {
+			display: none;
+		}
 	}
 
 	// Link: see code above, wrapped in few selectors to override colors for normal links

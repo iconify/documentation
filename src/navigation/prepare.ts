@@ -1,5 +1,6 @@
 import { MinifiedNavigationItem } from './minify';
 import { Theme } from '../themes';
+import { NavigationItemStyles } from './loader';
 
 /**
  * Navigation item
@@ -13,6 +14,7 @@ export interface ExtendedNavigationItem {
 	showing: boolean; // Item is shown in navigation
 	expanded: boolean; // Item is expanded: has visible child items
 	selectedWithin: boolean; // Item or child item is selected
+	styles: NavigationItemStyles[]; // Extra styles
 	parent?: ExtendedNavigationItem;
 	children: ExtendedNavigationItem[];
 }
@@ -53,6 +55,7 @@ export function prepareNavigation(
 			showing: level < 2,
 			expanded: false,
 			selectedWithin: false,
+			styles: item.styles ? item.styles : [],
 			children: [],
 		};
 

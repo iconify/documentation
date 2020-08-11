@@ -1334,6 +1334,7 @@ li {
 	display: block;
 	margin: 0;
 	padding: 0 8px;
+	position: relative;
 	border: 1px solid transparent;
 	border-width: 1px 0;
 }
@@ -1373,9 +1374,35 @@ li {
 	display: none;
 }
 
+.docs-navigation-link--separator {
+	margin-top: 2px;
+}
+
+.docs-navigation-link--separator:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -2px;
+	height: 0;
+	box-sizing: content-box;
+	border-top: 2px dotted #e4e4e4;
+}
+
 .docs-navigation-link--selected {
 	background: #f8f8f8;
+	border-style: solid;
 	border-color: #e4e4e4;
+}
+
+.docs-navigation-link--selected,
+.docs-navigation-link--selected + .docs-navigation-link--separator {
+	margin-top: 0;
+}
+
+.docs-navigation-link--selected:before,
+.docs-navigation-link--selected + .docs-navigation-link--separator:before {
+	display: none;
 }
 
 .docs-navigation-button a {

@@ -22,7 +22,7 @@ Function has the following parameters:
 
 Function returns `[type]boolean` value: `[bool]true` on success, `[bool]false` if something is wrong with data.
 
-Examples:
+## Examples
 
 ```js
 Iconify.addIcon('mdi:account-box', {

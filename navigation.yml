@@ -48,8 +48,24 @@
               title: Functions
               wip: true
               children:
+                # Getting icons
+                icon-exists.html: iconExists
+                list-icons.html: listIcons
+                get-icon.html: getIcon
+                # Adding icons
+                add-icon.html:
+                  title: addIcon
+                  separator: true
                 add-collection.html: addCollection
-                add-icon.html: addIcon
+                # Rendering icons
+                render-svg.html:
+                  title: renderSVG
+                  separator: true
+                render-html.html: renderHTML
+                render-icon.html: renderIcon
+                # Observer
+                # API
+                # Internal
             ./optimizations.html:
               title: Optimizations
         ./iconify1/:

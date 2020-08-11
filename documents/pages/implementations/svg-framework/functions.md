@@ -15,6 +15,12 @@ types:
 functions:
   addCollection: './add-collection.md'
   addIcon: './add-icon.md'
+  iconExists: './icon-exists.md'
+  listIcons: './list-icons.md'
+  getIcon: './get-icon.md'
+  renderSVG: './render-svg.md'
+  renderHTML: './render-html.md'
+  renderIcon: './render-icon.md'
 ```
 
 # SVG Framework functions

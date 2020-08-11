@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?24ac" />
+		<link rel="stylesheet" href="../../assets/style.css?1fa9" />
 		<title>Iconify SVG Framework Functions: addCollection</title>
 		
 	</head>
@@ -90,7 +90,11 @@
 <section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
 <li><span class="hljs-inline-prop">data</span>, <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>. Icon set data.</li>
 <li><span class="hljs-inline-prop">provider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Optional API provider ID.</li>
-</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> value: <span class="hljs-literal">true</span> on success, <span class="hljs-literal">false</span> if something is wrong with data.</p><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ2N1c3RvbScsCglpY29uczogewoJCWljb24xOiB7CgkJCWJvZHk6CgkJCQknPHBhdGggZD0iTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJfSwKCXdpZHRoOiAyNCwKCWhlaWdodDogMjQsCn0pOwo="><code class="highlight hljs">Iconify.addCollection({<br>
+</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> value: <span class="hljs-literal">true</span> on success, <span class="hljs-literal">false</span> if something is wrong with data.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ2N1c3RvbScsCglpY29uczogewoJCWljb24xOiB7CgkJCWJvZHk6CgkJCQknPHBhdGggZD0iTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJfSwKCXdpZHRoOiAyNCwKCWhlaWdodDogMjQsCn0pOwo="><code class="highlight hljs">Iconify.addCollection({<br>
  &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;custom&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icon1</span>: {<br>
@@ -125,10 +129,6 @@
  &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
 });<br>
 </code></div></div></div></section>
-
-
-
-
 <section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
 <li>Icons added by this function are not cached in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
 <li>Calling this function will trigger re-scan of DOM on the next tick.</li>
@@ -183,8 +183,14 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Inline Icons</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./functions.html">Functions<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./icon-exists.html">iconExists</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./list-icons.html">listIcons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./get-icon.html">getIcon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./add-icon.html">addIcon</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./add-collection.html">addCollection</a></li>
-	<li class="docs-navigation-link docs-navigation-link--4"><a href="./add-icon.html">addIcon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./render-svg.html">renderSVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render-html.html">renderHTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render-icon.html">renderIcon</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
 </ul>

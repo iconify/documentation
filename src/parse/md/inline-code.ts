@@ -44,11 +44,10 @@ function wrap(type: string, text: string): string {
 const midSeparators: string[] = [',', '[]', '|', ' or '];
 const typeSeparators: string[] = midSeparators.concat(['Record', '<', '>']);
 function wrapType(raw: string, escaped: string): string {
-	// Attempt to split types
-	const typesStart: string[] = [];
-	const typesEnd: string[] = [];
-
-	function split(type: string) {
+	function split(type: string): string[] {
+		// Attempt to split types
+		let typesStart: string[] = [];
+		let typesEnd: string[] = [];
 		let changed = false;
 
 		function checkSpaces() {
@@ -69,7 +68,7 @@ function wrapType(raw: string, escaped: string): string {
 
 		checkSpaces();
 		if (type === '') {
-			return;
+			return typesStart.concat(typesEnd);
 		}
 
 		// Check separators
@@ -100,8 +99,8 @@ function wrapType(raw: string, escaped: string): string {
 		// Remaining part
 		if (changed) {
 			// Run it again
-			split(type);
-			return;
+			typesStart = typesStart.concat(split(type));
+			return typesStart.concat(typesEnd);
 		}
 
 		// Find separators in the middle
@@ -111,21 +110,21 @@ function wrapType(raw: string, escaped: string): string {
 			if (index !== -1) {
 				const firstChunk = type.slice(0, index);
 				const lastChunk = type.slice(index + separator.length);
-				split(firstChunk);
+				typesStart = typesStart.concat(split(firstChunk));
 				typesStart.push(separator);
-				split(lastChunk);
-				return;
+				typesEnd = split(lastChunk).concat(typesEnd);
+				return typesStart.concat(typesEnd);
 			}
 		}
 
 		// Add remaining chunk
 		typesStart.push(type);
+
+		return typesStart.concat(typesEnd);
 	}
-	split(raw);
+	const types = split(raw);
 
 	// Merge list and escape contents
-	const types = typesStart.concat(typesEnd);
-
 	return (
 		'<span class="hljs-inline-type hljs-linkable">' +
 		types
@@ -166,6 +165,18 @@ export function renderInlineCode(context: MDContext, md: md) {
 	md.renderer.rules.code_inline = function (tokens, idx, options, env, slf) {
 		let token = tokens[idx],
 			rawContent = token.content;
+
+		// Replace few items
+		switch (rawContent) {
+			case 'null':
+				rawContent = '[null]null';
+				break;
+
+			case 'true':
+			case 'false':
+				rawContent = '[bool]' + rawContent;
+				break;
+		}
 
 		// Get and remove [type]
 		if (rawContent.slice(0, 1) !== '[') {

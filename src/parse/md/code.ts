@@ -95,7 +95,7 @@ function validateSource(src: string): boolean {
 function locateCode(file: string, type: TabTypes): string | null {
 	let filename: string;
 
-	// Check for demo
+	// Check for demo: force .html extension
 	if (type === 'demo') {
 		// Remove extension
 		const parts = file.split('.');
@@ -103,16 +103,18 @@ function locateCode(file: string, type: TabTypes): string | null {
 
 		// Test .demo.html
 		filename =
-			paths.rawCode + '/' + parts.slice(0).concat(['demo', ext]).join('.');
+			paths.rawCode + '/' + parts.slice(0).concat(['demo', 'html']).join('.');
 		if (exists(filename)) {
 			return filename;
 		}
 
 		// Test .html
-		filename = paths.rawCode + '/' + parts.slice(0).concat([ext]).join('.');
+		filename = paths.rawCode + '/' + parts.slice(0).concat(['html']).join('.');
 		if (exists(filename)) {
 			return filename;
 		}
+
+		return null;
 	}
 
 	// Check for raw code
