@@ -59,6 +59,6 @@ For more details about dimensions and alignment see [icon dimensions documentati
 
 For more details about transformations see [icon transformations documentation](./transform.md).
 
-## Rendering SVG
+## Rendering SVG or HTML
 
-This function creates `[tag]string`. If you want to create `[tag]svg` element, use `[func]renderSVG()` instead.
+This function creates `[type]object`. If you want to create `[tag]svg` element, use `[func]renderSVG()` instead. If you want to get HTML `[type]string`, use `[func]renderHTML()` instead.
