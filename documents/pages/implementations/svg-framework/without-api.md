@@ -5,6 +5,8 @@ replacements:
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
   - code: '60k'
     value: '${counters.icons-short}'
+  - code: '@iconify/iconify@2'
+    value: '${iconify2.import}'
 ```
 
 # SVG Framework without API
@@ -28,7 +30,7 @@ To switch from full bundle to bundle without API support, add `[str].without-api
 <script src="https://code.iconify.design/2/2.0.0/iconify.without-api.min.js"></script>
 ```
 
-If you are using NPM package, import `[file]dist/iconify.without-api.min.js`:
+If you are using NPM package `[npm]@iconify/iconify@2`, import `[file]dist/iconify.without-api.min.js`:
 
 ```js
 import Iconify from '@iconify/iconify/dist/iconify.without-api.min.js';

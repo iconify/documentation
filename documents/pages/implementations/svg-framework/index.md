@@ -6,6 +6,8 @@ replacements:
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
   - code: '60k'
     value: '${counters.icons-short}'
+  - code: '@iconify/iconify@2'
+    value: '${iconify2.import}'
 ```
 
 # Iconify SVG Framework
@@ -22,7 +24,7 @@ Iconify SVG framework was designed to be as easy to use as possible. You can cha
 
 ## Usage
 
-Adding icons to HTML is very simple:
+Adding icons to HTML document is very simple:
 
 Add script tag to include Iconify SVG framework. You can add it in head section (before `[tag]</head>`) or at the end of page before `[tag]</body>`:
 
@@ -45,7 +47,7 @@ Look in [icon collections](https://iconify.design/icon-sets/) to find icons. Cli
 
 You can also import Iconify SVG framework in other script and bundle it with your code. This is useful if you are using tools like WebPack or Rollup.js to build your project.
 
-Install `[npm]@iconify/iconify` as dependency and import it in your project:
+Install `[npm]@iconify/iconify@2` as dependency and import it in your project:
 
 ```js
 import Iconify from '@iconify/iconify';

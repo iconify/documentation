@@ -12,7 +12,7 @@
  */
 const fs = require('fs');
 
-// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify
+// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify@2
 const tools = require('@iconify/tools');
 const { Collection } = require('@iconify/json-tools');
 

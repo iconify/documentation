@@ -5,6 +5,8 @@ replacements:
     value: '/${iconify1.version.major}/${iconify1.version.full}/'
   - code: '60k'
     value: '${counters.icons-short}'
+  - code: '@iconify/iconify@1'
+    value: '${iconify1.import}'
 ```
 
 # Iconify SVG framework
@@ -40,6 +42,16 @@ To change an icon, write a different icon name in the `[attr]data-icon` attribut
 
 Look in [icon collections](https://iconify.design/icon-sets/) to find icons. Click an icon to see HTML code for that icon.
 
+### Importing SVG framework
+
+You can also import Iconify SVG framework in other script and bundle it with your code. This is useful if you are using tools like WebPack or Rollup.js to build your project.
+
+Install `[npm]@iconify/iconify@1` as dependency and import it in your project:
+
+```js
+import Iconify from '@iconify/iconify';
+```
+
 ## How does it work?
 
 Iconify SVG framework works by locating icon placeholders, retrieving icon name from placeholder, retrieving icon data from Iconify API, then replacing the placeholder with SVG. This is done very quickly in a fraction of a second.
@@ -54,6 +66,14 @@ What are the disadvantages?
 
 - It requires an internet connection. However, there is a solution for offline use, see [Iconify icon bundles](../../sources/bundles/index.md).
 - Relies on third party service. However, there is an option to host your own Iconify API, see [self-hosted API](../../sources/api/hosting.md).
+
+### Usage without API
+
+Iconify SVG framework retrieves icon data from Iconify API. That makes it very easy to use because developer does not need to prepare the icon data. Downside is, visitor must be online to retrieve icon data.
+
+However, SVG framework can also work without API. It allows using Iconify SVG framework in offline web applications.
+
+See [using SVG framework without API](./without-api.md) tutorial.
 
 ## Icon syntax
 

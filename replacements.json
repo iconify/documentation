@@ -9,7 +9,8 @@
 			"major": "1",
 			"full": "1.0.7"
 		},
-		"size": "22kb"
+		"size": "22kb",
+		"import": "@iconify/iconify"
 	},
 	"iconify2": {
 		"version": {
@@ -17,7 +18,8 @@
 			"full": "2.0.0-beta.5"
 		},
 		"size": "30kb",
-		"size-without-api": "16kb"
+		"size-without-api": "16kb",
+		"import": "@iconify/iconify@beta"
 	},
 	"counters": {
 		"sets": "80",

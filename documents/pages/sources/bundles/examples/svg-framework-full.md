@@ -5,6 +5,8 @@ standalone: true
 replacements:
   - code: '/2/2.0.0/'
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
+  - code: '@iconify/iconify@2'
+    value: '${iconify2.import}'
 types:
   IconifyJSON: '../../../types/iconify-json.md'
 ```
@@ -30,7 +32,7 @@ You need to configure script before running it.
 Installation:
 
 ```bash
-npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify
+npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify@2
 ```
 
 Usage:

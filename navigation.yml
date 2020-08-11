@@ -63,6 +63,7 @@
             ./inline-vs-block.html: Inline and Block Modes
             ./custom-dimensions.html: Dimensions and Alignment
             ./transformations.html: Transformations
+            ./without-api.html: No API
             ./icon-aliases.html: Icon Aliases
             ./rtl-support.html: RTL Support
             ./functions.html: Iconify Functions
