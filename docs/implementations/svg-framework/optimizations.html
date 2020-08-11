@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Iconify SVG Framework Optimizations</title>
 		
 	</head>
@@ -124,7 +124,7 @@
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;flat-color-icons:like&apos;</span>,<br>
  &#xA0; &#xA0;]);<br>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
-</code></div></div></div><p>Argument to <span class="hljs-name">loadIcons</span> (or <span class="hljs-name">preloadImages</span> for version 1.0) is an array of icons you want to load.</p><p>To use this function, make sure either Iconify is placed in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span> or put it in bundle with SVG framework. Otherwise, SVG framework might be loaded faster than your script, scan DOM and get shorter list of icons to retrieve, splitting it into multiple API queries.</p></section><section class="content-section content-section--3"><H1 id="bundle-icons" class="heading--3">Bundle icons <a href="#bundle-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If in your development process you are creating script bundles, where you put everything you need, including Iconify SVG framework, you should consider adding icon data to your bundle.</p><p>This will reduce number of HTTP queries and it will make sure icon data is available instantly.</p><p>See <a href="../../sources/bundles/">bundled icons page</a> for details.</p></section></section>
+</code></div></div></div><p>Argument to <span class="hljs-function">loadIcons</span> (or <span class="hljs-function">preloadImages</span> for version 1.0) is an array of icons you want to load.</p><p>To use this function, make sure either Iconify is placed in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span> or put it in bundle with SVG framework. Otherwise, SVG framework might be loaded faster than your script, scan DOM and get shorter list of icons to retrieve, splitting it into multiple API queries.</p></section><section class="content-section content-section--3"><H1 id="bundle-icons" class="heading--3">Bundle icons <a href="#bundle-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If in your development process you are creating script bundles, where you put everything you need, including Iconify SVG framework, you should consider adding icon data to your bundle.</p><p>This will reduce number of HTTP queries and it will make sure icon data is available instantly.</p><p>See <a href="../../sources/bundles/">bundled icons page</a> for details.</p></section></section>
 
 
 

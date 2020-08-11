@@ -42,20 +42,14 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html:
-              title: Inline Icons
-              wip: true
+            ./inline.html: Inline Icons
             ./without-api.html: No API
             ./functions.html:
               title: Functions
               wip: true
               children:
-                add-collection.html:
-                  title: addCollection
-                  wip: true
-                add-icon.html:
-                  title: addIcon
-                  wip: true
+                add-collection.html: addCollection
+                add-icon.html: addIcon
             ./optimizations.html:
               title: Optimizations
         ./iconify1/:

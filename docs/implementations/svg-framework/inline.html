@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Inline Icons in Iconify SVG Framework</title>
 		
 	</head>
@@ -84,18 +84,85 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents. Documentation is updated daily.
-	</p>
-</aside><h1>Inline icons</h1>
+					<h1>Inline icons</h1>
 <p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
-<p>TODO</p>
+<p>Icons have 2 modes: inline and block. Difference between modes is <span class="hljs-inline-prop">vertical-align</span> that is added to inline icons.</p>
+<p>Inline icons are aligned slightly below baseline, so they look centred compared to text, like glyph fonts.</p>
+<p>Block icons do not have alignment, like images, which aligns them to baseline by default.</p>
+<p>Alignment option was added to make icons look like continuation of text, behaving like glyph fonts. This should make migration from glyph fonts easier.</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglCbG9jazoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSI+PC9zcGFuPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibWRpOmFjY291bnQtYm94LW91dGxpbmUiPjwvc3Bhbj4KPC9wPgo8cD4KCUlubGluZToKCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiPjwvc3Bhbj4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSI+PC9zcGFuPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="cCB7Cglwb3NpdGlvbjogcmVsYXRpdmU7Cglmb250LXNpemU6IDI0cHg7CglsaW5lLWhlaWdodDogMzJweDsKfQoKLy8gQm9yZGVycyBhYm92ZSBhbmQgYmVsb3cgdGV4dCB0byBoaWdobGlnaHQgaWNvbiBhbGlnbm1lbnQKcDphZnRlciwKcDpiZWZvcmUgewoJY29udGVudDogJyc7Cglwb3NpdGlvbjogYWJzb2x1dGU7CglsZWZ0OiAwOwoJcmlnaHQ6IDA7Cglib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNjY2M7Cn0KcDpiZWZvcmUgewoJdG9wOiA2cHg7Cn0KcDphZnRlciB7Cglib3R0b206IDdweDsKfQo="><code class="highlight hljs"><span class="hljs-selector-tag">p</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">position</span>: relative;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">// Borders above and below text to highlight icon alignment</span><br>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:after</span>,<br>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">content</span>: <span class="hljs-string">&apos;&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">position</span>: absolute;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> dotted <span class="hljs-number">#ccc</span>;<br>
+}<br>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">top</span>: <span class="hljs-number">6px</span>;<br>
+}<br>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:after</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">bottom</span>: <span class="hljs-number">7px</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
+	Block:
+	<span class="iconify" data-icon="line-md:image-twotone"></span>
+	<span class="iconify" data-icon="mdi:account-box-outline"></span>
+</p>
+<p>
+	Inline:
+	<span class="iconify-inline" data-icon="line-md:image-twotone"></span>
+	<span class="iconify-inline" data-icon="mdi:account-box-outline"></span>
+</p>
+</div></div></div></div><section class="content-section content-section--2"><H1 id="syntax" class="heading--2">Syntax <a href="#syntax" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, icon is treated as block icon. It has no custom <span class="hljs-inline-prop">vertical-align</span>, so you can add it as necessary in a stylesheet.</p><p>You can change that behaviour by:</p><ul>
+<li>Adding &quot;<span class="hljs-string">iconify-inline</span>&quot; to class list (or replacing &quot;<span class="hljs-string">iconify</span>&quot; with &quot;<span class="hljs-string">iconify-inline</span>&quot;).</li>
+<li>Adding <span class="hljs-inline-prop">data-inline</span> attribute.</li>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglCbG9jazoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaTpob21lIiBkYXRhLWlubGluZT0iZmFsc2UiPjwvc3Bhbj4KCTxpIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImVtb2ppb25lLXYxOmJpcmQiIGRhdGEtaW5saW5lPSJmYWxzZSI+PC9pPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0idWltOnNjZW5lcnkiPjwvc3Bhbj4KPC9wPgo8cD4KCUlubGluZToKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaTpob21lIiBkYXRhLWlubGluZT0idHJ1ZSI+PC9zcGFuPgoJPGkgY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZW1vamlvbmUtdjE6YmlyZCIgZGF0YS1pbmxpbmU9InRydWUiPjwvaT4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJ1aW06c2NlbmVyeSI+PC9zcGFuPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
+	Block:
+	<span class="iconify" data-icon="mdi:home" data-inline="false"></span>
+	<i class="iconify" data-icon="emojione-v1:bird" data-inline="false"></i>
+	<span class="iconify" data-icon="uim:scenery"></span>
+</p>
+<p>
+	Inline:
+	<span class="iconify" data-icon="mdi:home" data-inline="true"></span>
+	<i class="iconify" data-icon="emojione-v1:bird" data-inline="true"></i>
+	<span class="iconify-inline" data-icon="uim:scenery"></span>
+</p>
+</div></div></div></div></section>
+
+
+
+
 
 				</article>
 				<nav

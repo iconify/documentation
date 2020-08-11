@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Converting icon font to Iconify JSON with Iconify Tools</title>
 		
 	</head>
@@ -230,10 +230,10 @@ tools<br>
 <p>There are comments in code above that explain what is going on.</p>
 <p>Process is simple:</p>
 <ol>
-<li><span class="hljs-name">tools.ImportFont()</span> imports SVG font.</li>
-<li><span class="hljs-name">tools.SVGO()</span> is used to optimize icons.</li>
-<li><span class="hljs-name">tools.ChangePalette()</span> is used to add &quot;<span class="hljs-string">currentColor</span>&quot; to all shapes because imported SVG do not have any color values.</li>
-<li><span class="hljs-name">tools.ExportJSON()</span> is used to export collection to JSON file.</li>
+<li><span class="hljs-function">tools.ImportFont()</span> imports SVG font.</li>
+<li><span class="hljs-function">tools.SVGO()</span> is used to optimize icons.</li>
+<li><span class="hljs-function">tools.ChangePalette()</span> is used to add &quot;<span class="hljs-string">currentColor</span>&quot; to all shapes because imported SVG do not have any color values.</li>
+<li><span class="hljs-function">tools.ExportJSON()</span> is used to export collection to JSON file.</li>
 </ol>
 <p>This code does not do one major part of importing font: it does not assign keywords to each icon. Keywords are not stored in font, they should be retrieved from CSS file. Problem with those files is they can be very different for each font, so there is no universal code to get those icon names.</p>
 <p>However, if you do get icon names for each icon, you can use code like this to rename icons:</p>

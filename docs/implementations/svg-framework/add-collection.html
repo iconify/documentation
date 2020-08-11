@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Iconify SVG Framework Functions: addCollection</title>
 		
 	</head>
@@ -84,18 +84,86 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents. Documentation is updated daily.
-	</p>
-</aside><h1>SVG Framework functions: addCollection</h1>
-<p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
-<p>TODO</p>
+					<h1>SVG Framework functions: addCollection</h1>
+<p>This tutorial is part of <a href="./functions.html#adding-icons">Iconify SVG Framework functions tutorial</a>.</p>
+<p>Function <span class="hljs-function">addCollection()</span> adds icons collection to SVG framework storage.</p>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">data</span>, <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>. Icon set data.</li>
+<li><span class="hljs-inline-prop">provider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Optional API provider ID.</li>
+</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> value: <span class="hljs-literal">true</span> on success, <span class="hljs-literal">false</span> if something is wrong with data.</p><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ2N1c3RvbScsCglpY29uczogewoJCWljb24xOiB7CgkJCWJvZHk6CgkJCQknPHBhdGggZD0iTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJfSwKCXdpZHRoOiAyNCwKCWhlaWdodDogMjQsCn0pOwo="><code class="highlight hljs">Iconify.addCollection({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;custom&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icon1</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCSdhY2NvdW50LWJveCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNNiAxN2MwLTIgNC0zLjEgNi0zLjFzNiAxLjEgNiAzLjF2MUg2bTktOWEzIDMgMCAwIDEtMyAzYTMgMyAwIDAgMS0zLTNhMyAzIDAgMCAxIDMtM2EzIDMgMCAwIDEgMyAzTTMgNXYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ySDVhMiAyIDAgMCAwLTIgMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudC1jYXNoJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdob21lJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs">Iconify.addCollection({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-box&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-cash&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;home&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
+<li>Icons added by this function are not cached in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li>Calling this function will trigger re-scan of DOM on the next tick.</li>
+</ul></section>
+
+<section class="content-section content-section--2"><H1 id="api-provider" class="heading--2">API provider <a href="#api-provider" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>API provider parameter can be used to load custom icons asynchronously without triggering API queries.</p><p>Each API provider has its own API endpoint, so if you are using custom API provider that SVG framework doesn&apos;t have configuration for (currently by default SVG framework has no API providers configured), SVG framework will not attempt to load missing icons from an unknown API provider.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKAoJewoJCXByZWZpeDogJ21kJywKCQlpY29uczogewoJCQl0ZXN0OiB7CgkJCQlib2R5OgoJCQkJCSc8cGF0aCBkPSJNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzTDIgMTJoM3Y4aDV6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCQl9LAoJCX0sCgkJd2lkdGg6IDI0LAoJCWhlaWdodDogMjQsCgl9LAoJJ2N1c3RvbScKKTsK"><code class="highlight hljs">Iconify.addCollection(<br>
+ &#xA0; &#xA0;{<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;md&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">test</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;custom&apos;</span><br>
+);<br>
+</code></div></div></div><p>Code above adds only one icon:</p><ul>
+<li><span class="hljs-inline-prop">provider</span> is &quot;<span class="hljs-string">custom</span>&quot;.</li>
+<li><span class="hljs-inline-prop">prefix</span> is &quot;<span class="hljs-string">md</span>&quot;.</li>
+<li><span class="hljs-inline-prop">name</span> is &quot;<span class="hljs-string">test</span>&quot;.</li>
+</ul><p>In HTML code this icon can be used like this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iQGN1c3RvbTptZDp0ZXN0Ij48L3NwYW4+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;@custom:md:test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div></div><p>Syntax is similar to default icon syntax, but with addition of provider &quot;<span class="hljs-string">@custom</span>&quot; before icon name. Provider in icon name always starts with &quot;<span class="hljs-string">@</span>&quot;.</p></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="one-icon" class="heading--2">One icon <a href="#one-icon" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function adds and entire icon set in <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</p><p>If you want to add only once icon and you have <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> data, use function <a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a> instead.</p></section>
+
+
 
 				</article>
 				<nav

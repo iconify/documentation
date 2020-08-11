@@ -22,7 +22,8 @@ export interface MetaData {
 	redirect?: string; // Redirection, full link
 	navigation?: string; // File to use for navigation
 	theme?: Theme; // Theme, string
-	types?: Record<string, string>; // Types
+	types?: Record<string, string>; // Links to types
+	functions?: Record<string, string>; // Links to functions
 }
 
 /**
@@ -45,6 +46,7 @@ const defaultMetaData: Required<SourceMetaData> = {
 	navigation: '',
 	theme: 'develop',
 	types: {},
+	functions: {},
 };
 
 /**

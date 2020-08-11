@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>SVG framework functions</title>
 		
 	</head>
@@ -203,7 +203,7 @@ Iconify.resumeObserving();<br>
 <br>
 <span class="hljs-comment">// Set new value</span><br>
 Iconify.setConfig(<span class="hljs-string">&apos;localStorage&apos;</span>, <span class="hljs-literal">true</span>);<br>
-</code></div></div></div><p>These functions are used to get and set configuration options.</p><p>First argument is option name. In <span class="hljs-name">setConfig</span> second argument is new value.</p><p>Not all configuration options can be changed after Iconify has been included! <span class="inline-code inline-code--js">Iconify.getConfig()</span> will return values for all options, but <span class="inline-code inline-code--js">Iconify.setConfig()</span> can only change several options.</p><p>List of options that can be changed at any time (usable with <span class="inline-code inline-code--js">Iconify.setConfig()</span>):</p><ul>
+</code></div></div></div><p>These functions are used to get and set configuration options.</p><p>First argument is option name. In <span class="hljs-function">setConfig</span> second argument is new value.</p><p>Not all configuration options can be changed after Iconify has been included! <span class="inline-code inline-code--js">Iconify.getConfig()</span> will return values for all options, but <span class="inline-code inline-code--js">Iconify.setConfig()</span> can only change several options.</p><p>List of options that can be changed at any time (usable with <span class="inline-code inline-code--js">Iconify.setConfig()</span>):</p><ul>
 <li><span class="hljs-inline-prop">defaultAPI</span> - URL of Iconify API, string</li>
 <li><span class="hljs-inline-prop">API</span> - List of custom API URLs for different prefixes. Object, where key is prefix, value is API URL. Setting this option will merge it with existing option rather than overwrite it. See also: <a href="#api-custom">Iconify.setCustomAPI()</a>.</li>
 <li><span class="hljs-inline-prop">loaderMaxURLSize</span> - Maximum length of API URL, number. If limit is reached when requesting icons from API, request is split into 2 or more requests.</li>
@@ -223,8 +223,8 @@ Iconify.setConfig(<span class="hljs-string">&apos;localStorage&apos;</span>, <sp
 <li><span class="hljs-inline-prop">appendedClass</span> - Placeholder icon class name that is added to icons when SVG is appended as child node rather than replacing placeholder, string.</li>
 <li><span class="hljs-inline-prop">appendedClass</span> - Placeholder icon class name that is added to icons when SVG is appended as child node rather than replacing placeholder, string.</li>
 <li><span class="hljs-inline-prop">webComponentsPolyfill</span> - URL of web components polyfill for old browsers, string.</li>
-<li><span class="hljs-inline-prop">classListPolyfill</span> - URL of <span class="hljs-name">classList</span> polyfill for old browsers, string.</li>
-</ul><p>To change options not usable with <span class="hljs-name">setConfig</span> you need to create <span class="hljs-inline-prop">IconifyConfig</span> object before including Iconify:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCXZhciBJY29uaWZ5Q29uZmlnID0gewoJCWNsYXNzTGlzdFBvbHlmaWxsOgoJCQknaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvY2xhc3NsaXN0LzEuMi4yMDE3MTEwOTIvY2xhc3NMaXN0Lm1pbi5qcycsCgkJd2ViQ29tcG9uZW50c1BvbHlmaWxsOgoJCQknaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvd2ViY29tcG9uZW50c2pzLzAuNy4yNC93ZWJjb21wb25lbnRzLWxpdGUubWluLmpzJywKCX07Cjwvc2NyaXB0Pgo8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jb2RlLmljb25pZnkuZGVzaWduLzEvMS4wLjcvaWNvbmlmeS5taW4uanMiPjwvc2NyaXB0Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript"><br>
+<li><span class="hljs-inline-prop">classListPolyfill</span> - URL of <span class="hljs-function">classList</span> polyfill for old browsers, string.</li>
+</ul><p>To change options not usable with <span class="hljs-function">setConfig</span> you need to create <span class="hljs-inline-prop">IconifyConfig</span> object before including Iconify:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCXZhciBJY29uaWZ5Q29uZmlnID0gewoJCWNsYXNzTGlzdFBvbHlmaWxsOgoJCQknaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvY2xhc3NsaXN0LzEuMi4yMDE3MTEwOTIvY2xhc3NMaXN0Lm1pbi5qcycsCgkJd2ViQ29tcG9uZW50c1BvbHlmaWxsOgoJCQknaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvd2ViY29tcG9uZW50c2pzLzAuNy4yNC93ZWJjb21wb25lbnRzLWxpdGUubWluLmpzJywKCX07Cjwvc2NyaXB0Pgo8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jb2RlLmljb25pZnkuZGVzaWduLzEvMS4wLjcvaWNvbmlmeS5taW4uanMiPjwvc2NyaXB0Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">var</span> IconifyConfig = {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;classListPolyfill:<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.201711092/classList.min.js&apos;</span>,<br>
@@ -249,7 +249,7 @@ Iconify.setConfig(<span class="hljs-string">&apos;localStorage&apos;</span>, <sp
 </code></div></div></div><p>This function sets custom API URL for icons that start with some prefix. First argument is collection prefix, second argument is API URL.</p><p>URL can contain several variables:</p><ul>
 <li><span class="hljs-inline-prop">{prefix}</span> - will be replaced with prefix</li>
 <li><span class="hljs-inline-prop">{icons}</span> - will be replaced with list of requested icons</li>
-</ul><p>You don&apos;t have to host API script if your custom icon set is small. Instead, you can upload only &quot;<span class="hljs-string">.js</span>&quot; file that loads all your custom icons and use it as second <span class="hljs-name">setCustomAPI</span> argument.</p><p>To set custom API URL for all collections, change <span class="hljs-inline-prop">defaultAPI</span> configuration variable using <span class="hljs-name">setConfig</span> function or <span class="hljs-inline-prop">IconifyConfig</span> object.</p></section>
+</ul><p>You don&apos;t have to host API script if your custom icon set is small. Instead, you can upload only &quot;<span class="hljs-string">.js</span>&quot; file that loads all your custom icons and use it as second <span class="hljs-function">setCustomAPI</span> argument.</p><p>To set custom API URL for all collections, change <span class="hljs-inline-prop">defaultAPI</span> configuration variable using <span class="hljs-function">setConfig</span> function or <span class="hljs-inline-prop">IconifyConfig</span> object.</p></section>
 
 
 

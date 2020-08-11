@@ -13,6 +13,10 @@
 	@import './samples/iconify/index-color';
 }
 
+.iconify-inline-block {
+	@import './samples/iconify/inline-block';
+}
+
 // Iconify 1
 .iconify1-index-size-attr {
 	@import './samples/iconify1/index-size-attr';
@@ -36,10 +40,6 @@
 
 .iconify1-index-transform-rotate-comparison {
 	@import './samples/iconify1/index-transform-rotate-comparison';
-}
-
-.iconify1-inline-block {
-	@import './samples/iconify1/inline-block';
 }
 
 .iconify1-size-demo {

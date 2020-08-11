@@ -255,9 +255,15 @@ export function renderInlineCode(context: MDContext, md: md) {
 				*/
 				return wrapType(rawContent, escapedContent);
 
-			// Class or function name
-			case 'class':
+			// Function
 			case 'func':
+				return wrap(
+					'class',
+					'<span class="hljs-function">' + escapedContent + '</span>'
+				);
+
+			// Class name
+			case 'class':
 				return wrap(
 					'class',
 					'<span class="hljs-name">' + escapedContent + '</span>'

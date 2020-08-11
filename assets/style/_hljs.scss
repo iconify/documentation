@@ -42,7 +42,8 @@
 
 .hljs-tag,
 .hljs-name,
-.hljs-attribute {
+.hljs-attribute,
+.hljs-function {
 	color: palette('indigo', 700);
 	font-weight: normal;
 }

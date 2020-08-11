@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Importing icons with Iconify Tools</title>
 		
 	</head>
@@ -116,7 +116,7 @@
  &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
  &#xA0; &#xA0;});<br>
-</code></div></div></div><p>There are several options available for importing directory, options should be passed as second parameter to <span class="hljs-name">ImportDir()</span> function:</p><ul>
+</code></div></div></div><p>There are several options available for importing directory, options should be passed as second parameter to <span class="hljs-function">ImportDir()</span> function:</p><ul>
 <li><span class="hljs-inline-prop">&apos;include-subdirs&apos;</span> check subdirectories, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Default = <span class="hljs-literal">true</span>.</li>
 <li><span class="hljs-inline-prop">keywordCallback</span> custom callback to get image name from file. It is a function with 2 arguments: <span class="inline-code inline-code--js"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file_without_extension, filename</span>)</span></span>. Function should return <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. See default function in <span class="hljs-inline-file">src/import/dir.js</span> for example.</li>
 <li><span class="hljs-inline-prop">ignoreDuplicates</span> if <span class="hljs-literal">true</span>, when files with duplicate keywords are found script will log an error message.</li>
@@ -161,7 +161,7 @@
  &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
  &#xA0; &#xA0;});<br>
-</code></div></div></div><p>There are several options available for importing SVG font, options should be passed as second parameter to <span class="hljs-name">ImportFont</span>
+</code></div></div></div><p>There are several options available for importing SVG font, options should be passed as second parameter to <span class="hljs-function">ImportFont</span>
 function:</p><ul>
 <li><span class="hljs-inline-prop">ignoreCharacters</span> list of characters to ignore, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>.</li>
 <li><span class="hljs-inline-prop">characterChanges</span> changes for each character, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">object</span></span>. Object key is character&apos;s hexadecimal code, value is list of changes for that character.</li>

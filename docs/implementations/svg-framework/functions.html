@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?2a47" />
+		<link rel="stylesheet" href="../../assets/style.css?24ac" />
 		<title>Iconify SVG Framework Functions</title>
 		
 	</head>
@@ -95,7 +95,101 @@
 	</p>
 </aside><h1>SVG Framework functions</h1>
 <p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
-<p>TODO</p>
+<p>Iconify SVG framework has many functions that you can use to use SVG framework in your scripts.</p>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are two ways of using SVG framework functions:</p><ul>
+<li>By using <span class="hljs-inline-var">Iconify</span> global.</li>
+<li>By importing <span class="hljs-inline-var">Iconify</span> from <span class="hljs-inline-package hljs-linkable">@iconify/iconify@beta</span> if you are bundling SVG framework with your scripts.</li>
+</ul><p>Examples of using <span class="hljs-function">loadIcons</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4wLWJldGEuNS9pY29uaWZ5Lm1pbi5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQ+CglJY29uaWZ5LmxvYWRJY29ucyhbJ21kaTpob21lJ10sICgpID0+IHsKCQljb25zb2xlLmxvZygnTG9hZGVkIGhvbWUgaWNvbiEnKTsKCX0pOwo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.0-beta.5/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><br>
+ &#xA0; &#xA0;Iconify.loadIcons([<span class="hljs-string">&apos;mdi:home&apos;</span>], () =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Loaded home icon!&apos;</span>);<br>
+ &#xA0; &#xA0;});<br>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IEljb25pZnkgZnJvbSAnQGljb25pZnkvaWNvbmlmeSc7CgpJY29uaWZ5LmxvYWRJY29ucyhbJ21kaTpob21lJ10sICgpID0+IHsKCWNvbnNvbGUubG9nKCdMb2FkZWQgaG9tZSBpY29uIScpOwp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> Iconify <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/iconify&apos;</span>;<br>
+<br>
+Iconify.loadIcons([<span class="hljs-string">&apos;mdi:home&apos;</span>], () =&gt; {<br>
+ &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Loaded home icon!&apos;</span>);<br>
+});<br>
+</code></div></div></div><p>Even if you use bundle (method shown in second example), <span class="hljs-inline-var">Iconify</span> global is also available because SVG framework exports functions and creates a global variable regardless of how you use it. That means you can use method shown in first example regardless of how you import SVG framework.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="functions" class="heading--2">Functions <a href="#functions" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Functions are split in several groups:</p><ul>
+<li><a href="#general">General functions</a>.</li>
+<li><a href="#getting-icons">Getting icons</a>.</li>
+<li><a href="#adding-icons">Adding icons</a>.</li>
+<li><a href="#render">Rendering icons</a>.</li>
+<li><a href="#scanner">Scanning and observing DOM</a>.</li>
+<li><a href="#api">API functions</a>.</li>
+<li><a href="#internal">Internal functions</a>.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="general" class="heading--2">General functions <a href="#general" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>In this section there is only one function:</p><ul>
+<li><span class="hljs-function">getVersion()</span>. This function returns SVG framework version string. &quot;<span class="hljs-string">2.0.0-beta.5</span>&quot;</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="getting-icons" class="heading--2">Getting icons <a href="#getting-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several functions in this section:</p><ul>
+<li><span class="hljs-function">iconExists(name)</span>. Checks if an icon exists, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>.</li>
+<li><span class="hljs-function">listIcons()</span>. Lists available icons, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>.</li>
+<li><span class="hljs-function">getIcon(name)</span>. Returns icon data, returns <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> object.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="adding-icons" class="heading--2">Adding icons <a href="#adding-icons" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Functions for adding icons to SVG framework:</p><ul>
+<li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
+<li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
+</ul><p>Note: icons added to SVG framework with these functions are not stored in cache. SVG framework caches only icons retrieved from API.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="render" class="heading--2">Rendering icons <a href="#render" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Functions that generate SVG or data:</p><ul>
+<li><span class="hljs-function">renderSVG(name, customisations?)</span>. Creates <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element.</li>
+<li><span class="hljs-function">renderHTML(name, customisations?)</span>. Returns <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> string.</li>
+<li><span class="hljs-function">renderIcon(name, customisations?)</span>. Generates data used by functions above. This can be used if you prefer to generate <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> yourself. Data includes attributes for <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> and inner HTML.</li>
+</ul><p>This section also includes helper function:</p><ul>
+<li><span class="hljs-function">replaceIDs(html)</span>. Randomizes IDs in generated string. This should be used when rendering data returned by <span class="hljs-function">renderIcon()</span> to make sure elements inside each icon have unique IDs. This function is not needed for icons generated by <span class="hljs-function">renderSVG()</span> and <span class="hljs-function">renderHTML()</span>.</li>
+</ul></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="scanner" class="heading--2">Scanning and observing DOM <a href="#scanner" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>SVG framework automatically scans DOM whenever something changes. However, there are some limitations:</p><ul>
+<li>Observer can observe only child nodes of <span class="hljs-inline-prop">document.body</span>.</li>
+<li>SVG framework scans DOM after every change (though scans are throttled to avoid scanning too often).</li>
+</ul><p>In some instances you might want to temporarily disable observer or scan a node that is not part of DOM, such as Shadow DOM. There are functions that you can use:</p><ul>
+<li><span class="hljs-function">scan(root?)</span>. Scans DOM or custom node for placeholder elements.</li>
+<li><span class="hljs-function">observe(root)</span>. Observes custom root node.</li>
+<li><span class="hljs-function">stopObserving(root)</span>. Stops observing custom root node. You can call it with <span class="hljs-inline-prop">document.body</span> as parameter to stop observing <span class="hljs-inline-prop">document.body</span>.</li>
+<li><span class="hljs-function">pauseObserver(root?)</span>. Pauses observer.</li>
+<li><span class="hljs-function">resumeObserver(root?)</span>. Resumes observer.</li>
+</ul></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="api" class="heading--2">API functions <a href="#api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These functions are not available in module without API.</p><ul>
+<li><span class="hljs-function">locaIcons(icons, callback?)</span>. Loads icons from API, calls optional callback when either all or part of icons have been loaded.</li>
+<li><span class="hljs-function">enableCache()</span>. Toggles caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><span class="hljs-function">addAPIProvider()</span>. Adds custom API provider. This is experimental function. API provider functionality is in development.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="internal" class="heading--2">Internal functions <a href="#internal" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several internal functions that are exposed. They are intended to be used by implementations that want more control over SVG framework, such as Iconify Icon Finder. Use them carefully.</p><p>All internal functions are exposed as properties of <span class="hljs-inline-var">Iconify._internal</span> object.</p><p>Function available with all packages:</p><ul>
+<li><span class="hljs-function">calculateSize()</span>. Calculates icon size. It is used to calculate <span class="hljs-inline-prop">width</span> if only <span class="hljs-inline-prop">height</span> is set and vice versa.</li>
+</ul><p>Functions available only when API is included:</p><ul>
+<li><span class="hljs-function">getAPI()</span>. Returns internal API module.</li>
+<li><span class="hljs-function">getAPIConfig()</span>. Returns API configuration.</li>
+<li><span class="hljs-function">setAPIModule(provider)</span>. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.</li>
+</ul></section>
+
+
+
+
+
+
 
 				</article>
 				<nav

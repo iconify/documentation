@@ -10,6 +10,7 @@ import { changeHeadingLinks } from './html/headings';
 import { wrapSections } from './html/sections';
 import { replacementsToPairs } from '../replacements';
 import { linkTypes } from './html/types';
+import { linkFunctions } from './html/functions';
 import { wrapCustomCode } from './html/code';
 import { importHTMLPartials } from './html/includes';
 import { parseHTMLImages } from './html/images';
@@ -66,6 +67,9 @@ export function parseMD(source: ReadResult, relativeFile: string): ParseResult {
 	parseHTMLImages($html, result, context.filename);
 	if (metadata.types) {
 		linkTypes($html, context, metadata.types);
+	}
+	if (metadata.functions) {
+		linkFunctions($html, context, metadata.functions);
 	}
 
 	// Convert back to HTML, replacing Cheerio bugs

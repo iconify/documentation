@@ -1851,7 +1851,8 @@ h1:hover .link-back:hover {
 
 .hljs-tag,
 .hljs-name,
-.hljs-attribute {
+.hljs-attribute,
+.hljs-function {
 	color: #303e89;
 	font-weight: normal;
 }
@@ -1954,6 +1955,29 @@ h1:hover .link-back:hover {
 	color: #0e0;
 }
 
+.iconify-inline-block p {
+	position: relative;
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.iconify-inline-block p:after,
+.iconify-inline-block p:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	border-bottom: 1px dotted #ccc;
+}
+
+.iconify-inline-block p:before {
+	top: 6px;
+}
+
+.iconify-inline-block p:after {
+	bottom: 7px;
+}
+
 .iconify1-index-size-attr .alert .iconify {
 	color: #d00;
 	font-size: 24px;
@@ -1991,29 +2015,6 @@ h1:hover .link-back:hover {
 
 .iconify1-index-transform-rotate-comparison .rotate {
 	transform: rotate(90deg) !important;
-}
-
-.iconify1-inline-block p {
-	position: relative;
-	font-size: 24px;
-	line-height: 32px;
-}
-
-.iconify1-inline-block p:after,
-.iconify1-inline-block p:before {
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	border-bottom: 1px dotted #ccc;
-}
-
-.iconify1-inline-block p:before {
-	top: 6px;
-}
-
-.iconify1-inline-block p:after {
-	bottom: 7px;
 }
 
 .iconify1-size-demo {
