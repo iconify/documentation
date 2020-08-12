@@ -303,3 +303,60 @@
 		display: none;
 	}
 }
+
+// Short navigation
+.docs-short-navigation {
+	margin: 16px 0;
+
+	// Links
+	&-link {
+		white-space: nowrap;
+		position: relative;
+		padding: 0 8px;
+		text-decoration: none;
+		font-size: $base-font-size;
+		line-height: $base-line-height;
+
+		.iconify {
+			position: absolute;
+			top: 0;
+			font-size: $icon-size;
+			line-height: 1em;
+			color: $text-muted-color;
+		}
+
+		&--prev {
+			float: left;
+			padding-left: $icon-size;
+			.iconify {
+				left: 0;
+			}
+		}
+		&--next {
+			float: right;
+			text-align: right;
+			padding-right: $icon-size;
+			.iconify {
+				right: 0;
+			}
+		}
+
+		&:hover {
+			text-decoration: underline;
+			.iconify {
+				color: inherit;
+			}
+		}
+	}
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	// Heading after links
+	+ h1 {
+		margin-top: 24px;
+	}
+}

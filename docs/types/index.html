@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../assets/style.css?9e49" />
+		<link rel="stylesheet" href="../assets/style.css?af0c" />
 		<title>Iconify Types</title>
 		
 	</head>
@@ -84,7 +84,10 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<h1>Iconify types</h1>
+					<div class="docs-short-navigation">
+<a href="../tools/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Development Tools</a>
+</div>
+<h1>Iconify types</h1>
 <p>All Iconify libraries share common object structures. They are described as types in <span class="hljs-inline-package hljs-linkable">@iconify/types</span> NPM package.</p>
 <section class="content-section content-section--2"><H1 id="typescript" class="heading--2">TypeScript <a href="#typescript" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All types are described with TypeScript.</p><p>If you are not familiar with TypeScript, but are familiar with JavaScript, it should not be hard to understand this documentation because it is mostly just basic types.</p><p>Few things that you need to know to understand types:</p><section class="content-section content-section--3"><H1 id="object" class="heading--3">object <a href="#object" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Some Iconify code is written in PHP, yet refers to this documentation for description of types.</p><p>Object in JavaScript is the same as associative array in PHP. That is every entry has unique key and value.</p></section><section class="content-section content-section--3"><H1 id="record" class="heading--3">Record <a href="#record" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">number</span>&gt;</span> is an object, where key is <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>, value is <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>.</p><p>For PHP developers it is an associative array.</p></section><section class="content-section content-section--3"><H1 id="unknown" class="heading--3">unknown <a href="#unknown" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">unknown</span></span> means value can be any type.</p></section><section class="content-section content-section--3"><H1 id="extends" class="heading--3">extends <a href="#extends" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW50ZXJmYWNlIEZvbyBleHRlbmRzIEJhciwgQmF6IHt9Cg=="><code class="highlight hljs"><span class="hljs-keyword">interface</span> Foo <span class="hljs-keyword">extends</span> Bar, Baz {}<br>
 </code></div></div></div><p>This means one type extends another type. In the example above, type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Foo</span></span> has all properties of types <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Bar</span></span> and <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Baz</span></span>.</p></section></section>

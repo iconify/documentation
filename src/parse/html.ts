@@ -1,10 +1,10 @@
-import { readFileSync } from 'fs';
+import { readFileSync, link } from 'fs';
 import { ParseResult } from './types';
 import { paths } from '../files';
 import { replaceAll } from '../str';
 import { defaultTheme } from '../themes';
 import { NavigationItem } from '../navigation/loader';
-import { replaceText } from '../replacements';
+import { replaceText, rawReplacements } from '../replacements';
 import { prepareNavigation } from '../navigation/prepare';
 import { minifiedNavigation } from '../navigation/minify';
 import { fileToURL } from '../navigation/helpers';
@@ -12,6 +12,11 @@ import { renderNavigation } from '../navigation/render';
 import { absoluteToRelative } from '../urls';
 import { parsePartial } from './partial';
 import { hashes } from '../hashes';
+import {
+	PrevNextLinks,
+	getPrevNextLinks,
+	generateShortNavigation,
+} from '../navigation/short';
 
 // Hash to use to break browser cache
 const hash = '' + Math.round(Date.now() / 1000);
@@ -38,6 +43,9 @@ export function buildHTML(
 		}
 	}
 
+	// URL
+	const currentURL = fileToURL(item.filename);
+
 	// Theme
 	if (
 		navigationRef &&
@@ -57,9 +65,15 @@ export function buildHTML(
 	// Get navigation
 	const preparedNavigation = prepareNavigation(
 		minifiedNavigation,
-		navigationRef ? navigationRef.url : fileToURL(item.filename)
+		navigationRef ? navigationRef.url : currentURL
 	);
 	const navigation = renderNavigation(preparedNavigation);
+
+	// Prev/next links
+	let shortNavigation: PrevNextLinks = {};
+	if (navigationRef && !item.metadata.standalone && !item.metadata.navigation) {
+		shortNavigation = getPrevNextLinks(item, navigationRef);
+	}
 
 	// Check for bad MarkDown links
 	if (
@@ -74,6 +88,11 @@ export function buildHTML(
 	if (item.metadata.wip) {
 		const wip = parsePartial('notices/wip', item.filename);
 		html = wip.html + html;
+	}
+
+	// Add prev/next links
+	if (shortNavigation.prev || shortNavigation.next) {
+		html = generateShortNavigation(currentURL, shortNavigation) + html;
 	}
 
 	// Generate replacements
