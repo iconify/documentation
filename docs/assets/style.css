@@ -1559,11 +1559,13 @@ h1.heading--empty + section > h1:first-child {
 	margin-top: 0;
 }
 
-h1:hover .link-back {
+h1:hover .link-back,
+h1:target .link-back {
 	display: block;
 }
 
-h1:hover .link-back:hover {
+h1:hover .link-back:hover,
+h1:target .link-back:hover {
 	color: #ba3329;
 }
 

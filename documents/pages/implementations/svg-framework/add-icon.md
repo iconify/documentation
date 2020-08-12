@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: addIcon'
+title: 'Iconify SVG Framework Function: addIcon'
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
@@ -7,7 +7,7 @@ functions:
   addCollection: './add-collection.md'
 ```
 
-# SVG Framework functions: addIcon
+# SVG Framework function: addIcon
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#adding-icons).
 

@@ -21,6 +21,12 @@ functions:
   renderSVG: './render-svg.md'
   renderHTML: './render-html.md'
   renderIcon: './render-icon.md'
+  replaceIDs: './replace-ids.md'
+  scan: './scan.md'
+  observe: './observe.md'
+  stopObserving: './stop-observing.md'
+  pauseObserver: './pause-observer.md'
+  resumeObserver: './resume-observer.md'
 ```
 
 # SVG Framework functions
@@ -69,6 +75,8 @@ Functions are split in several groups:
 - [API functions](#api).
 - [Internal functions](#internal).
 
+Click function name to see more details and examples.
+
 ## General functions {#general}
 
 In this section there is only one function:
@@ -108,14 +116,14 @@ This section also includes helper function:
 
 SVG framework automatically scans DOM whenever something changes. However, there are some limitations:
 
-- Observer can observe only child nodes of `[prop]document.body`.
+- Observer can observe only child elements of `[prop]document.body`.
 - SVG framework scans DOM after every change (though scans are throttled to avoid scanning too often).
 
-In some instances you might want to temporarily disable observer or scan a node that is not part of DOM, such as Shadow DOM. There are functions that you can use:
+In some instances you might want to temporarily disable observer or scan an element that is not part of DOM, such as Shadow DOM. There are functions that you can use:
 
-- `[func]scan(root?)`. Scans DOM or custom node for placeholder elements.
-- `[func]observe(root)`. Observes custom root node.
-- `[func]stopObserving(root)`. Stops observing custom root node. You can call it with `[prop]document.body` as parameter to stop observing `[prop]document.body`.
+- `[func]scan(root?)`. Scans DOM or custom element for placeholder elements.
+- `[func]observe(root)`. Observes custom root element.
+- `[func]stopObserving(root)`. Stops observing custom root element. You can call it with `[prop]document.body` as parameter to stop observing `[prop]document.body`.
 - `[func]pauseObserver(root?)`. Pauses observer.
 - `[func]resumeObserver(root?)`. Resumes observer.
 

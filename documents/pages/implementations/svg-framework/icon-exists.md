@@ -1,8 +1,8 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: iconExists'
+title: 'Iconify SVG Framework Function: iconExists'
 ```
 
-# SVG Framework functions: iconExists
+# SVG Framework function: iconExists
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 

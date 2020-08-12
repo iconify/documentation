@@ -63,7 +63,15 @@
                   separator: true
                 render-html.html: renderHTML
                 render-icon.html: renderIcon
+                replace-ids.html: replaceIDs
                 # Observer
+                scan.html:
+                  title: scan
+                  separator: true
+                observe.html: observe
+                stop-observing.html: stopObserving
+                pause-observer.html: pauseObserver
+                resume-observer.html: resumeObserver
                 # API
                 # Internal
             ./optimizations.html:

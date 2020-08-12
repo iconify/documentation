@@ -76,7 +76,8 @@ h1.heading--empty {
 }
 
 // Link
-h1:hover .link-back {
+h1:hover .link-back,
+h1:target .link-back {
 	display: block;
 	&:hover {
 		color: palette($link-hover-palette, $link-hover-shade);

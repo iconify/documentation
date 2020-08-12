@@ -1,11 +1,11 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: renderSVG'
+title: 'Iconify SVG Framework Function: renderSVG'
 functions:
   renderHTML: './render-html.md'
   renderIcon: './render-icon.md'
 ```
 
-# SVG Framework functions: renderSVG
+# SVG Framework function: renderSVG
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
 

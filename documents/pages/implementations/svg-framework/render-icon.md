@@ -1,11 +1,12 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: renderIcon'
+title: 'Iconify SVG Framework Function: renderIcon'
 functions:
   renderSVG: './render-svg.md'
   renderHTML: './render-html.md'
+  replaceIDs: './replace-ids.md'
 ```
 
-# SVG Framework functions: renderIcon
+# SVG Framework function: renderIcon
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
 
@@ -37,7 +38,7 @@ Use function `[func]replaceIDs()` when generating icons using data provided by t
 
 It will make sure elements inside each icon have unique IDs.
 
-## Example
+## Examples
 
 ```yaml
 src: implementations/iconify/render-icon.js
@@ -45,6 +46,30 @@ title: 'Code:'
 extra:
   - src: implementations/iconify/render-icon.json
     title: 'Result:'
+```
+
+```js
+// Get icon data
+const icon = Iconify.renderIcon('carbon:deploy');
+
+// Create element
+const svg = document.createElement('svg');
+const svgDefaults: IconifySVGProps = {
+	'xmlns': 'http://www.w3.org/2000/svg',
+	'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+	'aria-hidden': true,
+	'focusable': false,
+	'role': 'img',
+};
+Object.keys(svgDefaults).forEach((attr) => {
+	svg.setAttribute(attr, svgDefaults[attr]);
+});
+Object.keys(icon.attributes).forEach((attr) => {
+	svg.setAttribute(attr, icon.attributes[attr]);
+});
+
+// Set content
+svg.innerHTML = Iconify.replaceIDs(icon.body);
 ```
 
 ## Customizations

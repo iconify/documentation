@@ -1,10 +1,10 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: getIcon'
+title: 'Iconify SVG Framework Function: getIcon'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 ```
 
-# SVG Framework functions: getIcon
+# SVG Framework function: getIcon
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 

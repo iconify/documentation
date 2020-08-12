@@ -1,8 +1,8 @@
 ```yaml
-title: 'Iconify SVG Framework Functions: listIcons'
+title: 'Iconify SVG Framework Function: listIcons'
 ```
 
-# SVG Framework functions: listIcons
+# SVG Framework function: listIcons
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 
