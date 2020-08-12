@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?9e49" />
+		<title>Iconify SVG Framework Function: loadIcons</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<h1>SVG Framework function: loadIcons</h1>
+<p>This tutorial is part of <a href="./functions.html#api">Iconify SVG Framework functions tutorial</a>.</p>
+<p>This function is part of API module and is not available in <a href="./without-api.html">bundle without API support</a>.</p>
+<p>Function <span class="hljs-function">loadIcons()</span> retrieves icons from Iconify API.</p>
+<p>When to use this function:</p>
+<ul>
+<li>To preload multiple icons that you will use later. This will make sure icon data is available when needed and it will load faster.</li>
+<li>If you need to get icon data as soon as it is available. For example, when rendering a custom component.</li>
+</ul>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">icons</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">(string</span> | <span class="hljs-inline-type hljs-linkable">IconifyIconName)</span>[]</span>. List of icons to load.</li>
+<li><span class="hljs-inline-prop">callback</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Optional callback to call. Callback is called not only when all icons have been retrieved, but also when part of icons have been retrieved.</li>
+</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span> you can use to stop loading icons. It is needed when, for example, you are loading icons in a custom component, but component&apos;s life cycle ended before icons have loaded, so you need to remove callback.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="icons-list" class="heading--2">Icons list <a href="#icons-list" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icons list is an array. Each element can be a string, such as <span class="hljs-inline-icon">mdi:home</span> or a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></span> object.</p></section>
+
+<section class="content-section content-section--2"><H1 id="callback" class="heading--2">Callback <a href="#callback" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Optional callback has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">loaded</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that have been loaded.</li>
+<li><span class="hljs-inline-prop">missing</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that are not available on API.</li>
+<li><span class="hljs-inline-prop">pending</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that are still loading.</li>
+<li><span class="hljs-inline-prop">unsubscribe</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Function to call to cancel loading. It is the same as result of <span class="hljs-function">loadIcons()</span> call.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="iconifyiconname-type" class="heading--2">IconifyIconName type <a href="#iconifyiconname-type" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></span> is a simple object with the following properties, all properties are mandatory:</p><ul>
+<li><span class="hljs-inline-prop">provider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. API provider. For Iconify API value is an empty string &quot;<span class="hljs-string"></span>&quot;.</li>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon set prefix.</li>
+<li><span class="hljs-inline-prop">name</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon name.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Simple callback that loads one icon:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgaWNvbk5hbWUgPSAnbWRpOmhvbWUnOwpsZXQgbG9hZGVkID0gSWNvbmlmeS5pY29uRXhpc3RzKGljb25OYW1lKTsKCmlmICghbG9hZGVkKSB7CglJY29uaWZ5LmxvYWRJY29ucyhbaWNvbk5hbWVdLCAobG9hZGVkLCBtaXNzaW5nLCBwZW5kaW5nLCB1bnN1YnNjcmliZSkgPT4gewoJCWlmIChsb2FkZWQubGVuZ3RoKSB7CgkJCWxvYWRlZCA9IHRydWU7CgkJCWNvbnNvbGUubG9nKAoJCQkJYEljb24gJHtpY29uTmFtZX0gaGF2ZSBiZWVuIGxvYWRlZCBhbmQgaXMgcmVhZHkgdG8gYmUgcmVuZGVyZXJlZC5gCgkJCSk7CgkJCXJldHVybjsKCQl9CgoJCWlmIChtaXNzaW5nLmxlbmd0aCkgewoJCQljb25zb2xlLmxvZyhgSWNvbiAke2ljb25OYW1lfSBkb2VzIG5vdCBleGlzdC5gKTsKCQkJcmV0dXJuOwoJCX0KCgkJaWYgKHBlbmRpbmcubGVuZ3RoKSB7CgkJCS8vIFBlbmRpbmcgaWNvbnMgYXJyYXkgd2lsbCBhbHdheXMgYmUgZW1wdHkgYmVjYXVzZSBpbiB0aGlzIGV4YW1wbGUgdGhlcmUgaXMgb25seSBvbmUgaWNvbiB0byBsb2FkLgoJCQkvLyBDYWxsYmFjayBpcyBjYWxsZWQgd2hlbiBzb21ldGhpbmcgY2hhbmdlcywgd2l0aCAxIGljb24gdGhlcmUgY2FuIG9ubHkgYmUgMiB0eXBlIG9mIGNoYW5nZXM6IGljb24gaGFzIGxvYWRlZCBvciBpY29uIGlzIG1pc3NpbmcuCgkJfQoJfSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">const</span> iconName = <span class="hljs-string">&apos;mdi:home&apos;</span>;<br>
+<span class="hljs-keyword">let</span> loaded = Iconify.iconExists(iconName);<br>
+<br>
+<span class="hljs-keyword">if</span> (!loaded) {<br>
+ &#xA0; &#xA0;Iconify.loadIcons([iconName], (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (loaded.length) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;loaded = <span class="hljs-literal">true</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">`Icon <span class="hljs-subst">${iconName}</span> have been loaded and is ready to be renderered.`</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (missing.length) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Icon <span class="hljs-subst">${iconName}</span> does not exist.`</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (pending.length) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Pending icons array will always be empty because in this example there is only one icon to load.</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Callback is called when something changes, with 1 icon there can only be 2 type of changes: icon has loaded or icon is missing.</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;});<br>
+}<br>
+</code></div></div></div><p>Svelte component that waits for icon to load before displaying its data:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uaWZ5IGZyb20gJ0BpY29uaWZ5L2ljb25pZnknOwoJaW1wb3J0IHsgb25EZXN0cm95IH0gZnJvbSAnc3ZlbHRlJzsKCgkvKiogQHR5cGUge3N0cmluZ30gSWNvbiB0byBkaXNwbGF5ICovCglleHBvcnQgbGV0IHNlbGVjdGVkSWNvbjsKCgkvLyBWYXJpYWJsZSB0byBzdG9yZSBpY29uIGRhdGEKCWxldCBpY29uRGF0YSA9IG51bGw7CgoJLy8gRXZlbnQgbGlzdGVuZXIKCWxldCBhYm9ydExvYWRlciA9IG51bGw7CgoJLy8gTG9hZCBpY29uCgkkOiB7CgkJaWNvbkRhdGEgPSBJY29uaWZ5LmdldEljb24oc2VsZWN0ZWRJY29uKTsKCQlpZiAoaWNvbkRhdGEgPT09IG51bGwpIHsKCQkJaWYgKGFib3J0TG9hZGVyICE9PSBudWxsKSB7CgkJCQkvLyBSZW1vdmUgcHJldmlvdXMgY2FsbGJhY2sKCQkJCWFib3J0TG9hZGVyKCk7CgkJCX0KCQkJYWJvcnRMb2FkZXIgPSBJY29uaWZ5LmxvYWRJY29ucyhbc2VsZWN0ZWRJY29uXSwgKCkgPT4gewoJCQkJaWNvbkRhdGEgPSBJY29uaWZ5LmdldEljb24oc2VsZWN0ZWRJY29uKTsKCQkJfSk7CgkJfQoJfQoKCS8vIFJlbW92ZSBldmVudCBsaXN0ZW5lcgoJb25EZXN0cm95KCgpID0+IHsKCQlpZiAoYWJvcnRMb2FkZXIgIT09IG51bGwpIHsKCQkJYWJvcnRMb2FkZXIoKTsKCQl9Cgl9KTsKPC9zY3JpcHQ+Cgp7I2lmIGljb25EYXRhICE9PSBudWxsfQo8cD5JY29uIGRhdGEgZm9yIHtzZWxlY3RlZEljb259OjwvcD4KPHVsIGNsYXNzPSJpY29uLWRhdGEiPgoJeyNlYWNoIE9iamVjdC5rZXlzKGljb25EYXRhKSBhcyBrZXl9Cgk8bGk+CgkJe2tleX0gPSB7aWNvbkRhdGFba2V5XX0KCTwvbGk+Cgl7L2VhY2h9CjwvdWw+CnsvaWZ9Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><br>
+ &#xA0; &#xA0;<span class="hljs-keyword">import</span> Iconify <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/iconify&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">import</span> { onDestroy } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">/** @type {string} Icon to display */</span><br>
+ &#xA0; &#xA0;<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> selectedIcon;<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Variable to store icon data</span><br>
+ &#xA0; &#xA0;<span class="hljs-keyword">let</span> iconData = <span class="hljs-literal">null</span>;<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Event listener</span><br>
+ &#xA0; &#xA0;<span class="hljs-keyword">let</span> abortLoader = <span class="hljs-literal">null</span>;<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Load icon</span><br>
+ &#xA0; &#xA0;$: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;iconData = Iconify.getIcon(selectedIcon);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (iconData === <span class="hljs-literal">null</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (abortLoader !== <span class="hljs-literal">null</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Remove previous callback</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader();<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader = Iconify.loadIcons([selectedIcon], () =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;iconData = Iconify.getIcon(selectedIcon);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Remove event listener</span><br>
+ &#xA0; &#xA0;onDestroy(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (abortLoader !== <span class="hljs-literal">null</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader();<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;});<br>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+<br>
+{#if iconData !== null}<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Icon data for {selectedIcon}:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-data&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;{#each Object.keys(iconData) as key}<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;{key} = {iconData[key]}<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>
+ &#xA0; &#xA0;{/each}<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>
+{/if}<br>
+</code></div></div></div></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Implementations<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG Framework<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./functions.html">Functions<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./icon-exists.html">iconExists</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./list-icons.html">listIcons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./get-icon.html">getIcon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./add-icon.html">addIcon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./add-collection.html">addCollection</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./render-svg.html">renderSVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render-html.html">renderHTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render-icon.html">renderIcon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./replace-ids.html">replaceIDs</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./scan.html">scan</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./observe.html">observe</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./stop-observing.html">stopObserving</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./pause-observer.html">pauseObserver</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./resume-observer.html">resumeObserver</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--separator"><a href="./load-icons.html">loadIcons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/">Icon Finder</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?3e18"></script>
+		<script src="https://code.iconify.design/2/2.0.0-beta.5/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

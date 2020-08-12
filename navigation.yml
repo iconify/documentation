@@ -73,6 +73,9 @@
                 pause-observer.html: pauseObserver
                 resume-observer.html: resumeObserver
                 # API
+                load-icons.html:
+                  title: loadIcons
+                  separator: true
                 # Internal
             ./optimizations.html:
               title: Optimizations

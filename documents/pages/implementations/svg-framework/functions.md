@@ -27,6 +27,7 @@ functions:
   stopObserving: './stop-observing.md'
   pauseObserver: './pause-observer.md'
   resumeObserver: './resume-observer.md'
+  loadIcons: './load-icons.md'
 ```
 
 # SVG Framework functions
@@ -131,7 +132,7 @@ In some instances you might want to temporarily disable observer or scan an elem
 
 These functions are not available in module without API.
 
-- `[func]locaIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
+- `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
 - `[func]enableCache()`. Toggles caching in `[prop]localStorage` and `[prop]sessionStorage`.
 - `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
 

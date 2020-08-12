@@ -7,7 +7,7 @@ functions:
   resumeObserver: './resume-observer.md'
   renderSVG: './render-svg.md'
   renderHTML: './render-html.md'
-  # loadIcons: './load-icons.md'
+  loadIcons: './load-icons.md'
 ```
 
 # SVG Framework function: observe
