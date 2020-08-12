@@ -46,7 +46,6 @@
             ./without-api.html: No API
             ./functions.html:
               title: Functions
-              wip: true
               children:
                 # Getting icons
                 icon-exists.html: iconExists
@@ -76,6 +75,8 @@
                 load-icons.html:
                   title: loadIcons
                   separator: true
+                enable-cache.html: enableCache
+                disable-cache.html: disableCache
                 # Internal
             ./optimizations.html:
               title: Optimizations

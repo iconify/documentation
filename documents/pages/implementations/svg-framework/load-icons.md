@@ -2,6 +2,8 @@
 title: 'Iconify SVG Framework Function: loadIcons'
 functions:
   scan: './scan.md'
+types:
+  IconifyIconName: './icon-name.md'
 ```
 
 # SVG Framework function: loadIcons

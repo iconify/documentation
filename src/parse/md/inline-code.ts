@@ -41,7 +41,7 @@ function wrap(type: string, text: string): string {
 /**
  * Wrap type
  */
-const midSeparators: string[] = [',', '[]', '|', ' or '];
+const midSeparators: string[] = [',', '[]', '|', ' or ', '(', ')'];
 const typeSeparators: string[] = midSeparators.concat(['Record', '<', '>']);
 function wrapType(raw: string, escaped: string): string {
 	function split(type: string): string[] {
@@ -87,7 +87,7 @@ function wrapType(raw: string, escaped: string): string {
 
 			// At the end
 			if (type.slice(0 - separator.length) === separator) {
-				typesEnd.push(separator);
+				typesEnd.unshift(separator);
 				type = type.slice(0, type.length - separator.length);
 				changed = true;
 
@@ -98,9 +98,8 @@ function wrapType(raw: string, escaped: string): string {
 
 		// Remaining part
 		if (changed) {
-			// Run it again
-			typesStart = typesStart.concat(split(type));
-			return typesStart.concat(typesEnd);
+			// Run it again on content
+			return typesStart.concat(split(type), typesEnd);
 		}
 
 		// Find separators in the middle
@@ -110,17 +109,19 @@ function wrapType(raw: string, escaped: string): string {
 			if (index !== -1) {
 				const firstChunk = type.slice(0, index);
 				const lastChunk = type.slice(index + separator.length);
-				typesStart = typesStart.concat(split(firstChunk));
+				if (firstChunk.length) {
+					typesStart = typesStart.concat(split(firstChunk));
+				}
 				typesStart.push(separator);
-				typesEnd = split(lastChunk).concat(typesEnd);
+				if (lastChunk.length) {
+					typesEnd = split(lastChunk).concat(typesEnd);
+				}
 				return typesStart.concat(typesEnd);
 			}
 		}
 
-		// Add remaining chunk
-		typesStart.push(type);
-
-		return typesStart.concat(typesEnd);
+		// Merge start, remaining chunk, end
+		return typesStart.concat([type], typesEnd);
 	}
 	const types = split(raw);
 

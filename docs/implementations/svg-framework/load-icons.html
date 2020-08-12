@@ -94,23 +94,23 @@
 <li>If you need to get icon data as soon as it is available. For example, when rendering a custom component.</li>
 </ul>
 <section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
-<li><span class="hljs-inline-prop">icons</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">(string</span> | <span class="hljs-inline-type hljs-linkable">IconifyIconName)</span>[]</span>. List of icons to load.</li>
+<li><span class="hljs-inline-prop">icons</span>, <span class="hljs-inline-type hljs-linkable">(<span class="hljs-inline-type hljs-linkable">string</span> | <a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a>)[]</span>. List of icons to load.</li>
 <li><span class="hljs-inline-prop">callback</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Optional callback to call. Callback is called not only when all icons have been retrieved, but also when part of icons have been retrieved.</li>
 </ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span> you can use to stop loading icons. It is needed when, for example, you are loading icons in a custom component, but component&apos;s life cycle ended before icons have loaded, so you need to remove callback.</p></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="icons-list" class="heading--2">Icons list <a href="#icons-list" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icons list is an array. Each element can be a string, such as <span class="hljs-inline-icon">mdi:home</span> or a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></span> object.</p></section>
+<section class="content-section content-section--2"><H1 id="icons-list" class="heading--2">Icons list <a href="#icons-list" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icons list is an array. Each element can be a string, such as <span class="hljs-inline-icon">mdi:home</span> or a <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a></span> object.</p></section>
 
 <section class="content-section content-section--2"><H1 id="callback" class="heading--2">Callback <a href="#callback" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Optional callback has the following parameters:</p><ul>
-<li><span class="hljs-inline-prop">loaded</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that have been loaded.</li>
-<li><span class="hljs-inline-prop">missing</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that are not available on API.</li>
-<li><span class="hljs-inline-prop">pending</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span>[]</span>. List of icons that are still loading.</li>
+<li><span class="hljs-inline-prop">loaded</span>, <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a>[]</span>. List of icons that have been loaded.</li>
+<li><span class="hljs-inline-prop">missing</span>, <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a>[]</span>. List of icons that are not available on API.</li>
+<li><span class="hljs-inline-prop">pending</span>, <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a>[]</span>. List of icons that are still loading.</li>
 <li><span class="hljs-inline-prop">unsubscribe</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Function to call to cancel loading. It is the same as result of <span class="hljs-function">loadIcons()</span> call.</li>
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="iconifyiconname-type" class="heading--2">IconifyIconName type <a href="#iconifyiconname-type" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></span> is a simple object with the following properties, all properties are mandatory:</p><ul>
+<section class="content-section content-section--2"><H1 id="iconifyiconname-type" class="heading--2">IconifyIconName type <a href="#iconifyiconname-type" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a></span> is a simple object with the following properties, all properties are mandatory:</p><ul>
 <li><span class="hljs-inline-prop">provider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. API provider. For Iconify API value is an empty string &quot;<span class="hljs-string"></span>&quot;.</li>
 <li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon set prefix.</li>
 <li><span class="hljs-inline-prop">name</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon name.</li>
@@ -223,6 +223,8 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./pause-observer.html">pauseObserver</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./resume-observer.html">resumeObserver</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--separator"><a href="./load-icons.html">loadIcons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./enable-cache.html">enableCache</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./disable-cache.html">disableCache</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
 </ul>

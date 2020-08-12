@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify SVG Framework Functions
-wip: true
 replacements:
   - code: '/2/2.0.0/'
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
@@ -28,6 +27,9 @@ functions:
   pauseObserver: './pause-observer.md'
   resumeObserver: './resume-observer.md'
   loadIcons: './load-icons.md'
+  enableCache: './enable-cache.md'
+  disableCache: './disable-cache.md'
+  addAPIProvider: './add-api-provider.md'
 ```
 
 # SVG Framework functions
@@ -133,7 +135,8 @@ In some instances you might want to temporarily disable observer or scan an elem
 These functions are not available in module without API.
 
 - `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
-- `[func]enableCache()`. Toggles caching in `[prop]localStorage` and `[prop]sessionStorage`.
+- `[func]enableCache()`. Enables caching in `[prop]localStorage` and `[prop]sessionStorage`.
+- `[func]disableCache()`. Disables caching in `[prop]localStorage` and `[prop]sessionStorage`.
 - `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
 
 ## Internal functions {#internal}

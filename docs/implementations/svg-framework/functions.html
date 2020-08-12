@@ -84,16 +84,7 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents. Documentation is updated daily.
-	</p>
-</aside><h1>SVG Framework functions</h1>
+					<h1>SVG Framework functions</h1>
 <p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
 <p>Iconify SVG framework has many functions that you can use to use SVG framework in your scripts.</p>
 <section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are two ways of using SVG framework functions:</p><ul>
@@ -173,8 +164,9 @@ Iconify.loadIcons([<span class="hljs-string">&apos;mdi:home&apos;</span>], () =&
 
 <section class="content-section content-section--2"><H1 id="api" class="heading--2">API functions <a href="#api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These functions are not available in module without API.</p><ul>
 <li><a href="./load-icons.html" title="loadIcons() documentation"><span class="hljs-function hljs-linkable">loadIcons(icons, callback?)</span></a>. Loads icons from API, calls optional callback when either all or part of icons have been loaded.</li>
-<li><span class="hljs-function">enableCache()</span>. Toggles caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
-<li><span class="hljs-function">addAPIProvider()</span>. Adds custom API provider. This is experimental function. API provider functionality is in development.</li>
+<li><a href="./enable-cache.html" title="enableCache() documentation"><span class="hljs-function hljs-linkable">enableCache()</span></a>. Enables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./disable-cache.html" title="disableCache() documentation"><span class="hljs-function hljs-linkable">disableCache()</span></a>. Disables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./add-api-provider.html" title="addAPIProvider() documentation"><span class="hljs-function hljs-linkable">addAPIProvider()</span></a>. Adds custom API provider. This is experimental function. API provider functionality is in development.</li>
 </ul></section>
 
 
@@ -225,6 +217,8 @@ Iconify.loadIcons([<span class="hljs-string">&apos;mdi:home&apos;</span>], () =&
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./pause-observer.html">pauseObserver</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./resume-observer.html">resumeObserver</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator"><a href="./load-icons.html">loadIcons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./enable-cache.html">enableCache</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./disable-cache.html">disableCache</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
 </ul>
