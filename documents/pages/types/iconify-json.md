@@ -5,7 +5,7 @@ types:
   IconifyAlias: './iconify-alias.md'
 ```
 
-# IconifyJSON Type
+# IconifyJSON type
 
 All Iconify libraries share common object structures. They are described as types in `[npm]@iconify/types` NPM package.
 

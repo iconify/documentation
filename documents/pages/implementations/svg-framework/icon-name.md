@@ -4,7 +4,7 @@ standalone: true
 navigation: './functions.md'
 ```
 
-# IconifyIconName
+# IconifyIconName type
 
 `include types/iconify-icon-name`
 
