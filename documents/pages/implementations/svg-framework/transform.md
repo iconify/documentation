@@ -6,26 +6,16 @@ title: Transforming Icons in Iconify SVG Framework
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
-
-There are two types of transformations:
-
-- Horizontal and vertical flip.
-- Rotation by 90, 180 and 270 degrees.
+`include implementations/transform-intro`
 
 ## CSS vs Iconify transformations {#css}
 
-These are not CSS transformations, transformations are applied inside SVG.
-
-What's the difference from CSS transformations?
-
-- If you rotate an icon by 90 degrees in CSS, icon's bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.
-- If you rotate an icon by 90 degrees in SVG Framework, icon's dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.
+`include implementations/transform-compare`
 
 Example:
 
 ```yaml
-src: implementations/iconify/rotate-comparison.html
+src: implementations/common/rotate-comparison.html
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -47,24 +37,24 @@ To do that, add `[attr]data-flip` attribute with comma separated values. Possibl
 Example:
 
 ```yaml
-src: implementations/iconify/flip.html
+src: implementations/common/flip.html
 demo: true
 ```
 
 ## Rotation
 
-You can rotate icon by 90, 180 and 270 degrees.
+You can rotate icon by `[num]90`, `[num]180` and `[num]270` degrees.
 
 To do that, add `[attr]data-rotate` attribute. Possible values:
 
-- `[str]90deg`, `[str]1`: rotate by 90 degrees.
-- `[str]180deg`, `[str]2`: rotate by 180 degrees.
-- `[str]270deg`, `[str]3`: rotate by 270 degrees.
+- `[str]90deg`, `[str]1`: rotate by `[num]90` degrees.
+- `[str]180deg`, `[str]2`: rotate by `[num]180` degrees.
+- `[str]270deg`, `[str]3`: rotate by `[num]270` degrees.
 
 Example:
 
 ```yaml
-src: implementations/iconify/rotate.html
+src: implementations/common/rotate.html
 demo: true
 ```
 

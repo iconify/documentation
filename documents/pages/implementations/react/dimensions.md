@@ -20,6 +20,34 @@ demoTitle: 'Demo:'
 class: components-size
 ```
 
+## Units
+
+Size can be a `[type]string` with or without units or a `[type]number`. If value is a `[type]number` or `[type]string` without units, it will be treated by browser as pixels.
+
+Examples of `[num]24px` icon:
+
+```jsx
+<Icon icon={homeIcon} height={24} />
+// String without units
+<Icon icon={homeIcon} height="24" />
+// String with units
+<Icon icon={homeIcon} height="24px" />
+// String with units, font-size is 16px
+<Icon icon={homeIcon} height="1.5em" />
+```
+
+## Keyword "auto" {#auto}
+
+Special keyword `[str]auto` sets size to value from `[attr]viewBox`. This makes it easy to render an icon as it was originally designed.
+
+It is enough to set one dimension to `[str]auto`, other dimension will be set to `[str]auto` too, unless you specify otherwise.
+
+For example, if `[attr]viewBox="0 0 24 24"` and `[prop]height` is set to `[str]auto`, `[prop]height` will be set to `[num]24`.
+
+```jsx
+<Icon icon={homeIcon} height="auto" />
+```
+
 ## Setting only width or height
 
 In an example above, all icons only use `[prop]height`.

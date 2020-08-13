@@ -209,6 +209,18 @@ export function renderCode(context: MDContext, md: md) {
 				);
 			}
 
+			// Prepare code
+			let modified = false;
+			switch (lang) {
+				case 'jsx':
+					if (str.slice(0, 1) === '<' && str.trim().slice(-1) === '>') {
+						// Wrap tag in () to allow syntax highlight
+						modified = true;
+						str = '(' + str + ')';
+					}
+					break;
+			}
+
 			// Parse code
 			try {
 				code = hljs.highlight(lang, str).value;
@@ -224,6 +236,13 @@ export function renderCode(context: MDContext, md: md) {
 					code = replaceAll(code, {
 						'<span class="hljs-doctag">@iconify</span>': '@iconify',
 					});
+					break;
+
+				case 'jsx':
+					if (modified) {
+						// Remove ()
+						code = code.slice(1, code.length - 2);
+					}
 					break;
 			}
 		}

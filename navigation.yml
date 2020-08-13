@@ -100,10 +100,10 @@
           children:
             ../react/:
               title: React
-              wip: true
               children:
                 ./color.html: Icon Color
                 ./dimensions.html: Icon Dimensions
+                ./transform.html: Transformations
             ../react-with-api/:
               title: React with API
               wip: true

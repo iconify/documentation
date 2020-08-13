@@ -123,7 +123,8 @@
 <section class="content-section content-section--2"><H1 id="components-vs-svg-framework" class="heading--2">Components vs SVG Framework <a href="#components-vs-svg-framework" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Unlike SVG framework, components are designed for specific frameworks:</p><ul>
 <li>Components use syntax familiar to developers.</li>
 <li>Some components use framework&apos;s native code when possible.</li>
-<li>Components correctly bind event handlers and dynamic properties, something that SVG framework doesn&apos;t support.</li>
+<li>Components correctly bind event handlers and dynamic properties. SVG framework cannot do that.</li>
+<li>Components render icons regardless of parent element, making it perfect for use in things like Shadow DOM. SVG framework only scans placeholders in <span class="hljs-inline-prop">document.body</span> (unless configured otherwise, but components do that without additional configuration).</li>
 </ul></section>
 
 

@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify for React
-wip: true
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
@@ -183,4 +182,8 @@ For various ways to change icon dimensions and alignment, see [how to change ico
 
 ## Transformations
 
-TODO...
+An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
+
+These are not CSS transformations, transformations are applied inside SVG.
+
+For more details see [how to transform icon in Iconify for React](./transform.md).
