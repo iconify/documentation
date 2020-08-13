@@ -7,7 +7,7 @@ functions:
   resumeObserver: './resume-observer.md'
 ```
 
-# SVG Framework function: stopObserving
+# SVG framework function: stopObserving
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#scanner).
 

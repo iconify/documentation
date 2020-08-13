@@ -6,7 +6,7 @@ functions:
   renderIcon: './render-icon.md'
 ```
 
-# SVG Framework function: replaceIDs
+# SVG framework function: replaceIDs
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
 

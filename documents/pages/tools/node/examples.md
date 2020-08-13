@@ -1,8 +1,8 @@
 ```yaml
-title: Iconify Tools Examples
+title: Iconify Tools Code Examples
 ```
 
-# Iconify Tools Examples
+# Iconify Tools code examples
 
 Few examples that show how to import, optimize and export icons:
 

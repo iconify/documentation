@@ -4,7 +4,7 @@ standalone: true
 navigation: './functions.md'
 ```
 
-# SVG Framework function: addAPIProvider
+# SVG framework function: addAPIProvider
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
 

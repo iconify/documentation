@@ -2,7 +2,7 @@
 title: 'Iconify SVG Framework Function: iconExists'
 ```
 
-# SVG Framework function: iconExists
+# SVG framework function: iconExists
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 

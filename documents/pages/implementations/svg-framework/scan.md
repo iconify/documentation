@@ -7,7 +7,7 @@ functions:
   resumeObserver: './resume-observer.md'
 ```
 
-# SVG Framework function: scan
+# SVG framework function: scan
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#scanner).
 

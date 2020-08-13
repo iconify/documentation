@@ -2,7 +2,7 @@
 title: 'Iconify SVG Framework Function: listIcons'
 ```
 
-# SVG Framework function: listIcons
+# SVG framework function: listIcons
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 

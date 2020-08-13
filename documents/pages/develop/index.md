@@ -5,7 +5,7 @@ replacements:
     value: '${counters.icons-short}'
 ```
 
-# Iconify for Developers
+# Iconify for developers
 
 Iconify is the most versatile icon framework available. It was originally designed to replace outdated icon fonts with modern SVG framework, while offering ease of use that icon fonts are famous for. Since then Iconify has evolved. It offers more icons than any other solution and various components for web app frameworks.
 

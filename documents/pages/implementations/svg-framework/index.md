@@ -10,7 +10,7 @@ replacements:
     value: '${iconify2.import}'
 ```
 
-# Iconify SVG Framework
+# Iconify SVG framework
 
 `include notices/iconify2`
 

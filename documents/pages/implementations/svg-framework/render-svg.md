@@ -5,7 +5,7 @@ functions:
   renderIcon: './render-icon.md'
 ```
 
-# SVG Framework function: renderSVG
+# SVG framework function: renderSVG
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#render).
 

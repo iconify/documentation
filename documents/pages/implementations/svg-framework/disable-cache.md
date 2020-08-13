@@ -6,7 +6,7 @@ functions:
   addCollection: './add-collection.md'
 ```
 
-# SVG Framework function: disableCache
+# SVG framework function: disableCache
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
 

@@ -2,7 +2,7 @@
 title: Tools for Developers
 ```
 
-# Tools for Developers
+# Tools for developers
 
 Iconify offers several libraries that help with converting icons, manipulating icon sets and generating icons.
 

@@ -7,7 +7,7 @@ functions:
   addIcon: './add-icon.md'
 ```
 
-# SVG Framework function: addCollection
+# SVG framework function: addCollection
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#adding-icons).
 

@@ -9,7 +9,7 @@ replacements:
     value: '${iconify2.import}'
 ```
 
-# SVG Framework without API
+# SVG framework without API
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 

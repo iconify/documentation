@@ -32,7 +32,7 @@ functions:
   addAPIProvider: './add-api-provider.md'
 ```
 
-# SVG Framework functions
+# SVG framework functions
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 

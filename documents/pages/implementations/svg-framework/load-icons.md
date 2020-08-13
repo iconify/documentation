@@ -6,7 +6,7 @@ types:
   IconifyIconName: './icon-name.md'
 ```
 
-# SVG Framework function: loadIcons
+# SVG framework function: loadIcons
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#api).
 

@@ -9,7 +9,7 @@ replacements:
     value: '${iconify1.import}'
 ```
 
-# SVG Framework without API
+# SVG framework without API
 
 `include notices/iconify1`
 

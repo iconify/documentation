@@ -4,7 +4,7 @@ types:
   IconifyIcon: '../../types/iconify-icon.md'
 ```
 
-# SVG Framework function: getIcon
+# SVG framework function: getIcon
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
 

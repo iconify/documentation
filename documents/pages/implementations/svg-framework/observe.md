@@ -10,7 +10,7 @@ functions:
   loadIcons: './load-icons.md'
 ```
 
-# SVG Framework function: observe
+# SVG framework function: observe
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#scanner).
 
