@@ -48,35 +48,35 @@
               title: Functions
               children:
                 # Getting icons
-                icon-exists.html: iconExists()
-                list-icons.html: listIcons()
-                get-icon.html: getIcon()
+                ./icon-exists.html: iconExists()
+                ./list-icons.html: listIcons()
+                ./get-icon.html: getIcon()
                 # Adding icons
-                add-icon.html:
+                ./add-icon.html:
                   title: addIcon()
                   separator: true
-                add-collection.html: addCollection()
+                ./add-collection.html: addCollection()
                 # Rendering icons
-                render-svg.html:
+                ./render-svg.html:
                   title: renderSVG()
                   separator: true
-                render-html.html: renderHTML()
-                render-icon.html: renderIcon()
-                replace-ids.html: replaceIDs()
+                ./render-html.html: renderHTML()
+                ./render-icon.html: renderIcon()
+                ./replace-ids.html: replaceIDs()
                 # Observer
-                scan.html:
+                ./scan.html:
                   title: scan()
                   separator: true
-                observe.html: observe()
-                stop-observing.html: stopObserving()
-                pause-observer.html: pauseObserver()
-                resume-observer.html: resumeObserver()
+                ./observe.html: observe()
+                ./stop-observing.html: stopObserving()
+                ./pause-observer.html: pauseObserver()
+                ./resume-observer.html: resumeObserver()
                 # API
-                load-icons.html:
+                ./load-icons.html:
                   title: loadIcons()
                   separator: true
-                enable-cache.html: enableCache()
-                disable-cache.html: disableCache()
+                ./enable-cache.html: enableCache()
+                ./disable-cache.html: disableCache()
                 # Internal
             ./optimizations.html:
               title: Optimizations
@@ -101,6 +101,9 @@
             ../react/:
               title: React
               wip: true
+              children:
+                ./color.html: Icon Color
+                ./dimensions.html: Icon Dimensions
             ../react-with-api/:
               title: React with API
               wip: true

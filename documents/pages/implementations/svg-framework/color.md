@@ -8,7 +8,7 @@ This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 
 You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
 
-To add color to the monotone icon simply change text color.
+To change color of a monotone icon simply change text color.
 
 ```yaml
 src: implementations/iconify/index-color.html
@@ -96,12 +96,8 @@ extra:
 
 ## RGBA and HSLA colors {#opacity}
 
-Avoid using `[prop]rgba` and `[prop]hsla` colors. Some icons have multiple layers on top of each other. Using semi-transparent color will result in both layers being visible.
-
-Instead, use a solid color and add transparency with `[prop]opacity`. This will result in browser rendering shapes with a solid color, then applying opacity to an entire icon.
+`include implementations/color-rgba`
 
 ## fill and stroke
 
-Avoid using `[prop]fill` and `[prop]stroke` in stylesheet, unless you are using it for a specific icon.
-
-Not all icons are the same. Some use `[prop]fill` for shapes, some use `[prop]stroke`. If you set `[prop]fill`, you might end up with filled shapes that should not be filled.
+`include implementations/color-fill`

@@ -2158,6 +2158,27 @@ h1:target .link-back:hover {
 	font-size: 72px;
 }
 
+.components-color .orange-block {
+	color: #e70;
+}
+
+.components-color .light-blue-block svg {
+	color: #08f;
+}
+
+.components-color .red-icon {
+	color: #e00;
+}
+
+.components-size svg {
+	font-size: 24px;
+	line-height: 1em;
+}
+
+.components-size .big-icon {
+	font-size: 72px;
+}
+
 .css-demo1 .pseudo-test:after {
 	content: url("https://api.iconify.design/bi/bell-fill.svg?height=16");
 	vertical-align: -0.125em;

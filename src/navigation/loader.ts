@@ -172,6 +172,16 @@ function parseRawData(
 
 	Object.keys(data).forEach((key) => {
 		const value = data[key];
+
+		// Check URL
+		if (
+			key.slice(0, 1) !== '/' &&
+			key.slice(0, 2) !== './' &&
+			key.slice(0, 3) !== '../'
+		) {
+			throw new Error(`Invalid URL in navigation: ${key}`);
+		}
+
 		const url = parent ? relativeToAbsolute(parent.url, key, true) : key;
 
 		switch (typeof value) {

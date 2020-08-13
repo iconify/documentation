@@ -55,6 +55,15 @@
 	@import './samples/iconify/size-demo';
 }
 
+// Components
+.components-color {
+	@import './samples/components/color';
+}
+
+.components-size {
+	@import './samples/components/size';
+}
+
 // Common
 .css-demo1 {
 	@import './samples/common/css-demo1';
