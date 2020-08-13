@@ -12,7 +12,7 @@
  */
 const fs = require('fs');
 
-// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify@2
+// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify
 const tools = require('@iconify/tools');
 const { Collection } = require('@iconify/json-tools');
 
@@ -220,7 +220,7 @@ function parseSVG() {
 					collection.prefix = prefix;
 
 					// Options for SVGO optimization
-					let SVGOOptions = source.options
+					const SVGOOptions = source.options
 						? source.options
 						: {
 								convertShapeToPath: true,
@@ -271,7 +271,8 @@ function parseSVG() {
 					);
 				})
 				.then(() => {
-					let options = monotone
+					// Change palette
+					const options = monotone
 						? {
 								default: 'currentColor', // change all colors to "currentColor"
 								add: 'currentColor', // add "currentColor" to shapes that are missing color value

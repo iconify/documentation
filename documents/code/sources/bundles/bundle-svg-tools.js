@@ -35,7 +35,7 @@ tools
 		collection.prefix = prefix;
 
 		// Options for SVGO optimization
-		let SVGOOptions = {
+		const SVGOOptions = {
 			convertShapeToPath: true,
 			mergePaths: true,
 		};
@@ -81,17 +81,17 @@ tools
 	.then(() => {
 		// Change color to "currentColor" to all icons
 		// Use this only for monotone collections
-		let options = {
+		const options = {
 			default: 'currentColor', // change all colors to "currentColor"
 			add: 'currentColor', // add "currentColor" to shapes that are missing color value
 		};
 
 		/*
 		// For icons that have palette use this instead:
-		let options = {
+		const options = {
 			add: 'currentColor',
-        };
-        */
+		};
+		*/
 
 		return collection.promiseEach(
 			(svg) => tools.ChangePalette(svg, options),

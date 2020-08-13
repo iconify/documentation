@@ -237,8 +237,18 @@ const sources = {
 
 ## Code
 
+Below are two versions of the same code.
+
+First version uses `[func]Promise` syntax, second version uses `[func]async` and `[func]await` syntax.
+
 ```yaml
+title: 'Promise syntax'
 src: sources/bundles/bundle-svg-full.js
+```
+
+```yaml
+title: 'async/await syntax'
+src: sources/bundles/bundle-svg-full-async.js
 ```
 
 Part of code is taken from [Iconify Tools import examples](../../../tools/node/import-mdi.md).

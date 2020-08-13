@@ -30,8 +30,18 @@ Usage:
 - Optionally change `[var]prefix` to prefix you want to use for imported icons and `[var]preload` to change bundle behaviour.
 - Run script.
 
+Below are two versions of the same code.
+
+First version uses `[func]Promise` syntax, second version uses `[func]async` and `[func]await` syntax.
+
 ```yaml
+title: 'Promise syntax'
 src: sources/bundles/bundle-svg-tools.js
+```
+
+```yaml
+title: 'async/await syntax'
+src: sources/bundles/bundle-svg-tools-async.js
 ```
 
 Part of code is taken from [Iconify Tools import examples](../../../tools/node/import-mdi.md).
