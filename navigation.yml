@@ -48,35 +48,35 @@
               title: Functions
               children:
                 # Getting icons
-                icon-exists.html: iconExists
-                list-icons.html: listIcons
-                get-icon.html: getIcon
+                icon-exists.html: iconExists()
+                list-icons.html: listIcons()
+                get-icon.html: getIcon()
                 # Adding icons
                 add-icon.html:
-                  title: addIcon
+                  title: addIcon()
                   separator: true
-                add-collection.html: addCollection
+                add-collection.html: addCollection()
                 # Rendering icons
                 render-svg.html:
-                  title: renderSVG
+                  title: renderSVG()
                   separator: true
-                render-html.html: renderHTML
-                render-icon.html: renderIcon
-                replace-ids.html: replaceIDs
+                render-html.html: renderHTML()
+                render-icon.html: renderIcon()
+                replace-ids.html: replaceIDs()
                 # Observer
                 scan.html:
-                  title: scan
+                  title: scan()
                   separator: true
-                observe.html: observe
-                stop-observing.html: stopObserving
-                pause-observer.html: pauseObserver
-                resume-observer.html: resumeObserver
+                observe.html: observe()
+                stop-observing.html: stopObserving()
+                pause-observer.html: pauseObserver()
+                resume-observer.html: resumeObserver()
                 # API
                 load-icons.html:
-                  title: loadIcons
+                  title: loadIcons()
                   separator: true
-                enable-cache.html: enableCache
-                disable-cache.html: disableCache
+                enable-cache.html: enableCache()
+                disable-cache.html: disableCache()
                 # Internal
             ./optimizations.html:
               title: Optimizations
