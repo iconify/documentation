@@ -101,7 +101,7 @@ export function getPrevNextLinks(
 		return links;
 	}
 
-	// Not sections
+	// Not a root item, use parent to find prev/next link
 	const parent = navigationRef.parent;
 
 	// Check same level
@@ -143,9 +143,8 @@ export function getPrevNextLinks(
 	}
 
 	// Use parent for previous link
-	if (links.next && !links.prev) {
+	if (!links.prev) {
 		links.prev = parent;
-		return links;
 	}
 
 	// Use parent's next child for next link
@@ -194,8 +193,6 @@ export function getPrevNextLinks(
 			}
 		});
 	}
-
-	// TODO: test other methods
 
 	return links;
 }
