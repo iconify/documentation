@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?28b1" />
-		<title>Changing Icon Color in Iconify for React</title>
+		<title>Changing Icon Color in Iconify for React with API</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -85,41 +85,35 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> React</a>
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> React with API</a>
 <a href="./dimensions.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Icon Dimensions</a>
 </div>
 <h1>Icon color</h1>
-<p>This tutorial is part of <a href="./">Iconify for React tutorial</a>.</p>
+<p>This tutorial is part of <a href="./">Iconify for React with API tutorial</a>.</p>
 <p>You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.</p>
 <p>To change color of a monotone icon simply change text color or use <span class="hljs-inline-prop">color</span> attribute.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">JSX:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKCi8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvcmVhY3QgQGljb25pZnkvaWNvbnMtYmkgQGljb25pZnkvaWNvbnMtYnggQGljb25pZnkvaWNvbnMtbm90bwppbXBvcnQgeyBJbmxpbmVJY29uIH0gZnJvbSAnQGljb25pZnkvcmVhY3QnOwppbXBvcnQgYmVsbEZpbGwgZnJvbSAnQGljb25pZnkvaWNvbnMtYmkvYmVsbC1maWxsJzsKaW1wb3J0IHN0b3B3YXRjaEljb24gZnJvbSAnQGljb25pZnkvaWNvbnMtYmkvc3RvcHdhdGNoJzsKaW1wb3J0IGJ4SG9tZSBmcm9tICdAaWNvbmlmeS9pY29ucy1ieC9ieC1ob21lJzsKaW1wb3J0IHBhaW50YnJ1c2hJY29uIGZyb20gJ0BpY29uaWZ5L2ljb25zLW5vdG8vcGFpbnRicnVzaCc7CgpleHBvcnQgZnVuY3Rpb24gY29sb3JEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8ZGl2IGNsYXNzTmFtZT0ibGlnaHQtYmx1ZS1ibG9jayI+CgkJCQlBbGwgaWNvbnMgaW5zaWRlIHRoaXMgZGl2IGFyZSBsaWdodCBibHVlLCBpbmNsdWRpbmcgYSBiZWxsIGljb257JyAnfQoJCQkJPElubGluZUljb24gaWNvbj17YmVsbEZpbGx9IC8+IGFuZCBzdG9wd2F0Y2ggaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPXtzdG9wd2F0Y2hJY29ufSAvPgoJCQk8L2Rpdj4KCQkJPGRpdiBjbGFzc05hbWU9Im9yYW5nZS1ibG9jayI+CgkJCQlUaGlzIHRleHQgYW5kIGljb24gYXJlIG9yYW5nZTogPElubGluZUljb24gaWNvbj17YmVsbEZpbGx9IC8+CgkJCTwvZGl2PgoJCQk8ZGl2PgoJCQkJUmVkIGhvbWUgaWNvbnMgKHNob3dzIGRpZmZlcmVudCB3YXlzIHRvIGNoYW5nZSBjb2xvcik6eycgJ30KCQkJCTxJbmxpbmVJY29uIGNsYXNzTmFtZT0icmVkLWljb24iIGljb249e2J4SG9tZX0gLz57JyAnfQoJCQkJPElubGluZUljb24gc3R5bGU9e3sgY29sb3I6ICdyZWQnIH19IGljb249e2J4SG9tZX0gLz57JyAnfQoJCQkJPElubGluZUljb24gY29sb3I9InJlZCIgaWNvbj17YnhIb21lfSAvPgoJCQk8L2Rpdj4KCQkJPGRpdj4KCQkJCUljb24gd2l0aCBwYWxldHRlOiA8SW5saW5lSWNvbiBpY29uPXtwYWludGJydXNoSWNvbn0gLz4KCQkJPC9kaXY+CgkJPC9kaXY+CgkpOwp9Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
-<br>
-<span class="hljs-comment">// npm install --save-dev @iconify/react @iconify/icons-bi @iconify/icons-bx @iconify/icons-noto</span><br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">JSX:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsKCmV4cG9ydCBmdW5jdGlvbiBjb2xvckRlbW8oKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxkaXYgY2xhc3NOYW1lPSJsaWdodC1ibHVlLWJsb2NrIj4KCQkJCUFsbCBpY29ucyBpbnNpZGUgdGhpcyBkaXYgYXJlIGxpZ2h0IGJsdWUsIGluY2x1ZGluZyBhIGJlbGwgaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+IGFuZCBzdG9wd2F0Y2ggaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpzdG9wd2F0Y2giIC8+CgkJCTwvZGl2PgoJCQk8ZGl2IGNsYXNzTmFtZT0ib3JhbmdlLWJsb2NrIj4KCQkJCVRoaXMgdGV4dCBhbmQgaWNvbiBhcmUgb3JhbmdlOiA8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+CgkJCTwvZGl2PgoJCQk8ZGl2PgoJCQkJUmVkIGhvbWUgaWNvbnMgKHNob3dzIGRpZmZlcmVudCB3YXlzIHRvIGNoYW5nZSBjb2xvcik6eycgJ30KCQkJCTxJbmxpbmVJY29uIGNsYXNzTmFtZT0icmVkLWljb24iIGljb249ImJ4OmJ4LWhvbWUiIC8+eycgJ30KCQkJCTxJbmxpbmVJY29uIHN0eWxlPXt7IGNvbG9yOiAncmVkJyB9fSBpY29uPSJieDpieC1ob21lIiAvPnsnICd9CgkJCQk8SW5saW5lSWNvbiBjb2xvcj0icmVkIiBpY29uPSJieDpieC1ob21lIiAvPgoJCQk8L2Rpdj4KCQkJPGRpdj4KCQkJCUljb24gd2l0aCBwYWxldHRlOiA8SW5saW5lSWNvbiBpY29uPSJub3RvOnBhaW50YnJ1c2giIC8+CgkJCTwvZGl2PgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
 <span class="hljs-keyword">import</span> { InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
-<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/bell-fill&apos;</span>;<br>
-<span class="hljs-keyword">import</span> stopwatchIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/stopwatch&apos;</span>;<br>
-<span class="hljs-keyword">import</span> bxHome <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bx/bx-home&apos;</span>;<br>
-<span class="hljs-keyword">import</span> paintbrushIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-noto/paintbrush&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">colorDemo</span>(<span class="hljs-params"></span>) </span>{<br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;light-blue-block&quot;</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;All icons inside this div are light blue, including a bell icon{&apos; &apos;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{bellFill}</span> /&gt;</span> and stopwatch icon{&apos; &apos;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{stopwatchIcon}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:bell-fill&quot;</span> /&gt;</span> and stopwatch icon{&apos; &apos;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:stopwatch&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;orange-block&quot;</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;This text and icon are orange: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{bellFill}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;This text and icon are orange: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:bell-fill&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Red home icons (shows different ways to change color):{&apos; &apos;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;red-icon&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{bxHome}</span> /&gt;</span>{&apos; &apos;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">red</span>&apos; }} <span class="hljs-attr">icon</span>=<span class="hljs-string">{bxHome}</span> /&gt;</span>{&apos; &apos;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{bxHome}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;red-icon&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> /&gt;</span>{&apos; &apos;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">red</span>&apos; }} <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> /&gt;</span>{&apos; &apos;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Icon with palette: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{paintbrushIcon}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Icon with palette: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
  &#xA0; &#xA0;);<br>
@@ -178,12 +172,12 @@
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Implementations<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../components/">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React with API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./color.html">Icon Color</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./inline.html">Inline Icons</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api/">React with API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue</a></li>
 </ul>

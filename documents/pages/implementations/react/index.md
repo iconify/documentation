@@ -117,19 +117,7 @@ Required properties:
 
 - `[prop]icon`, `[type]IconifyIcon | string` icon data or name of icon registered with `[func]addIcon()`.
 
-Optional properties:
-
-- `[prop]width`, `[type]string | number` icon width.
-- `[prop]height`, `[type]string | number` icon height.
-- `[prop]hFlip`, `[type]boolean` flips icon horizontally.
-- `[prop]vFlip`, `[type]boolean` flips icon vertically.
-- `[prop]flip`, `[type]string` alternative to `[prop]hFlip` and `[prop]vFlip`.
-- `[prop]rotate`, `[type]number | string` rotates icon.
-- `[prop]color`, `[type]string` changes icon color.
-- `[prop]hAlign` horizontally aligns content inside icon.
-- `[prop]vAlign` vertically aligns content inside icon.
-- `[prop]slice` alignment behaviour: `[str]meet` or `[str]slice`.
-- `[prop]align`, `[type]string` aligns content inside icon, alternative to `[prop]hAlign`, `[prop]vAlign` and `[prop]slice`.
+`include implementations/component-optional-props`
 
 See below for more information on each optional property.
 
@@ -148,6 +136,14 @@ Examples:
 ...and so on.
 
 Variable name in import statement is irrelevant because all exports are default exports.
+
+## Inline icon
+
+There are two components in Iconify for React: `[var]Icon` and `[var]InlineIcon`.
+
+They are identical, except for one thing: `[var]InlineIcon` adds `[prop]vertical-align` style to `[tag]svg`. This makes icon behave like an icon font.
+
+See [inline icons tutorial](./inline.md) for details.
 
 ## Color
 

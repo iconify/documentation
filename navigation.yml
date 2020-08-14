@@ -104,9 +104,15 @@
                 ./color.html: Icon Color
                 ./dimensions.html: Icon Dimensions
                 ./transform.html: Transformations
+                ./inline.html: Inline Icons
             ../react-with-api/:
               title: React with API
               wip: true
+              children:
+                ./color.html: Icon Color
+                ./dimensions.html: Icon Dimensions
+                ./transform.html: Transformations
+                ./inline.html: Inline Icons
             ../svelte/:
               title: Svelte
               wip: true

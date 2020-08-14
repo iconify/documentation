@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?28b1" />
-		<title>Inline Icons in Iconify SVG Framework</title>
+		<title>Inline Icons in Iconify for React with API</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -86,24 +86,33 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="./transform.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Transformations</a>
-<a href="./without-api.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> No API</a>
+<a href="../svelte/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Svelte</a>
 </div>
 <h1>Inline icons</h1>
-<p>This tutorial is part of <a href="./">Iconify SVG Framework tutorial</a>.</p>
+<p>This tutorial is part of <a href="./">Iconify for React with API tutorial</a>.</p>
 <p>Icons have 2 modes: inline and block. Difference between modes is <span class="hljs-inline-prop">vertical-align</span> that is added to inline icons.</p>
 <p>Inline icons are aligned slightly below baseline, so they look centred compared to text, like glyph fonts.</p>
 <p>Block icons do not have alignment, like images, which aligns them to baseline by default.</p>
 <p>Alignment option was added to make icons look like continuation of text, behaving like glyph fonts. This should make migration from glyph fonts easier.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglCbG9jazoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSI+PC9zcGFuPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibWRpOmFjY291bnQtYm94LW91dGxpbmUiPjwvc3Bhbj4KPC9wPgo8cD4KCUlubGluZToKCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiPjwvc3Bhbj4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSI+PC9zcGFuPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJPEljb24gaWNvbj0ibGluZS1tZDppbWFnZS10d290b25lIiAvPgoJCQkJPEljb24gaWNvbj0ibWRpOmFjY291bnQtYm94LW91dGxpbmUiIC8+CgkJCTwvcD4KCQkJPHA+CgkJCQlJbmxpbmU6CgkJCQk8SW5saW5lSWNvbiBpY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiIC8+CgkJCQk8SW5saW5lSWNvbiBpY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSIgLz4KCQkJPC9wPgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
+ &#xA0; &#xA0;);<br>
+}<br>
 </code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="cCB7Cglwb3NpdGlvbjogcmVsYXRpdmU7Cglmb250LXNpemU6IDI0cHg7CglsaW5lLWhlaWdodDogMzJweDsKfQoKLy8gQm9yZGVycyBhYm92ZSBhbmQgYmVsb3cgdGV4dCB0byBoaWdobGlnaHQgaWNvbiBhbGlnbm1lbnQKcDphZnRlciwKcDpiZWZvcmUgewoJY29udGVudDogJyc7Cglwb3NpdGlvbjogYWJzb2x1dGU7CglsZWZ0OiAwOwoJcmlnaHQ6IDA7Cglib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNjY2M7Cn0KcDpiZWZvcmUgewoJdG9wOiA2cHg7Cn0KcDphZnRlciB7Cglib3R0b206IDdweDsKfQo="><code class="highlight hljs"><span class="hljs-selector-tag">p</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attribute">position</span>: relative;<br>
  &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;<br>
@@ -136,21 +145,30 @@
 	<span class="iconify-inline" data-icon="mdi:account-box-outline"></span>
 </p>
 </div></div></div></div><section class="content-section content-section--2"><H1 id="syntax" class="heading--2">Syntax <a href="#syntax" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, icon is treated as block icon. It has no custom <span class="hljs-inline-prop">vertical-align</span>, so you can add it as necessary in a stylesheet.</p><p>You can change that behaviour by:</p><ul>
-<li>Adding &quot;<span class="hljs-string">iconify-inline</span>&quot; to class list (or replacing &quot;<span class="hljs-string">iconify</span>&quot; with &quot;<span class="hljs-string">iconify-inline</span>&quot;).</li>
-<li>Adding <span class="hljs-inline-prop">data-inline</span> attribute.</li>
+<li>Swapping <span class="hljs-inline-var">Icon</span> component with <span class="hljs-inline-var">InlineIcon</span>.</li>
+<li>Adding <span class="hljs-inline-prop">inline</span> attribute.</li>
 <li>Adding <span class="hljs-inline-prop">vertical-align</span> style with value <span class="hljs-number">-0.125em</span>.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglCbG9jazoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaTpob21lIiBkYXRhLWlubGluZT0iZmFsc2UiPjwvc3Bhbj4KCTxpIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImVtb2ppb25lLXYxOmJpcmQiIGRhdGEtaW5saW5lPSJmYWxzZSI+PC9pPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0idWltOnNjZW5lcnkiPjwvc3Bhbj4KPC9wPgo8cD4KCUlubGluZToKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaTpob21lIiBkYXRhLWlubGluZT0idHJ1ZSI+PC9zcGFuPgoJPGkgY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZW1vamlvbmUtdjE6YmlyZCIgZGF0YS1pbmxpbmU9InRydWUiPjwvaT4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5LWlubGluZSIgZGF0YS1pY29uPSJ1aW06c2NlbmVyeSI+PC9zcGFuPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify-inline&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJPEljb24gaWNvbj0ibWRpOmhvbWUiIGlubGluZT17ZmFsc2V9IC8+CgkJCQk8SWNvbiBpY29uPSJlbW9qaW9uZS12MTpiaXJkIiBpbmxpbmU9e2ZhbHNlfSAvPgoJCQkJPElubGluZUljb24gaWNvbj0idWltOnNjZW5lcnkiIC8+CgkJCTwvcD4KCQkJPHA+CgkJCQlJbmxpbmU6CgkJCQk8SWNvbiBpY29uPSJtZGk6aG9tZSIgaW5saW5lPXt0cnVlfSAvPgoJCQkJPEljb24gaWNvbj0iZW1vamlvbmUtdjE6YmlyZCIgaW5saW5lPXt0cnVlfSAvPgoJCQkJPElubGluZUljb24gaWNvbj0idWltOnNjZW5lcnkiIC8+CgkJCTwvcD4KCQk8L2Rpdj4KCSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
+ &#xA0; &#xA0;);<br>
+}<br>
 </code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
 	Block:
 	<span class="iconify" data-icon="mdi:home" data-inline="false"></span>
@@ -180,15 +198,16 @@
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Implementations<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG Framework<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./inline.html">Inline Icons</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./functions.html">Functions</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./optimizations.html">Optimizations</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../components/">Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../components/">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React with API<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
