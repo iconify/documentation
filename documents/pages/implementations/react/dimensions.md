@@ -75,13 +75,17 @@ class: highlight-box
 
 Instead of adding space around icon to fit it in bounding box, browser can also cut parts of icon that do not fit.
 
-To cut parts of icon, add `[attr]align="slice"` to icon:
+To cut parts of icon, add `[attr]align="slice"` to icon or set `[attr]slice` to `[bool]true`:
 
 ```yaml
-src: implementations/common/alignment-slice.html
+src: implementations/common/alignment-slice.jsx
+hint: Using "align" attribute
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
+extra:
+  - src: implementations/common/alignment-slice-alt.jsx
+    hint: Using "slice" attribute
 ```
 
 ### Horizontal alignment {#horizontal}

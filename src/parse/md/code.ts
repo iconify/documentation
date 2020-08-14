@@ -32,7 +32,7 @@ interface CodeSample {
 	cssHint?: string;
 
 	// Demo
-	demo?: boolean; // True if demo should be shown below code
+	demo?: boolean | string; // True if demo should be shown below code, optional filename for demo
 	demoTitle?: string; // Demo tab title
 	demoHint?: string;
 	class?: string; // Class name to wrap demo
@@ -379,11 +379,26 @@ export function renderCode(context: MDContext, md: md) {
 				continue;
 			}
 
-			if (typeof data[attr] !== typeof defaultCodeSample[attr]) {
-				// Wrong type?
-				throw new Error(
-					`Invalid value type for "${attr}" in code block in ${context.filename}.`
-				);
+			switch (attr) {
+				case 'demo':
+					if (
+						typeof data[attr] !== 'boolean' &&
+						typeof data[attr] !== 'string'
+					) {
+						// Wrong type?
+						throw new Error(
+							`Invalid value type for "${attr}" in code block in ${context.filename}.`
+						);
+					}
+					break;
+
+				default:
+					if (typeof data[attr] !== typeof defaultCodeSample[attr]) {
+						// Wrong type?
+						throw new Error(
+							`Invalid value type for "${attr}" in code block in ${context.filename}.`
+						);
+					}
 			}
 
 			if (
@@ -455,7 +470,10 @@ export function renderCode(context: MDContext, md: md) {
 
 		// Demo
 		if (data.demo) {
-			const demoFile = locateCode(data.src, 'demo');
+			const demoFile = locateCode(
+				typeof data.demo === 'string' ? data.demo : data.src,
+				'demo'
+			);
 			if (demoFile === null) {
 				throw new Error(
 					`Unable to locate demo file "${data.src}" in code block in ${context.filename}. Demo file must match source file, but end with ".demo.html" or ".html"`
