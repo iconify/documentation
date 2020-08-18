@@ -125,3 +125,46 @@ Svelte component that waits for icon to load before displaying its data:
 </ul>
 {/if}
 ```
+
+Promise version of `[func]loadIcons()`:
+
+```js
+/**
+ * Function to load icons, returns Promise
+ */
+function loadIcons(icons) {
+	return new Promise((fulfill, reject) => {
+		Iconify.loadIcons(icons, (loaded, missing, pending, unsubscribe) => {
+			if (pending.length) {
+				// Icons are pending, wait for all to load/fail
+				return;
+			}
+			if (missing.length) {
+				reject({
+					loaded,
+					missing,
+				});
+			} else {
+				fulfill({
+					loaded,
+				});
+			}
+		});
+	});
+}
+
+/**
+ * Usage example in async function
+ */
+async function test() {
+	await loadIcons(['jam:info', 'cil:locomotive', 'cil:paper-plane']).catch(
+		(err) => {
+			console.error('Failed to load icons:', err.missing);
+		}
+	);
+
+	// Do stuff with loaded icons
+	console.log('Loaded!');
+}
+test();
+```

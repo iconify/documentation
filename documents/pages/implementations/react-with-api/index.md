@@ -98,6 +98,8 @@ There are several options:
 - You can install local copy of [Iconify API](../../sources/api/index.md) instead of relying on Iconify public API servers.
 - You can also use [icon components](../../sources/npm/index.md), similar to [basic React component](../react/index.md).
 
+See [icon bundles for Iconify for React](../../sources/bundles/react.md) documentation.
+
 ## Properties
 
 You can pass any custom properties to `[var]Icon`.

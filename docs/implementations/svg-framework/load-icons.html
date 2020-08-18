@@ -190,7 +190,46 @@
  &#xA0; &#xA0;{/each}<br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>
 {/if}<br>
+</code></div></div></div><p>Promise version of <span class="hljs-function">loadIcons()</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="LyoqCiAqIEZ1bmN0aW9uIHRvIGxvYWQgaWNvbnMsIHJldHVybnMgUHJvbWlzZQogKi8KZnVuY3Rpb24gbG9hZEljb25zKGljb25zKSB7CglyZXR1cm4gbmV3IFByb21pc2UoKGZ1bGZpbGwsIHJlamVjdCkgPT4gewoJCUljb25pZnkubG9hZEljb25zKGljb25zLCAobG9hZGVkLCBtaXNzaW5nLCBwZW5kaW5nLCB1bnN1YnNjcmliZSkgPT4gewoJCQlpZiAocGVuZGluZy5sZW5ndGgpIHsKCQkJCS8vIEljb25zIGFyZSBwZW5kaW5nLCB3YWl0IGZvciBhbGwgdG8gbG9hZC9mYWlsCgkJCQlyZXR1cm47CgkJCX0KCQkJaWYgKG1pc3NpbmcubGVuZ3RoKSB7CgkJCQlyZWplY3QoewoJCQkJCWxvYWRlZCwKCQkJCQltaXNzaW5nLAoJCQkJfSk7CgkJCX0gZWxzZSB7CgkJCQlmdWxmaWxsKHsKCQkJCQlsb2FkZWQsCgkJCQl9KTsKCQkJfQoJCX0pOwoJfSk7Cn0KCi8qKgogKiBVc2FnZSBleGFtcGxlIGluIGFzeW5jIGZ1bmN0aW9uCiAqLwphc3luYyBmdW5jdGlvbiB0ZXN0KCkgewoJYXdhaXQgbG9hZEljb25zKFsnamFtOmluZm8nLCAnY2lsOmxvY29tb3RpdmUnLCAnY2lsOnBhcGVyLXBsYW5lJ10pLmNhdGNoKAoJCShlcnIpID0+IHsKCQkJY29uc29sZS5lcnJvcignRmFpbGVkIHRvIGxvYWQgaWNvbnM6JywgZXJyLm1pc3NpbmcpOwoJCX0KCSk7CgoJLy8gRG8gc3R1ZmYgd2l0aCBsb2FkZWQgaWNvbnMKCWNvbnNvbGUubG9nKCdMb2FkZWQhJyk7Cn0KdGVzdCgpOwo="><code class="highlight hljs"><span class="hljs-comment">/**<br>
+ * Function to load icons, returns Promise<br>
+ */</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadIcons</span>(<span class="hljs-params">icons</span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Iconify.loadIcons(icons, (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (pending.length) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Icons are pending, wait for all to load/fail</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (missing.length) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;reject({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;loaded,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;missing,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;} <span class="hljs-keyword">else</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;fulfill({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;loaded,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0;});<br>
+}<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Usage example in async function<br>
+ */</span><br>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">await</span> loadIcons([<span class="hljs-string">&apos;jam:info&apos;</span>, <span class="hljs-string">&apos;cil:locomotive&apos;</span>, <span class="hljs-string">&apos;cil:paper-plane&apos;</span>]).catch(<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Failed to load icons:&apos;</span>, err.missing);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;);<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Do stuff with loaded icons</span><br>
+ &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Loaded!&apos;</span>);<br>
+}<br>
+test();<br>
 </code></div></div></div></section>
+
 
 
 
