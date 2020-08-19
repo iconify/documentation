@@ -179,6 +179,18 @@
 		}
 	}
 
+	// Sub-section
+	&--section {
+		color: $text-muted-color;
+		position: relative;
+		left: -4px;
+		margin-top: 4px;
+		&:before {
+			left: 4px;
+			top: -4px;
+		}
+	}
+
 	// Selected link
 	&--selected {
 		background: palette('gray', 25);

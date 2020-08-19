@@ -95,7 +95,6 @@
               hidden: true
         ./components/:
           title: Components
-          wip: true
           children:
             ../react/:
               title: React
@@ -106,12 +105,26 @@
                 ./inline.html: Inline Icons
             ../react-with-api/:
               title: React with API
-              wip: true
               children:
                 ./color.html: Icon Color
                 ./dimensions.html: Icon Dimensions
                 ./transform.html: Transformations
                 ./inline.html: Inline Icons
+                ./functions.html:
+                  title: Functions
+                  separator: true
+                  clickable: false
+                # Getting icons
+                ./icon-exists.html: iconExists()
+                ./list-icons.html: listIcons()
+                # Adding icons
+                ./add-icon.html: addIcon()
+                ./add-collection.html: addCollection()
+                # API
+                ./load-icons.html: loadIcons()
+                ./enable-cache.html: enableCache()
+                ./disable-cache.html: disableCache()
+                # Internal
             ../svelte/:
               title: Svelte
               wip: true

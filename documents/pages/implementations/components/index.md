@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify Components
-wip: true
 ```
 
 # Iconify components

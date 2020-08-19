@@ -47,6 +47,4 @@ Iconify.enableCache('all', false);
 
 ## Notes
 
-- Enabling or disabling cache will not affect icon data already stored in cache. Icon data will always be loaded, regardless of setting. Setting affects only storing new icon data retrieved from API.
-- Setting affects only icon data loaded from API. Icon data loaded with `[func]addIcon()` or `[func]addCollection()` is not cached.
-- When both `[prop]localStorage` and `[prop]sessionStorage` are enabled, icon data is cached only in `[prop]localStorage`.
+`include implementations/cache-notes`

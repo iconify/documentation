@@ -24,13 +24,13 @@ function renderLeftArrow() {
 	if (Iconify.iconExists('bi:arrow-left')) {
 		// Return HTML for 'bi:arrow-left'
 		return Iconify.renderHTML('bi:arrow-left');
-	} else {
-		// Load icon. Bad example because this should use a callback to re-render arrow, but
-		// this code example is about iconExists(), not loadIcons()
-		Iconify.loadIcons(['bi:arrow-left']);
-
-		// Return '<'
-		return '&lt;';
 	}
+
+	// Load icon. Bad example because this should use a callback to re-render arrow, but
+	// this code example is about iconExists(), not loadIcons()
+	Iconify.loadIcons(['bi:arrow-left']);
+
+	// Return '<'
+	return '&lt;';
 }
 ```

@@ -38,7 +38,7 @@ export function build() {
 		if (files.indexOf(filename) === -1) {
 			if (item.wip) {
 				console.error('Page is not complete:', filename);
-			} else {
+			} else if (!item.unclickable) {
 				console.error(
 					'Missing page (mark it as "wip" in navigation.yml to ignore this error):',
 					filename

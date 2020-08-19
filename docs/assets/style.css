@@ -1389,6 +1389,18 @@ li {
 	border-top: 2px dotted #e4e4e4;
 }
 
+.docs-navigation-link--section {
+	color: #959595;
+	position: relative;
+	left: -4px;
+	margin-top: 4px;
+}
+
+.docs-navigation-link--section:before {
+	left: 4px;
+	top: -4px;
+}
+
 .docs-navigation-link--selected {
 	background: #f8f8f8;
 	border-style: solid;

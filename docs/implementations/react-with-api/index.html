@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?28b1" />
+		<link rel="stylesheet" href="../../assets/style.css?0446" />
 		<title>Iconify for React with API</title>
 		
 	</head>
@@ -88,16 +88,7 @@
 <a href="../react/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> React</a>
 <a href="./color.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Icon Color</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Iconify for React with API</h1>
+<h1>Iconify for React with API</h1>
 <p>In addition to <a href="../svg-framework/">SVG framework</a>, Iconify offers native components for several popular UI frameworks. Iconify for React is one of such components.</p>
 <p>Yet another icon component? What are advantages over other icon components?</p>
 <ul>
@@ -189,6 +180,38 @@
 
 
 
+<section class="content-section content-section--2"><H1 id="functions" class="heading--2">Functions <a href="#functions" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This component offers functions, which developers can use to control icons.</p><p>Functions are split in several groups (click function name to see more details and examples):</p><section class="content-section content-section--3"><H1 id="getting-icons" class="heading--3">Check available icons <a href="#getting-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several functions in this section:</p><ul>
+<li><a href="./icon-exists.html" title="iconExists() documentation"><span class="hljs-function hljs-linkable">iconExists(name)</span></a>. Checks if an icon exists, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>.</li>
+<li><a href="./list-icons.html" title="listIcons() documentation"><span class="hljs-function hljs-linkable">listIcons()</span></a>. Lists available icons, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="adding-icons" class="heading--3">Adding icons <a href="#adding-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Functions for adding icons to component:</p><ul>
+<li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
+<li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
+</ul><p>Note: icons added to component with these functions are not stored in cache. Component caches only icons retrieved from API.</p></section><section class="content-section content-section--3"><H1 id="api" class="heading--3">API functions <a href="#api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
+<li><a href="./load-icons.html" title="loadIcons() documentation"><span class="hljs-function hljs-linkable">loadIcons(icons, callback?)</span></a>. Loads icons from API, calls optional callback when either all or part of icons have been loaded.</li>
+<li><a href="./enable-cache.html" title="enableCache() documentation"><span class="hljs-function hljs-linkable">enableCache()</span></a>. Enables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./disable-cache.html" title="disableCache() documentation"><span class="hljs-function hljs-linkable">disableCache()</span></a>. Disables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./add-api-provider.html" title="addAPIProvider() documentation"><span class="hljs-function hljs-linkable">addAPIProvider()</span></a>. Adds custom API provider. This is experimental function. API provider functionality is in development.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="internal" class="heading--3">Internal functions <a href="#internal" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several internal functions that are exposed. They are intended to be used by implementations that want more control over component, such as Iconify Icon Finder. Use them carefully.</p><p>All internal functions are exposed as properties of <span class="hljs-inline-var">internals</span> object:</p><ul>
+<li><span class="hljs-function">calculateSize()</span>. Calculates icon size. It is used to calculate <span class="hljs-inline-prop">width</span> if only <span class="hljs-inline-prop">height</span> is set and vice versa.</li>
+<li><span class="hljs-function">getAPI()</span>. Returns internal API module.</li>
+<li><span class="hljs-function">getAPIConfig()</span>. Returns API configuration.</li>
+<li><span class="hljs-function">setAPIModule(provider)</span>. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				</article>
 				<nav
@@ -209,6 +232,14 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./disable-cache.html">disableCache()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue</a></li>
 </ul>

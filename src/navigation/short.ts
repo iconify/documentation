@@ -36,6 +36,7 @@ export function getPrevNextLinks(
 			url: '/',
 			wip: false,
 			hidden: false,
+			unclickable: false,
 			theme: navigationRef.theme,
 			level: 0,
 			styles: [],

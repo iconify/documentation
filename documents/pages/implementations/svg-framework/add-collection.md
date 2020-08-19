@@ -15,12 +15,7 @@ Function `[func]addCollection()` adds icons collection to SVG framework storage.
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]provider`, `[type]string`. Optional API provider ID.
-
-Function returns `[type]boolean` value: `[bool]true` on success, `[bool]false` if something is wrong with data.
+`include implementations/add-collection-props`
 
 ## Examples
 
@@ -71,9 +66,7 @@ Iconify.addCollection({
 
 ## API provider
 
-API provider parameter can be used to load custom icons asynchronously without triggering API queries.
-
-Each API provider has its own API endpoint, so if you are using custom API provider that SVG framework doesn't have configuration for (currently by default SVG framework has no API providers configured), SVG framework will not attempt to load missing icons from an unknown API provider.
+`include implementations/api-provider/description-svg`
 
 Example:
 

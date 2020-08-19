@@ -50,7 +50,7 @@ export function renderNavigation(data: PrepareNavigationResult): string {
 	 */
 	function renderLink(item: ExtendedNavigationItem): string {
 		let className = linkClass + ' ' + linkClass + '--' + item.level;
-		if (item === selectedItem) {
+		if (item === selectedItem && !item.unclickable) {
 			className += ' ' + linkClass + '--selected';
 		}
 		if (item.selectedWithin) {
@@ -83,15 +83,14 @@ export function renderNavigation(data: PrepareNavigationResult): string {
 		}
 
 		// Generate HTML
-		let html =
-			'\t<li class="' +
-			className +
-			'"><a href="' +
-			getURL(item.url) +
-			'">' +
-			item.title +
-			icon +
-			'</a></li>\n';
+		let html = '\t<li class="' + className + '">';
+		if (item.unclickable) {
+			html += item.title + ':';
+		} else {
+			html +=
+				'<a href="' + getURL(item.url) + '">' + item.title + icon + '</a>';
+		}
+		html += '</li>\n';
 
 		return html + children;
 	}

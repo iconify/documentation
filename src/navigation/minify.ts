@@ -8,6 +8,7 @@ export interface MinifiedNavigationItem {
 	title: string;
 	url: string;
 	hidden?: boolean;
+	unclickable?: boolean;
 	theme?: Theme;
 	styles?: NavigationItemStyles[];
 	children?: MinifiedNavigationItem[];
@@ -34,6 +35,9 @@ function minifyNavigation(
 	}
 	if (item.styles.length) {
 		newItem.styles = item.styles;
+	}
+	if (item.unclickable) {
+		newItem.unclickable = true;
 	}
 
 	// Child items

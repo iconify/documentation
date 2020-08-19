@@ -15,6 +15,7 @@ export interface ExtendedNavigationItem {
 	expanded: boolean; // Item is expanded: has visible child items
 	selectedWithin: boolean; // Item or child item is selected
 	styles: NavigationItemStyles[]; // Extra styles
+	unclickable: boolean;
 	parent?: ExtendedNavigationItem;
 	children: ExtendedNavigationItem[];
 }
@@ -56,6 +57,7 @@ export function prepareNavigation(
 			expanded: false,
 			selectedWithin: false,
 			styles: item.styles ? item.styles : [],
+			unclickable: !!item.unclickable,
 			children: [],
 		};
 

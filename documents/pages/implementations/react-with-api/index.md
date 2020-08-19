@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify for React with API
-wip: true
 replacements:
   - code: '60,000'
     value: '${counters.icons}'
@@ -8,6 +7,15 @@ replacements:
     value: '${counters.sets}+'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
+functions:
+  addCollection: './add-collection.md'
+  addIcon: './add-icon.md'
+  iconExists: './icon-exists.md'
+  listIcons: './list-icons.md'
+  loadIcons: './load-icons.md'
+  enableCache: './enable-cache.md'
+  disableCache: './disable-cache.md'
+  addAPIProvider: './add-api-provider.md'
 ```
 
 # Iconify for React with API
@@ -168,3 +176,43 @@ An icon can be rotated and flipped horizontally and/or vertically. All transform
 These are not CSS transformations, transformations are applied inside SVG.
 
 For more details see [how to transform icon in Iconify for React](./transform.md).
+
+## Functions {#functions}
+
+This component offers functions, which developers can use to control icons.
+
+Functions are split in several groups (click function name to see more details and examples):
+
+### Check available icons {#getting-icons}
+
+There are several functions in this section:
+
+- `[func]iconExists(name)`. Checks if an icon exists, returns `[type]boolean`.
+- `[func]listIcons()`. Lists available icons, returns `[type]string[]`.
+
+### Adding icons {#adding-icons}
+
+Functions for adding icons to component:
+
+- `[func]addIcon()`. Adds one icon.
+- `[func]addCollection()`. Adds an icon set.
+
+Note: icons added to component with these functions are not stored in cache. Component caches only icons retrieved from API.
+
+### API functions {#api}
+
+- `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
+- `[func]enableCache()`. Enables caching in `[prop]localStorage` and `[prop]sessionStorage`.
+- `[func]disableCache()`. Disables caching in `[prop]localStorage` and `[prop]sessionStorage`.
+- `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
+
+### Internal functions {#internal}
+
+There are several internal functions that are exposed. They are intended to be used by implementations that want more control over component, such as Iconify Icon Finder. Use them carefully.
+
+All internal functions are exposed as properties of `[var]internals` object:
+
+- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
+- `[func]getAPI()`. Returns internal API module.
+- `[func]getAPIConfig()`. Returns API configuration.
+- `[func]setAPIModule(provider)`. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.

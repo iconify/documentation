@@ -16,6 +16,7 @@ export interface YamlNavigationItemValue {
 	wip?: boolean; // True if work in progress
 	hidden?: boolean; // True if item is hidden
 	separator?: boolean; // True if line should be placed above navigation item
+	clickable?: boolean; // False if navigation item is sub-section title, should be with separator = true
 	children?: Record<string, string | YamlNavigationItemValue>; // Value is item title (for items that do not contain child items and do not need additional properties) or object
 }
 
@@ -28,13 +29,14 @@ export const defaultYamlNavigationItem: Required<YamlNavigationItemValue> = {
 	wip: false,
 	hidden: false,
 	separator: false,
+	clickable: true,
 	children: {},
 };
 
 /**
  * List of extra styles for navigation item
  */
-export type NavigationItemStyles = 'separator';
+export type NavigationItemStyles = 'separator' | 'section';
 
 /**
  * Navigation item
@@ -47,6 +49,7 @@ export interface NavigationItem {
 	theme: Theme;
 	level: number;
 	styles: NavigationItemStyles[];
+	unclickable: boolean;
 	children: NavigationItem[];
 	parent?: NavigationItem;
 }
@@ -91,6 +94,7 @@ function parseString(
 		theme,
 		level,
 		styles: [],
+		unclickable: false,
 		children: [],
 		parent,
 	};
@@ -122,13 +126,19 @@ function parseObject(
 
 	const theme = defaultTheme(filename);
 	if (!theme) {
-		throw new Error(`'Missing theme for: ${filename}`);
+		throw new Error(`Missing theme for: ${filename}`);
 	}
 
 	// Styles
 	const styles: NavigationItemStyles[] = [];
 	if (item.separator) {
 		styles.push('separator');
+	}
+
+	let unclickable = false;
+	if (item.clickable === false) {
+		styles.push('section');
+		unclickable = true;
 	}
 
 	// Create item
@@ -140,12 +150,16 @@ function parseObject(
 		theme,
 		level,
 		styles,
+		unclickable,
 		children: [],
 		parent,
 	};
 
 	// Add child nodes
 	if (item.children) {
+		if (unclickable) {
+			throw new Error(`Unclickable item cannot have children`);
+		}
 		result.children = parseRawData(item.children, level + 1, result);
 	}
 
