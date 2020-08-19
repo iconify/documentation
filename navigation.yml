@@ -37,7 +37,6 @@
       children:
         ./svg-framework/:
           title: SVG Framework
-          wip: true
           children:
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
