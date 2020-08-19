@@ -1,7 +1,5 @@
 import md from 'markdown-it';
 import { MDContext } from '../types';
-import { replaceAll } from '../../str';
-import { replaceText } from '../../replacements';
 
 const idMatch = /^[a-z][a-z0-9-]*[a-z0-9]$/;
 

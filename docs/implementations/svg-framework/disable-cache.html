@@ -94,24 +94,24 @@
 <p>Function <span class="hljs-function">disableCache()</span> disables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</p>
 <p>When SVG framework retrieves new icons from API, icon data is stored in browser storage. Cache makes rendering faster because SVG framework can retrieve icons from cache instead of sending API query. Unlike API queries, cache is instant.</p>
 <p>By default, <span class="hljs-inline-prop">localStorage</span> is enabled, <span class="hljs-inline-prop">sessionStorage</span> is disabled.</p>
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameter:</p><ul>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameter:</p><ul>
 <li><span class="hljs-inline-prop">storage</span>. Storage to disable.</li>
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="storage-types" class="heading--2">Storage types <a href="#storage-types" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>First parameter can be one of the following:</p><ul>
+<section class="content-section content-section--2"><H1 id="storage-types" class="heading--2">Storage types <a href="#storage-types" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>First parameter can be one of the following:</p><ul>
 <li>&quot;<span class="hljs-string">local</span>&quot; for <span class="hljs-inline-prop">localStorage</span>.</li>
 <li>&quot;<span class="hljs-string">session</span>&quot; for <span class="hljs-inline-prop">sessionStorage</span>.</li>
 <li>&quot;<span class="hljs-string">all</span>&quot; for both <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gRGlzYWJsZSBjYWNoaW5nIGluIGxvY2FsU3RvcmFnZQpJY29uaWZ5LmRpc2FibGVDYWNoZSgnbG9jYWwnKTsK"><code class="highlight hljs"><span class="hljs-comment">// Disable caching in localStorage</span><br>
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gRGlzYWJsZSBjYWNoaW5nIGluIGxvY2FsU3RvcmFnZQpJY29uaWZ5LmRpc2FibGVDYWNoZSgnbG9jYWwnKTsK"><code class="highlight hljs"><span class="hljs-comment">// Disable caching in localStorage</span><br>
 Iconify.disableCache(<span class="hljs-string">&apos;local&apos;</span>);<br>
 </code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gRGlzYWJsZSBhbGwgY2FjaGluZwpJY29uaWZ5LmRpc2FibGVDYWNoZSgnYWxsJyk7Cg=="><code class="highlight hljs"><span class="hljs-comment">// Disable all caching</span><br>
 Iconify.disableCache(<span class="hljs-string">&apos;all&apos;</span>);<br>
 </code></div></div></div></section>
-<section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
+<section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
 <li>Enabling or disabling cache will not affect icon data already stored in cache. Icon data will always be loaded, regardless of setting. Setting affects only storing new icon data retrieved from API.</li>
 <li>Setting affects only icon data loaded from API. Icon data loaded with <a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a> or <a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a> is not cached.</li>
 <li>When both <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span> are enabled, icon data is cached only in <span class="hljs-inline-prop">localStorage</span>.</li>

@@ -92,12 +92,12 @@
 <p>This tutorial is part of <a href="./functions.html#scanner">Iconify SVG Framework functions tutorial</a>.</p>
 <p>Function <span class="hljs-function">pauseObserver()</span> tells SVG framework to temporarily stop watching HTML element for icon placeholders.</p>
 <p>Use this function when you need to do a lot of DOM manipulation and you want to prevent SVG framework from scanning DOM until you resume observing using <a href="./resume-observer.html" title="resumeObserver() documentation"><span class="hljs-function hljs-linkable">resumeObserver()</span></a>.</p>
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following optional parameter:</p><ul>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following optional parameter:</p><ul>
 <li><span class="hljs-inline-prop">root</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">HTMLElement</span></span>. Element to pause observing. If missing, SVG framework will pause all active observers.</li>
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gUGF1c2Ugb2JzZXJ2ZXIKSWNvbmlmeS5wYXVzZU9ic2VydmVyKCk7CgovLyBEbyBzb21lIGhlYXZ5IERPTSBtYW5pcHVsYXRpb24KLy8gLi4uCi8vIC4uLgoKLy8gUmVzdW1lIG9ic2VydmVyCkljb25pZnkucmVzdW1lT2JzZXJ2ZXIoKTsK"><code class="highlight hljs"><span class="hljs-comment">// Pause observer</span><br>
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gUGF1c2Ugb2JzZXJ2ZXIKSWNvbmlmeS5wYXVzZU9ic2VydmVyKCk7CgovLyBEbyBzb21lIGhlYXZ5IERPTSBtYW5pcHVsYXRpb24KLy8gLi4uCi8vIC4uLgoKLy8gUmVzdW1lIG9ic2VydmVyCkljb25pZnkucmVzdW1lT2JzZXJ2ZXIoKTsK"><code class="highlight hljs"><span class="hljs-comment">// Pause observer</span><br>
 Iconify.pauseObserver();<br>
 <br>
 <span class="hljs-comment">// Do some heavy DOM manipulation</span><br>
@@ -107,7 +107,7 @@ Iconify.pauseObserver();<br>
 <span class="hljs-comment">// Resume observer</span><br>
 Iconify.resumeObserver();<br>
 </code></div></div></div></section>
-<section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
+<section class="content-section content-section--2"><H1 id="notes" class="heading--2">Notes <a href="#notes" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
 <li>Pause tracker is a number, it increases with every call. If you call <span class="hljs-function">pauseObserver()</span> multiple times, you need to call <a href="./resume-observer.html" title="resumeObserver() documentation"><span class="hljs-function hljs-linkable">resumeObserver()</span></a> the same amount of times to resume observer.</li>
 <li>If you are removing custom node and do not plan to re-use it, you need to stop observer, not pause it. See <a href="./stop-observing.html" title="stopObserving() documentation"><span class="hljs-function hljs-linkable">stopObserving()</span></a>.</li>
 </ul></section>

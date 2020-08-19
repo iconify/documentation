@@ -96,7 +96,7 @@
 <li>Horizontal and vertical flip.</li>
 <li>Rotation by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</li>
 </ul>
-<section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
+<section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
 <li>If you rotate an icon by 90 degrees in CSS, icon&apos;s bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.</li>
 <li>If you rotate an icon by 90 degrees in SVG Framework, icon&apos;s dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.</li>
 </ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglUZXN0IGljb24gPElubGluZUljb24gaWNvbj0iZmEtcmVndWxhcjpoYW5kc2hha2UiIHJvdGF0ZT0iOTBkZWciIC8+IHdpdGggdGV4dCBhcm91bmQgaXQKPC9wPgo8cD4KCVRlc3QgaWNvbiA8SW5saW5lSWNvbiBpY29uPSJmYS1yZWd1bGFyOmhhbmRzaGFrZSIgc3R5bGU9e3sgdHJhbnNmb3JtOiAncm90YXRlKDkwZGVnKScgfX0gLz4gd2l0aCB0ZXh0IGFyb3VuZCBpdAo8L3A+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
@@ -121,7 +121,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>One way to do that is to add <span class="hljs-inline-prop">flip</span> attribute with comma separated values. Possible values:</p><ul>
+<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>One way to do that is to add <span class="hljs-inline-prop">flip</span> attribute with comma separated values. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
 <li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
 </ul><p>You can also do that by setting <span class="hljs-inline-prop">hFlip</span> and / or <span class="hljs-inline-prop">vFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHA+CglObyBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiAvPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBmbGlwPSJob3Jpem9udGFsIiAvPgo8L3A+CjxwPgoJVmVydGljYWwgZmxpcDogPElubGluZUljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgZmxpcD0idmVydGljYWwiIC8+CjwvcD4KPHA+CglCb3RoIChvciAxODDCsCByb3RhdGlvbik6IDxJbmxpbmVJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIGZsaXA9Imhvcml6b250YWwsdmVydGljYWwiIC8+CjwvcD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
@@ -167,7 +167,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can rotate icon by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</p><p>To do that, add <span class="hljs-inline-prop">rotate</span> attribute. Possible values:</p><ul>
+<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can rotate icon by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</p><p>To do that, add <span class="hljs-inline-prop">rotate</span> attribute. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by <span class="hljs-number">90</span> degrees.</li>
 <li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by <span class="hljs-number">180</span> degrees.</li>
 <li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by <span class="hljs-number">270</span> degrees.</li>
@@ -202,7 +202,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="rotate-and-flip" class="heading--2">Rotate and flip <a href="#rotate-and-flip" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section>
+<section class="content-section content-section--2"><H1 id="rotate-and-flip" class="heading--2">Rotate and flip <a href="#rotate-and-flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section>
 
 
 				</article>

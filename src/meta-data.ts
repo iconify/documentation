@@ -52,7 +52,10 @@ const defaultMetaData: Required<SourceMetaData> = {
 /**
  * Get MetaData from code
  */
-export function getMetaData(code: object | string): SourceMetaData {
+export function getMetaData(
+	code: object | string,
+	file: string
+): SourceMetaData {
 	const result: SourceMetaData = {
 		replacements: [],
 	};
@@ -90,13 +93,13 @@ export function getMetaData(code: object | string): SourceMetaData {
 
 				default:
 					assertNever(theme);
-					throw new Error(`Invalid theme "${theme}"`);
+					throw new Error(`Invalid theme "${theme}" in ${file}`);
 			}
 			continue;
 		}
 
 		if (typeof value !== typeof defaultMetaData[attr]) {
-			throw new Error(`Invalid type for ${attr}`);
+			throw new Error(`Invalid type for ${attr} in ${file}`);
 		}
 		if (value === defaultMetaData[attr]) {
 			// Default value
@@ -107,7 +110,7 @@ export function getMetaData(code: object | string): SourceMetaData {
 			case 'replacements':
 				// Copy array and validate entries
 				if (!(value instanceof Array)) {
-					throw new Error('Invalid code/value pairs');
+					throw new Error(`Invalid code/value pairs in ${file}`);
 				}
 				value.forEach((item) => {
 					const entry = item as TextReplacement;
@@ -116,7 +119,7 @@ export function getMetaData(code: object | string): SourceMetaData {
 						typeof entry.code !== 'string' ||
 						typeof entry.value !== 'string'
 					) {
-						throw new Error('Invalid code/value pair');
+						throw new Error(`Invalid code/value pair in ${file}`);
 					}
 					(result[attr] as TextReplacement[]).push(entry);
 				});
@@ -125,6 +128,13 @@ export function getMetaData(code: object | string): SourceMetaData {
 			default:
 				// Copy value
 				((result as unknown) as Record<string, unknown>)[attr] = value;
+		}
+	}
+
+	// Check for invalid keys
+	for (const key in codeRecord) {
+		if ((defaultMetaData as Record<string, unknown>)[key] === void 0) {
+			throw new Error(`Invalid metadata key "${key}" in ${file}`);
 		}
 	}
 

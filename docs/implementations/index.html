@@ -90,10 +90,10 @@
 </div>
 <h1>Iconify implementations</h1>
 <p>Implementations render icons.</p>
-<section class="content-section content-section--2"><H1 id="sources" class="heading--2">Source independent <a href="#sources" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Unlike icon fonts, which only render icons available in specific fonts, Iconify implementations are not tied to specific icon set.</p><p>There are two types of implementations:</p><section class="content-section content-section--3"><H1 id="with-api" class="heading--3">Implementations with API support <a href="#with-api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Some implementations support <a href="../sources/api/">Iconify API</a>.</p><p>They fetch icons as needed from API, so developers do not need to create icon bundles. Because of this, such implementations are very easy to use. Developers do not need to keep track of icons used in project.</p><p>There are several downsides to using API:</p><ul>
+<section class="content-section content-section--2"><H1 id="sources" class="heading--2">Source independent <a href="#sources" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Unlike icon fonts, which only render icons available in specific fonts, Iconify implementations are not tied to specific icon set.</p><p>There are two types of implementations:</p><section class="content-section content-section--3"><H1 id="with-api" class="heading--3">Implementations with API support <a href="#with-api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Some implementations support <a href="../sources/api/">Iconify API</a>.</p><p>They fetch icons as needed from API, so developers do not need to create icon bundles. Because of this, such implementations are very easy to use. Developers do not need to keep track of icons used in project.</p><p>There are several downsides to using API:</p><ul>
 <li>API requires visitor to be online. <a href="../sources/api/">Iconify API</a> software is available, so organizations can mitigate it by hosting Iconify API on internal servers. You can also create <a href="../sources/bundles/">icon bundles</a>.</li>
 <li>Code is a bit bigger because it includes API support. Difference isn&apos;t big, just about 10-15kb, depending on implementation.</li>
-</ul></section><section class="content-section content-section--3"><H1 id="without-api" class="heading--3">Implementations without API support <a href="#without-api" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you want to make sure icon data is always available, do not rely on Iconify API. Even though Iconify API servers have redundancies built in to provide as stable experience as possible, internet is never 100% reliable.</p><p>Implementations without API support rely on developer providing icon data. They are a bit harder to work with because you need to bundle icon data with package. These components get icon data from <a href="../sources/npm/">icon components</a>.</p><p>Implementations with API support can also function without API. They do support <a href="../sources/bundles/">icon bundles</a> and <a href="../sources/npm/">icon components</a>.</p></section></section>
+</ul></section><section class="content-section content-section--3"><H1 id="without-api" class="heading--3">Implementations without API support <a href="#without-api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you want to make sure icon data is always available, do not rely on Iconify API. Even though Iconify API servers have redundancies built in to provide as stable experience as possible, internet is never 100% reliable.</p><p>Implementations without API support rely on developer providing icon data. They are a bit harder to work with because you need to bundle icon data with package. These components get icon data from <a href="../sources/npm/">icon components</a>.</p><p>Implementations with API support can also function without API. They do support <a href="../sources/bundles/">icon bundles</a> and <a href="../sources/npm/">icon components</a>.</p></section></section>
 
 
 
@@ -105,7 +105,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="svg-framework" class="heading--2">SVG framework <a href="#svg-framework" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./svg-framework/">Iconify SVG framework</a> is a modern replacement for outdated icon fonts.</p><p>It offers all the advantages of icons fonts:</p><ul>
+<section class="content-section content-section--2"><H1 id="svg-framework" class="heading--2">SVG framework <a href="#svg-framework" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./svg-framework/">Iconify SVG framework</a> is a modern replacement for outdated icon fonts.</p><p>It offers all the advantages of icons fonts:</p><ul>
 <li>Syntax is very simple and similar to icon fonts: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.</li>
 <li>You can change size and color by changing <span class="hljs-inline-prop">font-size</span> and <span class="hljs-inline-prop">color</span> in stylesheet.</li>
 </ul><p>It does not have disadvantages of icons fonts:</p><ul>
@@ -118,7 +118,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="components" class="heading--2">Components <a href="#components" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify offers components for several popular frameworks:</p><ul>
+<section class="content-section content-section--2"><H1 id="components" class="heading--2">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify offers components for several popular frameworks:</p><ul>
 <li><a href="./react/">Iconify for React</a>.</li>
 <li><a href="./react-with-api/">Iconify for React with API support</a>.</li>
 <li><a href="./vue/">Iconify for Vue</a>.</li>
@@ -128,7 +128,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="components-vs-svg-framework" class="heading--2">Components vs SVG Framework <a href="#components-vs-svg-framework" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Unlike SVG framework, components are designed for specific frameworks:</p><ul>
+<section class="content-section content-section--2"><H1 id="components-vs-svg-framework" class="heading--2">Components vs SVG Framework <a href="#components-vs-svg-framework" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Unlike SVG framework, components are designed for specific frameworks:</p><ul>
 <li>Components use syntax familiar to developers.</li>
 <li>Some components use framework&apos;s native code when possible.</li>
 <li>Components correctly bind event handlers and dynamic properties. SVG framework cannot do that.</li>
@@ -136,7 +136,7 @@
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="repositories" class="heading--2">Repositories <a href="#repositories" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most components share common code, making it easy to maintain multiple components for multiple frameworks. They also share code with <a href="./svg-framework/">Iconify SVG framework</a>.</p><p>You can find code and demo files in big monorepo: <a href="https://github.com/iconify/iconify" target="_blank">https://github.com/iconify/iconify</a>.</p></section>
+<section class="content-section content-section--2"><H1 id="repositories" class="heading--2">Repositories <a href="#repositories" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most components share common code, making it easy to maintain multiple components for multiple frameworks. They also share code with <a href="./svg-framework/">Iconify SVG framework</a>.</p><p>You can find code and demo files in big monorepo: <a href="https://github.com/iconify/iconify" target="_blank">https://github.com/iconify/iconify</a>.</p></section>
 
 
 

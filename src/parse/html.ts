@@ -1,10 +1,10 @@
-import { readFileSync, link } from 'fs';
+import { readFileSync } from 'fs';
 import { ParseResult } from './types';
 import { paths } from '../files';
 import { replaceAll } from '../str';
 import { defaultTheme } from '../themes';
 import { NavigationItem } from '../navigation/loader';
-import { replaceText, rawReplacements } from '../replacements';
+import { replaceText } from '../replacements';
 import { prepareNavigation } from '../navigation/prepare';
 import { minifiedNavigation } from '../navigation/minify';
 import { fileToURL } from '../navigation/helpers';

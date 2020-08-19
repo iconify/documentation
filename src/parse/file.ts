@@ -51,7 +51,7 @@ export function parseFile(
 
 		// Parse meta data
 		const metadata: SourceMetaData = heading.length
-			? getMetaData(heading.join(separator))
+			? getMetaData(heading.join(separator), file)
 			: {
 					replacements: [],
 			  };

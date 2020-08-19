@@ -91,14 +91,14 @@
 <h1>SVG framework function: renderHTML</h1>
 <p>This tutorial is part of <a href="./functions.html#render">Iconify SVG Framework functions tutorial</a>.</p>
 <p>Function <span class="hljs-function">renderHTML()</span> generates HTML code for icon.</p>
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
 <li><span class="hljs-inline-prop">name</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon name.</li>
 <li><span class="hljs-inline-prop">customisations</span>. Optional customizations object.</li>
 </ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>, <span class="hljs-literal">null</span> if icon is not available.</p></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aWYgKEljb25pZnkuaWNvbkV4aXN0cygnbWRpOmhvbWUnKSkgewoJbm9kZS5pbm5lckhUTUwgPSBJY29uaWZ5LnJlbmRlckhUTUwoJ21kaTpob21lJyk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">if</span> (Iconify.iconExists(<span class="hljs-string">&apos;mdi:home&apos;</span>)) {<br>
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aWYgKEljb25pZnkuaWNvbkV4aXN0cygnbWRpOmhvbWUnKSkgewoJbm9kZS5pbm5lckhUTUwgPSBJY29uaWZ5LnJlbmRlckhUTUwoJ21kaTpob21lJyk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">if</span> (Iconify.iconExists(<span class="hljs-string">&apos;mdi:home&apos;</span>)) {<br>
  &#xA0; &#xA0;node.innerHTML = Iconify.renderHTML(<span class="hljs-string">&apos;mdi:home&apos;</span>);<br>
 }<br>
 </code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgbm9kZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwpub2RlLmlubmVySFRNTCA9IEljb25pZnkucmVuZGVySFRNTCgnYmk6c3RvcHdhdGNoJywgewoJcm90YXRlOiAxLAoJaGVpZ2h0OiAnYXV0bycsCn0pOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> node = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);<br>
@@ -107,7 +107,7 @@ node.innerHTML = Iconify.renderHTML(<span class="hljs-string">&apos;bi:stopwatch
  &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-string">&apos;auto&apos;</span>,<br>
 });<br>
 </code></div></div></div></section>
-<section class="content-section content-section--2"><H1 id="customizations" class="heading--2">Customizations <a href="#customizations" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Second parameter is optional icon customizations. Do not confuse it with placeholder <span class="hljs-inline-prop">data-</span> attributes.</p><p>Available customizations:</p><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconCustomisations</span></span> type is an object with the following optional properties, split into several categories.</p><p>Display mode:</p><ul>
+<section class="content-section content-section--2"><H1 id="customizations" class="heading--2">Customizations <a href="#customizations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Second parameter is optional icon customizations. Do not confuse it with placeholder <span class="hljs-inline-prop">data-</span> attributes.</p><p>Available customizations:</p><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyIconCustomisations</span></span> type is an object with the following optional properties, split into several categories.</p><p>Display mode:</p><ul>
 <li><span class="hljs-inline-prop">inline</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Inline or block mode. The default value is <span class="hljs-literal">false</span>.</li>
 </ul><p>Icon dimensions:</p><ul>
 <li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">number</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Icon width. The default value is <span class="hljs-literal">null</span>.</li>
@@ -137,7 +137,7 @@ node.innerHTML = Iconify.renderHTML(<span class="hljs-string">&apos;bi:stopwatch
 
 
 
-<section class="content-section content-section--2"><H1 id="rendering-svg" class="heading--2">Rendering SVG <a href="#rendering-svg" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function creates <span class="hljs-inline-tag hljs-linkable">&lt;string&gt;</span>. If you want to create <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element, use <a href="./render-svg.html" title="renderSVG() documentation"><span class="hljs-function hljs-linkable">renderSVG()</span></a> instead.</p></section>
+<section class="content-section content-section--2"><H1 id="rendering-svg" class="heading--2">Rendering SVG <a href="#rendering-svg" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function creates <span class="hljs-inline-tag hljs-linkable">&lt;string&gt;</span>. If you want to create <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element, use <a href="./render-svg.html" title="renderSVG() documentation"><span class="hljs-function hljs-linkable">renderSVG()</span></a> instead.</p></section>
 
 
 				</article>

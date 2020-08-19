@@ -96,7 +96,7 @@
 <li>Horizontal and vertical flip.</li>
 <li>Rotation by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</li>
 </ul>
-<section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
+<section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
 <li>If you rotate an icon by 90 degrees in CSS, icon&apos;s bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.</li>
 <li>If you rotate an icon by 90 degrees in SVG Framework, icon&apos;s dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.</li>
 </ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglUZXN0IGljb24KCTxzcGFuCgkJY2xhc3M9Imljb25pZnktaW5saW5lIgoJCWRhdGEtaWNvbj0iZmEtcmVndWxhcjpoYW5kc2hha2UiCgkJZGF0YS1yb3RhdGU9IjkwZGVnIgoJPjwvc3Bhbj4KCXdpdGggdGV4dCBhcm91bmQgaXQKPC9wPgo8cD4KCVRlc3QgaWNvbgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeS1pbmxpbmUiCgkJZGF0YS1pY29uPSJmYS1yZWd1bGFyOmhhbmRzaGFrZSIKCQlzdHlsZT0idHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOyIKCT48L3NwYW4+Cgl3aXRoIHRleHQgYXJvdW5kIGl0CjwvcD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
@@ -134,7 +134,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>To do that, add <span class="hljs-inline-prop">data-flip</span> attribute with comma separated values. Possible values:</p><ul>
+<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>To do that, add <span class="hljs-inline-prop">data-flip</span> attribute with comma separated values. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
 <li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
 </ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglObyBmbGlwOiA8c3BhbiBjbGFzcz0iaWNvbmlmeS1pbmxpbmUiIGRhdGEtaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSI+PC9zcGFuPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeS1pbmxpbmUiCgkJZGF0YS1pY29uPSJiaTpjaGVjazItY2lyY2xlIgoJCWRhdGEtZmxpcD0iaG9yaXpvbnRhbCIKCT48L3NwYW4+CjwvcD4KPHA+CglWZXJ0aWNhbCBmbGlwOgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeS1pbmxpbmUiCgkJZGF0YS1pY29uPSJiaTpjaGVjazItY2lyY2xlIgoJCWRhdGEtZmxpcD0idmVydGljYWwiCgk+PC9zcGFuPgo8L3A+CjxwPgoJQm90aCAob3IgMTgwwrAgcm90YXRpb24pOgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeS1pbmxpbmUiCgkJZGF0YS1pY29uPSJiaTpjaGVjazItY2lyY2xlIgoJCWRhdGEtZmxpcD0iaG9yaXpvbnRhbCx2ZXJ0aWNhbCIKCT48L3NwYW4+CjwvcD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
@@ -184,7 +184,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can rotate icon by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</p><p>To do that, add <span class="hljs-inline-prop">data-rotate</span> attribute. Possible values:</p><ul>
+<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can rotate icon by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</p><p>To do that, add <span class="hljs-inline-prop">data-rotate</span> attribute. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by <span class="hljs-number">90</span> degrees.</li>
 <li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by <span class="hljs-number">180</span> degrees.</li>
 <li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by <span class="hljs-number">270</span> degrees.</li>
@@ -235,7 +235,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="rotate-and-flip" class="heading--2">Rotate and flip <a href="#rotate-and-flip" class="link-back"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section>
+<section class="content-section content-section--2"><H1 id="rotate-and-flip" class="heading--2">Rotate and flip <a href="#rotate-and-flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section>
 
 
 				</article>
