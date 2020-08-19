@@ -1,11 +1,15 @@
 import md from 'markdown-it';
 import Token from 'markdown-it/lib/token';
 import hljs from 'highlight.js';
+import hljs_svelte from 'highlightjs-svelte';
 import yaml from 'yaml';
 import { MDContext } from '../types';
 import { paths, exists } from '../../files';
 import { readFileSync } from 'fs';
 import { replaceAll } from '../../str';
+
+// Import Svelte syntax highlight module
+hljs_svelte(hljs);
 
 /**
  * Code parameters
