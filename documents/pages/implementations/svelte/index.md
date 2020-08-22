@@ -42,7 +42,7 @@ Install `[npm]@iconify/svelte` and packages for selected icon sets. Import compo
 
 ```js
 import IconifyIcon from '@iconify/svelte';
-import home from '@iconify/icons-mdi-light/home';
+import home from '@iconify-icons/mdi-light/home';
 ```
 
 Then use `[var]IconifyIcon` component with icon data as `[prop]icon` parameter:
@@ -77,13 +77,17 @@ In Svelte it is not possible to pass events to child components, so component do
 
 Examples:
 
-- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify/icons-mdi/home`.
-- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify/icons-bi/arrow-left-circle`.
-- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify/icons-tabler/info-circle`.
+- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/home`.
+- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/arrow-left-circle`.
+- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle`.
 
 ...and so on.
 
 Variable name in import statement is irrelevant because all exports are default exports.
+
+### CommonJS icon modules {#commonjs}
+
+`include implementations/icon-packages-exports`
 
 ## Color
 

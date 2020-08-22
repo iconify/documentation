@@ -1,9 +1,9 @@
 import React from 'react';
 
-// npm install --save-dev @iconify/react @iconify/icons-mdi @iconify/icons-line-md
+// npm install --save-dev @iconify/react @iconify-icons/mdi @iconify-icons/line-md
 import { Icon, InlineIcon } from '@iconify/react';
-import imageTwotone from '@iconify/icons-line-md/image-twotone';
-import accountBoxOutline from '@iconify/icons-mdi/account-box-outline';
+import imageTwotone from '@iconify-icons/line-md/image-twotone';
+import accountBoxOutline from '@iconify-icons/mdi/account-box-outline';
 
 export function inlineDemo() {
 	return (

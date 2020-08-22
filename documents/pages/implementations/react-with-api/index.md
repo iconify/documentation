@@ -43,7 +43,7 @@ What is the difference?
 
 ```js
 import { Icon } from '@iconify/react';
-import home from '@iconify/icons-mdi-light/home';
+import home from '@iconify-icons/mdi-light/home';
 ```
 
 ```jsx

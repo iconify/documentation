@@ -1,7 +1,7 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify/icons-fa-regular
+	// npm install --save-dev @iconify/svelte @iconify-icons/fa-regular
 	import Icon from '@iconify/svelte';
-	import handshakeIcon from '@iconify/icons-fa-regular/handshake';
+	import handshakeIcon from '@iconify-icons/fa-regular/handshake';
 </script>
 
 <style>

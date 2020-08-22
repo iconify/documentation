@@ -33,7 +33,7 @@ Iconify for React is a basic component. It works offline and does not have any d
 
 ```js
 import { Icon } from '@iconify/react';
-import home from '@iconify/icons-mdi-light/home';
+import home from '@iconify-icons/mdi-light/home';
 ```
 
 ```jsx
@@ -78,7 +78,7 @@ Install `[npm]@iconify/react` and packages for selected icon sets. Import `[var]
 
 ```js
 import { Icon } from '@iconify/react';
-import home from '@iconify/icons-mdi-light/home';
+import home from '@iconify-icons/mdi-light/home';
 ```
 
 Then use `[var]Icon` component with icon data as `[prop]icon` parameter:
@@ -96,7 +96,7 @@ With this method the icon needs to be added only once. That means if you have mu
 ```jsx
 import React from 'react';
 import { Icon, addIcon } from '@iconify/react';
-import homeIcon from '@iconify/icons-mdi-light/home';
+import homeIcon from '@iconify-icons/mdi-light/home';
 
 addIcon('home', homeIcon);
 
@@ -129,13 +129,17 @@ In addition to the properties mentioned above, the icon component accepts any ot
 
 Examples:
 
-- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify/icons-mdi/home`.
-- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify/icons-bi/arrow-left-circle`.
-- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify/icons-tabler/info-circle`.
+- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/home`.
+- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/arrow-left-circle`.
+- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle`.
 
 ...and so on.
 
 Variable name in import statement is irrelevant because all exports are default exports.
+
+### CommonJS icon modules {#commonjs}
+
+`include implementations/icon-packages-exports`
 
 ## Inline icon
 

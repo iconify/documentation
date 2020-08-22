@@ -1,7 +1,7 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify/icons-bi
+	// npm install --save-dev @iconify/svelte @iconify-icons/bi
 	import Icon from '@iconify/svelte';
-	import check2Circle from '@iconify/icons-bi/check2-circle';
+	import check2Circle from '@iconify-icons/bi/check2-circle';
 </script>
 
 <p>

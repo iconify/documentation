@@ -1,9 +1,9 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify/icons-cil
+	// npm install --save-dev @iconify/svelte @iconify-icons/cil
 	import Icon from '@iconify/svelte';
-	import locomotiveIcon from '@iconify/icons-cil/locomotive';
-	import paperPlane from '@iconify/icons-cil/paper-plane';
-	import truckIcon from '@iconify/icons-cil/truck';
+	import locomotiveIcon from '@iconify-icons/cil/locomotive';
+	import paperPlane from '@iconify-icons/cil/paper-plane';
+	import truckIcon from '@iconify-icons/cil/truck';
 </script>
 
 <style>

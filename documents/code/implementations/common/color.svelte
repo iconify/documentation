@@ -1,10 +1,10 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify/icons-bi @iconify/icons-bx @iconify/icons-noto
+	// npm install --save-dev @iconify/svelte @iconify-icons/bi @iconify-icons/bx @iconify-icons/noto
 	import IconifyIcon from '@iconify/svelte';
-	import bellFill from '@iconify/icons-bi/bell-fill';
-	import stopwatchIcon from '@iconify/icons-bi/stopwatch';
-	import bxHome from '@iconify/icons-bx/bx-home';
-	import paintbrushIcon from '@iconify/icons-noto/paintbrush';
+	import bellFill from '@iconify-icons/bi/bell-fill';
+	import stopwatchIcon from '@iconify-icons/bi/stopwatch';
+	import bxHome from '@iconify-icons/bx/bx-home';
+	import paintbrushIcon from '@iconify-icons/noto/paintbrush';
 </script>
 
 <style>

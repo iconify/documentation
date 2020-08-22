@@ -1,11 +1,11 @@
 import React from 'react';
 
-// npm install --save-dev @iconify/react @iconify/icons-bi @iconify/icons-bx @iconify/icons-noto
+// npm install --save-dev @iconify/react @iconify-icons/bi @iconify-icons/bx @iconify-icons/noto
 import { InlineIcon } from '@iconify/react';
-import bellFill from '@iconify/icons-bi/bell-fill';
-import stopwatchIcon from '@iconify/icons-bi/stopwatch';
-import bxHome from '@iconify/icons-bx/bx-home';
-import paintbrushIcon from '@iconify/icons-noto/paintbrush';
+import bellFill from '@iconify-icons/bi/bell-fill';
+import stopwatchIcon from '@iconify-icons/bi/stopwatch';
+import bxHome from '@iconify-icons/bx/bx-home';
+import paintbrushIcon from '@iconify-icons/noto/paintbrush';
 
 export function colorDemo() {
 	return (
