@@ -2,14 +2,16 @@ import md from 'markdown-it';
 import Token from 'markdown-it/lib/token';
 import hljs from 'highlight.js';
 import hljs_svelte from 'highlightjs-svelte';
+import { hljsDefineVue } from './highlight_vue';
 import yaml from 'yaml';
 import { MDContext } from '../types';
 import { paths, exists } from '../../files';
 import { readFileSync } from 'fs';
 import { replaceAll } from '../../str';
 
-// Import Svelte syntax highlight module
+// Import additional syntax highlight modules
 hljs_svelte(hljs);
+hljs.registerLanguage('vue', hljsDefineVue);
 
 /**
  * Code parameters
