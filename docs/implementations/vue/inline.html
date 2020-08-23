@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?0446" />
-		<title>Inline Icons in Iconify for React</title>
+		<title>Inline Icons in Iconify for Vue</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -86,38 +86,51 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="./transform.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Transformations</a>
-<a href="../react-with-api/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> React with API</a>
+<a href="../vue2/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Vue 2</a>
 </div>
 <h1>Inline icons</h1>
-<p>This tutorial is part of <a href="./">Iconify for React tutorial</a>.</p>
+<p>This tutorial is part of <a href="./">Iconify for Vue tutorial</a>.</p>
 <p>Icons have 2 modes: inline and block. Difference between modes is <span class="hljs-inline-prop">vertical-align</span> that is added to inline icons.</p>
 <p>Inline icons are aligned slightly below baseline, so they look centred compared to text, like glyph fonts.</p>
 <p>Block icons do not have alignment, like images, which aligns them to baseline by default.</p>
 <p>Alignment option was added to make icons look like continuation of text, behaving like glyph fonts. This should make migration from glyph fonts easier.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKCi8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvcmVhY3QgQGljb25pZnktaWNvbnMvbWRpIEBpY29uaWZ5LWljb25zL2xpbmUtbWQKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsKaW1wb3J0IGltYWdlVHdvdG9uZSBmcm9tICdAaWNvbmlmeS1pY29ucy9saW5lLW1kL2ltYWdlLXR3b3RvbmUnOwppbXBvcnQgYWNjb3VudEJveE91dGxpbmUgZnJvbSAnQGljb25pZnktaWNvbnMvbWRpL2FjY291bnQtYm94LW91dGxpbmUnOwoKZXhwb3J0IGZ1bmN0aW9uIGlubGluZURlbW8oKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxwPgoJCQkJQmxvY2s6CgkJCQk8SWNvbiBpY29uPXtpbWFnZVR3b3RvbmV9IC8+CgkJCQk8SWNvbiBpY29uPXthY2NvdW50Qm94T3V0bGluZX0gLz4KCQkJPC9wPgoJCQk8cD4KCQkJCUlubGluZToKCQkJCTxJbmxpbmVJY29uIGljb249e2ltYWdlVHdvdG9uZX0gLz4KCQkJCTxJbmxpbmVJY29uIGljb249e2FjY291bnRCb3hPdXRsaW5lfSAvPgoJCQk8L3A+CgkJPC9kaXY+CgkpOwp9Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJQmxvY2s6CgkJCTxJY29uIDppY29uPSJpY29ucy5pbWFnZSIgLz4KCQkJPEljb24gOmljb249Imljb25zLmFjY291bnQiIC8+CgkJPC9wPgoJCTxwPgoJCQlJbmxpbmU6CgkJCTxJbmxpbmVJY29uIDppY29uPSJpY29ucy5pbWFnZSIgLz4KCQkJPElubGluZUljb24gOmljb249Imljb25zLmFjY291bnQiIC8+CgkJPC9wPgoJPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0PgovLyBucG0gaW5zdGFsbCAtLXNhdmUtZGV2IEBpY29uaWZ5L3Z1ZUBiZXRhIEBpY29uaWZ5LWljb25zL21kaSBAaWNvbmlmeS1pY29ucy9saW5lLW1kCmltcG9ydCB7IEljb24sIElubGluZUljb24gfSBmcm9tICdAaWNvbmlmeS92dWUnOwppbXBvcnQgaW1hZ2VUd290b25lIGZyb20gJ0BpY29uaWZ5LWljb25zL2xpbmUtbWQvaW1hZ2UtdHdvdG9uZSc7CmltcG9ydCBhY2NvdW50Qm94T3V0bGluZSBmcm9tICdAaWNvbmlmeS1pY29ucy9tZGkvYWNjb3VudC1ib3gtb3V0bGluZSc7CgpleHBvcnQgZGVmYXVsdCB7Cgljb21wb25lbnRzOiB7CgkJSWNvbiwKCQlJbmxpbmVJY29uLAoJfSwKCWRhdGEoKSB7CgkJcmV0dXJuIHsKCQkJaWNvbnM6IHsKCQkJCWltYWdlOiBpbWFnZVR3b3RvbmUsCgkJCQlhY2NvdW50OiBhY2NvdW50Qm94T3V0bGluZSwKCQkJfSwKCQl9OwoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.image&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.account&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.image&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.account&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
-<span class="hljs-comment">// npm install --save-dev @iconify/react @iconify-icons/mdi @iconify-icons/line-md</span><br>
-<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-comment">// npm install --save-dev @iconify/vue@beta @iconify-icons/mdi @iconify-icons/line-md</span><br>
+<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
 <span class="hljs-keyword">import</span> imageTwotone <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/line-md/image-twotone&apos;</span>;<br>
 <span class="hljs-keyword">import</span> accountBoxOutline <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi/account-box-outline&apos;</span>;<br>
 <br>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{imageTwotone}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{accountBoxOutline}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{imageTwotone}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{accountBoxOutline}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
- &#xA0; &#xA0;);<br>
-}<br>
-</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="cCB7Cglwb3NpdGlvbjogcmVsYXRpdmU7Cglmb250LXNpemU6IDI0cHg7CglsaW5lLWhlaWdodDogMzJweDsKfQoKLy8gQm9yZGVycyBhYm92ZSBhbmQgYmVsb3cgdGV4dCB0byBoaWdobGlnaHQgaWNvbiBhbGlnbm1lbnQKcDphZnRlciwKcDpiZWZvcmUgewoJY29udGVudDogJyc7Cglwb3NpdGlvbjogYWJzb2x1dGU7CglsZWZ0OiAwOwoJcmlnaHQ6IDA7Cglib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNjY2M7Cn0KcDpiZWZvcmUgewoJdG9wOiA2cHg7Cn0KcDphZnRlciB7Cglib3R0b206IDdweDsKfQo="><code class="highlight hljs"><span class="hljs-selector-tag">p</span> {<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;InlineIcon,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;data() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">image</span>: imageTwotone,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">account</span>: accountBoxOutline,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</span></code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="cCB7Cglwb3NpdGlvbjogcmVsYXRpdmU7Cglmb250LXNpemU6IDI0cHg7CglsaW5lLWhlaWdodDogMzJweDsKfQoKLy8gQm9yZGVycyBhYm92ZSBhbmQgYmVsb3cgdGV4dCB0byBoaWdobGlnaHQgaWNvbiBhbGlnbm1lbnQKcDphZnRlciwKcDpiZWZvcmUgewoJY29udGVudDogJyc7Cglwb3NpdGlvbjogYWJzb2x1dGU7CglsZWZ0OiAwOwoJcmlnaHQ6IDA7Cglib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNjY2M7Cn0KcDpiZWZvcmUgewoJdG9wOiA2cHg7Cn0KcDphZnRlciB7Cglib3R0b206IDdweDsKfQo="><code class="highlight hljs"><span class="hljs-selector-tag">p</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attribute">position</span>: relative;<br>
  &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;<br>
  &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>;<br>
@@ -152,33 +165,47 @@
 <li>Swapping <span class="hljs-inline-var">Icon</span> component with <span class="hljs-inline-var">InlineIcon</span>.</li>
 <li>Adding <span class="hljs-inline-prop">inline</span> attribute.</li>
 <li>Adding <span class="hljs-inline-prop">vertical-align</span> style with value <span class="hljs-number">-0.125em</span>.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKCi8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvcmVhY3QgQGljb25pZnktaWNvbnMvbWRpIEBpY29uaWZ5LWljb25zL2Vtb2ppb25lLXYxIEBpY29uaWZ5LWljb25zL3VpbQppbXBvcnQgeyBJY29uLCBJbmxpbmVJY29uIH0gZnJvbSAnQGljb25pZnkvcmVhY3QnOwppbXBvcnQgaG9tZUljb24gZnJvbSAnQGljb25pZnktaWNvbnMvbWRpL2hvbWUnOwppbXBvcnQgYmlyZEljb24gZnJvbSAnQGljb25pZnktaWNvbnMvZW1vamlvbmUtdjEvYmlyZCc7CmltcG9ydCBzY2VuZXJ5SWNvbiBmcm9tICdAaWNvbmlmeS1pY29ucy91aW0vc2NlbmVyeSc7CgpleHBvcnQgZnVuY3Rpb24gaW5saW5lRGVtbygpIHsKCXJldHVybiAoCgkJPGRpdj4KCQkJPHA+CgkJCQlCbG9jazoKCQkJCTxJY29uIGljb249e2hvbWVJY29ufSBpbmxpbmU9e2ZhbHNlfSAvPgoJCQkJPEljb24gaWNvbj17YmlyZEljb259IGlubGluZT17ZmFsc2V9IC8+CgkJCQk8SW5saW5lSWNvbiBpY29uPXtzY2VuZXJ5SWNvbn0gLz4KCQkJPC9wPgoJCQk8cD4KCQkJCUlubGluZToKCQkJCTxJY29uIGljb249e2hvbWVJY29ufSBpbmxpbmU9e3RydWV9IC8+CgkJCQk8SWNvbiBpY29uPXtiaXJkSWNvbn0gaW5saW5lPXt0cnVlfSAvPgoJCQkJPElubGluZUljb24gaWNvbj17c2NlbmVyeUljb259IC8+CgkJCTwvcD4KCQk8L2Rpdj4KCSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJQmxvY2s6CgkJCTxJY29uIDppY29uPSJpY29ucy5ob21lIiA6aW5saW5lPSJmYWxzZSIgLz4KCQkJPEljb24gOmljb249Imljb25zLmJpcmQiIDppbmxpbmU9ImZhbHNlIiAvPgoJCQk8SW5saW5lSWNvbiA6aWNvbj0iaWNvbnMuc2NlbmVyeSIgLz4KCQk8L3A+CgkJPHA+CgkJCUlubGluZToKCQkJPEljb24gOmljb249Imljb25zLmhvbWUiIDppbmxpbmU9InRydWUiIC8+CgkJCTxJY29uIDppY29uPSJpY29ucy5iaXJkIiA6aW5saW5lPSJ0cnVlIiAvPgoJCQk8SW5saW5lSWNvbiA6aWNvbj0iaWNvbnMuc2NlbmVyeSIgLz4KCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnktaWNvbnMvbWRpIEBpY29uaWZ5LWljb25zL2Vtb2ppb25lLXYxIEBpY29uaWZ5LWljb25zL3VpbQppbXBvcnQgeyBJY29uLCBJbmxpbmVJY29uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsKaW1wb3J0IGhvbWVJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS9ob21lJzsKaW1wb3J0IGJpcmRJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL2Vtb2ppb25lLXYxL2JpcmQnOwppbXBvcnQgc2NlbmVyeUljb24gZnJvbSAnQGljb25pZnktaWNvbnMvdWltL3NjZW5lcnknOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUljb24sCgkJSW5saW5lSWNvbiwKCX0sCglkYXRhKCkgewoJCXJldHVybiB7CgkJCWljb25zOiB7CgkJCQlob21lOiBob21lSWNvbiwKCQkJCWJpcmQ6IGJpcmRJY29uLAoJCQkJc2NlbmVyeTogc2NlbmVyeUljb24sCgkJCX0sCgkJfTsKCX0sCn07Cjwvc2NyaXB0Pgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.home&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bird&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.scenery&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.home&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bird&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.scenery&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
-<span class="hljs-comment">// npm install --save-dev @iconify/react @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim</span><br>
-<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-comment">// npm install --save-dev @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim</span><br>
+<span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
 <span class="hljs-keyword">import</span> homeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi/home&apos;</span>;<br>
 <span class="hljs-keyword">import</span> birdIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/emojione-v1/bird&apos;</span>;<br>
 <span class="hljs-keyword">import</span> sceneryIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/uim/scenery&apos;</span>;<br>
 <br>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{homeIcon}</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{birdIcon}</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{sceneryIcon}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{homeIcon}</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{birdIcon}</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{sceneryIcon}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
- &#xA0; &#xA0;);<br>
-}<br>
-</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;InlineIcon,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;data() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: homeIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">bird</span>: birdIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">scenery</span>: sceneryIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</span></code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
 	Block:
 	<span class="iconify" data-icon="mdi:home" data-inline="false"></span>
 	<i class="iconify" data-icon="emojione-v1:bird" data-inline="false"></i>
@@ -209,14 +236,14 @@
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Implementations<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../components/">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api/">React with API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Vue 3<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./color.html">Icon Color</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./inline.html">Inline Icons</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api/">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2/">Vue 2</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">

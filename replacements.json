@@ -21,6 +21,10 @@
 		"size-without-api": "16kb",
 		"import": "@iconify/iconify@beta"
 	},
+	"vue": {
+		"import-vue2": "@iconify/vue",
+		"import-vue3": "@iconify/vue@beta"
+	},
 	"counters": {
 		"sets": "80",
 		"icons": "60,000",

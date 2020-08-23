@@ -27,6 +27,7 @@ Size can be a `[type]string` with or without units or a `[type]number`. If value
 Examples of `[num]24px` icon:
 
 ```jsx
+// Number
 <Icon icon={homeIcon} height={24} />
 // String without units
 <Icon icon={homeIcon} height="24" />

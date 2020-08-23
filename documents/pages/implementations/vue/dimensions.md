@@ -1,18 +1,23 @@
 ```yaml
-title: Changing Icon Dimensions in Iconify for Svelte
+title: Changing Icon Dimensions in Iconify for Vue
+replacements:
+  - code: '@iconify/vue@2'
+    value: '${vue.import-vue3}'
 ```
 
 # Icon dimensions
 
-This tutorial is part of [Iconify for Svelte tutorial](./index.md).
+This tutorial is part of [Iconify for Vue tutorial](./index.md).
 
 By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio.
 
 This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet or in style, just like icon fonts:
 
 ```yaml
-src: implementations/common/size.svelte
-title: 'Svelte:'
+src: implementations/common/size.vue
+title: 'JSX:'
+css: components/size.scss
+cssTitle: 'Stylesheet:'
 demo: true
 demoTitle: 'Demo:'
 class: components-size
@@ -24,15 +29,15 @@ Size can be a `[type]string` with or without units or a `[type]number`. If value
 
 Examples of `[num]24px` icon:
 
-```jsx
-// Number
-<Icon icon={homeIcon} height={24} />
-// String without units
-<Icon icon={homeIcon} height="24" />
-// String with units
-<Icon icon={homeIcon} height="24px" />
-// String with units, font-size is 16px
-<Icon icon={homeIcon} height="1.5em" />
+```vue
+<!-- Number -->
+<Icon :icon="icons.home" :height="24" />
+<!-- String without units -->
+<Icon :icon="icons.home" height="24" />
+<!-- String with units -->
+<Icon :icon="icons.home" height="24px" />
+<!-- String with units, font-size is 16px -->
+<Icon :icon="icons.home" height="1.5em" />
 ```
 
 ## Keyword "auto" {#auto}
@@ -43,8 +48,8 @@ It is enough to set one dimension to `[str]auto`, other dimension will be set to
 
 For example, if `[attr]viewBox="0 0 24 24"` and `[prop]height` is set to `[str]auto`, `[prop]height` will be set to `[num]24`.
 
-```jsx
-<Icon icon={homeIcon} height="auto" />
+```vue
+<Icon :icon="icons.home" height="auto" />
 ```
 
 ## Setting only width or height
@@ -62,7 +67,7 @@ In an example above, all icons only use `[prop]height`.
 `include implementations/align-header`
 
 ```yaml
-src: implementations/common/alignment.jsx
+src: implementations/common/alignment.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -77,13 +82,13 @@ Instead of adding space around icon to fit it in bounding box, browser can also 
 To cut parts of icon, add `[attr]align="slice"` to icon or set `[attr]slice` to `[bool]true`:
 
 ```yaml
-src: implementations/common/alignment-slice.jsx
+src: implementations/common/alignment-slice.vue
 hint: Using "align" attribute
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 extra:
-  - src: implementations/common/alignment-slice-alt.jsx
+  - src: implementations/common/alignment-slice-alt.vue
     hint: Using "slice" attribute
 ```
 
@@ -96,7 +101,7 @@ When...
 
 ...you can align icon horizontally.
 
-To align icon, you can add one of these 3 values to `[attr]align` or `[attr]hAlign` attribute:
+To align icon, you can add one of these 3 values to `[attr]align` or `[attr]horizontalAlign` attribute:
 
 - `[str]left`
 - `[str]center` (default)
@@ -105,7 +110,7 @@ To align icon, you can add one of these 3 values to `[attr]align` or `[attr]hAli
 Examples of aligning wide icon with slice disabled:
 
 ```yaml
-src: implementations/common/alignment-horizontal.jsx
+src: implementations/common/alignment-horizontal.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -114,7 +119,7 @@ class: highlight-box
 Examples of aligning tall icon with slice enabled:
 
 ```yaml
-src: implementations/common/alignment-horizontal-slice.jsx
+src: implementations/common/alignment-horizontal-slice.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -129,7 +134,7 @@ When...
 
 ...you can align icon vertically.
 
-To align icon, you can add one of these 3 values to `[attr]align` or `[attr]vAlign` attribute:
+To align icon, you can add one of these 3 values to `[attr]align` or `[attr]verticalAlign` attribute:
 
 - `[str]top`
 - `[str]middle` (default)
@@ -138,7 +143,7 @@ To align icon, you can add one of these 3 values to `[attr]align` or `[attr]vAli
 Examples of aligning tall icon with slice disabled:
 
 ```yaml
-src: implementations/common/alignment-vertical.jsx
+src: implementations/common/alignment-vertical.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -147,7 +152,7 @@ class: highlight-box
 Examples of aligning wide icon with slice enabled:
 
 ```yaml
-src: implementations/common/alignment-vertical-slice.jsx
+src: implementations/common/alignment-vertical-slice.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
@@ -160,8 +165,14 @@ You can add both horizontal and vertical alignment to icon.
 One of alignments will have no effect. For example, if icon is too tall, horizontal alignment is ignored because icon is already aligned to both left and right sides.
 
 ```yaml
-src: implementations/common/alignment-both.jsx
+src: implementations/common/alignment-both.vue
 demo: true
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
+
+## Property names
+
+In other components, properties for alignment are `[attr]hAlign` and `[attr]vAlign`. Vue has special treatment for properties that start with `[attr]v-`, so `[attr]vAlign` (same applies to `[attr]vFlip` attribute) attribute is not available without using tricky syntax.
+
+Because of that, Vue component uses longer property names: `[attr]verticalAlign` instead of `[attr]vAlign` and `[attr]horizontalAlign` instead of `[attr]hAlign` for consistency.
