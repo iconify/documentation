@@ -1,6 +1,7 @@
 ```yaml
 title: Iconify in CSS
-wip: true
+standalone: true
+navigation: './index.md'
 ```
 
 # How to use Iconify in CSS

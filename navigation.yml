@@ -146,10 +146,6 @@
                 ./dimensions.html: Icon Dimensions
                 ./transform.html: Transformations
                 ./inline.html: Inline Icons
-            ./css.html:
-              title: Iconify in CSS
-              wip: true
-              hidden: true
 /design/:
   title: For Designers
   children:
