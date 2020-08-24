@@ -11,14 +11,14 @@ export function inlineDemo() {
 		<div>
 			<p>
 				Block:
-				<Icon icon={homeIcon} inline={false} />
-				<Icon icon={birdIcon} inline={false} />
-				<InlineIcon icon={sceneryIcon} />
+				<InlineIcon icon={homeIcon} inline={false} />
+				<InlineIcon icon={birdIcon} style={{ verticalAlign: 0 }} />
+				<Icon icon={sceneryIcon} />
 			</p>
 			<p>
 				Inline:
 				<Icon icon={homeIcon} inline={true} />
-				<Icon icon={birdIcon} inline={true} />
+				<Icon icon={birdIcon} style={{ verticalAlign: '-0.125em' }} />
 				<InlineIcon icon={sceneryIcon} />
 			</p>
 		</div>

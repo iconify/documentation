@@ -10,12 +10,17 @@ export function inlineDemo() {
 		<div>
 			<p>
 				Block:
-				<Icon icon={imageTwotone} />
+				{/* 
+				Adding class to first icon to trigger animations used by line-md icon set.
+				SVG framework automatically adds classes based on icon prefix,
+				but components do not because they handle raw icon data. 
+				*/}
+				<Icon icon={imageTwotone} className="iconify--line-md" />
 				<Icon icon={accountBoxOutline} />
 			</p>
 			<p>
 				Inline:
-				<InlineIcon icon={imageTwotone} />
+				<InlineIcon icon={imageTwotone} className="iconify--line-md" />
 				<InlineIcon icon={accountBoxOutline} />
 			</p>
 		</div>

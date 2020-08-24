@@ -2,21 +2,21 @@
 	<div>
 		<p>
 			Block:
-			<Icon :icon="icons.home" :inline="false" />
-			<Icon :icon="icons.bird" :inline="false" />
-			<InlineIcon :icon="icons.scenery" />
+			<InlineIcon :icon="icons.home" :inline="false" />
+			<InlineIcon :icon="icons.bird" style="vertical-align: 0" />
+			<Icon :icon="icons.scenery" />
 		</p>
 		<p>
 			Inline:
 			<Icon :icon="icons.home" :inline="true" />
-			<Icon :icon="icons.bird" :inline="true" />
+			<Icon :icon="icons.bird" :style="{verticalAlign: '-0.125em'}" />
 			<InlineIcon :icon="icons.scenery" />
 		</p>
 	</div>
 </template>
 
 <script>
-// npm install --save-dev @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim
+// npm install --save-dev @iconify/vue@2 @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim
 import { Icon, InlineIcon } from '@iconify/vue';
 import homeIcon from '@iconify-icons/mdi/home';
 import birdIcon from '@iconify-icons/emojione-v1/bird';

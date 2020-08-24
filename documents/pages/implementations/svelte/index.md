@@ -41,11 +41,16 @@ Iconify for Svelte is a basic component. It works offline and does not have any 
 Install `[npm]@iconify/svelte` and packages for selected icon sets. Import component from `[npm]@iconify/svelte` and icon data for icon you want to use:
 
 ```js
+// Import component
 import IconifyIcon from '@iconify/svelte';
+
+// Import icon data
+// You can import icon with any name instead of 'home'
+// because exports are not named
 import home from '@iconify-icons/mdi-light/home';
 ```
 
-Then use `[var]IconifyIcon` component with icon data as `[prop]icon` parameter:
+Then use `[var]IconifyIcon` component with imported icon's data as `[prop]icon` parameter:
 
 ```jsx
 <IconifyIcon icon={home} />
@@ -77,9 +82,9 @@ In Svelte it is not possible to pass events to child components, so component do
 
 Examples:
 
-- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/home`.
-- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/arrow-left-circle`.
-- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle`.
+- `[icon]mdi-light:login` from [Material Design Light Icons](https://iconify.design/icon-sets/mdi-light/) can be imported from `[npm]@iconify-icons/mdi-light/login`.
+- `[icon]ri:login-circle-fill` from [Remix Icons](https://iconify.design/icon-sets/ri/) can be imported from `[npm]@iconify-icons/ri/login-circle-fill`.
+- `[icon]tabler:barcode` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/barcode`.
 
 ...and so on.
 

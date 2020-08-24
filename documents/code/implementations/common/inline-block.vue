@@ -2,12 +2,17 @@
 	<div>
 		<p>
 			Block:
-			<Icon :icon="icons.image" />
+			<!-- 
+				Adding class to first icon to trigger animations used by line-md icon set.
+				SVG framework automatically adds classes based on icon prefix,
+				but components do not because they handle raw icon data.
+			-->
+			<Icon :icon="icons.image" class="iconify--line-md" />
 			<Icon :icon="icons.account" />
 		</p>
 		<p>
 			Inline:
-			<InlineIcon :icon="icons.image" />
+			<InlineIcon :icon="icons.image" class="iconify--line-md" />
 			<InlineIcon :icon="icons.account" />
 		</p>
 	</div>

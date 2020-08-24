@@ -125,12 +125,6 @@
                 ./enable-cache.html: enableCache()
                 ./disable-cache.html: disableCache()
                 # Internal
-            ../svelte/:
-              title: Svelte
-              children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
             ../vue/:
               title: Vue 3
               children:
@@ -140,16 +134,22 @@
                 ./inline.html: Inline Icons
             ../vue2/:
               title: Vue 2
+              children:
+                ./color.html: Icon Color
+                ./dimensions.html: Icon Dimensions
+                ./transform.html: Transformations
+                ./inline.html: Inline Icons
+            ../svelte/:
+              title: Svelte
+              children:
+                ./color.html: Icon Color
+                ./dimensions.html: Icon Dimensions
+                ./transform.html: Transformations
+                ./inline.html: Inline Icons
+            ./css.html:
+              title: Iconify in CSS
               wip: true
-              # children:
-              #   ./color.html: Icon Color
-              #   ./dimensions.html: Icon Dimensions
-              #   ./transform.html: Transformations
-              #   ./inline.html: Inline Icons
-        ./css.html:
-          title: Iconify in CSS
-          wip: true
-          hidden: true
+              hidden: true
 /design/:
   title: For Designers
   children:

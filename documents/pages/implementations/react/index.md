@@ -32,7 +32,12 @@ What is the difference?
 Iconify for React is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.
 
 ```js
+// Import component
 import { Icon } from '@iconify/react';
+
+// Import icon data
+// You can import icon with any name instead of 'home'
+// because exports are not named
 import home from '@iconify-icons/mdi-light/home';
 ```
 
@@ -129,8 +134,8 @@ In addition to the properties mentioned above, the icon component accepts any ot
 
 Examples:
 
-- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/home`.
-- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/arrow-left-circle`.
+- `[icon]mdi:login-variant` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/login-variant`.
+- `[icon]bi:chat-quote` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/chat-quote`.
 - `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle`.
 
 ...and so on.

@@ -85,7 +85,7 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="../react-with-api/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> React with API</a>
+<a href="../vue2/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Vue 2</a>
 <a href="./color.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Icon Color</a>
 </div>
 <h1>Iconify for Svelte</h1>
@@ -101,9 +101,14 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify for Svelte is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.</p><p>Install <span class="hljs-inline-package hljs-linkable">@iconify/svelte</span> and packages for selected icon sets. Import component from <span class="hljs-inline-package hljs-linkable">@iconify/svelte</span> and icon data for icon you want to use:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7CmltcG9ydCBob21lIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify for Svelte is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.</p><p>Install <span class="hljs-inline-package hljs-linkable">@iconify/svelte</span> and packages for selected icon sets. Import component from <span class="hljs-inline-package hljs-linkable">@iconify/svelte</span> and icon data for icon you want to use:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0IGNvbXBvbmVudAppbXBvcnQgSWNvbmlmeUljb24gZnJvbSAnQGljb25pZnkvc3ZlbHRlJzsKCi8vIEltcG9ydCBpY29uIGRhdGEKLy8gWW91IGNhbiBpbXBvcnQgaWNvbiB3aXRoIGFueSBuYW1lIGluc3RlYWQgb2YgJ2hvbWUnCi8vIGJlY2F1c2UgZXhwb3J0cyBhcmUgbm90IG5hbWVkCmltcG9ydCBob21lIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsK"><code class="highlight hljs"><span class="hljs-comment">// Import component</span><br>
+<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon data</span><br>
+<span class="hljs-comment">// You can import icon with any name instead of &apos;home&apos;</span><br>
+<span class="hljs-comment">// because exports are not named</span><br>
 <span class="hljs-keyword">import</span> home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
-</code></div></div></div><p>Then use <span class="hljs-inline-var">IconifyIcon</span> component with icon data as <span class="hljs-inline-prop">icon</span> parameter:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb25pZnlJY29uIGljb249e2hvbWV9IC8+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{home}</span> /&gt;</span></span></code></div></div></div></section>
+</code></div></div></div><p>Then use <span class="hljs-inline-var">IconifyIcon</span> component with imported icon&apos;s data as <span class="hljs-inline-prop">icon</span> parameter:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb25pZnlJY29uIGljb249e2hvbWV9IC8+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{home}</span> /&gt;</span></span></code></div></div></div></section>
 
 
 
@@ -134,9 +139,9 @@
 
 
 <section class="content-section content-section--2"><H1 id="icon" class="heading--2">Icon <a href="#icon" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is a basic component, it cannot retrieve icon data from Iconify API. That means you need to provide icon data yourself.</p><p>All icons available with Iconify components and Iconify SVG framework can be imported from NPM packages.</p><p>Each icon set has its own package that you need to install. Package names start with <span class="hljs-inline-package hljs-linkable">@iconify-icons/</span>, followed by icon set prefix.</p><p>Each icon is stored in a separate file, so only icons you import are bundled. To import an icon, combine package name and icon name in import statement.</p><p>Examples:</p><ul>
-<li><span class="hljs-inline-icon">mdi:home</span> from <a href="https://iconify.design/icon-sets/mdi/" target="_blank">Material Design Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi/home</span>.</li>
-<li><span class="hljs-inline-icon">bi:arrow-left-circle</span> from <a href="https://iconify.design/icon-sets/bi/" target="_blank">Bootstrap Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi/arrow-left-circle</span>.</li>
-<li><span class="hljs-inline-icon">tabler:info-circle</span> from <a href="https://iconify.design/icon-sets/tabler/" target="_blank">Tabler Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/tabler/info-circle</span>.</li>
+<li><span class="hljs-inline-icon">mdi-light:login</span> from <a href="https://iconify.design/icon-sets/mdi-light/" target="_blank">Material Design Light Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi-light/login</span>.</li>
+<li><span class="hljs-inline-icon">ri:login-circle-fill</span> from <a href="https://iconify.design/icon-sets/ri/" target="_blank">Remix Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/ri/login-circle-fill</span>.</li>
+<li><span class="hljs-inline-icon">tabler:barcode</span> from <a href="https://iconify.design/icon-sets/tabler/" target="_blank">Tabler Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/tabler/barcode</span>.</li>
 </ul><p>...and so on.</p><p>Variable name in import statement is irrelevant because all exports are default exports.</p><section class="content-section content-section--3"><H1 id="commonjs" class="heading--3">CommonJS icon modules <a href="#commonjs" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icons in icon packages are ES modules.</p><p>Sometimes you might need CommonJS module, for example, when importing icon data in Node.js.</p><p>There are alternative icon packages that use CommonJS modules: <span class="hljs-inline-package hljs-linkable">@iconify/icons-*</span>. Icons are identical, the only difference is export method. To swap from ES package to CommonJS package, use &quot;<span class="hljs-string">@iconify/icons-</span>&quot; before icon set prefix in package name instead of &quot;<span class="hljs-string">@iconify-icons/</span>&quot;.</p><p>For example, Material Design Icons are available as <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi</span> with ES exports, as <span class="hljs-inline-package hljs-linkable">@iconify/icons-mdi</span> with CommonJS exports.</p></section></section>
 
 
@@ -185,12 +190,13 @@
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../components/">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react/">React</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api/">React with API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2/">Vue 2</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Svelte<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./color.html">Icon Color</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./inline.html">Inline Icons</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

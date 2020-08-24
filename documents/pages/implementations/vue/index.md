@@ -53,22 +53,30 @@ Then use `[var]Icon` component with icon data as `[prop]icon` parameter:
 
 ```vue
 <template>
+	<!-- icon points to variable returned by "data()" method -->
 	<Icon :icon="icons.home" />
 </template>
 
 <script>
+// Import component
 import { Icon } from '@iconify/vue';
-import home from '@iconify-icons/mdi-light/home';
+
+// Import icon data.
+// You can import icon with any name instead of 'homeIcon'
+// because exports are not named
+import homeIcon from '@iconify-icons/mdi-light/home';
 
 export default {
 	components: {
+		// Add Icon to list of used components
 		Icon,
 	},
 	data() {
 		return {
 			// Returns icons data that can be used in template
 			icons: {
-				home: home,
+				// Assign homeIcon to icons.home
+				home: homeIcon,
 			},
 		};
 	},
@@ -86,11 +94,17 @@ As a bonus, with this method the icon needs to be added only once. That means if
 
 ```vue
 <template>
+	<!-- icon value is the same as first parameter in addIcon() -->
 	<Icon icon="home" />
 </template>
 
 <script>
+// Import component and addIcon function
 import { Icon, addIcon } from '@iconify/vue';
+
+// Import icon data.
+// You can import icon with any name instead of 'homeIconData'
+// because exports are not named
 import homeIconData from '@iconify-icons/mdi-light/home';
 
 // Assign name 'home' to icon
@@ -98,6 +112,7 @@ addIcon('home', homeIconData);
 
 export default {
 	components: {
+		// Add Icon to list of used components
 		Icon,
 	},
 };
@@ -124,9 +139,9 @@ In addition to the properties mentioned above, the icon component accepts any ot
 
 Examples:
 
-- `[icon]mdi:home` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/home`.
-- `[icon]bi:arrow-left-circle` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/arrow-left-circle`.
-- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle`.
+- `[icon]mdi:image-edit` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/image-edit`.
+- `[icon]la:envelope-open` from [Line Awesome](https://iconify.design/icon-sets/la/) can be imported from `[npm]@iconify-icons/la/envelope-open`.
+- `[icon]tabler:shield-check` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/shield-check`.
 
 ...and so on.
 
@@ -135,6 +150,14 @@ Variable name in import statement is irrelevant because all exports are default 
 ### CommonJS icon modules {#commonjs}
 
 `include implementations/icon-packages-exports`
+
+## Inline icon
+
+There are two components in Iconify for Vue: `[var]Icon` and `[var]InlineIcon`.
+
+They are identical, except for one thing: `[var]InlineIcon` adds `[prop]vertical-align` style to `[tag]svg`. This makes icon behave like an icon font.
+
+See [inline icons tutorial](./inline.md) for details.
 
 ## Color
 

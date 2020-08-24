@@ -86,18 +86,9 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="../vue/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Vue 3</a>
-<a href="../../design/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> For Designers</a>
+<a href="./color.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Icon Color</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Iconify for Vue</h1>
+<h1>Iconify for Vue</h1>
 <p>In addition to <a href="../svg-framework/">SVG framework</a>, Iconify offers native components for several popular UI frameworks. Iconify for Vue is one of such components.</p>
 <p>Yet another icon component? What are advantages over other icon components?</p>
 <ul>
@@ -119,35 +110,134 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify for Vue is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.</p><p>Install <span class="hljs-inline-package hljs-linkable">@iconify/vue</span> and packages for selected icon sets. Import component from <span class="hljs-inline-package hljs-linkable">@iconify/vue</span> and icon data for icon you want to use:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CmltcG9ydCBob21lIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
-</code></div></div></div><p>Then use <span class="hljs-inline-var">IconifyIcon</span> component with icon data as <span class="hljs-inline-prop">icon</span> parameter:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPEljb25pZnlJY29uIDppY29uPSJpY29ucy5ob21lIiAvPgo8L3RlbXBsYXRlPgoKPHNjcmlwdD4KaW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CmltcG9ydCBob21lIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsKCmV4cG9ydCBkZWZhdWx0IHsKCWNvbXBvbmVudHM6IHsKCQlJY29uaWZ5SWNvbiwKCX0sCglkYXRhKCkgewoJCXJldHVybiB7CgkJCS8vIFJldHVybnMgaWNvbnMgZGF0YSB0aGF0IGNhbiBiZSB1c2VkIGluIHRlbXBsYXRlCgkJCWljb25zOiB7CgkJCQlob21lOiBob21lLAoJCQl9LAoJCX07Cgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.home&quot;</span> /&gt;</span><br>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify for Vue is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.</p><p>Install <span class="hljs-inline-package hljs-linkable">@iconify/vue</span> and packages for selected icon sets. Import component from <span class="hljs-inline-package hljs-linkable">@iconify/vue</span> and icon data for icon you want to use:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0IGNvbXBvbmVudAppbXBvcnQgSWNvbmlmeUljb24gZnJvbSAnQGljb25pZnkvdnVlJzsKCi8vIEltcG9ydCBpY29uIGRhdGEuCi8vIFlvdSBjYW4gaW1wb3J0IGljb24gd2l0aCBhbnkgbmFtZSBpbnN0ZWFkIG9mICdob21lSWNvbicKLy8gYmVjYXVzZSBleHBvcnRzIGFyZSBub3QgbmFtZWQKaW1wb3J0IGhvbWVJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsK"><code class="highlight hljs"><span class="hljs-comment">// Import component</span><br>
+<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon data.</span><br>
+<span class="hljs-comment">// You can import icon with any name instead of &apos;homeIcon&apos;</span><br>
+<span class="hljs-comment">// because exports are not named</span><br>
+<span class="hljs-keyword">import</span> homeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
+</code></div></div></div><p>Then use <span class="hljs-inline-var">IconifyIcon</span> component with icon data as <span class="hljs-inline-prop">icon</span> parameter:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPEljb25pZnlJY29uIDppY29uPSJpY29ucy5ob21lSWNvbiIgLz4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIEltcG9ydCBjb21wb25lbnQKaW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CgovLyBJbXBvcnQgaWNvbiBkYXRhLgovLyBZb3UgY2FuIGltcG9ydCBpY29uIHdpdGggYW55IG5hbWUgaW5zdGVhZCBvZiAnaG9tZUljb24nCi8vIGJlY2F1c2UgZXhwb3J0cyBhcmUgbm90IG5hbWVkCmltcG9ydCBob21lSWNvbiBmcm9tICdAaWNvbmlmeS1pY29ucy9tZGktbGlnaHQvaG9tZSc7CgpleHBvcnQgZGVmYXVsdCB7Cgljb21wb25lbnRzOiB7CgkJLy8gQWRkIEljb25pZnlJY29uIHRvIGxpc3Qgb2YgdXNlZCBjb21wb25lbnRzCgkJSWNvbmlmeUljb24sCgl9LAoJZGF0YSgpIHsKCQlyZXR1cm4gewoJCQkvLyBSZXR1cm5zIGljb25zIGRhdGEgdGhhdCBjYW4gYmUgdXNlZCBpbiB0ZW1wbGF0ZQoJCQlpY29uczogewoJCQkJLy8gQXNzaWduIGhvbWVJY29uIHRvIGljb25zLmhvbWUKCQkJCWhvbWU6IGhvbWVJY29uLAoJCQl9LAoJCX07Cgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.homeIcon&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-comment">// Import component</span><br>
 <span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon data.</span><br>
+<span class="hljs-comment">// You can import icon with any name instead of &apos;homeIcon&apos;</span><br>
+<span class="hljs-comment">// because exports are not named</span><br>
+<span class="hljs-keyword">import</span> homeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Add IconifyIcon to list of used components</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
  &#xA0; &#xA0;},<br>
  &#xA0; &#xA0;data() {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Returns icons data that can be used in template</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: home,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Assign homeIcon to icons.home</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: homeIcon,<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;};<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
-</span></code></div></div></div></section>
+</span></code></div></div></div><section class="content-section content-section--3"><H1 id="string-syntax" class="heading--3">String syntax <a href="#string-syntax" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Using icon data in Vue requires creating <span class="hljs-function">data()</span> method in your component.</p><p>However, there is an easier way: assigning a name to icon and calling icon by name.</p><p>As a bonus, with this method the icon needs to be added only once. That means if you have multiple components using <span class="hljs-inline-icon">home</span> icon, you can add it only in your main component. This makes it easy to swap icons for an entire application.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPCEtLSBpY29uIHZhbHVlIGlzIHRoZSBzYW1lIGFzIGZpcnN0IHBhcmFtZXRlciBpbiBhZGRJY29uKCkgLS0+Cgk8SWNvbmlmeUljb24gaWNvbj0iaG9tZSIgLz4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIEltcG9ydCBjb21wb25lbnQKaW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CgovLyBJbXBvcnQgaWNvbiBkYXRhLgovLyBZb3UgY2FuIGltcG9ydCBpY29uIHdpdGggYW55IG5hbWUgaW5zdGVhZCBvZiAnaG9tZUljb25EYXRhJwovLyBiZWNhdXNlIGV4cG9ydHMgYXJlIG5vdCBuYW1lZAppbXBvcnQgaG9tZUljb25EYXRhIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsKCi8vIEFzc2lnbiBuYW1lICdob21lJyB0byBpY29uCkljb25pZnlJY29uLmFkZEljb24oJ2hvbWUnLCBob21lSWNvbkRhdGEpOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCS8vIEFkZCBJY29uaWZ5SWNvbiB0byBsaXN0IG9mIHVzZWQgY29tcG9uZW50cwoJCUljb25pZnlJY29uLAoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;</span><span class="hljs-comment">&lt;!-- icon value is the same as first parameter in addIcon() --&gt;</span><span class="xml"><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;home&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
+<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-comment">// Import component</span><br>
+<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon data.</span><br>
+<span class="hljs-comment">// You can import icon with any name instead of &apos;homeIconData&apos;</span><br>
+<span class="hljs-comment">// because exports are not named</span><br>
+<span class="hljs-keyword">import</span> homeIconData <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Assign name &apos;home&apos; to icon</span><br>
+IconifyIcon.addIcon(<span class="hljs-string">&apos;home&apos;</span>, homeIconData);<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Add IconifyIcon to list of used components</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</span></code></div></div></div></section></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="properties" class="heading--2">Properties <a href="#properties" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="properties" class="heading--2">Properties <a href="#properties" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can pass any custom properties to component.</p><p>Required properties:</p><ul>
+<li><span class="hljs-inline-prop">icon</span>, <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a> | <span class="hljs-inline-type hljs-linkable">string</span></span> icon data.</li>
+</ul><p>Optional properties:</p><ul>
+<li><span class="hljs-inline-prop">inline</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> toggles inline or block mode.</li>
+<li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">number</span></span> icon width.</li>
+<li><span class="hljs-inline-prop">height</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">number</span></span> icon height.</li>
+<li><span class="hljs-inline-prop">horizontalFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> flips icon horizontally.</li>
+<li><span class="hljs-inline-prop">verticalFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> flips icon vertically.</li>
+<li><span class="hljs-inline-prop">flip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> alternative to <span class="hljs-inline-prop">horizontalFlip</span> and <span class="hljs-inline-prop">verticalFlip</span>.</li>
+<li><span class="hljs-inline-prop">rotate</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span> | <span class="hljs-inline-type hljs-linkable">string</span></span> rotates icon.</li>
+<li><span class="hljs-inline-prop">color</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> changes icon color.</li>
+<li><span class="hljs-inline-prop">horizontalAlign</span> horizontally aligns content inside icon.</li>
+<li><span class="hljs-inline-prop">verticalAlign</span> vertically aligns content inside icon.</li>
+<li><span class="hljs-inline-prop">slice</span> alignment behaviour: &quot;<span class="hljs-string">meet</span>&quot; or &quot;<span class="hljs-string">slice</span>&quot;.</li>
+<li><span class="hljs-inline-prop">align</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> aligns content inside icon, alternative to <span class="hljs-inline-prop">horizontalAlign</span>, <span class="hljs-inline-prop">verticalAlign</span> and <span class="hljs-inline-prop">slice</span>.</li>
+</ul><p>See below for more information on each optional property.</p><p>In addition to the properties mentioned above, the icon component accepts any other properties and events. All other properties and events will be passed to generated SVG element, so you can do stuff like setting the inline style, add title, add <span class="hljs-inline-prop">onClick</span> event and so on.</p></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="icon" class="heading--2">Icon <a href="#icon" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is a basic component, it cannot retrieve icon data from Iconify API. That means you need to provide icon data yourself.</p><p>All icons available with Iconify components and Iconify SVG framework can be imported from NPM packages.</p><p>Each icon set has its own package that you need to install. Package names start with <span class="hljs-inline-package hljs-linkable">@iconify-icons/</span>, followed by icon set prefix.</p><p>Each icon is stored in a separate file, so only icons you import are bundled. To import an icon, combine package name and icon name in import statement.</p><p>Examples:</p><ul>
+<li><span class="hljs-inline-icon">mdi-light:logout</span> from <a href="https://iconify.design/icon-sets/mdi-light/" target="_blank">Material Design Light Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi-light/logout</span>.</li>
+<li><span class="hljs-inline-icon">uim:comment-dots</span> from <a href="https://iconify.design/icon-sets/uim/" target="_blank">Unicons Monochrome</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/uim/comment-dots</span>.</li>
+<li><span class="hljs-inline-icon">eva:info-outline</span> from <a href="https://iconify.design/icon-sets/tabler/" target="_blank">Eva Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/eva/info-outline</span>.</li>
+</ul><p>...and so on.</p><p>Variable name in import statement is irrelevant because all exports are default exports.</p><section class="content-section content-section--3"><H1 id="commonjs" class="heading--3">CommonJS icon modules <a href="#commonjs" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icons in icon packages are ES modules.</p><p>Sometimes you might need CommonJS module, for example, when importing icon data in Node.js.</p><p>There are alternative icon packages that use CommonJS modules: <span class="hljs-inline-package hljs-linkable">@iconify/icons-*</span>. Icons are identical, the only difference is export method. To swap from ES package to CommonJS package, use &quot;<span class="hljs-string">@iconify/icons-</span>&quot; before icon set prefix in package name instead of &quot;<span class="hljs-string">@iconify-icons/</span>&quot;.</p><p>For example, Material Design Icons are available as <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi</span> with ES exports, as <span class="hljs-inline-package hljs-linkable">@iconify/icons-mdi</span> with CommonJS exports.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="color" class="heading--2">Color <a href="#color" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.</p><p>To add color to a monotone icon simply change text color.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb25pZnlJY29uIGljb249ImhvbWUiIHN0eWxlPSJjb2xvcjogcmVkIiAvPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;home&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red&quot;</span> /&gt;</span><br>
+</span></code></div></div></div><p>For various ways to set color, see <a href="./color.html">how to change icon color in Iconify for Vue</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="dimensions-and-alignment" class="heading--2">Dimensions and alignment <a href="#dimensions-and-alignment" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, icon height is set to &quot;<span class="hljs-string">1em</span>&quot;, icon width is changed dynamically based on the icon&apos;s width to height ratio. This makes it easy to change icon size by changing <span class="hljs-inline-prop">font-size</span> in the stylesheet, just like icon fonts.</p><p>There are several ways to change icon dimensions:</p><ul>
+<li>Setting <span class="hljs-inline-prop">font-size</span> in style.</li>
+<li>Setting <span class="hljs-inline-prop">width</span> and/or <span class="hljs-inline-prop">height</span> property.</li>
+</ul><p>Values for <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> can be numbers or strings.</p><p>If you set only one dimension, another dimension will be calculated using the icon&apos;s width to height ratio. For example, if the icon size is 16 x 24, you set the height to 48, the width will be set to 32. Calculations work not only with numbers, but also with string values.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb25pZnlJY29uIGljb249ImhvbWUiIHN0eWxlPSJmb250LXNpemU6IDI0cHg7IiAvPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;home&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 24px;&quot;</span> /&gt;</span><br>
+</span></code></div></div></div><p>For various ways to change icon dimensions and alignment, see <a href="./dimensions.html">how to change icon dimensions in Iconify for Vue</a>.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="transformations" class="heading--2">Transformations <a href="#transformations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.</p><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>For more details see <a href="./transform.html">how to transform icon in Iconify for Vue</a>.</p></section>
+
+
 
 
 				</article>
@@ -165,9 +255,13 @@
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../components/">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react/">React</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api/">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Vue 2<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

@@ -94,7 +94,7 @@
 <p>Inline icons are aligned slightly below baseline, so they look centred compared to text, like glyph fonts.</p>
 <p>Block icons do not have alignment, like images, which aligns them to baseline by default.</p>
 <p>Alignment option was added to make icons look like continuation of text, behaving like glyph fonts. This should make migration from glyph fonts easier.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJPEljb24gaWNvbj0ibGluZS1tZDppbWFnZS10d290b25lIiAvPgoJCQkJPEljb24gaWNvbj0ibWRpOmFjY291bnQtYm94LW91dGxpbmUiIC8+CgkJCTwvcD4KCQkJPHA+CgkJCQlJbmxpbmU6CgkJCQk8SW5saW5lSWNvbiBpY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiIC8+CgkJCQk8SW5saW5lSWNvbiBpY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSIgLz4KCQkJPC9wPgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJey8qIAoJCQkJQWRkaW5nIGNsYXNzIHRvIGZpcnN0IGljb24gdG8gdHJpZ2dlciBhbmltYXRpb25zIHVzZWQgYnkgbGluZS1tZCBpY29uIHNldC4KCQkJCVNWRyBmcmFtZXdvcmsgYXV0b21hdGljYWxseSBhZGRzIGNsYXNzZXMgYmFzZWQgb24gaWNvbiBwcmVmaXgsCgkJCQlidXQgY29tcG9uZW50cyBkbyBub3QgYmVjYXVzZSB0aGV5IGhhbmRsZSByYXcgaWNvbiBkYXRhLiAKCQkJCSovfQoJCQkJPEljb24gaWNvbj0ibGluZS1tZDppbWFnZS10d290b25lIiBjbGFzc05hbWU9Imljb25pZnktLWxpbmUtbWQiIC8+CgkJCQk8SWNvbiBpY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSIgLz4KCQkJPC9wPgoJCQk8cD4KCQkJCUlubGluZToKCQkJCTxJbmxpbmVJY29uIGljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIgY2xhc3NOYW1lPSJpY29uaWZ5LS1saW5lLW1kIiAvPgoJCQkJPElubGluZUljb24gaWNvbj0ibWRpOmFjY291bnQtYm94LW91dGxpbmUiIC8+CgkJCTwvcD4KCQk8L2Rpdj4KCSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
 <span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
@@ -102,12 +102,17 @@
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;{/* <br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Adding class to first icon to trigger animations used by line-md icon set.<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;SVG framework automatically adds classes based on icon prefix,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;but components do not because they handle raw icon data. <br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;*/}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconify--line-md&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconify--line-md&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
@@ -148,7 +153,7 @@
 <li>Swapping <span class="hljs-inline-var">Icon</span> component with <span class="hljs-inline-var">InlineIcon</span>.</li>
 <li>Adding <span class="hljs-inline-prop">inline</span> attribute.</li>
 <li>Adding <span class="hljs-inline-prop">vertical-align</span> style with value <span class="hljs-number">-0.125em</span>.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJPEljb24gaWNvbj0ibWRpOmhvbWUiIGlubGluZT17ZmFsc2V9IC8+CgkJCQk8SWNvbiBpY29uPSJlbW9qaW9uZS12MTpiaXJkIiBpbmxpbmU9e2ZhbHNlfSAvPgoJCQkJPElubGluZUljb24gaWNvbj0idWltOnNjZW5lcnkiIC8+CgkJCTwvcD4KCQkJPHA+CgkJCQlJbmxpbmU6CgkJCQk8SWNvbiBpY29uPSJtZGk6aG9tZSIgaW5saW5lPXt0cnVlfSAvPgoJCQkJPEljb24gaWNvbj0iZW1vamlvbmUtdjE6YmlyZCIgaW5saW5lPXt0cnVlfSAvPgoJCQkJPElubGluZUljb24gaWNvbj0idWltOnNjZW5lcnkiIC8+CgkJCTwvcD4KCQk8L2Rpdj4KCSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBpbmxpbmVEZW1vKCkgewoJcmV0dXJuICgKCQk8ZGl2PgoJCQk8cD4KCQkJCUJsb2NrOgoJCQkJPElubGluZUljb24gaWNvbj0ibWRpOmhvbWUiIGlubGluZT17ZmFsc2V9IC8+CgkJCQk8SW5saW5lSWNvbiBpY29uPSJlbW9qaW9uZS12MTpiaXJkIiBzdHlsZT17eyB2ZXJ0aWNhbEFsaWduOiAwIH19IC8+CgkJCQk8SWNvbiBpY29uPSJ1aW06c2NlbmVyeSIgLz4KCQkJPC9wPgoJCQk8cD4KCQkJCUlubGluZToKCQkJCTxJY29uIGljb249Im1kaTpob21lIiBpbmxpbmU9e3RydWV9IC8+CgkJCQk8SWNvbiBpY29uPSJlbW9qaW9uZS12MTpiaXJkIiBzdHlsZT17eyB2ZXJ0aWNhbEFsaWduOiAnLTAuMTI1ZW0nIH19IC8+CgkJCQk8SW5saW5lSWNvbiBpY29uPSJ1aW06c2NlbmVyeSIgLz4KCQkJPC9wPgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
 <span class="hljs-keyword">import</span> { Icon, InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineDemo</span>(<span class="hljs-params"></span>) </span>{<br>
@@ -156,14 +161,14 @@
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{false}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">verticalAlign:</span> <span class="hljs-attr">0</span> }} /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Inline:<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">verticalAlign:</span> &apos;<span class="hljs-attr">-0.125em</span>&apos; }} /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
@@ -172,13 +177,13 @@
 </code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
 	Block:
 	<span class="iconify" data-icon="mdi:home" data-inline="false"></span>
-	<i class="iconify" data-icon="emojione-v1:bird" data-inline="false"></i>
+	<i class="iconify" data-icon="emojione-v1:bird" style="vertical-align: 0;"></i>
 	<span class="iconify" data-icon="uim:scenery"></span>
 </p>
 <p>
 	Inline:
 	<span class="iconify" data-icon="mdi:home" data-inline="true"></span>
-	<i class="iconify" data-icon="emojione-v1:bird" data-inline="true"></i>
+	<i class="iconify" data-icon="emojione-v1:bird" style="vertical-align: -0.125em;"></i>
 	<span class="iconify-inline" data-icon="uim:scenery"></span>
 </p>
 </div></div></div></div></section>
@@ -214,9 +219,9 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./load-icons.html">loadIcons()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./enable-cache.html">enableCache()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./disable-cache.html">disableCache()</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
