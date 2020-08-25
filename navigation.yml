@@ -21,12 +21,8 @@
             ./api.html: Using Iconify API
             ./json-tools.html: Using JSON Tools
             ./svg-framework.html: SVG Framework
-            ./react.html:
-              title: Components (React)
-              wip: true
-            ./examples/:
-              title: Examples
-              wip: true
+            ./react.html: Components (React)
+            ./examples/: Examples
         ./npm/:
           title: Icon Components
           wip: true

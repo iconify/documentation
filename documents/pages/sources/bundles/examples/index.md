@@ -1,6 +1,5 @@
 ```yaml
 title: Icon Bundle Examples
-wip: true
 ```
 
 # Example of generating icon bundles
@@ -29,4 +28,15 @@ Examples for creating bundles for SVG Framework:
 
 Examples for creating bundles for React component:
 
-...TODO
+- [Basic bundle example](./react-simple.md) (Node.js and PHP).
+- [Bundling custom icons](./react-custom.md) (Node.js and PHP).
+- [Bundling custom icons using Iconify Tools](./react-custom-tools.md) (Node.js only).
+- [Advanced bundler example](./react-full.md) (Node.js only).
+
+## Code differences
+
+What's different in SVG framework and React bundle scripts?
+
+- Header. In bundle for a component code starts with import statement.
+- Function. In SVG framework code uses `[func]Iconify.addCollection()`, in component code uses imported `[func]addCollection()`.
+- Examples for SVG framework that use `[var]IconifyPreload` are not usable with components.

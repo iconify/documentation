@@ -1,5 +1,5 @@
 /**
- * This is an advanced example for creating icon bundles for Iconify SVG Framework.
+ * This is an advanced example for creating icon bundles for Iconify for React.
  * It creates a bundle from all SVG files in a directory.
  *
  * This example uses Iconify Tools to convert icons to Iconify JSON format.
@@ -10,13 +10,8 @@ const fs = require('fs');
 // Installation: npm install --save-dev @iconify/tools
 const tools = require('@iconify/tools');
 
-// True if bundle should use IconifyPreload.
-// False if bundle should use Iconify.addCollection.
-// See bundles for SVG framework for details.
-const preload = true;
-
 // File to save bundle to
-const target = __dirname + '/assets/icons-bundle.js';
+const target = __dirname + '/src/icons-bundle.js';
 
 // SVG files location
 const source = __dirname + '/svg';
@@ -76,9 +71,9 @@ const prefix = 'custom';
 
 	// Export to bundle
 	const text = JSON.stringify(json);
-	const output = preload
-		? 'IconifyPreload = [' + text + '];\n'
-		: 'Iconify.addCollection(' + text + ');\n';
+
+	let output = "import { addCollection } from '@iconify/react-with-api';\n\n";
+	output += 'addCollection(' + text + ');\n';
 
 	// Save to file
 	fs.writeFileSync(target, output, 'utf8');

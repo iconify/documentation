@@ -88,16 +88,7 @@
 <a href="./svg-framework.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> SVG Framework</a>
 <a href="./examples/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Examples</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Icon bundles for Iconify for React</h1>
+<h1>Icon bundles for Iconify for React</h1>
 <p>This tutorial is a part of <a href="./">Iconify icon bundles tutorial</a> and <a href="../../implementations/react-with-api/">Iconify for React with API documentation</a>.</p>
 <p>Icon bundles make it easy to:</p>
 <ul>
@@ -106,7 +97,39 @@
 </ul>
 <section class="content-section content-section--2"><H1 id="generating-data" class="heading--2">Generating data <a href="#generating-data" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you came here from <a href="../../implementations/react-with-api/">Iconify for React with API documentation</a>, you need to read <a href="./">icon bundles tutorial</a> first to understand what icon bundles are.</p></section>
 
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section>
+<section class="content-section content-section--2"><H1 id="difference" class="heading--2">Difference with SVG framework <a href="#difference" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Usage is almost identical to <a href="./svg-framework.html">using icon bundles in SVG framework</a> with one major difference: bundle requires importing React component.</p><p>That one difference completely changes how bundle behaves. While in SVG framework bundle can be in a separately included script, in React component bundle is similar to any other part of your application that uses React component. That is, it must be bundled with your application.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="bundle-example" class="heading--2">Bundle example <a href="#bundle-example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is an example of icon bundle:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCi8vIExvYWQgaWNvbnMKYWRkQ29sbGVjdGlvbih7CglwcmVmaXg6ICdtZGktbGlnaHQnLAoJaWNvbnM6IHsKCQlhY2NvdW50OiB7CgkJCWJvZHk6CgkJCQknPHBhdGggZD0iTTExLjUgMTRjNC4xNDIgMCA3LjUgMS41NjcgNy41IDMuNVYyMEg0di0yLjVjMC0xLjkzMyAzLjM1OC0zLjUgNy41LTMuNXptNi41IDMuNWMwLTEuMzgtMi45MS0yLjUtNi41LTIuNVM1IDE2LjEyIDUgMTcuNVYxOWgxM3YtMS41ek0xMS41IDVhMy41IDMuNSAwIDEgMSAwIDdhMy41IDMuNSAwIDAgMSAwLTd6bTAgMWEyLjUgMi41IDAgMSAwIDAgNWEyLjUgMi41IDAgMCAwIDAtNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQlob21lOiB7CgkJCWJvZHk6CgkJCQknPHBhdGggZD0iTTE2IDguNDE0bC00LjUtNC41TDQuNDE0IDExSDZ2OGgzdi02aDV2Nmgzdi04aDEuNTg2TDE3IDkuNDE0VjZoLTF2Mi40MTR6TTIgMTJsOS41LTkuNUwxNSA2VjVoM3Y0bDMgM2gtM3Y3Ljk5OGgtNXYtNmgtM3Y2SDVWMTJIMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { addCollection } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Load icons</span><br>
+addCollection({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi-light&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">account</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M11.5 14c4.142 0 7.5 1.567 7.5 3.5V20H4v-2.5c0-1.933 3.358-3.5 7.5-3.5zm6.5 3.5c0-1.38-2.91-2.5-6.5-2.5S5 16.12 5 17.5V19h13v-1.5zM11.5 5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7zm0 1a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M16 8.414l-4.5-4.5L4.414 11H6v8h3v-6h5v6h3v-8h1.586L17 9.414V6h-1v2.414zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v7.998h-5v-6h-3v6H5V12H2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div></div></div><p>You can add that code in any file that is bundled in your application, or you can create a new bundle file that you import somewhere in your application:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0ICcuL2J1bmRsZS5qcyc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./bundle.js&apos;</span>;<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="automation" class="heading--2">How to automate build process? <a href="#automation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Manually creating files with icon data is tedious. Good news, it is easy to automate.</p><p>You need to create a simple script that does the following:</p><ol>
+<li>Get icon data.</li>
+<li>Wrap it in a necessary code (import <span class="hljs-function">addCollection</span> from component, wrap data in <span class="hljs-function">addCollection</span> calls).</li>
+<li>Save it to a file, which is imported in your application.</li>
+</ol><p>See <a href="./examples/">examples</a> for scripts you can use.</p></section>
+
+
+
 
 
 				</article>

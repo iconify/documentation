@@ -1,28 +1,22 @@
 /**
- * This is an advanced example for creating icon bundles for Iconify SVG Framework.
+ * This is an advanced example for creating icon bundles for Iconify for React.
  *
  * It creates a bundle from:
  * - All SVG files in a directory.
  * - Custom JSON files.
  * - Iconify icon sets.
- * - Iconify.
  *
  * This example uses Iconify Tools to convert icons to Iconify JSON format.
  * For Iconify Tools documentation visit https://docs.iconify.design/tools/node/
  */
 const fs = require('fs');
 
-// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify@2
+// Installation: npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json
 const tools = require('@iconify/tools');
 const { Collection } = require('@iconify/json-tools');
 
 // Various sources. Comment out sources you do not want in a bundle
 const sources = {
-	// Source file for Iconify:
-	// Use '@iconify/iconify' for full version
-	// Use '@iconify/iconify/dist/iconify.without-api.min' for version without API
-	iconify: require.resolve('@iconify/iconify/dist/iconify.without-api.min'),
-
 	// Import custom SVG files
 	// Each entry is an object:
 	// dir: directory where files are
@@ -77,29 +71,13 @@ const sources = {
 };
 
 // File to save bundle to
-const target = __dirname + '/src/iconify-bundle.js';
+const target = __dirname + '/src/icons-bundle.js';
 
 /**
  * Do stuff!
  */
 (async function () {
-	let bundle = '';
-
-	/**
-	 * Bundle Iconify
-	 */
-	if (sources.iconify) {
-		bundle += fs.readFileSync(sources.iconify, 'utf8');
-
-		// Try to copy .d.ts
-		const tsSource = sources.iconify.replace('.js', '.d.ts');
-		try {
-			const tsContent = fs.readFileSync(tsSource);
-			fs.writeFileSync(target.replace('.js', '.d.ts'), tsContent);
-		} catch (err) {
-			//
-		}
-	}
+	let bundle = "import { addCollection } from '@iconify/react-with-api';\n\n";
 
 	/**
 	 * Bundle full JSON files
@@ -108,7 +86,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 		sources.json.forEach((file) => {
 			// Parse and stringify to minify file
 			const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-			bundle += 'Iconify.addCollection(' + JSON.stringify(data) + ');\n';
+			bundle += 'addCollection(' + JSON.stringify(data) + ');\n';
 		});
 	}
 
@@ -243,7 +221,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 
 			// Export to bundle
 			const text = JSON.stringify(json);
-			bundle += 'Iconify.addCollection(' + text + ');\n';
+			bundle += 'addCollection(' + text + ');\n';
 		}
 	}
 
@@ -263,7 +241,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 		// Get data for all icons as string
 		bundle += collection.scriptify({
 			icons,
-			callback: 'Iconify.addCollection',
+			callback: 'addCollection',
 			optimize: true,
 		});
 	}

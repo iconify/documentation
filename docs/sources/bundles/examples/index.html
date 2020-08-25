@@ -88,16 +88,7 @@
 <a href="../react.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Components (React)</a>
 <a href="../../npm/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Icon Components</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Example of generating icon bundles</h1>
+<h1>Example of generating icon bundles</h1>
 <p>This tutorial is a part of <a href="../">Iconify icon bundles tutorial</a>.</p>
 <p>Below are several examples of scripts that generate icon bundles. You can use code from these examples to create your own bundle script.</p>
 <p>All examples assume you either:</p>
@@ -114,7 +105,19 @@
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="react" class="heading--2">React <a href="#react" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Examples for creating bundles for React component:</p><p>...TODO</p></section>
+<section class="content-section content-section--2"><H1 id="react" class="heading--2">React <a href="#react" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Examples for creating bundles for React component:</p><ul>
+<li><a href="./react-simple.html">Basic bundle example</a> (Node.js and PHP).</li>
+<li><a href="./react-custom.html">Bundling custom icons</a> (Node.js and PHP).</li>
+<li><a href="./react-custom-tools.html">Bundling custom icons using Iconify Tools</a> (Node.js only).</li>
+<li><a href="./react-full.html">Advanced bundler example</a> (Node.js only).</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="code-differences" class="heading--2">Code differences <a href="#code-differences" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>What&apos;s different in SVG framework and React bundle scripts?</p><ul>
+<li>Header. In bundle for a component code starts with import statement.</li>
+<li>Function. In SVG framework code uses <span class="hljs-function">Iconify.addCollection()</span>, in component code uses imported <span class="hljs-function">addCollection()</span>.</li>
+<li>Examples for SVG framework that use <span class="hljs-inline-var">IconifyPreload</span> are not usable with components.</li>
+</ul></section>
 
 
 
