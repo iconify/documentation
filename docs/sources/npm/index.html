@@ -88,17 +88,72 @@
 <a href="../bundles/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Bundled Icons</a>
 <a href="../json/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Iconify Icon Sets</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Icon components</h1>
-<p>TODO...</p>
+<h1>Icon components</h1>
+<p>Icon components are simple files that store icon data, one icon per file. Data is <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> object:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImJvZHkiOiAiPHBhdGggZD1cIk0xNSAyMGExIDEgMCAwIDAtMS0xaC0xdi0yaDRhMiAyIDAgMCAwIDItMlY1YTIgMiAwIDAgMC0yLTJIN2EyIDIgMCAwIDAtMiAydjEwYTIgMiAwIDAgMCAyIDJoNHYyaC0xYTEgMSAwIDAgMC0xIDFIMnYyaDdhMSAxIDAgMCAwIDEgMWg0YTEgMSAwIDAgMCAxLTFoN3YtMmgtN20tOC01VjVoMTB2MTBIN3pcIiBmaWxsPVwiY3VycmVudENvbG9yXCIvPiIsCgkid2lkdGgiOiAyNCwKCSJoZWlnaHQiOiAyNAp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;&lt;path d=\&quot;M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;width&quot;</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;height&quot;</span>: <span class="hljs-number">24</span><br>
+}<br>
+</code></div></div></div><p>For more information about <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> type see <a href="../../types/iconify-icon.html">IconifyIcon documentation</a>.</p>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon data is used in Iconify components:</p><ul>
+<li><a href="../../implementations/react/">Iconify for React</a>.</li>
+<li><a href="../../implementations/vue/">Iconify for Vue</a>.</li>
+<li><a href="../../implementations/svelte/">Iconify for Svelte</a>.</li>
+</ul><p>Icon data is passed as parameter to Iconify icon component, like this (example for React component):</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0IFJlYWN0CmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7CgovLyBJbXBvcnQgSWNvbmlmeSBjb21wb25lbnQKaW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsKCi8vIEltcG9ydCBpY29uIGRhdGEKaW1wb3J0IGhvbWVJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS1saWdodC9ob21lJzsKCi8vIFNhbXBsZSBmdW5jdGlvbmFsIGNvbXBvbmVudApleHBvcnQgZnVuY3Rpb24gTXlDb21wb25lbnQoKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxJY29uIGljb249e2hvbWVJY29ufSAvPgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-comment">// Import React</span><br>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import Iconify component</span><br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon data</span><br>
+<span class="hljs-keyword">import</span> homeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi-light/home&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Sample functional component</span><br>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params"></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{homeIcon}</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
+ &#xA0; &#xA0;);<br>
+}<br>
+</code></div></div></div><p>It can also be used in <a href="../../implementations/svg-framework/">SVG framework</a> using <a href="../../implementations/svg-framework/add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRJY29uKCdtZGk6bmV0d29yay1vdXRsaW5lJywgewoJYm9keToKCQknPHBhdGggZD0iTTE1IDIwYTEgMSAwIDAgMC0xLTFoLTF2LTJoNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMkg3YTIgMiAwIDAgMC0yIDJ2MTBhMiAyIDAgMCAwIDIgMmg0djJoLTFhMSAxIDAgMCAwLTEgMUgydjJoN2ExIDEgMCAwIDAgMSAxaDRhMSAxIDAgMCAwIDEtMWg3di0yaC03bS04LTVWNWgxMHYxMEg3eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCXdpZHRoOiAyNCwKCWhlaWdodDogMjQsCn0pOwo="><code class="highlight hljs">Iconify.addIcon(<span class="hljs-string">&apos;mdi:network-outline&apos;</span>, {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">body</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;&lt;path d=&quot;M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="available-icons" class="heading--2">Available icons <a href="#available-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All icon sets available with <a href="../api/">Iconify API</a> are available as standalone icon components. There are over 60,000 icons from more than 80 icon sets.</p></section>
+
+<section class="content-section content-section--2"><H1 id="packages" class="heading--2">Packages <a href="#packages" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Putting so many files in one package would result in massive package, so icons are split into several NPM packages, two packages per icon set:</p><ul>
+<li>One package that uses modern ES6 <span class="hljs-function">export</span> syntax: <span class="hljs-inline-package hljs-linkable">@iconify-icons/{prefix}</span>.</li>
+<li>One package that uses CommonJS <span class="hljs-function">module.exports</span> syntax, which is used by Node.js: <span class="hljs-inline-package hljs-linkable">@iconify/icons-{prefix}</span>.</li>
+</ul><p>where &quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix.</p><p>To import an icon, add icon name after package, for example, icon <span class="hljs-inline-icon">mdi-light:home</span> can be imported from &quot;<span class="hljs-string">@iconify-icons/mdi-light/home</span>&quot; (ES module) or &quot;<span class="hljs-string">@iconify/icons-mdi-light/home</span>&quot; (CommonJS module)</p><p>It is recommended that you use ES6 module, recent versions of Node.js do support it. CommonJS are legacy packages.</p></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="typescript-support" class="heading--2">TypeScript support <a href="#typescript-support" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All icons in ES6 and CommonJS packages have <span class="hljs-inline-file">.d.ts</span> files, so they can be used with TypeScript.</p></section>
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Few examples of icon names:</p><ul>
+<li><span class="hljs-inline-icon">mdi:login-variant</span> from <a href="https://iconify.design/icon-sets/mdi/" target="_blank">Material Design Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/mdi/login-variant</span> (ES6) or <span class="hljs-inline-package hljs-linkable">@iconify/icons-mdi/login-variant</span> (CommonJS).</li>
+<li><span class="hljs-inline-icon">bi:chat-quote</span> from <a href="https://iconify.design/icon-sets/bi/" target="_blank">Bootstrap Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi/chat-quote</span> (ES6) or <span class="hljs-inline-package hljs-linkable">@iconify/icons-bi/chat-quote</span> (CommonJS).</li>
+<li><span class="hljs-inline-icon">tabler:info-circle</span> from <a href="https://iconify.design/icon-sets/tabler/" target="_blank">Tabler Icons</a> can be imported from <span class="hljs-inline-package hljs-linkable">@iconify-icons/tabler/info-circle</span> (ES6) or <span class="hljs-inline-package hljs-linkable">@iconify-icons/tabler/info-circle</span> (CommonJS).</li>
+</ul><p>See Iconify components for usage:</p><ul>
+<li><a href="../../implementations/react/">Iconify for React</a>.</li>
+<li><a href="../../implementations/vue/">Iconify for Vue</a>.</li>
+<li><a href="../../implementations/svelte/">Iconify for Svelte</a>.</li>
+</ul></section>
+
+
+
+
 
 				</article>
 				<nav

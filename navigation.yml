@@ -23,11 +23,8 @@
             ./svg-framework.html: SVG Framework
             ./react.html: Components (React)
             ./examples/: Examples
-        ./npm/:
-          title: Icon Components
-          wip: true
-        ./json/:
-          title: Iconify Icon Sets
+        ./npm/: Icon Components
+        ./json/: Iconify Icon Sets
     /implementations/:
       title: Implementations
       children:
