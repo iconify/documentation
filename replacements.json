@@ -15,7 +15,7 @@
 	"iconify2": {
 		"version": {
 			"major": "2",
-			"full": "2.0.0-beta.6"
+			"full": "2.0.0-rc.1"
 		},
 		"size": "30kb",
 		"size-without-api": "16kb",
@@ -36,6 +36,6 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.0.0-beta.6/iconify.min.js"
+		"iconify": "https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"
 	}
 }
