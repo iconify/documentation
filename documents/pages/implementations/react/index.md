@@ -5,6 +5,8 @@ replacements:
     value: '${counters.icons}'
   - code: '80+'
     value: '${counters.sets}+'
+  - code: '@iconify/react@2'
+    value: '${react.import}'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 ```
@@ -66,20 +68,20 @@ This documentation is for basic component. [Click here](../react-with-api/index.
 If you are using NPM:
 
 ```bash
-npm install --save-dev @iconify/react
+npm install --save-dev @iconify/react@2
 ```
 
 If you are using Yarn:
 
 ```bash
-yarn add --dev @iconify/react
+yarn add --dev @iconify/react@2
 ```
 
 This package does not include icons. Icons are split into separate packages that available at NPM. See below.
 
 ## Usage
 
-Install `[npm]@iconify/react` and packages for selected icon sets. Import `[var]Icon` from `[npm]@iconify/react` and icon data for icon you want to use:
+Install `[npm]@iconify/react@2` and packages for selected icon sets. Import `[var]Icon` from `[npm]@iconify/react` and icon data for icon you want to use:
 
 ```js
 import { Icon } from '@iconify/react';

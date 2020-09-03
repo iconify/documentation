@@ -42,7 +42,7 @@ This package does not include icons. Icons are split into separate packages that
 
 Iconify for Vue is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.
 
-Install `[npm]@iconify/vue@2` and packages for selected icon sets. Import component from `[npm]@iconify/vue@2` and icon data for icon you want to use:
+Install `[npm]@iconify/vue@2` and packages for selected icon sets. Import component from `[npm]@iconify/vue` and icon data for icon you want to use:
 
 ```bash
 # Installs component and Material Design Light icons

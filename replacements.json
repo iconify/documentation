@@ -21,8 +21,11 @@
 		"size-without-api": "16kb",
 		"import": "@iconify/iconify@beta"
 	},
+	"react": {
+		"import": "@iconify/react@beta"
+	},
 	"vue": {
-		"import-vue2": "@iconify/vue",
+		"import-vue2": "@iconify/vue@^1",
 		"import-vue3": "@iconify/vue@beta"
 	},
 	"counters": {
