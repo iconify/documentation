@@ -27,8 +27,8 @@
 	},
 	"counters": {
 		"sets": "80",
-		"icons": "60,000",
-		"icons-short": "60k"
+		"icons": "70,000",
+		"icons-short": "70k"
 	},
 	"icons": {
 		"hash": "line-md:hash-small",
