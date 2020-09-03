@@ -15,9 +15,13 @@ types:
 
 Icon bundle is the easiest way to make Iconify implementations that rely on API, such as [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md), work without the internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.
 
+## Smaller bundle size
+
+For components that do not rely on API, such as [basic React component](../../implementations/react/index.md) and [Vue component](../../implementations/vue/index.md), you can use bundles to import multiple icons at the same time instead of importing icons one by one.
+
 ## Speed up loading
 
-Icon bundles can be used to speed up loading.
+Icon bundles can be used to speed up loading for [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md).
 
 [Iconify implementation](../../implementations/index.md) queries API for icon data when it needs to render that icon. Even though loading icon data from API is very fast, it is not instant. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly.
 
@@ -70,7 +74,7 @@ See [bundles for SVG framework](./svg-framework.md) for details.
 
 ### Components
 
-Components that support Iconify API, expose method `[func]addCollection()`. You need to use that method to import icon bundles.
+Most components expose method `[func]addCollection()`. You need to use that method to import icon bundles.
 
 See [bundles for React component](./react.md) for details.
 

@@ -24,19 +24,19 @@ Examples for creating bundles for SVG Framework:
 - [Bundling custom icons using Iconify Tools](./svg-framework-custom-tools.md) (Node.js only).
 - [Advanced bundler example](./svg-framework-full.md) (Node.js only).
 
-## React
+## Components
 
-Examples for creating bundles for React component:
+Examples for creating bundles for various Iconify components (React, Vue):
 
-- [Basic bundle example](./react-simple.md) (Node.js and PHP).
-- [Bundling custom icons](./react-custom.md) (Node.js and PHP).
-- [Bundling custom icons using Iconify Tools](./react-custom-tools.md) (Node.js only).
-- [Advanced bundler example](./react-full.md) (Node.js only).
+- [Basic bundle example](./component-simple.md) (Node.js and PHP).
+- [Bundling custom icons](./component-custom.md) (Node.js and PHP).
+- [Bundling custom icons using Iconify Tools](./component-custom-tools.md) (Node.js only).
+- [Advanced bundler example](./component-full.md) (Node.js only).
 
 ## Code differences
 
-What's different in SVG framework and React bundle scripts?
+What's different in SVG framework and component bundle scripts?
 
-- Header. In bundle for a component code starts with import statement.
+- Header. In bundle for a component code starts with an import statement.
 - Function. In SVG framework code uses `[func]Iconify.addCollection()`, in component code uses imported `[func]addCollection()`.
 - Examples for SVG framework that use `[var]IconifyPreload` are not usable with components.

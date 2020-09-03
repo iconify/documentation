@@ -157,6 +157,22 @@ function changeTokens(tokens: Token[]) {
 		if (token.type === 'fence' && !token.children) {
 			token.tag = '';
 			token.type = 'code_block';
+
+			// Check for include
+			if (token.info === 'yaml') {
+				try {
+					const data = yaml.parse(token.content);
+					if (
+						typeof data === 'object' &&
+						data.src === void 0 &&
+						typeof data.include === 'string'
+					) {
+						token.type = 'include';
+					}
+				} catch (err) {
+					//
+				}
+			}
 		}
 		if (token.children) {
 			changeTokens(token.children);

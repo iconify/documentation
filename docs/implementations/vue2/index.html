@@ -170,7 +170,30 @@ IconifyIcon.addIcon(<span class="hljs-string">&apos;home&apos;</span>, homeIconD
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
-</span></code></div></div></div></section></section>
+</span></code></div></div></div><p>Instead of adding icons one by one using <span class="hljs-function">addIcon()</span>, you can import an entire icon set using <span class="hljs-function">addCollection()</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGljb25pZnktaWNvbiBpY29uPSJqYW06aG9tZSIgLz4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+CmltcG9ydCBJY29uaWZ5SWNvbiBmcm9tICdAaWNvbmlmeS92dWUnOwoKLy8gSW1wb3J0IHJlcXVpcmVzIGJ1bmRsZXIgdGhhdCBjYW4gaW1wb3J0IEpTT04gZmlsZXMKaW1wb3J0IGphbUljb25zIGZyb20gJ0BpY29uaWZ5L2pzb24vanNvbi9qYW0uanNvbic7CgovLyBGdW5jdGlvbiBhdXRvbWF0aWNhbGx5IGFkZHMgcHJlZml4IGZyb20gaWNvbiBzZXQsIHdoaWNoIGluIHRoaXMgY2FzZSBpcyAnamFtJywgZm9sbG93ZWQgYnkgJzonLCBzbwovLyBpY29uIG5hbWVzIGFkZGVkIGJ5IGZ1bmN0aW9uIHNob3VsZCBiZSBjYWxsZWQgd2l0aCBwcmVmaXgsIHN1Y2ggYXMgJ2phbTpob21lJwpJY29uaWZ5SWNvbi5hZGRDb2xsZWN0aW9uKGphbUljb25zKTsKCmV4cG9ydCBkZWZhdWx0IHsKCWNvbXBvbmVudHM6IHsKCQlJY29uaWZ5SWNvbiwKCX0sCn07Cjwvc2NyaXB0Pgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;jam:home&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
+<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import requires bundler that can import JSON files</span><br>
+<span class="hljs-keyword">import</span> jamIcons <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/json/json/jam.json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Function automatically adds prefix from icon set, which in this case is &apos;jam&apos;, followed by &apos;:&apos;, so</span><br>
+<span class="hljs-comment">// icon names added by function should be called with prefix, such as &apos;jam:home&apos;</span><br>
+IconifyIcon.addCollection(jamIcons);<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</span></code></div></div></div><p>Example above imports an entire icon set.</p><p>To learn how to create smaller bundles, check out <a href="../../sources/bundles/">Iconify bundles documentation</a>.</p></section></section>
+
+
+
 
 
 

@@ -1,7 +1,19 @@
 import md from 'markdown-it';
 import Token from 'markdown-it/lib/token';
+import yaml from 'yaml';
 import { MDContext } from '../types';
 import { parsePartial } from '../partial';
+import { replaceAll } from '../../str';
+
+interface InlineCodeReplacement {
+	search: string;
+	replace: string;
+}
+
+interface InlineCodeMeta {
+	include: string;
+	replacements?: InlineCodeReplacement;
+}
 
 /**
  * Check if token is a potential include token, return included file name on success or null on failure
@@ -27,7 +39,7 @@ function changeTokenType(token: Token, included: string): Token {
 	const newToken = Object.assign({}, token);
 	newToken.type = 'include';
 	newToken.tag = '';
-	newToken.content = included;
+	newToken.content = 'include: ' + included;
 	return newToken;
 }
 
@@ -60,8 +72,18 @@ export function parseMDIncludes(context: MDContext, md: md) {
 	// Render include token
 	md.renderer.rules['include'] = (tokens, idx, options, env, self) => {
 		const token = tokens[idx];
-		const file = token.content;
+		const data = yaml.parse(token.content) as InlineCodeMeta;
+		const file = data.include;
 		const result = parsePartial(file, context.relativeFile);
+
+		// Replace content
+		if (data.replacements && data.replacements instanceof Array) {
+			const replacements: Record<string, string> = Object.create(null);
+			data.replacements.forEach((item) => {
+				replacements[item.search] = item.replace;
+			});
+			result.html = replaceAll(result.html, replacements);
+		}
 
 		// Make sure there are no conflicting ids
 		result.ids.forEach((id) => {

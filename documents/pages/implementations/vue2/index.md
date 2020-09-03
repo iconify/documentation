@@ -123,6 +123,35 @@ export default {
 </script>
 ```
 
+Instead of adding icons one by one using `[func]addIcon()`, you can import an entire icon set using `[func]addCollection()`:
+
+```vue
+<template>
+	<iconify-icon icon="jam:home" />
+</template>
+
+<script>
+import IconifyIcon from '@iconify/vue';
+
+// Import requires bundler that can import JSON files
+import jamIcons from '@iconify/json/json/jam.json';
+
+// Function automatically adds prefix from icon set, which in this case is 'jam', followed by ':', so
+// icon names added by function should be called with prefix, such as 'jam:home'
+IconifyIcon.addCollection(jamIcons);
+
+export default {
+	components: {
+		IconifyIcon,
+	},
+};
+</script>
+```
+
+Example above imports an entire icon set.
+
+To learn how to create smaller bundles, check out [Iconify bundles documentation](../../sources/bundles/index.md).
+
 ## Properties
 
 You can pass any custom properties to component.

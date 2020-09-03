@@ -21,8 +21,16 @@
             ./api.html: Using Iconify API
             ./json-tools.html: Using JSON Tools
             ./svg-framework.html: SVG Framework
-            ./react.html: Components (React)
-            ./examples/: Examples
+            ./components.html:
+              title: Components
+              separator: true
+              clickable: false
+            ./react.html: React
+            ./react-with-api.html: React with API
+            ./vue.html: Vue
+            ./examples/:
+              title: Examples
+              separator: true
         ./npm/: Icon Components
         ./json/: Iconify Icon Sets
     /implementations/:

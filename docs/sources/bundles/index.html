@@ -114,7 +114,9 @@
 	</dd>
 </dl><section class="content-section content-section--2"><H1 id="offline-use" class="heading--2">Offline use <a href="#offline-use" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundle is the easiest way to make Iconify implementations that rely on API, such as <a href="../../implementations/svg-framework/">SVG framework</a> and <a href="../../implementations/react-with-api/">React component</a>, work without the internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.</p></section>
 
-<section class="content-section content-section--2"><H1 id="speed-up-loading" class="heading--2">Speed up loading <a href="#speed-up-loading" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundles can be used to speed up loading.</p><p><a href="../../implementations/">Iconify implementation</a> queries API for icon data when it needs to render that icon. Even though loading icon data from API is very fast, it is not instant. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly.</p></section>
+<section class="content-section content-section--2"><H1 id="smaller-bundle-size" class="heading--2">Smaller bundle size <a href="#smaller-bundle-size" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>For components that do not rely on API, such as <a href="../../implementations/react/">basic React component</a> and <a href="../../implementations/vue/">Vue component</a>, you can use bundles to import multiple icons at the same time instead of importing icons one by one.</p></section>
+
+<section class="content-section content-section--2"><H1 id="speed-up-loading" class="heading--2">Speed up loading <a href="#speed-up-loading" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundles can be used to speed up loading for <a href="../../implementations/svg-framework/">SVG framework</a> and <a href="../../implementations/react-with-api/">React component</a>.</p><p><a href="../../implementations/">Iconify implementation</a> queries API for icon data when it needs to render that icon. Even though loading icon data from API is very fast, it is not instant. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly.</p></section>
 
 
 <section class="content-section content-section--2"><H1 id="create" class="heading--2">How to create icons bundle? <a href="#create" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You need to:</p><ol>
@@ -211,7 +213,7 @@ Iconify.addCollection({<br>
 <section class="content-section content-section--2"><H1 id="callbacks" class="heading--2">Wrapping data in callback <a href="#callbacks" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You need to make sure icon bundle is loaded before implementation attempts to render an icon. Otherwise, implementation might send a redundant API query to retrieve icon data.</p><section class="content-section content-section--3"><H1 id="svg-framework" class="heading--3">SVG framework <a href="#svg-framework" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>SVG framework supports 2 ways of adding icon bundles:</p><ul>
 <li>Loading icon bundles before loading Iconify.</li>
 <li>Loading icon bundles after loading Iconify.</li>
-</ul><p>See <a href="./svg-framework.html">bundles for SVG framework</a> for details.</p></section><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components that support Iconify API, expose method <span class="hljs-function">addCollection()</span>. You need to use that method to import icon bundles.</p><p>See <a href="./react.html">bundles for React component</a> for details.</p></section></section>
+</ul><p>See <a href="./svg-framework.html">bundles for SVG framework</a> for details.</p></section><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most components expose method <span class="hljs-function">addCollection()</span>. You need to use that method to import icon bundles.</p><p>See <a href="./react.html">bundles for React component</a> for details.</p></section></section>
 
 
 
@@ -238,8 +240,11 @@ Iconify.addCollection({<br>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./api.html">Using Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./json-tools.html">Using JSON Tools</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svg-framework.html">SVG Framework</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">Components (React)</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react-with-api.html">React with API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./examples/">Examples</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify Icon Sets</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>

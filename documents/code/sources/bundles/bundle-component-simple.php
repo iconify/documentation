@@ -1,6 +1,6 @@
 <?php
 /**
- * This is a simple example for creating icon bundles for Iconify for React.
+ * This is a simple example for creating icon bundles for Iconify components.
  *
  * It bundles only icons from Iconify icon sets.
  * For bundling custom icons see other code examples in documentation.
@@ -10,6 +10,10 @@ require './vendor/autoload.php';
 
 // Installation: composer require iconify/json-tools iconify/json
 use Iconify\JSONTools\Collection;
+
+// Iconify component (this changes import statement in generated file)
+// Available options: 'react', 'react-with-api', 'vue' (for Vue 3), 'vue2'
+$component = 'react';
 
 // File to save bundle to
 $target = __DIR__ . '/src/icons-bundle.js';
@@ -28,7 +32,7 @@ $icons = [
 $icons = organizeIconsList($icons);
 
 // Load icons data
-$output = "import { addCollection } from '@iconify/react-with-api';\n\n";
+$output = getImport($component) . "\n\n";
 foreach ($icons as $prefix => $iconsList) {
     // Load icon set
     $collection = new Collection($prefix);
@@ -147,4 +151,28 @@ function stringToIcon($value)
     }
 
     return null;
+}
+
+/**
+ * Get import statement for component
+ */
+function getImport($component)
+{
+    $imports = [
+        'react' => "import { addCollection } from '@iconify/react';",
+        'react-with-api' =>
+        "import { addCollection } from '@iconify/react-with-api';",
+        'vue' => "import { addCollection } from '@iconify/vue';",
+        'vue2' =>
+        "import IconifyIcon from '@iconify/vue';\n\nconst addCollection = IconifyIcon.addCollection;",
+    ];
+
+    if (isset($imports[$component])) {
+        return $imports[$component];
+    }
+
+    throw new Error(
+        'Invalid value for "component" variable. Possible values: \'' .
+        implode("', '", array_keys($imports)) . '\''
+    );
 }

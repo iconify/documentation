@@ -1,5 +1,5 @@
 /**
- * This is a simple example for creating icon bundles for Iconify for React.
+ * This is a simple example for creating icon bundles for Iconify components.
  *
  * It bundles only icons from Iconify icon sets.
  * For bundling custom icons see other code examples in documentation.
@@ -8,6 +8,10 @@ const fs = require('fs');
 
 // Installation: npm install --save-dev @iconify/json-tools @iconify/json
 const { Collection } = require('@iconify/json-tools');
+
+// Iconify component (this changes import statement in generated file)
+// Available options: 'react', 'react-with-api', 'vue' (for Vue 3), 'vue2'
+const component = 'react';
 
 // File to save bundle to
 const target = __dirname + '/src/icons-bundle.js';
@@ -26,7 +30,7 @@ let icons = [
 icons = organizeIconsList(icons);
 
 // Load icons data
-let output = "import { addCollection } from '@iconify/react-with-api';\n\n";
+let output = getImport(component) + '\n\n';
 Object.keys(icons).forEach((prefix) => {
 	const iconsList = icons[prefix];
 
@@ -145,4 +149,28 @@ function stringToIcon(value) {
 	}
 
 	return null;
+}
+
+/**
+ * Get import statement for component
+ */
+function getImport(component) {
+	const imports = {
+		'react': "import { addCollection } from '@iconify/react';",
+		'react-with-api':
+			"import { addCollection } from '@iconify/react-with-api';",
+		'vue': "import { addCollection } from '@iconify/vue';",
+		'vue2':
+			"import IconifyIcon from '@iconify/vue';\n\nconst addCollection = IconifyIcon.addCollection;",
+	};
+
+	if (imports[component] !== void 0) {
+		return imports[component];
+	}
+
+	throw new Error(
+		`Invalid value for "component" variable. Possible values: '${Object.keys(
+			imports
+		).join("', '")}'`
+	);
 }
