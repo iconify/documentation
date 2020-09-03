@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?0446" />
+		<link rel="stylesheet" href="../../assets/style.css?ffd5" />
 		<title>Manipulating icons with Iconify Tools</title>
 		
 	</head>
@@ -100,7 +100,7 @@
 	</p>
 </div><p>Most functions require SVG to be optimized. Therefore, before doing anything else, you should optimize icon.</p>
 <section class="content-section content-section--2"><H1 id="svgo" class="heading--2">SVGO optimization <a href="#svgo" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">SVGO</span> optimizes icon.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance.</li>
 <li>Optional options object.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5TVkdPKHN2ZykKCS50aGVuKChzdmcpID0+IHsKCQkvLyBzdmcgdmFyaWFibGUgaXMgdGhlIHNhbWUgYXMgaW4gYXJndW1lbnQuIE9wdGltaXplciBkb2VzIG5vdCBjcmVhdGUgbmV3IGluc3RhbmNlIG9mIFNWRyBjbGFzcwoJCWNvbnNvbGUubG9nKCdPcHRpbWl6ZWQgU1ZHOicsIHN2Zy50b1N0cmluZygpKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
  &#xA0; &#xA0;.SVGO(svg)<br>
@@ -132,7 +132,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="crop" class="heading--2">Cropping images <a href="#crop" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">Crop</span> removes empty spaces around icon content.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance or <span class="hljs-name">Collection</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance or <span class="hljs-class">Collection</span> instance.</li>
 </ol><p>How to crop one icon:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5Dcm9wKHN2ZykKCS50aGVuKChzdmcpID0+IHsKCQljb25zb2xlLmxvZygnQ3JvcHBlZCBTVkc6ICcgKyBzdmcudG9TdHJpbmcoKSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
  &#xA0; &#xA0;.Crop(svg)<br>
  &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
@@ -149,7 +149,7 @@
  &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
  &#xA0; &#xA0;});<br>
-</code></div></div></div><p>How does <span class="hljs-function">Crop()</span> function work? By drawing SVG on canvas and checking all 4 sides for transparent pixels. First it appends space on all sides of SVG, until all sides have nothing but empty pixels. Then it slowly cuts all sides until it reaches pixels that aren&apos;t empty. Process doesn&apos;t take long because script checks pixels in bulk by zooming in.</p><p>When it crops <span class="hljs-name">SVG</span> or <span class="hljs-name">Collection</span> instance (like in examples above), each <span class="hljs-name">SVG</span> instance receives additional properties that you might want to use later: <span class="hljs-inline-prop">_cropData</span>. <span class="hljs-inline-prop">_cropData</span> is an object with list of cropped edges: <span class="hljs-inline-prop">left</span>, <span class="hljs-inline-prop">top</span>, <span class="hljs-inline-prop">right</span>, <span class="hljs-inline-prop">bottom</span>.</p></section>
+</code></div></div></div><p>How does <span class="hljs-function">Crop()</span> function work? By drawing SVG on canvas and checking all 4 sides for transparent pixels. First it appends space on all sides of SVG, until all sides have nothing but empty pixels. Then it slowly cuts all sides until it reaches pixels that aren&apos;t empty. Process doesn&apos;t take long because script checks pixels in bulk by zooming in.</p><p>When it crops <span class="hljs-class">SVG</span> or <span class="hljs-class">Collection</span> instance (like in examples above), each <span class="hljs-class">SVG</span> instance receives additional properties that you might want to use later: <span class="hljs-inline-prop">_cropData</span>. <span class="hljs-inline-prop">_cropData</span> is an object with list of cropped edges: <span class="hljs-inline-prop">left</span>, <span class="hljs-inline-prop">top</span>, <span class="hljs-inline-prop">right</span>, <span class="hljs-inline-prop">bottom</span>.</p></section>
 
 
 
@@ -182,7 +182,7 @@
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {<br>
  &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
 });<br>
-</code></div></div></div><p>To use it with entire icon set, use <span class="hljs-name">Collection</span>&apos;s <span class="hljs-function">promiseAll</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29sbGVjdGlvbi5wcm9taXNlQWxsKHN2ZyA9PiB0b29scy5HZXRQYWxldHRlKHN2ZykpLnRoZW4ocmVzdWx0ID0+IHsKICAgIE9iamVjdC5rZXlzKHJlc3VsdHMpLmZvckVhY2goa2V5ID0+IHsKICAgICAgICBjb25zb2xlLmxvZygnQ29sb3JzIGZvdW5kIGluIGltYWdlICcgKyBrZXkgKyAnOiAnICsgcmVzdWx0W2tleV0uY29sb3JzLmpvaW4oJywgJyk7CiAgICB9KTsKfSkuY2F0Y2goZXJyID0+IHsKICAgIGNvbnNvbGUuZXJyb3IoZXJyKTsKfSk7Cg=="><code class="highlight hljs">collection.promiseAll(<span class="hljs-function"><span class="hljs-params">svg</span> =&gt;</span> tools.GetPalette(svg)).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {<br>
+</code></div></div></div><p>To use it with entire icon set, use <span class="hljs-class">Collection</span>&apos;s <span class="hljs-function">promiseAll</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29sbGVjdGlvbi5wcm9taXNlQWxsKHN2ZyA9PiB0b29scy5HZXRQYWxldHRlKHN2ZykpLnRoZW4ocmVzdWx0ID0+IHsKICAgIE9iamVjdC5rZXlzKHJlc3VsdHMpLmZvckVhY2goa2V5ID0+IHsKICAgICAgICBjb25zb2xlLmxvZygnQ29sb3JzIGZvdW5kIGluIGltYWdlICcgKyBrZXkgKyAnOiAnICsgcmVzdWx0W2tleV0uY29sb3JzLmpvaW4oJywgJyk7CiAgICB9KTsKfSkuY2F0Y2goZXJyID0+IHsKICAgIGNvbnNvbGUuZXJyb3IoZXJyKTsKfSk7Cg=="><code class="highlight hljs">collection.promiseAll(<span class="hljs-function"><span class="hljs-params">svg</span> =&gt;</span> tools.GetPalette(svg)).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {<br>
  &#xA0; &#xA0;<span class="hljs-built_in">Object</span>.keys(results).forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Colors found in image &apos;</span> + key + <span class="hljs-string">&apos;: &apos;</span> + result[key].colors.join(<span class="hljs-string">&apos;, &apos;</span>);<br>
  &#xA0; &#xA0;});<br>
@@ -197,7 +197,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="change-palette" class="heading--2">Replacing palette in SVG <a href="#change-palette" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">ChangePalette</span> changes colors in SVG and adds colors to shapes that are missing colors.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance.</li>
 <li>Color changes, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">object</span></span> or <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>.</li>
 </ol><p>Color changes object is a list of key/value pairs, where key is the old color, value is the new color.</p><p>Colors that are formatted differently are treated differently. For example, &quot;<span class="hljs-string">#fff</span>&quot;, &quot;<span class="hljs-string">#ffffff</span>&quot; and &quot;<span class="hljs-string">white</span>&quot; are considered to be different colors. Use <span class="hljs-function">GetPalette</span> before changing palette to get list of colors because that function will also treat those colors as separate colors and will return them in the same format as in SVG.</p><p>Reserved keywords in color changes object:</p><ul>
 <li><span class="hljs-inline-prop">add</span>: color to add to shapes that are missing color. This is used when shape has <span class="hljs-inline-prop">fill</span> or <span class="hljs-inline-prop">stroke</span>, but does not have color value.</li>
@@ -285,7 +285,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="index-shapes" class="heading--2">Indexing shapes <a href="#index-shapes" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">IndexShapes</span> is used to add unique numbers to each shape and count shapes.</p><p>This function is intended to be used when calculating stroke animations.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance.</li>
 <li>Options object.</li>
 </ol><p>Options object properties:</p><ul>
 <li><span class="hljs-inline-prop">ignoreTags</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. List of tags to ignore.</li>
@@ -319,7 +319,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="shape-length" class="heading--2">Getting shape lengths <a href="#shape-length" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">ShapeLength</span> returns lengths of all shapes as well as all shapes as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">cheerio</span></span> objects.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5TaGFwZUxlbmd0aChzdmcpCgkudGhlbigocmVzdWx0cykgPT4gewoJCWNvbnNvbGUubG9nKCdGb3VuZCAnICsgcmVzdWx0cy5sZW5ndGggKyAnIHNoYXBlczonKTsKCQlyZXN1bHRzLmZvckVhY2goKHJlc3VsdCkgPT4gewoJCQljb25zb2xlLmxvZygKCQkJCSdTaGFwZSAnICsKCQkJCQlyZXN1bHQuJG5vZGUuZ2V0KDApLnRhZ05hbWUgKwoJCQkJCScgaGFzIGxlbmd0aCBvZiAnICsKCQkJCQlyZXN1bHQubGVuZ3RoCgkJCSk7CgkJfSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
  &#xA0; &#xA0;.ShapeLength(svg)<br>
  &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> {<br>

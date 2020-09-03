@@ -24,6 +24,7 @@ export interface MetaData {
 	theme?: Theme; // Theme, string
 	types?: Record<string, string>; // Links to types
 	functions?: Record<string, string>; // Links to functions
+	classes?: Record<string, string>; // Links to classes
 }
 
 /**
@@ -47,6 +48,7 @@ const defaultMetaData: Required<SourceMetaData> = {
 	theme: 'develop',
 	types: {},
 	functions: {},
+	classes: {},
 };
 
 /**

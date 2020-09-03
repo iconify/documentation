@@ -1951,7 +1951,8 @@ h1:target .link-back:hover {
 .hljs-tag,
 .hljs-name,
 .hljs-attribute,
-.hljs-function {
+.hljs-function,
+.hljs-class {
 	color: #303e89;
 	font-weight: normal;
 }

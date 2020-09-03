@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?0446" />
+		<link rel="stylesheet" href="../../assets/style.css?ffd5" />
 		<title>Exporting icons with Iconify Tools</title>
 		
 	</head>
@@ -100,7 +100,7 @@
 	</p>
 </div><p>There are several exporters available in Iconify Tools.</p>
 <section class="content-section content-section--2"><H1 id="export-svg" class="heading--2">Exporting as SVG <a href="#export-svg" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">ExportSVG</span> exports one icon to file.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">SVG</span> instance.</li>
+<li><span class="hljs-class">SVG</span> instance.</li>
 <li>File name.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRTVkcoc3ZnLCAnZmlsZW5hbWUuc3ZnJykKCS50aGVuKCgpID0+IHsKCQljb25zb2xlLmxvZygnRXhwb3J0ZWQhJyk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
  &#xA0; &#xA0;.ExportSVG(svg, <span class="hljs-string">&apos;filename.svg&apos;</span>)<br>
@@ -115,7 +115,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="export-dir" class="heading--2">Exporting collection to directory <a href="#export-dir" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">ExportDir</span> exports collection to directory as individual SVG files.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">Collection</span> instance.</li>
+<li><span class="hljs-class">Collection</span> instance.</li>
 <li>Directory name.</li>
 <li>Optional options object.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnREaXIoY29sbGVjdGlvbiwgJ291dHB1dCcpCgkudGhlbigoY291bnQpID0+IHsKCQljb25zb2xlLmxvZygnRXhwb3J0ZWQgJyArIGNvdW50ICsgJyBmaWxlcycpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
@@ -138,7 +138,7 @@
 
 
 <section class="content-section content-section--2"><H1 id="export-json" class="heading--2">Exporting to Iconify JSON <a href="#export-json" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify JSON format is used to store icon sets in Iconify. It is used everywhere in Iconify: in Iconify API, in Iconify SVG framework, various components.</p><p>Why JSON format? Because it is easy to read and parse, it can contain many icons, it can contain custom metadata such as tags and categories, it is easy to store multiple variations or aliases of the same icon.</p><p>Function <span class="hljs-function">ExportJSON</span> exports collection to JSON file. This is the main export function in Iconify Tools, entire package was designed to import various formats and export them as JSON icon sets.</p><p>Parameters:</p><ol>
-<li><span class="hljs-name">Collection</span> instance.</li>
+<li><span class="hljs-class">Collection</span> instance.</li>
 <li>Target filename.</li>
 <li>Optional options object.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRKU09OKGNvbGxlY3Rpb24sICdmaWxlbmFtZS5qc29uJykKCS50aGVuKChqc29uKSA9PiB7CgkJY29uc29sZS5sb2coJ0V4cG9ydGVkIGNvbGxlY3Rpb24uIEpTT04gZGF0YTogJyArIEpTT04uc3RyaW5naWZ5KGpzb24pKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
@@ -162,8 +162,8 @@
 
 
 <section class="content-section content-section--2"><H1 id="export-png" class="heading--2">Exporting to PNG <a href="#export-png" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <span class="hljs-function">ExportPNG</span> export collection to PNG files.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew. It is also not optimal because it sometimes creates rough edges.</p><ol>
-<li><span class="hljs-name">SVG</span> or <span class="hljs-name">Collection</span> instance.</li>
-<li>Target filename (for <span class="hljs-name">SVG</span> instance) or directory (for <span class="hljs-name">Collection</span> instance).</li>
+<li><span class="hljs-class">SVG</span> or <span class="hljs-class">Collection</span> instance.</li>
+<li>Target filename (for <span class="hljs-class">SVG</span> instance) or directory (for <span class="hljs-class">Collection</span> instance).</li>
 <li>Optional options object.</li>
 </ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5FeHBvcnRQTkcoc3ZnLCAnZmlsZW5hbWUucG5nJywgewoJCS8vIG9wdGlvbnMgb2JqZWN0IGhlcmUKCX0pCgkudGhlbigoKSA9PiB7CgkJY29uc29sZS5sb2coJ0V4cG9ydGVkIGZpbGVuYW1lLnBuZycpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
  &#xA0; &#xA0;.ExportPNG(svg, <span class="hljs-string">&apos;filename.png&apos;</span>, {<br>

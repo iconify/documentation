@@ -14,6 +14,7 @@ import { linkFunctions } from './html/functions';
 import { wrapCustomCode } from './html/code';
 import { importHTMLPartials } from './html/includes';
 import { parseHTMLImages } from './html/images';
+import { linkClasses } from './html/classes';
 
 /**
  * Parse MD
@@ -70,6 +71,9 @@ export function parseMD(source: ReadResult, relativeFile: string): ParseResult {
 	}
 	if (metadata.functions) {
 		linkFunctions($html, context, metadata.functions);
+	}
+	if (metadata.classes) {
+		linkClasses($html, context, metadata.classes);
 	}
 
 	// Convert back to HTML, replacing Cheerio bugs

@@ -18,15 +18,6 @@ const wrappers: Record<string, CodeWrapper> = {
 	},
 };
 
-['js', 'bash', 'json', 'php'].forEach((lang) => {
-	if (wrappers[lang] === void 0) {
-		wrappers[lang] = {
-			header: '<span class="inline-code inline-code--' + lang + '">',
-			footer: '</span>',
-		};
-	}
-});
-
 /**
  * Wrap code
  */
@@ -278,7 +269,7 @@ export function renderInlineCode(context: MDContext, md: md) {
 			case 'class':
 				return wrap(
 					'class',
-					'<span class="hljs-name">' + escapedContent + '</span>'
+					'<span class="hljs-class">' + escapedContent + '</span>'
 				);
 
 			// NPM / Packagist packages
@@ -349,14 +340,17 @@ export function renderInlineCode(context: MDContext, md: md) {
 			*/
 
 			// Language
+			case 'ts':
 			case 'js':
 			case 'bash':
 			case 'json':
 			case 'php':
 			case 'css':
 			case 'html':
-				return wrap(
-					type,
+				return (
+					'<span class="inline-code inline-code--' +
+					type +
+					'">' +
 					(() => {
 						if (!hljs.getLanguage(type)) {
 							throw new Error(
@@ -364,7 +358,8 @@ export function renderInlineCode(context: MDContext, md: md) {
 							);
 						}
 						return hljs.highlight(type, rawContent).value;
-					})()
+					})() +
+					'</span>'
 				);
 
 			// Domain / URL

@@ -156,6 +156,15 @@
     /icon-finder/:
       title: Icon Finder
       wip: true
+      children:
+        ./packages/:
+          title: Packages
+          wip: true
+          hidden: true
+          children:
+            ./core/:
+              title: Core
+              wip: true
 /code/:
   title: Code
   children:
