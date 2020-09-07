@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?ffd5" />
+		<title>Render event callback in Iconify Icon Finder Core</title>
+		
+	</head>
+	<body class="website-docs theme-integration">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<div class="docs-short-navigation">
+<a href="./core.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> IconFinderCore</a>
+<a href="./routes.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Routes</a>
+</div>
+<h1>Render event callback in Iconify Icon Finder Core</h1>
+<p>This tutorial is part of <a href="../">Iconify Icon Finder Core tutorial</a>.</p>
+<p>Render callback is the most important part of code. When there is something new to render, this callback is called. UI must create a function for callback and use it to update UI.</p>
+<section class="content-section content-section--2"><H1 id="listening" class="heading--2">Listening to &quot;render&quot; event <a href="#listening" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are two ways to work with Icon Finder Core: using <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> class and using <a href="./registry.html" title="Registry documentation"><span class="hljs-class hljs-linkable">Registry</span></a> class.</p><p>Render callback is the same using both methods, except that if you use <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> class, it has a second parameter that points to <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> instance.</p><p>This is how you should create callback when using <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgeyBJY29uRmluZGVyQ29yZSB9ID0gcmVxdWlyZSgnQGljb25pZnkvaWNvbi1maW5kZXItY29yZScpOwoKY29uc3QgY29yZSA9IG5ldyBJY29uRmluZGVyQ29yZSh7CgkvLyBQYXJhbWV0ZXJzIGhlcmUKCS8vIC4uLgoJY2FsbGJhY2s6IChkYXRhLCBjb3JlKSA9PiB7CgkJLy8gTWFpbiBjYWxsYmFjayB3aGVyZSBhbGwgc3R1ZmYgaGFwcGVucwoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> { IconFinderCore } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/icon-finder-core&apos;</span>);<br>
+<br>
+<span class="hljs-keyword">const</span> core = <span class="hljs-keyword">new</span> IconFinderCore({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Parameters here</span><br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">data, core</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Main callback where all stuff happens</span><br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div><p>This is how you should create callback when using <a href="./registry.html" title="Registry documentation"><span class="hljs-class hljs-linkable">Registry</span></a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgeyBSZWdpc3RyeSB9ID0gcmVxdWlyZSgnQGljb25pZnkvaWNvbi1maW5kZXItY29yZS9saWIvcmVnaXN0cnknKTsKCi8vIENyZWF0ZSByZWdpc3RyeSwgZ2V0IHJvdXRlciBhbmQgZXZlbnRzCmNvbnN0IHJlZ2lzdHJ5ID0gbmV3IFJlZ2lzdHJ5KCk7CmNvbnN0IHJvdXRlciA9IHJlZ2lzdHJ5LnJvdXRlcjsKY29uc3QgZXZlbnRzID0gcmVnaXN0cnkuZXZlbnRzOwoKLy8gU3Vic2NyaWJlIHRvIHJlbmRlciBldmVudCwgc2FtZSBhcyB1c2luZyBjYWxsYmFjayBpbiBJY29uRmluZGVyQ29yZSBleGFtcGxlIGFib3ZlCmV2ZW50cy5zdWJzY3JpYmUoJ3JlbmRlcicsIChkYXRhKSA9PiB7CgkvLyBTYW1lIGFzIGNhbGxiYWNrIGluIGV4YW1wbGUgYWJvdmUuCn0pOwoKLy8gTmF2aWdhdGUgdG8gaG9tZQpyb3V0ZXIuaG9tZSgpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> { Registry } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/icon-finder-core/lib/registry&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Create registry, get router and events</span><br>
+<span class="hljs-keyword">const</span> registry = <span class="hljs-keyword">new</span> Registry();<br>
+<span class="hljs-keyword">const</span> router = registry.router;<br>
+<span class="hljs-keyword">const</span> events = registry.events;<br>
+<br>
+<span class="hljs-comment">// Subscribe to render event, same as using callback in IconFinderCore example above</span><br>
+events.subscribe(<span class="hljs-string">&apos;render&apos;</span>, (data) =&gt; {<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Same as callback in example above.</span><br>
+});<br>
+<br>
+<span class="hljs-comment">// Navigate to home</span><br>
+router.home();<br>
+</code></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="router-event" class="heading--2">Callback data <a href="#router-event" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Parameter <span class="hljs-inline-prop">data</span> of the callback contains data you should render. Data is an object, TypeScript type is <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">RouterEvent</span></span>. It has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">viewChanged</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. <span class="hljs-literal">True</span> if the current view has changed since the previous callback call. Value is <span class="hljs-literal">true</span> on the first callback call. This attribute should be used by UI to check if the entire UI needs re-rendering, including the parent views list.</li>
+<li><span class="hljs-inline-prop">error</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Possible values:
+<ul>
+<li>&quot;<span class="hljs-string"></span>&quot;: no error, the view is safe to render.</li>
+<li>&quot;<span class="hljs-string">loading</span>&quot;: the view is still loading. UI should render the generic &quot;<span class="hljs-string">Loading</span>&quot; page.</li>
+<li>&quot;<span class="hljs-string">timeout</span>&quot;: API request timed out.</li>
+<li>&quot;<span class="hljs-string">invalid_data</span>&quot;: API returned invalid data.</li>
+<li>&quot;<span class="hljs-string">empty</span>&quot;: API returned empty data. This can happen if, for example, there are no search matches. This error is generated before applying view filters, so a lack of error does not guarantee that there are items to display.</li>
+<li>&quot;<span class="hljs-string">not_found</span>&quot;: API returned &quot;<span class="hljs-string">not found</span>&quot; error.</li>
+</ul>
+</li>
+<li><span class="hljs-inline-prop">route</span>, <span class="hljs-inline-type hljs-linkable"><a href="./routes.html" title="PartialRoute documentation"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></a></span>. Current route. See <a href="./routes.html">routes documentation</a>.</li>
+<li><span class="hljs-inline-prop">blocks</span>. Blocks as object, where key is block name, value is block. See <a href="./blocks.html">blocks documentation</a>. If there is an error (see <span class="hljs-inline-prop">error</span> property), blocks could be <span class="hljs-literal">null</span>.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="blocks" class="heading--2">Blocks <a href="#blocks" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Property <span class="hljs-inline-prop">blocks</span> is a simple object.</p><p>Key is a name of block. It is unique and is always the same for block. Do not confuse it with block type: there can be multiple blocks of the same type. For example, theme prefix, theme suffix and categories all have block type <span class="hljs-inline-type hljs-linkable"><a href="./blocks.html#collections-filter" title="CollectionsFilterBlock documentation"><span class="hljs-inline-type hljs-linkable">CollectionsFilterBlock</span></a></span>.</p><p>Value is block data object. You can figure out block type using <span class="hljs-inline-prop">type</span> property of value. See <a href="./blocks.html">blocks documentation</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="callback-logic" class="heading--2">Callback logic <a href="#callback-logic" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>First check for <span class="hljs-inline-prop">viewChanged</span> property. If the value is <span class="hljs-literal">true</span>, it means route was changed. UI might need to render different components for different view types, change navigation, change parent views list, change the keyword in the search form.</p><p>Then check for an <span class="hljs-inline-prop">error</span> property. If the value is not empty, the current view is not ready to be rendered. Display the appropriate error message. If the value is &quot;<span class="hljs-string">loading</span>&quot;, UI should show the &quot;<span class="hljs-string">loading</span>&quot; page.</p><p>If there is no error, you can access the <span class="hljs-inline-prop">blocks</span> property. UI should be split into components of the same types as blocks. Render components in whatever order you want, use data blocks as parameters.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="buttons-and-inputs" class="heading--2">Buttons and inputs <a href="#buttons-and-inputs" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Render callback is responsible only for rendering current data. If a user clicks a button or changes input value, you need to run action. See <a href="./actions.html">actions documentation</a>.</p></section>
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This example shows a simple container that creates an Icon Finder Core instance, uses data from callback to change state and renders child components.</p><p>It decides what child component to show based on the current error message and route.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JzsKY29uc3QgeyBJY29uRmluZGVyQ29yZSB9ID0gcmVxdWlyZSgnQGljb25pZnkvaWNvbi1maW5kZXItY29yZScpOwoKY2xhc3MgVUkgZXh0ZW5kcyBDb21wb25lbnQgewoJY29uc3RydWN0b3IoKSB7CgkJc3VwZXIoKTsKCgkJdGhpcy5tb3VudGVkID0gZmFsc2U7CgoJCS8vIEluaXRpYWwgc3RhdGU6ICJMb2FkaW5nIiBwYWdlIGFuZCBjb2xsZWN0aW9ucyBsaXN0CgkJdGhpcy5zdGF0ZSA9IHsKCQkJc2VhcmNoOiAnJywKCQkJZXJyb3I6ICdsb2FkaW5nJywKCQkJcm91dGU6IHsKCQkJCXR5cGU6ICdjb2xsZWN0aW9ucycsCgkJCX0sCgkJfTsKCX0KCgljb21wb25lbnREaWRNb3VudCgpIHsKCQkvLyBNYXJrIGFzIG1vdW50ZWQKCQl0aGlzLm1vdW50ZWQgPSB0cnVlOwoKCQkvLyBDcmVhdGUgSWNvbkZpbmRlckNvcmUgaW5zdGFuY2UKCQl0aGlzLmNvcmUgPSBuZXcgSWNvbkZpbmRlckNvcmUoewoJCQlkZWZhdWx0Um91dGU6IHsKCQkJCXR5cGU6ICdjb2xsZWN0aW9ucycsCgkJCX0sCgkJCWNhbGxiYWNrOiAoZGF0YSwgY29yZSkgPT4gdGhpcy5fdXBkYXRlU3RhdGUuYmluZCh0aGlzKSwKCQl9KTsKCX0KCgljb21wb25lbnRXaWxsVW5tb3VudCgpIHsKCQkvLyBNYXJrIGFzIHVubW91bnRlZAoJCXRoaXMubW91bnRlZCA9IGZhbHNlOwoKCQkvLyBEZXN0cm95IEljb25GaW5kZXJDb3JlIGluc3RhbmNlIChvcHRpb25hbCkKCQl0aGlzLmNvcmUuZGVzdHJveSgpOwoJfQoKCV91cGRhdGVTdGF0ZShkYXRhKSB7CgkJaWYgKHRoaXMubW91bnRlZCkgewoJCQkvLyBJZiBjdXJyZW50IHZpZXcgY2hhbmdlZCB0byBzZWFyY2ggcmVzdWx0cywgY29weSBjdXJyZW50IHNlYXJjaCBrZXl3b3JkIGZyb20gcm91dGUKCQkJaWYgKGRhdGEudmlld0NoYW5nZWQgJiYgZGF0YS5yb3V0ZS50eXBlID09PSAnc2VhcmNoJykgewoJCQkJdGhpcy5zZXRTdGF0ZSh7CgkJCQkJa2V5d29yZDogZGF0YS5yb3V0ZS5wYXJhbXMuc2VhcmNoLAoJCQkJfSk7CgkJCX0KCgkJCS8vIE1lcmdlIFJvdXRlckV2ZW50IGRhdGEgd2l0aCBzdGF0ZQoJCQl0aGlzLnNldFN0YXRlKGRhdGEpOwoJCX0KCX0KCglyZW5kZXIoKSB7CgkJY29uc3Qgc3RhdGUgPSB0aGlzLnN0YXRlOwoKCQkvLyBDaGVjayBvZiBjb3JlIGlzIGF2YWlsYWJsZQoJCWlmICh0aGlzLmNvcmUgPT09IHZvaWQgMCkgewoJCQlyZXR1cm4gPExvYWRpbmdFcnJvciAvPjsKCQl9CgoJCS8vIEdldCBjaGlsZCBjb21wb25lbnQKCQlsZXQgQ2hpbGRDb21wb25lbnQgPSBMb2FkaW5nRXJyb3I7CgkJY29uc3QgY2hpbGRQcm9wcyA9IHsKCQkJLy8gU2VhcmNoIGtleXdvcmQKCQkJc2VhcmNoOiBzdGF0ZS5zZWFyY2gsCgoJCQkvLyBSb3V0ZQoJCQlyb3V0ZTogc3RhdGUucm91dGUsCgoJCQkvLyBDb3JlIGlkLCBjYW4gYmUgdXNlZCB0byBnZXQgSWNvbkZpbmRlckNvcmUgaW5zdGFuY2UgYW5kIHJ1biBhY3Rpb24KCQkJY29yZTogdGhpcy5jb3JlLmlkLAoJCX07CgoJCWxldCByb3V0ZVR5cGUgPSBzdGF0ZS5yb3V0ZS50eXBlOwoJCXN3aXRjaCAoc3RhdGUuZXJyb3IpIHsKCQkJY2FzZSAnJzoKCQkJCS8vIE5vIGVycm9yLiBSZW5kZXIgY2hpbGQgdmlldyBiYXNlZCBvbiBjdXJyZW50IHJvdXRlCgkJCQlzd2l0Y2ggKHJvdXRlVHlwZSkgewoJCQkJCWNhc2UgJ2NvbGxlY3Rpb25zJzoKCQkJCQkJQ2hpbGRDb21wb25lbnQgPSBDb2xsZWN0aW9uc1ZpZXdDb250YWluZXI7CgkJCQkJCWJyZWFrOwoKCQkJCQljYXNlICdjb2xsZWN0aW9uJzoKCQkJCQkJQ2hpbGRDb21wb25lbnQgPSBDb2xsZWN0aW9uVmlld0NvbnRhaW5lcjsKCQkJCQkJYnJlYWs7CgoJCQkJCWNhc2UgJ3NlYXJjaCc6CgkJCQkJCUNoaWxkQ29tcG9uZW50ID0gU2VhcmNoVmlld0NvbnRhaW5lcjsKCQkJCQkJYnJlYWs7CgoJCQkJCWNhc2UgJ2N1c3RvbSc6CgkJCQkJCUNoaWxkQ29tcG9uZW50ID0gQ3VzdG9tVmlld0NvbnRhaW5lcjsKCQkJCQkJYnJlYWs7CgoJCQkJCWRlZmF1bHQ6CgkJCQkJCS8vIFRoaXMgY29kZSBzaG91bGQgYmUgdW5yZWFjaGFibGUuIElmIHVzaW5nIFR5cGVTY3JpcHQgYWRkIGNoZWNrIGZvciAibmV2ZXIiIHR5cGUgaGVyZQoJCQkJCQlDaGlsZENvbXBvbmVudCA9IEdlbmVyaWNFcnJvcjsKCQkJCQkJY2hpbGRQcm9wcy5lcnJvciA9ICdpbnZhbGlkX3ZpZXcnOwoJCQkJfQoKCQkJCS8vIEV4cGFuZCBibG9ja3MgYXMgdmFyaW91cyBwcm9wZXJ0aWVzLCBlbmRpbmcgd2l0aCAiQmxvY2siLCBzdWNoIGFzIGJsb2Nrcy5pY29ucyBiZWNvbWVzIGljb25zQmxvY2sKCQkJCU9iamVjdC5rZXlzKHN0YXRlLmJsb2NrcykuZm9yRWFjaCgoa2V5KSA9PiB7CgkJCQkJY2hpbGRQcm9wc1trZXkgKyAnQmxvY2snXSA9IHN0YXRlLmJsb2Nrc1trZXldOwoJCQkJfSk7CgkJCQlicmVhazsKCgkJCWNhc2UgJ2xvYWRpbmcnOgoJCQkJLy8gUmVuZGVyICJMb2FkaW5nIiBwYWdlCgkJCQlDaGlsZENvbXBvbmVudCA9IExvYWRpbmdFcnJvcjsgLy8gUmVkdW5kYW50IGNvZGUKCQkJCWJyZWFrOwoKCQkJZGVmYXVsdDoKCQkJCS8vIFJlbmRlciBlcnJvciBjb21wb25lbnQsIHVzZSAiZXJyb3IiIHByb3AgdG8gZ2VuZXJhdGUgZXJyb3IgbWVzc2FnZQoJCQkJQ2hpbGRDb21wb25lbnQgPSBHZW5lcmljRXJyb3I7CgkJCQljaGlsZFByb3BzLmVycm9yID0gc3RhdGUuZXJyb3I7CgkJfQoKCQkvLyBSZW5kZXIKCQlyZXR1cm4gPENoaWxkQ29tcG9uZW50IHsuLi5jaGlsZFByb3BzfSAvPjsKCX0KfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> react, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">const</span> { IconFinderCore } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/icon-finder-core&apos;</span>);<br>
+<br>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UI</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">constructor</span>() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">super</span>();<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.mounted = <span class="hljs-literal">false</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Initial state: &quot;Loading&quot; page and collections list</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.state = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">search</span>: <span class="hljs-string">&apos;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">error</span>: <span class="hljs-string">&apos;loading&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">route</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collections&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;componentDidMount() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Mark as mounted</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.mounted = <span class="hljs-literal">true</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Create IconFinderCore instance</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.core = <span class="hljs-keyword">new</span> IconFinderCore({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">defaultRoute</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collections&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">data, core</span>) =&gt;</span> <span class="hljs-keyword">this</span>._updateState.bind(<span class="hljs-keyword">this</span>),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;componentWillUnmount() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Mark as unmounted</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.mounted = <span class="hljs-literal">false</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Destroy IconFinderCore instance (optional)</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.core.destroy();<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;_updateState(data) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.mounted) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// If current view changed to search results, copy current search keyword from route</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (data.viewChanged &amp;&amp; data.route.type === <span class="hljs-string">&apos;search&apos;</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.setState({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">keyword</span>: data.route.params.search,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Merge RouterEvent data with state</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.setState(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;render() {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> state = <span class="hljs-keyword">this</span>.state;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Check of core is available</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.core === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoadingError</span> /&gt;</span></span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Get child component</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> ChildComponent = LoadingError;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> childProps = {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Search keyword</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">search</span>: state.search,<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Route</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">route</span>: state.route,<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Core id, can be used to get IconFinderCore instance and run action</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">core</span>: <span class="hljs-keyword">this</span>.core.id,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> routeType = state.route.type;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">switch</span> (state.error) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// No error. Render child view based on current route</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">switch</span> (routeType) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;collections&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = CollectionsViewContainer;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;collection&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = CollectionViewContainer;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;search&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = SearchViewContainer;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;custom&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = CustomViewContainer;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">default</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// This code should be unreachable. If using TypeScript add check for &quot;never&quot; type here</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = GenericError;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;childProps.error = <span class="hljs-string">&apos;invalid_view&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Expand blocks as various properties, ending with &quot;Block&quot;, such as blocks.icons becomes iconsBlock</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">Object</span>.keys(state.blocks).forEach(<span class="hljs-function">(<span class="hljs-params">key</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;childProps[key + <span class="hljs-string">&apos;Block&apos;</span>] = state.blocks[key];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;loading&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Render &quot;Loading&quot; page</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = LoadingError; <span class="hljs-comment">// Redundant code</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">default</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Render error component, use &quot;error&quot; prop to generate error message</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;ChildComponent = GenericError;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;childProps.error = state.error;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Render</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> {<span class="hljs-attr">...childProps</span>} /&gt;</span></span>;<br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><p>In child components to get <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> instance, use property <span class="hljs-inline-prop">core</span> passed from parent component:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgeyBnZXRDb3JlSW5zdGFuY2UgfSA9IHJlcXVpcmUoJ0BpY29uaWZ5L2ljb24tZmluZGVyLWNvcmUnKTsKCi8vIEV4YW1wbGUgY29kZSBpbnNpZGUgY29tcG9uZW50Ci8vICJjb3JlIiB3YXMgcHJvdmlkZWQgYXMgcHJvcGVydHkgaW4gYSBwcmV2aW91cyBleGFtcGxlLiBUaGlzIGV4YW1wbGUgaXMgYW4gYWRkaXRpb24gdG8gcHJldmlvdXMgZXhhbXBsZS4KY29uc3QgaWQgPSB0aGlzLnByb3BzLmNvcmU7CmlmIChpZCAhPT0gbnVsbCkgewoJY29uc3QgY29yZSA9IGdldENvcmVJbnN0YW5jZSh0aGlzLnByb3BzLmNvcmUpOwoJY29yZS5yb3V0ZXIuYWN0aW9uKCdwYWdpbmF0aW9uJywgMik7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">const</span> { getCoreInstance } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/icon-finder-core&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Example code inside component</span><br>
+<span class="hljs-comment">// &quot;core&quot; was provided as property in a previous example. This example is an addition to previous example.</span><br>
+<span class="hljs-keyword">const</span> id = <span class="hljs-keyword">this</span>.props.core;<br>
+<span class="hljs-keyword">if</span> (id !== <span class="hljs-literal">null</span>) {<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">const</span> core = getCoreInstance(<span class="hljs-keyword">this</span>.props.core);<br>
+ &#xA0; &#xA0;core.router.action(<span class="hljs-string">&apos;pagination&apos;</span>, <span class="hljs-number">2</span>);<br>
+}<br>
+</code></div></div></div></section>
+
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Core<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./core.html">IconFinderCore</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./render.html">Render Callback</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./routes.html">Routes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./blocks.html">Blocks</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./actions.html">Actions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./custom-view.html">Custom View</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Core Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./registry.html">Registry</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./router.html">Router</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?3e18"></script>
+		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

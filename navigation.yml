@@ -172,7 +172,17 @@
           children:
             ./core/:
               title: Core
-              wip: true
+              children:
+                ./core.html: IconFinderCore
+                ./render.html: Render Callback
+                ./routes.html: Routes
+                ./blocks.html: Blocks
+                ./actions.html: Actions
+                ./custom-view.html: Custom View
+                ./config.html: Core Configuration
+                ./registry.html: Registry
+                ./router.html: Router
+                ./types.html: Types
 /code/:
   title: Code
   children:

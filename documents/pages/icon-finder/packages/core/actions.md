@@ -1,6 +1,16 @@
 ```yaml
 title: Actions in Iconify Icon Finder
-wip: true
+classes:
+  IconFinderCore: ./core.md
+  Registry: ./registry.md
+  Router: ./router.md
+types:
+  FiltersBlock: ./blocks.md#filters
+  CollectionsListBlock: ./blocks.md#collections-list
+  CollectionsFilterBlock: ./blocks.md#collections-filter
+  SearchBlock: ./blocks.md#search
+  PaginationBlock: ./blocks.md#pagination
+  Icon: ./types.md#icon
 ```
 
 # Actions in Iconify Icon Finder
@@ -11,10 +21,10 @@ When rendering a view, you get a [list of blocks](./blocks.md). Each block rende
 
 Usually, when rendering any block, there is something for a user to edit or to click. For example, in the pagination block, the user can click a page, in search form user and enter a keyword. To forward that action to Icon Finder Core, UI should apply action to the current view.
 
-To apply action to currently visible view, you need to run `[js]action(blockName: string, value: unknown)` function of router. If you are using [`[class]APICore`](./api-core.md) instance, do this:
+To apply action to currently visible view, you need to run `[js]action(blockName: string, value: unknown)` function of router. If you are using `[class]IconFinderCore` instance, do this:
 
 ```js
-const router = core.getRouter();
+const router = core.router;
 router.action('pagination', 2); // Changes page to 2. Usable in all views, except for collections list.
 router.action('search', 'arrow'); // Searches for "arrow"
 ```
@@ -307,7 +317,7 @@ Action information:
 
 - Block type: none. This action has no block associated with it.
 
-This action changes the icons list. Value is an array of new icons. Each array entry can be an [`[type]Icon` object](./types.md#icon) or a string.
+This action changes the icons list. Value is an array of new icons. Each array entry can be an `[type]Icon` object or a string.
 
 ```js
 router.action('set', [

@@ -1,9 +1,11 @@
 ```yaml
 title: 'Iconify Icon Finder Package: Core'
-wip: true
 classes:
-  APICore: ./api-core.md
+  IconFinderCore: ./core.md
   Registry: ./registry.md
+  Router: ./router.md
+types:
+  PartialRoute: ./routes.md
 ```
 
 # Iconify Icon Finder package: Core
@@ -18,29 +20,48 @@ Code is written in TypeScript to provide types for all data, so editors such as 
 
 ## How does it work
 
-Creating instance:
+All you need to do is create `[class]IconFinderCore` instance and provide the callback among other parameters.
 
-- You create `[class]APICore` instance and provide a callback. That callback will be called whenever data changes.
-- You supply core with a route. If a route is not supplied, Icon Finder Core will navigate to collections list.
-- Icon Finder Core sends requests to API to retrieve data.
-- When data is available, Icon Finder Core parses that data, filters it according to route, converts everything to simple objects and calls callback you have provided when you were creating new `[class]APICore` instance.
-- In callback you render data. See [render event callback](./render.md).
+All communication from `[class]IconFinderCore` to UI is done via callback. When new set of data is ready to be rendered, Core will prepare that data for rendering and call the callback. If there is an error or a loading screen (caused by API delay or internet connection problems), core will call the callback.
 
-To change something, for example, a page, you should do this:
+In the callback you should render data provided as callback parameter. See [render event callback](./render.md).
 
-- Apply action, such as `[js]action('pagination', 1)` to get second page of results.
-- Icon Finder Core will apply that change to the current route, retrieve data (if needed), filter data and call your callback with updated data.
+To change something, for example, a page, you can do one of two things:
 
-## APICore and Registry
-
-There are two ways to work with Icon Finder Core: using `[class]APICore` class and using `[class]Registry`.
-
-`[class]APICore` class is accessed by importing `[prop]APICore` from package's main file:
+1. Apply action using `[func]action` function. Icon Finder Core will apply that change to the current route, retrieve data (if needed), filter data and call your callback with updated data.
+2. Change route by writing to `[prop]route` property of the router. You can access `[class]Router` instance using `[prop]router` property.
 
 ```js
-const { APICore } = require('@iconify/icon-finder-core');
+// Change page
+core.action('pagination', 1); // Second page. First page is 0.
+```
 
-const core = new APICore({
+```js
+// Change route to MDI
+core.router.route = {
+	// Collection route, prefix is set in params object.
+	type: 'collection',
+	params: {
+		prefix: 'mdi',
+	},
+	// Collections list as the parent route.
+	// If not set, UI will not have link to return to collections list.
+	parent: {
+		type: 'collections',
+	},
+};
+```
+
+## IconFinderCore and Registry
+
+There are two ways to work with Icon Finder Core: using `[class]IconFinderCore` class and using `[class]Registry`.
+
+`[class]IconFinderCore` class is accessed by importing `[prop]IconFinderCore` from package's main file:
+
+```js
+const { IconFinderCore } = require('@iconify/icon-finder-core');
+
+const core = new IconFinderCore({
 	// Parameters here
 	// ...
 	callback: (data, core) => {
@@ -49,7 +70,7 @@ const core = new APICore({
 });
 ```
 
-`[class]Registry` class gives full access to all internal stuff. You can also access it from `[class]APICore` instance by calling method `[func]getInternalRegistry()`.
+`[class]Registry` class gives full access to all internal stuff. You can also access it from `[class]IconFinderCore` instance by accessing `[func]registry` property.
 
 To create a `[class]Registry` instance, import `[prop]Registry` class from `[file]lib/registry` and create new instance:
 
@@ -61,7 +82,7 @@ const registry = new Registry();
 const router = registry.router;
 const events = registry.events;
 
-// Subscribe to render event, same as using callback in APICore example above
+// Subscribe to render event, same as using callback in IconFinderCore example above
 events.subscribe('render', (data) => {
 	// Same as callback in example above.
 });
@@ -70,13 +91,13 @@ events.subscribe('render', (data) => {
 router.home();
 ```
 
-For more examples of code, see `[class]APICore` class or `[class]Registry` class.
+For more examples of code, see `[class]IconFinderCore` class or `[class]Registry` class.
 
 ## Routes
 
-Every request and response has a route associated with it. Route is a simple object describing the current view.
+Every request and response has a route associated with it. `[type]PartialRoute` is a simple object describing the current view.
 
-For description of routes see [core/routes.md](./routes.md).
+For description of routes see [routes documentation](./routes.md).
 
 ## Views
 
@@ -99,13 +120,13 @@ When your callback is called, it includes a list of blocks that UI should displa
 
 Each block represents one set of data.
 
-For description of all available blocks see [core/blocks.md](./blocks.md).
+For description of all available blocks see [blocks documentation](./blocks.md).
 
 ## Actions
 
 When a user clicks something in UI, UI should send action to Icon Finder Core.
 
-For list of actions see [core/actions.md](./actions.md).
+For list of actions see [actions documentation](./actions.md).
 
 ## Types
 
@@ -115,4 +136,4 @@ Icon Finder Core is written in TypeScript. This has several major advantages:
 - When using a library written in TypeScript, editors such as VSCode will give you hints and autofill properties, making it much easier to use the library.
 - Easier to avoid bugs. While core does have unit tests, TypeScript provides an additional layer of code checking, reducing chances of bugs.
 
-For description of types that are relevant to implementing UI, see [core/types.md](./types.md).
+For description of types that are relevant to implementing UI, see [types documentation](./types.md).

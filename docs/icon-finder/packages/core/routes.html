@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?ffd5" />
+		<title>Routes in Iconify Icon Finder</title>
+		
+	</head>
+	<body class="website-docs theme-integration">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<div class="docs-short-navigation">
+<a href="./render.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Render Callback</a>
+<a href="./blocks.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Blocks</a>
+</div>
+<h1>Routes in Iconify Icon Finder</h1>
+<p>This tutorial is part of <a href="../">Iconify Icon Finder Core tutorial</a>.</p>
+<p>Every view has a route associated with it. Route makes it easy to save and restore Icon Finder state, so visitor can continue browsing page from the previous session.</p>
+<p>A route is a simple object of type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></span> describing the current view. It has a route type, set of parameters and optional parent route.</p>
+<p>For example, this route represents collections list:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY29sbGVjdGlvbnMiCn0K"><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collections&quot;</span><br>
+}<br>
+</code></div></div></div><p>Each route can have parameters object, which is optional for icon sets list but is required for other route types.</p>
+<p>For example, this route represents displaying second page (pages start with 0) of collection &quot;<span class="hljs-string">mdi</span>&quot;:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY29sbGVjdGlvbiIsCgkicGFyYW1zIjogewoJCSJwcmVmaXgiOiAibWRpIiwKCQkicGFnZSI6IDEKCX0KfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;page&quot;</span>: <span class="hljs-number">1</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><p>In this example route represents searching collection &quot;<span class="hljs-string">mdi</span>&quot; for icons that contain &quot;<span class="hljs-string">arrow</span>&quot; and are part of the &quot;<span class="hljs-string">Account / User</span>&quot; category:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY29sbGVjdGlvbiIsCgkicGFyYW1zIjogewoJCSJwcmVmaXgiOiAibWRpIiwKCQkiZmlsdGVyIjogImFycm93IiwKCQkidGFnIjogIkFjY291bnQgLyBVc2VyIgoJfQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;arrow&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;tag&quot;</span>: <span class="hljs-string">&quot;Account / User&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><p>Each route can have the parent route. For example, this is what route looks like if you browsed collections list, then searched for &quot;<span class="hljs-string">home</span>&quot;, then from search results selected &quot;<span class="hljs-string">ant-design</span>&quot; collection to show only icons that belong to that collection:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY29sbGVjdGlvbiIsCgkicGFyYW1zIjogewoJCSJwcmVmaXgiOiAiYW50LWRlc2lnbiIsCgkJImZpbHRlciI6ICJob21lIgoJfSwKCSJwYXJlbnQiOiB7CgkJInR5cGUiOiAic2VhcmNoIiwKCQkicGFyYW1zIjogewoJCQkia2V5d29yZCI6ICJob21lIgoJCX0sCgkJInBhcmVudCI6IHsKCQkJInR5cGUiOiAiY29sbGVjdGlvbnMiCgkJfQoJfQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;ant-design&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;home&quot;</span><br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;parent&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;search&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;keyword&quot;</span>: <span class="hljs-string">&quot;home&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;parent&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collections&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><section class="content-section content-section--2"><H1 id="types" class="heading--2">Types <a href="#types" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are 5 types of routes. Almost all of them have required parameters:</p><ul>
+<li>&quot;<span class="hljs-string">collections</span>&quot;: Shows list of collections. No required parameters.</li>
+<li>&quot;<span class="hljs-string">collection</span>&quot;: Shows one collection. Required parameter: <span class="hljs-inline-prop">prefix</span> that matches icon set prefix.</li>
+<li>&quot;<span class="hljs-string">search</span>&quot;: Shows search results. Required parameter: <span class="hljs-inline-prop">keyword</span> that contains a phrase to search for. Search is case-insensitive.</li>
+<li>&quot;<span class="hljs-string">custom</span>&quot;: Shows custom icons list (more about custom views below). Required parameter: <span class="hljs-inline-prop">customType</span>.</li>
+<li>&quot;<span class="hljs-string">empty</span>&quot;: Shows empty content. This is used if you want UI to display only the footer. No parameters.</li>
+</ul><section class="content-section content-section--3"><H1 id="collections" class="heading--3">Collections <a href="#collections" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Collections list route is represented by type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">CollectionsRoute</span></span> and has the following optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">filter</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Used for searching collections list. The default value is an empty string &quot;<span class="hljs-string"></span>&quot;.</li>
+<li><span class="hljs-inline-prop">category</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Used to show icon sets only from one category. The default value is <span class="hljs-literal">null</span>.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="collection" class="heading--3">Collection <a href="#collection" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Collection route is represented by type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">CollectionRoute</span></span> and has one required parameter:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon set prefix.</li>
+</ul><p>It also has the following optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">filter</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Keyword to filter icons. The default value is an empty string &quot;<span class="hljs-string"></span>&quot;.</li>
+<li><span class="hljs-inline-prop">page</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Current page number. The default value is <span class="hljs-number">0</span>.</li>
+<li><span class="hljs-inline-prop">tag</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Tag filter. If not <span class="hljs-literal">null</span>, only icons that include tag will be shown. Value could be an empty string to show icons that do not have any tag. The default value is <span class="hljs-literal">null</span>.</li>
+<li><span class="hljs-inline-prop">themePrefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Theme prefix. Value is a theme name, not an actual prefix. See the <a href="#prefixes-suffixes">Prefixes and Suffixes</a> section below. The default value is <span class="hljs-literal">null</span>.</li>
+<li><span class="hljs-inline-prop">themeSuffix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Same as above, but for the suffix.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="search" class="heading--3">Search <a href="#search" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Search results route is represented by type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">SearchRoute</span></span> and has one required parameter:</p><ul>
+<li><span class="hljs-inline-prop">search</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Search keyword. Value is case-insensitive and cannot be empty.</li>
+</ul><p>It also has the following optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">page</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Current page number. The default value is <span class="hljs-number">0</span>.</li>
+<li><span class="hljs-inline-prop">mode</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. <span class="hljs-literal">True</span> if more results are available. The default value is <span class="hljs-literal">true</span> for pages <span class="hljs-number">0</span> and <span class="hljs-number">1</span>, <span class="hljs-literal">false</span> for other pages.</li>
+</ul><p>By default, Icon Finder will retrieve only the first 2 pages of results from API. This is done to reduce the load on API because often visitors don&apos;t look further than the first page. Additional results can be retrieved by changing the current page to 2 (or higher).</p></section><section class="content-section content-section--3"><H1 id="custom" class="heading--3">Custom <a href="#custom" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Custom icons list route is represented by type <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">CustomRoute</span></span> and has one required parameter:</p><ul>
+<li><span class="hljs-inline-prop">customType</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Custom page type. Value is used to tell the difference between various custom icon lists. For example, value for recent icons list can be &quot;<span class="hljs-string">recent</span>&quot;, value for bookmarked icons can be &quot;<span class="hljs-string">bookmarks</span>&quot;.</li>
+</ul><p>It also has the following optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">filter</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Keyword to filter icons. The default value is an empty string &quot;<span class="hljs-string"></span>&quot;.</li>
+<li><span class="hljs-inline-prop">page</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Current page number. The default value is <span class="hljs-number">0</span>.</li>
+</ul><p>For more information about a custom view, see <a href="./custom-view.html">custom view documentation</a>.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="prefixes-suffixes" class="heading--2">Prefixes and suffixes <a href="#prefixes-suffixes" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>The collection route can have theme prefix and/or suffix. They define icon variations based on part of icon name, such as Filled and Outline variations of the same icon.</p><p>Theme prefixes and suffixes have 2 properties:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span> (or <span class="hljs-inline-prop">suffix</span>), <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. This is a prefix or suffix part of icons name, such as &quot;<span class="hljs-string">baseline-</span>&quot; or &quot;<span class="hljs-string">-outline</span>&quot;.</li>
+<li><span class="hljs-inline-prop">title</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Title to show, such as &quot;<span class="hljs-string">Baseline</span>&quot; or &quot;<span class="hljs-string">Outline</span>&quot;.</li>
+</ul><p>In all filters in all routes, the <span class="hljs-inline-prop">title</span> is used as a value, not <span class="hljs-inline-prop">prefix</span>/<span class="hljs-inline-prop">suffix</span>. So for example, if in an icon set there is a prefix with value &quot;<span class="hljs-string">round-</span>&quot; and the title &quot;<span class="hljs-string">Round</span>&quot;, the route would have &quot;<span class="hljs-string">Round</span>&quot; as prefix:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY29sbGVjdGlvbiIsCgkicGFyYW1zIjogewoJCSJwcmVmaXgiOiAiaWMiLAoJCSJ0aGVtZVByZWZpeCI6ICJSb3VuZCIKCX0KfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;ic&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;themePrefix&quot;</span>: <span class="hljs-string">&quot;Round&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><p>Icon set can use both prefixes and suffixes at the same time, however, as of time when this documentation was created, no icon set does that. Icon sets usually use only prefix or suffix.</p></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="router" class="heading--2">Router <a href="#router" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Routes are handled by <span class="hljs-inline-type hljs-linkable"><a href="./router.html" title="Router documentation"><span class="hljs-inline-type hljs-linkable">Router</span></a></span> instance. See <a href="./router.html">Router documentation</a> for details.</p></section>
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Core<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./core.html">IconFinderCore</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render.html">Render Callback</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./routes.html">Routes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./blocks.html">Blocks</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./actions.html">Actions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./custom-view.html">Custom View</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Core Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./registry.html">Registry</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./router.html">Router</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?3e18"></script>
+		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>
