@@ -47,6 +47,33 @@ To convert icon from/to string, the following functions are available:
 - `[func]iconToString(icon: Icon): string`. Return string representation of icon, such as `[str]fa-solid:home`.
 - `[func]stringToIcon(icon: string): Icon | null`. Returns `[type]Icon` object, `null` if it fails to convert.
 
+## IconsList {#icons-list}
+
+Type `[type]IconsList` is used to set icons for a [custom view](./custom-view.md).
+
+It is an array of icon names. Each array entry can be one of the following types:
+
+- `[type]Icon`. Icon name as object.
+- `[type]string`. Icon name as string, such as `[icon]mdi:home`.
+
+You can mix those types if you want to, function will convert all entries to `[type]Icon` type.
+
+Example:
+
+```js
+const icons: IconsList = [
+	'bi:bag',
+	'bi:bell-fill',
+	{
+		provider: '',
+		prefix: 'bi',
+		name: 'stopwatch',
+	},
+];
+
+core.router.setCustomIcons('recent', icons);
+```
+
 ## Route {#route}
 
 Route is represented by several types:
@@ -77,6 +104,6 @@ It extends type `[type]IconifyInfo` from `[npm]@iconify/types` package.
 
 ## RouterEvent {#router-event}
 
-`[type]RouterEvent` object contains data needed to update UI. It is used in the render callback.
+Type `[type]RouterEvent` is an object contains data needed to update UI. It is used in the render callback.
 
 See [render callback documentation](./render.md) for details.
