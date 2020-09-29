@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react-with-api';
 
 export function sizeDemo() {
 	return (

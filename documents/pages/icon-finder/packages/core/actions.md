@@ -15,7 +15,7 @@ types:
 
 # Actions in Iconify Icon Finder
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 When rendering a view, you get a [list of blocks](./blocks.md). Each block renders only 1 type of data and has an action associated with it. The action name matches the name of the block.
 

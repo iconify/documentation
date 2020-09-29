@@ -193,7 +193,9 @@ const target = __dirname + '/src/iconify-bundle.js';
 			const { dir, prefix, monotone } = source;
 
 			// Import directory
-			const collection = await tools.ImportDir(dir);
+			const collection = await tools.ImportDir(dir, {
+				prefix,
+			});
 
 			// Set prefix
 			collection.prefix = prefix;

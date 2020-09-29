@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?ffd5" />
+		<link rel="stylesheet" href="../../assets/style.css?9075" />
 		<title>Changing Icon Color in Iconify for React with API</title>
 		
 	</head>
@@ -92,8 +92,8 @@
 <p>This tutorial is part of <a href="./">Iconify for React with API tutorial</a>.</p>
 <p>You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.</p>
 <p>To change color of a monotone icon simply change text color or use <span class="hljs-inline-prop">color</span> attribute.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">JSX:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsKCmV4cG9ydCBmdW5jdGlvbiBjb2xvckRlbW8oKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxkaXYgY2xhc3NOYW1lPSJsaWdodC1ibHVlLWJsb2NrIj4KCQkJCUFsbCBpY29ucyBpbnNpZGUgdGhpcyBkaXYgYXJlIGxpZ2h0IGJsdWUsIGluY2x1ZGluZyBhIGJlbGwgaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+IGFuZCBzdG9wd2F0Y2ggaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpzdG9wd2F0Y2giIC8+CgkJCTwvZGl2PgoJCQk8ZGl2IGNsYXNzTmFtZT0ib3JhbmdlLWJsb2NrIj4KCQkJCVRoaXMgdGV4dCBhbmQgaWNvbiBhcmUgb3JhbmdlOiA8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+CgkJCTwvZGl2PgoJCQk8ZGl2PgoJCQkJUmVkIGhvbWUgaWNvbnMgKHNob3dzIGRpZmZlcmVudCB3YXlzIHRvIGNoYW5nZSBjb2xvcik6eycgJ30KCQkJCTxJbmxpbmVJY29uIGNsYXNzTmFtZT0icmVkLWljb24iIGljb249ImJ4OmJ4LWhvbWUiIC8+eycgJ30KCQkJCTxJbmxpbmVJY29uIHN0eWxlPXt7IGNvbG9yOiAncmVkJyB9fSBpY29uPSJieDpieC1ob21lIiAvPnsnICd9CgkJCQk8SW5saW5lSWNvbiBjb2xvcj0icmVkIiBpY29uPSJieDpieC1ob21lIiAvPgoJCQk8L2Rpdj4KCQkJPGRpdj4KCQkJCUljb24gd2l0aCBwYWxldHRlOiA8SW5saW5lSWNvbiBpY29uPSJub3RvOnBhaW50YnJ1c2giIC8+CgkJCTwvZGl2PgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
-<span class="hljs-keyword">import</span> { InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">JSX:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSW5saW5lSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBjb2xvckRlbW8oKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxkaXYgY2xhc3NOYW1lPSJsaWdodC1ibHVlLWJsb2NrIj4KCQkJCUFsbCBpY29ucyBpbnNpZGUgdGhpcyBkaXYgYXJlIGxpZ2h0IGJsdWUsIGluY2x1ZGluZyBhIGJlbGwgaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+IGFuZCBzdG9wd2F0Y2ggaWNvbnsnICd9CgkJCQk8SW5saW5lSWNvbiBpY29uPSJiaTpzdG9wd2F0Y2giIC8+CgkJCTwvZGl2PgoJCQk8ZGl2IGNsYXNzTmFtZT0ib3JhbmdlLWJsb2NrIj4KCQkJCVRoaXMgdGV4dCBhbmQgaWNvbiBhcmUgb3JhbmdlOiA8SW5saW5lSWNvbiBpY29uPSJiaTpiZWxsLWZpbGwiIC8+CgkJCTwvZGl2PgoJCQk8ZGl2PgoJCQkJUmVkIGhvbWUgaWNvbnMgKHNob3dzIGRpZmZlcmVudCB3YXlzIHRvIGNoYW5nZSBjb2xvcik6eycgJ30KCQkJCTxJbmxpbmVJY29uIGNsYXNzTmFtZT0icmVkLWljb24iIGljb249ImJ4OmJ4LWhvbWUiIC8+eycgJ30KCQkJCTxJbmxpbmVJY29uIHN0eWxlPXt7IGNvbG9yOiAncmVkJyB9fSBpY29uPSJieDpieC1ob21lIiAvPnsnICd9CgkJCQk8SW5saW5lSWNvbiBjb2xvcj0icmVkIiBpY29uPSJieDpieC1ob21lIiAvPgoJCQk8L2Rpdj4KCQkJPGRpdj4KCQkJCUljb24gd2l0aCBwYWxldHRlOiA8SW5saW5lSWNvbiBpY29uPSJub3RvOnBhaW50YnJ1c2giIC8+CgkJCTwvZGl2PgoJCTwvZGl2PgoJKTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">colorDemo</span>(<span class="hljs-params"></span>) </span>{<br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
@@ -248,7 +248,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="../../assets/bundle.js?3e18"></script>
+		<script src="../../assets/bundle.js?d420"></script>
 		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

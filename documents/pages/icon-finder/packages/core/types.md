@@ -11,7 +11,7 @@ types:
 
 # Types in Iconify Icon Finder Core
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 Iconify Icon Finder Core is written in TypeScript. This has several major advantages:
 

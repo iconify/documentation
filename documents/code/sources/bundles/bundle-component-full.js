@@ -194,7 +194,9 @@ function parseSVG() {
 
 			let collection;
 			tools
-				.ImportDir(dir)
+				.ImportDir(dir, {
+					prefix,
+				})
 				.then((result) => {
 					collection = result;
 

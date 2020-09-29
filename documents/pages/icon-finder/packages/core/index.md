@@ -18,6 +18,20 @@ Everything is asynchronous. Icon Finder Core uses events to react to requests.
 
 Code is written in TypeScript to provide types for all data, so editors such as VSCode will give you types and object keys for data provided by core.
 
+## Requirements
+
+This documentation is very technical. To understand this tutorial you need:
+
+- Good JavaScript knowledge, including browser and Node.js.
+- Good TypeScript knowledge. Core is entirely written in TypeScript.
+- Understanding of asynchronous development.
+
+## Building
+
+To build Icon Finder Core, navigate to `[file]packages/core` of [GitHub repository](https://github.com/iconify/icon-finder), install dependencies and run `[bash]npm run build`.
+
+To run unit tests, run `[bash]npm run test`.
+
 ## How does it work
 
 All you need to do is create `[class]IconFinderCore` instance and provide the callback among other parameters.

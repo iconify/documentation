@@ -21,7 +21,7 @@ export function getPrevNextLinks(
 	if (navigationRef.children) {
 		for (let i = 0; i < navigationRef.children.length; i++) {
 			const item = navigationRef.children[i];
-			if (!item.hidden) {
+			if (!item.hidden && !item.unclickable) {
 				links.next = item;
 				break;
 			}
@@ -116,7 +116,7 @@ export function getPrevNextLinks(
 						if (prevIndex < 0) {
 							break;
 						}
-						if (list[prevIndex].hidden) {
+						if (list[prevIndex].hidden || list[prevIndex].unclickable) {
 							prevIndex--;
 							continue;
 						}
@@ -131,7 +131,7 @@ export function getPrevNextLinks(
 						if (list[nextIndex] === void 0) {
 							break;
 						}
-						if (list[nextIndex].hidden) {
+						if (list[nextIndex].hidden || list[nextIndex].unclickable) {
 							nextIndex++;
 							continue;
 						}

@@ -339,41 +339,41 @@ template {
 
 @supports (animation: foo 1s) and (not (-ms-ime-align: auto)) and (not (overflow: -webkit-marquee)) {
 	.iconify--line-md .il-md-fill {
-		animation: il-md-fill 0.5s forwards;
+		animation: il-md-fill 0.5s linear forwards;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-15 {
-		animation: il-md-length-15 0s forwards;
+		animation: il-md-length-15 0s linear forwards;
 		stroke-dasharray: 15;
 		stroke-dashoffset: 15;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-25 {
-		animation: il-md-length-25 0s forwards;
+		animation: il-md-length-25 0s linear forwards;
 		stroke-dasharray: 25;
 		stroke-dashoffset: 25;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-40 {
-		animation: il-md-length-40 0s forwards;
+		animation: il-md-length-40 0s linear forwards;
 		stroke-dasharray: 40;
 		stroke-dashoffset: 40;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-70 {
-		animation: il-md-length-70 0s forwards;
+		animation: il-md-length-70 0s linear forwards;
 		stroke-dasharray: 70;
 		stroke-dashoffset: 70;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-100 {
-		animation: il-md-length-100 0s forwards;
+		animation: il-md-length-100 0s linear forwards;
 		stroke-dasharray: 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
 	}
 	.iconify--line-md .il-md-length-150 {
-		animation: il-md-length-150 0s forwards;
+		animation: il-md-length-150 0s linear forwards;
 		stroke-dasharray: 150;
 		stroke-dashoffset: 150;
 		opacity: 0;
@@ -1774,7 +1774,7 @@ h1:target .link-back:hover {
 	color: #ffffff;
 	background: #327335;
 	border-radius: 3px;
-	animation: show-code-notice 2s ease;
+	animation: show-code-notice 2s ease forwards;
 }
 
 .code-block-notice svg {

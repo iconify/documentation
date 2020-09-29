@@ -124,7 +124,7 @@
 		background: $success-notice-background;
 		border-radius: 3px;
 
-		animation: show-code-notice 2s ease;
+		animation: show-code-notice 2s ease forwards;
 
 		svg {
 			float: left;

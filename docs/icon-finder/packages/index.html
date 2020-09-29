@@ -26,7 +26,7 @@
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?ffd5" />
+		<link rel="stylesheet" href="../../assets/style.css?9075" />
 		<title>Iconify Icon Finder Packages</title>
 		
 	</head>
@@ -86,7 +86,7 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="../" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Icon Finder</a>
-<a href="./core/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Core</a>
+<a href="./build/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Build Process</a>
 </div>
 <aside class="notice notice--gray">
 	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
@@ -101,38 +101,38 @@
 <p>Icon Finder is coded to be flexible. It can be used to create custom icon search applications.</p>
 <p>How is it achieved?</p>
 <ul>
-<li>Components can be changed during build process.</li>
-<li>Code can be re-used to build custom UI instead of customizing default UI package.</li>
-<li>Build is configurable.</li>
+<li>Components and language pack can be changed during build process based on options.</li>
+<li>Icon Finder implementations can override components with their own, adding implementation specific stuff.</li>
 </ul>
 <p>Those features make build process flexible, but also very complex. To make code easier to organize, core is split into several packages. All packages are stored in same monorepo.</p>
 <p>This tutorial is written to help you understand package structure.</p>
-<section class="content-section content-section--2"><H1 id="packages" class="heading--2">Packages <a href="#packages" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon Finder packages are:</p><ul>
-<li><a href="#core">Core</a> does all the heavy parsing: sending API queries, parsing results.</li>
-<li><a href="#theme">Theme</a> that contains stylesheet and theme configuration.</li>
-<li><a href="#components">Components</a> package contains customizable Svelte components that are used to build UI.</li>
-<li><a href="#configurator">Configurator</a> package configures and builds other packages. It is used in build process.</li>
-</ul></section>
-
-
 <section class="content-section content-section--2"><H1 id="main-requirements" class="heading--2">Requirements <a href="#main-requirements" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This tutorial is very technical. To understand it, you need to:</p><ul>
 <li>Have some knowledge of Node.js and ability to execute commands.</li>
 <li>Understand basics of monorepo and Lerna. You can learn basic concepts in just few minutes.</li>
 </ul></section>
 
 
+<section class="content-section content-section--2"><H1 id="packages" class="heading--2">Packages <a href="#packages" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon Finder packages are found in <span class="hljs-inline-file">package</span> directory of the <a href="https://github.com/iconify/icon-finder" target="_blank">Icon Finder repository</a>.</p><p>Packages:</p><ul>
+<li><a href="#core">Core</a> does all the heavy parsing: sending API queries, parsing results.</li>
+<li><a href="#theme">Theme</a> that contains stylesheet and theme configuration.</li>
+<li><a href="#components">Components</a> package contains customizable Svelte components that are used to build UI.</li>
+<li><a href="#configurator">Configurator</a> package configures and builds other packages. It is used in the build process.</li>
+</ul><section class="content-section content-section--3"><H1 id="dependencies" class="heading--3">Dependencies <a href="#dependencies" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All packages, except for <a href="#components">Components package</a> do not depend on other packages. They can be compiled and tested separately.</p><p>However, <a href="#components">components package</a> uses other packages:</p><ul>
+<li><a href="#core">Core package</a> is used by components to do all API stuff.</li>
+<li><a href="#theme">Theme package</a> is used by components for configuration. Components take icons and color rotation from theme.</li>
+</ul><p><a href="#configurator">Configurator package</a> puts it all together by mixing theme, custom configuration, custom components and compiles <a href="#components">components package</a>.</p></section></section>
+
+
+
+
+
+
+
+
 <section class="content-section content-section--2"><H1 id="core" class="heading--2">Core <a href="#core" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Core package is main part of Icon Finder. It handles all actions, sends API requests, parses and organizes data and tells UI what to display.</p><p>Code is completely asynchronous. Package is written in TypeScript for strict type checking.</p><p>Core package can be used in the following environments:</p><ul>
 <li>Browser. It uses Fetch API to send API queries.</li>
 <li>Node.js. It uses Axios to send API queries.</li>
-</ul><p>You can also code custom module that sends API queries for any other environment.</p><p>For more details, see <a href="./core/">Core package documentation</a>.</p><section class="content-section content-section--3"><H1 id="core-requirements" class="heading--3">Requirements <a href="#core-requirements" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon Finder Core documentation is very technical. In addition to requirements for this tutorial, you need:</p><ul>
-<li>Good JavaScript knowledge.</li>
-<li>Good TypeScript knowledge. Core is entirely written in TypeScript.</li>
-<li>Understanding of asynchronous development.</li>
-</ul><p>... TODO</p></section></section>
-
-
-
-
+</ul><p>You can also code custom module that sends API queries for any other environment.</p><p>For more details, see <a href="./core/">core package documentation</a>.</p></section>
 
 
 
@@ -148,7 +148,7 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="components" class="heading--2">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components package is responsible for displaying data to visitor. It relies on Core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from Theme package.</p><p>UI is written in Svelte. Why no React or Vue? Because Svelte is lighter and does not have dependencies.</p><section class="content-section content-section--3"><H1 id="components-requirements" class="heading--3">Requirements <a href="#components-requirements" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components documentation is more technical. In addition to requirements for this tutorial, you need:</p><ul>
+<section class="content-section content-section--2"><H1 id="components" class="heading--2">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components package is responsible for displaying data to visitor. It relies on the core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from Theme package.</p><p>UI is written in Svelte. Why no React or Vue? Because Svelte is lighter and does not have dependencies.</p><section class="content-section content-section--3"><H1 id="phrases" class="heading--3">Phrases <a href="#phrases" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Phrases are a part of components package.</p><p>It is easy to swap language pack during compilation by changing <span class="hljs-inline-prop">language</span> property in <span class="hljs-inline-file">configurator.json</span>.</p><p>See <a href="./components/phrases.html">phrases documentation</a> and <a href="./build/">build process documentation</a>.</p></section><section class="content-section content-section--3"><H1 id="components-requirements" class="heading--3">Requirements <a href="#components-requirements" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components documentation is more technical. In addition to requirements for this tutorial, you need:</p><ul>
 <li>Good JavaScript knowledge.</li>
 <li>Basic Svelte knowledge. If you are familiar with React or Vue, Svelte will not be hard to understand.</li>
 <li>Basic TypeScript knowledge. Many files are written in TypeScript.</li>
@@ -159,9 +159,13 @@
 
 
 
+
+
+
+
 <section class="content-section content-section--2"><H1 id="configurator" class="heading--2">Configurator <a href="#configurator" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Configurator is a script that combines theme with components, applies configuration and compiles a set of Svelte components that can be used by implementation package.</p></section>
 
-<section class="content-section content-section--2"><H1 id="building" class="heading--2">Building <a href="#building" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Packages mentioned above are parts that are used to build Icon Finder.</p><p>Other packages are implementations that use all mentioned above packages to build various Icon Finder implementations.</p><p>TODO...</p></section>
+<section class="content-section content-section--2"><H1 id="building" class="heading--2">Building <a href="#building" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Packages mentioned above are parts that are used to build Icon Finder.</p><p>Other packages are implementations that use all mentioned above packages to build various Icon Finder implementations.</p><p>Build process is documented in the <a href="./build/">build process documentation</a>.</p></section>
 
 
 
@@ -188,7 +192,9 @@
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./build/">Build Process</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./core/">Core</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./components/phrases.html">Phrases</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -238,7 +244,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="../../assets/bundle.js?3e18"></script>
+		<script src="../../assets/bundle.js?d420"></script>
 		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

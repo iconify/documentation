@@ -8,7 +8,7 @@ classes:
 
 # Configuration of Iconify Icon Finder Core
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 This tutorial lists configuration options for Icon Finder Core.
 

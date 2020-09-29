@@ -55,7 +55,7 @@ import home from '@iconify-icons/mdi-light/home';
 Iconify for React with API is a more advanced component. It works similar to [SVG framework](../svg-framework/index.md). You do not need to provide icon data, you can reference icon by name and component will automatically retrieve icon data from Iconify API.
 
 ```js
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react-with-api';
 ```
 
 ```jsx

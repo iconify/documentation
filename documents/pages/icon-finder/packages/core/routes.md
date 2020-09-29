@@ -6,7 +6,7 @@ types:
 
 # Routes in Iconify Icon Finder
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 Every view has a route associated with it. Route makes it easy to save and restore Icon Finder state, so visitor can continue browsing page from the previous session.
 

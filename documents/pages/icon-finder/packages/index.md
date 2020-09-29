@@ -9,22 +9,12 @@ Icon Finder is coded to be flexible. It can be used to create custom icon search
 
 How is it achieved?
 
-- Components can be changed during build process.
-- Code can be re-used to build custom UI instead of customizing default UI package.
-- Build is configurable.
+- Components and language pack can be changed during build process based on options.
+- Icon Finder implementations can override components with their own, adding implementation specific stuff.
 
 Those features make build process flexible, but also very complex. To make code easier to organize, core is split into several packages. All packages are stored in same monorepo.
 
 This tutorial is written to help you understand package structure.
-
-## Packages
-
-Icon Finder packages are:
-
-- [Core](#core) does all the heavy parsing: sending API queries, parsing results.
-- [Theme](#theme) that contains stylesheet and theme configuration.
-- [Components](#components) package contains customizable Svelte components that are used to build UI.
-- [Configurator](#configurator) package configures and builds other packages. It is used in build process.
 
 ## Requirements {#main-requirements}
 
@@ -32,6 +22,28 @@ This tutorial is very technical. To understand it, you need to:
 
 - Have some knowledge of Node.js and ability to execute commands.
 - Understand basics of monorepo and Lerna. You can learn basic concepts in just few minutes.
+
+## Packages
+
+Icon Finder packages are found in `[file]package` directory of the [Icon Finder repository](https://github.com/iconify/icon-finder).
+
+Packages:
+
+- [Core](#core) does all the heavy parsing: sending API queries, parsing results.
+- [Theme](#theme) that contains stylesheet and theme configuration.
+- [Components](#components) package contains customizable Svelte components that are used to build UI.
+- [Configurator](#configurator) package configures and builds other packages. It is used in the build process.
+
+### Dependencies
+
+All packages, except for [Components package](#components) do not depend on other packages. They can be compiled and tested separately.
+
+However, [components package](#components) uses other packages:
+
+- [Core package](#core) is used by components to do all API stuff.
+- [Theme package](#theme) is used by components for configuration. Components take icons and color rotation from theme.
+
+[Configurator package](#configurator) puts it all together by mixing theme, custom configuration, custom components and compiles [components package](#components).
 
 ## Core {#core}
 
@@ -46,17 +58,7 @@ Core package can be used in the following environments:
 
 You can also code custom module that sends API queries for any other environment.
 
-For more details, see [Core package documentation](./core/index.md).
-
-### Requirements {#core-requirements}
-
-Icon Finder Core documentation is very technical. In addition to requirements for this tutorial, you need:
-
-- Good JavaScript knowledge.
-- Good TypeScript knowledge. Core is entirely written in TypeScript.
-- Understanding of asynchronous development.
-
-... TODO
+For more details, see [core package documentation](./core/index.md).
 
 ## Theme {#theme}
 
@@ -72,9 +74,17 @@ Configuration is used by components package.
 
 ## Components {#components}
 
-Components package is responsible for displaying data to visitor. It relies on Core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from Theme package.
+Components package is responsible for displaying data to visitor. It relies on the core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from Theme package.
 
 UI is written in Svelte. Why no React or Vue? Because Svelte is lighter and does not have dependencies.
+
+### Phrases {#phrases}
+
+Phrases are a part of components package.
+
+It is easy to swap language pack during compilation by changing `[prop]language` property in `[file]configurator.json`.
+
+See [phrases documentation](./components/phrases.md) and [build process documentation](./build/index.md).
 
 ### Requirements {#components-requirements}
 
@@ -95,4 +105,4 @@ Packages mentioned above are parts that are used to build Icon Finder.
 
 Other packages are implementations that use all mentioned above packages to build various Icon Finder implementations.
 
-TODO...
+Build process is documented in the [build process documentation](./build/index.md).

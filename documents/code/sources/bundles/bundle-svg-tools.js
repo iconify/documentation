@@ -27,7 +27,9 @@ const prefix = 'custom';
 // Import icons
 let collection;
 tools
-	.ImportDir(source)
+	.ImportDir(source, {
+		prefix,
+	})
 	.then((result) => {
 		collection = result;
 

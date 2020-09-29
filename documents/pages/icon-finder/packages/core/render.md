@@ -10,7 +10,7 @@ types:
 
 # Render event callback in Iconify Icon Finder Core
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 Render callback is the most important part of code. When there is something new to render, this callback is called. UI must create a function for callback and use it to update UI.
 

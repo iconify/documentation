@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?9075" />
+		<title>Phrases in Iconify Icon Finder</title>
+		
+	</head>
+	<body class="website-docs theme-integration">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<div class="docs-short-navigation">
+<a href="../core/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Core</a>
+<a href="../../../code/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Code</a>
+</div>
+<h1>Phrases in Iconify Icon Finder</h1>
+<p>Icon Finder UI is designed to be easy to customise. That includes the possibility of translation.</p>
+<p>By default, Icon Finder UI uses English phrases. Phrases are written in TypeScript and are located in <span class="hljs-inline-file">src/phrases/en.ts</span> or components package.</p>
+<p>Components package is located in <span class="hljs-inline-file">packages/components/</span> of <a href="https://github.com/iconify/icon-finder" target="_blank">Icon Finder repository</a>.</p>
+<section class="content-section content-section--2"><H1 id="creating-a-language-pack" class="heading--2">Creating a language pack <a href="#creating-a-language-pack" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To create language pack, go to <span class="hljs-inline-file">src/phrases/</span> of components package and copy <span class="hljs-inline-file">en.ts</span>. Filename must end with <span class="hljs-inline-file">.ts</span>.</p><p>Edit text in a new file.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="changing-language-pack" class="heading--2">Changing language pack <a href="#changing-language-pack" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To change the default language pack, open <span class="hljs-inline-file">configurator.json</span> of UI package and change the value of property <span class="hljs-inline-prop">language</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImxhbmd1YWdlIjogImRlIgp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;language&quot;</span>: <span class="hljs-string">&quot;de&quot;</span><br>
+}<br>
+</code></div></div></div><p>Language value is the name of your language pack file, without <span class="hljs-inline-file">.ts</span> extension.</p><p>After changing the language pack, rebuild UI.</p><p>Important: file <span class="hljs-inline-file">configurator.json</span> is not in components package, it is in package with Icon Finder UI. See <a href="../build/">build process documentation</a> for details.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="variables" class="heading--2">Variables <a href="#variables" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Some phrases contain variables.</p><p>For example, <span class="hljs-inline-prop">search.placeholder.collection</span> has value &quot;<span class="hljs-string">Search {name}</span>&quot;.</p><p>In this case, &quot;<span class="hljs-string">{name}</span>&quot; is a variable. It will be replaced by icon set name, such as &quot;<span class="hljs-string">Material Design Icons</span>&quot;, resulting in &quot;<span class="hljs-string">Search Material Design Icons</span>&quot;.</p><p>Variables should not be changed:</p><ul>
+<li>Do not translate variables. They are keywords, not words to translate.</li>
+<li>Do not add new variables, it won&apos;t work.</li>
+<li>Do not remove variables from phrases.</li>
+</ul></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="special-characters" class="heading--2">Special characters <a href="#special-characters" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>In some phrases you&apos;ll see strange things like this: <span class="inline-code inline-code--js"><span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">0x00b0</span>)</span>. Those are characters that cannot be reliably saved in a text file, such as degrees character.</p><p>Use basic set of characters in phrases. If you need to use a special character, use <span class="inline-code inline-code--js"><span class="hljs-built_in">String</span>.fromCharCode()</span> function.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="rebuilding-ui" class="heading--2">Rebuilding UI <a href="#rebuilding-ui" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is specific to UI. Usually, you need to run <span class="inline-code inline-code--bash">npm run build</span> for UI after changing <span class="hljs-inline-file">configurator.json</span>.</p><p>See <a href="../build/">build process documentation</a> for details.</p></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../build/">Build Process</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./phrases.html">Phrases</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?d420"></script>
+		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

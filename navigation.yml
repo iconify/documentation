@@ -170,6 +170,9 @@
           wip: true
           hidden: true
           children:
+            ./build/:
+              title: Build Process
+              wip: true
             ./core/:
               title: Core
               children:
@@ -183,6 +186,7 @@
                 ./registry.html: Registry
                 ./router.html: Router
                 ./types.html: Types
+            ./components/phrases.html: Phrases
 /code/:
   title: Code
   children:

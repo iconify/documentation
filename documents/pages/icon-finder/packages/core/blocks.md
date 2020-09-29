@@ -14,7 +14,7 @@ types:
 
 # Blocks in Iconify Icon Finder
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 When rendering a view, it generates blocks that should be displayed by UI. Each block represents one set of data that can be passed as parameters to appropriate React component (or component of any other framework), making it easy to detect changes and update only components that should be updated.
 

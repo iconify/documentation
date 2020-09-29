@@ -10,7 +10,7 @@ types:
 
 # IconFinderCore class in Iconify Icon Finder
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 `[class]IconFinderCore` class makes it easy to interact with Iconify Icon Finder Core.
 

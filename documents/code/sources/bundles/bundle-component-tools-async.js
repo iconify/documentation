@@ -26,7 +26,9 @@ const prefix = 'custom';
 // Import icons
 (async function () {
 	// Import icons
-	const collection = await tools.ImportDir(source);
+	const collection = await tools.ImportDir(source, {
+		prefix,
+	});
 
 	// Set prefix
 	collection.prefix = prefix;

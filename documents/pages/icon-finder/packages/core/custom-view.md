@@ -11,7 +11,7 @@ types:
 
 # Custom views in Iconify Icon Finder
 
-This tutorial is part of [Iconify Icon Finder Core tutorial](../index.md).
+This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 The custom view is similar to the search results view, except that it uses custom source for icons list. You must set the icons list when the view is being initialised. You can do that asynchronously, similar to querying API for search results.
 

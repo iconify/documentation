@@ -1,5 +1,5 @@
 import React from 'react';
-import { InlineIcon } from '@iconify/react';
+import { InlineIcon } from '@iconify/react-with-api';
 
 export function colorDemo() {
 	return (
