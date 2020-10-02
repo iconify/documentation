@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?9075" />
+		<title>Iconify Icon Finder Components</title>
+		
+	</head>
+	<body class="website-docs theme-integration">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs">
+					<div class="docs-short-navigation">
+<a href="../core/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Core</a>
+<a href="./config.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Configuration</a>
+</div>
+<h1>Components</h1>
+<p>This tutorial is part of <a href="../">Iconify Icon Finder packages tutorial</a>.</p>
+<p>Components package is a set of reusable Svelte components.</p>
+<p>Main entry points are <span class="hljs-inline-file">src/wrapper.ts</span> for <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> and <span class="hljs-inline-file">src/ui/Container.svelte</span> for container component.</p>
+<section class="content-section content-section--2"><H1 id="wrapper-and-container" class="heading--2">Wrapper and Container <a href="#wrapper-and-container" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> class creates instance of container component and renders it inside DOM node that you specify. Then it handles events, it has functions to set and get config, route, selected icon, customisations.</p><p>Container component is needed to be passed as parameter to <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> instance. This allows you to swap container with another component, for example, one that renders your custom header, footer or navigation.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Basic example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0IFdyYXBwZXIgY2xhc3MgYW5kIGNvbnRhaW5lciBjb21wb25lbnQKaW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CgovLyBET00gZWxlbWVudCB0byBhcHBlbmQgaWNvbiBmaW5kZXIgdG8KY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbnRhaW5lcicpOwoKLy8gQ3JlYXRlIGluc3RhbmNlCm5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lciwKCWNvbXBvbmVudDogQ29udGFpbmVyLAoJY2FsbGJhY2s6IChldmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAp9KTsK"><code class="highlight hljs"><span class="hljs-comment">// Import Wrapper class and container component</span><br>
+<span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// DOM element to append icon finder to</span><br>
+<span class="hljs-keyword">const</span> container = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;container&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">component</span>: Container,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div><p>For more information about <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> class, take a look at <a href="./wrapper.html">Wrapper class documentation</a>.</p><p>For more information about callback, take a look at <a href="./callback.html">Wrapper callback documentation</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="swapping-components" class="heading--2">Swapping components <a href="#swapping-components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can swap components with custom components during build process.</p><p>To do that, put custom component in a directory within your implementation source that has structure similar to directory <span class="hljs-inline-file">src</span> of components package, add <span class="hljs-inline-prop">common.components.customDir</span> to configuration and run build process. For more information about custom components, see <a href="../build/custom-components.html">custom components documentation</a>.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="exports" class="heading--2">Exports <a href="#exports" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several variables used in most components that are exported:</p><ul>
+<li><span class="hljs-inline-var">registry</span>, <span class="hljs-inline-type hljs-linkable"><a href="../core/registry.html" title="Registry documentation"><span class="hljs-inline-type hljs-linkable">Registry</span></a></span>. This is an instance of <a href="../core/registry.html" title="Registry documentation"><span class="hljs-class hljs-linkable">Registry</span></a> class. It never changes. It is used to retrieve static stuff that does not change, such as phrases, configuration, API providers.</li>
+<li><span class="hljs-inline-var">selectedIcon</span>, <span class="hljs-inline-type hljs-linkable"><a href="../core/types.html#icon" title="Icon documentation"><span class="hljs-inline-type hljs-linkable">Icon</span></a> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Selected icon as object.</li>
+<li><span class="hljs-inline-var">route</span>, <span class="hljs-inline-type hljs-linkable"><a href="../core/types.html#route" title="PartialRoute documentation"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></a></span>. Current route, contains only parameters that are not default.</li>
+</ul><p>Additional exported variables that exist only in some components, but are still quite common:</p><ul>
+<li><span class="hljs-inline-var">iconCustomisations</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></span>. List of icon customisations, such as color, dimensions, transformations. See <span class="hljs-inline-file">src/misc/customisations.ts</span> for type description.</li>
+<li><span class="hljs-inline-var">blocks</span>. List of blocks, specific to view. Used in view specific pages, so type is always known.</li>
+<li><span class="hljs-inline-var">block</span>. Block data, used in blocks. Type is specific to block.</li>
+<li><span class="hljs-inline-var">name</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Block name, used in blocks.</li>
+</ul></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="core-stuff" class="heading--2">Actions, Routes <a href="#core-stuff" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Actions in components, such as clicking page in pagination block, are handled by <a href="../core/router.html" title="Router documentation"><span class="hljs-class hljs-linkable">Router</span></a>. So are routes.</p><p>Router is static, it can be retrieved from <a href="../core/registry.html" title="Registry documentation"><span class="hljs-class hljs-linkable">Registry</span></a> instance.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmVnaXN0cnkucm91dGVyLmFjdGlvbigncGFnaW5hdGlvbicsIHZhbHVlKTsK"><code class="highlight hljs">registry.router.action(<span class="hljs-string">&apos;pagination&apos;</span>, value);<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmVnaXN0cnkucm91dGUgPSB7Cgl0eXBlOiAnY29sbGVjdGlvbicsCglwYXJhbXM6IHsKCQlwcmVmaXg6ICdtZGknLAoJfSwKCXBhcmVudDogewoJCXR5cGU6ICdjb2xsZWN0aW9ucycsCgl9LAp9Owo="><code class="highlight hljs">registry.route = {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collection&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">params</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">parent</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collections&apos;</span>,<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="other-stuff" class="heading--2">Other stuff <a href="#other-stuff" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Everything else is specific to component. See various components for code examples.</p></section>
+
+<section class="content-section content-section--2"><H1 id="typescript" class="heading--2">TypeScript <a href="#typescript" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you are using TypeScript, you can import types for various objects directly from Core by referencing <span class="hljs-inline-package hljs-linkable">@iconify/search-core</span> package. Do not import files from relative directory, use package names instead. Lerna will handle all links to packages.</p><p>If you are experiencing errors in VSCode, such as VSCode telling you that imported type does not exist, run <span class="inline-code inline-code--bash">npm run link</span> in root directory to fix symbolic links. If that does not help, edit import line once (cut and paste it to the same place, so code is not changed) to force VSCode to refresh import. It should fix VSCode glitch that sometimes happens when working with monorepo.</p></section>
+
+
+
+				</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content">
+							<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../sources/">Sources</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../build/">Build Process</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./wrapper.html">Wrapper</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./callback.html">Callback</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./phrases.html">Phrases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?a396"></script>
+		<script src="https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

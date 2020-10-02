@@ -84,67 +84,71 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Building Iconify Icon Finder: configuration</h1>
+					<div class="docs-short-navigation">
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Build Process</a>
+<a href="./custom-components.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Custom Components</a>
+</div>
+<h1>Building Iconify Icon Finder: configuration</h1>
 <p>This tutorial is part of <a href="./">Iconify Icon Finder build process tutorial</a>.</p>
 <p>Your project must have custom configuration in <span class="hljs-inline-file">configurator.json</span>.</p>
 <p>You can change config name to something else. To use custom config file, add the following parameter to configurator script: <span class="inline-code inline-code--bash">--config-file config.json</span>.</p>
 <section class="content-section content-section--2"><H1 id="structure" class="heading--2">Structure <a href="#structure" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Config file is a simple JSON file.</p><p>It contains:</p><ul>
-<li>Name of theme that your project uses.</li>
-<li>Options that are customized. If option value matches the default value, you do not need to include it in config.</li>
-</ul><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInRoZW1lIjogImljb25pZnkiLAoJImZvb3RlciI6IHsKCQkiY29tcG9uZW50cyI6IHsKCQkJImZvb3RlciI6ICJmdWxsIiwKCQkJIm5hbWUiOiAic2ltcGxlLWVkaXRhYmxlIgoJCX0sCgkJImN1c3RvbWlzYXRpb25zIjogewoJCQkiY29sb3IiOiB7CgkJCQkiZGVmYXVsdENvbG9yIjogIiNmODAiCgkJCX0KCQl9Cgl9Cn0K"><code class="highlight hljs">{<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;theme&quot;</span>: <span class="hljs-string">&quot;iconify&quot;</span>,<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;full&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;simple-editable&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;customisations&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;color&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;defaultColor&quot;</span>: <span class="hljs-string">&quot;#f80&quot;</span><br>
+<li>Common options, used by configurator. Some options are passed to components.</li>
+<li>Components package options, specific to components package.</li>
+</ul><p>Only options that you have customized should be included in configuration. If option value matches the default value, you do not need to include it in config.</p><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImNvbW1vbiI6IHsKCQkidGhlbWUiOiB7CgkJCSJuYW1lIjogImljb25pZnkiCgkJfQoJfSwKCSJjb21wb25lbnRzIjogewoJCSJmb290ZXIiOiB7CgkJCSJjb21wb25lbnRzIjogewoJCQkJImZvb3RlciI6ICJmdWxsIiwKCQkJCSJuYW1lIjogInNpbXBsZS1lZGl0YWJsZSIKCQkJfSwKCQkJImN1c3RvbWlzYXRpb25zIjogewoJCQkJImNvbG9yIjogewoJCQkJCSJkZWZhdWx0Q29sb3IiOiAiI2Y4MCIKCQkJCX0KCQkJfQoJCX0KCX0KfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;common&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;theme&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;full&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;simple-editable&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;customisations&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;color&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;defaultColor&quot;</span>: <span class="hljs-string">&quot;#f80&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;}<br>
 }<br>
-</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInRoZW1lIjogImZpZ21hIiwKCSJsYXlvdXQiOiB7CgkJImNhblNob3J0ZW5OYW1lIjogZmFsc2UKCX0sCgkicHJvdmlkZXJzIjogewoJCSJzaG93IjogdHJ1ZSwKCQkiZGVmYXVsdCI6ICJsb2NhbCIsCgkJImNhbkFkZCI6IHRydWUsCgkJImN1c3RvbSI6IHsKCQkJImxvY2FsIjogewoJCQkJImFwaSI6ICJodHRwOi8vbG9jYWxob3N0OjMxMDAiLAoJCQkJInRpdGxlIjogIkxvY2FsIFRlc3QiCgkJCX0KCQl9Cgl9LAoJImZvb3RlciI6IHsKCQkiYnV0dG9ucyI6IHsKCQkJInN1Ym1pdCI6IHsKCQkJCSJ0eXBlIjogInByaW1hcnkiLAoJCQkJInRleHQiOiAiU3VibWl0IiwKCQkJCSJpY29uIjogIkBsb2NhbDpsaW5lLW1kOmNvbmZpcm0iCgkJCX0sCgkJCSJjYW5jZWwiOiB7CgkJCQkidHlwZSI6ICJzZWNvbmRhcnkiLAoJCQkJInRleHQiOiAiQ2FuY2VsIiwKCQkJCSJpY29uIjogIkBsb2NhbDpjbGFyaXR5OmNoZWNrLWxpbmUiCgkJCX0sCgkJCSJjbG9zZSI6IHsKCQkJCSJ0eXBlIjogImRlc3RydWN0aXZlIiwKCQkJCSJ0ZXh0IjogIkNsb3NlIgoJCQl9CgkJfQoJfQp9Cg=="><code class="highlight hljs">{<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;theme&quot;</span>: <span class="hljs-string">&quot;figma&quot;</span>,<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;layout&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;canShortenName&quot;</span>: <span class="hljs-literal">false</span><br>
- &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;providers&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;local&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;canAdd&quot;</span>: <span class="hljs-literal">true</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;custom&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;local&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;api&quot;</span>: <span class="hljs-string">&quot;http://localhost:3100&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Local Test&quot;</span><br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImNvbW1vbiI6IHsKCQkidGhlbWUiOiB7CgkJCSJuYW1lIjogImZpZ21hIgoJCX0sCgkJInByb3ZpZGVycyI6IHsKCQkJInNob3ciOiB0cnVlLAoJCQkiZGVmYXVsdCI6ICJsb2NhbCIsCgkJCSJjYW5BZGQiOiB0cnVlLAoJCQkiY3VzdG9tIjogewoJCQkJImxvY2FsIjogewoJCQkJCSJhcGkiOiAiaHR0cDovL2xvY2FsaG9zdDozMTAwIiwKCQkJCQkidGl0bGUiOiAiTG9jYWwgVGVzdCIKCQkJCX0KCQkJfQoJCX0KCX0sCgkiY29tcG9uZW50cyI6IHsKCQkiZm9vdGVyIjogewoJCQkiYnV0dG9ucyI6IHsKCQkJCSJzdWJtaXQiOiB7CgkJCQkJInR5cGUiOiAicHJpbWFyeSIsCgkJCQkJInRleHQiOiAiU3VibWl0IiwKCQkJCQkiaWNvbiI6ICJAbG9jYWw6bGluZS1tZDpjb25maXJtIgoJCQkJfSwKCQkJCSJjYW5jZWwiOiB7CgkJCQkJInR5cGUiOiAic2Vjb25kYXJ5IiwKCQkJCQkidGV4dCI6ICJDYW5jZWwiLAoJCQkJCSJpY29uIjogIkBsb2NhbDpjbGFyaXR5OmNoZWNrLWxpbmUiCgkJCQl9LAoJCQkJImNsb3NlIjogewoJCQkJCSJ0eXBlIjogImRlc3RydWN0aXZlIiwKCQkJCQkidGV4dCI6ICJDbG9zZSIKCQkJCX0KCQkJfQoJCX0KCX0KfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;common&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;theme&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;figma&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;providers&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-string">&quot;local&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;canAdd&quot;</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;custom&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;local&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;api&quot;</span>: <span class="hljs-string">&quot;http://localhost:3100&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Local Test&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;buttons&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;submit&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;primary&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Submit&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;@local:line-md:confirm&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;cancel&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;secondary&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Cancel&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;@local:clarity:check-line&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;close&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;destructive&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Close&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;footer&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;buttons&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;submit&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;primary&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Submit&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;@local:line-md:confirm&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;cancel&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;secondary&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Cancel&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-string">&quot;@local:clarity:check-line&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;close&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;destructive&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;Close&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;}<br>
@@ -154,10 +158,23 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="theme" class="heading--2">Theme <a href="#theme" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Theme is required, even if you are not using actual theme. Why? Because of theme configuration.</p><p>Configurator uses the following data from theme:</p><ul>
+
+<section class="content-section content-section--2"><H1 id="common-section" class="heading--2">Common section <a href="#common-section" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Common section contains global configuration:</p><ul>
+<li>Names of packages for theme and components, name of theme and source directory for custom components.</li>
+<li>Configuration for API providers.</li>
+</ul><p>You can find the latest version of configuration options and list of default values in file <span class="hljs-inline-file">src/config/common.ts</span> of configurator package (<span class="hljs-inline-file">packages/configurator/src/config/common.ts</span>).</p><section class="content-section content-section--3"><H1 id="theme" class="heading--3">Theme <a href="#theme" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If theme package has multiple themes, such as the default themes package, theme name option is required.</p><p>Configurator uses the following data from the theme:</p><ul>
 <li>From <span class="hljs-inline-file">rotation.json</span> it gets the number of colors used in rotation. This makes it possible to have unique backgrounds for various icon sets, categories, prefixes. See <a href="../themes/color-rotation.html">color rotation in themes</a> for details.</li>
 <li>From <span class="hljs-inline-file">theme.json</span> it gets list of icons and few other options.</li>
-</ul></section>
+</ul></section></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="components-section" class="heading--2">Components section <a href="#components-section" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components section is specific to components package.</p><p>It contains list of options used by components, such as name of language pack, footer buttons, list of enabled customization options.</p><p>These options are applied during compilation, resulting in bundle containing only files that you need.</p><p>You can find the latest version of configuration options for components package and list of default values in file <span class="hljs-inline-file">build/config.ts</span> of the components package (<span class="hljs-inline-file">packages/components/build/config.ts</span>).</p></section>
+
 
 
 
@@ -181,8 +198,16 @@
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
-	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../">Icon Finder</a></li>
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Build Process<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./custom-components.html">Custom Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/">Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/phrases.html">Phrases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

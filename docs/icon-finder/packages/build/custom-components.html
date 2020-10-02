@@ -84,20 +84,25 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs">
-					<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Building Iconify Icon Finder: custom components</h1>
+					<div class="docs-short-navigation">
+<a href="./config.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Configuration</a>
+<a href="../core/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Core</a>
+</div>
+<h1>Building Iconify Icon Finder: custom components</h1>
 <p>This tutorial is part of <a href="./">Iconify Icon Finder build process tutorial</a>.</p>
-<p>TODO</p>
-<p>...</p>
-<p>You can set it in <span class="hljs-inline-prop">customFilesDir</span> option <a href="./config.html">in config</a>.</p>
+<p>Build process can swap files when building components. If you set option <span class="hljs-inline-prop">common.components.customDir</span> <a href="./config.html">in configuration</a>, build script will look for files from that directory. Directory is relative to your UI package.</p>
+<p>Example:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImNvbW1vbiI6IHsKCQkiY29tcG9uZW50cyI6IHsKCQkJImN1c3RvbURpciI6ICJzcmMvY29tcG9uZW50cyIKCQl9Cgl9Cn0K"><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;common&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;customDir&quot;</span>: <span class="hljs-string">&quot;src/components&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><p>If you have a file <span class="hljs-inline-file">src/components/ui/Container.svelte</span>, build script will use it instead of <span class="hljs-inline-file">@iconify/search-components/src/ui/Container.svelte</span> to build <span class="hljs-inline-file">@iconify/search-components/lib/ui/Container.svelte</span>.</p>
+<p>This applies to all files used by components: <span class="hljs-inline-file">.svelte</span> and <span class="hljs-inline-file">.ts</span>.</p>
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>For examples of how it is done, look in Iconify for Figma plug-in code (see <span class="hljs-inline-file">ui/figma</span> of Icon Finder repository).</p></section>
+
 
 				</article>
 				<nav
@@ -118,8 +123,16 @@
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
-	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../">Icon Finder</a></li>
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Build Process<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./custom-components.html">Custom Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/">Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/phrases.html">Phrases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

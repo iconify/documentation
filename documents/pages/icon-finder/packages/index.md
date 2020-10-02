@@ -1,18 +1,19 @@
 ```yaml
 title: Iconify Icon Finder Packages
-wip: true
 ```
 
 # Iconify Icon Finder packages
 
-Icon Finder is coded to be flexible. It can be used to create custom icon search applications.
+This document explains structure of packages in Icon Finder source. It is for developers that want to create custom Icon Finder implementations.
+
+Icon Finder is designed to be flexible. It can be used to create custom icon search applications.
 
 How is it achieved?
 
-- Components and language pack can be changed during build process based on options.
-- Icon Finder implementations can override components with their own, adding implementation specific stuff.
+- Components have options that can be customised during build process.
+- Implementations can override components with their own, adding custom functionality.
 
-Those features make build process flexible, but also very complex. To make code easier to organize, core is split into several packages. All packages are stored in same monorepo.
+Those features make build process flexible, but also very complex. To make code easier to organize, core is split into several packages. All packages are stored in the same monorepo.
 
 This tutorial is written to help you understand package structure.
 
@@ -25,31 +26,33 @@ This tutorial is very technical. To understand it, you need to:
 
 ## Packages
 
-Icon Finder packages are found in `[file]package` directory of the [Icon Finder repository](https://github.com/iconify/icon-finder).
+Icon Finder packages are found in `[file]packages` directory of the [Icon Finder repository](https://github.com/iconify/icon-finder).
 
 Packages:
 
 - [Core](#core) does all the heavy parsing: sending API queries, parsing results.
-- [Theme](#theme) that contains stylesheet and theme configuration.
+- [Themes](#themes) package contains stylesheets and configuration for multiple themes.
 - [Components](#components) package contains customizable Svelte components that are used to build UI.
 - [Configurator](#configurator) package configures and builds other packages. It is used in the build process.
 
+Those are packages that most Icon Finder implementations are based on. For examples of how they are implemented, look in `[file]ui` directory of Icon Finder repository.
+
 ### Dependencies
 
-All packages, except for [Components package](#components) do not depend on other packages. They can be compiled and tested separately.
+All packages, except for [the components package](#components) do not depend on other packages. They can be compiled and tested separately.
 
 However, [components package](#components) uses other packages:
 
 - [Core package](#core) is used by components to do all API stuff.
-- [Theme package](#theme) is used by components for configuration. Components take icons and color rotation from theme.
+- [Theme configuration](#themes) is used by components for list of icons and colors rotation.
 
-[Configurator package](#configurator) puts it all together by mixing theme, custom configuration, custom components and compiles [components package](#components).
+[Configurator package](#configurator) puts it all together. It compiles configuration for implementation, then runs build processes of other packages to build them according to implementation specification.
 
 ## Core {#core}
 
 Core package is main part of Icon Finder. It handles all actions, sends API requests, parses and organizes data and tells UI what to display.
 
-Code is completely asynchronous. Package is written in TypeScript for strict type checking.
+Code is completely asynchronous, it uses callbacks to send data to components package to render. Package is written in TypeScript for strict type checking.
 
 Core package can be used in the following environments:
 
@@ -60,9 +63,9 @@ You can also code custom module that sends API queries for any other environment
 
 For more details, see [core package documentation](./core/index.md).
 
-## Theme {#theme}
+## Themes {#themes}
 
-Theme package contains stylesheet.
+Themes package contains stylesheet.
 
 However, it is not a simple stylesheet. Themes have configuration files, which contain the following data:
 
@@ -70,11 +73,11 @@ However, it is not a simple stylesheet. Themes have configuration files, which c
 - Various toggles that define what theme supports.
 - List of icons that should be used by components.
 
-Configuration is used by components package.
+Configuration is used by the components package.
 
 ## Components {#components}
 
-Components package is responsible for displaying data to visitor. It relies on the core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from Theme package.
+Components package is responsible for displaying data to visitor. It relies on the core package to do all the heavy work, such as sending API queries and parsing data and uses configuration from themes package.
 
 UI is written in Svelte. Why no React or Vue? Because Svelte is lighter and does not have dependencies.
 
@@ -82,7 +85,7 @@ UI is written in Svelte. Why no React or Vue? Because Svelte is lighter and does
 
 Phrases are a part of components package.
 
-It is easy to swap language pack during compilation by changing `[prop]language` property in `[file]configurator.json`.
+It is easy to swap language pack during compilation by changing `[prop]components.language` property in `[file]configurator.json`.
 
 See [phrases documentation](./components/phrases.md) and [build process documentation](./build/index.md).
 
@@ -97,7 +100,9 @@ Components documentation is more technical. In addition to requirements for this
 
 ## Configurator {#configurator}
 
-Configurator is a script that combines theme with components, applies configuration and compiles a set of Svelte components that can be used by implementation package.
+Configurator is a script that builds it all.
+
+It reads `[file]configurator.json` file in implementation, merges it with default values to build custom configuration. Then it (re)builds core, theme and components.
 
 ## Building
 

@@ -1,11 +1,10 @@
 ```yaml
 title: Iconify Icon Finder Build
-wip: true
 ```
 
 # Building Iconify Icon Finder
 
-This documentation explains how to Iconify Icon Finder build process.
+This documentation explains Iconify Icon Finder build process.
 
 Building is a very complex process that mixes code from multiple packages. Why does it need to be complex? To make Icon Finder code flexible.
 
@@ -32,25 +31,30 @@ Building has 2 steps:
 
 Configuration is stored in file `[file]configurator.json` in your project. It contains:
 
-- Theme name.
-- Various layout options, such as footer buttons, list of customisations, names of components.
+- Global configuration:
+  - Names of theme and components packages. This makes it possible to use custom theme and components when building stuff, but only as long as they are stored in the same monorepo.
+  - Theme name within theme package, if theme package has multiple themes.
+  - Configuration for custom Iconify API providers, making it possible to use Icon Finder with third party API.
+  - Directory with custom component files, making it possible to change some components without altering components package.
+- Configuration for components package that change layout.
 
 For more details [see configuration documentation](./config.md).
 
 Configurator package does the following:
 
 - Generates configuration by
-  - Merging your custom `[file]configurator.json` with default configuration.
-  - Merges it with configuration from selected theme.
-- Saves it to `[file]config.json` in components package.
+  - Merging your custom `[file]configurator.json` with the default configuration.
+  - Merges it with configuration from the selected theme.
+- Extracts list of replacements and custom files for the components package.
+- Saves it to `[file]config/current.json` in the components package.
 
 ### Applying configuration
 
-After generating configuration, configurator applies it to components in several steps.
+Configuration is used by components package build process to swap or customize components.
 
 #### Modifying Svelte files
 
-In first step configurator prepares all files.
+In the first step, components build script prepares all files.
 
 Sources:
 
@@ -59,7 +63,7 @@ Sources:
 
 Target: directory `[file]src-configured` of components package.
 
-Configurator scans those directories, copies all files to target directory, modifying contents.
+Build script scans those directories, copies all files to target directory, modifying contents.
 
 This step is where configuration is applied to components. If you open component files, you'll notice code like this:
 
@@ -75,15 +79,15 @@ and this:
 import Footer from './footer/Simple.svelte';
 ```
 
-Those are replacements that depend on configuration. Configurator finds them and replaces code on next line.
+Those are replacements that depend on configuration. Build script finds them and replaces code on next line.
 
-For example, if your project has option `[prop]providers.show` set to `[bool]false`, first example will be replaced with this:
+For example, if your project has option `[prop]common.providers.show` set to `[bool]false`, first example will be replaced with this:
 
 ```js
 const canShowProviders = false;
 ```
 
-If you set footer component in `[prop]footer.components.footer` option to `[str]full`, second example will be replaced with this:
+If you set footer component in `[prop]components.footer.components.footer` option to `[str]full`, second example will be replaced with this:
 
 ```js
 import Footer from './footer/Full.svelte';
@@ -93,7 +97,7 @@ Why is it done? To make components flexible. Replacing import statements make it
 
 #### Compiling
 
-After configurator generates `[file]src-configured`, it runs TypeScript to compile files to directory `[file]lib`.
+After build script generates `[file]src-configured`, it runs TypeScript to compile files to directory `[file]lib`.
 
 All these actions are done inside components package, not in your project's directories.
 

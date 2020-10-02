@@ -18,11 +18,13 @@ Edit text in a new file.
 
 ## Changing language pack
 
-To change the default language pack, open `[file]configurator.json` of UI package and change the value of property `[prop]language`:
+To change the default language pack, open `[file]configurator.json` of UI package and change the value of property `[prop]components.language`:
 
 ```json
 {
-	"language": "de"
+	"components": {
+		"language": "de"
+	}
 }
 ```
 

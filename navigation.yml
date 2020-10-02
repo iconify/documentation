@@ -172,7 +172,9 @@
           children:
             ./build/:
               title: Build Process
-              wip: true
+              children:
+                ./config.html: Configuration
+                ./custom-components.html: Custom Components
             ./core/:
               title: Core
               children:
@@ -186,7 +188,19 @@
                 ./registry.html: Registry
                 ./router.html: Router
                 ./types.html: Types
+            ./components/:
+              title: Components
+              wip: true
+              children:
+                ./config.html: Configuration
+                ./wrapper.html: Wrapper
+                ./callback.html: Callback
             ./components/phrases.html: Phrases
+            ./themes/:
+              title: Themes
+              wip: true
+              children:
+                ./color-rotation.html: Color Rotation
 /code/:
   title: Code
   children:
