@@ -102,7 +102,7 @@ If theme package has multiple themes, such as the default themes package, theme 
 
 Configurator uses the following data from the theme:
 
-- From `[file]rotation.json` it gets the number of colors used in rotation. This makes it possible to have unique backgrounds for various icon sets, categories, prefixes. See [color rotation in themes](../themes/color-rotation.md) for details.
+- From `[file]rotation.json` it gets the number of colors used in rotation. This makes it possible to have unique backgrounds for various icon sets, categories, prefixes. See [color rotation in themes](../themes/index.md#rotation) for details.
 - From `[file]theme.json` it gets list of icons and few other options.
 
 ## Components section

@@ -86,20 +86,134 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="../components/phrases.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Phrases</a>
-<a href="./color-rotation.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Color Rotation</a>
+<a href="../../../code/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Code</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Iconify Icon Finder: themes package</h1>
+<h1>Iconify Icon Finder: themes package</h1>
 <p>This tutorial is part of <a href="../">Iconify Icon Finder build process tutorial</a>.</p>
-<p>TODO</p>
+<p>Themes package contains several sets of stylesheets, designed to be use with Svelte components from <a href="../components/">components package</a>.</p>
+<p>Themes package can be found in directory <span class="hljs-inline-file">packages/themes</span> of <a href="http://github.com/iconify/icon-finder" target="_blank">Icon Finder source code</a>.</p>
+<p>All themes are using SASS syntax with few changes:</p>
+<ul>
+<li>Each theme has color rotation in JSON file, which is converted to SASS file by build script.</li>
+<li>Build script supports themes tree. Each theme can have a parent theme, which is used as include path for SASS files.</li>
+</ul>
+<section class="content-section content-section--2"><H1 id="main-files" class="heading--2">Main files <a href="#main-files" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Each theme must have two files:</p><ul>
+<li><span class="hljs-inline-file">theme.json</span> that contains configuration.</li>
+<li><span class="hljs-inline-file">theme.scss</span> that is main entry.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Theme must also have <span class="hljs-inline-file">rotation.json</span>, however it is not required if one of parent themes has it. See <a href="#themes-tree">themes tree</a>.</p><p>File <span class="hljs-inline-file">rotation.json</span> contains color rotation as array. It can be imported as variable <span class="hljs-inline-var">$rotation</span> in SASS files.</p><p>Why is it stored as JSON file, not SASS file? Because build script in components package needs to know the number of elements in the color rotation of current theme, but without parsing SASS files, so it extracts it from JSON file.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0ICRyb3RhdGlvbgpAaW1wb3J0ICdyb3RhdGlvbic7CgovLyBHZXQgbGVuZ3RoIG9mIHJvdGF0aW9uCiRyb3RhdGlvbi10b3RhbDogbGVuZ3RoKCRyb3RhdGlvbik7Cg=="><code class="highlight hljs"><span class="hljs-comment">// Import $rotation</span><br>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">&apos;rotation&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Get length of rotation</span><br>
+<span class="hljs-variable">$rotation-total</span>: length(<span class="hljs-variable">$rotation</span>);<br>
+</code></div></div></div><p>Values in rotation array are colors. If you want to use strings, such as indexes of function, add quotes.</p><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="WwoJLy8gcHVycGxlCgkiIzZmNTNmZSIsCgkvLyBkZXNhdHVyYXRlZCBncmVlbgoJIiM1ODg1NDIiLAoJLy8gcGluawoJIiNjNjAwYzYiLAoJLy8gY3lhbgoJIiMwMDllOWUiLAoJLy8gYnJvd24KCSIjODI0ZTAwIiwKCS8vIGRhcmsgcmVkCgkiI2M2MDA2YiIsCgkvLyBkZXNhdHVyYXRlZCBibHVlCgkiIzY3ODZhYiIsCgkvLyBncmVlbgoJIiMwMGFkNjQiLAoJLy8gYmx1ZSAyCgkiIzI3NWNjNiIsCgkvLyBvcmFuZ2UKCSIjY2E4NzA2IgpdCg=="><code class="highlight hljs">[<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// purple</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#6f53fe&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// desaturated green</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#588542&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// pink</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#c600c6&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// cyan</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#009e9e&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// brown</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#824e00&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// dark red</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#c6006b&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// desaturated blue</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#6786ab&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// green</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#00ad64&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// blue 2</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#275cc6&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// orange</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;#ca8706&quot;</span><br>
+]<br>
+</code></div></div></div><p>Importing such <span class="hljs-inline-file">rotation.json</span> will be identical to this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="JHJvdGF0aW9uOiAoCgkvLyBwdXJwbGUKCSM2ZjUzZmUsCgkvLyBkZXNhdHVyYXRlZCBncmVlbgoJIzU4ODU0MiwKCS8vIHBpbmsKCSNjNjAwYzYsCgkvLyBjeWFuCgkjMDA5ZTllLAoJLy8gYnJvd24KCSM4MjRlMDAsCgkvLyBkYXJrIHJlZAoJI2M2MDA2YiwKCS8vIGRlc2F0dXJhdGVkIGJsdWUKCSM2Nzg2YWIsCgkvLyBncmVlbgoJIzAwYWQ2NCwKCS8vIGJsdWUgMgoJIzI3NWNjNiwKCS8vIG9yYW5nZQoJI2NhODcwNgopOwo="><code class="highlight hljs"><span class="hljs-variable">$rotation</span>: (<br>
+ &#xA0; &#xA0;// purple<br>
+ &#xA0; &#xA0;<span class="hljs-number">#6f53fe</span>,<br>
+ &#xA0; &#xA0;// desaturated green<br>
+ &#xA0; &#xA0;<span class="hljs-number">#588542</span>,<br>
+ &#xA0; &#xA0;// pink<br>
+ &#xA0; &#xA0;<span class="hljs-number">#c600c6</span>,<br>
+ &#xA0; &#xA0;// cyan<br>
+ &#xA0; &#xA0;<span class="hljs-number">#009e9e</span>,<br>
+ &#xA0; &#xA0;// brown<br>
+ &#xA0; &#xA0;<span class="hljs-number">#824e00</span>,<br>
+ &#xA0; &#xA0;// dark red<br>
+ &#xA0; &#xA0;<span class="hljs-number">#c6006b</span>,<br>
+ &#xA0; &#xA0;// desaturated blue<br>
+ &#xA0; &#xA0;<span class="hljs-number">#6786ab</span>,<br>
+ &#xA0; &#xA0;// green<br>
+ &#xA0; &#xA0;<span class="hljs-number">#00ad64</span>,<br>
+ &#xA0; &#xA0;// blue <span class="hljs-number">2</span><br>
+ &#xA0; &#xA0;<span class="hljs-number">#275cc6</span>,<br>
+ &#xA0; &#xA0;// orange<br>
+ &#xA0; &#xA0;<span class="hljs-number">#ca8706</span><br>
+);<br>
+</code></div></div></div><p>Example with strings:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="WwoJLy8gUGFsZXR0ZXMsIGltcG9ydGVkIGFzIHN0cmluZ3MgdG8gYmUgdXNlZCBpbiBwYWxldHRlKCkgbWl4aW4KCSIncHVycGxlJyIsCgkiJ3RlYWwnIiwKCSInb3JhbmdlJyIsCgkiJ2JsdWUtZ3JheSciLAoJIidncmVlbiciLAoJIidpbmRpZ28nIiwKCSInYnJvd24nIiwKCSInZGVlcC1wdXJwbGUnIiwKCSIncGluayciLAoJIidjeWFuJyIsCgkiJ2xpZ2h0LWdyZWVuJyIsCgkiJ3JlZCciCl0K"><code class="highlight hljs">[<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Palettes, imported as strings to be used in palette() mixin</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;purple&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;teal&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;orange&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;blue-gray&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;green&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;indigo&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;brown&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;deep-purple&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;pink&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;cyan&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;light-green&apos;&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&quot;&apos;red&apos;&quot;</span><br>
+]<br>
+</code></div></div></div><p>Importing such <span class="hljs-inline-file">rotation.json</span> will be identical to this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="JHJvdGF0aW9uOiAoCgkvLyBQYWxldHRlcywgaW1wb3J0ZWQgYXMgc3RyaW5ncyB0byBiZSB1c2VkIGluIHBhbGV0dGUoKSBtaXhpbgoJJ3B1cnBsZScsCgkndGVhbCcsCgknb3JhbmdlJywKCSdibHVlLWdyYXknLAoJJ2dyZWVuJywKCSdpbmRpZ28nLAoJJ2Jyb3duJywKCSdkZWVwLXB1cnBsZScsCgkncGluaycsCgknY3lhbicsCgknbGlnaHQtZ3JlZW4nLAoJJ3JlZCcKKTsK"><code class="highlight hljs"><span class="hljs-variable">$rotation</span>: (<br>
+ &#xA0; &#xA0;// Palettes, imported as strings to be used in palette() mixin<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;purple&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;teal&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;orange&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;blue-gray&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;green&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;indigo&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;brown&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;deep-purple&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;pink&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;cyan&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;light-green&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;red&apos;</span><br>
+);<br>
+</code></div></div></div></section>
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="config" class="heading--2">Config <a href="#config" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>File <span class="hljs-inline-file">theme.json</span> contains theme configuration:</p><ul>
+<li><span class="hljs-inline-prop">parent</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Name of parent theme, if theme has a parent theme. See <a href="#themes-tree">themes tree</a>.</li>
+<li><span class="hljs-inline-prop">icons</span>. List of icons. Icons are rendered in HTML as SVG, so they are used in components, not in theme. However, because icons must match theme, icons configuration is stored in theme, not in components.</li>
+</ul><section class="content-section content-section--3"><H1 id="icons" class="heading--3">Icons <a href="#icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Property <span class="hljs-inline-prop">icons</span> of <span class="hljs-inline-file">theme.json</span> has several properties, all are optional:</p><ul>
+<li><span class="hljs-inline-prop">class</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Class to add to all icons.</li>
+<li><span class="hljs-inline-prop">custom</span>, <span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>. Custom icons in JSON format.</li>
+<li><span class="hljs-inline-prop">names</span>. List of icons used for each action. Key is action, value is name of icon.</li>
+</ul></section></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="themes-tree" class="heading--2">Themes tree <a href="#themes-tree" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Themes tree makes it easy to duplicate theme with minor changes without duplicating all files.</p><p>When file is missing in a theme, compiler will look in parent theme&apos;s directory. If parent theme does not have requested file, but it has a parent theme, compiler will look in parent theme&apos;s parent theme&apos;s directory... and so on.</p><p>That means if you want to create a new theme based on another theme, but with few changes, all you have to do is mention parent theme in <span class="hljs-inline-file">theme.json</span> instead of copying all files and only copy files that you want to change.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="building" class="heading--2">Building <a href="#building" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To build a theme, run <span class="inline-code inline-code--bash">node build theme-name</span>, where &quot;<span class="hljs-string">theme-name</span>&quot; is name of theme.</p><p>To build all themes, run <span class="inline-code inline-code--bash">node build --all</span>.</p><p>Build script will generate <span class="hljs-inline-file">.css</span> and <span class="hljs-inline-file">.json</span> files for each theme in directory <span class="hljs-inline-file">dist</span>. Names of files will match name of the theme.</p><p>You can also re-build theme from implementation by adding <span class="hljs-inline-prop">--rebuild-theme</span> (or <span class="hljs-inline-prop">--rebuild-all</span> to rebuild all packages) to build script&apos;s command line.</p></section>
+
+
+
+
 
 				</article>
 				<nav
@@ -127,8 +241,7 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/">Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/phrases.html">Phrases</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Themes<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--4"><a href="./color-rotation.html">Color Rotation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./">Themes</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

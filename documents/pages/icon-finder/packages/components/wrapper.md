@@ -11,6 +11,7 @@ types:
   Icon: ../core/types.md#icon
   PartialRoute: ../core/types.md#route
   IconFinderCustomSets: ./wrapper.md#icon-finder-custom-sets
+  IconifyJSON: ../../../types/iconify-json.md
 functions:
   getState: ./wrapper.md#get-state
   getStatus: ./wrapper.md#get-status

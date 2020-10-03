@@ -195,11 +195,7 @@
                 ./callback.html: Callback
                 ./types.html: Types
             ./components/phrases.html: Phrases
-            ./themes/:
-              title: Themes
-              wip: true
-              children:
-                ./color-rotation.html: Color Rotation
+            ./themes/: Themes
 /code/:
   title: Code
   children:
