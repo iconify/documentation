@@ -8,6 +8,7 @@ types:
   Registry: ../core/registry.md
   Icon: ../core/types.md#icon
   PartialRoute: ../core/types.md#route
+  IconCustomisations: ./types.md#icon-customisations
 ```
 
 # Components

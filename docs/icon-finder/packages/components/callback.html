@@ -86,19 +86,159 @@
 				<article class="docs">
 					<div class="docs-short-navigation">
 <a href="./wrapper.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Wrapper</a>
-<a href="./phrases.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Phrases</a>
+<a href="./types.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Types</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Components wrapper callback</h1>
+<h1>Components wrapper callback</h1>
 <p>This tutorial is part of <a href="./">Iconify Icon Finder components tutorial</a>.</p>
+<p>Callback must be provided as parameter to <span class="hljs-class">Wrapper</span> constructor. It is used to notify your code whenever something changes in Icon Finder instance.</p>
+<p>Callback is a function with only one parameter: <span class="hljs-inline-var">event</span>, <span class="hljs-inline-type hljs-linkable"><a href="./callback.html#event" title="IconFinderEvent documentation"><span class="hljs-inline-type hljs-linkable">IconFinderEvent</span></a></span>.</p>
+<section class="content-section content-section--2"><H1 id="event" class="heading--2">Payload <a href="#event" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Payload has type <span class="hljs-inline-type hljs-linkable"><a href="./callback.html#event" title="IconFinderEvent documentation"><span class="hljs-inline-type hljs-linkable">IconFinderEvent</span></a></span>, which you can find in <span class="hljs-inline-file">src/wrapper/events.ts</span> of components package (to import type in your TypeScript code, use <span class="hljs-inline-file">@iconify/search-components/lib/wrapper/events</span>).</p><p>It is a simple object with multiple properties. Property <span class="hljs-inline-prop">type</span> defines type of event, other properties are specific to that type.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="load" class="heading--2">Load <a href="#load" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Load event is sent when Icon Finder has loaded.</p><p>Callback payload example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAibG9hZCIKfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;load&quot;</span><br>
+}<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="route" class="heading--2">Route <a href="#route" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Route event is sent when current page has changed.</p><p>Event has property <span class="hljs-inline-prop">route</span>, <span class="hljs-inline-type hljs-linkable"><a href="../core/types.html#route" title="PartialRoute documentation"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></a></span> that contains new route.</p><p>Callback payload examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAicm91dGUiLAoJInJvdXRlIjogewoJCSJ0eXBlIjogImNvbGxlY3Rpb25zIgoJfQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;route&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;route&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collections&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAicm91dGUiLAoJInJvdXRlIjogewoJCSJ0eXBlIjogImNvbGxlY3Rpb24iLAoJCSJwYXJhbXMiOiB7CgkJCSJwcmVmaXgiOiAibWRpIiwKCQkJInBhZ2UiOiAxCgkJfSwKCQkicGFyZW50IjogewoJCQkidHlwZSI6ICJjb2xsZWN0aW9ucyIKCQl9Cgl9Cn0K"><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;route&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;route&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;page&quot;</span>: <span class="hljs-number">1</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;parent&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collections&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="icon" class="heading--2">Icon <a href="#icon" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon event is sent when new icon has been selected.</p><p>Event has property <span class="hljs-inline-prop">icon</span>, <span class="hljs-inline-type hljs-linkable"><a href="../core/types.html#icon" title="Icon documentation"><span class="hljs-inline-type hljs-linkable">Icon</span></a> | <span class="hljs-inline-type hljs-linkable">null</span></span> that contains new selected icon as object. If icon has been deselected, value is <span class="hljs-literal">null</span>.</p><p>Callback payload examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiaWNvbiIsCgkiaWNvbiI6IHsKCQkicHJvdmlkZXIiOiAiIiwKCQkicHJlZml4IjogIm1kaSIsCgkJIm5hbWUiOiAiYWNjb3VudC1sb2NrIgoJfQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;icon&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;provider&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;account-lock&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiaWNvbiIsCgkiaWNvbiI6IG51bGwKfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;icon&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: <span class="hljs-literal">null</span><br>
+}<br>
+</code></div></div></div><p>You can use function <span class="hljs-function">iconToString</span> from Icon Finder Core to convert icon object to string:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IHsgSWNvbkZpbmRlckV2ZW50IH0gZnJvbSAnQGljb25pZnkvc2VhcmNoLWNvbXBvbmVudHMvbGliL3dyYXBwZXIvZXZlbnRzJzsKaW1wb3J0IHsgaWNvblRvU3RyaW5nIH0gZnJvbSAnQGljb25pZnkvc2VhcmNoLWNvcmUnOwoKLy8gLi4uCmNvbnN0IHdyYXBwZXIgPSBuZXcgV3JhcHBlcih7CgkvLyAuLi4KCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCXN3aXRjaCAoZXZlbnQudHlwZSkgewoJCQljYXNlICdpY29uJzoKCQkJCWlmIChldmVudC5pY29uKSB7CgkJCQkJY29uc29sZS5sb2coJ05ldyBpY29uIHNlbGVjdGVkOicsIGljb25Ub1N0cmluZyhldmVudC5pY29uKSk7CgkJCQl9IGVsc2UgewoJCQkJCWNvbnNvbGUubG9nKCdJY29uIGhhcyBiZWVuIGRlc2VsZWN0ZWQnKTsKCQkJCX0KCQkJCWJyZWFrOwoJCX0KCX0sCgkvLyAuLi4KfSk7Ci8vIC4uLgo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { iconToString } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-core&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// ...</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">switch</span> (event.type) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;icon&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (event.icon) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;New icon selected:&apos;</span>, iconToString(event.icon));<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;} <span class="hljs-keyword">else</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Icon has been deselected&apos;</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<span class="hljs-comment">// ...</span><br>
+</code></div></div></div><p>Usually user cannot deselect current icon. To deselect icon, use <span class="hljs-class">Wrapper</span>&apos;s <span class="hljs-function">selectIcon(null)</span> function as response to clicking button.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IHsgSWNvbkZpbmRlckV2ZW50IH0gZnJvbSAnQGljb25pZnkvc2VhcmNoLWNvbXBvbmVudHMvbGliL3dyYXBwZXIvZXZlbnRzJzsKCi8vIC4uLgpjb25zdCB3cmFwcGVyID0gbmV3IFdyYXBwZXIoewoJLy8gLi4uCgljYWxsYmFjazogKGV2ZW50OiBJY29uRmluZGVyRXZlbnQpID0+IHsKCQlzd2l0Y2ggKGV2ZW50LnR5cGUpIHsKCQkJY2FzZSAnYnV0dG9uJzoKCQkJCXN3aXRjaCAoZXZlbnQuYnV0dG9uKSB7CgkJCQkJY2FzZSAncmVzZXQnOgoJCQkJCQkvLyBEZXNlbGVjdCBjdXJyZW50IGljb24KCQkJCQkJd3JhcHBlci5zZWxlY3RJY29uKG51bGwpOwoJCQkJCQlicmVhazsKCgkJCQkJLy8gLi4uCgkJCQl9CgkJCQlicmVhazsKCQl9Cgl9LAoJLy8gLi4uCn0pOwovLyAuLi4K"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// ...</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">switch</span> (event.type) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;button&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">switch</span> (event.button) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;reset&apos;</span>:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Deselect current icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;wrapper.selectIcon(<span class="hljs-literal">null</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">break</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<span class="hljs-comment">// ...</span><br>
+</code></div></div></div></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="customisations" class="heading--2">Customisations <a href="#customisations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Customisations event it sent when icon customisations have changed. For example, when user has changed icon color or rotated icon.</p><p>Event has property <span class="hljs-inline-prop">customisations</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="PartialIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">PartialIconCustomisations</span></a></span> that contains list of customisations.</p><p>Callback payload examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY3VzdG9taXNhdGlvbnMiLAoJImN1c3RvbWlzYXRpb25zIjogewoJCSJjb2xvciI6ICIjZjIwIgoJfQp9Cg=="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;customisations&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;customisations&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;color&quot;</span>: <span class="hljs-string">&quot;#f20&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiY3VzdG9taXNhdGlvbnMiLAoJImN1c3RvbWlzYXRpb25zIjogewoJCSJoRmxpcCI6IHRydWUsCgkJImNvbG9yIjogIiNmMjAiLAoJCSJoZWlnaHQiOiAiMjQiCgl9Cn0K"><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;customisations&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;customisations&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;hFlip&quot;</span>: <span class="hljs-literal">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;color&quot;</span>: <span class="hljs-string">&quot;#f20&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;height&quot;</span>: <span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="button" class="heading--2">Button <a href="#button" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Button event is sent when button in footer has been clicked. Event has 2 properties:</p><ul>
+<li><span class="hljs-inline-prop">button</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Key of button that has been clicked. It is the same key as in <span class="hljs-inline-prop">components.footer.buttons</span> object in configurator.</li>
+<li><span class="hljs-inline-prop">state</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span>. Current state.</li>
+</ul><p>Callback payload example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInR5cGUiOiAiYnV0dG9uIiwKCSJidXR0b24iOiAic3VibWl0IiwKCSJzdGF0ZSI6IHsKCQkiaWNvbiI6IHsKCQkJInByb3ZpZGVyIjogIiIsCgkJCSJwcmVmaXgiOiAibWRpIiwKCQkJIm5hbWUiOiAiYWNjb3VudC1ib3gtb3V0bGluZSIKCQl9LAoJCSJyb3V0ZSI6IHsKCQkJInR5cGUiOiAiY29sbGVjdGlvbiIsCgkJCSJwYXJhbXMiOiB7CgkJCQkicHJlZml4IjogIm1kaSIKCQkJfSwKCQkJInBhcmVudCI6IHsKCQkJCSJ0eXBlIjogImNvbGxlY3Rpb25zIgoJCQl9CgkJfSwKCQkiY29uZmlnIjogewoJCQkiY29tcG9uZW50cyI6IHsKCQkJCSJsaXN0IjogdHJ1ZQoJCQl9CgkJfSwKCQkiY3VzdG9taXNhdGlvbnMiOiB7CgkJCSJjb2xvciI6ICIjZjIwIgoJCX0KCX0KfQo="><code class="highlight hljs">{<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;button&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;button&quot;</span>: <span class="hljs-string">&quot;submit&quot;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">&quot;state&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;icon&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;provider&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;account-box-outline&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;route&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collection&quot;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;params&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;prefix&quot;</span>: <span class="hljs-string">&quot;mdi&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;parent&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;collections&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;config&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;list&quot;</span>: <span class="hljs-literal">true</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;customisations&quot;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;color&quot;</span>: <span class="hljs-string">&quot;#f20&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+}<br>
+</code></div></div></div></section>
+
+
+
 
 				</article>
 				<nav
@@ -128,6 +268,7 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Configuration</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./wrapper.html">Wrapper</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./callback.html">Callback</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./phrases.html">Phrases</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
 </ul>

@@ -167,7 +167,6 @@
       children:
         ./packages/:
           title: Packages
-          wip: true
           hidden: true
           children:
             ./build/:
@@ -195,6 +194,7 @@
                 ./config.html: Configuration
                 ./wrapper.html: Wrapper
                 ./callback.html: Callback
+                ./types.html: Types
             ./components/phrases.html: Phrases
             ./themes/:
               title: Themes

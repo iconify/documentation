@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../../assets/style.css?9075" />
-		<title>Iconify Icon Finder Components: Wrapper</title>
+		<title>Iconify Icon Finder Components: Types</title>
 		
 	</head>
 	<body class="website-docs theme-integration">
@@ -85,57 +85,34 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="./config.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Configuration</a>
-<a href="./callback.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Callback</a>
+<a href="./callback.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Callback</a>
+<a href="./phrases.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Phrases</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Components wrapper</h1>
+<h1>Components wrapper callback</h1>
 <p>This tutorial is part of <a href="./">Iconify Icon Finder components tutorial</a>.</p>
-<p>Main entry point of components package is <span class="hljs-inline-file">wrapper</span>. It creates Icon Finder instance, renders container component, uses callback to notify implementation of any changes (such as new icon was seleted or button was clicked) and has several functions that can be used to control Icon Finder instance.</p>
-<p>To import <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> class, use this:</p>
-<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
-</code></div></div></div><p>Constructor for <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> has only one parameter: object <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconFinderWrapperParams</span></span> that has the following mandatory properties:</p>
-<ul>
-<li><span class="hljs-inline-prop">container</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">HTMLElement</span></span>. Container element where Icon Finder instance should be rendered.</li>
-<li><span class="hljs-inline-prop">component</span>. Main Svelte component to render.</li>
-<li><span class="hljs-inline-prop">callback</span>, <span class="hljs-inline-type hljs-linkable"><a href="./callback.html#event" title="IconFinderEvent documentation"><span class="hljs-inline-type hljs-linkable">IconFinderEvent</span></a></span>. Callback function that will be called whenever something happens.</li>
-</ul>
-<p>Then there are several optional properties:</p>
-<ul>
-<li><span class="hljs-inline-prop">iconSet</span>, <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a> | <span class="hljs-inline-type hljs-linkable">IconifyJSON</span>[]</span>. Custom icon sets.</li>
-<li><span class="hljs-inline-prop">state</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span>. Current state. This can be used to restore state from previous instance.</li>
-<li><span class="hljs-inline-prop">phrases</span>. Custom phrases.</li>
-</ul>
-<section class="content-section content-section--2"><H1 id="component" class="heading--2">Component <a href="#component" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use <span class="hljs-inline-prop">component</span> property to render custom container or to render default container.</p><p>Example of rendering default container:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
-<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
-<br>
-<span class="hljs-comment">// Create instance</span><br>
-<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;<span class="hljs-attr">component</span>: Container,<br>
- &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
- &#xA0; &#xA0;},<br>
-});<br>
-</code></div></div></div></section>
-
-
-<section class="content-section content-section--2"><H1 id="callback" class="heading--2">Callback <a href="#callback" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Callback is used to notify implementation of various events.</p><p>For more details see <a href="./callback.html">callback documentation</a>.</p></section>
-
-
-<section class="content-section content-section--2"><H1 id="custom-sets" class="heading--2">Custom sets <a href="#custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p><section class="content-section content-section--3"><H1 id="icon-finder-custom-sets" class="heading--3">IconFinderCustomSets type <a href="#icon-finder-custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section></section>
+<p>These types are used in components package.</p>
+<section class="content-section content-section--2"><H1 id="icon-customisations" class="heading--2">IconCustomisations <a href="#icon-customisations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="IconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></a></span> represents icon customisations. It is a simple object with few properties:</p><ul>
+<li><span class="hljs-inline-prop">color</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon color.</li>
+<li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon width.</li>
+<li><span class="hljs-inline-prop">height</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon height.</li>
+<li><span class="hljs-inline-prop">rotate</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Rotation. <span class="hljs-number">1</span> = <span class="hljs-number">90deg</span>, <span class="hljs-number">2</span> = <span class="hljs-number">180deg</span>, <span class="hljs-number">3</span> = <span class="hljs-number">270deg</span>.</li>
+<li><span class="hljs-inline-prop">hFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Horizontal flip.</li>
+<li><span class="hljs-inline-prop">vFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Vertical flip.</li>
+</ul><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="PartialIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">PartialIconCustomisations</span></a></span> is identical to <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="IconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></a></span>, but all properties are optional.</p><p>You can find source code in <span class="hljs-inline-file">src/misc/customisations.ts</span> of components package. To import type in your TypeScript code, use <span class="hljs-inline-file">@iconify/search-components/lib/misc/customisations</span>.</p></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="restoring-state" class="heading--2">Restoring state <a href="#restoring-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section>
+
+<section class="content-section content-section--2"><H1 id="icon-finder-state" class="heading--2">IconFinderState <a href="#icon-finder-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span> is used to send full state of Icon Finder instance. It is used in &quot;<span class="hljs-string">button</span>&quot; event. Value is a simple object with few properties:</p><ul>
+<li><span class="hljs-inline-prop">icon</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Icon</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Selected icon.</li>
+<li><span class="hljs-inline-prop">route</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></span>. Current route.</li>
+<li><span class="hljs-inline-prop">customisation</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="PartialIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">PartialIconCustomisations</span></a></span>. Customisations for selected icon.</li>
+<li><span class="hljs-inline-prop">config</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconFinderConfig</span></span>. Icon Finder configuration.</li>
+</ul><p>All properties, except for <span class="hljs-inline-prop">icon</span> are optional.</p><p>All values contain only modified elements. For example, if icon is not rotated, <span class="hljs-inline-prop">customisation</span> will not have property <span class="hljs-inline-prop">rotate</span>.</p><p>You can find source code in <span class="hljs-inline-file">src/wrapper/state.ts</span> of components package. To import type in your TypeScript code, use <span class="hljs-inline-file">@iconify/search-components/lib/wrapper/state</span>.</p></section>
+
+
+
+
 
 
 				</article>
@@ -164,9 +141,9 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Configuration</a></li>
-	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./wrapper.html">Wrapper</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./wrapper.html">Wrapper</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./callback.html">Callback</a></li>
-	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./types.html">Types</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./phrases.html">Phrases</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
 </ul>
