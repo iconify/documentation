@@ -189,7 +189,6 @@
                 ./types.html: Types
             ./components/:
               title: Components
-              wip: true
               children:
                 ./config.html: Configuration
                 ./wrapper.html: Wrapper

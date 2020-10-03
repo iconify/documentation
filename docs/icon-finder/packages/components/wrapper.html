@@ -88,16 +88,7 @@
 <a href="./config.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Configuration</a>
 <a href="./callback.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Callback</a>
 </div>
-<aside class="notice notice--gray">
-	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
-	<p class="notice-header">Work in progress!</p>
-	<p>
-		New Iconify documentation is currently in development.
-	</p>
-	<p>
-		There are missing and incomplete documents.
-	</p>
-</aside><h1>Components wrapper</h1>
+<h1>Components wrapper</h1>
 <p>This tutorial is part of <a href="./">Iconify Icon Finder components tutorial</a>.</p>
 <p>Main entry point of components package is <span class="hljs-inline-file">wrapper</span>. It creates Icon Finder instance, renders container component, uses callback to notify implementation of any changes (such as new icon was seleted or button was clicked) and has several functions that can be used to control Icon Finder instance.</p>
 <p>To import <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> class, use this:</p>
@@ -110,18 +101,19 @@
 </ul>
 <p>Then there are several optional properties:</p>
 <ul>
-<li><span class="hljs-inline-prop">iconSet</span>, <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a> | <span class="hljs-inline-type hljs-linkable">IconifyJSON</span>[]</span>. Custom icon sets.</li>
+<li><span class="hljs-inline-prop">iconSets</span>, <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a> | <span class="hljs-inline-type hljs-linkable">IconifyJSON</span>[]</span>. Custom icon sets.</li>
 <li><span class="hljs-inline-prop">state</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span>. Current state. This can be used to restore state from previous instance.</li>
 <li><span class="hljs-inline-prop">phrases</span>. Custom phrases.</li>
 </ul>
-<section class="content-section content-section--2"><H1 id="component" class="heading--2">Component <a href="#component" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use <span class="hljs-inline-prop">component</span> property to render custom container or to render default container.</p><p>Example of rendering default container:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<section class="content-section content-section--2"><H1 id="component" class="heading--2">Component <a href="#component" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use <span class="hljs-inline-prop">component</span> property to render custom container or to render default container.</p><p>Example of rendering default container:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CmltcG9ydCB7IEljb25GaW5kZXJFdmVudCB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
 <span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;<span class="hljs-attr">component</span>: Container,<br>
- &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
 });<br>
@@ -131,11 +123,235 @@
 <section class="content-section content-section--2"><H1 id="callback" class="heading--2">Callback <a href="#callback" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Callback is used to notify implementation of various events.</p><p>For more details see <a href="./callback.html">callback documentation</a>.</p></section>
 
 
-<section class="content-section content-section--2"><H1 id="custom-sets" class="heading--2">Custom sets <a href="#custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p><section class="content-section content-section--3"><H1 id="icon-finder-custom-sets" class="heading--3">IconFinderCustomSets type <a href="#icon-finder-custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section></section>
+<section class="content-section content-section--2"><H1 id="custom-sets" class="heading--2">Custom sets <a href="#custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use <span class="hljs-inline-prop">iconSets</span> property to display your custom icons. It can be used to display one or more icon sets. Icon sets can be merged with icon sets retrieved from API or you can choose to display only your icon sets.</p><p>Value can be either array of icon sets in <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></span> format. It can also be <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span> object, which also contains array of icon sets in <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></span> format, but has few extra properties.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CmltcG9ydCB7IEljb25GaW5kZXJFdmVudCB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAoJaWNvblNldHM6IFsKCQl7CgkJCXByZWZpeDogJ3Rlc3QnLAoJCQlpbmZvOiB7CgkJCQluYW1lOiAnVGVzdCcsCgkJCX0sCgkJCWljb25zOiB7CgkJCQkvLyBMaXN0IG9mIGljb25zIGhlcmUKCQkJfSwKCQl9LAoJXSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;{<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;name: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;],<br>
+});<br>
+</code></div></div></div><section class="content-section content-section--3"><H1 id="icon-finder-custom-sets" class="heading--3">IconFinderCustomSets type <a href="#icon-finder-custom-sets" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span> has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">iconSets</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span>[]</span>. Array of icon sets.</li>
+<li><span class="hljs-inline-prop">info</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">IconifyInfo</span>&gt;</span>. Metadata for icon sets. If icon set already has metadata, this will override data from icon set.</li>
+<li><span class="hljs-inline-prop">provider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. API provider. If set, all icon sets in <span class="hljs-inline-prop">iconSets</span> will be treated as if they belong to that API provider.</li>
+<li><span class="hljs-inline-prop">merge</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Merge method:
+<ul>
+<li>&quot;<span class="hljs-string">only-custom</span>&quot;: Icon Finder will display only custom icon sets.</li>
+<li>&quot;<span class="hljs-string">custom-first</span>&quot;: Icon Finder will display both custom icon sets and icon sets from Iconify API. Custom sets will be listed first.</li>
+<li>&quot;<span class="hljs-string">custom-last</span>&quot;: Icon Finder will display both custom icon sets and icon sets from Iconify API. Custom sets will be listed last.</li>
+</ul>
+</li>
+</ul><p>When displaying both custom and default icon sets, when searching all icon sets, Icon Finder will display results only from default icon sets. Search for custom icon sets will work only when browsing that icon set.</p><p>Example above using <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAoJaWNvblNldHM6IHsKCQlpY29uU2V0czogWwoJCQl7CgkJCQlwcmVmaXg6ICd0ZXN0JywKCQkJCWluZm86IHsKCQkJCQluYW1lOiAnVGVzdCcsCgkJCQl9LAoJCQkJaWNvbnM6IHsKCQkJCQkvLyBMaXN0IG9mIGljb25zIGhlcmUKCQkJCX0sCgkJCX0sCgkJXSwKCQltZXJnZTogJ29ubHktY3VzdG9tJywKCX0sCn0pOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;iconSets: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;{<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;name: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;],<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;merge: <span class="hljs-string">&apos;only-custom&apos;</span>,<br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div></section><section class="content-section content-section--3"><H1 id="info-property" class="heading--3">Info property <a href="#info-property" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon sets must have <span class="hljs-inline-prop">info</span> property with icon set name. If missing, Icon Finder will not display that icon set.</p><p>If your JSON data does not have <span class="hljs-inline-prop">info</span> property, you must use <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span> object and must include information for icon set in <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span>&apos;s <span class="hljs-inline-prop">info</span> property.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CmltcG9ydCB7IEljb25GaW5kZXJFdmVudCB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAoJaWNvblNldHM6IHsKCQkvLyBJY29uIHNldHMgd2l0aG91dCBtZXRhZGF0YQoJCWljb25TZXRzOiBbCgkJCXsKCQkJCXByZWZpeDogJ3Rlc3QnLAoJCQkJaWNvbnM6IHsKCQkJCQkvLyBMaXN0IG9mIGljb25zIGhlcmUKCQkJCX0sCgkJCX0sCgkJXSwKCQkvLyBNaXNzaW5nIG1ldGFkYXRhIGZvciBpY29uIHNldHMKCQlpbmZvOiB7CgkJCS8vIEluZm8gZm9yICd0ZXN0JyBpY29uIHNldAoJCQl0ZXN0OiB7CgkJCQl0aXRsZTogJ1Rlc3QnLAoJCQl9LAoJCX0sCgl9LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;iconSets: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Icon sets without metadata</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;{<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;],<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Missing metadata for icon sets</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Info for &apos;test&apos; icon set</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;test: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;title: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div></section><section class="content-section content-section--3"><H1 id="examples" class="heading--3">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>For usage example, take a look at <a href="https://cyberalien.github.io/line-md/" target="_blank">Material Line Icons website</a>. It uses Icon Finder with <span class="hljs-inline-prop">iconSets</span> property to display only custom icon set. Source code is available in directory <span class="hljs-inline-file">ui/line-md</span> of Icon Finder repository.</p></section></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="restoring-state" class="heading--2">Restoring state <a href="#restoring-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>TODO...</p></section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="restoring-state" class="heading--2">Restoring state <a href="#restoring-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>State is provided as property in &quot;<span class="hljs-string">button</span>&quot; event, triggered when button in footer has been clicked. See <a href="./callback.html">callback documentation</a> for details. You can also retrieve current state using wrapper&apos;s <a href="./wrapper.html#get-state" title="getState() documentation"><span class="hljs-function hljs-linkable">getState()</span></a> function.</p><p>You can save that state in application&apos;s memory or in cookies and use <span class="hljs-inline-prop">state</span> property of <a href="./wrapper.html" title="Wrapper documentation"><span class="hljs-class hljs-linkable">Wrapper</span></a> constructor to restore state.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CmltcG9ydCB7IEljb25GaW5kZXJTdGF0ZSB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyL3N0YXRlJzsKaW1wb3J0IHsgSWNvbkZpbmRlckV2ZW50IH0gZnJvbSAnQGljb25pZnkvc2VhcmNoLWNvbXBvbmVudHMvbGliL3dyYXBwZXIvZXZlbnRzJzsKCi8vIEdldCBsYXN0IHNhdmVkIHN0YXRlCmxldCBsYXN0U2F2ZWRTdGF0ZTogUGFydGlhbDxJY29uRmluZGVyU3RhdGU+OwppZiAoLyogc29tZSBjb25kaXRpb24gdGhhdCBjaGVja3MgaWYgc3RhdGUgaXMgc2F2ZWQgKi8pIHsKICAvLyBSZXRyaWV2ZSBzdGF0ZSBmcm9tIHNvbWV3aGVyZQogIC8vIGxhc3RTYXZlZFN0YXRlID0KfQoKLy8gQ3JlYXRlIGluc3RhbmNlCmNvbnN0IHdyYXBwZXIgPSBuZXcgV3JhcHBlcih7Cgljb250YWluZXI6IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpY29uLWZpbmRlcicpLAoJY29tcG9uZW50OiBDb250YWluZXIsCgljYWxsYmFjazogKGV2ZW50OiBJY29uRmluZGVyRXZlbnQpID0+IHsKCQljb25zb2xlLmxvZygnRXZlbnQ6JywgZXZlbnQpOwoJfSwKCXN0YXRlOiBsYXN0U2F2ZWRTdGF0ZSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderState } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/state&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Get last saved state</span><br>
+<span class="hljs-keyword">let</span> lastSavedState: Partial&lt;IconFinderState&gt;;<br>
+<span class="hljs-keyword">if</span> (<span class="hljs-comment">/* some condition that checks if state is saved */</span>) {<br>
+ &#xA0;<span class="hljs-comment">// Retrieve state from somewhere</span><br>
+ &#xA0;<span class="hljs-comment">// lastSavedState =</span><br>
+}<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;state: lastSavedState,<br>
+});<br>
+</code></div></div></div><p>You can also use it to set initial page:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyJzsKaW1wb3J0IENvbnRhaW5lciBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29tcG9uZW50cy9saWIvdWkvQ29udGFpbmVyLnN2ZWx0ZSc7CmltcG9ydCB7IEljb25GaW5kZXJFdmVudCB9IGZyb20gJ0BpY29uaWZ5L3NlYXJjaC1jb21wb25lbnRzL2xpYi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljb21wb25lbnQ6IENvbnRhaW5lciwKCWNhbGxiYWNrOiAoZXZlbnQ6IEljb25GaW5kZXJFdmVudCkgPT4gewoJCWNvbnNvbGUubG9nKCdFdmVudDonLCBldmVudCk7Cgl9LAoJc3RhdGU6IHsKCQkvLyBTZXQgTWF0ZXJpYWwgRGVzaWduIEljb25zIGFzIGhvbWUgcm91dGUKCQljb25maWc6IHsKCQkJcm91dGVyOiB7CgkJCQkvLyBPcHRpb24gdmFsdWUgaXMgYSBKU09OIHN0cmluZywgc28gc3RyaW5naWZ5IHJvdXRlCgkJCQlob21lOiBKU09OLnN0cmluZ2lmeSh7CgkJCQkJdHlwZTogJ2NvbGxlY3Rpb24nLAoJCQkJCXBhcmFtczogewoJCQkJCQlwcmVmaXg6ICdtZGknLAoJCQkJCX0sCgkJCQl9KSwKCQkJfSwKCQl9LAoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper&apos;</span>;<br>
+<span class="hljs-keyword">import</span> Container <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/ui/Container.svelte&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/search-components/lib/wrapper/events&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create instance</span><br>
+<span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;component: Container,<br>
+ &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;state: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Set Material Design Icons as home route</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;config: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;router: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Option value is a JSON string, so stringify route</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;home: <span class="hljs-built_in">JSON</span>.stringify({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">type</span>: <span class="hljs-string">&apos;collection&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;params: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="show-hide" class="heading--2">Hide and show <a href="#show-hide" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can show and hide UI using functions <a href="./wrapper.html#show-hide" title="show() documentation"><span class="hljs-function hljs-linkable">show()</span></a> and <a href="./wrapper.html#show-hide" title="hide() documentation"><span class="hljs-function hljs-linkable">hide()</span></a> of wrapper instance.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCndyYXBwZXIuaGlkZSgpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+wrapper.hide();<br>
+</code></div></div></div></section>
+
+<section class="content-section content-section--2"><H1 id="get-state" class="heading--2">Get state <a href="#get-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <a href="./wrapper.html#get-state" title="getState() documentation"><span class="hljs-function hljs-linkable">getState()</span></a> returns current state in <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span> format.</p><p>See <a href="./types.html#icon-finder-state"><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></span> documentation</a>.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCmNvbnN0IHN0YXRlID0gd3JhcHBlci5nZXRTdGF0ZSgpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+<span class="hljs-keyword">const</span> state = wrapper.getState();<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="get-status" class="heading--2">Get status <a href="#get-status" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <a href="./wrapper.html#get-status" title="getStatus() documentation"><span class="hljs-function hljs-linkable">getStatus()</span></a> returns status of Icon Finder instance as string. Possible values:</p><ul>
+<li>&quot;<span class="hljs-string"></span>&quot; (empty string): default status.</li>
+<li>&quot;<span class="hljs-string">loading</span>&quot;: instance is loading.</li>
+<li>&quot;<span class="hljs-string">hidden</span>&quot;: instance is hidden.</li>
+<li>&quot;<span class="hljs-string">destroyed</span>&quot;: instance has been destroyed.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="destroy" class="heading--2">Destroy <a href="#destroy" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function <a href="./wrapper.html#destroy" title="destroy() documentation"><span class="hljs-function hljs-linkable">destroy()</span></a> destroys instance. All data stored in memory gets destroyed. Use this function if your UI no longer needs Icon Finder instance.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCi8vIERlc3Ryb3kgaW5zdGFuY2UKd3JhcHBlci5kZXN0cm95KCk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+<span class="hljs-comment">// Destroy instance</span><br>
+wrapper.destroy();<br>
+</code></div></div></div></section>
+
+<section class="content-section content-section--2"><H1 id="set-route" class="heading--2">setRoute <a href="#set-route" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function changes current route.</p><p>This function should not be used to set initial route. You should set initial route using constructor&apos;s <span class="hljs-inline-prop">state.route</span> property. This function should be used to change route after some action, for example a button has been clicked.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCi8vIE5hdmlnYXRlIHRvIGFuIGljb24gc2V0CndyYXBwZXIuc2V0Um91dGUoewoJdHlwZTogJ2NvbGxlY3Rpb24nLAoJcGFyYW1zOiB7CgkJcHJlZml4OiAnbWRpJywKCX0sCglwYXJlbnQ6IHsKCQl0eXBlOiAnY29sbGVjdGlvbnMnLAoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+<span class="hljs-comment">// Navigate to an icon set</span><br>
+wrapper.setRoute({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collection&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">params</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">parent</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collections&apos;</span>,<br>
+ &#xA0; &#xA0;},<br>
+});<br>
+</code></div></div></div><p>You can retrieve current route as part of state using <a href="./wrapper.html#get-state" title="getState() documentation"><span class="hljs-function hljs-linkable">getState()</span></a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="select-icon" class="heading--2">selectIcon <a href="#select-icon" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function changes currently selected icon.</p><p>Value can be:</p><ul>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>: icon name as string.</li>
+<li><span class="hljs-inline-type hljs-linkable"><a href="../core/types.html#icon" title="Icon documentation"><span class="hljs-inline-type hljs-linkable">Icon</span></a></span>: icon name as object.</li>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">null</span></span>: clears selection.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCi8vIFNlbGVjdCAibWRpOmhvbWUiCndyYXBwZXIuc2VsZWN0SWNvbignbWRpOmhvbWUnKTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+<span class="hljs-comment">// Select &quot;mdi:home&quot;</span><br>
+wrapper.selectIcon(<span class="hljs-string">&apos;mdi:home&apos;</span>);<br>
+</code></div></div></div><p>You can retrieve currently selected icon as part of state using <a href="./wrapper.html#get-state" title="getState() documentation"><span class="hljs-function hljs-linkable">getState()</span></a>.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="set-customisations" class="heading--2">setCustomisations <a href="#set-customisations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This function changes current icon customisations, such as color, dimensions, transformations.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCS8vIC4uLgp9KTsKCi8vIFJvdGF0ZSBjdXJyZW50bHkgc2VsZWN0ZWQgaWNvbiBieSA5MCBkZWdyZWVzCndyYXBwZXIuc2V0Q3VzdG9taXNhdGlvbnMoewoJcm90YXRlOiAxLAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+});<br>
+<br>
+<span class="hljs-comment">// Rotate currently selected icon by 90 degrees</span><br>
+wrapper.setCustomisations({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">rotate</span>: <span class="hljs-number">1</span>,<br>
+});<br>
+</code></div></div></div><p>You can retrieve list of active icon customisations as part of state using <a href="./wrapper.html#get-state" title="getState() documentation"><span class="hljs-function hljs-linkable">getState()</span></a>.</p></section>
+
 
 
 				</article>
