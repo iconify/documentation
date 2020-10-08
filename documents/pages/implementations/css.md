@@ -70,7 +70,7 @@ url('<span class="hljs-string">https://api.iconify.design/fa-solid/home.svg?colo
 
 ## Color
 
-One downside of using SVG as external resource is it cannot inherit color from parent element.
+One downside of using SVG as external resource is it cannot inherit color from parent element. Browsers will use black instead of `[key]currentColor`.
 
 This example shows 3 monotone icons, one is used as DOM element, one as pseudo element's content, one as background:
 
@@ -94,7 +94,11 @@ To change color add parameter `[attr]color` to icon URL:
 
 This applies only to monotone icons. Icons that have hardcoded palette don't need `[attr]color` attribute.
 
-In URLs character `[str]"#"` must be encoded, so replace `[str]"#"` with `[str]"%23"`. In example above, color value is `[str]"#ba3329"`.
+If you are using hexadecimal color, make sure to replace `[str]#` with `[str]%23`:
+
+```raw
+https://api.iconify.design/fa-solid/home.svg?color=%23ba3329
+```
 
 ## Dimensions
 

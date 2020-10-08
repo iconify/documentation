@@ -17,7 +17,7 @@ Iconify API has several types of queries:
 - Administrative queries.
 - Search queries.
 
-Documentation below is not complete. For now it just lists queries, more details will be added later.
+Documentation below is not complete. For now, it just lists queries, more details will be added later.
 
 ## JSONP responses
 
@@ -48,8 +48,8 @@ By default, API will return JSON data. If you want a JSONP response, do this:
 
 Examples:
 
-- JSON query: `[url]/mdi.js?icons=home&callback=Iconify.addCollection`
-- JSONP query: `[url]/mdi.json?icons=home`
+- JSON query: `[url]/mdi.json?icons=home`
+- JSONP query: `[url]/mdi.js?icons=home&callback=Iconify.addCollection`
 
 ## Common parameters
 
@@ -86,13 +86,28 @@ hint: /uil.json?icons=cake,lock,lock-open-alt&pretty=1
 src: sources/api/uil.json
 ```
 
+## SVG
+
+Iconify API can also generate SVG, which can be used as a background image.
+
+Query format: `[url]/{prefix}/{name}.svg`
+
+See [using Iconify in CSS](../../implementations/css.md) for list of parameters.
+
+In addition to parameters described in [using Iconify in CSS tutorial](../../implementations/css.md), there are few parameters that do not apply to CSS:
+
+- `[prop]download` forces browser to download file: `[str]download=1`.
+- `[prop]box` adds an empty rectangle to SVG that matches `[attr]viewBox`.
+
+Some software ignore `[attr]viewBox` when importing icons. They create groups that automatically resize to fit content. Icons usually have empty pixels around icon, so such software crops those empty pixels when importing SVG. This applies to most UI design tools.
+
+Parameter `[prop]box` adds empty rectangle to SVG, which fixes icon import issue in such software: `[url]/mdi/home.svg?box=1`.
+
+Combined with `[prop]download` parameter, `[prop]box` parameter this can be used to download SVG that will be imported correctly in software that does not support `[attr]viewBox`: `[url]/mdi/home.svg?box=1&download=1`.
+
 ## Other queries
 
 Other queries will be added to documentation later.
-
-Queries to get SVG:
-
-- `[url]/{prefix}/{name}.svg` will render SVG. It has many parameters: `[prop]width`, `[prop]height`, `[prop]color` and many others. Special parameters are `[prop]box=1` to add empty rectangle that matches `[attr]viewBox` and `[prop]download=1` that will add headers that will force browser to download icon.
 
 Icon finder queries:
 
