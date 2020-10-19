@@ -2,7 +2,7 @@
 title: Router in Iconify Icon Finder Core
 types:
   PartialRoute: ./routes.md
-  Route: ./routes.md
+  FullRoute: ./routes.md
   IconsList: ./types.md#icons-list
   Icon: ./types.md#icon
 ```
@@ -27,7 +27,8 @@ const router = registry.router;
 
 `[class]Router` has the following methods and properties:
 
-- `[prop]route`, `[type]PartialRoute`. Current route. You can change route by changing value.
+- `[prop]partialRoute`, `[type]PartialRoute`. Current route (only customised parameters). You can change route by changing value.
+- `[prop]fullRoute`, `[type]FullRoute`. Current route (full object). You can change route by changing value.
 - `[prop]defaultProvider`, `[type]string`. You can use this to set default API provider when navigating to home page.
 - `[func]home()`. Navigates to home page.
 - `[func]action()`. Run action on the currently visible view.
@@ -40,9 +41,17 @@ Functions and properties that are meant for internal use:
 - `[func]createChildView()`. Creates new child view from route.
 - `[func]setParentView()`. Navigate few levels up in parent views tree. Identical to `[js]action('parent', 1)`.
 
-## route
+## partialRoute and fullRoute {#route}
 
-Property `[prop]route` can access or change current route. See [routes documentation](./routes.md) for details.
+Properties `[prop]partialRoute` and `[prop]fullRoute` can access or change current route. See [routes documentation](./routes.md) for details.
+
+What is the difference between two properties?
+
+Property `[prop]partialRoute` contains copy of current route, without parameters that match default values.
+
+Property `[prop]fullRoute` accesses current route variable directly. It has all parameters, including optional parameters. Be careful when using this property, it is a reference to internal variable, not a copy, so your code should never modify it and never assume it will not be modified. Use `[prop]partialRoute` instead if you need to a copy of route.
+
+Setting either property to `null` is identical to calling `[func]home()` function.
 
 ## defaultProvider
 

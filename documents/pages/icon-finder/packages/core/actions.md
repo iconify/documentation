@@ -11,6 +11,7 @@ types:
   SearchBlock: ./blocks.md#search
   PaginationBlock: ./blocks.md#pagination
   Icon: ./types.md#icon
+wip: true
 ```
 
 # Actions in Iconify Icon Finder

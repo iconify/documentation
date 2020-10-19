@@ -21,7 +21,7 @@ If you want to change the configuration, you should do it when initialising inst
 If you are using `[class]IconFinderCore`, pass custom configuration as `[prop]config` property of first parameter to constructor:
 
 ```js
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 const core = new IconFinderCore({
 	config: {
@@ -41,7 +41,7 @@ const core = new IconFinderCore({
 If you are using `[class]Registry`, change configuration synchronously immediately after creating registry:
 
 ```js
-const { Registry } = require('@iconify/icon-finder-core/lib/registry');
+const { Registry } = require('@iconify/search-core/lib/registry');
 
 // Create registry, get configuration and change it
 const registry = new Registry();

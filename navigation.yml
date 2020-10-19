@@ -181,7 +181,9 @@
                 ./render.html: Render Callback
                 ./routes.html: Routes
                 ./blocks.html: Blocks
-                ./actions.html: Actions
+                ./actions.html:
+                  title: Actions
+                  wip: true
                 ./custom-view.html: Custom View
                 ./config.html: Core Configuration
                 ./registry.html: Registry

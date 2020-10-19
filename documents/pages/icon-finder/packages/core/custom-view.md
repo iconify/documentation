@@ -45,7 +45,7 @@ Setting icons is done by creating a callback (if you are using `[class]IconFinde
 Example with `[class]IconFinderCore`:
 
 ```js
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 const core = new IconFinderCore({
 	// List of custom
@@ -73,7 +73,7 @@ const core = new IconFinderCore({
 If you are using `[class]Registry` class, you need to use an event listener:
 
 ```js
-const { Registry } = require('@iconify/icon-finder-core/lib/registry');
+const { Registry } = require('@iconify/search-core/lib/registry');
 
 // Create registry, set event listeners to loading custom icons
 const registry = new Registry();

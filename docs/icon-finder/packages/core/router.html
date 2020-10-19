@@ -97,7 +97,8 @@
 </code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgcm91dGVyID0gcmVnaXN0cnkucm91dGVyOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> router = registry.router;<br>
 </code></div></div></div><p><span class="hljs-class">Router</span> has the following methods and properties:</p>
 <ul>
-<li><span class="hljs-inline-prop">route</span>, <span class="hljs-inline-type hljs-linkable"><a href="./routes.html" title="PartialRoute documentation"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></a></span>. Current route. You can change route by changing value.</li>
+<li><span class="hljs-inline-prop">partialRoute</span>, <span class="hljs-inline-type hljs-linkable"><a href="./routes.html" title="PartialRoute documentation"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></a></span>. Current route (only customised parameters). You can change route by changing value.</li>
+<li><span class="hljs-inline-prop">fullRoute</span>, <span class="hljs-inline-type hljs-linkable"><a href="./routes.html" title="FullRoute documentation"><span class="hljs-inline-type hljs-linkable">FullRoute</span></a></span>. Current route (full object). You can change route by changing value.</li>
 <li><span class="hljs-inline-prop">defaultProvider</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. You can use this to set default API provider when navigating to home page.</li>
 <li><span class="hljs-function">home()</span>. Navigates to home page.</li>
 <li><span class="hljs-function">action()</span>. Run action on the currently visible view.</li>
@@ -110,7 +111,11 @@
 <li><span class="hljs-function">createChildView()</span>. Creates new child view from route.</li>
 <li><span class="hljs-function">setParentView()</span>. Navigate few levels up in parent views tree. Identical to <span class="inline-code inline-code--js">action(<span class="hljs-string">&apos;parent&apos;</span>, <span class="hljs-number">1</span>)</span>.</li>
 </ul>
-<section class="content-section content-section--2"><H1 id="route" class="heading--2">route <a href="#route" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Property <span class="hljs-inline-prop">route</span> can access or change current route. See <a href="./routes.html">routes documentation</a> for details.</p></section>
+<section class="content-section content-section--2"><H1 id="route" class="heading--2">partialRoute and fullRoute <a href="#route" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Properties <span class="hljs-inline-prop">partialRoute</span> and <span class="hljs-inline-prop">fullRoute</span> can access or change current route. See <a href="./routes.html">routes documentation</a> for details.</p><p>What is the difference between two properties?</p><p>Property <span class="hljs-inline-prop">partialRoute</span> contains copy of current route, without parameters that match default values.</p><p>Property <span class="hljs-inline-prop">fullRoute</span> accesses current route variable directly. It has all parameters, including optional parameters. Be careful when using this property, it is a reference to internal variable, not a copy, so your code should never modify it and never assume it will not be modified. Use <span class="hljs-inline-prop">partialRoute</span> instead if you need to a copy of route.</p><p>Setting either property to <span class="hljs-literal">null</span> is identical to calling <span class="hljs-function">home()</span> function.</p></section>
+
+
+
+
 
 <section class="content-section content-section--2"><H1 id="defaultprovider" class="heading--2">defaultProvider <a href="#defaultprovider" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Property <span class="hljs-inline-prop">defaultProvider</span> is used to set default API provider. It affects only <span class="hljs-function">home()</span> function.</p></section>
 

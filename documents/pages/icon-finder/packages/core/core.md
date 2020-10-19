@@ -17,7 +17,7 @@ This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 All configuration values, initial route, and callbacks are set in the constructor. Then all you need to do is react to the render callback.
 
 ```js
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 const core = new IconFinderCore({
 	// Configuration
@@ -55,7 +55,7 @@ If you do not want to pass an entire `[class]IconFinderCore` instance to child c
 Each `[class]IconFinderCore` instance has a unique identifier. It makes it possible to pass `[class]IconFinderCore` instance as a string instead of an object to child components.
 
 ```jsx
-import { IconFinderCore, getCoreInstance } from '@iconify/icon-finder-core';
+import { IconFinderCore, getCoreInstance } from '@iconify/search-core';
 
 // Container component: create core
 class Container extends Component {
@@ -119,7 +119,7 @@ To get `[class]Router` instance, use `[func]router` property:
 const router = core.router;
 
 // View Material Design Icons with collections list as the parent view
-router.route = {
+router.partialRoute = {
 	type: 'collection',
 	params: {
 		prefix: 'mdi',
@@ -134,7 +134,7 @@ router.route = {
 
 Current view is stored in the route. You can save current route or set a new route.
 
-To get or set route, use router's `[prop]route` getter or setter (see code example above).
+To get or set route, use router's `[prop]partialRoute` or `[prop]fullRoute` getter or setter (see code example above).
 
 See [routes documentation](./routes.md) for list of routes, [Router documentation](./router.md) for `[class]Router` methods.
 

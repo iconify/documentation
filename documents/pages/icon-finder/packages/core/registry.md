@@ -22,7 +22,7 @@ This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 To create `[class]Registry` instance, you need to use import class `[prop]Registry` from `[file]lib/registry` and initialise it:
 
 ```js
-const { Registry } = require('@iconify/icon-finder-core/lib/registry');
+const { Registry } = require('@iconify/search-core/lib/registry');
 
 const registry = new Registry();
 ```
@@ -122,7 +122,7 @@ api.query(
 To access `[class]Router` instance, use `[prop]router` property:
 
 ```js
-const router = registry.router.router.home();
+const router = registry.router.home();
 ```
 
 ## Custom properties

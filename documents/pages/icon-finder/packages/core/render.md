@@ -23,7 +23,7 @@ Render callback is the same using both methods, except that if you use `[class]I
 This is how you should create callback when using `[class]IconFinderCore`:
 
 ```js
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 const core = new IconFinderCore({
 	// Parameters here
@@ -37,7 +37,7 @@ const core = new IconFinderCore({
 This is how you should create callback when using `[class]Registry`:
 
 ```js
-const { Registry } = require('@iconify/icon-finder-core/lib/registry');
+const { Registry } = require('@iconify/search-core/lib/registry');
 
 // Create registry, get router and events
 const registry = new Registry();
@@ -96,7 +96,7 @@ It decides what child component to show based on the current error message and r
 
 ```jsx
 import react, { Component } from 'react';
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 class UI extends Component {
 	constructor() {
@@ -223,7 +223,7 @@ class UI extends Component {
 In child components to get `[class]IconFinderCore` instance, use property `[prop]core` passed from parent component:
 
 ```js
-const { getCoreInstance } = require('@iconify/icon-finder-core');
+const { getCoreInstance } = require('@iconify/search-core');
 
 // Example code inside component
 // "core" was provided as property in a previous example. This example is an addition to previous example.

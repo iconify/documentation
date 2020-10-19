@@ -43,7 +43,7 @@ In the callback you should render data provided as callback parameter. See [rend
 To change something, for example, a page, you can do one of two things:
 
 1. Apply action using `[func]action` function. Icon Finder Core will apply that change to the current route, retrieve data (if needed), filter data and call your callback with updated data.
-2. Change route by writing to `[prop]route` property of the router. You can access `[class]Router` instance using `[prop]router` property.
+2. Change route by writing to `[prop]partialRoute` property of the router. You can access `[class]Router` instance using `[prop]router` property.
 
 ```js
 // Change page
@@ -52,7 +52,7 @@ core.action('pagination', 1); // Second page. First page is 0.
 
 ```js
 // Change route to MDI
-core.router.route = {
+core.router.partialRoute = {
 	// Collection route, prefix is set in params object.
 	type: 'collection',
 	params: {
@@ -73,7 +73,7 @@ There are two ways to work with Icon Finder Core: using `[class]IconFinderCore` 
 `[class]IconFinderCore` class is accessed by importing `[prop]IconFinderCore` from package's main file:
 
 ```js
-const { IconFinderCore } = require('@iconify/icon-finder-core');
+const { IconFinderCore } = require('@iconify/search-core');
 
 const core = new IconFinderCore({
 	// Parameters here
@@ -89,7 +89,7 @@ const core = new IconFinderCore({
 To create a `[class]Registry` instance, import `[prop]Registry` class from `[file]lib/registry` and create new instance:
 
 ```js
-const { Registry } = require('@iconify/icon-finder-core/lib/registry');
+const { Registry } = require('@iconify/search-core/lib/registry');
 
 // Create registry, get router and events
 const registry = new Registry();
