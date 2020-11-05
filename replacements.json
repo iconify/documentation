@@ -15,7 +15,7 @@
 	"iconify2": {
 		"version": {
 			"major": "2",
-			"full": "2.0.0-rc.1"
+			"full": "2.0.0-rc.2"
 		},
 		"size": "30kb",
 		"size-without-api": "16kb",
@@ -26,7 +26,7 @@
 	},
 	"vue": {
 		"import-vue2": "@iconify/vue@^1",
-		"import-vue3": "@iconify/vue@beta"
+		"import-vue3": "@iconify/vue@next"
 	},
 	"counters": {
 		"sets": "80",
@@ -39,6 +39,6 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js"
+		"iconify": "https://code.iconify.design/2/2.0.0-rc.2/iconify.min.js"
 	}
 }
