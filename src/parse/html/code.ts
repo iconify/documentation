@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 /**
  * Wrap custom code blocks
  */
-export function wrapCustomCode($html: CheerioStatic): void {
+export function wrapCustomCode($html: cheerio.Root): void {
 	$html('code').each((index, node) => {
 		const $node = cheerio(node);
 		const wrap = $node.attr('data-wrap');
@@ -12,7 +12,7 @@ export function wrapCustomCode($html: CheerioStatic): void {
 		}
 
 		$node.removeAttr('data-wrap');
-		let $wrapper: Cheerio;
+		let $wrapper: cheerio.Cheerio;
 		switch (wrap) {
 			case 'block':
 				// Wrap in block

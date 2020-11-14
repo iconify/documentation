@@ -4,7 +4,7 @@ import { relativeToAbsolute, absoluteToRelative, assetURL } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
 
 export function parseHTMLImages(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: ParseResult,
 	relativeFile: string
 ) {

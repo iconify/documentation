@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 /**
  * Wrap content into sections
  */
-export function wrapSections($html: CheerioStatic): void {
+export function wrapSections($html: cheerio.Root): void {
 	// Wrap all headings
 	for (let level = 6; level > 1; level--) {
 		$html('h' + level).each((index, node) => {

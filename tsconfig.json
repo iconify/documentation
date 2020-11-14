@@ -7,10 +7,10 @@
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
-		"strict": true,
+		"strict": false,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"types": ["node"]
+		"types": ["node", "cheerio", "markdown-it"]
 	}
 }

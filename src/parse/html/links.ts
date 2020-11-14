@@ -4,7 +4,7 @@ import { relativeToAbsolute, absoluteToRelative } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
 
 export function parseHTMLLinks(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: ParseResult,
 	relativeFile: string
 ) {

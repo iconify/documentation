@@ -8,7 +8,7 @@ const attr = 'data-partial';
  * Include partials
  */
 export function importHTMLPartials(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: MDContext
 ): void {
 	$html('[' + attr + ']').each((index, node) => {

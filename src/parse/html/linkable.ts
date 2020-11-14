@@ -9,7 +9,7 @@ export interface LinkableConfig {
 }
 
 export function checkLinkables(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: MDContext,
 	items: Record<string, string>,
 	config: LinkableConfig
@@ -50,7 +50,7 @@ export function checkLinkables(
 		return link;
 	}
 
-	function checkItem($child: Cheerio, content: string): boolean {
+	function checkItem($child: cheerio.Cheerio, content: string): boolean {
 		const item = content.split('(').shift()!;
 		if (items[item] !== void 0) {
 			const target = buildLink(items[item]);

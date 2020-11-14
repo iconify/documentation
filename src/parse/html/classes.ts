@@ -2,7 +2,7 @@ import { MDContext } from '../types';
 import { checkLinkables } from './linkable';
 
 export function linkClasses(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: MDContext,
 	classes: Record<string, string>
 ): void {

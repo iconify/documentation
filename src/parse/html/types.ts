@@ -4,7 +4,7 @@ import { relativeToAbsolute, absoluteToRelative } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
 
 export function linkTypes(
-	$html: CheerioStatic,
+	$html: cheerio.Root,
 	context: MDContext,
 	types: Record<string, string>
 ): void {
@@ -44,7 +44,7 @@ export function linkTypes(
 		return link;
 	}
 
-	function checkType($child: Cheerio, type: string): boolean {
+	function checkType($child: cheerio.Cheerio, type: string): boolean {
 		if (types[type] !== void 0) {
 			const target = buildLink(types[type]);
 			$child.wrap(

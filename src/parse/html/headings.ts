@@ -4,7 +4,7 @@ import { rawReplacements } from '../../replacements';
 /**
  * Change links in headings
  */
-export function changeHeadingLinks($html: CheerioStatic) {
+export function changeHeadingLinks($html: cheerio.Root) {
 	// Replace back links
 	const icon = rawReplacements.icons.hash;
 	$html('a.link-back').each((index, link) => {
