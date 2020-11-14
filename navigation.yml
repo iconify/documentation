@@ -167,13 +167,7 @@
       children:
         ./packages/:
           title: Packages
-          hidden: true
           children:
-            ./build/:
-              title: Build Process
-              children:
-                ./config.html: Configuration
-                ./custom-components.html: Custom Components
             ./core/:
               title: Core
               children:
@@ -189,15 +183,15 @@
                 ./registry.html: Registry
                 ./router.html: Router
                 ./types.html: Types
-            ./components/:
-              title: Components
+            ./base-svelte/:
+              title: Svelte Components
+              wip: true
               children:
-                ./config.html: Configuration
+                ./components-config.html: Configuration
                 ./wrapper.html: Wrapper
                 ./callback.html: Callback
                 ./types.html: Types
-            ./components/phrases.html: Phrases
-            ./themes/: Themes
+                ./examples.html: Project Forks
 /code/:
   title: Code
   children:

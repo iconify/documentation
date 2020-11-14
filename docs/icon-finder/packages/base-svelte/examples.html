@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../../assets/style.css?9075" />
-		<title>Phrases in Iconify Icon Finder</title>
+		<title>Examples of Iconify Icon Finder Forks</title>
 		
 	</head>
 	<body class="website-docs theme-integration">
@@ -85,40 +85,24 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Components</a>
-<a href="../themes/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Themes</a>
+<a href="./types.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Types</a>
+<a href="../../../code/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Code</a>
 </div>
-<h1>Phrases in Iconify Icon Finder</h1>
-<p>Icon Finder UI is designed to be easy to customise. That includes the possibility of translation.</p>
-<p>By default, Icon Finder UI uses English phrases. Phrases are written in TypeScript and are located in <span class="hljs-inline-file">src/phrases/en.ts</span> or components package.</p>
-<p>Components package is located in <span class="hljs-inline-file">packages/components/</span> of <a href="https://github.com/iconify/icon-finder" target="_blank">Icon Finder repository</a>.</p>
-<section class="content-section content-section--2"><H1 id="creating-a-language-pack" class="heading--2">Creating a language pack <a href="#creating-a-language-pack" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To create language pack, go to <span class="hljs-inline-file">src/phrases/</span> of components package and copy <span class="hljs-inline-file">en.ts</span>. Filename must end with <span class="hljs-inline-file">.ts</span>.</p><p>Edit text in a new file.</p></section>
-
-
-<section class="content-section content-section--2"><H1 id="changing-language-pack" class="heading--2">Changing language pack <a href="#changing-language-pack" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To change the default language pack, open <span class="hljs-inline-file">configurator.json</span> of UI package and change the value of property <span class="hljs-inline-prop">components.language</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJImNvbXBvbmVudHMiOiB7CgkJImxhbmd1YWdlIjogImRlIgoJfQp9Cg=="><code class="highlight hljs">{<br>
- &#xA0; &#xA0;<span class="hljs-attr">&quot;components&quot;</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">&quot;language&quot;</span>: <span class="hljs-string">&quot;de&quot;</span><br>
- &#xA0; &#xA0;}<br>
-}<br>
-</code></div></div></div><p>Language value is the name of your language pack file, without <span class="hljs-inline-file">.ts</span> extension.</p><p>After changing the language pack, rebuild UI.</p><p>Important: file <span class="hljs-inline-file">configurator.json</span> is not in components package, it is in package with Icon Finder UI. See <a href="../build/">build process documentation</a> for details.</p></section>
-
-
-
-
-<section class="content-section content-section--2"><H1 id="variables" class="heading--2">Variables <a href="#variables" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Some phrases contain variables.</p><p>For example, <span class="hljs-inline-prop">search.placeholder.collection</span> has value &quot;<span class="hljs-string">Search {name}</span>&quot;.</p><p>In this case, &quot;<span class="hljs-string">{name}</span>&quot; is a variable. It will be replaced by icon set name, such as &quot;<span class="hljs-string">Material Design Icons</span>&quot;, resulting in &quot;<span class="hljs-string">Search Material Design Icons</span>&quot;.</p><p>Variables should not be changed:</p><ul>
-<li>Do not translate variables. They are keywords, not words to translate.</li>
-<li>Do not add new variables, it won&apos;t work.</li>
-<li>Do not remove variables from phrases.</li>
+<h1>Examples of customised Iconify Icon Finder forks</h1>
+<p>This tutorial is part of <a href="./">Svelte Components for Iconify Icon Finder tutorial</a>.</p>
+<p>Few examples of projects that are based on Icon Finder Svelte components.</p>
+<p>Forking one base project makes it easy to maintain multiple seemingly unrelated projects. Even though projects have different purpose, they share a lot of code.</p>
+<section class="content-section content-section--2"><H1 id="line-md" class="heading--2">Material Line Icons <a href="#line-md" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="https://github.com/cyberalien/line-md" target="_blank">Material Line Icons</a> is based on this package.</p><p>Package has different configuration, customised components and stylesheet.</p><p>Additionally, the following changes were applied to the build script:</p><ul>
+<li>Output directory was changed from <span class="hljs-inline-file">dist</span> to <span class="hljs-inline-file">assets</span> in <span class="hljs-inline-file">build/config.js</span>.</li>
+<li>Custom build scripts for generating SVG and for generating custom stylesheet were added to <span class="hljs-inline-file">build/all.js</span> as well as new build files.</li>
 </ul></section>
 
 
 
 
+<section class="content-section content-section--2"><H1 id="figma" class="heading--2">Iconify for Figma plug-in <a href="#figma" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="https://github.com/iconify/iconify-figma/tree/dev3" target="_blank">Iconify for Figma</a> version 3 is also based on this package.</p><p>At the moment of writing this documentation, version 3 of plug-in is in development.</p><p>Package has different configuration, heavily customised components and a completely different stylesheet.</p><p>Build process will also be changed to build plug-in after building Icon Finder.</p></section>
 
-<section class="content-section content-section--2"><H1 id="special-characters" class="heading--2">Special characters <a href="#special-characters" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>In some phrases you&apos;ll see strange things like this: <span class="inline-code inline-code--js"><span class="hljs-built_in">String</span>.fromCharCode(<span class="hljs-number">0x00b0</span>)</span>. Those are characters that cannot be reliably saved in a text file, such as degrees character.</p><p>Use basic set of characters in phrases. If you need to use a special character, use <span class="inline-code inline-code--js"><span class="hljs-built_in">String</span>.fromCharCode()</span> function.</p></section>
 
-
-<section class="content-section content-section--2"><H1 id="rebuilding-ui" class="heading--2">Rebuilding UI <a href="#rebuilding-ui" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is specific to UI. Usually, you need to run <span class="inline-code inline-code--bash">npm run build</span> for UI after changing <span class="hljs-inline-file">configurator.json</span>.</p><p>See <a href="../build/">build process documentation</a> for details.</p></section>
 
 
 
@@ -144,11 +128,13 @@
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../build/">Build Process</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./">Components</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./phrases.html">Phrases</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Svelte Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./components-config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./wrapper.html">Wrapper</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./callback.html">Callback</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./examples.html">Project Forks</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

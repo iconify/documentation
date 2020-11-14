@@ -23,54 +23,45 @@ functions:
   setCustomisations: ./wrapper.md#set-customisations
 ```
 
-# Components wrapper
+# Wrapper class
 
-This tutorial is part of [Iconify Icon Finder components tutorial](./index.md).
+This tutorial is part of [Svelte Components for Iconify Icon Finder tutorial](./index.md).
 
-Main entry point of components package is `[file]wrapper`. It creates Icon Finder instance, renders container component, uses callback to notify implementation of any changes (such as new icon was seleted or button was clicked) and has several functions that can be used to control Icon Finder instance.
+`[class]Wrapper` is the main class that creates Icon Finder Core instance, renders container component, manages state and parameters.
 
-To import `[class]Wrapper` class, use this:
+It uses callback to notify implementation of any changes (such as new icon was selected or button was clicked) and has several functions that can be used to control Icon Finder instance.
+
+You can import `[class]Wrapper` class from `[file]src/icon-finder/wrapper.ts`.
+
+Look in `[file]src/icon-finder/index.ts` for example:
 
 ```js
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
+import { Wrapper } from './wrapper';
+
+const container = document.getElementById('container');
+if (container) {
+	const wrapper = new Wrapper({
+		container,
+		callback: (event) => {
+			console.log('Event:', event);
+		},
+	});
+}
 ```
 
 Constructor for `[class]Wrapper` has only one parameter: object `[type]IconFinderWrapperParams` that has the following mandatory properties:
 
 - `[prop]container`, `[type]HTMLElement`. Container element where Icon Finder instance should be rendered.
-- `[prop]component`. Main Svelte component to render.
 - `[prop]callback`, `[type]IconFinderEvent`. Callback function that will be called whenever something happens.
 
 Then there are several optional properties:
 
 - `[prop]iconSets`, `[type]IconFinderCustomSets | IconifyJSON[]`. Custom icon sets.
 - `[prop]state`, `[type]IconFinderState`. Current state. This can be used to restore state from previous instance.
-- `[prop]phrases`. Custom phrases.
-
-## Component
-
-You can use `[prop]component` property to render custom container or to render default container.
-
-Example of rendering default container:
-
-```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
-
-// Create instance
-const wrapper = new Wrapper({
-	container: document.getElementById('icon-finder'),
-	component: Container,
-	callback: (event: IconFinderEvent) => {
-		console.log('Event:', event);
-	},
-});
-```
 
 ## Callback
 
-Callback is used to notify implementation of various events.
+Callback is used to notify you on various events.
 
 For more details see [callback documentation](./callback.md).
 
@@ -83,14 +74,12 @@ Value can be either array of icon sets in `[type]IconifyJSON` format. It can als
 Example:
 
 ```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // Create instance
 const wrapper = new Wrapper({
 	container: document.getElementById('icon-finder'),
-	component: Container,
 	callback: (event: IconFinderEvent) => {
 		console.log('Event:', event);
 	},
@@ -125,13 +114,12 @@ When displaying both custom and default icon sets, when searching all icon sets,
 Example above using `[type]IconFinderCustomSets`:
 
 ```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // Create instance
 const wrapper = new Wrapper({
 	container: document.getElementById('icon-finder'),
-	component: Container,
 	callback: (event: IconFinderEvent) => {
 		console.log('Event:', event);
 	},
@@ -161,14 +149,12 @@ If your JSON data does not have `[prop]info` property, you must use `[type]IconF
 Example:
 
 ```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // Create instance
 const wrapper = new Wrapper({
 	container: document.getElementById('icon-finder'),
-	component: Container,
 	callback: (event: IconFinderEvent) => {
 		console.log('Event:', event);
 	},
@@ -195,7 +181,7 @@ const wrapper = new Wrapper({
 
 ### Examples
 
-For usage example, take a look at [Material Line Icons website](https://cyberalien.github.io/line-md/). It uses Icon Finder with `[prop]iconSets` property to display only custom icon set. Source code is available in directory `[file]ui/line-md` of Icon Finder repository.
+For usage example, take a look at [Material Line Icons website](https://cyberalien.github.io/line-md/). It uses Icon Finder with `[prop]iconSets` property to display only custom icon set. See [`[file]src/icon-finder/index.ts` of Material Line Icons repository](https://github.com/cyberalien/line-md/blob/master/src/icon-finder/index.ts).
 
 ## Restoring state
 
@@ -204,10 +190,9 @@ State is provided as property in `[str]button` event, triggered when button in f
 You can save that state in application's memory or in cookies and use `[prop]state` property of `[class]Wrapper` constructor to restore state.
 
 ```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
-import { IconFinderState } from '@iconify/search-components/lib/wrapper/state';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
+import type { IconFinderState } from './wrapper/state';
 
 // Get last saved state
 let lastSavedState: Partial<IconFinderState>;
@@ -219,7 +204,6 @@ if (/* some condition that checks if state is saved */) {
 // Create instance
 const wrapper = new Wrapper({
 	container: document.getElementById('icon-finder'),
-	component: Container,
 	callback: (event: IconFinderEvent) => {
 		console.log('Event:', event);
 	},
@@ -230,14 +214,12 @@ const wrapper = new Wrapper({
 You can also use it to set initial page:
 
 ```ts
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import Container from '@iconify/search-components/lib/ui/Container.svelte';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // Create instance
 const wrapper = new Wrapper({
 	container: document.getElementById('icon-finder'),
-	component: Container,
 	callback: (event: IconFinderEvent) => {
 		console.log('Event:', event);
 	},
@@ -331,15 +313,11 @@ wrapper.setRoute({
 
 You can retrieve current route as part of state using `[func]getState()`.
 
-## selectIcon {#select-icon}
+## selectIcons {#select-icon}
 
-This function changes currently selected icon.
+This function changes currently selected icon(s).
 
-Value can be:
-
-- `[type]string`: icon name as string.
-- `[type]Icon`: icon name as object.
-- `[type]null`: clears selection.
+Value must be an array of icons as `[type]Icon` or `[type]string`.
 
 ```js
 const wrapper = new Wrapper({
@@ -347,10 +325,14 @@ const wrapper = new Wrapper({
 });
 
 // Select "mdi:home"
-wrapper.selectIcon('mdi:home');
+wrapper.selectIcons(['mdi:home']);
 ```
 
-You can retrieve currently selected icon as part of state using `[func]getState()`.
+This function will trigger callback, so make sure you are not calling it in response to `[str]selection` event or you might trigger an infinite loop.
+
+If you try to select multiple icons, but option to select multiple icons is not enabled, only last icon will be selected.
+
+You can retrieve currently selected icon(s) as part of state using `[func]getState()`.
 
 ## setCustomisations {#set-customisations}
 

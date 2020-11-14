@@ -12,7 +12,7 @@ This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
 This tutorial lists configuration options for Icon Finder Core.
 
-For default configuration values look in `[file]src/data/config.ts` of Icon Finder Core package.
+For default configuration values look in `[file]src/data/config.ts` of [Icon Finder Core repository](https://github.com/iconify/icon-finder/tree/core).
 
 ## Changing configuration
 

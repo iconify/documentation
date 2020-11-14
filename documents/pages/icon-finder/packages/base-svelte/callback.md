@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify Icon Finder Components: Callback'
+title: 'Iconify Icon Finder Components Callback'
 types:
   IconFinderEvent: ./callback.md#event
   IconFinderState: ./types.md#icon-finder-state
@@ -10,15 +10,15 @@ types:
 
 # Components wrapper callback
 
-This tutorial is part of [Iconify Icon Finder components tutorial](./index.md).
+This tutorial is part of [Svelte Components for Iconify Icon Finder tutorial](./index.md).
 
-Callback must be provided as parameter to `[class]Wrapper` constructor. It is used to notify your code whenever something changes in Icon Finder instance.
+Class `[class]Wrapper` uses callback to notify your code of any changes, such as change in route, change in selected icon or when user clicks button in footer.
 
-Callback is a function with only one parameter: `[var]event`, `[type]IconFinderEvent`.
+Callback must be provided as parameter to `[class]Wrapper` constructor. It is a function with only one parameter: `[var]event`, `[type]IconFinderEvent`.
 
 ## Payload {#event}
 
-Payload has type `[type]IconFinderEvent`, which you can find in `[file]src/wrapper/events.ts` of components package (to import type in your TypeScript code, use `[file]@iconify/search-components/lib/wrapper/events`).
+Payload has type `[type]IconFinderEvent`, which you can find in `[file]src/icon-finder/wrapper/events.ts`.
 
 It is a simple object with multiple properties. Property `[prop]type` defines type of event, other properties are specific to that type.
 
@@ -67,49 +67,61 @@ Callback payload examples:
 }
 ```
 
-## Icon
+## Selection
 
-Icon event is sent when new icon has been selected.
+Selection event is sent when new icons have been selected.
 
-Event has property `[prop]icon`, `[type]Icon | null` that contains new selected icon as object. If icon has been deselected, value is `null`.
+Event has property `[prop]icons`, `[type]Icon[]` that contains array of selected icons as objects.
 
 Callback payload examples:
 
 ```json
 {
-	"type": "icon",
-	"icon": {
-		"provider": "",
-		"prefix": "mdi",
-		"name": "account-lock"
-	}
+	"type": "selection",
+	"icons": [
+		{
+			"provider": "",
+			"prefix": "mdi",
+			"name": "account-lock"
+		}
+	]
 }
 ```
 
 ```json
 {
-	"type": "icon",
-	"icon": null
+	"type": "selection",
+	"icons": []
 }
 ```
 
 You can use function `[func]iconToString` from Icon Finder Core to convert icon object to string:
 
 ```js
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
 import { iconToString } from '@iconify/search-core';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // ...
 const wrapper = new Wrapper({
 	// ...
 	callback: (event: IconFinderEvent) => {
 		switch (event.type) {
-			case 'icon':
-				if (event.icon) {
-					console.log('New icon selected:', iconToString(event.icon));
-				} else {
-					console.log('Icon has been deselected');
+			case 'selection':
+				switch (event.icons.length) {
+					case 0:
+						console.log('No icons selected');
+						break;
+
+					case 1:
+						console.log('Selected icon:', iconToString(event.icons[0]));
+						break;
+
+					default:
+						console.log(
+							'Multiple icons selected:',
+							event.icons.map(iconToString).join(', ')
+						);
 				}
 				break;
 		}
@@ -122,8 +134,8 @@ const wrapper = new Wrapper({
 Usually user cannot deselect current icon. To deselect icon, use `[class]Wrapper`'s `[func]selectIcon(null)` function as response to clicking button.
 
 ```js
-import { Wrapper } from '@iconify/search-components/lib/wrapper';
-import { IconFinderEvent } from '@iconify/search-components/lib/wrapper/events';
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
 
 // ...
 const wrapper = new Wrapper({
@@ -179,7 +191,7 @@ Callback payload examples:
 
 Button event is sent when button in footer has been clicked. Event has 2 properties:
 
-- `[prop]button`, `[type]string`. Key of button that has been clicked. It is the same key as in `[prop]components.footer.buttons` object in configurator.
+- `[prop]button`, `[type]string`. Key of button that has been clicked. It is the same key as in `[var]footerButtons` [config variable](./components-config.md).
 - `[prop]state`, `[type]IconFinderState`. Current state.
 
 Callback payload example:

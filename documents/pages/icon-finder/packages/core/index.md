@@ -1,5 +1,5 @@
 ```yaml
-title: 'Iconify Icon Finder Package: Core'
+title: 'Iconify Icon Finder Core'
 classes:
   IconFinderCore: ./core.md
   Registry: ./registry.md
@@ -8,7 +8,7 @@ types:
   PartialRoute: ./routes.md
 ```
 
-# Iconify Icon Finder package: Core
+# Iconify Icon Finder Core
 
 This tutorial is part of [Iconify Icon Finder packages tutorial](../index.md).
 
@@ -26,9 +26,15 @@ This documentation is very technical. To understand this tutorial you need:
 - Good TypeScript knowledge. Core is entirely written in TypeScript.
 - Understanding of asynchronous development.
 
-## Building
+## Installation
 
-To build Icon Finder Core, navigate to `[file]packages/core` of [GitHub repository](https://github.com/iconify/icon-finder), install dependencies and run `[bash]npm run build`.
+You can install Icon Finder Core by adding `[npm]@iconify/search-core` package to your project.
+
+## Source code
+
+Source code is available in [Icon Finder Core GitHub repository](https://github.com/iconify/icon-finder/tree/core).
+
+To build it, install dependencies and run `[bash]npm run build`.
 
 To run unit tests, run `[bash]npm run test`.
 

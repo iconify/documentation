@@ -144,4 +144,4 @@ Function will return `[type]undefined` if data for that `[prop]key` is not avail
 
 If you want to set some data shared among instances, first check if it is available using `[func]getCustom()`, then, if data is not available, set it using `[func]setCustom()`.
 
-Custom data is used by UI to set phrases, to set current component instance for render callback. See `[file]src/wrapper.ts` in components package for example and various components for usage.
+Custom data is used by UI to set phrases, to set current component instance for render callback. See `[file]src/icon-finder/wrapper.ts` in [Icon Finder Svelte components](../base-svelte/index.md) for example and various components for usage.

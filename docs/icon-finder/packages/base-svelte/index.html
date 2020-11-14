@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../../assets/style.css?9075" />
-		<title>Iconify Icon Finder Components: Types</title>
+		<title>Svelte Components for Iconify Icon Finder</title>
 		
 	</head>
 	<body class="website-docs theme-integration">
@@ -85,31 +85,49 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="./callback.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Callback</a>
-<a href="./phrases.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Phrases</a>
+<a href="../core/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Core</a>
+<a href="./components-config.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Configuration</a>
 </div>
-<h1>Components wrapper callback</h1>
-<p>This tutorial is part of <a href="./">Iconify Icon Finder components tutorial</a>.</p>
-<p>These types are used in components package.</p>
-<section class="content-section content-section--2"><H1 id="icon-customisations" class="heading--2">IconCustomisations <a href="#icon-customisations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="IconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></a></span> represents icon customisations. It is a simple object with few properties:</p><ul>
-<li><span class="hljs-inline-prop">color</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon color.</li>
-<li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon width.</li>
-<li><span class="hljs-inline-prop">height</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon height.</li>
-<li><span class="hljs-inline-prop">rotate</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Rotation. <span class="hljs-number">1</span> = <span class="hljs-number">90deg</span>, <span class="hljs-number">2</span> = <span class="hljs-number">180deg</span>, <span class="hljs-number">3</span> = <span class="hljs-number">270deg</span>.</li>
-<li><span class="hljs-inline-prop">hFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Horizontal flip.</li>
-<li><span class="hljs-inline-prop">vFlip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Vertical flip.</li>
-</ul><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="PartialIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">PartialIconCustomisations</span></a></span> is identical to <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="IconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></a></span>, but all properties are optional.</p><p>You can find source code in <span class="hljs-inline-file">src/misc/customisations.ts</span> of components package. To import type in your TypeScript code, use <span class="hljs-inline-file">@iconify/search-components/lib/misc/customisations</span>.</p></section>
+<aside class="notice notice--gray">
+	<span class="iconify-inline" data-icon="line-md:construction-twotone"></span>
+	<p class="notice-header">Work in progress!</p>
+	<p>
+		New Iconify documentation is currently in development.
+	</p>
+	<p>
+		There are missing and incomplete documents.
+	</p>
+</aside><h1>Svelte components for Iconify Icon Finder</h1>
+<p>This tutorial is part of <a href="../">Iconify Icon Finder packages tutorial</a>.</p>
+<p>Branch <a href="https://github.com/iconify/icon-finder/tree/base-svelte" target="_blank">&quot;<span class="hljs-string">base-svelte</span>&quot;</a> of Iconify Icon Finder contains set of Svelte components and stylesheet.</p>
+<p>It contains full set of components you need to build custom icon picker.</p>
+<section class="content-section content-section--2"><H1 id="contents" class="heading--2">Contents <a href="#contents" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>What is in package?</p><ol>
+<li>Customisable build scripts.</li>
+<li>Components that are responsible for displaying data to visitor. They rely on <a href="../core/">Icon Finder Core</a> to do all the heavy work, such as sending API queries and parsing data.</li>
+<li>Stylesheet that is built with SASS.</li>
+</ol></section>
+
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Few examples of projects that are based on Icon Finder Svelte components. See <a href="./examples.html">projects based on Iconify Icon Finder Svelte components</a>.</p></section>
+
+<section class="content-section content-section--2"><H1 id="build-scripts" class="heading--2">Build scripts <a href="#build-scripts" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Build scripts are designed to be easy to customise. You can:</p><ul>
+<li>Change locations and names of built files.</li>
+<li>Completely ignore stylesheet and rely on your own instead.</li>
+<li>Add your own stuff to build, such as bundling it all or script to build a plug-in.</li>
+</ul><p>You can find build configuration in <span class="hljs-inline-file">build/config.js</span>. There you can change various filenames. See comments.</p><p>You can add custom build scripts to build process by editing <span class="hljs-inline-file">build/all.js</span>.</p></section>
 
 
 
 
-<section class="content-section content-section--2"><H1 id="icon-finder-state" class="heading--2">IconFinderState <a href="#icon-finder-state" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-finder-state" title="IconFinderState documentation"><span class="hljs-inline-type hljs-linkable">IconFinderState</span></a></span> is used to send full state of Icon Finder instance. It is used in &quot;<span class="hljs-string">button</span>&quot; event. Value is a simple object with few properties:</p><ul>
-<li><span class="hljs-inline-prop">icon</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Icon</span> | <span class="hljs-inline-type hljs-linkable">null</span></span>. Selected icon.</li>
-<li><span class="hljs-inline-prop">route</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">PartialRoute</span></span>. Current route.</li>
-<li><span class="hljs-inline-prop">customisation</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-customisations" title="PartialIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">PartialIconCustomisations</span></a></span>. Customisations for selected icon.</li>
-<li><span class="hljs-inline-prop">config</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">IconFinderConfig</span></span>. Icon Finder configuration.</li>
-</ul><p>All properties, except for <span class="hljs-inline-prop">icon</span> are optional.</p><p>All values contain only modified elements. For example, if icon is not rotated, <span class="hljs-inline-prop">customisation</span> will not have property <span class="hljs-inline-prop">rotate</span>.</p><p>You can find source code in <span class="hljs-inline-file">src/wrapper/state.ts</span> of components package. To import type in your TypeScript code, use <span class="hljs-inline-file">@iconify/search-components/lib/wrapper/state</span>.</p></section>
+<section class="content-section content-section--2"><H1 id="components" class="heading--2">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Components are written in Svelte. Why no React or Vue? Because:</p><ul>
+<li>Svelte is lighter.</li>
+<li>Built package does not have dependencies, making it easier to integrate in any environment, even as Vue or React components.</li>
+</ul><p>Some components have multiple versions, which you can swap in configuration files.</p><p>See <a href="./components-config.html">components configuration documentation</a> for details.</p></section>
 
+
+
+
+<section class="content-section content-section--2"><H1 id="stylesheet" class="heading--2">Stylesheet <a href="#stylesheet" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Stylesheet is a basic SASS stylesheet.</p><p>Main entry is <span class="hljs-inline-file">src/style-iconify/style.scss</span>. You can change it in <span class="hljs-inline-file">build/config.js</span>.</p><p>If you are changing stylesheet, you also need to change components configuration in <span class="hljs-inline-file">src/icon-finder/config/theme.ts</span>.</p><p>See <a href="./components-config.html#theme">theme configuration documentation</a> for details.</p></section>
 
 
 
@@ -137,15 +155,13 @@
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../build/">Build Process</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../core/">Core</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--4"><a href="./config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Svelte Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./components-config.html">Configuration</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./wrapper.html">Wrapper</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./callback.html">Callback</a></li>
-	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./types.html">Types</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./phrases.html">Phrases</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./examples.html">Project Forks</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

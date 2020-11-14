@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../../assets/style.css?9075" />
-		<title>Iconify Icon Finder Package: Core</title>
+		<title>Iconify Icon Finder Core</title>
 		
 	</head>
 	<body class="website-docs theme-integration">
@@ -85,10 +85,10 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="../build/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Build Process</a>
+<a href="../" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Packages</a>
 <a href="./core.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> IconFinderCore</a>
 </div>
-<h1>Iconify Icon Finder package: Core</h1>
+<h1>Iconify Icon Finder Core</h1>
 <p>This tutorial is part of <a href="../">Iconify Icon Finder packages tutorial</a>.</p>
 <p>Icon Finder Core is doing all the heavy stuff. It takes route object, retrieves data from API, filters data and returns simple objects that can be displayed by UI without any additional steps.</p>
 <p>Everything is asynchronous. Icon Finder Core uses events to react to requests.</p>
@@ -100,7 +100,10 @@
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="building" class="heading--2">Building <a href="#building" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To build Icon Finder Core, navigate to <span class="hljs-inline-file">packages/core</span> of <a href="https://github.com/iconify/icon-finder" target="_blank">GitHub repository</a>, install dependencies and run <span class="inline-code inline-code--bash">npm run build</span>.</p><p>To run unit tests, run <span class="inline-code inline-code--bash">npm run <span class="hljs-built_in">test</span></span>.</p></section>
+<section class="content-section content-section--2"><H1 id="installation" class="heading--2">Installation <a href="#installation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can install Icon Finder Core by adding <span class="hljs-inline-package hljs-linkable">@iconify/search-core</span> package to your project.</p></section>
+
+<section class="content-section content-section--2"><H1 id="source-code" class="heading--2">Source code <a href="#source-code" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Source code is available in <a href="https://github.com/iconify/icon-finder/tree/core" target="_blank">Icon Finder Core GitHub repository</a>.</p><p>To build it, install dependencies and run <span class="inline-code inline-code--bash">npm run build</span>.</p><p>To run unit tests, run <span class="inline-code inline-code--bash">npm run <span class="hljs-built_in">test</span></span>.</p></section>
+
 
 
 <section class="content-section content-section--2"><H1 id="how-does-it-work" class="heading--2">How does it work <a href="#how-does-it-work" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All you need to do is create <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> instance and provide the callback among other parameters.</p><p>All communication from <a href="./core.html" title="IconFinderCore documentation"><span class="hljs-class hljs-linkable">IconFinderCore</span></a> to UI is done via callback. When new set of data is ready to be rendered, Core will prepare that data for rendering and call the callback. If there is an error or a loading screen (caused by API delay or internet connection problems), core will call the callback.</p><p>In the callback you should render data provided as callback parameter. See <a href="./render.html">render event callback</a>.</p><p>To change something, for example, a page, you can do one of two things:</p><ol>
@@ -209,7 +212,6 @@ router.home();<br>
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../integrate/">Integration<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Packages<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../build/">Build Process</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Core<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./core.html">IconFinderCore</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./render.html">Render Callback</a></li>
@@ -221,9 +223,7 @@ router.home();<br>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./registry.html">Registry</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./router.html">Router</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./types.html">Types</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/">Components</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../components/phrases.html">Phrases</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../themes/">Themes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../base-svelte/">Svelte Components</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>

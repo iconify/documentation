@@ -6,11 +6,11 @@ types:
   IconFinderState: ./types.md#icon-finder-state
 ```
 
-# Components wrapper callback
+# Types used in components
 
-This tutorial is part of [Iconify Icon Finder components tutorial](./index.md).
+This tutorial is part of [Svelte Components for Iconify Icon Finder tutorial](./index.md).
 
-These types are used in components package.
+These types are used in components.
 
 ## IconCustomisations {#icon-customisations}
 
@@ -25,19 +25,19 @@ Type `[type]IconCustomisations` represents icon customisations. It is a simple o
 
 Type `[type]PartialIconCustomisations` is identical to `[type]IconCustomisations`, but all properties are optional.
 
-You can find source code in `[file]src/misc/customisations.ts` of components package. To import type in your TypeScript code, use `[file]@iconify/search-components/lib/misc/customisations`.
+You can find type definition in `[file]src/icon-finder/customisations/types.ts`.
 
 ## IconFinderState {#icon-finder-state}
 
 Type `[type]IconFinderState` is used to send full state of Icon Finder instance. It is used in `[str]button` event. Value is a simple object with few properties:
 
-- `[prop]icon`, `[type]Icon | null`. Selected icon.
+- `[prop]icons`, `[type]Icon[]`. Selected icon(s).
 - `[prop]route`, `[type]PartialRoute`. Current route.
-- `[prop]customisation`, `[type]PartialIconCustomisations`. Customisations for selected icon.
-- `[prop]config`, `[type]IconFinderConfig`. Icon Finder configuration.
+- `[prop]customisation`, `[type]PartialIconCustomisations`. Customisations for selected icon(s).
+- `[prop]config`, `[type]IconFinderConfig`. Icon Finder configuration, only customised properties.
 
-All properties, except for `[prop]icon` are optional.
+All properties, except for `[prop]icons` are optional.
 
 All values contain only modified elements. For example, if icon is not rotated, `[prop]customisation` will not have property `[prop]rotate`.
 
-You can find source code in `[file]src/wrapper/state.ts` of components package. To import type in your TypeScript code, use `[file]@iconify/search-components/lib/wrapper/state`.
+You can find type definition in `[file]src/icon-finder/wrapper/state.ts`.
