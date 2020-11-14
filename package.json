@@ -22,12 +22,10 @@
 		"cheerio": "^1.0.0-rc.3",
 		"highlight.js": "^9.18.3",
 		"highlightjs-svelte": "^1.0.6",
-		"i": "^0.3.6",
 		"markdown-it": "^10.0.0",
 		"node-sass": "^5.0.0",
 		"nodemon": "^2.0.6",
-		"npm": "^6.14.8",
-		"typescript": "^3.9.7",
-		"yaml": "^1.7.2"
+		"typescript": "^4.0.5",
+		"yaml": "^1.10.0"
 	}
 }
