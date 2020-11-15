@@ -157,41 +157,37 @@
     ./adobe-xd/:
       title: Adobe XD Plug-In
       wip: true
-/integrate/:
-  title: Integration
+/icon-finder/:
+  title: Icon Finder
   wip: true
   children:
-    /icon-finder/:
-      title: Icon Finder
-      wip: true
+    ./packages/:
+      title: Packages
       children:
-        ./packages/:
-          title: Packages
+        ./core/:
+          title: Core
           children:
-            ./core/:
-              title: Core
-              children:
-                ./core.html: IconFinderCore
-                ./render.html: Render Callback
-                ./routes.html: Routes
-                ./blocks.html: Blocks
-                ./actions.html:
-                  title: Actions
-                  wip: true
-                ./custom-view.html: Custom View
-                ./config.html: Core Configuration
-                ./registry.html: Registry
-                ./router.html: Router
-                ./types.html: Types
-            ./base-svelte/:
-              title: Svelte Components
+            ./core.html: IconFinderCore
+            ./render.html: Render Callback
+            ./routes.html: Routes
+            ./blocks.html: Blocks
+            ./actions.html:
+              title: Actions
               wip: true
-              children:
-                ./components-config.html: Configuration
-                ./wrapper.html: Wrapper
-                ./callback.html: Callback
-                ./types.html: Types
-                ./examples.html: Project Forks
+            ./custom-view.html: Custom View
+            ./config.html: Core Configuration
+            ./registry.html: Registry
+            ./router.html: Router
+            ./types.html: Types
+        ./base-svelte/:
+          title: Svelte Components
+          wip: true
+          children:
+            ./components-config.html: Configuration
+            ./wrapper.html: Wrapper
+            ./callback.html: Callback
+            ./types.html: Types
+            ./examples.html: Project Forks
 /code/:
   title: Code
   children:
