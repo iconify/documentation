@@ -226,3 +226,51 @@ Callback payload example:
 	}
 }
 ```
+
+## Link
+
+Link event is sent when external link has been clicked. Event has 2 properties:
+
+- `[prop]href`, `[type]string`. Link URL.
+- `[prop]event`, `[type]MouseEvent`. Mouse event.
+
+Callback payload example:
+
+```json
+{
+	"type": "link",
+	"href": "https://raw.githubusercontent.com/Templarian/MaterialDesign/master/LICENSE",
+	"event": /* MouseEvent instance */
+}
+```
+
+This event can be used to prevent external links from being clicked or handle links differently.
+
+For example, [Sketch plug-in](../../../design/sketch/index.md) uses this event. Links do not work in Sketch plug-ins, but using this event, Sketch plug-in captures all links clicked in Icon Finder and tells Sketch to open a new browser window.
+
+```js
+import { Wrapper } from './wrapper';
+import type { IconFinderEvent } from './wrapper/events';
+
+// ...
+const wrapper = new Wrapper({
+	// ...
+	callback: (event: IconFinderEvent) => {
+		switch (event.type) {
+			case 'link':
+				// Stop default event handler
+				event.event.preventDefault();
+
+				// Send message to script running in Sketch to open link
+				// Internal event used by Sketch plug-in, not to be confused with Icon Finder event
+				window.postMessage('iconify', {
+					action: 'link',
+					href: event.href,
+				});
+				break;
+		}
+	},
+	// ...
+});
+// ...
+```
