@@ -1047,6 +1047,10 @@ li {
 	margin-bottom: 8px;
 }
 
+img {
+	max-width: 100%;
+}
+
 .docs-container {
 	display: flex;
 	overflow: hidden;

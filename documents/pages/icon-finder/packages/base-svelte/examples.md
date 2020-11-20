@@ -24,6 +24,14 @@ Additionally, the following changes were applied to the build script:
 - Output directory was changed from `[file]dist` to `[file]assets` in `[file]build/config.js`.
 - Custom build scripts for generating SVG and for generating custom stylesheet were added to `[file]build/all.js` as well as new build files.
 
+## Iconify for Sketch plug-in {#sketch}
+
+[Iconify for Sketch](https://github.com/iconify/iconify-sketch) version 2 is based on this package.
+
+Package has different configuration, slightly customised components and different build process.
+
+After building Icon Finder, build process puts it in a bundle file, then builds a plug-in. This is a good example of how add additional steps to build process.
+
 ## Iconify for Figma plug-in {#figma}
 
 [Iconify for Figma](https://github.com/iconify/iconify-figma/tree/dev3) version 3 is also based on this package.
