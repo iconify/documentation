@@ -13,35 +13,46 @@ types:
 
 This tutorial is part of [Iconify Icon Finder Core tutorial](./index.md).
 
-If you want to work with Icon Finder Core in Node.js, you need to enable API module.
-
-## Why is it disabled? {#disabled}
-
-API module for Node.js is disabled by default. This is because it requires a lot of useless dependencies that over 90% of projects based on Icon Finder Core will never need.
+By default, Icon Finder relies on global `[func]fetch()` function. Node.js doesn't have built-in support for Fetch API, so external module is required.
 
 Because of that, using Icon Finder Core with Node.js requires few additional steps to set up.
 
-## Usage
+## Fetch API for Node.js {#fetch-api}
 
-Steps:
+Icon Finder uses `[npm]cross-fetch` library to provide support for Fetch API in Node.js.
 
-1. Add the following dependencies: `[npm]axios`, `[npm]@cyberalien/redundancy`, `[npm]@iconify/search-core`.
-2. Copy `[file]src-deprecated/api/axios.ts` to your project.
-3. Transpile it from TypeScript to JavaScript.
-4. Set it as module.
-
-To set it as module, you need to get instance of `[class]Registry`. See [Icon Finder Core documentation](./index.md) on details. Then all you need to do is assign `[class]API` exported from API module (from `[file]src-deprecated/api/axios.ts`) to `[var]registry.api`:
+To set it as module, you need to get instance of `[class]Registry`. See [Icon Finder Core documentation](./index.md) on details. Then all you need to do is assign `[class]API` exported from API module (from `[file]lib/api/cross-fetch.js`) to `[var]registry.api`:
 
 ```js
-registry.api = API;
+const { IconFinderCore } = require('@iconify/search-core');
+const { API } = require('@iconify/search-core/lib/api/cross-fetch');
+
+const core = new IconFinderCore({
+	// Parameters here
+	// ...
+	callback: (data, core) => {
+		// Main callback where all stuff happens
+	},
+});
+
+// Get Registry instance and assign API to registry.api
+core.registry.api = API;
 ```
+
+All API queries are asynchronous, so assigning API right after creating `[class]IconFinderCore` instance will work correctly.
+
+## Axios module {#axios}
+
+If you do not like `[npm]cross-fetch`, there is a module for `[npm]axios` available. You can find it in `[file]src-deprecated/api/axios.ts`.
+
+Transpile it from TypeScript to JavaScript, import `[var]API` from it and use it exactly the same way as in example above.
 
 ## Custom module
 
-If you want to use different method of fetching data from API instead of using Axios, you can easily do that by creating custom API module.
+If you want to use different method of fetching data from API instead of using `[npm]cross-fetch` or `[npm]axios`, you can easily do that by creating custom API module.
 
 API module extends class `[class]BaseAPI` and should implement only 1 function: `[func]_query()` that sends API query, stores response and caches data.
 
-See API examples in `[file]src/api/fetch.ts` and `[file]src-deprecated/api/axios.ts`. Copy code from one of those modules, change it to use your preferred method of fetching data.
+See API examples in `[file]src/api/fetch.ts`, `[file]src/api/cross-fetch.ts` and `[file]src-deprecated/api/axios.ts`. Copy code from one of those modules, change it to use your preferred method of fetching data.
 
 Assign your API class to `[prop]registry.api` before any API queries are sent to use it in Icon Finder Core.
