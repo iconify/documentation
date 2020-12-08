@@ -179,6 +179,7 @@
             ./registry.html: Registry
             ./router.html: Router
             ./types.html: Types
+            ./node-js.html: Node.js Usage
         ./base-svelte/:
           title: Svelte Components
           wip: true

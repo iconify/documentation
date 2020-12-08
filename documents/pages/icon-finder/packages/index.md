@@ -32,12 +32,14 @@ Branches:
 
 Core package is the main part of Icon Finder. It handles all actions, sends API requests, parses and organizes data and tells UI what to display.
 
-Code is completely asynchronous, it uses callbacks to send data to components package to render. Package is written in TypeScript for strict type checking.
+By default, code flow is completely asynchronous. When something changes, events are used send data to components package to render.
+
+Package is written in TypeScript for strict type checking and has a lot of unit tests to make sure it all works correctly.
 
 Core package can be used in the following environments:
 
 - Browser. It uses Fetch API to send API queries.
-- Node.js. It can use Axios to send API queries.
+- Node.js. It can use Axios to send API queries ([see documentation](./core/node-js.md)).
 
 You can also code custom module that sends API queries for any other environment.
 

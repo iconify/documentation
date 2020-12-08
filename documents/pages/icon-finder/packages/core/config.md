@@ -87,6 +87,30 @@ UI config is responsible for stuff used in UI, such as number of icons displayed
 
 ### Router config
 
-Router config has only one property: home route.
+Router config has few properties:
 
-For more information about routes, see [routes documentation](./routes.md).
+- `[prop]home`: home route as JSON string, empty if home route should be set automatically. For more information about routes, see [routes documentation](./routes.md).
+- `[prop]syncRender`: enables synchronous mode.
+
+#### Synchronous rendering
+
+Synchronous rendering can be used to trigger events immediately after any action, allowing rendering HTML without delays.
+
+However, it works synchronously only if API responses are cached. If API data is not cached, events are triggered asynchronously after retrieving data from API.
+
+To use synchronous mode, developer must provide cached API data. To do that use function `[func]storeCache()` of API module:
+
+```js
+// API provider
+const provider = '';
+
+// Collections list data from API
+const collections = {
+	// ...
+};
+
+// Import collectionsCacheKey() and similar functions for other views
+// from '@iconify/search-core/lib/api/base'. They are used to assign
+// unique cache id for API responses.
+registry.api.storeCache(provider, collectionsCacheKey(), collections);
+```

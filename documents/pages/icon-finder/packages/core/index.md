@@ -14,7 +14,7 @@ This tutorial is part of [Iconify Icon Finder packages tutorial](../index.md).
 
 Icon Finder Core is doing all the heavy stuff. It takes route object, retrieves data from API, filters data and returns simple objects that can be displayed by UI without any additional steps.
 
-Everything is asynchronous. Icon Finder Core uses events to react to requests.
+By default, everything is asynchronous. Icon Finder Core uses events to react to requests and sends events on the next tick of process.
 
 Code is written in TypeScript to provide types for all data, so editors such as VSCode will give you types and object keys for data provided by core.
 

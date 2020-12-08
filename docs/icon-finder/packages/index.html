@@ -109,10 +109,11 @@
 
 
 
-<section class="content-section content-section--2"><H1 id="core" class="heading--2">Core <a href="#core" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Core package is the main part of Icon Finder. It handles all actions, sends API requests, parses and organizes data and tells UI what to display.</p><p>Code is completely asynchronous, it uses callbacks to send data to components package to render. Package is written in TypeScript for strict type checking.</p><p>Core package can be used in the following environments:</p><ul>
+<section class="content-section content-section--2"><H1 id="core" class="heading--2">Core <a href="#core" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Core package is the main part of Icon Finder. It handles all actions, sends API requests, parses and organizes data and tells UI what to display.</p><p>By default, code flow is completely asynchronous. When something changes, events are used send data to components package to render.</p><p>Package is written in TypeScript for strict type checking and has a lot of unit tests to make sure it all works correctly.</p><p>Core package can be used in the following environments:</p><ul>
 <li>Browser. It uses Fetch API to send API queries.</li>
-<li>Node.js. It can use Axios to send API queries.</li>
+<li>Node.js. It can use Axios to send API queries (<a href="./core/node-js.html">see documentation</a>).</li>
 </ul><p>You can also code custom module that sends API queries for any other environment.</p><p>For more details, see <a href="./core/">documentation for Icon Finder Core</a>.</p></section>
+
 
 
 

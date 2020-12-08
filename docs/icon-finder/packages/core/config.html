@@ -135,7 +135,26 @@ config.set({<br>
 <section class="content-section content-section--2"><H1 id="configuration-sections" class="heading--2">Configuration sections <a href="#configuration-sections" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several types of configuration, split into different sections:</p><ul>
 <li><span class="hljs-inline-prop">ui</span>: configuration rendering data.</li>
 <li><span class="hljs-inline-prop">router</span>: <a href="./router.html" title="Router documentation"><span class="hljs-class hljs-linkable">Router</span></a> configuration.</li>
-</ul><p>The detailed explanation of each configuration variable is available in <span class="hljs-inline-file">src/data/config.ts</span>. Because configuration uses custom TypeScript interfaces instead of generic objects, VSCode should show you all available properties when you type.</p><section class="content-section content-section--3"><H1 id="ui-config" class="heading--3">UI config <a href="#ui-config" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>UI config is responsible for stuff used in UI, such as number of icons displayed per page.</p></section><section class="content-section content-section--3"><H1 id="router-config" class="heading--3">Router config <a href="#router-config" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Router config has only one property: home route.</p><p>For more information about routes, see <a href="./routes.html">routes documentation</a>.</p></section></section>
+</ul><p>The detailed explanation of each configuration variable is available in <span class="hljs-inline-file">src/data/config.ts</span>. Because configuration uses custom TypeScript interfaces instead of generic objects, VSCode should show you all available properties when you type.</p><section class="content-section content-section--3"><H1 id="ui-config" class="heading--3">UI config <a href="#ui-config" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>UI config is responsible for stuff used in UI, such as number of icons displayed per page.</p></section><section class="content-section content-section--3"><H1 id="router-config" class="heading--3">Router config <a href="#router-config" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Router config has few properties:</p><ul>
+<li><span class="hljs-inline-prop">home</span>: home route as JSON string, empty if home route should be set automatically. For more information about routes, see <a href="./routes.html">routes documentation</a>.</li>
+<li><span class="hljs-inline-prop">syncRender</span>: enables synchronous mode.</li>
+</ul><section class="content-section content-section--4"><H1 id="synchronous-rendering" class="heading--4">Synchronous rendering <a href="#synchronous-rendering" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Synchronous rendering can be used to trigger events immediately after any action, allowing rendering HTML without delays.</p><p>However, it works synchronously only if API responses are cached. If API data is not cached, events are triggered asynchronously after retrieving data from API.</p><p>To use synchronous mode, developer must provide cached API data. To do that use function <span class="hljs-function">storeCache()</span> of API module:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gQVBJIHByb3ZpZGVyCmNvbnN0IHByb3ZpZGVyID0gJyc7CgovLyBDb2xsZWN0aW9ucyBsaXN0IGRhdGEgZnJvbSBBUEkKY29uc3QgY29sbGVjdGlvbnMgPSB7CgkvLyAuLi4KfTsKCi8vIEltcG9ydCBjb2xsZWN0aW9uc0NhY2hlS2V5KCkgYW5kIHNpbWlsYXIgZnVuY3Rpb25zIGZvciBvdGhlciB2aWV3cwovLyBmcm9tICdAaWNvbmlmeS9zZWFyY2gtY29yZS9saWIvYXBpL2Jhc2UnLiBUaGV5IGFyZSB1c2VkIHRvIGFzc2lnbgovLyB1bmlxdWUgY2FjaGUgaWQgZm9yIEFQSSByZXNwb25zZXMuCnJlZ2lzdHJ5LmFwaS5zdG9yZUNhY2hlKHByb3ZpZGVyLCBjb2xsZWN0aW9uc0NhY2hlS2V5KCksIGNvbGxlY3Rpb25zKTsK"><code class="highlight hljs"><span class="hljs-comment">// API provider</span><br>
+<span class="hljs-keyword">const</span> provider = <span class="hljs-string">&apos;&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Collections list data from API</span><br>
+<span class="hljs-keyword">const</span> collections = {<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// ...</span><br>
+};<br>
+<br>
+<span class="hljs-comment">// Import collectionsCacheKey() and similar functions for other views</span><br>
+<span class="hljs-comment">// from &apos;@iconify/search-core/lib/api/base&apos;. They are used to assign</span><br>
+<span class="hljs-comment">// unique cache id for API responses.</span><br>
+registry.api.storeCache(provider, collectionsCacheKey(), collections);<br>
+</code></div></div></div></section></section></section>
+
+
+
+
 
 
 
@@ -177,6 +196,7 @@ config.set({<br>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./registry.html">Registry</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./router.html">Router</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./types.html">Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./node-js.html">Node.js Usage</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../base-svelte/">Svelte Components</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--code">
