@@ -15,7 +15,7 @@
 	"iconify2": {
 		"version": {
 			"major": "2",
-			"full": "2.0.0-rc.2"
+			"full": "2.0.0-rc.3"
 		},
 		"size": "30kb",
 		"size-without-api": "16kb",
@@ -39,7 +39,7 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.0.0-rc.2/iconify.min.js",
+		"iconify": "https://code.iconify.design/2/2.0.0-rc.3/iconify.min.js",
 		"figma3-repo": "https://github.com/iconify/iconify-figma/tree/dev3"
 	}
 }
