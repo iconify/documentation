@@ -123,17 +123,17 @@
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0;<span class="hljs-attr">iconSets</span>: [<br>
  &#xA0; &#xA0; &#xA0; &#xA0;{<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;name: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">info</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Test&apos;</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;},<br>
@@ -155,23 +155,23 @@
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;iconSets: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0;<span class="hljs-attr">iconSets</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">iconSets</span>: [<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;{<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;name: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">info</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Test&apos;</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;],<br>
- &#xA0; &#xA0; &#xA0; &#xA0;merge: <span class="hljs-string">&apos;only-custom&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">merge</span>: <span class="hljs-string">&apos;only-custom&apos;</span>,<br>
  &#xA0; &#xA0;},<br>
 });<br>
 </code></div></div></div></section><section class="content-section content-section--3"><H1 id="info-property" class="heading--3">Info property <a href="#info-property" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon sets must have <span class="hljs-inline-prop">info</span> property with icon set name. If missing, Icon Finder will not display that icon set.</p><p>If your JSON data does not have <span class="hljs-inline-prop">info</span> property, you must use <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span> object and must include information for icon set in <span class="hljs-inline-type hljs-linkable"><a href="./wrapper.html#icon-finder-custom-sets" title="IconFinderCustomSets documentation"><span class="hljs-inline-type hljs-linkable">IconFinderCustomSets</span></a></span>&apos;s <span class="hljs-inline-prop">info</span> property.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJy4vd3JhcHBlcic7CmltcG9ydCB0eXBlIHsgSWNvbkZpbmRlckV2ZW50IH0gZnJvbSAnLi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljYWxsYmFjazogKGV2ZW50OiBJY29uRmluZGVyRXZlbnQpID0+IHsKCQljb25zb2xlLmxvZygnRXZlbnQ6JywgZXZlbnQpOwoJfSwKCWljb25TZXRzOiB7CgkJLy8gSWNvbiBzZXRzIHdpdGhvdXQgbWV0YWRhdGEKCQlpY29uU2V0czogWwoJCQl7CgkJCQlwcmVmaXg6ICd0ZXN0JywKCQkJCWljb25zOiB7CgkJCQkJLy8gTGlzdCBvZiBpY29ucyBoZXJlCgkJCQl9LAoJCQl9LAoJCV0sCgkJLy8gTWlzc2luZyBtZXRhZGF0YSBmb3IgaWNvbiBzZXRzCgkJaW5mbzogewoJCQkvLyBJbmZvIGZvciAndGVzdCcgaWNvbiBzZXQKCQkJdGVzdDogewoJCQkJdGl0bGU6ICdUZXN0JywKCQkJfSwKCQl9LAoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./wrapper&apos;</span>;<br>
@@ -179,25 +179,25 @@
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;iconSets: {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">iconSets</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Icon sets without metadata</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;iconSets: [<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">iconSets</span>: [<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;{<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;test&apos;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;icons: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// List of icons here</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;],<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Missing metadata for icon sets</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;info: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">info</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Info for &apos;test&apos; icon set</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;test: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;title: <span class="hljs-string">&apos;Test&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">test</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Test&apos;</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0;},<br>
@@ -230,30 +230,30 @@
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;state: lastSavedState,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">state</span>: lastSavedState,<br>
 });<br>
 </code></div></div></div><p>You can also use it to set initial page:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgV3JhcHBlciB9IGZyb20gJy4vd3JhcHBlcic7CmltcG9ydCB0eXBlIHsgSWNvbkZpbmRlckV2ZW50IH0gZnJvbSAnLi93cmFwcGVyL2V2ZW50cyc7CgovLyBDcmVhdGUgaW5zdGFuY2UKY29uc3Qgd3JhcHBlciA9IG5ldyBXcmFwcGVyKHsKCWNvbnRhaW5lcjogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2ljb24tZmluZGVyJyksCgljYWxsYmFjazogKGV2ZW50OiBJY29uRmluZGVyRXZlbnQpID0+IHsKCQljb25zb2xlLmxvZygnRXZlbnQ6JywgZXZlbnQpOwoJfSwKCXN0YXRlOiB7CgkJLy8gU2V0IE1hdGVyaWFsIERlc2lnbiBJY29ucyBhcyBob21lIHJvdXRlCgkJY29uZmlnOiB7CgkJCXJvdXRlcjogewoJCQkJLy8gT3B0aW9uIHZhbHVlIGlzIGEgSlNPTiBzdHJpbmcsIHNvIHN0cmluZ2lmeSByb3V0ZQoJCQkJaG9tZTogSlNPTi5zdHJpbmdpZnkoewoJCQkJCXR5cGU6ICdjb2xsZWN0aW9uJywKCQkJCQlwYXJhbXM6IHsKCQkJCQkJcHJlZml4OiAnbWRpJywKCQkJCQl9LAoJCQkJfSksCgkJCX0sCgkJfSwKCX0sCn0pOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Wrapper } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./wrapper&apos;</span>;<br>
 <span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { IconFinderEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./wrapper/events&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// Create instance</span><br>
 <span class="hljs-keyword">const</span> wrapper = <span class="hljs-keyword">new</span> Wrapper({<br>
- &#xA0; &#xA0;container: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
- &#xA0; &#xA0;callback: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;icon-finder&apos;</span>),<br>
+ &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">event: IconFinderEvent</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Event:&apos;</span>, event);<br>
  &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;state: {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">state</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Set Material Design Icons as home route</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;config: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;router: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">config</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">router</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Option value is a JSON string, so stringify route</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;home: <span class="hljs-built_in">JSON</span>.stringify({<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">type</span>: <span class="hljs-string">&apos;collection&apos;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;params: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;prefix: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: <span class="hljs-built_in">JSON</span>.stringify({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">type</span>: <span class="hljs-string">&apos;collection&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">params</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}),<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>

@@ -125,7 +125,7 @@
 <span class="hljs-keyword">let</span> loaded = iconExists(iconName);<br>
 <br>
 <span class="hljs-keyword">if</span> (!loaded) {<br>
- &#xA0; &#xA0;loadIcons([iconName], (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0;loadIcons([iconName], <span class="hljs-function">(<span class="hljs-params">loaded, missing, pending, unsubscribe</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (loaded.length) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;loaded = <span class="hljs-literal">true</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<br>
@@ -152,7 +152,7 @@
  */</span><br>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadTestIcons</span>(<span class="hljs-params">icons</span>) </span>{<br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;loadIcons(icons, (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;loadIcons(icons, <span class="hljs-function">(<span class="hljs-params">loaded, missing, pending, unsubscribe</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (pending.length) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Icons are pending, wait for all to load/fail</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>

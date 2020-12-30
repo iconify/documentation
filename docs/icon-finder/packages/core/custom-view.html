@@ -116,7 +116,7 @@
  &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">bookmarks</span>: <span class="hljs-function">(<span class="hljs-params">callback</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// It can be done asynchronously as well, for example if loading data from external resource</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;callback([<span class="hljs-string">&apos;ic:baseline-home&apos;</span>]);<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}, <span class="hljs-number">100</span>);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;},<br>
@@ -134,15 +134,15 @@
 <span class="hljs-keyword">const</span> events = registry.events;<br>
 <br>
 <span class="hljs-comment">// Event name starts with &quot;load-&quot;, followed by &quot;customType&quot; value.</span><br>
-events.subscribe(<span class="hljs-string">&apos;load-recent&apos;</span>, (callback) =&gt; {<br>
+events.subscribe(<span class="hljs-string">&apos;load-recent&apos;</span>, <span class="hljs-function">(<span class="hljs-params">callback</span>) =&gt;</span> {<br>
  &#xA0; &#xA0;<span class="hljs-comment">// Load icons from somewhere, call callback.</span><br>
  &#xA0; &#xA0;callback([<span class="hljs-string">&apos;mdi-home&apos;</span>]);<br>
 });<br>
 <br>
 <span class="hljs-comment">// Event name starts with &quot;load-&quot;, followed by &quot;customType&quot; value.</span><br>
-events.subscribe(<span class="hljs-string">&apos;load-bookmarks&apos;</span>, (callback) =&gt; {<br>
+events.subscribe(<span class="hljs-string">&apos;load-bookmarks&apos;</span>, <span class="hljs-function">(<span class="hljs-params">callback</span>) =&gt;</span> {<br>
  &#xA0; &#xA0;<span class="hljs-comment">// It can be done asynchronously as well, for example if loading data from external resource</span><br>
- &#xA0; &#xA0;setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;callback([<span class="hljs-string">&apos;ic:baseline-home&apos;</span>]);<br>
  &#xA0; &#xA0;}, <span class="hljs-number">100</span>);<br>
 });<br>

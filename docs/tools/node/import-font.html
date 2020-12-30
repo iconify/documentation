@@ -167,7 +167,7 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f1b3</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">2176</span> }, <span class="hljs-comment">// cubes</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f210</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> }, <span class="hljs-comment">// dashcube</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f286</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// fort-awesome</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f0f4</span>: { <span class="hljs-attr">left</span>: <span class="hljs-number">-64</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">1984</span> },<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f0f4</span>: { <span class="hljs-attr">left</span>: -<span class="hljs-number">64</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">1984</span> },<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f21b</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> },<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f21d</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> },<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">f22a</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1152</span> },<br>
@@ -211,14 +211,14 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Add &quot;currentColor&quot; to all shapes</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> tools.ChangePalette(svg, <span class="hljs-string">&apos;currentColor&apos;</span>),<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export JSON collection</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exporting collection to&apos;</span>, target);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> tools.ExportJSON(collection, target, {<br>

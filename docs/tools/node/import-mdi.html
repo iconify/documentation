@@ -165,7 +165,7 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Clean up tags</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
@@ -184,14 +184,14 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Move icons origin to 0,0</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// This is not needed for most collections, but its useful to know how to do it</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> promises = [];<br>
  &#xA0; &#xA0; &#xA0; &#xA0;collection.forEach(<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (svg.top !== <span class="hljs-number">0</span> || svg.left !== <span class="hljs-number">0</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> body = svg.getBody();<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (body.indexOf(<span class="hljs-string">&apos;&lt;defs&apos;</span>) !== <span class="hljs-number">-1</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (body.indexOf(<span class="hljs-string">&apos;&lt;defs&apos;</span>) !== -<span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Do not use this method to move icons with &lt;defs&gt; tags - sometimes results could be wrong</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
@@ -234,7 +234,7 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0;});<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(promises);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Change color to &quot;currentColor&quot; to all icons</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Use this only for monotone collections</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> options = {<br>
@@ -254,7 +254,7 @@ tools<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0;})<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export JSON collection</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Exporting collection to&apos;</span>, target);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> tools.ExportJSON(collection, target, {<br>

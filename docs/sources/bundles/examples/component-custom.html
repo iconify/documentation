@@ -205,7 +205,7 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix] = [name];<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === <span class="hljs-number">-1</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === -<span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix].push(name);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;});<br>
@@ -308,16 +308,16 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
 <br>
 <span class="hljs-comment">// Iconify component (this changes import statement in generated file)</span><br>
 <span class="hljs-comment">// Available options: &apos;react&apos;, &apos;react-with-api&apos;, &apos;vue&apos; (for Vue 3), &apos;vue2&apos;</span><br>
-$component = <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-variable">$component</span> = <span class="hljs-string">&apos;react&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// File to save bundle to</span><br>
-$target = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/src/icons-bundle.js&apos;</span>;<br>
+<span class="hljs-variable">$target</span> = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/src/icons-bundle.js&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// JSON files location. Filename inside directory must match prefix. For example, for &quot;line-md&quot; prefix icons should be stored in &quot;line-md.json&quot;</span><br>
-$source = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/json&apos;</span>;<br>
+<span class="hljs-variable">$source</span> = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/json&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// Icons to bundle, array</span><br>
-$icons = [<br>
+<span class="hljs-variable">$icons</span> = [<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;line-md:home-twotone-alt&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;line-md:github&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;line-md:image-twotone&apos;</span>,<br>
@@ -326,71 +326,71 @@ $icons = [<br>
 ];<br>
 <br>
 <span class="hljs-comment">// Organize icons by prefix</span><br>
-$icons = organizeIconsList($icons);<br>
+<span class="hljs-variable">$icons</span> = organizeIconsList(<span class="hljs-variable">$icons</span>);<br>
 <br>
 <span class="hljs-comment">// Load icons data</span><br>
-$output = getImport($component) . <span class="hljs-string">&quot;\n\n&quot;</span>;<br>
-<span class="hljs-keyword">foreach</span> ($icons <span class="hljs-keyword">as</span> $prefix =&gt; $iconsList) {<br>
+<span class="hljs-variable">$output</span> = getImport(<span class="hljs-variable">$component</span>) . <span class="hljs-string">&quot;\n\n&quot;</span>;<br>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$prefix</span> =&gt; <span class="hljs-variable">$iconsList</span>) {<br>
  &#xA0; &#xA0;<span class="hljs-comment">// Load icon set</span><br>
- &#xA0; &#xA0;$collection = <span class="hljs-keyword">new</span> Collection($prefix);<br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!$collection-&gt;loadFromFile($source . <span class="hljs-string">&apos;/&apos;</span> . $prefix . <span class="hljs-string">&apos;.json&apos;</span>)) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">&apos;Cannot find file &quot;&apos;</span> . $prefix . <span class="hljs-string">&apos;.json&quot;&apos;</span>);<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$collection</span> = <span class="hljs-keyword">new</span> Collection(<span class="hljs-variable">$prefix</span>);<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!<span class="hljs-variable">$collection</span>-&gt;loadFromFile(<span class="hljs-variable">$source</span> . <span class="hljs-string">&apos;/&apos;</span> . <span class="hljs-variable">$prefix</span> . <span class="hljs-string">&apos;.json&apos;</span>)) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Cannot find file &quot;&apos;</span> . <span class="hljs-variable">$prefix</span> . <span class="hljs-string">&apos;.json&quot;&apos;</span>);<br>
  &#xA0; &#xA0;}<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Make sure all icons exist</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">foreach</span> ($iconsList <span class="hljs-keyword">as</span> $name) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!$collection-&gt;iconExists($name)) {<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$iconsList</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$name</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!<span class="hljs-variable">$collection</span>-&gt;iconExists(<span class="hljs-variable">$name</span>)) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Uncomment next line to throw error if an icon does not exist</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// throw new Error(&apos;Could not find icon: &quot;&apos; . $prefix . &apos;:&apos; . $name . &apos;&quot;&apos;);</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Could not find icon: &quot;&apos;</span>, $prefix, <span class="hljs-string">&apos;:&apos;</span>, $name, <span class="hljs-string">&quot;\&quot;\n&quot;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Could not find icon: &quot;&apos;</span>, <span class="hljs-variable">$prefix</span>, <span class="hljs-string">&apos;:&apos;</span>, <span class="hljs-variable">$name</span>, <span class="hljs-string">&quot;\&quot;\n&quot;</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;}<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Get data for all icons as string</span><br>
- &#xA0; &#xA0;$output .= $collection-&gt;scriptify([<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;icons&apos;</span> =&gt; $iconsList,<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$output</span> .= <span class="hljs-variable">$collection</span>-&gt;scriptify([<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;icons&apos;</span> =&gt; <span class="hljs-variable">$iconsList</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;callback&apos;</span> =&gt; <span class="hljs-string">&apos;addCollection&apos;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;optimize&apos;</span> =&gt; <span class="hljs-keyword">true</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;optimize&apos;</span> =&gt; <span class="hljs-literal">true</span>,<br>
  &#xA0; &#xA0;]);<br>
 }<br>
 <br>
 <span class="hljs-comment">// Save to file</span><br>
-file_put_contents($target, $output);<br>
+file_put_contents(<span class="hljs-variable">$target</span>, <span class="hljs-variable">$output</span>);<br>
 <br>
-<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Saved &apos;</span>, $target, <span class="hljs-string">&apos; (&apos;</span>, strlen($output), <span class="hljs-string">&quot; bytes)\n&quot;</span>;<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Saved &apos;</span>, <span class="hljs-variable">$target</span>, <span class="hljs-string">&apos; (&apos;</span>, strlen(<span class="hljs-variable">$output</span>), <span class="hljs-string">&quot; bytes)\n&quot;</span>;<br>
 <br>
 <span class="hljs-comment">/**<br>
  * Organize icons list by prefix<br>
  *<br>
  * Result is an object, where key is prefix, value is array of icon names<br>
  */</span><br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">organizeIconsList</span><span class="hljs-params">($icons)</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">organizeIconsList</span>(<span class="hljs-params"><span class="hljs-variable">$icons</span></span>)<br>
 </span>{<br>
- &#xA0; &#xA0;$results = [];<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$results</span> = [];<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-keyword">foreach</span> ($icons <span class="hljs-keyword">as</span> $str) {<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$str</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Split icon to prefix and name</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;$icon = stringToIcon($str);<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> ($icon === <span class="hljs-keyword">null</span> || $icon[<span class="hljs-string">&apos;provider&apos;</span>] !== <span class="hljs-string">&apos;&apos;</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$icon</span> = stringToIcon(<span class="hljs-variable">$str</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-variable">$icon</span> === <span class="hljs-literal">null</span> || <span class="hljs-variable">$icon</span>[<span class="hljs-string">&apos;provider&apos;</span>] !== <span class="hljs-string">&apos;&apos;</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Invalid name or icon name has provider.</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// All icons in this example are from Iconify, so providers are not supported.</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">&apos;Invalid icon name: &apos;</span> . $str);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Invalid icon name: &apos;</span> . <span class="hljs-variable">$str</span>);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
 <br>
- &#xA0; &#xA0; &#xA0; &#xA0;$prefix = $icon[<span class="hljs-string">&apos;prefix&apos;</span>];<br>
- &#xA0; &#xA0; &#xA0; &#xA0;$name = $icon[<span class="hljs-string">&apos;name&apos;</span>];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$prefix</span> = <span class="hljs-variable">$icon</span>[<span class="hljs-string">&apos;prefix&apos;</span>];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$name</span> = <span class="hljs-variable">$icon</span>[<span class="hljs-string">&apos;name&apos;</span>];<br>
 <br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Add icon to results</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>($results[$prefix])) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;$results[$prefix] = [$name];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$results</span>[<span class="hljs-variable">$prefix</span>])) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$results</span>[<span class="hljs-variable">$prefix</span>] = [<span class="hljs-variable">$name</span>];<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">continue</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!in_array($name, $results[$prefix])) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;$results[$prefix][] = $name;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (!in_array(<span class="hljs-variable">$name</span>, <span class="hljs-variable">$results</span>[<span class="hljs-variable">$prefix</span>])) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$results</span>[<span class="hljs-variable">$prefix</span>][] = <span class="hljs-variable">$name</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;}<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> $results;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-variable">$results</span>;<br>
 }<br>
 <br>
 <span class="hljs-comment">/**<br>
@@ -404,56 +404,56 @@ file_put_contents($target, $output);<br>
  * This function was converted to PHP from @iconify/core/src/icon/name.ts<br>
  * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts<br>
  */</span><br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringToIcon</span><span class="hljs-params">($value)</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringToIcon</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)<br>
 </span>{<br>
- &#xA0; &#xA0;$provider = <span class="hljs-string">&apos;&apos;</span>;<br>
- &#xA0; &#xA0;$colonSeparated = explode(<span class="hljs-string">&apos;:&apos;</span>, $value);<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$provider</span> = <span class="hljs-string">&apos;&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$colonSeparated</span> = explode(<span class="hljs-string">&apos;:&apos;</span>, <span class="hljs-variable">$value</span>);<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Check for provider with correct &apos;@&apos; at start</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (substr($value, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) === <span class="hljs-string">&apos;@&apos;</span>) {<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (substr(<span class="hljs-variable">$value</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) === <span class="hljs-string">&apos;@&apos;</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// First part is provider</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count($colonSeparated) &lt; <span class="hljs-number">2</span> || count($colonSeparated) &gt; <span class="hljs-number">3</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count(<span class="hljs-variable">$colonSeparated</span>) &lt; <span class="hljs-number">2</span> || count(<span class="hljs-variable">$colonSeparated</span>) &gt; <span class="hljs-number">3</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// &quot;@provider:prefix:name&quot; or &quot;@provider:prefix-name&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0;$provider = substr(array_shift($colonSeparated), <span class="hljs-number">1</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$provider</span> = substr(array_shift(<span class="hljs-variable">$colonSeparated</span>), <span class="hljs-number">1</span>);<br>
  &#xA0; &#xA0;}<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Check split by colon: &quot;prefix:name&quot;, &quot;provider:prefix:name&quot;</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count($colonSeparated) &gt; <span class="hljs-number">3</span> || !count($colonSeparated)) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count(<span class="hljs-variable">$colonSeparated</span>) &gt; <span class="hljs-number">3</span> || !count(<span class="hljs-variable">$colonSeparated</span>)) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
  &#xA0; &#xA0;}<br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count($colonSeparated) &gt; <span class="hljs-number">1</span>) {<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count(<span class="hljs-variable">$colonSeparated</span>) &gt; <span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// &quot;prefix:name&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;$name = array_pop($colonSeparated);<br>
- &#xA0; &#xA0; &#xA0; &#xA0;$prefix = array_pop($colonSeparated);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$name</span> = array_pop(<span class="hljs-variable">$colonSeparated</span>);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-variable">$prefix</span> = array_pop(<span class="hljs-variable">$colonSeparated</span>);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> [<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Allow provider without &apos;@&apos;: &quot;provider:prefix:name&quot;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; count($colonSeparated) &gt; <span class="hljs-number">0</span> ? $colonSeparated[<span class="hljs-number">0</span>] : $provider,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; $prefix,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;name&apos;</span> =&gt; $name,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; count(<span class="hljs-variable">$colonSeparated</span>) &gt; <span class="hljs-number">0</span> ? <span class="hljs-variable">$colonSeparated</span>[<span class="hljs-number">0</span>] : <span class="hljs-variable">$provider</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; <span class="hljs-variable">$prefix</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;name&apos;</span> =&gt; <span class="hljs-variable">$name</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0;];<br>
  &#xA0; &#xA0;}<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Attempt to split by dash: &quot;prefix-name&quot;</span><br>
- &#xA0; &#xA0;$dashSeparated = explode(<span class="hljs-string">&apos;-&apos;</span>, $colonSeparated[<span class="hljs-number">0</span>]);<br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count($dashSeparated) &gt; <span class="hljs-number">1</span>) {<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$dashSeparated</span> = explode(<span class="hljs-string">&apos;-&apos;</span>, <span class="hljs-variable">$colonSeparated</span>[<span class="hljs-number">0</span>]);<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (count(<span class="hljs-variable">$dashSeparated</span>) &gt; <span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> [<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; $provider,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; array_shift($dashSeparated),<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;name&apos;</span> =&gt; implode(<span class="hljs-string">&apos;-&apos;</span>, $dashSeparated),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; <span class="hljs-variable">$provider</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; array_shift(<span class="hljs-variable">$dashSeparated</span>),<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;name&apos;</span> =&gt; implode(<span class="hljs-string">&apos;-&apos;</span>, <span class="hljs-variable">$dashSeparated</span>),<br>
  &#xA0; &#xA0; &#xA0; &#xA0;];<br>
  &#xA0; &#xA0;}<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
 }<br>
 <br>
 <span class="hljs-comment">/**<br>
  * Get import statement for component<br>
  */</span><br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getImport</span><span class="hljs-params">($component)</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getImport</span>(<span class="hljs-params"><span class="hljs-variable">$component</span></span>)<br>
 </span>{<br>
- &#xA0; &#xA0;$imports = [<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$imports</span> = [<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react&apos;</span> =&gt; <span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react&apos;;&quot;</span>,<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react-with-api&apos;</span> =&gt;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react-with-api&apos;;&quot;</span>,<br>
@@ -462,13 +462,13 @@ file_put_contents($target, $output);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import IconifyIcon from &apos;@iconify/vue&apos;;\n\nconst addCollection = IconifyIcon.addCollection;&quot;</span>,<br>
  &#xA0; &#xA0;];<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($imports[$component])) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> $imports[$component];<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$imports</span>[<span class="hljs-variable">$component</span>])) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-variable">$imports</span>[<span class="hljs-variable">$component</span>];<br>
  &#xA0; &#xA0;}<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;Invalid value for &quot;component&quot; variable. Possible values: \&apos;&apos;</span> .<br>
- &#xA0; &#xA0; &#xA0; &#xA0;implode(<span class="hljs-string">&quot;&apos;, &apos;&quot;</span>, array_keys($imports)) . <span class="hljs-string">&apos;\&apos;&apos;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;implode(<span class="hljs-string">&quot;&apos;, &apos;&quot;</span>, array_keys(<span class="hljs-variable">$imports</span>)) . <span class="hljs-string">&apos;\&apos;&apos;</span><br>
  &#xA0; &#xA0;);<br>
 }<br>
 </code></div></div></div><p>Bundle generated by script above must be imported in your application:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0ICcuL2ljb25zLWJ1bmRsZS5qcyc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./icons-bundle.js&apos;</span>;<br>

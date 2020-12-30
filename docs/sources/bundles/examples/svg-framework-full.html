@@ -406,7 +406,7 @@
  */</span><br>
 <span class="hljs-comment">// Parse custom SVG</span><br>
 parseSVG()<br>
- &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Done. Save bundle</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;saveBundle();<br>
  &#xA0; &#xA0;})<br>
@@ -491,7 +491,7 @@ parseSVG()<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Clean up tags</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> collection.promiseEach(<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
@@ -513,7 +513,7 @@ parseSVG()<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-literal">true</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;);<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;})<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;.then(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Change palette</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> options = monotone<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;? {<br>
@@ -596,7 +596,7 @@ parseSVG()<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix] = [name];<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === <span class="hljs-number">-1</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === -<span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix].push(name);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;});<br>
@@ -957,7 +957,7 @@ parseSVG()<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix] = [name];<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === <span class="hljs-number">-1</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (results[prefix].indexOf(name) === -<span class="hljs-number">1</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;results[prefix].push(name);<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;});<br>

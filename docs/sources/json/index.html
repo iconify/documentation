@@ -146,19 +146,19 @@
 <span class="hljs-keyword">use</span> <span class="hljs-title">Iconify</span>\<span class="hljs-title">IconsJSON</span>\<span class="hljs-title">Finder</span>;<br>
 <br>
 <span class="hljs-comment">// Get list of all icon sets</span><br>
-$iconSets = Finder::collections();<br>
-$prefixes = array_keys($iconSets);<br>
-<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Available &apos;</span>, count($prefixes), <span class="hljs-string">&quot; icon sets\n&quot;</span>;<br>
+<span class="hljs-variable">$iconSets</span> = Finder::collections();<br>
+<span class="hljs-variable">$prefixes</span> = array_keys(<span class="hljs-variable">$iconSets</span>);<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Available &apos;</span>, count(<span class="hljs-variable">$prefixes</span>), <span class="hljs-string">&quot; icon sets\n&quot;</span>;<br>
 <br>
 <span class="hljs-comment">// List icon sets in format: &quot;prefix: name (total icons)&quot;</span><br>
-<span class="hljs-keyword">echo</span> implode(<span class="hljs-string">&quot;\n&quot;</span>, array_map(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($prefix)</span> <span class="hljs-title">use</span> <span class="hljs-params">($iconSets)</span> </span>{<br>
- &#xA0; &#xA0;$item = $iconSets[$prefix];<br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> $prefix . <span class="hljs-string">&apos;: &apos;</span> . $item[<span class="hljs-string">&apos;name&apos;</span>] . <span class="hljs-string">&apos; (&apos;</span> . $item[<span class="hljs-string">&apos;total&apos;</span>] . <span class="hljs-string">&apos; icons)&apos;</span>;<br>
-}, $prefixes)), <span class="hljs-string">&quot;\n&quot;</span>;<br>
+<span class="hljs-keyword">echo</span> implode(<span class="hljs-string">&quot;\n&quot;</span>, array_map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-variable">$prefix</span></span>) <span class="hljs-title">use</span> (<span class="hljs-params"><span class="hljs-variable">$iconSets</span></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$item</span> = <span class="hljs-variable">$iconSets</span>[<span class="hljs-variable">$prefix</span>];<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-variable">$prefix</span> . <span class="hljs-string">&apos;: &apos;</span> . <span class="hljs-variable">$item</span>[<span class="hljs-string">&apos;name&apos;</span>] . <span class="hljs-string">&apos; (&apos;</span> . <span class="hljs-variable">$item</span>[<span class="hljs-string">&apos;total&apos;</span>] . <span class="hljs-string">&apos; icons)&apos;</span>;<br>
+}, <span class="hljs-variable">$prefixes</span>)), <span class="hljs-string">&quot;\n&quot;</span>;<br>
 <br>
 <span class="hljs-comment">// Get location of Taber Icons JSON file</span><br>
-$tabler = Finder::locate(<span class="hljs-string">&apos;tabler&apos;</span>);<br>
-<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Tabler icons JSON file is located at: &apos;</span>, $tabler, <span class="hljs-string">&quot;\n&quot;</span>;<br>
+<span class="hljs-variable">$tabler</span> = Finder::locate(<span class="hljs-string">&apos;tabler&apos;</span>);<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Tabler icons JSON file is located at: &apos;</span>, <span class="hljs-variable">$tabler</span>, <span class="hljs-string">&quot;\n&quot;</span>;<br>
 </code></div></div></div><p>These helper functions only list and locate icon sets. For reading icon sets, you can use <a href="../../tools/json/">Iconify JSON Tools</a>.</p></section>
 
 

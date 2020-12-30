@@ -122,28 +122,28 @@
 <br>
 <span class="hljs-comment">// Container component: create core</span><br>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">constructor</span>() {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">super</span>();<br>
+ &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">super</span>();<br>
 <br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.core = <span class="hljs-keyword">new</span> IconFinderCore({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">this</span>.core = <span class="hljs-keyword">new</span> IconFinderCore({<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Change state on each render</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.setState(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">this</span>.setState(data);<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
  &#xA0; &#xA0; &#xA0; &#xA0;});<br>
  &#xA0; &#xA0;}<br>
 <br>
- &#xA0; &#xA0;render() {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;&lt;ChildComponent {...this.state} core={<span class="hljs-keyword">this</span>.core.id} /&gt;;<br>
+ &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ChildComponent</span> {<span class="hljs-attr">...this.state</span>} <span class="hljs-attr">core</span>=<span class="hljs-string">{this.core.id}</span> /&gt;</span></span>;<br>
  &#xA0; &#xA0;}<br>
 }<br>
 <br>
 <span class="hljs-comment">// Child component: use core passed as string</span><br>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChildComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">constructor</span>(props) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">super</span>(props);<br>
+ &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">props</span>)</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">super</span>(props);<br>
 <br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">this</span>.core = getCoreInstance(props.core);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">this</span>.core = getCoreInstance(props.core);<br>
  &#xA0; &#xA0;}<br>
 }<br>
 </code></div></div></div></section>

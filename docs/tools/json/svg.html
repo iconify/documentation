@@ -112,14 +112,14 @@ collection.loadIconifyCollection(<span class="hljs-string">&apos;mdi&apos;</span
 <span class="hljs-keyword">use</span> \<span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">SVG</span>;<br>
 <br>
 <span class="hljs-comment">// Create Collection instance and load Material Design Icons</span><br>
-$collection = <span class="hljs-keyword">new</span> Collection();<br>
-$collection-&gt;loadIconifyCollection(<span class="hljs-string">&apos;mdi&apos;</span>);<br>
+<span class="hljs-variable">$collection</span> = <span class="hljs-keyword">new</span> Collection();<br>
+<span class="hljs-variable">$collection</span>-&gt;loadIconifyCollection(<span class="hljs-string">&apos;mdi&apos;</span>);<br>
 <br>
 <span class="hljs-comment">// Create SVG instance with &apos;mdi:home&apos; icon data</span><br>
-$svg = <span class="hljs-keyword">new</span> SVG($collection-&gt;getIconData(<span class="hljs-string">&apos;home&apos;</span>));<br>
+<span class="hljs-variable">$svg</span> = <span class="hljs-keyword">new</span> SVG(<span class="hljs-variable">$collection</span>-&gt;getIconData(<span class="hljs-string">&apos;home&apos;</span>));<br>
 <br>
 <span class="hljs-comment">// Generate and echo &lt;svg&gt;</span><br>
-<span class="hljs-keyword">echo</span> $svg-&gt;getSVG();</code></div></div></div></section></section>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$svg</span>-&gt;getSVG();</code></div></div></div></section></section>
 
 
 
@@ -154,19 +154,19 @@ svg.getSVG({<br>
 svg.getSVG({<br>
  &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-string">&apos;auto&apos;</span>, <span class="hljs-comment">// height and width will be set from viewBox attribute, using original icon&apos;s dimensions</span><br>
 });<br>
-</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JwpdKTsKJHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JywKICAgICd3aWR0aCcgPT4gJzI0cHgnLAogICAgJ2FsaWduJyA9PiAnY2VudGVyLG1pZGRsZSxtZWV0JywKICAgICdjb2xvcicgPT4gJyNmZjgwMDAnLAogICAgJ3JvdGF0ZScgPT4gJzkwZGVnJywgLy8gc2FtZSBhcyAiJ3JvdGF0ZScgPT4gIDEiIG9yICIncm90YXRlJyA9PiAnMjUlJyIKICAgICdmbGlwJyA9PiAnaG9yaXpvbnRhbCcsIC8vIHNhbWUgYXMgIidoRmxpcCcgPT4gdHJ1ZSIKICAgICdib3gnID0+IHRydWUKXSk7CiRzdmctPmdldFNWRyhbCiAgICAnaGVpZ2h0JyA9PiAnYXV0bycgLy8gaGVpZ2h0IGFuZCB3aWR0aCB3aWxsIGJlIHNldCBmcm9tIHZpZXdCb3ggYXR0cmlidXRlLCB1c2luZyBvcmlnaW5hbCBpY29uJ3MgZGltZW5zaW9ucwpdKTs="><code class="highlight hljs">$svg-&gt;getSVG([<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JwpdKTsKJHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JywKICAgICd3aWR0aCcgPT4gJzI0cHgnLAogICAgJ2FsaWduJyA9PiAnY2VudGVyLG1pZGRsZSxtZWV0JywKICAgICdjb2xvcicgPT4gJyNmZjgwMDAnLAogICAgJ3JvdGF0ZScgPT4gJzkwZGVnJywgLy8gc2FtZSBhcyAiJ3JvdGF0ZScgPT4gIDEiIG9yICIncm90YXRlJyA9PiAnMjUlJyIKICAgICdmbGlwJyA9PiAnaG9yaXpvbnRhbCcsIC8vIHNhbWUgYXMgIidoRmxpcCcgPT4gdHJ1ZSIKICAgICdib3gnID0+IHRydWUKXSk7CiRzdmctPmdldFNWRyhbCiAgICAnaGVpZ2h0JyA9PiAnYXV0bycgLy8gaGVpZ2h0IGFuZCB3aWR0aCB3aWxsIGJlIHNldCBmcm9tIHZpZXdCb3ggYXR0cmlidXRlLCB1c2luZyBvcmlnaW5hbCBpY29uJ3MgZGltZW5zaW9ucwpdKTs="><code class="highlight hljs"><span class="hljs-variable">$svg</span>-&gt;getSVG([<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span><br>
 ]);<br>
-$svg-&gt;getSVG([<br>
+<span class="hljs-variable">$svg</span>-&gt;getSVG([<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;width&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;align&apos;</span> =&gt; <span class="hljs-string">&apos;center,middle,meet&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;color&apos;</span> =&gt; <span class="hljs-string">&apos;#ff8000&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;rotate&apos;</span> =&gt; <span class="hljs-string">&apos;90deg&apos;</span>, <span class="hljs-comment">// same as &quot;&apos;rotate&apos; =&gt; &#xA0;1&quot; or &quot;&apos;rotate&apos; =&gt; &apos;25%&apos;&quot;</span><br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;flip&apos;</span> =&gt; <span class="hljs-string">&apos;horizontal&apos;</span>, <span class="hljs-comment">// same as &quot;&apos;hFlip&apos; =&gt; true&quot;</span><br>
- &#xA0; &#xA0;<span class="hljs-string">&apos;box&apos;</span> =&gt; <span class="hljs-keyword">true</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;box&apos;</span> =&gt; <span class="hljs-literal">true</span><br>
 ]);<br>
-$svg-&gt;getSVG([<br>
+<span class="hljs-variable">$svg</span>-&gt;getSVG([<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;auto&apos;</span> <span class="hljs-comment">// height and width will be set from viewBox attribute, using original icon&apos;s dimensions</span><br>
 ]);</code></div></div></div></section>
 

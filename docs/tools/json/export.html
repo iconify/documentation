@@ -145,39 +145,39 @@ icons.forEach(<span class="hljs-function">(<span class="hljs-params">name</span>
 <span class="hljs-keyword">require</span>(<span class="hljs-string">&apos;./vendor/autoload.php&apos;</span>);<br>
 <br>
 <span class="hljs-comment">// Source file</span><br>
-$source = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/mdi.json&apos;</span>;<br>
+<span class="hljs-variable">$source</span> = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/mdi.json&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// Target directory</span><br>
-$target = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/output&apos;</span>;<br>
+<span class="hljs-variable">$target</span> = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/output&apos;</span>;<br>
 <br>
 <span class="hljs-comment">// Load collection</span><br>
-$collection = <span class="hljs-keyword">new</span> \Iconify\JSONTools\Collection();<br>
-<span class="hljs-keyword">if</span> (!$collection-&gt;loadFromFile($source)) {<br>
+<span class="hljs-variable">$collection</span> = <span class="hljs-keyword">new</span> \Iconify\JSONTools\Collection();<br>
+<span class="hljs-keyword">if</span> (!<span class="hljs-variable">$collection</span>-&gt;loadFromFile(<span class="hljs-variable">$source</span>)) {<br>
  &#xA0; &#xA0;<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Error loading JSON file.\n&quot;</span>;<br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
 }<br>
 <br>
 <span class="hljs-comment">// Create directory for export</span><br>
-@mkdir($target);<br>
+@mkdir(<span class="hljs-variable">$target</span>);<br>
 <br>
 <span class="hljs-comment">// Export each icon</span><br>
-$icons = $collection-&gt;listIcons(<span class="hljs-keyword">true</span>);<br>
-<span class="hljs-keyword">foreach</span> ($icons <span class="hljs-keyword">as</span> $name) {<br>
+<span class="hljs-variable">$icons</span> = <span class="hljs-variable">$collection</span>-&gt;listIcons(<span class="hljs-literal">true</span>);<br>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$name</span>) {<br>
  &#xA0; &#xA0;<span class="hljs-comment">// Get icon data</span><br>
- &#xA0; &#xA0;$data = $collection-&gt;getIconData($name);<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$data</span> = <span class="hljs-variable">$collection</span>-&gt;getIconData(<span class="hljs-variable">$name</span>);<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Create new SVG object</span><br>
- &#xA0; &#xA0;$svg = <span class="hljs-keyword">new</span> \Iconify\JSONTools\SVG($data);<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$svg</span> = <span class="hljs-keyword">new</span> \Iconify\JSONTools\SVG(<span class="hljs-variable">$data</span>);<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Generate SVG code</span><br>
- &#xA0; &#xA0;$code = $svg-&gt;getSVG([<br>
+ &#xA0; &#xA0;<span class="hljs-variable">$code</span> = <span class="hljs-variable">$svg</span>-&gt;getSVG([<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;auto&apos;</span> <span class="hljs-comment">// This will export icons with their original dimensions instead of &quot;1em&quot;</span><br>
  &#xA0; &#xA0;]);<br>
 <br>
- &#xA0; &#xA0;file_put_contents($target . <span class="hljs-string">&apos;/&apos;</span> . $name . <span class="hljs-string">&apos;.svg&apos;</span>, $code);<br>
+ &#xA0; &#xA0;file_put_contents(<span class="hljs-variable">$target</span> . <span class="hljs-string">&apos;/&apos;</span> . <span class="hljs-variable">$name</span> . <span class="hljs-string">&apos;.svg&apos;</span>, <span class="hljs-variable">$code</span>);<br>
 }<br>
 <br>
-<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Exported &apos;</span>, count($icons), <span class="hljs-string">&quot; icons.\n&quot;</span>;<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Exported &apos;</span>, count(<span class="hljs-variable">$icons</span>), <span class="hljs-string">&quot; icons.\n&quot;</span>;<br>
 </code></div></div></div><p>Run <span class="inline-code inline-code--bash">php export.php</span> to run <span class="hljs-inline-file">export.php</span>.</p><p>This code will convert <span class="hljs-inline-file">mdi.json</span> to individual SVG files that will be saved in directory <span class="hljs-inline-file">output</span>.</p></section>
 
 
@@ -190,10 +190,10 @@ $icons = $collection-&gt;listIcons(<span class="hljs-keyword">true</span>);<br>
  &#xA0; &#xA0;<span class="hljs-attr">box</span>: <span class="hljs-literal">true</span>,<br>
 });<br>
 </code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gR2VuZXJhdGUgcmVkIGljb24gd2l0aCAiMWVtIiBoZWlnaHQgYW5kIGJvdW5kaW5nIHJlY3RhbmdsZQokY29kZSA9ICRzdmctPmdldFNWRyhbCiAgICAnaGVpZ2h0JyA9PiAnMWVtJywKICAgICdjb2xvcicgPT4gJ3JlZCcsCiAgICAnYm94JyA9PiB0cnVlCl0pOwo="><code class="highlight hljs"><span class="hljs-comment">// Generate red icon with &quot;1em&quot; height and bounding rectangle</span><br>
-$code = $svg-&gt;getSVG([<br>
+<span class="hljs-variable">$code</span> = <span class="hljs-variable">$svg</span>-&gt;getSVG([<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;1em&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-string">&apos;color&apos;</span> =&gt; <span class="hljs-string">&apos;red&apos;</span>,<br>
- &#xA0; &#xA0;<span class="hljs-string">&apos;box&apos;</span> =&gt; <span class="hljs-keyword">true</span><br>
+ &#xA0; &#xA0;<span class="hljs-string">&apos;box&apos;</span> =&gt; <span class="hljs-literal">true</span><br>
 ]);<br>
 </code></div></div></div><p>See <a href="./svg.html">SVG class documentation</a>.</p></section>
 

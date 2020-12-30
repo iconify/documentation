@@ -125,7 +125,7 @@
 <span class="hljs-keyword">let</span> loaded = Iconify.iconExists(iconName);<br>
 <br>
 <span class="hljs-keyword">if</span> (!loaded) {<br>
- &#xA0; &#xA0;Iconify.loadIcons([iconName], (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0;Iconify.loadIcons([iconName], <span class="hljs-function">(<span class="hljs-params">loaded, missing, pending, unsubscribe</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (loaded.length) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;loaded = <span class="hljs-literal">true</span>;<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.log(<br>
@@ -149,7 +149,7 @@
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Iconify <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/iconify&apos;</span>;<br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> { onDestroy } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-comment">/** @type {string} Icon to display */</span><br>
+ &#xA0; &#xA0;<span class="hljs-comment">/** <span class="hljs-doctag">@type <span class="hljs-type">{string}</span> </span>Icon to display */</span><br>
  &#xA0; &#xA0;<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> selectedIcon;<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Variable to store icon data</span><br>
@@ -166,14 +166,14 @@
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Remove previous callback</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader();<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader = Iconify.loadIcons([selectedIcon], () =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader = Iconify.loadIcons([selectedIcon], <span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;iconData = Iconify.getIcon(selectedIcon);<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;});<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
  &#xA0; &#xA0;}<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Remove event listener</span><br>
- &#xA0; &#xA0;onDestroy(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br>
+ &#xA0; &#xA0;onDestroy(<span class="hljs-function">() =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (abortLoader !== <span class="hljs-literal">null</span>) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;abortLoader();<br>
  &#xA0; &#xA0; &#xA0; &#xA0;}<br>
@@ -195,7 +195,7 @@
  */</span><br>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadIcons</span>(<span class="hljs-params">icons</span>) </span>{<br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;Iconify.loadIcons(icons, (loaded, missing, pending, unsubscribe) =&gt; {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Iconify.loadIcons(icons, <span class="hljs-function">(<span class="hljs-params">loaded, missing, pending, unsubscribe</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (pending.length) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Icons are pending, wait for all to load/fail</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
