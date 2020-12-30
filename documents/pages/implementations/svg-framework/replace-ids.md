@@ -4,6 +4,7 @@ functions:
   renderSVG: './render-svg.md'
   renderHTML: './render-html.md'
   renderIcon: './render-icon.md'
+  getIcon: './get-icon.md'
 ```
 
 # SVG framework function: replaceIDs

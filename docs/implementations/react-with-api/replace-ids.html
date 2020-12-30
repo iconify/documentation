@@ -27,7 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?6674" />
-		<title>Iconify for React Function: iconExists</title>
+		<title>Iconify for React Function: replaceIDs</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -85,35 +85,31 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs">
 					<div class="docs-short-navigation">
-<a href="./inline.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Inline Icons</a>
-<a href="./list-icons.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> listIcons()</a>
+<a href="./disable-cache.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> disableCache()</a>
+<a href="../vue/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Vue 3</a>
 </div>
-<h1>Iconify for React function: iconExists</h1>
+<h1>Iconify for React function: replaceIDs</h1>
 <p>This tutorial is part of <a href="./#functions">Iconify for React with API functions tutorial</a>.</p>
-<p>Function <span class="hljs-function">iconExists()</span> checks if icon is available.</p>
-<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameter:</p><ul>
-<li><span class="hljs-inline-prop">name</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon name.</li>
-</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> value: <span class="hljs-literal">true</span> if icon is available, <span class="hljs-literal">false</span> if icon is not available.</p></section>
+<p>Function <span class="hljs-function">replaceIDs()</span> finds IDs in SVG and replaces them with unique random IDs.</p>
+<p>This function is meant to be used when you generate <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element yourself using data provided by <a href="./get-icon.html" title="getIcon() documentation"><span class="hljs-function hljs-linkable">getIcon()</span></a>.</p>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">data</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon content.</li>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">function</span></span>. Optional prefix for generated IDs. It can be a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> or a callback that returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>.</li>
+</ul><p>Function returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> containing icon data with IDs replaced.</p></section>
 
 
 
-<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgaWNvbkV4aXN0cywgbG9hZEljb25zLCBJY29uIH0gZnJvbSAnQGljb25pZnkvcmVhY3Qtd2l0aC1hcGknOwoKZnVuY3Rpb24gcmVuZGVyTGVmdEFycm93KCkgewoJLy8gQ2hlY2sgaWYgJ2JpOmFycm93LWxlZnQnIGlzIGF2YWlsYWJsZQoJaWYgKGljb25FeGlzdHMoJ2JpOmFycm93LWxlZnQnKSkgewoJCS8vIFJldHVybiBIVE1MIGZvciAnYmk6YXJyb3ctbGVmdCcKCQlyZXR1cm4gPEljb24gaWNvbj0iYmk6YXJyb3ctbGVmdCIgLz47Cgl9CgoJLy8gTG9hZCBpY29uLiBCYWQgZXhhbXBsZSBiZWNhdXNlIHRoaXMgc2hvdWxkIHVzZSBhIGNhbGxiYWNrIHRvIHJlLXJlbmRlciBhcnJvdyBpbiBhIHN0YXRlZnVsCgkvLyBjb21wb25lbnQsIGJ1dCB0aGlzIGNvZGUgZXhhbXBsZSBpcyBhYm91dCBpY29uRXhpc3RzKCksIG5vdCBsb2FkSWNvbnMoKQoJbG9hZEljb25zKFsnYmk6YXJyb3ctbGVmdCddKTsKCgkvLyBSZXR1cm4gJzwnCglyZXR1cm4gPHNwYW4+Jmx0Ozwvc3Bhbj47Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> { iconExists, loadIcons, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is a rather useless example. In real core this function is used when generating SVG code samples in Icon Finder, which is not as simple as this example.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgcmVwbGFjZUlEcywgZ2V0SWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCi8vIEdldCBpY29uIGRhdGEKY29uc3QgZGF0YSA9IGdldEljb24oJ2NhcmJvbjpkZXBsb3knKTsKCi8vIEdldCBjb250ZW50CmNvbnN0IGJvZHkgPSByZXBsYWNlSURzKGRhdGEuYm9keSk7Cgpjb25zb2xlLmxvZygnSWNvbiBjb250ZW50OicsIGJvZHkpOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { replaceIDs, getIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
 <br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLeftArrow</span>(<span class="hljs-params"></span>) </span>{<br>
- &#xA0; &#xA0;<span class="hljs-comment">// Check if &apos;bi:arrow-left&apos; is available</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (iconExists(<span class="hljs-string">&apos;bi:arrow-left&apos;</span>)) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Return HTML for &apos;bi:arrow-left&apos;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:arrow-left&quot;</span> /&gt;</span></span>;<br>
- &#xA0; &#xA0;}<br>
+<span class="hljs-comment">// Get icon data</span><br>
+<span class="hljs-keyword">const</span> data = getIcon(<span class="hljs-string">&apos;carbon:deploy&apos;</span>);<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-comment">// Load icon. Bad example because this should use a callback to re-render arrow in a stateful</span><br>
- &#xA0; &#xA0;<span class="hljs-comment">// component, but this code example is about iconExists(), not loadIcons()</span><br>
- &#xA0; &#xA0;loadIcons([<span class="hljs-string">&apos;bi:arrow-left&apos;</span>]);<br>
+<span class="hljs-comment">// Get content</span><br>
+<span class="hljs-keyword">const</span> body = replaceIDs(data.body);<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-comment">// Return &apos;&lt;&apos;</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>;<br>
-}<br>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Icon content:&apos;</span>, body);<br>
 </code></div></div></div></section>
+
 
 				</article>
 				<nav
@@ -135,7 +131,7 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./inline.html">Inline Icons</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
-	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4"><a href="./icon-exists.html">iconExists()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./list-icons.html">listIcons()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./get-icon.html">getIcon()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./add-icon.html">addIcon()</a></li>
@@ -143,7 +139,7 @@
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./load-icons.html">loadIcons()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./enable-cache.html">enableCache()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--4"><a href="./disable-cache.html">disableCache()</a></li>
-	<li class="docs-navigation-link docs-navigation-link--4"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--4 docs-navigation-link--selected docs-navigation-link--active"><a href="./replace-ids.html">replaceIDs()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue/">Vue 3</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2/">Vue 2</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte/">Svelte</a></li>

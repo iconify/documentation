@@ -1,1 +1,1 @@
-Iconify.getIcon('bi:check2-circle');
+const data = Iconify.getIcon('bi:check2-circle');

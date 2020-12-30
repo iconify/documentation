@@ -13,6 +13,7 @@ functions:
   iconExists: './icon-exists.md'
   listIcons: './list-icons.md'
   loadIcons: './load-icons.md'
+  getIcon: './get-icon.md'
   enableCache: './enable-cache.md'
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
@@ -189,6 +190,7 @@ There are several functions in this section:
 
 - `[func]iconExists(name)`. Checks if an icon exists, returns `[type]boolean`.
 - `[func]listIcons()`. Lists available icons, returns `[type]string[]`.
+- `[func]getIcon(name)`. Returns icon data, returns `[type]IconifyIcon` object.
 
 ### Adding icons {#adding-icons}
 
@@ -199,6 +201,11 @@ Functions for adding icons to component:
 
 Note: icons added to component with these functions are not stored in cache. Component caches only icons retrieved from API.
 
+### Helper functions {#helper}
+
+- `[func]replaceIDs(html)`. Randomizes IDs in generated string. This should be used when rendering icon based on data returned by `[func]getIcon()` to make sure elements inside each icon have unique IDs.
+- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
+
 ### API functions {#api}
 
 - `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
@@ -206,13 +213,12 @@ Note: icons added to component with these functions are not stored in cache. Com
 - `[func]disableCache()`. Disables caching in `[prop]localStorage` and `[prop]sessionStorage`.
 - `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
 
-### Internal functions {#internal}
+### Internal API functions {#internal}
 
-There are several internal functions that are exposed. They are intended to be used by implementations that want more control over component, such as Iconify Icon Finder. Use them carefully.
+There are several internal API functions that are exposed. They are intended to be used by implementations that want more control over component, such as Iconify Icon Finder. Use them carefully.
 
-All internal functions are exposed as properties of `[var]internals` object:
+All internal API functions are exposed as properties of `[var]_api` object:
 
-- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
 - `[func]getAPI()`. Returns internal API module.
 - `[func]getAPIConfig()`. Returns API configuration.
 - `[func]setAPIModule(provider)`. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.

@@ -1,12 +1,12 @@
 ```yaml
-title: 'Iconify SVG Framework Function: getIcon'
+title: 'Iconify for React Function: getIcon'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 ```
 
-# SVG framework function: getIcon
+# Iconify for React function: getIcon
 
-This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#getting-icons).
+This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]getIcon()` retrieves icon data.
 
@@ -21,7 +21,7 @@ Function returns icon data in `[type]IconifyIcon` format, `null` if icon is not 
 ## Examples
 
 ```yaml
-src: implementations/iconify/get-icon.js
+src: implementations/react-with-api/get-icon.js
 title: 'Code:'
 extra:
   - src: implementations/iconify/get-icon.json
@@ -29,7 +29,7 @@ extra:
 ```
 
 ```yaml
-src: implementations/iconify/get-icon2.js
+src: implementations/react-with-api/get-icon2.js
 title: 'Code:'
 extra:
   - src: implementations/iconify/get-icon2.json
@@ -37,6 +37,8 @@ extra:
 ```
 
 ```js
+import { getIcon } from '@iconify/react-with-api';
+
 // null
-const data = Iconify.getIcon('no-such-icon');
+const data = getIcon('no-such-icon');
 ```

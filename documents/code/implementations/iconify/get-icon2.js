@@ -1,1 +1,1 @@
-Iconify.getIcon('cil:paper-plane');
+const data = Iconify.getIcon('cil:paper-plane');

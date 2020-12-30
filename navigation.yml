@@ -118,6 +118,7 @@
                 # Getting icons
                 ./icon-exists.html: iconExists()
                 ./list-icons.html: listIcons()
+                ./get-icon.html: getIcon()
                 # Adding icons
                 ./add-icon.html: addIcon()
                 ./add-collection.html: addCollection()
@@ -126,6 +127,7 @@
                 ./enable-cache.html: enableCache()
                 ./disable-cache.html: disableCache()
                 # Internal
+                ./replace-ids.html: replaceIDs()
             ../vue/:
               title: Vue 3
               children:
