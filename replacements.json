@@ -29,9 +29,9 @@
 		"import-vue3": "@iconify/vue@next"
 	},
 	"counters": {
-		"sets": "80",
-		"icons": "70,000",
-		"icons-short": "70k"
+		"sets": "90",
+		"icons": "80,000",
+		"icons-short": "80k"
 	},
 	"icons": {
 		"hash": "line-md:hash-small",
@@ -39,7 +39,7 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.0.0-rc.4/iconify.min.js",
+		"iconify": "https://code.iconify.design/2/2.0.0-rc.5/iconify.min.js",
 		"figma3-repo": "https://github.com/iconify/iconify-figma/tree/dev3"
 	}
 }
