@@ -62,7 +62,7 @@ Then use `[var]Icon` component with icon data as `[prop]icon` parameter:
 import { Icon } from '@iconify/vue';
 
 // Import icon data.
-// You can import icon with any name instead of 'homeIcon'
+// You can use any variable name instead of 'homeIcon'
 // because exports are not named
 import homeIcon from '@iconify-icons/mdi-light/home';
 
@@ -103,7 +103,7 @@ As a bonus, with this method the icon needs to be added only once. That means if
 import { Icon, addIcon } from '@iconify/vue';
 
 // Import icon data.
-// You can import icon with any name instead of 'homeIconData'
+// You can use any variable name instead of 'homeIconData'
 // because exports are not named
 import homeIconData from '@iconify-icons/mdi-light/home';
 
@@ -179,7 +179,7 @@ Examples:
 
 Variable name in import statement is irrelevant because all exports are default exports.
 
-### CommonJS icon modules {#commonjs}
+### CommonJS icon packages {#commonjs}
 
 `include implementations/icon-packages-exports`
 

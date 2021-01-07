@@ -45,7 +45,7 @@ Install `[npm]@iconify/svelte` and packages for selected icon sets. Import compo
 import IconifyIcon from '@iconify/svelte';
 
 // Import icon data
-// You can import icon with any name instead of 'home'
+// You can use any variable name instead of 'home'
 // because exports are not named
 import home from '@iconify-icons/mdi-light/home';
 ```
@@ -90,7 +90,7 @@ Examples:
 
 Variable name in import statement is irrelevant because all exports are default exports.
 
-### CommonJS icon modules {#commonjs}
+### CommonJS icon packages {#commonjs}
 
 `include implementations/icon-packages-exports`
 

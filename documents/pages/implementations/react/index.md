@@ -38,7 +38,7 @@ Iconify for React is a basic component. It works offline and does not have any d
 import { Icon } from '@iconify/react';
 
 // Import icon data
-// You can import icon with any name instead of 'home'
+// You can use any variable name instead of 'home'
 // because exports are not named
 import home from '@iconify/icons-mdi-light/home';
 ```
