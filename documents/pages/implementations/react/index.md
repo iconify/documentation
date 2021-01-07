@@ -40,7 +40,7 @@ import { Icon } from '@iconify/react';
 // Import icon data
 // You can import icon with any name instead of 'home'
 // because exports are not named
-import home from '@iconify-icons/mdi-light/home';
+import home from '@iconify/icons-mdi-light/home';
 ```
 
 ```jsx
@@ -85,7 +85,7 @@ Install `[npm]@iconify/react@2` and packages for selected icon sets. Import `[va
 
 ```js
 import { Icon } from '@iconify/react';
-import home from '@iconify-icons/mdi-light/home';
+import home from '@iconify/icons-mdi-light/home';
 ```
 
 Then use `[var]Icon` component with icon data as `[prop]icon` parameter:
@@ -103,7 +103,7 @@ With this method the icon needs to be added only once. That means if you have mu
 ```jsx
 import React from 'react';
 import { Icon, addIcon } from '@iconify/react';
-import homeIcon from '@iconify-icons/mdi-light/home';
+import homeIcon from '@iconify/icons-mdi-light/home';
 
 addIcon('home', homeIcon);
 
@@ -173,9 +173,11 @@ Examples:
 
 Variable name in import statement is irrelevant because all exports are default exports.
 
-### CommonJS icon modules {#commonjs}
+### CommonJS icon packages {#commonjs}
 
 `include implementations/icon-packages-exports`
+
+If you are using Next.js, you should use CommonJS icon packages. At the time of writing this documentation, Next.js does not support ES modules.
 
 ## Inline icon
 

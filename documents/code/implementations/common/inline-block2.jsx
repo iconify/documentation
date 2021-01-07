@@ -1,10 +1,10 @@
 import React from 'react';
 
-// npm install --save-dev @iconify/react @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim
+// npm install --save-dev @iconify/react @iconify/icons-mdi @iconify/icons-emojione-v1 @iconify/icons-uim
 import { Icon, InlineIcon } from '@iconify/react';
-import homeIcon from '@iconify-icons/mdi/home';
-import birdIcon from '@iconify-icons/emojione-v1/bird';
-import sceneryIcon from '@iconify-icons/uim/scenery';
+import homeIcon from '@iconify/icons-mdi/home';
+import birdIcon from '@iconify/icons-emojione-v1/bird';
+import sceneryIcon from '@iconify/icons-uim/scenery';
 
 export function inlineDemo() {
 	return (

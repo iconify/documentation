@@ -1,10 +1,10 @@
 import React from 'react';
 
-// npm install --save-dev @iconify/react @iconify-icons/cil
+// npm install --save-dev @iconify/react @iconify/icons-cil
 import { Icon } from '@iconify/react';
-import locomotiveIcon from '@iconify-icons/cil/locomotive';
-import paperPlane from '@iconify-icons/cil/paper-plane';
-import truckIcon from '@iconify-icons/cil/truck';
+import locomotiveIcon from '@iconify/icons-cil/locomotive';
+import paperPlane from '@iconify/icons-cil/paper-plane';
+import truckIcon from '@iconify/icons-cil/truck';
 
 export function sizeDemo() {
 	return (
