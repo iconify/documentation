@@ -8,6 +8,12 @@ If you can, use Node.js version.
 
 Node.js implementation is slightly faster. This is because in Node.js server uses one persistent process and all data is already in memory, so everything is ready for each request. PHP needs to load data on every request. PHP version has cache to improve speed, but it is still slower than Node.js.
 
+## Django Iconify
+
+In addition to Iconify API servers mentioned above, there is a community created alternative for Django users: [django-iconify](https://pypi.org/project/django-iconify/).
+
+See [django-iconify project page](https://pypi.org/project/django-iconify/) for configuration options and usage.
+
 ## Source code
 
 Everything you need is available at [Iconify GitHub repositories](https://github.com/iconify):
