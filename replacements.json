@@ -10,16 +10,16 @@
 			"full": "1.0.7"
 		},
 		"size": "22kb",
-		"import": "@iconify/iconify"
+		"import": "@iconify/iconify@1"
 	},
 	"iconify2": {
 		"version": {
 			"major": "2",
-			"full": "2.0.0-rc.6"
+			"full": "2.0.0"
 		},
 		"size": "30kb",
 		"size-without-api": "16kb",
-		"import": "@iconify/iconify@beta"
+		"import": "@iconify/iconify"
 	},
 	"react": {
 		"import": "@iconify/react@beta"
