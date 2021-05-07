@@ -197,4 +197,4 @@ Iconify documentation is dual-licensed under Apache 2.0 licence. You can use thi
 
 `SPDX-License-Identifier: Apache-2.0`
 
-© 2020 Iconify OÜ
+© 2020, 2021 Iconify OÜ
