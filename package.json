@@ -19,7 +19,7 @@
 		"@types/cheerio": "^0.22.22",
 		"@types/markdown-it": "^10.0.2",
 		"@types/node": "^14.14.6",
-		"cheerio": "^1.0.0-rc.3",
+		"cheerio": "^1.0.0-rc.5",
 		"highlight.js": "^10.5.0",
 		"highlightjs-svelte": "^1.0.6",
 		"markdown-it": "^10.0.0",

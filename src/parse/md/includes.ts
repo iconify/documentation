@@ -5,7 +5,7 @@ import { MDContext } from '../types';
 import { parsePartial } from '../partial';
 import { replaceAll } from '../../str';
 
-interface InlineCodeReplacement {
+export interface InlineCodeReplacement {
 	search: string;
 	replace: string;
 }

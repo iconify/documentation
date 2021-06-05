@@ -8,6 +8,7 @@ import { MDContext } from '../types';
 import { paths, exists } from '../../files';
 import { readFileSync } from 'fs';
 import { replaceAll } from '../../str';
+import { InlineCodeReplacement } from './includes';
 
 // Import additional syntax highlight modules
 hljs_svelte(hljs);
@@ -42,6 +43,9 @@ interface CodeSample {
 	demoTitle?: string; // Demo tab title
 	demoHint?: string;
 	class?: string; // Class name to wrap demo
+
+	// Replacements
+	replacements?: InlineCodeReplacement[];
 }
 
 const defaultCodeSampleChunk: Required<CodeSampleChunk> = {
@@ -62,6 +66,7 @@ const defaultCodeSample: Required<CodeSample> = {
 	demo: false,
 	demoTitle: '',
 	demoHint: '',
+	replacements: [],
 };
 
 // Keys to check for valid filenames
@@ -186,6 +191,7 @@ function changeTokens(tokens: Token[]) {
 export function renderCode(context: MDContext, md: md) {
 	const codeHeader = '<code class="highlight hljs">';
 	const codeFooter = '</code>';
+	let replacements: Record<string, string> = Object.create(null);
 
 	/**
 	 * Get file contents
@@ -245,7 +251,9 @@ export function renderCode(context: MDContext, md: md) {
 
 			// Parse code
 			try {
-				code = hljs.highlight(lang, str).value;
+				code = hljs.highlight(str, {
+					language: lang,
+				}).value;
 			} catch (err) {
 				console.error(err);
 				throw new Error(`Error parsing code block in ${context.filename}.`);
@@ -297,7 +305,7 @@ export function renderCode(context: MDContext, md: md) {
 			title,
 			lang,
 			raw: code,
-			html: highlightCode(lang, code),
+			html: highlightCode(lang, replaceContent(code)),
 			hint,
 		});
 	}
@@ -327,7 +335,7 @@ export function renderCode(context: MDContext, md: md) {
 				'<div class="code-demo' +
 				(css === '' ? '' : ' ' + css) +
 				'">' +
-				html +
+				replaceContent(html) +
 				'</div>',
 			hint,
 		});
@@ -396,7 +404,7 @@ export function renderCode(context: MDContext, md: md) {
 
 			if (data[attr] === void 0) {
 				// Copy default value
-				((data as unknown) as Record<string, unknown>)[attr] =
+				(data as unknown as Record<string, unknown>)[attr] =
 					defaultCodeSample[attr];
 				continue;
 			}
@@ -412,6 +420,29 @@ export function renderCode(context: MDContext, md: md) {
 							`Invalid value type for "${attr}" in code block in ${context.filename}.`
 						);
 					}
+					break;
+
+				case 'replacements':
+					// Copy to global variable
+					if (!(data.replacements instanceof Array)) {
+						throw new Error(
+							`Invalid value type for "${attr}" in code block in ${context.filename}.`
+						);
+					}
+					data.replacements.forEach((item) => {
+						const search = item.search;
+						const replace = item.replace;
+						if (
+							typeof search !== 'string' ||
+							typeof replace !== 'string' ||
+							!search.length
+						) {
+							throw new Error(
+								`Invalid value type for "${attr}" in code block in ${context.filename}.`
+							);
+						}
+						replacements[search] = replace;
+					});
 					break;
 
 				default:
@@ -512,6 +543,13 @@ export function renderCode(context: MDContext, md: md) {
 	}
 
 	/**
+	 * Apply replacements
+	 */
+	function replaceContent(str: string): string {
+		return replaceAll(str, replacements);
+	}
+
+	/**
 	 * Render tabs
 	 */
 	function renderTabs(tabs: CodeTab[]): string {
@@ -520,7 +558,7 @@ export function renderCode(context: MDContext, md: md) {
 			let raw = '';
 			if (tab.raw !== '') {
 				const buff = Buffer.from(tab.raw, 'utf8');
-				raw = buff.toString('base64');
+				raw = replaceContent(buff.toString('base64'));
 			}
 
 			// Container
@@ -532,7 +570,10 @@ export function renderCode(context: MDContext, md: md) {
 
 			// Title
 			if (tab.title !== '') {
-				code += '<div class="code-block-title">' + tab.title + '</div>';
+				code +=
+					'<div class="code-block-title">' +
+					replaceContent(tab.title) +
+					'</div>';
 			}
 
 			// Content
@@ -549,7 +590,8 @@ export function renderCode(context: MDContext, md: md) {
 
 			// Hint
 			if (tab.hint !== '') {
-				code += '<div class="code-block-hint">' + tab.hint + '</div>';
+				code +=
+					'<div class="code-block-hint">' + replaceContent(tab.hint) + '</div>';
 			}
 
 			// Close container

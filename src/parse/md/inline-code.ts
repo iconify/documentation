@@ -357,7 +357,9 @@ export function renderInlineCode(context: MDContext, md: md) {
 								`Bad language for inline code block in ${context.filename}: ${type}`
 							);
 						}
-						return hljs.highlight(type, rawContent).value;
+						return hljs.highlight(rawContent, {
+							language: type,
+						}).value;
 					})() +
 					'</span>'
 				);

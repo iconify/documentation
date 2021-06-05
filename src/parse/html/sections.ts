@@ -6,7 +6,7 @@ import cheerio from 'cheerio';
 export function wrapSections($html: cheerio.Root): void {
 	// Wrap all headings
 	for (let level = 6; level > 1; level--) {
-		$html('h' + level).each((index, node) => {
+		$html('h' + level).each((index, node: cheerio.TagElement) => {
 			const $node = cheerio(node);
 			const $wrapper = cheerio(
 				'<section class="content-section content-section--' + level + '" />'
@@ -18,7 +18,7 @@ export function wrapSections($html: cheerio.Root): void {
 
 			// Find next nodes
 			let stop = false;
-			$wrapper.nextAll().each((index, next) => {
+			$wrapper.nextAll().each((index, next: cheerio.TagElement) => {
 				if (stop) {
 					return;
 				}
