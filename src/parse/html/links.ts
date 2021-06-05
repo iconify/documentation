@@ -1,4 +1,3 @@
-import cheerio from 'cheerio';
 import { ParseResult } from '../types';
 import { relativeToAbsolute, absoluteToRelative } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
@@ -9,7 +8,7 @@ export function parseHTMLLinks(
 	relativeFile: string
 ) {
 	$html('a').each((index, node) => {
-		const $node = cheerio(node);
+		const $node = $html(node);
 		const href = $node.attr('href');
 		if (href === void 0) {
 			return;

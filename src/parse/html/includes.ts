@@ -1,4 +1,3 @@
-import cheerio from 'cheerio';
 import { MDContext } from '../types';
 import { parsePartial } from '../partial';
 
@@ -12,7 +11,7 @@ export function importHTMLPartials(
 	context: MDContext
 ): void {
 	$html('[' + attr + ']').each((index, node) => {
-		const $node = cheerio(node);
+		const $node = $html(node);
 		const file = $node.attr(attr);
 		if (file === void 0) {
 			return;

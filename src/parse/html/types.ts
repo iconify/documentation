@@ -1,4 +1,3 @@
-import cheerio from 'cheerio';
 import { MDContext } from '../types';
 import { relativeToAbsolute, absoluteToRelative } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
@@ -56,7 +55,7 @@ export function linkTypes(
 	}
 
 	$html('.hljs-inline-type > span').each((index, child) => {
-		const $child = cheerio(child);
+		const $child = $html(child);
 
 		// Make sure type is not inside link
 		if ($child.parents('a').length) {

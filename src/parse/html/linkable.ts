@@ -1,4 +1,3 @@
-import cheerio from 'cheerio';
 import { MDContext } from '../types';
 import { relativeToAbsolute, absoluteToRelative } from '../../urls';
 import { fileToURL } from '../../navigation/helpers';
@@ -68,7 +67,7 @@ export function checkLinkables(
 	}
 
 	$html(config.selector).each((index, child) => {
-		const $child = cheerio(child);
+		const $child = $html(child);
 
 		// Make sure item is not inside link
 		if ($child.parents('a').length) {

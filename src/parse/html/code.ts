@@ -5,7 +5,7 @@ import cheerio from 'cheerio';
  */
 export function wrapCustomCode($html: cheerio.Root): void {
 	$html('code').each((index, node) => {
-		const $node = cheerio(node);
+		const $node = $html(node);
 		const wrap = $node.attr('data-wrap');
 		if (wrap === void 0) {
 			return;

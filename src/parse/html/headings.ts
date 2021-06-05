@@ -1,4 +1,3 @@
-import cheerio from 'cheerio';
 import { rawReplacements } from '../../replacements';
 
 /**
@@ -8,7 +7,7 @@ export function changeHeadingLinks($html: cheerio.Root) {
 	// Replace back links
 	const icon = rawReplacements.icons.hash;
 	$html('a.link-back').each((index, link) => {
-		const $link = cheerio(link);
+		const $link = $html(link);
 		$link.html('<span class="iconify" data-icon="' + icon + '"></span>');
 		$link.attr('title', 'Link to this section');
 	});

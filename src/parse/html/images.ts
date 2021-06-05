@@ -1,7 +1,5 @@
-import cheerio from 'cheerio';
 import { ParseResult } from '../types';
-import { relativeToAbsolute, absoluteToRelative, assetURL } from '../../urls';
-import { fileToURL } from '../../navigation/helpers';
+import { assetURL } from '../../urls';
 
 export function parseHTMLImages(
 	$html: cheerio.Root,
@@ -9,7 +7,7 @@ export function parseHTMLImages(
 	relativeFile: string
 ) {
 	$html('img').each((index, node) => {
-		const $node = cheerio(node);
+		const $node = $html(node);
 		const href = $node.attr('src');
 		if (href === void 0) {
 			return;
