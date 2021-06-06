@@ -13,17 +13,17 @@ types:
 
 ## Offline use
 
-Icon bundle is the easiest way to make Iconify implementations that rely on API, such as [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md), work without the internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.
+Icon bundle is the easiest way to make Iconify [SVG framework](../../implementations/svg-framework/index.md) and [various component](../../implementations/components/index.md) work without the internet access. Instead of loading icon data from Iconify API, you can provide icon by loading icon bundle.
 
 ## Smaller bundle size
 
-For components that do not rely on API, such as [basic React component](../../implementations/react/index.md) and [Vue component](../../implementations/vue/index.md), you can use bundles to import multiple icons at the same time instead of importing icons one by one.
+For components that do have support for Iconify API, such as [React offline component](../../implementations/react/offline.md), you can use bundles to import multiple icons at the same time instead of importing icons one by one. This reduces bundle size.
 
 ## Speed up loading
 
-Icon bundles can be used to speed up loading for [SVG framework](../../implementations/svg-framework/index.md) and [React component](../../implementations/react-with-api/index.md).
+Icon bundles can be used to speed up loading for [SVG framework](../../implementations/svg-framework/index.md) and [various components](../../implementations/components/index.md).
 
-[Iconify implementation](../../implementations/index.md) queries API for icon data when it needs to render that icon. Even though loading icon data from API is very fast, it is not instant. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly.
+When you tell Iconify component to render an icon, if icon data is not available, component attempts to load data for icon from Iconify API. Even though loading icon data from API is very fast, it is not instant and it requires internet access. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly and it can be used offline.
 
 ## How to create icons bundle? {#create}
 
@@ -40,13 +40,19 @@ src: sources/api/mdi.json
 
 This is the same format that is used to store an icon set, but without metadata and contains only icons that you need.
 
-You need to wrap that data in a function or assign it to a variable. This step is different for different [Iconify implementations](../../implementations/index.md). For example, in bundles for [SVG framework](./svg-framework.md) function name is `[func]Iconify.addCollection`:
+You need to wrap that data in a function or assign it to a variable. For [SVG framework](./svg-framework.md) function name is `[func]Iconify.addCollection`:
 
 ```yaml
 src: sources/api/mdi.js
 ```
 
-Each set of data can include only icons from one icon set. If you want to bundle icons from multiple icon sets, you need to repeat same process for each icon set. The only exception is using `[var]IconifyPreload` for SVG framework, which can be used with an array of data sets (see below).
+For [various components](../../implementations/components/index.md), you need to import function `[func]addCollection` from component package:
+
+```yaml
+src: sources/api/mdi-component.js
+```
+
+Each set of data can include only icons from one icon set. If you want to bundle icons from multiple icon sets, you need to call `[func]addCollection` for each icon set.
 
 ```yaml
 src: sources/bundles/mix.js
@@ -61,22 +67,11 @@ There are several ways to generate data for icon bundles:
 
 ## Wrapping data in callback {#callbacks}
 
-You need to make sure icon bundle is loaded before implementation attempts to render an icon. Otherwise, implementation might send a redundant API query to retrieve icon data.
+You need to make sure icon bundle is loaded before icon component attempts to render an icon. Otherwise, component might send a redundant API query to retrieve icon data.
 
-### SVG framework
+If you are using component, most likely icon data will be bundled with component in same JavaScript file, so it is done automatically.
 
-SVG framework supports 2 ways of adding icon bundles:
-
-- Loading icon bundles before loading Iconify.
-- Loading icon bundles after loading Iconify.
-
-See [bundles for SVG framework](./svg-framework.md) for details.
-
-### Components
-
-Most components expose method `[func]addCollection()`. You need to use that method to import icon bundles.
-
-See [bundles for React component](./react.md) for details.
+If you are using SVG framework and are linking to SVG framework JavaScript file separately, it gets a bit more complex. See [bundles for SVG framework](./svg-framework.md) for solutions.
 
 ## Examples
 

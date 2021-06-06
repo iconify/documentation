@@ -16,8 +16,11 @@ const tools = require('@iconify/tools');
 const { Collection } = require('@iconify/json-tools');
 
 // Iconify component (this changes import statement in generated file)
-// Available options: 'react', 'react-with-api', 'vue' (for Vue 3), 'vue2'
-const component = 'react';
+// Available options: '@iconify/react' for React, '@iconify/vue' for Vue 3, '@iconify/vue2' for Vue 2, '@iconify/svelte' for Svelte
+const component = '@iconify/react';
+
+// Set to true to use require() instead of import
+const commoonJS = false;
 
 // Various sources. Comment out sources you do not want in a bundle
 const sources = {
@@ -80,7 +83,9 @@ const target = __dirname + '/src/icons-bundle.js';
 /**
  * Do stuff!
  */
-let bundle = getImport(component) + '\n\n';
+let bundle = commoonJS
+	? "const { addCollection } = require('" + component + "');\n\n"
+	: "import { addCollection } from '" + component + "';\n\n";
 
 /**
  * Bundle full JSON files
@@ -353,8 +358,8 @@ function organizeIconsList(icons) {
  * - prefix
  * - name
  *
- * This function was copied from @iconify/core/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts
+ * This function was copied from @iconify/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
  */
 function stringToIcon(value) {
 	let provider = '';
@@ -397,28 +402,4 @@ function stringToIcon(value) {
 	}
 
 	return null;
-}
-
-/**
- * Get import statement for component
- */
-function getImport(component) {
-	const imports = {
-		'react': "import { addCollection } from '@iconify/react';",
-		'react-with-api':
-			"import { addCollection } from '@iconify/react-with-api';",
-		'vue': "import { addCollection } from '@iconify/vue';",
-		'vue2':
-			"import IconifyIcon from '@iconify/vue';\n\nconst addCollection = IconifyIcon.addCollection;",
-	};
-
-	if (imports[component] !== void 0) {
-		return imports[component];
-	}
-
-	throw new Error(
-		`Invalid value for "component" variable. Possible values: '${Object.keys(
-			imports
-		).join("', '")}'`
-	);
 }

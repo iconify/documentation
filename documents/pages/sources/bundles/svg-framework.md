@@ -95,6 +95,16 @@ Example:
 src: sources/bundles/mix.js
 ```
 
+## Both methods
+
+Not sure if your bundle will be included before or after SVG framework?
+
+You can wrap icon sets data in function that checks for `[func]Iconify.addCollection` and appends icon data to `[var]IconifyPreload` if `[func]Iconify.addCollection` is missing.
+
+```yaml
+src: sources/bundles/universal.js
+```
+
 ## How to automate build process? {#automation}
 
 Build process is simple:

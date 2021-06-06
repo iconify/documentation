@@ -17,8 +17,8 @@
 			"major": "2",
 			"full": "2.0.1"
 		},
-		"size": "30kb",
-		"size-without-api": "16kb",
+		"size": "32kb",
+		"size-without-api": "17kb",
 		"import": "@iconify/iconify"
 	},
 	"react": {

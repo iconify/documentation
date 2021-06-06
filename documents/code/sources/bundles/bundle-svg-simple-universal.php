@@ -2,45 +2,40 @@
 /**
  * This is a simple example for creating icon bundles for Iconify SVG Framework.
  *
- * It bundles only icons from Iconify JSON files.
- * For more advanced examples see other code examples in documentation.
- *
- * See Iconify Tools documentation on how to convert custom icons to Iconify JSON format:
- * https://docs.iconify.design/tools/node/import.html
- *
- * This example saves data to IconifyPreload variable, so bundle must be included before Iconify SVG framework.
+ * It bundles only icons from Iconify icon sets.
+ * For bundling custom icons see other code examples in documentation.
  */
 
 require './vendor/autoload.php';
 
-// Installation: composer require iconify/json-tools
+// Installation: composer require iconify/json-tools iconify/json
 use Iconify\JSONTools\Collection;
 
 // File to save bundle to
 $target = __DIR__ . '/assets/icons-bundle.js';
 
-// JSON files location. Filename inside directory must match prefix. For example, for "line-md" prefix icons should be stored in "line-md.json"
-$source = __DIR__ . '/json';
-
 // Icons to bundle, array
 $icons = [
-    'line-md:home-twotone-alt',
-    'line-md:github',
-    'line-md:image-twotone',
-    'octicon:book-24',
-    'octicon:code-square-24',
+    'mdi:home',
+    'mdi:account',
+    'mdi:login',
+    'mdi:logout',
+    'openmoji:birthday-cake',
+    'openmoji:clinking-glasses',
 ];
 
 // Organize icons by prefix
 $icons = organizeIconsList($icons);
 
 // Load icons data
-$iconsData = [];
+$output = '';
 foreach ($icons as $prefix => $iconsList) {
     // Load icon set
     $collection = new Collection($prefix);
-    if (!$collection->loadFromFile($source . '/' . $prefix . '.json')) {
-        throw new Error('Cannot find file "' . $prefix . '.json"');
+    if (!$collection->loadIconifyCollection($prefix)) {
+        throw new Error(
+            'Icons with prefix "' . $prefix . '" do not exist in Iconify. Update iconify/json?'
+        );
     }
 
     // Make sure all icons exist
@@ -52,16 +47,31 @@ foreach ($icons as $prefix => $iconsList) {
         }
     }
 
-    // Get data for all icons
-    $data = $collection->getIcons($iconsList);
-    Collection::optimize($data);
-
-    // Add to iconsData
-    $iconsData[] = $data;
+    // Get data for all icons as string
+    $output .= $collection->scriptify([
+        'icons' => $iconsList,
+        'callback' => 'add',
+        'optimize' => true,
+    ]);
 }
 
-// Export to string
-$output = 'IconifyPreload = ' . json_encode($iconsData) . ";\n";
+// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
+$output = '(function() { 
+	function add(data) {
+		try {
+			if (typeof self.Iconify === \'object\' && self.Iconify.addCollection) {
+				self.Iconify.addCollection(data);
+				return;
+			}
+			if (typeof self.IconifyPreload === \'undefined\') {
+				self.IconifyPreload = [];
+			}
+			self.IconifyPreload.push(data);
+		} catch (err) {
+		}
+	}
+	' . $output . '
+})();' . "\n";
 
 // Save to file
 file_put_contents($target, $output);
@@ -110,8 +120,8 @@ function organizeIconsList($icons)
  * - prefix
  * - name
  *
- * This function was converted to PHP from @iconify/core/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts
+ * This function was converted to PHP from @iconify/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
  */
 function stringToIcon($value)
 {

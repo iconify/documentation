@@ -3,8 +3,6 @@
  *
  * It bundles only icons from Iconify icon sets.
  * For bundling custom icons see other code examples in documentation.
- *
- * This example saves data to IconifyPreload variable, so bundle must be included before Iconify SVG framework.
  */
 const fs = require('fs');
 
@@ -28,7 +26,7 @@ let icons = [
 icons = organizeIconsList(icons);
 
 // Load icons data
-const iconsData = [];
+let output = '';
 Object.keys(icons).forEach((prefix) => {
 	const iconsList = icons[prefix];
 
@@ -49,16 +47,31 @@ Object.keys(icons).forEach((prefix) => {
 		}
 	});
 
-	// Get data for all icons
-	const data = collection.getIcons(iconsList);
-	Collection.optimize(data);
-
-	// Add to iconsData
-	iconsData.push(data);
+	// Get data for all icons as string
+	output += collection.scriptify({
+		icons: iconsList,
+		callback: 'add',
+		optimize: true,
+	});
 });
 
-// Export to string
-const output = 'IconifyPreload = ' + JSON.stringify(iconsData) + ';\n';
+// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
+output = `(function() { 
+	function add(data) {
+		try {
+			if (typeof self.Iconify === 'object' && self.Iconify.addCollection) {
+				self.Iconify.addCollection(data);
+				return;
+			}
+			if (typeof self.IconifyPreload === 'undefined') {
+				self.IconifyPreload = [];
+			}
+			self.IconifyPreload.push(data);
+		} catch (err) {
+		}
+	}
+	${output}
+})();\n`;
 
 // Save to file
 fs.writeFileSync(target, output, 'utf8');
@@ -106,8 +119,8 @@ function organizeIconsList(icons) {
  * - prefix
  * - name
  *
- * This function was copied from @iconify/core/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts
+ * This function was copied from @iconify/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
  */
 function stringToIcon(value) {
 	let provider = '';

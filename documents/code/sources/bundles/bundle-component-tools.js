@@ -11,8 +11,11 @@ const fs = require('fs');
 const tools = require('@iconify/tools');
 
 // Iconify component (this changes import statement in generated file)
-// Available options: 'react', 'react-with-api', 'vue' (for Vue 3), 'vue2'
-const component = 'react';
+// Available options: '@iconify/react' for React, '@iconify/vue' for Vue 3, '@iconify/vue2' for Vue 2, '@iconify/svelte' for Svelte
+const component = '@iconify/react';
+
+// Set to true to use require() instead of import
+const commoonJS = false;
 
 // File to save bundle to
 const target = __dirname + '/src/icons-bundle.js';
@@ -109,7 +112,9 @@ tools
 		// Export to bundle
 		const text = JSON.stringify(json);
 
-		let output = getImport(component) + '\n\n';
+		let output = commoonJS
+			? "const { addCollection } = require('" + component + "');\n\n"
+			: "import { addCollection } from '" + component + "';\n\n";
 		output += 'addCollection(' + text + ');\n';
 
 		// Save to file
@@ -120,27 +125,3 @@ tools
 	.catch((err) => {
 		console.error(err);
 	});
-
-/**
- * Get import statement for component
- */
-function getImport(component) {
-	const imports = {
-		'react': "import { addCollection } from '@iconify/react';",
-		'react-with-api':
-			"import { addCollection } from '@iconify/react-with-api';",
-		'vue': "import { addCollection } from '@iconify/vue';",
-		'vue2':
-			"import IconifyIcon from '@iconify/vue';\n\nconst addCollection = IconifyIcon.addCollection;",
-	};
-
-	if (imports[component] !== void 0) {
-		return imports[component];
-	}
-
-	throw new Error(
-		`Invalid value for "component" variable. Possible values: '${Object.keys(
-			imports
-		).join("', '")}'`
-	);
-}

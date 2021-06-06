@@ -277,9 +277,17 @@ import Iconify from './iconify-bundle';
 
 If you bundle Iconify SVG framework, you only need to include full file. You can link to a script using `[tag]script` tag or you can import it.
 
-If you do not bundle Iconify SVG framework, generated bundle must be included after SVG framework:
+If you do not bundle Iconify SVG framework, generated bundle can be included before SVG framework or after it:
 
 ```yaml
-src: sources/bundles/svg-framework-head-after.html
-hint: Loading bundle after SVG framework in head section.
+src: sources/bundles/svg-framework-head-before.html
+hint: Loading bundle before SVG framework in head section.
+extra:
+  - src: sources/bundles/svg-framework-footer-before.html
+    hint: Loading bundle before SVG framework in footer.
+  - src: sources/bundles/svg-framework-head-after.html
+    hint: Loading bundle after SVG framework in head section.
+replacements:
+  - search: preload-icons-bundle.js
+    replace: icons-bundle.js
 ```

@@ -1,10 +1,10 @@
 ```yaml
-title: Icon Bundles for Iconify for Vue 3
+title: Icon Bundles for Iconify for Vue 2
 types:
   IconifyJSON: '../../types/iconify-json.md'
 ```
 
-# Icon bundles for Iconify for Vue
+# Icon bundles for Iconify for Vue 2
 
 ```yaml
 include: sources/bundles/component-intro
@@ -12,7 +12,7 @@ replacements:
   - search: Iconify for React
     replace: Iconify for Vue
   - search: '/react/'
-    replace: '/vue/'
+    replace: '/vue2/'
 ```
 
 ## Generating data
@@ -23,7 +23,7 @@ replacements:
   - search: Iconify for React
     replace: Iconify for Vue
   - search: '/react/'
-    replace: '/vue/'
+    replace: '/vue2/'
 ```
 
 ## Difference with SVG framework {#difference}
@@ -41,7 +41,7 @@ replacements:
 include: sources/bundles/component-bundle
 replacements:
   - search: iconify/react
-    replace: iconify/vue
+    replace: iconify/vue2
 ```
 
 ### CommonJS module
@@ -50,7 +50,7 @@ replacements:
 include: sources/bundles/component-bundle-require
 replacements:
   - search: iconify/react
-    replace: iconify/vue
+    replace: iconify/vue2
 ```
 
 ## How to automate build process? {#automation}

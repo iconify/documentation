@@ -15,8 +15,11 @@ require './vendor/autoload.php';
 use Iconify\JSONTools\Collection;
 
 // Iconify component (this changes import statement in generated file)
-// Available options: 'react', 'react-with-api', 'vue' (for Vue 3), 'vue2'
-$component = 'react';
+// Available options: '@iconify/react' for React, '@iconify/vue' for Vue 3, '@iconify/vue2' for Vue 2, '@iconify/svelte' for Svelte
+$component = '@iconify/react';
+
+// Set to true to use require() instead of import
+$commoonJS = false;
 
 // File to save bundle to
 $target = __DIR__ . '/src/icons-bundle.js';
@@ -37,7 +40,7 @@ $icons = [
 $icons = organizeIconsList($icons);
 
 // Load icons data
-$output = getImport($component) . "\n\n";
+$output = $commoonJS ? "const { addCollection } = require('$component');\n\n" : "import { addCollection } from '$component';\n\n";
 foreach ($icons as $prefix => $iconsList) {
     // Load icon set
     $collection = new Collection($prefix);
@@ -109,8 +112,8 @@ function organizeIconsList($icons)
  * - prefix
  * - name
  *
- * This function was converted to PHP from @iconify/core/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts
+ * This function was converted to PHP from @iconify/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
  */
 function stringToIcon($value)
 {
@@ -154,28 +157,4 @@ function stringToIcon($value)
     }
 
     return null;
-}
-
-/**
- * Get import statement for component
- */
-function getImport($component)
-{
-    $imports = [
-        'react' => "import { addCollection } from '@iconify/react';",
-        'react-with-api' =>
-        "import { addCollection } from '@iconify/react-with-api';",
-        'vue' => "import { addCollection } from '@iconify/vue';",
-        'vue2' =>
-        "import IconifyIcon from '@iconify/vue';\n\nconst addCollection = IconifyIcon.addCollection;",
-    ];
-
-    if (isset($imports[$component])) {
-        return $imports[$component];
-    }
-
-    throw new Error(
-        'Invalid value for "component" variable. Possible values: \'' .
-        implode("', '", array_keys($imports)) . '\''
-    );
 }

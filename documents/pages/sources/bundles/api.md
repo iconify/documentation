@@ -46,3 +46,13 @@ Example, using `[func]Iconify.addCollection` for a callback that is used in SVG 
 ```yaml
 src: sources/bundles/uil.js
 ```
+
+## Importing component
+
+If you are using a component, you need to add import statement at start of file.
+
+API doesn't do that, it only wraps data. You need to add appropriate import statement yourself, then add generated file to your scripts, so it could be bundled with everything else.
+
+```yaml
+src: sources/bundles/import-component.js
+```

@@ -26,8 +26,9 @@
               separator: true
               clickable: false
             ./react.html: React
-            ./react-with-api.html: React with API
-            ./vue.html: Vue
+            ./vue.html: Vue 3
+            ./vue2.html: Vue 2
+            ./svelte.html: Svelte
             ./examples/:
               title: Examples
               separator: true

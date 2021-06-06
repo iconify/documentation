@@ -84,11 +84,13 @@ const target = __dirname + '/src/iconify-bundle.js';
  */
 (async function () {
 	let bundle = '';
+	const isIconifyBundled = !!sources.iconify;
+	const wrapperFunction = isIconifyBundled ? 'Iconify.addCollection' : 'add';
 
 	/**
 	 * Bundle Iconify
 	 */
-	if (sources.iconify) {
+	if (isIconifyBundled) {
 		bundle += fs.readFileSync(sources.iconify, 'utf8');
 
 		// Try to copy .d.ts
@@ -108,7 +110,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 		sources.json.forEach((file) => {
 			// Parse and stringify to minify file
 			const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-			bundle += 'Iconify.addCollection(' + JSON.stringify(data) + ');\n';
+			bundle += wrapperFunction + '(' + JSON.stringify(data) + ');\n';
 		});
 	}
 
@@ -169,6 +171,26 @@ const target = __dirname + '/src/iconify-bundle.js';
 	/**
 	 * Save bundle
 	 */
+	if (!isIconifyBundled) {
+		// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
+		bundle = `(function() { 
+		function add(data) {
+			try {
+				if (typeof self.Iconify === 'object' && self.Iconify.addCollection) {
+					self.Iconify.addCollection(data);
+					return;
+				}
+				if (typeof self.IconifyPreload === 'undefined') {
+					self.IconifyPreload = [];
+				}
+				self.IconifyPreload.push(data);
+			} catch (err) {
+			}
+		}
+		${bundle}
+	})();\n`;
+	}
+
 	fs.writeFileSync(target, bundle, 'utf8');
 	console.log(`Saved ${target} (${bundle.length} bytes)`);
 
@@ -245,7 +267,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 
 			// Export to bundle
 			const text = JSON.stringify(json);
-			bundle += 'Iconify.addCollection(' + text + ');\n';
+			bundle += wrapperFunction + '(' + text + ');\n';
 		}
 	}
 
@@ -265,7 +287,7 @@ const target = __dirname + '/src/iconify-bundle.js';
 		// Get data for all icons as string
 		bundle += collection.scriptify({
 			icons,
-			callback: 'Iconify.addCollection',
+			callback: wrapperFunction,
 			optimize: true,
 		});
 	}
@@ -314,7 +336,7 @@ function organizeIconsList(icons) {
  * - prefix
  * - name
  *
- * This function was copied from @iconify/core/src/icon/name.ts
+ * This function was copied from @iconify/utils/src/icon/name.ts
  * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts
  */
 function stringToIcon(value) {

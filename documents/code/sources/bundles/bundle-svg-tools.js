@@ -10,11 +10,6 @@ const fs = require('fs');
 // Installation: npm install --save-dev @iconify/tools
 const tools = require('@iconify/tools');
 
-// True if bundle should use IconifyPreload.
-// False if bundle should use Iconify.addCollection.
-// See bundles for SVG framework for details.
-const preload = true;
-
 // File to save bundle to
 const target = __dirname + '/assets/icons-bundle.js';
 
@@ -108,10 +103,25 @@ tools
 	})
 	.then((json) => {
 		// Export to bundle
-		const text = JSON.stringify(json);
-		const output = preload
-			? 'IconifyPreload = [' + text + '];\n'
-			: 'Iconify.addCollection(' + text + ');\n';
+		let output = 'add(' + JSON.stringify(json) + ');\n';
+
+		// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
+		output = `(function() { 
+	function add(data) {
+		try {
+			if (typeof self.Iconify === 'object' && self.Iconify.addCollection) {
+				self.Iconify.addCollection(data);
+				return;
+			}
+			if (typeof self.IconifyPreload === 'undefined') {
+				self.IconifyPreload = [];
+			}
+			self.IconifyPreload.push(data);
+		} catch (err) {
+		}
+	}
+	${output}
+})();\n`;
 
 		// Save to file
 		fs.writeFileSync(target, output, 'utf8');
