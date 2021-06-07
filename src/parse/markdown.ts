@@ -21,7 +21,7 @@ import { linkClasses } from './html/classes';
  */
 export function parseMD(source: ReadResult, relativeFile: string): ParseResult {
 	const filename = source.filename;
-	const text = source.text;
+	let text = source.text;
 	const { replacements, ...metadata } = source.metadata;
 	const context: MDContext = {
 		filename,
@@ -42,6 +42,18 @@ export function parseMD(source: ReadResult, relativeFile: string): ParseResult {
 		.use(renderInlineCode.bind(null, context))
 		.use(parseMDHeadings.bind(null, context));
 
+	// Remove hidden stuff
+	let index: number;
+	while ((index = text.indexOf('[hidden]')) !== -1) {
+		const match = '[/hidden]';
+		const end = text.indexOf(match);
+		if (end <= index) {
+			throw new Error(`Missing ${match} in ${filename}`);
+		}
+		text = text.slice(0, index) + text.slice(end + match.length);
+	}
+
+	// Render HTML
 	let html = markdown.render(text);
 
 	// Generate result
