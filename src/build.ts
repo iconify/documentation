@@ -7,6 +7,36 @@ import { urlToFile, indexFile, fileToURL } from './navigation/helpers';
 import { rawReplacements } from './replacements';
 import { relativeToAbsolute } from './urls';
 
+// Overwrite console.error with function that changes color, making it easy to see errors
+const oldLogError = console.error;
+const logError: typeof oldLogError = (...data: any[]) => {
+	const colors = {
+		reset: '\x1b[0m',
+		error: '\x1b[31m', // red
+		info: '\x1b[34m', // blue
+		notice: '\x1b[35m', // magenta
+		success: '\x1b[32m', // green
+	};
+
+	return oldLogError(
+		colors.error +
+			data
+				.map((item) => {
+					switch (typeof item) {
+						case 'string':
+						case 'number':
+							return item;
+
+						default:
+							return JSON.stringify(item);
+					}
+				})
+				.join(' ') +
+			colors.reset
+	);
+};
+console.error = logError;
+
 /**
  * Get page filename
  */
