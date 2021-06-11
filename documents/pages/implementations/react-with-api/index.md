@@ -21,6 +21,8 @@ functions:
 
 # Iconify for React with API
 
+`include notices/react-with-api`
+
 In addition to [SVG framework](../svg-framework/index.md), Iconify offers native components for several popular UI frameworks. Iconify for React is one of such components.
 
 Yet another icon component? What are advantages over other icon components?

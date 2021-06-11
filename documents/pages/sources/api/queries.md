@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify API Queries
-wip: true
 types:
   IconifyIcon: '../../types/iconify-icon.md'
   IconifyJSON: '../../types/iconify-json.md'
@@ -105,6 +104,8 @@ Parameter `[prop]box` adds empty rectangle to SVG, which fixes icon import issue
 
 Combined with `[prop]download` parameter, `[prop]box` parameter this can be used to download SVG that will be imported correctly in software that does not support `[attr]viewBox`: `[url]/mdi/home.svg?box=1&download=1`.
 
+[hidden]
+
 ## Other queries
 
 Other queries will be added to documentation later.
@@ -114,3 +115,5 @@ Icon finder queries:
 - `[url]/collections` will return list of available collections.
 - `[url]/collection?prefix={prefix}` will return list of icons in a collection.
 - `[url]/search?query={query}` will search icons. By default, API will return only up to 64 results, you can set limit up to 999 by adding `[prop]limit` parameter. You can also set prefixes that you want to search by adding `[prop]prefixes` parameter with comma separated list of prefixes.
+
+[/hidden]

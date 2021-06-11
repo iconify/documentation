@@ -6,6 +6,8 @@ functions:
 
 # Iconify for React function: replaceIDs
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]replaceIDs()` finds IDs in SVG and replaces them with unique random IDs.

@@ -6,6 +6,8 @@ navigation: './index.md'
 
 # Iconify for React function: addAPIProvider
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]addAPIProvider()` adds API provider.

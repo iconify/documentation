@@ -4,6 +4,8 @@ title: 'Iconify for React Function: iconExists'
 
 # Iconify for React function: iconExists
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]iconExists()` checks if icon is available.

@@ -4,6 +4,8 @@ title: Changing Icon Color in Iconify for React with API
 
 # Icon color
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API tutorial](./index.md).
 
 You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.

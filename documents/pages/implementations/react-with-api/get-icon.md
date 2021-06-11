@@ -6,6 +6,8 @@ types:
 
 # Iconify for React function: getIcon
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]getIcon()` retrieves icon data.

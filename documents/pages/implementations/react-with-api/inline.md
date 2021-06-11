@@ -4,6 +4,8 @@ title: Inline Icons in Iconify for React with API
 
 # Inline icons
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API tutorial](./index.md).
 
 `include implementations/inline-intro`

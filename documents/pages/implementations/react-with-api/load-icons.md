@@ -8,6 +8,8 @@ types:
 
 # Iconify for React function: loadIcons
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]loadIcons()` retrieves icons from Iconify API.

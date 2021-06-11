@@ -19,26 +19,28 @@ Iconify is designed to be very flexible. Logically it is split into two parts: [
 
 Source provides icon data.
 
-Implementation renders icon data.
+Implementation renders icon, using data provided by source.
 
 ## Sources
 
 There are 3 types of icon sources:
 
 - [Iconify API](../sources/api/index.md) is used to load icon data on demand, however it requires visitors to be online to be able to access API.
-- [Bundled icons](../sources/bundles/index.md) can work without internet access, so they are usable for offline applications. Downside is it requires a bit more work for developers.
-- [Icon components](../sources/npm/index.md) are icon packages that contain one icon per packages. They are designed to be imported in [Iconify components](../implementations/components/index.md).
+- [Bundled icons](../sources/bundles/index.md) are bundles of icon data, which should be bundled with your application, allowing to render icons without internet access. Unlike API, bundles are usable for offline applications. Downside is it requires a bit more work for developers and you need to know which icons your application renders.
+- [Icon packages](../sources/npm/index.md) are NPM packages that contain one icon set per package, where icon data is split by one icon per file. They are similar to bundles, but are easier to use.
 
-All icon sources offer over 60k icons. SVG framework and some components support all icon sources, however few icon components only support [icon components](../sources/npm/index.md).
+All icon sources offer over 60k icons.
 
 See [icon sources](../sources/index.md) for more information.
 
 ## Implementations
 
-Main implementation is [Iconify SVG Framework](../implementations/svg-framework/index.md). It was designed to be a modern replacement for outdated icon fonts. It works with [Iconify API](../sources/api/index.md), [bundled icons](../sources/bundles/index.md) and [icon components](../sources/npm/index.md).
+Main implementation is [Iconify SVG Framework](../implementations/svg-framework/index.md). It was designed to be a modern replacement for outdated icon fonts.
 
 Additionally, various components are available:
 
 `include implementations/components`
 
 See [Iconify implementations](../implementations/index.md) for more information.
+
+All implementations can dynamically retrieve icon data from [Iconify API](../sources/api/index.md), can use [bundled icons](../sources/bundles/index.md) and [icon packages](../sources/npm/index.md).

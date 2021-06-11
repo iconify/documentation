@@ -7,37 +7,38 @@ replacements:
 
 # Icon sources
 
-You can use Iconify with any icons.
+To display an icon, [Iconify implementation](../implementations/index.md) must have data for that icon.
 
-By default, Iconify includes over 60k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets.
-
-You can also use Iconify with your own icons or premium icons. Iconify offers [various tools](../tools/index.md) for importing, manipulating and exporting icon sets. There are [several examples](../tools/node/examples.md) showing how to import some popular icon sets, such as [FontAwesome Pro](../tools/node/import-fa-pro.md).
+There are multiple ways to provide data for icons, each has its advantages and disadvantages.
 
 ## Iconify API {#api}
 
-[Iconify API](./api/index.md) makes it easy to use thousands of icons without creating any icon bundles. Icons are loaded on demand. Loading icons on demand has massive advantages over bundles:
+[Iconify API](./api/index.md) is the main source of icons.
+
+API sends data for icons on demand. Loading icons on demand has massive advantages over other methods:
 
 - No need to pre-package icons. Icons are loaded dynamically when needed. That makes it very easy to use.
-- Only the icons used on web pages are loaded. That means:
-  - Huge choice of icons. Icons that are not used are not loaded, so there is no limit on how many icons can be served by API.
-  - Developers are no longer limited to one icon set. Developers can mix icons from Material Design Icons, FontAwesome, Unicons and many other icon sets on the same page.
+- Only the icons used on web pages are loaded. No need to waste bandwidth on loading icons that are not displayed.
+- Tools can be developed that allow users choose any icon available on Iconify API. There are over 60k icons to choose from with public Iconify API and you can add [custom API providers](./api/providers.md) for even more icons.
 
-By using [Iconify API](./api/index.md), you are relying on uptime of third party servers. Sometimes it is not desirable.
+Disadvantage of using API is API must be reachable. This means your applications must have access to internet. If you need to use icons offline, use one of other methods.
 
-### Custom API
-
-[API software is open source](https://github.com/iconify/api.js), which means you can host your own API on your servers. That allows you to have full control over servers or to host your own icon sets.
+By default, using API means relying on third party service. However, [API software is open source](https://github.com/iconify/api.js), which means you can host your own API on your servers. That allows you to have full control over servers instead of relying on third party service.
 
 ## Bundled icons
 
-Iconify API requires the visitor to be online. Sometimes that is a bad thing, but do not worry, there are alternative solutions.
+[Icon bundles](./bundles/index.md) are sets of icon data. You can build icon bundles for icons that are used in your application, making icon data available offline.
 
-The easiest solution is to create [icon bundles](./bundles/index.md). This requires a bit of coding. Icon sets are available on NPM and Packagist, making it easy to use with Node.js and PHP build tools.
+This requires a bit of coding. Icon sets are available on NPM and Packagist, making it easy to use with Node.js and PHP build tools.
 
-## Icon components
+## Icon packages
 
-Most of the [Iconify components](../implementations/components/index.md) rely on [icon components](./npm/index.md) to provide icon data.
+[Icon packages](./npm/index.md) are similar to bundles, but provide icon data for one icon at a time.
 
-[Icon components](./npm/index.md) are very easy to use: import icon component and pass data to Iconify implementation.
+Icon packages are very easy to use: import icon data from package and pass data to Iconify implementation.
 
-Unlike [icon bundles](./bundles/index.md) that bundle several icons in one file, [icon components](./npm/index.md) use separate files for each icon.
+## Available Icons
+
+All sources listed above are not tied to only icons available with Iconify.
+
+You can use Iconify with any icons. Iconify offers [various tools](../tools/index.md) for importing, manipulating and exporting icon sets. There are [several examples](../tools/node/examples.md) showing how to import some popular icon sets, such as [FontAwesome Pro](../tools/node/import-fa-pro.md).

@@ -12,9 +12,15 @@
               children:
                 ./hosting-php/: PHP
                 ./hosting-js/: Node.js
+            ./providers.html:
+              title: API Providers
+              wip: true
+            ./config.html:
+              title: Using custom API
+              wip: true
             ./queries.html:
               title: API Queries
-              wip: true
+              # wip: true
         ./bundles/:
           title: Bundled Icons
           children:
@@ -32,7 +38,7 @@
             ./examples/:
               title: Examples
               separator: true
-        ./npm/: Icon Components
+        ./npm/: Icon Packages
         ./json/: Iconify Icon Sets
     /implementations/:
       title: Implementations
@@ -107,6 +113,7 @@
                 ./inline.html: Inline Icons
             ../react-with-api/:
               title: React with API
+              hidden: true
               children:
                 ./color.html: Icon Color
                 ./dimensions.html: Icon Dimensions
@@ -160,6 +167,7 @@
     ./adobe-xd/:
       title: Adobe XD Plug-In
       wip: true
+      hidden: true
 /icon-finder/:
   title: Icon Finder
   wip: true

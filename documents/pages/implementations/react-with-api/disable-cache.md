@@ -8,6 +8,8 @@ functions:
 
 # Iconify for React function: disableCache
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]disableCache()` disables caching in `[prop]localStorage` and `[prop]sessionStorage`.

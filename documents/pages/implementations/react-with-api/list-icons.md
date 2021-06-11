@@ -4,6 +4,8 @@ title: 'Iconify for React Function: listIcons'
 
 # Iconify for React function: listIcons
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]listIcons()` lists available icons.

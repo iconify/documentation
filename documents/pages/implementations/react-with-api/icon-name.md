@@ -6,6 +6,8 @@ navigation: './functions.md'
 
 # IconifyIconName type
 
+`include notices/react-with-api`
+
 `include types/iconify-icon-name`
 
 ## API providers

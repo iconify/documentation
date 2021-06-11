@@ -4,6 +4,8 @@ title: Transforming Icon in Iconify for React with API
 
 # Transformations
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API tutorial](./index.md).
 
 `include implementations/transform-intro`

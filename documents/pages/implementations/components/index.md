@@ -12,11 +12,11 @@ Iconify offers components for several popular frameworks:
 
 `include implementations/sources/heading`
 
-### Implementations with API support {#with-api}
+### API support {#with-api}
 
 `include implementations/sources/with-api`
 
-### Implementations without API support {#without-api}
+### Usage without API {#without-api}
 
 `include implementations/sources/without-api`
 

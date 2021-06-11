@@ -8,6 +8,8 @@ functions:
 
 # Iconify for React function: enableCache
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
 Function `[func]enableCache()` enables or toggles caching in `[prop]localStorage` and `[prop]sessionStorage`.

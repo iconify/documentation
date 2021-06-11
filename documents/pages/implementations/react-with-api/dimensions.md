@@ -4,6 +4,8 @@ title: Changing Icon Dimensions in Iconify for React with API
 
 # Icon dimensions
 
+`include notices/react-with-api`
+
 This tutorial is part of [Iconify for React with API tutorial](./index.md).
 
 By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio.

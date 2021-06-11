@@ -1,17 +1,21 @@
 ```yaml
-title: Icon Components
+title: Icon Packages
 replacements:
   - code: '60k'
     value: '${counters.icons-short}'
+  - code: '60,000'
+    value: '${counters.icons}'
+  - code: '80 icon sets'
+    value: '${counters.sets} icon sets'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 functions:
   addIcon: ../../implementations/svg-framework/add-icon.md
 ```
 
-# Icon components
+# Icon packages
 
-Icon components are simple files that store icon data, one icon per file. Data is `[type]IconifyIcon` object:
+Icon packages are NPM packages that contain data for icons from one icon set, one icon per file. Data is `[type]IconifyIcon` object:
 
 ```json
 {
@@ -25,9 +29,9 @@ For more information about `[type]IconifyIcon` type see [IconifyIcon documentati
 
 ## Usage
 
-Icon data is used in Iconify components:
+Icon data can be used in Iconify components, providing icon data instead of icon name:
 
-`include implementations/components-no-api`
+`include implementations/components`
 
 Icon data is passed as parameter to Iconify icon component, like this (example for React component):
 
@@ -51,20 +55,52 @@ export function MyComponent() {
 }
 ```
 
-It can also be used in [SVG framework](../../implementations/svg-framework/index.md) using `[func]addIcon()` function:
+### addIcon
+
+It can also be used with `[func]addIcon()` function.
+
+In [SVG framework](../../implementations/svg-framework/index.md) you cannot pass icon data as parameter, but you can use `[func]addIcon()` to set a name for icon:
 
 ```js
-Iconify.addIcon('mdi:network-outline', {
-	body:
-		'<path d="M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7z" fill="currentColor"/>',
+Iconify.addIcon('custom-icon', {
+	body: '<path d="M15 20a1 1 0 0 0-1-1h-1v-2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4v2h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7m-8-5V5h10v10H7z" fill="currentColor"/>',
 	width: 24,
 	height: 24,
 });
 ```
 
+then refer to icon by name:
+
+```html
+<span class="iconify" data-icon="custom-icon"></span>
+```
+
+Function `[func]addIcon()` is also available in all components.
+
+```vue
+<template>
+	<Icon icon="demo" />
+</template>
+
+<script>
+import { Icon, addIcon } from '@iconify/vue';
+import demoIcon from '@iconify-icons/dashicons/info-outline';
+
+addIcon('demo', demoIcon);
+
+export default {
+	components: {
+		Icon,
+	},
+};
+</script>
+```
+
+In example above, `[func]addIcon` is used in same file as component. If you are using the same icon in multiple components, you need to add it only once in any file that is executed before your application renders components.
+
 ## Available icons
 
-All icon sets available with [Iconify API](../api/index.md) are available as standalone icon components. There are over 60,000 icons from more than 80 icon sets.
+All icon sets available with [Iconify API](../api/index.md) are available as standalone icon packages. There are over 60,000 icons from more than 80 icon sets.
 
 ## Packages
 
@@ -77,7 +113,7 @@ where `[str]{prefix}` is icon set prefix.
 
 To import an icon, add icon name after package, for example, icon `[icon]mdi-light:home` can be imported from `[str]'@iconify-icons/mdi-light/home'` (ES module) or `[str]'@iconify/icons-mdi-light/home'` (CommonJS module)
 
-It is recommended that you use ES6 module, recent versions of Node.js do support it. CommonJS are legacy packages.
+It is recommended that you use ES6 module, recent versions of Node.js do support it. CommonJS are packages for people that use outdated bundler software.
 
 ## TypeScript support
 
@@ -93,4 +129,4 @@ Few examples of icon names:
 
 See Iconify components for usage:
 
-`include implementations/components-no-api`
+`include implementations/components`

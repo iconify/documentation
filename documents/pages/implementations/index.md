@@ -13,11 +13,11 @@ Implementations render icons.
 
 `include implementations/sources/heading`
 
-### Implementations with API support {#with-api}
+### API support {#with-api}
 
 `include implementations/sources/with-api`
 
-### Implementations without API support {#without-api}
+### Usage without API {#without-api}
 
 `include implementations/sources/without-api`
 
@@ -43,7 +43,9 @@ Iconify offers components for several popular frameworks:
 
 `include implementations/components`
 
-`include implementations/components-types`
+All components support [Iconify API](../sources/api/index.md), loading icon data on demand.
+
+If you want to use component offline, all components also support various options to render icons without API: [icon bundles](../sources/bundles/index.md), [icon components](../sources/npm/index.md).
 
 ## Components vs SVG Framework
 
