@@ -22,6 +22,8 @@ If you are publishing icons, you can host your own Iconify API server that inclu
 
 How is it done?
 
+`include sources/api/namespaces/animation`
+
 ## Provider in icon name
 
 Icon names in Iconify implementations have 3 parts:
