@@ -12,7 +12,7 @@ navigation: './functions.md'
 
 ## API providers
 
-`include implementations/api-providers`
+`include implementations/api-providers-short`
 
 ## Examples
 

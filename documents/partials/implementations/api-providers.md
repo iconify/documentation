@@ -1,3 +1,14 @@
 API providers allow using icons from multiple API in the same document. For example, you can use default Iconify icons and custom icons from IconScout or Icons8 or custom API.
 
-To support providers, syntax for icon names have been extended. Usually, syntax contains prefix and icon name: `[icon]prefix:name`. To specify API provider in icon syntax, add it before prefix with `[str]@` before provider ID: `[icon]@provider:prefix:name`.
+`include sources/api/namespaces/animation`
+
+To support providers, syntax for icon names have been extended. Icon names in Iconify implementations have 3 parts:
+
+`include sources/api/namespaces/name`
+
+All parts are separated by `[str]:`, provider is optional and can be skipped if empty.
+
+Examples:
+
+- `[icon]@my-icons:line-24:home`: icon is retrieved from provider `[str]my-icons`. Icon name for that provider is `[icon]line-24:home`.
+- `[icon]mdi-light:home`: icon does not have provider, so provider is empty. Empty value is used for public Iconify API.

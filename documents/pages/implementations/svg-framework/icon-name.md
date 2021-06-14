@@ -8,9 +8,9 @@ navigation: './functions.md'
 
 `include types/iconify-icon-name`
 
-## API providers
+## Icon name as string
 
-`include implementations/api-providers`
+`include implementations/api-providers-short`
 
 ## Examples
 

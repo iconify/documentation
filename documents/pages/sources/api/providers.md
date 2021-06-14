@@ -1,6 +1,7 @@
 ```yaml
 title: Iconify API Providers
-wip: true
+types:
+  APIConfig: ./providers.md#api-config
 replacements:
   - code: '/2/2.0.0/'
     value: '/${iconify2.version.major}/${iconify2.version.full}/'
@@ -28,9 +29,7 @@ How is it done?
 
 Icon names in Iconify implementations have 3 parts:
 
-- provider. Starts with `[str]@`, can be empty (empty value is used for public Iconify API)
-- prefix
-- name
+`include sources/api/namespaces/name`
 
 All parts are separated by `[str]:`, provider is optional and can be skipped if empty.
 
@@ -58,7 +57,7 @@ import { addAPIProvider } from '@iconify/react';
 
 addAPIProvider('local', {
 	// Array of host names.
-	// Mutliple hosts allow redundancy: if one host is down, SVG framework will query another host.
+	// Mutliple hosts allow redundancy: if one host is down, component will query another host.
 	resources: ['http://localhost:3000'],
 });
 ```
@@ -112,3 +111,43 @@ Currently Iconify does not offer authentication options.
 If you want to use API providers functionality to host premium icon sets or restrict access, you should add your own authentication logic to both API and clients. Doing that might be tricky due to lack of documentation for internal code, if you need any help, [open an issue at Iconify GitHub repository](https://github.com/iconify/iconify/issues).
 
 It is on a roadmap for premium edition of Iconify API software, which should make hosting premium icon sets very easy. However, that functionality is far away due to lack of development resources. You can help by [sponsoring Iconify on GitHub](https://github.com/iconify/iconify/sponsors) (click "Sponsor" button).
+
+## API Config
+
+Type `[type]APIConfig` passed to `[func]addAPIProvider()`, is an object.
+
+Properties:
+
+- `[prop]resources`, `[type]string[]`. List of host names, required. Must start with `[str]https://` or `[str]http://`, should not contain path.
+- `[prop]path`, `[type]string`. Path to root directory. Default value is `[str]/`.
+- `[prop]rotate`, `[type]number`. Timeout before the next host is used, in milliseconds. Default value is `[num]750`.
+- `[prop]timeout`, `[type]number`. Timeout before the API query is considered failed, in milliseconds. Default value is `[num]5000`.
+
+Examples:
+
+```js
+import { addAPIProvider } from '@iconify/svelte';
+
+// Override default API provider with Iconify API hosted at 'https://iconify.my-project.com'
+addAPIProvider('', {
+	resources: ['https://iconify.my-project.com'],
+});
+```
+
+```html
+<script>
+	IconifyProviders = {
+		// Empty prefix: overwrite default API provider configuration
+		'': {
+			// Use custom API first, use Iconify public API as backup
+			resources: [
+				'https://iconify.my-project.com',
+				'https://api.iconify.design',
+			],
+			// Wait for 1 second before switching API hosts
+			rotate: 1000,
+		},
+	};
+</script>
+<script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
+```

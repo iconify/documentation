@@ -41,3 +41,5 @@ export function renderHomeIcon() {
 	return <Icon icon="@local:material-icons:home" />;
 }
 ```
+
+See [API providers documentation](../../sources/api/providers.md) for details.

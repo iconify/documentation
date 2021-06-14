@@ -1,3 +1,4 @@
+// pages/sources/api/providers.md -> partials/sources/api/namespaces/animation.html
 $namespace-prefix: 'api-namespaces';
 $namespace-icons-height: 44px;
 $namespace-font-line-height: 20px;
@@ -17,7 +18,7 @@ $namespace-total-height: $namespace-height * 3 + $namespace-vertical-spacing * 2
 // Main container
 .#{$namespace-prefix} {
 	position: relative;
-	width: 700px;
+	width: 680px;
 	margin: 0 auto;
 	height: $namespace-total-height;
 
@@ -161,7 +162,7 @@ $namespace-total-height: $namespace-height * 3 + $namespace-vertical-spacing * 2
 }
 
 // Compact mode
-@media (max-width: 720px) {
+@media (max-width: 980px) {
 	.#{$namespace-prefix} {
 		width: 480px;
 	}
@@ -203,5 +204,51 @@ $namespace-total-height: $namespace-height * 3 + $namespace-vertical-spacing * 2
 			left: 0;
 			right: -8px;
 		}
+	}
+}
+
+// pages/sources/api/providers.md -> partials/sources/api/namespaces/name.html
+.api-icon-name {
+	table {
+		text-align: center;
+	}
+	tr {
+		margin: 0;
+		padding: 0;
+	}
+	td {
+		margin: 0;
+		padding: 0;
+		color: $text-dimmed-color;
+		position: relative;
+
+		&:nth-child(2n) {
+			padding: 0 0.25em;
+		}
+		&:first-child {
+			color: palette($namespace-palette-1, 600);
+		}
+		&:nth-child(3) {
+			color: palette($namespace-palette-2, 600);
+		}
+		&:nth-child(5) {
+			color: palette($namespace-palette-3, 600);
+		}
+	}
+
+	tbody {
+		td {
+			text-align: left;
+		}
+	}
+
+	.api-icon-name-provider {
+		color: palette($namespace-palette-1, 600);
+	}
+	.api-icon-name-prefix {
+		color: palette($namespace-palette-2, 600);
+	}
+	.api-icon-name-name {
+		color: palette($namespace-palette-1, 600);
 	}
 }

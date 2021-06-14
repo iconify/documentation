@@ -14,7 +14,6 @@
                 ./hosting-js/: Node.js
             ./providers.html:
               title: API Providers
-              wip: true
             ./config.html:
               title: Using custom API
               wip: true

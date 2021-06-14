@@ -44,12 +44,14 @@ const preloadIcons = {
 		'alert',
 		'github-twotone',
 		'image-twotone',
-		// partials/common/process.html
+		// partials/process/*, partials/sources/api/namespaces/animation.html
 		// 'cloud',
 		'cloud-twotone',
 		'cloud-down-twotone',
 		'computer-twotone',
 		'laptop-twotone',
+		// partials/sources/api/namespaces/name.html
+		'navigation-left-up',
 		// partials/visual-blocks/bundle.html (re-using footer)
 		'home-twotone-alt',
 		'github',
@@ -63,6 +65,7 @@ const preloadIcons = {
 		'cloud-down-twotone',
 		'computer-twotone',
 		'laptop-twotone',
+		// partials/
 	],
 };
 

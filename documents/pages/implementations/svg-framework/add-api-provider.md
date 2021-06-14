@@ -38,3 +38,5 @@ Iconify.addAPIProvider('local', {
 ```html
 <span class="iconify" data-icon="@local:material-icons:home"></span>
 ```
+
+See [API providers documentation](../../sources/api/providers.md) for details.
