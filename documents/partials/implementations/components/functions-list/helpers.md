@@ -1,0 +1,2 @@
+- `[func]replaceIDs(html)`. Randomizes IDs in generated string. This should be used when rendering icon based on data returned by `[func]getIcon()` to make sure elements inside each icon have unique IDs.
+- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.

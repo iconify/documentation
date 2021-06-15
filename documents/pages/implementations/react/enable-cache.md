@@ -8,9 +8,7 @@ functions:
 
 # Iconify for React function: enableCache
 
-`include notices/react-with-api`
-
-This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
+This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
 
 `include implementations/functions/cache/intro-enable`
 
@@ -25,7 +23,7 @@ This tutorial is part of [Iconify for React with API functions tutorial](./index
 ## Examples
 
 ```js
-import { enableCache } from '@iconify/react-with-api';
+import { enableCache } from '@iconify/react';
 
 // Enable caching in localStorage
 enableCache('local');

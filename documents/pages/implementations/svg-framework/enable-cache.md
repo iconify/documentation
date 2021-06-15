@@ -12,26 +12,20 @@ This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.
 
 This function is part of API module and is not available in [bundle without API support](./without-api.md).
 
-Function `[func]enableCache()` enables or toggles caching in `[prop]localStorage` and `[prop]sessionStorage`.
-
-When SVG framework retrieves new icons from API, icon data is stored in browser storage. Cache makes rendering faster because SVG framework can retrieve icons from cache instead of sending API query. Unlike API queries, cache is instant.
-
-By default, `[prop]localStorage` is enabled, `[prop]sessionStorage` is disabled.
+```yaml
+include: implementations/functions/cache/intro-enable
+replacements:
+  - search: component
+    replace: SVG framework
+```
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]storage`. Storage to enable.
-- `[prop]enable`, `[type]boolean`. Optional value. If `false`, function will disable storage instead of enabling it, behaving like `[func]disableCache()`.
+`include implementations/functions/cache/props-enable`
 
 ## Storage types
 
-First parameter can be one of the following:
-
-- `[str]local` for `[prop]localStorage`.
-- `[str]session` for `[prop]sessionStorage`.
-- `[str]all` for both `[prop]localStorage` and `[prop]sessionStorage`.
+`include implementations/functions/cache/storage-types`
 
 ## Examples
 
@@ -47,4 +41,4 @@ Iconify.enableCache('all', false);
 
 ## Notes
 
-`include implementations/cache-notes`
+`include implementations/functions/cache/notes`

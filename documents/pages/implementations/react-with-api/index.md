@@ -23,13 +23,9 @@ functions:
 
 `include notices/react-with-api`
 
-In addition to [SVG framework](../svg-framework/index.md), Iconify offers native components for several popular UI frameworks. Iconify for React is one of such components.
-
-Yet another icon component? What are advantages over other icon components?
-
-- One syntax for over 60,000 icons from 80+ icon sets.
-- Renders SVG. Many components simply render icon fonts, which look ugly. Iconify renders pixel perfect SVG.
-- Loads icons on demand. No need to bundle icons, component will automatically load icon data for icons that you use from Iconify API.
+```yaml
+include: implementations/components/intro
+```
 
 ## Component variations
 
@@ -97,17 +93,15 @@ Then use `[var]Icon` component with icon name as `[prop]icon` parameter:
 <Icon icon="mdi-light:home" />
 ```
 
-Component will automatically retrieve data for `[icon]mdi-light:home` from Iconify API and render it. There are over 60,000 icons available on Iconify API from various free and open source icon sets, including all the most popular icon sets.
+```yaml
+include: implementations/components/intro-online
+```
 
 ### Offline use
 
-Retrieving icon data from Iconify API requires visitor to be online. What if you want to use component offline or on local network?
-
-There are several options:
-
-- You can create [icon bundles](../../sources/bundles/index.md) for icons that you use.
-- You can install local copy of [Iconify API](../../sources/api/index.md) instead of relying on Iconify public API servers.
-- You can also use [icon components](../../sources/npm/index.md), similar to [basic React component](../react/index.md).
+```yaml
+include: implementations/components/intro-offline
+```
 
 See [icon bundles for Iconify for React](../../sources/bundles/react.md) documentation.
 
@@ -127,25 +121,15 @@ In addition to the properties mentioned above, the icon component accepts any ot
 
 ## Icon
 
-Icon name syntax is `[attr]icon="prefix:icon-name"` or `[attr]icon="prefix-icon-name"`. Second syntax can be used if prefix does not contain `[str]"-"`, it is kept for compatibility with icon fonts.
-
-For example, `[attr]icon="fa-arrow-left"` and `[attr]icon="fa:arrow-left"` are identical (both have a prefix `[str]"fa"`), but `[attr]icon="flat-color-icons:voice-presentation"` and `[attr]icon="flat-color-icons-voice-presentation"` are not the same (first has a prefix `[str]"flat-color-icons"`, second has a prefix `[str]"flat"` that does not exist).
-
-There are over 60,000 icons available from 80+ icon sets. [Browse icons sets](https://iconify.design/icon-sets/) to see all available icons.
-
-## Inline icon
-
-There are two components in Iconify for React: `[var]Icon` and `[var]InlineIcon`.
-
-They are identical, except for one thing: `[var]InlineIcon` adds `[prop]vertical-align` style to `[tag]svg`. This makes icon behave like an icon font.
-
-See [inline icons tutorial](./inline.md) for details.
+```yaml
+include: implementations/components/intro-icon
+```
 
 ## Color
 
-You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
-
-To add color to a monotone icon simply change text color.
+```yaml
+include: implementations/components/intro-color
+```
 
 ```jsx
 <Icon icon="mdi:home" style={{ color: 'red' }} />
@@ -155,16 +139,9 @@ For various ways to set color, see [how to change icon color in Iconify for Reac
 
 ## Dimensions and alignment
 
-By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio. This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet, just like icon fonts.
-
-There are several ways to change icon dimensions:
-
-- Setting `[prop]font-size` in style (or `[prop]fontSize` if you are using inline style).
-- Setting `[prop]width` and/or `[prop]height` property.
-
-Values for `[prop]width` and `[prop]height` can be numbers or strings.
-
-If you set only one dimension, another dimension will be calculated using the icon's width to height ratio. For example, if the icon size is 16 x 24, you set the height to 48, the width will be set to 32. Calculations work not only with numbers, but also with string values.
+```yaml
+include: implementations/components/intro-size
+```
 
 ```jsx
 <Icon icon="mdi:home" style={{ fontSize: '24px' }} />
@@ -174,9 +151,9 @@ For various ways to change icon dimensions and alignment, see [how to change ico
 
 ## Transformations
 
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
-
-These are not CSS transformations, transformations are applied inside SVG.
+```yaml
+include: implementations/components/intro-transform
+```
 
 For more details see [how to transform icon in Iconify for React](./transform.md).
 
@@ -213,7 +190,7 @@ Note: icons added to component with these functions are not stored in cache. Com
 - `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
 - `[func]enableCache()`. Enables caching in `[prop]localStorage` and `[prop]sessionStorage`.
 - `[func]disableCache()`. Disables caching in `[prop]localStorage` and `[prop]sessionStorage`.
-- `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
+- `[func]addAPIProvider()`. Adds custom API provider. See [API providers documentation](../../sources/api/providers.md).
 
 ### Internal API functions {#internal}
 

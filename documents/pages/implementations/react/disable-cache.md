@@ -8,9 +8,7 @@ functions:
 
 # Iconify for React function: disableCache
 
-`include notices/react-with-api`
-
-This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
+This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
 
 `include implementations/functions/cache/intro-disable`
 
@@ -25,14 +23,14 @@ This tutorial is part of [Iconify for React with API functions tutorial](./index
 ## Examples
 
 ```js
-import { disableCache } from '@iconify/react-with-api';
+import { disableCache } from '@iconify/react';
 
 // Disable caching in localStorage
 disableCache('local');
 ```
 
 ```js
-import { disableCache } from '@iconify/react-with-api';
+import { disableCache } from '@iconify/react';
 
 // Disable all caching
 disableCache('all');
