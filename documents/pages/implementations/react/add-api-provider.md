@@ -8,9 +8,7 @@ navigation: './index.md'
 
 This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
 
-Function `[func]addAPIProvider()` adds API provider.
-
-This is an experimental feature, function might change any time!
+`include implementations/functions/add-api-provider/intro`
 
 ## API providers
 
@@ -18,10 +16,7 @@ This is an experimental feature, function might change any time!
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]provider`, `[type]string`. Provider ID.
-- `[prop]config`, `[type]APIConfig`. API configuration object.
+`include implementations/functions/add-api-provider/props`
 
 ## Example
 
@@ -29,8 +24,7 @@ Function has the following parameters:
 import { addAPIProvider, Icon } from '@iconify/react';
 
 addAPIProvider('local', {
-	// Array of host names.
-	// Mutliple hosts allow redundancy: if one host is down, SVG framework will query another host.
+	// Array of host names
 	resources: ['http://localhost:3000'],
 });
 
@@ -40,4 +34,4 @@ export function renderHomeIcon() {
 }
 ```
 
-See [API providers documentation](../../sources/api/providers.md) for details.
+`include implementations/functions/add-api-provider/footer`

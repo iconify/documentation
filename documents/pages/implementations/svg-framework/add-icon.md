@@ -11,18 +11,22 @@ functions:
 
 This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.md#adding-icons).
 
-Function `[func]addIcon()` add one icon to SVG framework storage.
+```yaml
+include: implementations/functions/add-icon/intro
+replacements:
+  - search: component
+    replace: SVG framework
+```
 
 ## Usage
 
-`include implementations/add-icon-props`
+`include implementations/functions/add-icon/props`
 
 ## Examples
 
 ```js
 Iconify.addIcon('mdi:account-box', {
-	body:
-		'<path d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" fill="currentColor"/>',
+	body: '<path d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" fill="currentColor"/>',
 	width: 24,
 	height: 24,
 });
@@ -35,7 +39,7 @@ Iconify.addIcon('mdi:account-box', {
 
 ## API provider
 
-`include implementations/api-provider/description-svg`
+`include implementations/functions/add-icon/provider`
 
 Example:
 
@@ -59,10 +63,8 @@ In HTML code this icon can be used like this:
 <span class="iconify" data-icon="@custom:md:test"></span>
 ```
 
-Syntax is similar to default icon syntax, but with addition of provider `[str]@custom` before icon name. Provider in icon name always starts with `[str]@`.
+`include implementations/functions/add-icon/custom`
 
 ## One icon
 
-This function adds one icon set in `[type]IconifyIcon` format.
-
-If you want to add several icons or you have `[type]IconifyJSON` data, use function `[func]addCollection()` instead.
+`include implementations/functions/add-icon/footer`

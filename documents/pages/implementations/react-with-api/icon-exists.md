@@ -8,15 +8,11 @@ title: 'Iconify for React Function: iconExists'
 
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
-Function `[func]iconExists()` checks if icon is available.
+`include implementations/functions/icon-exists/intro`
 
 ## Usage
 
-Function has the following parameter:
-
-- `[prop]name`, `[type]string`. Icon name.
-
-Function returns `[type]boolean` value: `[bool]true` if icon is available, `[bool]false` if icon is not available.
+`include implementations/functions/icon-exists/props`
 
 ## Example
 

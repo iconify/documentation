@@ -10,9 +10,12 @@ This tutorial is part of [Iconify SVG Framework functions tutorial](./functions.
 
 This function is part of API module and is not available in [bundle without API support](./without-api.md).
 
-Function `[func]addAPIProvider()` adds API provider.
-
-This is an experimental feature, function might change any time!
+```yaml
+include: implementations/functions/add-api-provider/intro
+replacements:
+  - search: component
+    replace: SVG framework
+```
 
 ## API providers
 
@@ -20,17 +23,13 @@ This is an experimental feature, function might change any time!
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]provider`, `[type]string`. Provider ID.
-- `[prop]config`, `[type]APIConfig`. API configuration object.
+`include implementations/functions/add-api-provider/props`
 
 ## Example
 
 ```js
 Iconify.addAPIProvider('local', {
-	// Array of host names.
-	// Mutliple hosts allow redundancy: if one host is down, SVG framework will query another host.
+	// Array of host names
 	resources: ['http://localhost:3000'],
 });
 ```
@@ -39,4 +38,4 @@ Iconify.addAPIProvider('local', {
 <span class="iconify" data-icon="@local:material-icons:home"></span>
 ```
 
-See [API providers documentation](../../sources/api/providers.md) for details.
+`include implementations/functions/add-api-provider/footer`

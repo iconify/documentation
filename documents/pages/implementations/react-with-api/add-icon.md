@@ -13,11 +13,11 @@ functions:
 
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
-Function `[func]addIcon()` add one icon to SVG framework storage.
+`include implementations/functions/add-icon/intro`
 
 ## Usage
 
-`include implementations/add-icon-props`
+`include implementations/functions/add-icon/props`
 
 ## Examples
 
@@ -31,13 +31,11 @@ addIcon('mdi:account-box', {
 });
 ```
 
-## Notes
-
-- Icons added by this function are not cached in `[prop]localStorage` and `[prop]sessionStorage`.
+`include implementations/functions/add-icon/notes`
 
 ## API provider
 
-`include implementations/api-provider/description-component`
+`include implementations/functions/add-icon/provider`
 
 Example:
 
@@ -63,10 +61,8 @@ In component this icon can be used like this:
 <Icon icon="@custom:md:test" />
 ```
 
-Syntax is similar to default icon syntax, but with addition of provider `[str]@custom` before icon name. Provider in icon name always starts with `[str]@`.
+`include implementations/functions/add-icon/custom`
 
 ## One icon
 
-This function adds one icon set in `[type]IconifyIcon` format.
-
-If you want to add several icons or you have `[type]IconifyJSON` data, use function `[func]addCollection()` instead.
+`include implementations/functions/add-icon/footer`

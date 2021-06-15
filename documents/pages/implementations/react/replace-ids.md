@@ -8,22 +8,15 @@ functions:
 
 This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
 
-Function `[func]replaceIDs()` finds IDs in SVG and replaces them with unique random IDs.
-
-This function is meant to be used when you generate `[tag]svg` element yourself using data provided by `[func]getIcon()`.
+`include implementations/functions/replace-ids/intro-component`
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]data`, `[type]string`. Icon content.
-- `[prop]prefix`, `[type]string | function`. Optional prefix for generated IDs. It can be a `[type]string` or a callback that returns `[type]string`.
-
-Function returns `[type]string` containing icon data with IDs replaced.
+`include implementations/functions/replace-ids/props`
 
 ## Example
 
-This is a rather useless example. In real core this function is used when generating SVG code samples in Icon Finder, which is not as simple as this example.
+`include implementations/functions/replace-ids/example-component`
 
 ```js
 import { replaceIDs, getIcon } from '@iconify/react';

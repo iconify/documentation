@@ -151,3 +151,9 @@ addAPIProvider('', {
 </script>
 <script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
 ```
+
+## Provider name
+
+Provider name is specific to your code. It is used only to associate icon with API configuration. Actual API server has no effect on what you call provider.
+
+That means you can change it to whatever you want. Make sure you are using the same provider id in all your code.

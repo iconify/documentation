@@ -13,11 +13,11 @@ functions:
 
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
-Function `[func]addCollection()` adds icons collection to SVG framework storage.
+`include implementations/functions/add-collection/intro`
 
 ## Usage
 
-`include implementations/add-collection-props`
+`include implementations/functions/add-collection/props`
 
 ## Examples
 
@@ -60,13 +60,11 @@ addCollection({
 });
 ```
 
-## Notes
-
-- Icons added by this function are not cached in `[prop]localStorage` and `[prop]sessionStorage`.
+`include implementations/functions/add-collection/notes`
 
 ## API provider
 
-`include implementations/api-provider/description-component`
+`include implementations/functions/add-collection/provider`
 
 Example:
 
@@ -100,10 +98,8 @@ In HTML code this icon can be used like this:
 <Icon icon="@custom:md:test" />
 ```
 
-Syntax is similar to default icon syntax, but with addition of provider `[str]@custom` before icon name. Provider in icon name always starts with `[str]@`.
+`include implementations/functions/add-collection/custom`
 
 ## One icon
 
-This function adds and entire icon set in `[type]IconifyJSON` format.
-
-If you want to add only once icon and you have `[type]IconifyIcon` data, use function `[func]addIcon()` instead.
+`include implementations/functions/add-collection/footer`

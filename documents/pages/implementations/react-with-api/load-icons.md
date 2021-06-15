@@ -12,33 +12,19 @@ types:
 
 This tutorial is part of [Iconify for React with API functions tutorial](./index.md#functions).
 
-Function `[func]loadIcons()` retrieves icons from Iconify API.
-
-When to use this function:
-
-- To preload multiple icons that you will use later. This will make sure icon data is available when needed and it will load faster.
+`include implementations/functions/load-icons/intro`
 
 ## Usage
 
-Function has the following parameters:
-
-- `[prop]icons`, `[type](string | IconifyIconName)[]`. List of icons to load.
-- `[prop]callback`, `[type]function`. Optional callback to call. Callback is called not only when all icons have been retrieved, but also when part of icons have been retrieved.
-
-Function returns `[type]function` you can use to stop loading icons. It is needed when, for example, you are loading icons in a custom component, but component's life cycle ended before icons have loaded, so you need to remove callback.
+`include implementations/functions/load-icons/props`
 
 ## Icons list
 
-Icons list is an array. Each element can be a string, such as `[icon]mdi:home` or a `[type]IconifyIconName` object.
+`include implementations/functions/load-icons/props-icons`
 
 ## Callback
 
-Optional callback has the following parameters:
-
-- `[prop]loaded`, `[type]IconifyIconName[]`. List of icons that have been loaded.
-- `[prop]missing`, `[type]IconifyIconName[]`. List of icons that are not available on API.
-- `[prop]pending`, `[type]IconifyIconName[]`. List of icons that are still loading.
-- `[prop]unsubscribe`, `[type]function`. Function to call to cancel loading. It is the same as result of `[func]loadIcons()` call.
+`include implementations/functions/load-icons/props-callback`
 
 ## IconifyIconName type
 
@@ -46,40 +32,35 @@ Optional callback has the following parameters:
 
 ## Examples
 
-This function is mostly intended to be used for [SVG framework](../svg-framework/index.md), however it is available in this component too in case if someone needs it. Component uses it internally to toggle `[var]loaded` state when rendering icon. Examples below are more generic, not made specifically for component.
-
 Simple callback that loads one icon:
 
 ```js
-import { loadIcons, iconExists } from '@iconify/react-with-api';
+import { loadIcons } from '@iconify/react-with-api';
 
 const iconName = 'mdi:home';
-let loaded = iconExists(iconName);
+loadIcons([iconName], (loaded, missing, pending, unsubscribe) => {
+	if (loaded.length) {
+		console.log(
+			`Icon ${iconName} have been loaded and is ready to be renderered.`
+		);
+		return;
+	}
 
-if (!loaded) {
-	loadIcons([iconName], (loaded, missing, pending, unsubscribe) => {
-		if (loaded.length) {
-			loaded = true;
-			console.log(
-				`Icon ${iconName} have been loaded and is ready to be renderered.`
-			);
-			return;
-		}
+	if (missing.length) {
+		console.log(`Icon ${iconName} does not exist.`);
+		return;
+	}
 
-		if (missing.length) {
-			console.log(`Icon ${iconName} does not exist.`);
-			return;
-		}
-
-		if (pending.length) {
-			// Pending icons array will always be empty because in this example there is only one icon to load.
-			// Callback is called when something changes, with 1 icon there can only be 2 type of changes: icon has loaded or icon is missing.
-		}
-	});
-}
+	if (pending.length) {
+		// Pending icons list in this example is empty.
+		// If you call loadIcons() with multiple icons, pending list might not be empty, but for one icon it is always empty.
+		//
+		// Callback is called when something changes, with 1 icon there can only be 2 type of changes: icon has loaded or icon is missing.
+	}
+});
 ```
 
-Promise version of `[func]loadIcons()`:
+Async version of `[func]loadIcons()`:
 
 ```js
 import { loadIcons } from '@iconify/react-with-api';

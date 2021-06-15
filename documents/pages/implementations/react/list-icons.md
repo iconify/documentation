@@ -6,16 +6,11 @@ title: 'Iconify for React Function: listIcons'
 
 This tutorial is part of [Iconify for React functions tutorial](./index.md#functions).
 
-Function `[func]listIcons()` lists available icons.
+`include implementations/functions/list-icons/intro`
 
 ## Usage
 
-Function has the following optional parameters:
-
-- `[prop]provider`, `[type]string`. Lists only icons from one API provider.
-- `[prop]prefix`, `[type]string`. Lists only icons with specific prefix. Must be used in combination with provider (for Iconify public API provider is empty string `[str]""`).
-
-Function returns array of icon names.
+`include implementations/functions/list-icons/props`
 
 ## Examples
 
