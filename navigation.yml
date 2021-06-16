@@ -16,7 +16,6 @@
               title: API Providers
             ./config.html:
               title: Using custom API
-              wip: true
             ./queries.html:
               title: API Queries
               # wip: true

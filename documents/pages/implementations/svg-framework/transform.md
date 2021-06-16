@@ -23,7 +23,7 @@ class: highlight-box
 
 In example above, first icon is rotated using `[attr]data-rotate` attribute, second icon is rotated using CSS. First icon kept its 1em height, second icon became taller than it should be.
 
-Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to inline style. If you are using stylesheet, add `[str]important!` after rule because `[tag]svg` already has a dummy transformation that fixes SVG rendering bug in Firefox.
+Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to inline style.
 
 ## Flip
 

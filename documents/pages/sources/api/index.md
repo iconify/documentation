@@ -8,7 +8,7 @@ replacements:
 
 # Iconify API
 
-Iconify API serves icon data to visitors.
+Iconify API sends icon data on demand to [SVG Framework](../../implementations/svg-framework/index.md) or one of [Iconify components](../../implementations/components/index.md).
 
 ## How does it work? {#concept}
 
@@ -18,7 +18,7 @@ Iconify API serves icon data to visitors.
 
 When you are using an icon font, font contains all icons, even ones you do not need. That limits number of icons that a font can have.
 
-When you are using Iconify implementation that relies on Iconify API, such as [SVG Framework](../../implementations/svg-framework/index.md) or [Iconify components with API support](../../implementations/components/index.md), implementation requests data only for icons that are used on the current page. Iconify API sends only data for icons that implementation has requested.
+When you are using Iconify implementation that relies on Iconify API, such as [SVG Framework](../../implementations/svg-framework/index.md) or [Iconify components](../../implementations/components/index.md), implementation requests data only for icons that are used on the current page. Iconify API sends only data for icons that implementation has requested.
 
 Because implementations do not load icons they do not need, Iconify API can host many icons. Visitors do not waste bandwidth loading icons they do not see.
 
@@ -43,3 +43,4 @@ You can also use Iconify API software to host custom or premium icon sets.
 Available documentation for Iconify API:
 
 - [Hosting Iconify API](./hosting.md) explains how to setup API on your server.
+- [Iconify API providers](./providers.md) explains how to use multiple API servers for more icon choices.

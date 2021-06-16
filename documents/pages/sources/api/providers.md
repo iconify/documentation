@@ -136,6 +136,7 @@ addAPIProvider('', {
 
 ```html
 <script>
+	// Define global variable
 	IconifyProviders = {
 		// Empty prefix: overwrite default API provider configuration
 		'': {

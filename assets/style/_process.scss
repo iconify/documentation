@@ -55,12 +55,15 @@ $process-animation-height: 64px;
 		// Code samples
 		.code-blocks {
 			margin: 0;
+			+ .code-blocks {
+				margin-top: 4px;
+			}
 		}
 		.code-block-content {
 			padding: 3px 7px;
 		}
 
-		// Icons list
+		// Icons list (old)
 		.inline-code {
 			padding-left: 7px;
 			padding-right: 7px;

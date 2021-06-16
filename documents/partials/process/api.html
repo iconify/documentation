@@ -2,16 +2,18 @@
 	<dl>
 		<dt>
 			<p>
-				<code data-wrap="inline">mdi:home</code>
-				<code data-wrap="inline">mdi:alert</code>
+				<code data-wrap="block">&lt;Icon icon="mdi:home" /&gt;</code>
+				<code data-wrap="block"
+					>&lt;span data-icon="mdi:alert" class="iconify" /&gt;</code
+				>
 			</p>
 		</dt>
 		<dd>
-			Implementation (<a href="/implementations/svg-framework/index.md"
-				>SVG Framework</a
-			>, <a href="/implementations/react-with-api/index.md">React with API</a>,
-			etc...) has names of icons that it must render. Icon names are passed as
-			parameters to components or as placeholder element's attribute.
+			Developer passes icon name as attribute for
+			<a href="/implementations/components/index.md">icon component</a> or
+			<a href="/implementations/svg-framework/index.md"
+				>SVG Framework placeholder</a
+			>.
 		</dd>
 	</dl>
 	<dl>
@@ -25,32 +27,25 @@
 		<dd>
 			<p>API sends data for requested icons.</p>
 			<p>
-				API hosts thousands of icons, but sends only data for icons that
-				implementation has requested.
+				API hosts thousands of icons, but sends only data for icons that were
+				requested.
 			</p>
 		</dd>
 	</dl>
 	<dl>
 		<dt>
 			<code data-wrap="block">
-				&lt;p&gt;<span class="hljs-string"
-					>&lt;svg class="iconify iconify-inline" data-icon="mdi:home"
-					style="vertical-align: -0.125em" height="1em"
-					<span class="hljs-comment">...</span>&gt;<span class="hljs-comment"
-						>...</span
-					>&lt;/svg&gt;</span
-				>
-				Home&lt;/p&gt;<br />
-				&lt;div class="alert"&gt;<br />
-				&nbsp;
-				<span class="hljs-string"
-					>&lt;svg class="iconify" data-icon="mdi:alert" height="1em"
-					<span class="hljs-comment">...</span>&gt;<span class="hljs-comment"
-						>...</span
-					>&lt;/svg&gt;</span
-				>
-				Important alert!<br />
-				&lt;/div&gt;
+				&lt;svg width="1em" height="1em" viewBox="0 0 24 24"
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment"
+					>...</span
+				>&lt;/svg&gt;
+			</code>
+			<code data-wrap="block">
+				&lt;svg class="iconify iconify--mdi" data-icon="mdi:alert" width="1em"
+				height="1em" viewBox="0 0 24 24"
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment"
+					>...</span
+				>&lt;/svg&gt;
 			</code>
 		</dt>
 		<dd>

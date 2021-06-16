@@ -1,12 +1,12 @@
 <p>
-	No flip: <InlineIcon icon={check2Circle} />
+	No flip: <InlineIcon icon="bi:check2-circle" />
 </p>
 <p>
-	Horizontal flip: <InlineIcon icon={check2Circle} hFlip={true} />
+	Horizontal flip: <InlineIcon icon="bi:check2-circle" hFlip={true} />
 </p>
 <p>
-	Vertical flip: <InlineIcon icon={check2Circle} vFlip={true} />
+	Vertical flip: <InlineIcon icon="bi:check2-circle" vFlip={true} />
 </p>
 <p>
-	Both (or 180° rotation): <InlineIcon icon={check2Circle} hFlip={true} vFlip={true} />
+	Both (or 180° rotation): <InlineIcon icon="bi:check2-circle" hFlip={true} vFlip={true} />
 </p>

@@ -8,8 +8,9 @@ export function inlineDemo() {
 				Block:
 				{/* 
 				Adding class to first icon to trigger animations used by line-md icon set.
-				SVG framework automatically adds classes based on icon prefix,
-				but components do not because they handle raw icon data. 
+
+				SVG framework and newer React component automatically add classes based
+				on icon prefix, but React with API component does not.
 				*/}
 				<Icon icon="line-md:image-twotone" className="iconify--line-md" />
 				<Icon icon="mdi:account-box-outline" />
