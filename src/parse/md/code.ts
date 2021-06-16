@@ -73,6 +73,13 @@ const defaultCodeSample: Required<CodeSample> = {
 const validateSources: (keyof CodeSample)[] = ['src', 'css'];
 
 /**
+ * Dummy callback for replacing content
+ */
+function returnContent(str: string): string {
+	return str;
+}
+
+/**
  * Code tabs
  */
 type TabTypes = 'src' | 'css' | 'demo';
@@ -84,6 +91,7 @@ interface CodeTab {
 	raw: string;
 	html: string;
 	hint: string;
+	replace: typeof returnContent;
 }
 
 /**
@@ -191,7 +199,6 @@ function changeTokens(tokens: Token[]) {
 export function renderCode(context: MDContext, md: md) {
 	const codeHeader = '<code class="highlight hljs">';
 	const codeFooter = '</code>';
-	let replacements: Record<string, string> = Object.create(null);
 
 	/**
 	 * Get file contents
@@ -199,6 +206,30 @@ export function renderCode(context: MDContext, md: md) {
 	function getFile(filename: string): string {
 		let data = readFileSync(filename, 'utf8');
 		return replaceAll(data, context.replacements);
+	}
+
+	/**
+	 * Convert replacements to object
+	 */
+	function convertReplacements(
+		data: InlineCodeReplacement[]
+	): Record<string, string> {
+		const replacements: Record<string, string> = Object.create(null);
+		data.forEach((item) => {
+			const search = item.search;
+			const replace = item.replace;
+			if (
+				typeof search !== 'string' ||
+				typeof replace !== 'string' ||
+				!search.length
+			) {
+				throw new Error(
+					`Invalid value type for "replacement" in code block in ${context.filename}.`
+				);
+			}
+			replacements[search] = replace;
+		});
+		return replacements;
 	}
 
 	/**
@@ -294,7 +325,8 @@ export function renderCode(context: MDContext, md: md) {
 		title: string,
 		lang: string,
 		code: string,
-		hint: string
+		hint: string,
+		replace: typeof returnContent
 	) {
 		// Change content
 		code = cleanupCode(lang, code);
@@ -305,8 +337,9 @@ export function renderCode(context: MDContext, md: md) {
 			title,
 			lang,
 			raw: code,
-			html: highlightCode(lang, replaceContent(code)),
+			html: highlightCode(lang, replace(code)),
 			hint,
+			replace,
 		});
 	}
 
@@ -318,7 +351,8 @@ export function renderCode(context: MDContext, md: md) {
 		css: string,
 		title: string,
 		html: string,
-		hint: string
+		hint: string,
+		replace: typeof returnContent
 	) {
 		if (css !== '') {
 			// Remove extensions
@@ -335,9 +369,10 @@ export function renderCode(context: MDContext, md: md) {
 				'<div class="code-demo' +
 				(css === '' ? '' : ' ' + css) +
 				'">' +
-				replaceContent(html) +
+				replace(html) +
 				'</div>',
 			hint,
+			replace,
 		});
 	}
 
@@ -346,11 +381,16 @@ export function renderCode(context: MDContext, md: md) {
 	 */
 	function parseYaml(tabs: CodeTab[], code: string) {
 		const data = yaml.parse(code) as Required<CodeSample>;
+		const replacements: Record<string, string> = Object.create(null);
+
 		if (typeof data !== 'object' || typeof data.src !== 'string') {
 			// Do not treat it as custom code
-			renderTab(tabs, 'src', '', 'yaml', code, '');
+			renderTab(tabs, 'src', '', 'yaml', code, '', returnContent);
 			return;
 		}
+
+		const replaceContent = (str: string): string =>
+			replaceAll(str, replacements);
 
 		// Clean up data
 		for (const key in defaultCodeSample) {
@@ -404,8 +444,9 @@ export function renderCode(context: MDContext, md: md) {
 
 			if (data[attr] === void 0) {
 				// Copy default value
+				const defaultValue = defaultCodeSample[attr];
 				(data as unknown as Record<string, unknown>)[attr] =
-					defaultCodeSample[attr];
+					defaultValue instanceof Array ? [] : defaultValue;
 				continue;
 			}
 
@@ -423,7 +464,7 @@ export function renderCode(context: MDContext, md: md) {
 					break;
 
 				case 'replacements':
-					// Copy to global variable
+					// Validate replacements
 					if (!(data.replacements instanceof Array)) {
 						throw new Error(
 							`Invalid value type for "${attr}" in code block in ${context.filename}.`
@@ -499,7 +540,8 @@ export function renderCode(context: MDContext, md: md) {
 				source.title,
 				source.src.split('.').pop()!,
 				getFile(sourceFile),
-				source.hint
+				source.hint,
+				replaceContent
 			);
 		});
 
@@ -517,7 +559,8 @@ export function renderCode(context: MDContext, md: md) {
 				data.cssTitle,
 				'scss',
 				getFile(stylesheetFile),
-				data.cssHint
+				data.cssHint,
+				replaceContent
 			);
 		}
 
@@ -537,16 +580,10 @@ export function renderCode(context: MDContext, md: md) {
 				data.class,
 				data.demoTitle,
 				getFile(demoFile),
-				data.demoHint
+				data.demoHint,
+				replaceContent
 			);
 		}
-	}
-
-	/**
-	 * Apply replacements
-	 */
-	function replaceContent(str: string): string {
-		return replaceAll(str, replacements);
 	}
 
 	/**
@@ -558,7 +595,7 @@ export function renderCode(context: MDContext, md: md) {
 			let raw = '';
 			if (tab.raw !== '') {
 				const buff = Buffer.from(tab.raw, 'utf8');
-				raw = replaceContent(buff.toString('base64'));
+				raw = tab.replace(buff.toString('base64'));
 			}
 
 			// Container
@@ -571,9 +608,7 @@ export function renderCode(context: MDContext, md: md) {
 			// Title
 			if (tab.title !== '') {
 				code +=
-					'<div class="code-block-title">' +
-					replaceContent(tab.title) +
-					'</div>';
+					'<div class="code-block-title">' + tab.replace(tab.title) + '</div>';
 			}
 
 			// Content
@@ -591,7 +626,7 @@ export function renderCode(context: MDContext, md: md) {
 			// Hint
 			if (tab.hint !== '') {
 				code +=
-					'<div class="code-block-hint">' + replaceContent(tab.hint) + '</div>';
+					'<div class="code-block-hint">' + tab.replace(tab.hint) + '</div>';
 			}
 
 			// Close container
@@ -620,7 +655,7 @@ export function renderCode(context: MDContext, md: md) {
 		if (lang === 'yaml') {
 			parseYaml(tabs, code);
 		} else {
-			renderTab(tabs, 'src', '', lang, code, '');
+			renderTab(tabs, 'src', '', lang, code, '', returnContent);
 		}
 
 		return renderTabs(tabs);
