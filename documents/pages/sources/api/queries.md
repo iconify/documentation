@@ -31,7 +31,7 @@ src: sources/api/mdi.json
 
 JSONP response is similar to JSON, but it returns a JavaScript file. JSON response is wrapped in a callback. What's the point of JSONP? No need to deal with CORS settings, easy to use, works with very old browsers. Just set up a global callback in visitor's browser, add `[tag]script` tag and wait for callback to be called.
 
-[Iconify SVG Framework version 1.0](../../implementations/iconify1/index.md) uses JSONP to retrieve icon data. Newer versions use Fetch API, but with JSONP as a backup for browsers that do not support Fetch API.
+[Iconify SVG Framework version 1.0](../../icon-components/iconify1/index.md) uses JSONP to retrieve icon data. Newer versions use Fetch API, but with JSONP as a backup for browsers that do not support Fetch API.
 
 Example of a JSONP response:
 
@@ -65,7 +65,7 @@ Replace `[str]{prefix}` with icon set prefix.
 
 You cannot request data for multiple icon sets in same query. It is one query per icon set.
 
-Number of icons per query is not limited, however be aware that browsers have limit on URL length. Iconify implementations, such as [Iconify SVG Framework](../../implementations/svg-framework/index.md), limit URL length to 500. If URL is longer than 500 characters, API query is split into multiple queries.
+Number of icons per query is not limited, however be aware that browsers have limit on URL length. [Iconify icon components](../../icon-components/index.md) limit URL length to 500. If URL is longer than 500 characters, API query is split into multiple queries.
 
 Parameters:
 
@@ -91,9 +91,9 @@ Iconify API can also generate SVG, which can be used as a background image.
 
 Query format: `[url]/{prefix}/{name}.svg`
 
-See [using Iconify in CSS](../../implementations/css.md) for list of parameters.
+See [using Iconify in CSS](../../icon-components/css.md) for list of parameters.
 
-In addition to parameters described in [using Iconify in CSS tutorial](../../implementations/css.md), there are few parameters that do not apply to CSS:
+In addition to parameters described in [using Iconify in CSS tutorial](../../icon-components/css.md), there are few parameters that do not apply to CSS:
 
 - `[prop]download` forces browser to download file: `[str]download=1`.
 - `[prop]box` adds an empty rectangle to SVG that matches `[attr]viewBox`.

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?1d42" />
+		<title>Iconify SVG Framework 1.0</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../svg-framework/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> SVG Framework</a>
+<a href="./inline-vs-block.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Inline and Block Modes</a>
+</div>
+<h1>Iconify SVG framework</h1>
+<div class="notice notice--legacy">
+	<span class="iconify-inline" data-icon="line-md:alert"></span>
+	<p>This article is for outdated Iconify SVG Framework version 1.0.</p>
+	<p>
+		Documentation for the latest version
+		<a href="../svg-framework/">is available here</a>.
+	</p>
+</div><p>Iconify SVG framework is a modern replacement for icon fonts.</p>
+<p>It combines the pixel-perfect rendering of SVG with ease of use of glyph fonts while offering more choice than any glyph font or SVG framework.</p>
+<p>Unlike icon fonts, Iconify SVG framework only loads icons that are used on the current page, so visitors do not waste bandwidth loading hundreds or thousands of icons just to show a few icons.</p>
+<p>Iconify SVG framework was designed to be as easy to use as possible. You can change icon dimensions and color with CSS, just like icon fonts.</p>
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Adding icons to HTML is very simple:</p><p>Add script tag to include Iconify SVG framework. You can add it in head section (before <span class="hljs-inline-tag hljs-linkable">&lt;/head&gt;</span>) or at the end of page before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8xLzEuMC43L2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/1/1.0.7/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div><p>To add an icon, write placeholder <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span> (or it could be any other inline DOM element):</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZmEtc29saWQ6aG9tZSI+PC9zcGFuPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><span class="iconify-inline" data-icon="fa-solid:home"></span>
+</div></div></div></div><p>To change an icon, write a different icon name in the <span class="hljs-inline-prop">data-icon</span> attribute instead of &quot;<span class="hljs-string">fa-regular:home</span>&quot;.</p><p>Look in <a href="https://iconify.design/icon-sets/" target="_blank">icon collections</a> to find icons. Click an icon to see HTML code for that icon.</p><section class="content-section content-section--3"><H1 id="importing-svg-framework" class="heading--3">Importing SVG framework <a href="#importing-svg-framework" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can also import Iconify SVG framework in other script and bundle it with your code. This is useful if you are using tools like WebPack or Rollup.js to build your project.</p><p>Install <span class="hljs-inline-package hljs-linkable">@iconify/iconify@1</span> as dependency and import it in your project:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IEljb25pZnkgZnJvbSAnQGljb25pZnkvaWNvbmlmeSc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> Iconify <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/iconify&apos;</span>;<br>
+</code></div></div></div></section></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="how-does-it-work" class="heading--2">How does it work? <a href="#how-does-it-work" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify SVG framework works by locating icon placeholders, retrieving icon name from placeholder, retrieving icon data from Iconify API, then replacing the placeholder with SVG. This is done very quickly in a fraction of a second.</p><p>What are the advantages of this approach?</p><ul>
+<li>It is very easy to use, just like icon fonts.</li>
+<li>No need to embed icons in HTML code. Icons retrieved from Iconify API are cached, so they are retrieved only once. If you embed SVG into HTML code, you need to send it to the visitor on every page view.</li>
+<li>Only icons that are found on the current page are retrieved from API. Other SVG frameworks and icon fonts load entire icon sets, wasting your visitor&apos;s bandwidth.</li>
+</ul><p>What are the disadvantages?</p><ul>
+<li>It requires an internet connection. However, there is a solution for offline use, see <a href="../../sources/bundles/">Iconify icon bundles</a>.</li>
+<li>Relies on third party service. However, there is an option to host your own Iconify API, see <a href="../../sources/api/hosting.html">self-hosted API</a>.</li>
+</ul><section class="content-section content-section--3"><H1 id="usage-without-api" class="heading--3">Usage without API <a href="#usage-without-api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify SVG framework retrieves icon data from Iconify API. That makes it very easy to use because developer does not need to prepare the icon data. Downside is, visitor must be online to retrieve icon data.</p><p>However, SVG framework can also work without API. It allows using Iconify SVG framework in offline web applications.</p><p>See <a href="./without-api.html">using SVG framework without API</a> tutorial.</p></section></section>
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="icon-syntax" class="heading--2">Icon syntax <a href="#icon-syntax" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>An element must have tag other than <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span>. Usually, it is <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span>, but you can use any element, for example, <span class="hljs-inline-tag hljs-linkable">&lt;i&gt;</span> or <span class="hljs-inline-tag hljs-linkable">&lt;strong&gt;</span>.</p><p>For the Iconify SVG framework to treat the element as icon placeholder, the element must have &quot;<span class="hljs-string">iconify</span>&quot; among the list of classes.</p><p>Element also must have a <span class="hljs-inline-prop">data-icon</span> attribute with icon name as value.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="QW55IHRhZyB3aXRoIGNsYXNzIGFuZCBkYXRhLWljb246CjxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImZhLXNvbGlkOmhvbWUiPjwvc3Bhbj4KPGkgY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibWRpLWFjY291bnQtb2ZmIj48L2k+CjxzdHJvbmcKCWNsYXNzPSJpY29uaWZ5IHNvbWUtY3VzdG9tLWNsYXNzIgoJZGF0YS1pY29uPSJmbGF0LWNvbG9yLWljb25zOmNhbmNlbCIKPjwvc3Ryb25nPgo="><code class="highlight hljs">Any tag with class and data-icon:<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi-account-off&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">strong</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify some-custom-class&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;flat-color-icons:cancel&quot;</span><br>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo">Any tag with class and data-icon:
+<span class="iconify-inline" data-icon="fa-solid:home"></span>
+<i class="iconify-inline" data-icon="mdi-account-off"></i>
+<strong class="iconify-inline some-custom-class" data-icon="flat-color-icons:cancel"></strong>
+</div></div></div></div><p>Icon name syntax is <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;prefix:icon-name&quot;</span> or <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;prefix-icon-name&quot;</span>. Second syntax can be used if prefix does not contain &quot;<span class="hljs-string">-</span>&quot;, it is kept for compatibility with icon fonts.</p><p>For example, <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;fa-arrow-left&quot;</span> and <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;fa:arrow-left&quot;</span> are identical (both have a prefix &quot;<span class="hljs-string">fa</span>&quot;), but <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;flat-color-icons:voice-presentation&quot;</span> and <span class="hljs-inline-attr">data-icon</span>=<span class="hljs-string">&quot;flat-color-icons-voice-presentation&quot;</span> are not the same (first has a prefix &quot;<span class="hljs-string">flat-color-icons</span>&quot;, second has a prefix &quot;<span class="hljs-string">flat</span>&quot; that does not exist).</p></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="color" class="heading--2">Color <a href="#color" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.</p><p>To add color to the monotone icon simply change text color.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdiBjbGFzcz0ibGlnaHQtYmx1ZS1ibG9jayI+CglBbGwgaWNvbnMgaW5zaWRlIHRoaXMgZGl2IGFyZSBsaWdodCBibHVlLCBpbmNsdWRpbmcgYW4gdW1icmVsbGEgaWNvbgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iaW9uOnVtYnJlbGxhLXNoYXJwIj48L3NwYW4+CglhbmQgYXR0YWNobWVudCBpY29uCgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJlbnR5cG8tYXR0YWNobWVudCI+PC9zcGFuPgo8L2Rpdj4KPGRpdiBjbGFzcz0ib3JhbmdlLWJsb2NrIj4KCUFsbCB0ZXh0IGFuZCBpY29ucyBpbnNpZGUgdGhpcyBkaXYgYXJlIG9yYW5nZSwgaW5jbHVkaW5nIGEgaG91cmdsYXNzIGljb24KCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImJ4OmJ4LWhvdXJnbGFzcyI+PC9zcGFuPgoJYW5kIGEgYnJpZWZjYXNlIGljb24KCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImJ4OmJ4cy1icmllZmNhc2UtYWx0Ij48L3NwYW4+CjwvZGl2Pgo8ZGl2PlJlZCBob21lIGljb246IDxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImJ4OmJ4LWhvbWUiPjwvc3Bhbj48L2Rpdj4KPGRpdj4KCUljb24gd2l0aCBwYWxldHRlOgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibm90bzpwYWludGJydXNoIj48L3NwYW4+CjwvZGl2Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;light-blue-block&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;All icons inside this div are light blue, including an umbrella icon<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion:umbrella-sharp&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;and attachment icon<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;entypo-attachment&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;orange-block&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;All text and icons inside this div are orange, including a hourglass icon<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;bx:bx-hourglass&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;and a briefcase icon<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;bx:bxs-briefcase-alt&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Red home icon: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Icon with palette:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gQ2hhbmdlIHRleHQgY29sb3IgZm9yICIub3JhbmdlLWJsb2NrIiB0byAjZTcwCi5vcmFuZ2UtYmxvY2sgewoJY29sb3I6ICNlNzA7Cn0KLy8gQ2hhbmdlIGFsbCBpY29ucyBpbnNpZGUgIi5saWdodC1ibHVlLWJsb2NrIiB0byAjMDhmCi5saWdodC1ibHVlLWJsb2NrIC5pY29uaWZ5IHsKCWNvbG9yOiAjMDhmOwp9Ci8vIENoYW5nZSBpY29uICJieDpieC1ob21lIiB0byAjZTAwCi5pY29uaWZ5W2RhdGEtaWNvbj0nYng6YngtaG9tZSddIHsKCWNvbG9yOiAjZTAwOwp9Ci8vIEZhaWxlZCBhdHRlbXB0IHRvIGNoYW5nZSBpY29uICJub3RvOnBhaW50YnJ1c2giIHRvICMwZTAKLmljb25pZnlbZGF0YS1pY29uPSdub3RvOnBhaW50YnJ1c2gnXSB7Cgljb2xvcjogIzBlMDsKfQo="><code class="highlight hljs"><span class="hljs-comment">// Change text color for &quot;.orange-block&quot; to #e70</span><br>
+<span class="hljs-selector-class">.orange-block</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#e70</span>;<br>
+}<br>
+<span class="hljs-comment">// Change all icons inside &quot;.light-blue-block&quot; to #08f</span><br>
+<span class="hljs-selector-class">.light-blue-block</span> <span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#08f</span>;<br>
+}<br>
+<span class="hljs-comment">// Change icon &quot;bx:bx-home&quot; to #e00</span><br>
+<span class="hljs-selector-class">.iconify</span><span class="hljs-selector-attr">[data-icon=<span class="hljs-string">&apos;bx:bx-home&apos;</span>]</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#e00</span>;<br>
+}<br>
+<span class="hljs-comment">// Failed attempt to change icon &quot;noto:paintbrush&quot; to #0e0</span><br>
+<span class="hljs-selector-class">.iconify</span><span class="hljs-selector-attr">[data-icon=<span class="hljs-string">&apos;noto:paintbrush&apos;</span>]</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#0e0</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-index-color"><div class="light-blue-block">
+	All icons inside this div are light blue, including an umbrella icon
+	<span class="iconify-inline" data-icon="ion:umbrella-sharp"></span>
+	and attachment icon
+	<span class="iconify-inline" data-icon="entypo-attachment"></span>
+</div>
+<div class="orange-block">
+	All text and icons inside this div are orange, including a hourglass icon
+	<span class="iconify-inline" data-icon="bx:bx-hourglass"></span>
+	and a briefcase icon
+	<span class="iconify-inline" data-icon="bx:bxs-briefcase-alt"></span>
+</div>
+<div>
+	Red home icon: <span class="iconify-inline" data-icon="bx:bx-home"></span>
+</div>
+<div>
+	Icon with palette:
+	<span class="iconify-inline" data-icon="noto:paintbrush"></span>
+</div>
+</div></div></div></div><p>Color only works for icons that do not have a palette. Color in icons that do have a palette, like <span class="hljs-inline-icon">noto:paintbrush</span> in an example above, cannot be changed.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="dimensions" class="heading--2">Dimensions <a href="#dimensions" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, icon height is set to &quot;<span class="hljs-string">1em</span>&quot;, icon width is changed dynamically based on the icon&apos;s width to height ratio.</p><p>This makes it easy to change icon size by changing <span class="hljs-inline-prop">font-size</span> in the stylesheet, just like icon fonts:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdj4KCURlZmF1bHQgZm9udCBzaXplIGFuZCAxZW0gbG9jb21vdGl2ZSBpY29uOgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iY2lsOmxvY29tb3RpdmUiPjwvc3Bhbj4KPC9kaXY+CjxkaXYgY2xhc3M9ImJpZ2dlci1zYW1wbGUiPgoJQmlnZ2VyIGZvbnQgYW5kIDFlbSBwYXBlciBwbGFuZSBpY29uOgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iY2lsOnBhcGVyLXBsYW5lIj48L3NwYW4+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJiaWctaWNvbiI+CglEZWZhdWx0IGZvbnQgc2l6ZSBmb3IgdGV4dCwgNDhweCBmb250IHNpemUgZm9yIGEgdHJ1Y2sgaWNvbgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iY2lsOnRydWNrIj48L3NwYW4+CjwvZGl2Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Default font size and 1em locomotive icon:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;cil:locomotive&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bigger-sample&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;Bigger font and 1em paper plane icon:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;cil:paper-plane&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;big-icon&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;Default font size for text, 48px font size for a truck icon<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;cil:truck&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gQ2hhbmdlIGZvbnQtc2l6ZSBmb3Igc2Vjb25kIGxpbmUKLmJpZ2dlci1zYW1wbGUgewoJZm9udC1zaXplOiAyNHB4OwoJbGluZS1oZWlnaHQ6IDMycHg7Cn0KCi8vIENoYW5nZSBmb250LXNpemUgb25seSBmb3IgaWNvbiBpbnNpZGUgdGhpcmQgbGluZQouYmlnLWljb24gLmljb25pZnkgewoJZm9udC1zaXplOiA0OHB4OwoJbGluZS1oZWlnaHQ6IDFlbTsKfQo="><code class="highlight hljs"><span class="hljs-comment">// Change font-size for second line</span><br>
+<span class="hljs-selector-class">.bigger-sample</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">32px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">// Change font-size only for icon inside third line</span><br>
+<span class="hljs-selector-class">.big-icon</span> <span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">48px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1em</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-size-em"><div>
+	Default font size and 1em locomotive icon:
+	<span class="iconify-inline" data-icon="cil:locomotive"></span>
+</div>
+<div class="bigger-sample">
+	Bigger font and 1em paper plane icon:
+	<span class="iconify-inline" data-icon="cil:paper-plane"></span>
+</div>
+<div class="big-icon">
+	Default font size for text, 48px font size for a truck icon
+	<span class="iconify-inline" data-icon="cil:truck"></span>
+</div>
+</div></div></div></div><p>If you want icon to have specific size instead of &quot;<span class="hljs-string">1em</span>&quot;, you can change <span class="hljs-inline-prop">height</span> and/or <span class="hljs-inline-prop">width</span> by adding <span class="hljs-inline-prop">data-height</span> and/or <span class="hljs-inline-prop">data-width</span> attributes.</p><p>If only one attribute is set, another attribute will be calculated using the icon&apos;s width to height ratio.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdiBjbGFzcz0iYWxlcnQiPgoJUmVkICJhbGVydCIgaWNvbiwgZGF0YS1oZWlnaHQ9IjQ4IjoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaS1hbGVydCIgZGF0YS1oZWlnaHQ9IjQ4Ij48L3NwYW4+CjwvZGl2Pgo8ZGl2IGNsYXNzPSJoaWdobGlnaHQtYm94Ij4KCTxociAvPgoJSW4gZXhhbXBsZXMgYmVsb3cgaWNvbnMgaGF2ZSByZWQgYm9yZGVyLCBzbyB5b3UgY291bGQgc2VlIGljb24gZGltZW5zaW9ucy48YnIgLz4KCTxiciAvPgoJSWNvbiB3aXRoIHdpZHRoL2hlaWdodCByYXRpbyAmbHQ7IDE6Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJmYS1yZWd1bGFyOmlkLWJhZGdlIj48L3NwYW4+PGJyIC8+CglTYW1lIGljb24gd2l0aCBkYXRhLXdpZHRoIGFuZCBkYXRhLWhlaWdodCBhdHRyaWJ1dGVzIHNldCB0byAxZW06Cgk8c3BhbgoJCWNsYXNzPSJpY29uaWZ5IgoJCWRhdGEtaWNvbj0iZmEtcmVndWxhcjppZC1iYWRnZSIKCQlkYXRhLXdpZHRoPSIxZW0iCgkJZGF0YS1oZWlnaHQ9IjFlbSIKCT48L3NwYW4KCT48YnIgLz4KCTxiciAvPgoJSWNvbiB3aXRoIHdpZHRoL2hlaWdodCByYXRpbyAmZ3Q7IDE6Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJmYS1yZWd1bGFyOmhhbmRzaGFrZSI+PC9zcGFuPjxiciAvPgoJU2FtZSBpY29uIHdpdGggZGF0YS13aWR0aCBhbmQgZGF0YS1oZWlnaHQgYXR0cmlidXRlcyBzZXQgdG8gMWVtOgoJPHNwYW4KCQljbGFzcz0iaWNvbmlmeSIKCQlkYXRhLWljb249ImZhLXJlZ3VsYXI6aGFuZHNoYWtlIgoJCWRhdGEtd2lkdGg9IjFlbSIKCQlkYXRhLWhlaWdodD0iMWVtIgoJPjwvc3BhbgoJPjxiciAvPgo8L2Rpdj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;Red &quot;alert&quot; icon, data-height=&quot;48&quot;:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi-alert&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;highlight-box&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span><br>
+ &#xA0; &#xA0;In examples below icons have red border, so you could see icon dimensions.<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;Icon with width/height ratio <span class="hljs-symbol">&amp;lt;</span> 1:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-regular:id-badge&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;Same icon with data-width and data-height attributes set to 1em:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-regular:id-badge&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span>&lt;/span<br>
+ &#xA0; &#xA0;&gt;<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;Icon with width/height ratio <span class="hljs-symbol">&amp;gt;</span> 1:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+ &#xA0; &#xA0;Same icon with data-width and data-height attributes set to 1em:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span>&lt;/span<br>
+ &#xA0; &#xA0;&gt;<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gUmVkIGNvbG9yIGZvciBhbGVydCBpY29uCi5hbGVydCAuaWNvbmlmeSB7Cgljb2xvcjogI2QwMDsKCWZvbnQtc2l6ZTogMjRweDsgLy8gd2lsbCBub3QgY2hhbmdlIGljb24gc2l6ZQp9CgovLyBTaG93IGljb24gc2l6ZSB1c2luZyBib3gtc2hhZG93Ci5oaWdobGlnaHQtYm94IC5pY29uaWZ5IHsKCWJveC1zaGFkb3c6IDAgMCAwIDFweCAjZTAwOwp9Cg=="><code class="highlight hljs"><span class="hljs-comment">// Red color for alert icon</span><br>
+<span class="hljs-selector-class">.alert</span> <span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#d00</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>; <span class="hljs-comment">// will not change icon size</span><br>
+}<br>
+<br>
+<span class="hljs-comment">// Show icon size using box-shadow</span><br>
+<span class="hljs-selector-class">.highlight-box</span> <span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#e00</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-size-attr"><div class="alert">
+	Red &quot;alert&quot; icon, data-height=&quot;48&quot;:
+	<span class="iconify-inline" data-icon="mdi-alert" data-height="48"></span>
+</div>
+<div class="highlight-box">
+	<hr>
+	In examples below icons have red border, so you could see icon dimensions.<br>
+	<br>
+	Icon with width/height ratio &lt; 1:
+	<span class="iconify-inline" data-icon="fa-regular:id-badge"></span><br>
+	Same icon with data-width and data-height attributes set to 1em:
+	<span class="iconify-inline" data-icon="fa-regular:id-badge" data-width="1em" data-height="1em"></span><br>
+	<br>
+	Icon with width/height ratio &gt; 1:
+	<span class="iconify-inline" data-icon="fa-regular:handshake"></span><br>
+	Same icon with data-width and data-height attributes set to 1em:
+	<span class="iconify-inline" data-icon="fa-regular:handshake" data-width="1em" data-height="1em"></span><br>
+</div>
+</div></div></div></div><p>Why is Iconify SVG framework using <span class="hljs-inline-prop">data-</span> attributes instead of <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span>? To make it easier to change icon dimensions by changing only one dimension. You can change <span class="hljs-inline-prop">width</span> and/or <span class="hljs-inline-prop">height</span> by adding attributes or in the stylesheet, however, if you set only one attribute, Iconify SVG framework cannot reliably detect width or height change and set another attribute.</p><p>When setting <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> in attributes or stylesheet, make sure you set both attributes. Otherwise, bad things happen:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdj4KCVRoZXNlIGljb25zIGFyZSBzdXBwb3NlZCB0byBiZSBzcXVhcmUsIGJ1dCBvbmx5IG9uZSBhdHRyaWJ1dGUgaXMgc2V0IGluCglzdHlsZXNoZWV0OgoJPHNwYW4gY2xhc3M9Imljb25pZnkgc2V0LWhlaWdodCIgZGF0YS1pY29uPSJtZGk6ZXllZHJvcHBlciI+PC9zcGFuPgoJPHNwYW4gY2xhc3M9Imljb25pZnkgc2V0LXdpZHRoIiBkYXRhLWljb249Im1kaTpleWVkcm9wcGVyIj48L3NwYW4+CjwvZGl2Pgo8ZGl2PgoJSWYgYm90aCBhdHRyaWJ1dGVzIGFyZSBzZXQgaW4gc3R5bGVzaGVldCwgaWNvbiBzY2FsZXMgY29ycmVjdGx5OgoJPHNwYW4gY2xhc3M9Imljb25pZnkgc2V0LWhlaWdodCBzZXQtd2lkdGgiIGRhdGEtaWNvbj0ibWRpOmV5ZWRyb3BwZXIiPjwvc3Bhbj4KPC9kaXY+CjxkaXY+CglUaGVzZSBpY29ucyBhcmUgc3F1YXJlIGluIG1vZGVybiBicm93c2VycywgYnV0IGZhaWwgaW4gSW50ZXJuZXQgRXhwbG9yZXIsCgl3aGljaCBpcyB1bmZvcnR1bmF0ZWx5IHN0aWxsIHVzZWQgYnkgZW5vdWdoIHBlb3BsZSB0byBzdXBwb3J0IGl0LiBZb3UgY2FuIHVzZQoJdGhpcyBtZXRob2QsIGJ1dCBiZXR0ZXIganVzdCBhdm9pZCBpdDoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im1kaTpleWVkcm9wcGVyIiBoZWlnaHQ9IjQ4Ij48L3NwYW4+Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJtZGk6ZXllZHJvcHBlciIgd2lkdGg9IjQ4Ij48L3NwYW4+CjwvZGl2Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;These icons are supposed to be square, but only one attribute is set in<br>
+ &#xA0; &#xA0;stylesheet:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify set-height&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:eyedropper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify set-width&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:eyedropper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;If both attributes are set in stylesheet, icon scales correctly:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify set-height set-width&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:eyedropper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;These icons are square in modern browsers, but fail in Internet Explorer,<br>
+ &#xA0; &#xA0;which is unfortunately still used by enough people to support it. You can use<br>
+ &#xA0; &#xA0;this method, but better just avoid it:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:eyedropper&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;mdi:eyedropper&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gU2hvdyBpY29uIHNpemUgdXNpbmcgYm94LXNoYWRvdwouaWNvbmlmeSB7Cglib3gtc2hhZG93OiAwIDAgMCAxcHggI2UwMDsKfQoKLy8gU2V0IGhlaWdodAouc2V0LWhlaWdodCB7CgloZWlnaHQ6IDQ4cHg7Cn0KCi8vIFNldCB3aWR0aAouc2V0LXdpZHRoIHsKCXdpZHRoOiA0OHB4Owp9Cg=="><code class="highlight hljs"><span class="hljs-comment">// Show icon size using box-shadow</span><br>
+<span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#e00</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">// Set height</span><br>
+<span class="hljs-selector-class">.set-height</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">height</span>: <span class="hljs-number">48px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">// Set width</span><br>
+<span class="hljs-selector-class">.set-width</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-size-fail"><div>
+	These icons are supposed to be square, but only one attribute is set in
+	stylesheet:
+	<span class="iconify-inline set-height" data-icon="mdi:eyedropper"></span>
+	<span class="iconify-inline set-width" data-icon="mdi:eyedropper"></span>
+</div>
+<div>
+	If both attributes are set in stylesheet, icon scales correctly:
+	<span class="iconify-inline set-height set-width" data-icon="mdi:eyedropper"></span>
+</div>
+<div>
+	These icons are square in modern browsers, but fail in Internet Explorer,
+	which is unfortunately still used by enough people to support it. You can use
+	this method, but better just avoid it:
+	<span class="iconify-inline" data-icon="mdi:eyedropper" height="48"></span>
+	<span class="iconify-inline" data-icon="mdi:eyedropper" width="48"></span>
+</div>
+</div></div></div></div></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="transformations" class="heading--2">Transformations <a href="#transformations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.</p><section class="content-section content-section--3"><H1 id="flip" class="heading--3">Flip <a href="#flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To flip an icon, add <span class="hljs-inline-prop">data-flip</span> attribute:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdj4KCU5vIGZsaXA6Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJlbW9qaW9uZS12MTp0ZWFyLW9mZi1jYWxlbmRhciI+PC9zcGFuPgo8L2Rpdj4KPGRpdj4KCUhvcml6b250YWw6Cgk8c3BhbgoJCWNsYXNzPSJpY29uaWZ5IgoJCWRhdGEtaWNvbj0iZW1vamlvbmUtdjE6dGVhci1vZmYtY2FsZW5kYXIiCgkJZGF0YS1mbGlwPSJob3Jpem9udGFsIgoJPjwvc3Bhbj4KPC9kaXY+CjxkaXY+CglWZXJ0aWNhbDoKCTxzcGFuCgkJY2xhc3M9Imljb25pZnkiCgkJZGF0YS1pY29uPSJlbW9qaW9uZS12MTp0ZWFyLW9mZi1jYWxlbmRhciIKCQlkYXRhLWZsaXA9InZlcnRpY2FsIgoJPjwvc3Bhbj4KPC9kaXY+CjxkaXY+CglIb3Jpem9udGFsIGFuZCB2ZXJ0aWNhbDoKCTxzcGFuCgkJY2xhc3M9Imljb25pZnkiCgkJZGF0YS1pY29uPSJlbW9qaW9uZS12MTp0ZWFyLW9mZi1jYWxlbmRhciIKCQlkYXRhLWZsaXA9Imhvcml6b250YWwsdmVydGljYWwiCgk+PC9zcGFuPgoJKHNhbWUgYXMgMTgwJmRlZzsgcm90YXRpb24pCjwvZGl2Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;No flip:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:tear-off-calendar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Horizontal:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:tear-off-calendar&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Vertical:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:tear-off-calendar&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;vertical&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Horizontal and vertical:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:tear-off-calendar&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;(same as 180<span class="hljs-symbol">&amp;deg;</span> rotation)<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><code class="highlight hljs"></code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-transform-flip"><div>
+	No flip:
+	<span class="iconify-inline" data-icon="emojione-v1:tear-off-calendar"></span>
+</div>
+<div>
+	Horizontal:
+	<span class="iconify-inline" data-icon="emojione-v1:tear-off-calendar" data-flip="horizontal"></span>
+</div>
+<div>
+	Vertical:
+	<span class="iconify-inline" data-icon="emojione-v1:tear-off-calendar" data-flip="vertical"></span>
+</div>
+<div>
+	Horizontal and vertical:
+	<span class="iconify-inline" data-icon="emojione-v1:tear-off-calendar" data-flip="horizontal,vertical"></span>
+	(same as 180&#xB0; rotation)
+</div>
+</div></div></div></div><p>Possible values:</p><ul>
+<li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
+<li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
+<li>&quot;<span class="hljs-string">horizontal,vertical</span>&quot;: flip icon horizontally and vertically.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="rotation" class="heading--3">Rotation <a href="#rotation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To rotate an icon, add <span class="hljs-inline-prop">data-rotate</span> attribute:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdj4KCU5vIHJvdGF0aW9uOgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0ibm90bzpwYWludGJydXNoIj48L3NwYW4+CjwvZGl2Pgo8ZGl2PgoJOTAmZGVnOyByb3RhdGlvbjoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im5vdG86cGFpbnRicnVzaCIgZGF0YS1yb3RhdGU9IjkwZGVnIj48L3NwYW4+CjwvZGl2Pgo8ZGl2PgoJMTgwJmRlZzsgcm90YXRpb246Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJub3RvOnBhaW50YnJ1c2giIGRhdGEtcm90YXRlPSIxODBkZWciPjwvc3Bhbj4KPC9kaXY+CjxkaXY+CgkyNzAmZGVnOyByb3RhdGlvbjoKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249Im5vdG86cGFpbnRicnVzaCIgZGF0YS1yb3RhdGU9IjI3MGRlZyI+PC9zcGFuPgo8L2Rpdj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;No rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;90<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span> <span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;180<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span> <span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;270<span class="hljs-symbol">&amp;deg;</span> rotation:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span> <span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;270deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><code class="highlight hljs"></code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-transform-rotate"><div>
+	No rotation:
+	<span class="iconify-inline" data-icon="noto:paintbrush"></span>
+</div>
+<div>
+	90&#xB0; rotation:
+	<span class="iconify-inline" data-icon="noto:paintbrush" data-rotate="90deg"></span>
+</div>
+<div>
+	180&#xB0; rotation:
+	<span class="iconify-inline" data-icon="noto:paintbrush" data-rotate="180deg"></span>
+</div>
+<div>
+	270&#xB0; rotation:
+	<span class="iconify-inline" data-icon="noto:paintbrush" data-rotate="270deg"></span>
+</div>
+</div></div></div></div><p>Rotation can be done by 90&#xB0;, 180&#xB0;, and 270&#xB0;. Why only these angles? Because unlike CSS rotations, icon rotations are done inside an icon and modify the bounding box.</p><p>When an icon is rotated by 90&#xB0; and 270&#xB0;, the icon&apos;s <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> properties are swapped.</p><p>Possible values:</p><ul>
+<li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by 90 degrees.</li>
+<li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by 180 degrees.</li>
+<li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by 270 degrees.</li>
+</ul><p>Comparison with CSS rotation:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdj4KCU9yaWdpbmFsIGljb246Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJmYTphcnJvd3MtdiI+PC9zcGFuPgo8L2Rpdj4KCjxkaXY+CglJY29uIHJvdGF0ZWQgd2l0aCBkYXRhLXJvdGF0ZSBhdHRyaWJ1dGUKCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImZhOmFycm93cy12IiBkYXRhLXJvdGF0ZT0iOTBkZWciPjwvc3Bhbj4KCXRoYXQga2VlcHMgMWVtIGhlaWdodCBhbmQgZG9lcyBub3QgYWZmZWN0IHRleHQgYXJvdW5kIGl0Lgo8L2Rpdj4KPGRpdj4KCUljb24gcm90YXRlZCB3aXRoIENTUwoJPHNwYW4gY2xhc3M9Imljb25pZnkgcm90YXRlIiBkYXRhLWljb249ImZhOmFycm93cy12Ij48L3NwYW4+Cgl0aGF0IGRvZXMgYWZmZWN0IHRleHQgYXJvdW5kIGl0IGJlY2F1c2UgaXQgYmVjb21lcyB3aWRlciB0aGFuIGVsZW1lbnQncyBib3guCjwvZGl2Pgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Original icon:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa:arrows-v&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Icon rotated with data-rotate attribute<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa:arrows-v&quot;</span> <span class="hljs-attr">data-rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;that keeps 1em height and does not affect text around it.<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Icon rotated with CSS<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify rotate&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa:arrows-v&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;that does affect text around it because it becomes wider than element&apos;s box.<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gU2hvdyBpY29uIHNpemUgdXNpbmcgYm94LXNoYWRvdwouaWNvbmlmeSB7Cglib3gtc2hhZG93OiAwIDAgMCAxcHggI2UwMDsKfQoKLy8gUm90YXRlIGljb24gYnkgOTAgZGVncmVlcwoucm90YXRlIHsKCXRyYW5zZm9ybTogcm90YXRlKDkwZGVnKSAhaW1wb3J0YW50Owp9Cg=="><code class="highlight hljs"><span class="hljs-comment">// Show icon size using box-shadow</span><br>
+<span class="hljs-selector-class">.iconify</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#e00</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">// Rotate icon by 90 degrees</span><br>
+<span class="hljs-selector-class">.rotate</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">transform</span>: rotate(<span class="hljs-number">90deg</span>) <span class="hljs-meta">!important</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-index-transform-rotate-comparison"><div>
+	Original icon:
+	<span class="iconify-inline" data-icon="fa:arrows-v"></span>
+</div>
+
+<div>
+	Icon rotated with data-rotate attribute
+	<span class="iconify-inline" data-icon="fa:arrows-v" data-rotate="90deg"></span>
+	that keeps 1em height and does not affect text around it.
+</div>
+<div>
+	Icon rotated with CSS
+	<span class="iconify-inline rotate" data-icon="fa:arrows-v"></span>
+	that does affect text around it because it becomes wider than element&apos;s box.
+</div>
+</div></div></div></div><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="vertical-alignment" class="heading--2">Vertical alignment <a href="#vertical-alignment" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Many users are switching to Iconify from icon fonts. To make things easier, by default, the Iconify SVG framework behaves like an icon font.</p><p>Icon font characters are drawn by browsers like any other font, not like images.</p><p>What&apos;s the difference?</p><ul>
+<li>Fonts have the <span class="hljs-inline-prop">ascend</span> and <span class="hljs-inline-prop">descend</span> properties, which cause glyphs to render near the baseline.</li>
+<li>Images are rendered on the baseline.</li>
+</ul><p>Because of that difference, when switching from font to images, images appear to render above the text. This can be fixed by adding <span class="hljs-inline-prop">vertical-align</span> and that&apos;s exactly what Iconify SVG framework does by default.</p><p>So how to change behaviour?</p><section class="content-section content-section--3"><H1 id="inline-rendering" class="heading--3">Inline rendering <a href="#inline-rendering" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>To render icon inline, simply write a placeholder using an inline tag, such as <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span> or <span class="hljs-inline-tag hljs-linkable">&lt;i&gt;</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="QW4gaWNvbiA8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJmYS1zb2xpZDpob21lIj48L3NwYW4+IGFsaWduZWQgbGlrZSBpY29uIGZvbnQncyBnbHlwaC4="><code class="highlight hljs">An icon <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> aligned like icon font&apos;s glyph.</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo">An icon <span class="iconify-inline" data-icon="fa-solid:home"></span> aligned
+like icon font&apos;s glyph.
+</div></div></div></div><p>This will force the Iconify SVG framework to add <span class="hljs-inline-prop">vertical-align</span> style to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element to align it like icon font glyph:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZwoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCglhcmlhLWhpZGRlbj0idHJ1ZSIKCWZvY3VzYWJsZT0iZmFsc2UiCgl3aWR0aD0iMS4xM2VtIgoJaGVpZ2h0PSIxZW0iCglzdHlsZT0idmVydGljYWwtYWxpZ246IC0wLjEyNWVtOy1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IgoJcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIKCXZpZXdCb3g9IjAgMCA1NzYgNTEyIgoJY2xhc3M9Imljb25pZnkiCglkYXRhLWljb249ImZhLXNvbGlkOmhvbWUiCj4KCTxwYXRoCgkJZD0iTTI4MC4zNyAxNDguMjZMOTYgMzAwLjExVjQ2NGExNiAxNiAwIDAgMCAxNiAxNmwxMTIuMDYtLjI5YTE2IDE2IDAgMCAwIDE1LjkyLTE2VjM2OGExNiAxNiAwIDAgMSAxNi0xNmg2NGExNiAxNiAwIDAgMSAxNiAxNnY5NS42NGExNiAxNiAwIDAgMCAxNiAxNi4wNUw0NjQgNDgwYTE2IDE2IDAgMCAwIDE2LTE2VjMwMEwyOTUuNjcgMTQ4LjI2YTEyLjE5IDEyLjE5IDAgMCAwLTE1LjMgMHpNNTcxLjYgMjUxLjQ3TDQ4OCAxODIuNTZWNDQuMDVhMTIgMTIgMCAwIDAtMTItMTJoLTU2YTEyIDEyIDAgMCAwLTEyIDEydjcyLjYxTDMxOC40NyA0M2E0OCA0OCAwIDAgMC02MSAwTDQuMzQgMjUxLjQ3YTEyIDEyIDAgMCAwLTEuNiAxNi45bDI1LjUgMzFBMTIgMTIgMCAwIDAgNDUuMTUgMzAxbDIzNS4yMi0xOTMuNzRhMTIuMTkgMTIuMTkgMCAwIDEgMTUuMyAwTDUzMC45IDMwMWExMiAxMiAwIDAgMCAxNi45LTEuNmwyNS41LTMxYTEyIDEyIDAgMCAwLTEuNy0xNi45M3oiCgkJZmlsbD0iY3VycmVudENvbG9yIgoJPjwvcGF0aD4KPC9zdmc+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>=<span class="hljs-string">&quot;1.13em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: -0.125em;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">preserveAspectRatio</span>=<span class="hljs-string">&quot;xMidYMid meet&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 576 512&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span><br>
+&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>If you want to understand other attributes added to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> by Iconify SVG framework, see <a href="#svg-rendering">SVG rendering</a> section below.</p></section><section class="content-section content-section--3"><H1 id="block-rendering" class="heading--3">Block rendering <a href="#block-rendering" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you want to align icon perfectly, like an image, you need to tell Iconify SVG framework to use block mode.</p><p>The only difference between inline and block mode is, for block mode SVG framework does not add <span class="hljs-inline-prop">vertical-align</span> to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span>.</p><p>There are two ways to force block mode:</p><ul>
+<li>Adding <span class="hljs-inline-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span> attribute.</li>
+<li>Using <span class="hljs-inline-tag hljs-linkable">&lt;iconify-icon&gt;</span> tag instead of <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span>.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PGRpdj4KCUFuIGljb24gPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZmEtc29saWQ6aG9tZSIgZGF0YS1pbmxpbmU9ImZhbHNlIj48L3NwYW4+IGFsaWduZWQgbGlrZSBpbWFnZS4KPC9kaXY+CjxkaXY+CglBbm90aGVyIGljb24gPGljb25pZnktaWNvbiBkYXRhLWljb249ImZhLXNvbGlkOmhvbWUiPjwvaWNvbmlmeS1pY29uPiB1c2luZyBkaWZmZXJlbnQgc3ludGF4Lgo8L2Rpdj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;An icon <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span> <span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> aligned like image.<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0;Another icon <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span> using different syntax.<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><div>
+	An icon
+	<span class="iconify" data-icon="fa-solid:home"></span>
+	aligned like image.
+</div>
+<div>
+	Another icon <span class="iconify" data-icon="fa-solid:home"></span> using
+	different syntax.
+</div>
+</div></div></div></div><p>This will force the Iconify SVG framework to not add <span class="hljs-inline-prop">vertical-align</span> style to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element, so browsers render it like an image:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZwoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCglhcmlhLWhpZGRlbj0idHJ1ZSIKCWZvY3VzYWJsZT0iZmFsc2UiCgl3aWR0aD0iMS4xM2VtIgoJaGVpZ2h0PSIxZW0iCglzdHlsZT0iLW1zLXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IC13ZWJraXQtdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsgdHJhbnNmb3JtOiByb3RhdGUoMzYwZGVnKTsiCglwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IgoJdmlld0JveD0iMCAwIDU3NiA1MTIiCgljbGFzcz0iaWNvbmlmeSIKCWRhdGEtaWNvbj0iZmEtc29saWQ6aG9tZSIKCWRhdGEtaW5saW5lPSJmYWxzZSIKPgoJPHBhdGgKCQlkPSJNMjgwLjM3IDE0OC4yNkw5NiAzMDAuMTFWNDY0YTE2IDE2IDAgMCAwIDE2IDE2bDExMi4wNi0uMjlhMTYgMTYgMCAwIDAgMTUuOTItMTZWMzY4YTE2IDE2IDAgMCAxIDE2LTE2aDY0YTE2IDE2IDAgMCAxIDE2IDE2djk1LjY0YTE2IDE2IDAgMCAwIDE2IDE2LjA1TDQ2NCA0ODBhMTYgMTYgMCAwIDAgMTYtMTZWMzAwTDI5NS42NyAxNDguMjZhMTIuMTkgMTIuMTkgMCAwIDAtMTUuMyAwek01NzEuNiAyNTEuNDdMNDg4IDE4Mi41NlY0NC4wNWExMiAxMiAwIDAgMC0xMi0xMmgtNTZhMTIgMTIgMCAwIDAtMTIgMTJ2NzIuNjFMMzE4LjQ3IDQzYTQ4IDQ4IDAgMCAwLTYxIDBMNC4zNCAyNTEuNDdhMTIgMTIgMCAwIDAtMS42IDE2LjlsMjUuNSAzMUExMiAxMiAwIDAgMCA0NS4xNSAzMDFsMjM1LjIyLTE5My43NGExMi4xOSAxMi4xOSAwIDAgMSAxNS4zIDBMNTMwLjkgMzAxYTEyIDEyIDAgMCAwIDE2LjktMS42bDI1LjUtMzFhMTIgMTIgMCAwIDAtMS43LTE2LjkzeiIKCQlmaWxsPSJjdXJyZW50Q29sb3IiCgk+PC9wYXRoPgo8L3N2Zz4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>=<span class="hljs-string">&quot;1.13em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">preserveAspectRatio</span>=<span class="hljs-string">&quot;xMidYMid meet&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 576 512&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span><br>
+&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>If you want to understand other attributes added to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> by Iconify SVG framework, see <a href="#svg-rendering">SVG rendering</a> section below.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="svg-rendering" class="heading--2">SVG rendering <a href="#svg-rendering" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>The Iconify SVG framework changes SVG a little to make it behave like the icon fonts and to account for browser bugs.</p><p>An example of a rendered SVG:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZwoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCglhcmlhLWhpZGRlbj0idHJ1ZSIKCWZvY3VzYWJsZT0iZmFsc2UiCgl3aWR0aD0iMS4xM2VtIgoJaGVpZ2h0PSIxZW0iCglzdHlsZT0idmVydGljYWwtYWxpZ246IC0wLjEyNWVtOy1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IgoJcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIKCXZpZXdCb3g9IjAgMCA1NzYgNTEyIgoJY2xhc3M9Imljb25pZnkiCglkYXRhLWljb249ImZhLXNvbGlkOmhvbWUiCj4KCTxwYXRoCgkJZD0iTTI4MC4zNyAxNDguMjZMOTYgMzAwLjExVjQ2NGExNiAxNiAwIDAgMCAxNiAxNmwxMTIuMDYtLjI5YTE2IDE2IDAgMCAwIDE1LjkyLTE2VjM2OGExNiAxNiAwIDAgMSAxNi0xNmg2NGExNiAxNiAwIDAgMSAxNiAxNnY5NS42NGExNiAxNiAwIDAgMCAxNiAxNi4wNUw0NjQgNDgwYTE2IDE2IDAgMCAwIDE2LTE2VjMwMEwyOTUuNjcgMTQ4LjI2YTEyLjE5IDEyLjE5IDAgMCAwLTE1LjMgMHpNNTcxLjYgMjUxLjQ3TDQ4OCAxODIuNTZWNDQuMDVhMTIgMTIgMCAwIDAtMTItMTJoLTU2YTEyIDEyIDAgMCAwLTEyIDEydjcyLjYxTDMxOC40NyA0M2E0OCA0OCAwIDAgMC02MSAwTDQuMzQgMjUxLjQ3YTEyIDEyIDAgMCAwLTEuNiAxNi45bDI1LjUgMzFBMTIgMTIgMCAwIDAgNDUuMTUgMzAxbDIzNS4yMi0xOTMuNzRhMTIuMTkgMTIuMTkgMCAwIDEgMTUuMyAwTDUzMC45IDMwMWExMiAxMiAwIDAgMCAxNi45LTEuNmwyNS41LTMxYTEyIDEyIDAgMCAwLTEuNy0xNi45M3oiCgkJZmlsbD0iY3VycmVudENvbG9yIgoJPjwvcGF0aD4KPC9zdmc+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>=<span class="hljs-string">&quot;1.13em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: -0.125em;-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">preserveAspectRatio</span>=<span class="hljs-string">&quot;xMidYMid meet&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 576 512&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span><br>
+ &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-solid:home&quot;</span><br>
+&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>There are several attributes added to <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span>:</p><ul>
+<li><span class="hljs-inline-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>. This hides icon from screen readers.</li>
+<li><span class="hljs-inline-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span>. This attribute fixes Internet Explorer bug. In Internet Explorer <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> tags can have focus, this attribute makes it behave like other browsers.</li>
+<li><span class="hljs-inline-prop">style</span>. There are two parts of style:
+<ul>
+<li><span class="hljs-inline-prop">vertical-align</span>. This moves icon a bit below the baseline, making it behave like text. To remove it add <span class="hljs-inline-attr">data-inline</span>=<span class="hljs-string">&quot;false&quot;</span> to the placeholder element. See <a href="#block-rendering">block rendering</a></li>
+<li><span class="hljs-inline-prop">transform</span>. 360 degrees rotation seems redundant, but it does serve a purpose. In Firefox until 2020 as well as older versions of other browsers, there was a bug that caused blurry edges of SVG when SVG left edge is place on sub-pixel. Rotation trick was a workaround for that bug. In the latest versions of all modern browsers this bug has been fixed.</li>
+</ul>
+</li>
+</ul><p>Also, <span class="hljs-inline-prop">fill</span> of <span class="hljs-inline-tag hljs-linkable">&lt;path&gt;</span> was changed to &quot;<span class="hljs-string">currentColor</span>&quot;. This forces icon to use current text color for fill. For icons that use <span class="hljs-inline-prop">stroke</span>, Iconify also changes <span class="hljs-inline-prop">stroke</span> to &quot;<span class="hljs-string">currentColor</span>&quot;.</p></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="optimization" class="heading--2">Optimization <a href="#optimization" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Sometimes an icon might flicker during load. Usually it is caused by a slow internet connection or long page.</p><p>If your page is large or your server is slow or visitor&apos;s internet connection is slow, it might take a while for page to load.</p><p>If you have placed Iconify script in footer before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>, it might take a while for browser to initialize Iconify, so your visitors will see empty places where icons are supposed to be.</p><p>How to fix that? Move Iconify script to header between <span class="hljs-inline-tag hljs-linkable">&lt;head&gt;</span> and <span class="hljs-inline-tag hljs-linkable">&lt;/head&gt;</span>.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCTxoZWFkPgoJCTxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPgoJCTx0aXRsZT5Zb3VyIHBhZ2UgdGl0bGU8L3RpdGxlPgoJCTxzY3JpcHQgc3JjPSJodHRwczovL2NvZGUuaWNvbmlmeS5kZXNpZ24vMS8xLjAuNy9pY29uaWZ5Lm1pbi5qcyI+PC9zY3JpcHQ+CgkJPCEtLSB0aGUgcmVzdCBvZiB5b3VyIGhlYWRlciBoZXJlIC0tPgoJPC9oZWFkPgoJPGJvZHk+CgkJPCEtLSBwYWdlIGNvbnRlbnQgaGVyZSAtLT4KCTwvYm9keT4KPC9odG1sPgo="><code class="highlight hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Your page title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/1/1.0.7/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- the rest of your header here --&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- page content here --&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br>
+</code></div></div></div></section>
+
+
+
+
+</article>
+				<nav
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icon Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG Framework 1.0<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline-vs-block.html">Inline and Block Modes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./custom-dimensions.html">Dimensions and Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transformations.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-aliases.html">Icon Aliases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./rtl-support.html">RTL Support</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./functions.html">Iconify Functions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/packages/">Packages</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020, 2021 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?14e2"></script>
+		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

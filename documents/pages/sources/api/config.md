@@ -7,9 +7,9 @@ replacements:
 
 # Configuring custom Iconify API
 
-This article explains who to confugure [SVG Framework](../../implementations/svg-framework/index.md) or [Iconify components](../../implementations/components/index.md) to use custom API server.
+This article explains who to confugure [Iconify icon components](../../icon-components/index.md) to use custom API server.
 
-All Iconify implementations can connect to multiple Iconify API servers. It is done via [API providers](./providers.md).
+All Iconify icon components can connect to multiple Iconify API servers. It is done via [API providers](./providers.md).
 
 `include sources/api/namespaces/animation`
 

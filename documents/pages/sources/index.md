@@ -7,7 +7,7 @@ replacements:
 
 # Icon sources
 
-To display an icon, [Iconify implementation](../implementations/index.md) must have data for that icon.
+To display an icon, [Iconify icon component](../icon-components/index.md) must have data for that icon.
 
 There are multiple ways to provide data for icons, each has its advantages and disadvantages.
 
@@ -35,7 +35,7 @@ This requires a bit of coding. Icon sets are available on NPM and Packagist, mak
 
 [Icon packages](./npm/index.md) are similar to bundles, but provide icon data for one icon at a time.
 
-Icon packages are very easy to use: import icon data from package and pass data to Iconify implementation.
+Icon packages are very easy to use: import icon data from icon package and pass data to Iconify icon component.
 
 ## Available Icons
 

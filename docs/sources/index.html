@@ -15,17 +15,22 @@
 			href="../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../assets/style.css?6674" />
+		<link rel="stylesheet" href="../assets/style.css?1d42" />
 		<title>Icon Sources</title>
 		
 	</head>
@@ -83,54 +88,52 @@
 		<div id="content">
 			<div class="page-width page-content docs-container">
 				<article class="docs"><div class="docs-short-navigation">
-<a href="../develop/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> For Developers</a>
+<a href="../icon-components/" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Icon Components</a>
 <a href="./api/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Iconify API</a>
 </div>
 <h1>Icon sources</h1>
-<p>You can use Iconify with any icons.</p>
-<p>By default, Iconify includes over 80k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets.</p>
-<p>You can also use Iconify with your own icons or premium icons. Iconify offers <a href="../tools/">various tools</a> for importing, manipulating and exporting icon sets. There are <a href="../tools/node/examples.html">several examples</a> showing how to import some popular icon sets, such as <a href="../tools/node/import-fa-pro.html">FontAwesome Pro</a>.</p>
-<section class="content-section content-section--2"><H1 id="api" class="heading--2">Iconify API <a href="#api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./api/">Iconify API</a> makes it easy to use thousands of icons without creating any icon bundles. Icons are loaded on demand. Loading icons on demand has massive advantages over bundles:</p><ul>
+<p>To display an icon, <a href="../icon-components/">Iconify icon component</a> must have data for that icon.</p>
+<p>There are multiple ways to provide data for icons, each has its advantages and disadvantages.</p>
+<section class="content-section content-section--2"><H1 id="api" class="heading--2">Iconify API <a href="#api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./api/">Iconify API</a> is the main source of icons.</p><p>API sends data for icons on demand. Loading icons on demand has massive advantages over other methods:</p><ul>
 <li>No need to pre-package icons. Icons are loaded dynamically when needed. That makes it very easy to use.</li>
-<li>Only the icons used on web pages are loaded. That means:
-<ul>
-<li>Huge choice of icons. Icons that are not used are not loaded, so there is no limit on how many icons can be served by API.</li>
-<li>Developers are no longer limited to one icon set. Developers can mix icons from Material Design Icons, FontAwesome, Unicons and many other icon sets on the same page.</li>
-</ul>
-</li>
-</ul><p>By using <a href="./api/">Iconify API</a>, you are relying on uptime of third party servers. Sometimes it is not desirable.</p><section class="content-section content-section--3"><H1 id="custom-api" class="heading--3">Custom API <a href="#custom-api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="https://github.com/iconify/api.js" target="_blank">API software is open source</a>, which means you can host your own API on your servers. That allows you to have full control over servers or to host your own icon sets.</p></section></section>
+<li>Only the icons used on web pages are loaded. No need to waste bandwidth on loading icons that are not displayed.</li>
+<li>Tools can be developed that allow users choose any icon available on Iconify API. There are over 80k icons to choose from with public Iconify API and you can add <a href="./api/providers.html">custom API providers</a> for even more icons.</li>
+</ul><p>Disadvantage of using API is API must be reachable. This means your applications must have access to internet. If you need to use icons offline, use one of other methods.</p><p>By default, using API means relying on third party service. However, <a href="https://github.com/iconify/api.js" target="_blank">API software is open source</a>, which means you can host your own API on your servers. That allows you to have full control over servers instead of relying on third party service.</p></section>
 
 
 
 
 
-<section class="content-section content-section--2"><H1 id="bundled-icons" class="heading--2">Bundled icons <a href="#bundled-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Iconify API requires the visitor to be online. Sometimes that is a bad thing, but do not worry, there are alternative solutions.</p><p>The easiest solution is to create <a href="./bundles/">icon bundles</a>. This requires a bit of coding. Icon sets are available on NPM and Packagist, making it easy to use with Node.js and PHP build tools.</p></section>
+<section class="content-section content-section--2"><H1 id="bundled-icons" class="heading--2">Bundled icons <a href="#bundled-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./bundles/">Icon bundles</a> are sets of icon data. You can build icon bundles for icons that are used in your application, making icon data available offline.</p><p>This requires a bit of coding. Icon sets are available on NPM and Packagist, making it easy to use with Node.js and PHP build tools.</p></section>
 
 
-<section class="content-section content-section--2"><H1 id="icon-components" class="heading--2">Icon components <a href="#icon-components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most of the <a href="../implementations/components/">Iconify components</a> rely on <a href="./npm/">icon components</a> to provide icon data.</p><p><a href="./npm/">Icon components</a> are very easy to use: import icon component and pass data to Iconify implementation.</p><p>Unlike <a href="./bundles/">icon bundles</a> that bundle several icons in one file, <a href="./npm/">icon components</a> use separate files for each icon.</p></section>
+<section class="content-section content-section--2"><H1 id="icon-packages" class="heading--2">Icon packages <a href="#icon-packages" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./npm/">Icon packages</a> are similar to bundles, but provide icon data for one icon at a time.</p><p>Icon packages are very easy to use: import icon data from icon package and pass data to Iconify icon component.</p></section>
 
+
+<section class="content-section content-section--2"><H1 id="available-icons" class="heading--2">Available Icons <a href="#available-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All sources listed above are not tied to only icons available with Iconify.</p><p>You can use Iconify with any icons. Iconify offers <a href="../tools/">various tools</a> for importing, manipulating and exporting icon sets. There are <a href="../tools/node/examples.html">several examples</a> showing how to import some popular icon sets, such as <a href="../tools/node/import-fa-pro.html">FontAwesome Pro</a>.</p></section>
 
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="./api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="./bundles/">Bundled Icons</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="./npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="./json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -183,7 +186,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="../assets/bundle.js?241e"></script>
+		<script src="../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

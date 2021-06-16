@@ -1,4 +1,0 @@
-- [Iconify for React](/implementations/react/index.md).
-- [Iconify for Vue](/implementations/vue/index.md).
-- [Iconify for Vue 2](/implementations/vue2/index.md).
-- [Iconify for Svelte](/implementations/svelte/index.md).

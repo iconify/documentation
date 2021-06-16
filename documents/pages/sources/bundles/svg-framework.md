@@ -11,7 +11,7 @@ types:
 
 This tutorial is a part of [Iconify icon bundles tutorial](./index.md).
 
-[Iconify SVG framework](../../implementations/svg-framework/index.md) supports 2 ways of adding icon bundles:
+[Iconify SVG framework](../../icon-components/svg-framework/index.md) supports 2 ways of adding icon bundles:
 
 - Loading icon bundles before loading Iconify.
 - Loading icon bundles after loading Iconify.

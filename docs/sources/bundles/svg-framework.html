@@ -15,17 +15,22 @@
 			href="../../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?6674" />
+		<link rel="stylesheet" href="../../assets/style.css?1d42" />
 		<title>Icon Bundles for Iconify SVG Framework</title>
 		
 	</head>
@@ -88,7 +93,7 @@
 </div>
 <h1>Icon bundles for Iconify SVG framework</h1>
 <p>This tutorial is a part of <a href="./">Iconify icon bundles tutorial</a>.</p>
-<p><a href="../../implementations/svg-framework/">Iconify SVG framework</a> supports 2 ways of adding icon bundles:</p>
+<p><a href="../../icon-components/svg-framework/">Iconify SVG framework</a> supports 2 ways of adding icon bundles:</p>
 <ul>
 <li>Loading icon bundles before loading Iconify.</li>
 <li>Loading icon bundles after loading Iconify.</li>
@@ -236,6 +241,59 @@ Iconify.addCollection({<br>
 
 
 
+<section class="content-section content-section--2"><H1 id="both-methods" class="heading--2">Both methods <a href="#both-methods" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Not sure if your bundle will be included before or after SVG framework?</p><p>You can wrap icon sets data in function that checks for <span class="hljs-function">Iconify.addCollection</span> and appends icon data to <span class="hljs-inline-var">IconifyPreload</span> if <span class="hljs-function">Iconify.addCollection</span> is missing.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gVXNlIGFub255bW91cyBmdW5jdGlvbiB0byBtYWtlIHN1cmUgYWRkKCkgaXMgbm90IGFkZGVkIHRvIGdsb2JhbCB2YXJpYWJsZXMKKGZ1bmN0aW9uICgpIHsKCS8vIEZ1bmN0aW9uIHRvIGFkZCBpY29ucwoJZnVuY3Rpb24gYWRkKGRhdGEpIHsKCQl0cnkgewoJCQlpZiAodHlwZW9mIHNlbGYuSWNvbmlmeSA9PT0gJ29iamVjdCcgJiYgc2VsZi5JY29uaWZ5LmFkZENvbGxlY3Rpb24pIHsKCQkJCXNlbGYuSWNvbmlmeS5hZGRDb2xsZWN0aW9uKGRhdGEpOwoJCQkJcmV0dXJuOwoJCQl9CgkJCWlmICh0eXBlb2Ygc2VsZi5JY29uaWZ5UHJlbG9hZCA9PT0gJ3VuZGVmaW5lZCcpIHsKCQkJCXNlbGYuSWNvbmlmeVByZWxvYWQgPSBbXTsKCQkJfQoJCQlzZWxmLkljb25pZnlQcmVsb2FkLnB1c2goZGF0YSk7CgkJfSBjYXRjaCAoZXJyKSB7fQoJfQoKCS8vIFdyYXAgeW91ciBkYXRhIGluIGFkZCgpCgoJLy8gTG9hZCBmZXcgaWNvbnMgZnJvbSBNYXRlcmlhbCBEZXNpZ24gSWNvbnMKCWFkZCh7CgkJcHJlZml4OiAnbWRpJywKCQlpY29uczogewoJCQlhY2NvdW50OiB7CgkJCQlib2R5OiAnPHBhdGggZD0iTTEyIDRhNCA0IDAgMCAxIDQgNGE0IDQgMCAwIDEtNCA0YTQgNCAwIDAgMS00LTRhNCA0IDAgMCAxIDQtNG0wIDEwYzQuNDIgMCA4IDEuNzkgOCA0djJINHYtMmMwLTIuMjEgMy41OC00IDgtNHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJCX0sCgkJCWhvbWU6IHsKCQkJCWJvZHk6ICc8cGF0aCBkPSJNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzTDIgMTJoM3Y4aDV6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCQl9LAoJCX0sCgkJd2lkdGg6IDI0LAoJCWhlaWdodDogMjQsCgl9KTsKCgkvLyBMb2FkIGZldyBpY29ucyBmcm9tIFVuaWNvbnMKCWFkZCh7CgkJcHJlZml4OiAndWlsJywKCQlpY29uczogewoJCQlob21lOiB7CgkJCQlib2R5OiAnPHBhdGggZD0iTTIxLjY2IDEwLjI1bC05LThhMSAxIDAgMCAwLTEuMzIgMGwtOSA4YTEgMSAwIDAgMC0uMjcgMS4xMUExIDEgMCAwIDAgMyAxMmgxdjlhMSAxIDAgMCAwIDEgMWgxNGExIDEgMCAwIDAgMS0xdi05aDFhMSAxIDAgMCAwIC45My0uNjRhMSAxIDAgMCAwLS4yNy0xLjExek0xMyAyMGgtMnYtM2ExIDEgMCAwIDEgMiAwem01IDBoLTN2LTNhMyAzIDAgMCAwLTYgMHYzSDZ2LThoMTJ6TTUuNjMgMTBMMTIgNC4zNEwxOC4zNyAxMHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJCX0sCgkJCWxvY2s6IHsKCQkJCWJvZHk6ICc8cGF0aCBkPSJNMTcgOVY3QTUgNSAwIDAgMCA3IDd2MmEzIDMgMCAwIDAtMyAzdjdhMyAzIDAgMCAwIDMgM2gxMGEzIDMgMCAwIDAgMy0zdi03YTMgMyAwIDAgMC0zLTN6TTkgN2EzIDMgMCAwIDEgNiAwdjJIOXptOSAxMmExIDEgMCAwIDEtMSAxSDdhMSAxIDAgMCAxLTEtMXYtN2ExIDEgMCAwIDEgMS0xaDEwYTEgMSAwIDAgMSAxIDF6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCQl9LAoJCX0sCgkJd2lkdGg6IDI0LAoJCWhlaWdodDogMjQsCgl9KTsKCgkvLyBFbmQgb2YgYW5vbnltb3VzIGZ1bmN0aW9uIGFuZCBpbW1lZGlhdGVseSBjYWxsIGl0Cn0pKCk7Cg=="><code class="highlight hljs"><span class="hljs-comment">// Use anonymous function to make sure add() is not added to global variables</span><br>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Function to add icons</span><br>
+ &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">data</span>) </span>{<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">try</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> self.Iconify === <span class="hljs-string">&apos;object&apos;</span> &amp;&amp; self.Iconify.addCollection) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.Iconify.addCollection(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> self.IconifyPreload === <span class="hljs-string">&apos;undefined&apos;</span>) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload = [];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload.push(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;} <span class="hljs-keyword">catch</span> (err) {}<br>
+ &#xA0; &#xA0;}<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Wrap your data in add()</span><br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Load few icons from Material Design Icons</span><br>
+ &#xA0; &#xA0;add({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">account</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;});<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Load few icons from Unicons</span><br>
+ &#xA0; &#xA0;add({<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;uil&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">home</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M21.66 10.25l-9-8a1 1 0 0 0-1.32 0l-9 8a1 1 0 0 0-.27 1.11A1 1 0 0 0 3 12h1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9h1a1 1 0 0 0 .93-.64a1 1 0 0 0-.27-1.11zM13 20h-2v-3a1 1 0 0 1 2 0zm5 0h-3v-3a3 3 0 0 0-6 0v3H6v-8h12zM5.63 10L12 4.34L18.37 10z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">lock</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M17 9V7A5 5 0 0 0 7 7v2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3zM9 7a3 3 0 0 1 6 0v2H9zm9 12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;});<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// End of anonymous function and immediately call it</span><br>
+})();<br>
+</code></div></div></div></section>
+
+
 <section class="content-section content-section--2"><H1 id="automation" class="heading--2">How to automate build process? <a href="#automation" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Build process is simple:</p><ol>
 <li>Get icon data.</li>
 <li>Wrap it in a callback.</li>
@@ -246,12 +304,15 @@ Iconify.addCollection({<br>
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -260,18 +321,17 @@ Iconify.addCollection({<br>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./svg-framework.html">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react-with-api.html">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svelte.html">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./examples/">Examples</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -324,7 +384,7 @@ Iconify.addCollection({<br>
 				</ul>
 			</div>
 		</footer>
-		<script src="../../assets/bundle.js?241e"></script>
+		<script src="../../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

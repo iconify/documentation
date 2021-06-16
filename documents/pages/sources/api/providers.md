@@ -19,7 +19,7 @@ replacements:
 
 # Iconify API providers
 
-If you are publishing icons, you can host your own Iconify API server that includes only your icons and give access to it to other users. Iconify implementations can retrieve icon data from multiple independent Iconify API servers.
+If you are publishing icons, you can host your own Iconify API server that includes only your icons and give access to it to other users. Iconify icon components can retrieve icon data from multiple independent Iconify API servers.
 
 How is it done?
 
@@ -27,7 +27,7 @@ How is it done?
 
 ## Provider in icon name
 
-Icon names in Iconify implementations have 3 parts:
+Icon names in Iconify icon components have 3 parts:
 
 `include sources/api/namespaces/name`
 
@@ -48,9 +48,9 @@ That regular expression means name must start with character or number, followed
 
 ## Adding API provider
 
-All implementations have function `[func]addAPIProvider()`. For SVG framework it is `[func]Iconify.addAPIProvider()`, for components you need to import it from component.
+All icon components have function `[func]addAPIProvider()`. For SVG framework it is `[func]Iconify.addAPIProvider()`, for other components you need to import it from component.
 
-Example for [React component](../../implementations/react/index.md):
+Example for [React component](../../icon-components/react/index.md):
 
 ```js
 import { addAPIProvider } from '@iconify/react';
@@ -67,7 +67,7 @@ Function has 2 parameters:
 - provider, `[type]string`. Provider name. You can also overwrite configuration for default provider by using empty string.
 - config, `[type]APIConfig`. API configuration.
 
-For more details see [addAPIProvider documentation from SVG framework](../../implementations/svg-framework/add-api-provider.md).
+For more details see [addAPIProvider documentation from SVG framework](../../icon-components/svg-framework/add-api-provider.md).
 
 ### IconifyProviders
 
@@ -101,7 +101,7 @@ All you have to do is add provider to icon name. Provider in icon name must matc
 ```
 
 ```yaml
-src: implementations/react-with-api/provider.jsx
+src: icon-components/react-with-api/provider.jsx
 ```
 
 ## Authentication

@@ -13,15 +13,15 @@ types:
 
 ## Offline use
 
-Icon bundle is the easiest way to make Iconify [SVG framework](../../implementations/svg-framework/index.md) and [various component](../../implementations/components/index.md) work without the internet access. Instead of loading icon data from Iconify API, you can provide icon by loading icon bundle.
+Icon bundle is the easiest way to make Iconify [SVG framework](../../icon-components/svg-framework/index.md) and [various component](../../icon-components/components/index.md) work without the internet access. Instead of loading icon data from Iconify API, you can provide icon by loading icon bundle.
 
 ## Smaller bundle size
 
-For components that do have support for Iconify API, such as [React offline component](../../implementations/react/offline.md), you can use bundles to import multiple icons at the same time instead of importing icons one by one. This reduces bundle size.
+For components that do have support for Iconify API, such as [React offline component](../../icon-components/react/offline.md), you can use bundles to import multiple icons at the same time instead of importing icons one by one. This reduces bundle size.
 
 ## Speed up loading
 
-Icon bundles can be used to speed up loading for [SVG framework](../../implementations/svg-framework/index.md) and [various components](../../implementations/components/index.md).
+Icon bundles can be used to speed up loading for [SVG framework](../../icon-components/svg-framework/index.md) and [various components](../../icon-components/components/index.md).
 
 When you tell Iconify component to render an icon, if icon data is not available, component attempts to load data for icon from Iconify API. Even though loading icon data from API is very fast, it is not instant and it requires internet access. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly and it can be used offline.
 
@@ -46,7 +46,7 @@ You need to wrap that data in a function or assign it to a variable. For [SVG fr
 src: sources/api/mdi.js
 ```
 
-For [various components](../../implementations/components/index.md), you need to import function `[func]addCollection` from component package:
+For [various components](../../icon-components/components/index.md), you need to import function `[func]addCollection` from component package:
 
 ```yaml
 src: sources/api/mdi-component.js

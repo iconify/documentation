@@ -15,17 +15,22 @@
 			href="./assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="./assets/style.css?6674" />
+		<link rel="stylesheet" href="./assets/style.css?1d42" />
 		<title>Iconify Documentation</title>
 		
 	</head>
@@ -92,17 +97,17 @@
 		There are missing and incomplete documents.
 	</p>
 </aside><h1>Iconify documentation</h1>
-<p>Iconify is the most versatile icon framework available. It was originally designed to replace outdated icon fonts with <a href="./implementations/svg-framework/">modern SVG framework</a>, while offering ease of use that icon fonts are famous for. Since then Iconify has evolved. It offers more icons than any other solution and various components for web app frameworks.</p>
+<p>Iconify is the most versatile icon framework available. It was originally designed to replace outdated icon fonts with <a href="./icon-components/svg-framework/">modern SVG framework</a>, while offering ease of use that icon fonts are famous for. Since then Iconify has evolved. It offers more icons than any other solution and various components for web app frameworks.</p>
 <p>This documentation is split into several parts.</p>
-<section class="content-section content-section--2"><H1 id="for-developers" class="heading--2">Iconify for developers <a href="#for-developers" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./develop/">Iconify for developers section</a> explains how to use Iconify icons in your project. Iconify is designed to be very flexible.</p><p>Developers section is split into two parts: <a href="./sources/">sources</a> and <a href="./implementations/">implementations</a>. Source provides icon data. Implementation renders icon data.</p><p>Most of the documentation assumes you have some familiarity with Iconify. If you are not familiar with Iconify, you are probably looking for <a href="./implementations/svg-framework/">Iconify SVG framework documentation</a>.</p><section class="content-section content-section--3"><H1 id="sources" class="heading--3">Sources <a href="#sources" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use Iconify with any icons.</p><p>By default, Iconify includes over 80k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets. You can browse all icons by <a href="https://iconify.design/icon-sets/" target="_blank">clicking &quot;Browse Icons&quot; link in navigation</a>.</p><p><a href="./sources/">Sources section</a> explains where implementations (such as SVG framework or React component) get icon data, show various ways to retrieve icon data.</p><p>Sources are split into several parts:</p><ul>
-<li><a href="./sources/api/">Iconify API</a>. It is used by <a href="./implementations/svg-framework/">SVG framework</a>, <a href="./icon-finder/">Icon Finder</a> and some components.</li>
-<li><a href="./sources/bundles/">Bundled icons</a>. You can create icon bundles, making it easy to use Iconify implementations offline.</li>
-<li><a href="./sources/npm/">Icon components</a>. Similar to icon bundles, but uses different approach. This is used by most components, such as <a href="./implementations/react/">React</a>, <a href="./implementations/svelte/">Svelte</a> and <a href="./implementations/vue/">Vue</a> components.</li>
-</ul></section><section class="content-section content-section--3"><H1 id="implementations" class="heading--3">Implementations <a href="#implementations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./implementations/">Implementations</a> are responsible for rendering icons.</p><p><a href="./implementations/svg-framework/">Iconify SVG framework</a> is a modern replacement for icon fonts.</p><p>In addition to SVG framework, Iconify offers components for several popular frameworks:</p><ul>
-<li><a href="./implementations/react/">Iconify for React</a>.</li>
-<li><a href="./implementations/react-with-api/">Iconify for React with API support</a>.</li>
-<li><a href="./implementations/vue/">Iconify for Vue</a>.</li>
-<li><a href="./implementations/svelte/">Iconify for Svelte</a>.</li>
+<section class="content-section content-section--2"><H1 id="for-developers" class="heading--2">Iconify for developers <a href="#for-developers" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./develop/">Iconify for developers section</a> explains how to use Iconify icons in your project. Iconify is designed to be very flexible.</p><p>Developers section is split into two parts: <a href="./sources/">sources</a> that provide icon data and <a href="./icon-components/">icon components</a> that render icons.</p><p>Most of the documentation assumes you have some familiarity with Iconify. If you are not familiar with Iconify, you are probably looking for <a href="./icon-components/svg-framework/">Iconify SVG framework documentation</a>.</p><section class="content-section content-section--3"><H1 id="icon-components" class="heading--3">Icon components <a href="#icon-components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./icon-components/">Icon components</a> are responsible for rendering icons.</p><ul>
+<li><a href="./icon-components/react/">Iconify for React</a>.</li>
+<li><a href="./icon-components/vue/">Iconify for Vue</a>.</li>
+<li><a href="./icon-components/vue2/">Iconify for Vue 2</a>.</li>
+<li><a href="./icon-components/svelte/">Iconify for Svelte</a>.</li>
+</ul><p>In addition to icon components for popular frameworks, Iconify has <a href="./icon-components/svg-framework/">SVG framework</a> that works as modern replacement for icon fonts.</p></section><section class="content-section content-section--3"><H1 id="sources" class="heading--3">Sources <a href="#sources" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can use Iconify with any icons.</p><p>By default, Iconify includes over 80k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets. You can browse all icons by <a href="https://iconify.design/icon-sets/" target="_blank">clicking &quot;Browse Icons&quot; link in navigation</a>.</p><p>Icon components do not include data for icons.</p><p><a href="./sources/">Sources section</a> explains how icon components can get icon data, show various ways to retrieve icon data.</p><p>Sources are split into several parts:</p><ul>
+<li><a href="./sources/api/">Iconify API</a>. It is used by <a href="./icon-components/">icon components</a> and <a href="./icon-finder/">Icon Finder</a>.</li>
+<li><a href="./sources/bundles/">Bundled icons</a>. You can create icon bundles, making it easy to use icon components offline.</li>
+<li><a href="./sources/npm/">Icon packages</a>. Similar to icon bundles, but imports icons one by one and is easier to use.</li>
 </ul></section></section>
 
 
@@ -121,7 +126,6 @@
 <section class="content-section content-section--2"><H1 id="for-designers" class="heading--2">Iconify for designers <a href="#for-designers" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><a href="./design/">For designers section</a> is for UI designers.</p><p>Iconify offers plug-ins for popular software:</p><ul>
 <li><a href="./design/figma/">Figma plug-in</a>.</li>
 <li><a href="./design/sketch/">Sketch plug-in</a>.</li>
-<li><a href="./design/adobe-xd/">Adobe XD plug-in</a>.</li>
 </ul></section>
 
 
@@ -138,20 +142,21 @@
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="./develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="./sources/">Sources</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="./implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="./design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="./design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="./design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="./design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="./icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -204,7 +209,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="./assets/bundle.js?241e"></script>
+		<script src="./assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

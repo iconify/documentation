@@ -6,7 +6,7 @@ This article explains how to host Iconify on your server, so your website does n
 
 If you can, use Node.js version.
 
-Node.js implementation is slightly faster. This is because in Node.js server uses one persistent process and all data is already in memory, so everything is ready for each request. PHP needs to load data on every request. PHP version has cache to improve speed, but it is still slower than Node.js.
+Node.js version is slightly faster. This is because in Node.js server uses one persistent process and all data is already in memory, so everything is ready for each request. PHP needs to load data on every request. PHP version has cache to improve speed, but it is still slower than Node.js.
 
 ## Django Iconify
 

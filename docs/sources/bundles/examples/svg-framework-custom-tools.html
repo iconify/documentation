@@ -15,17 +15,22 @@
 			href="../../../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../../assets/style.css?6674" />
+		<link rel="stylesheet" href="../../../assets/style.css?1d42" />
 		<title>Icon Bundle Examples: SVG Framework</title>
 		
 	</head>
@@ -89,9 +94,9 @@
 </code></div></div></div><p>Usage:</p><ul>
 <li>Change variable <span class="hljs-inline-var">target</span> to correct location of bundle.</li>
 <li>Change variable <span class="hljs-inline-var">source</span> to correct location of SVG files.</li>
-<li>Optionally change <span class="hljs-inline-var">prefix</span> to prefix you want to use for imported icons and <span class="hljs-inline-var">preload</span> to change bundle behaviour.</li>
+<li>Optionally change <span class="hljs-inline-var">prefix</span> to prefix you want to use for imported icons.</li>
 <li>Run script.</li>
-</ul><p>Below are two versions of the same code.</p><p>First version uses <span class="hljs-function">Promise</span> syntax, second version uses <span class="hljs-function">async</span> and <span class="hljs-function">await</span> syntax.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Promise syntax</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYW4gYWR2YW5jZWQgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqIEl0IGNyZWF0ZXMgYSBidW5kbGUgZnJvbSBhbGwgU1ZHIGZpbGVzIGluIGEgZGlyZWN0b3J5LgogKgogKiBUaGlzIGV4YW1wbGUgdXNlcyBJY29uaWZ5IFRvb2xzIHRvIGNvbnZlcnQgaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdC4KICogRm9yIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiB2aXNpdCBodHRwczovL2RvY3MuaWNvbmlmeS5kZXNpZ24vdG9vbHMvbm9kZS8KICovCmNvbnN0IGZzID0gcmVxdWlyZSgnZnMnKTsKCi8vIEluc3RhbGxhdGlvbjogbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBUcnVlIGlmIGJ1bmRsZSBzaG91bGQgdXNlIEljb25pZnlQcmVsb2FkLgovLyBGYWxzZSBpZiBidW5kbGUgc2hvdWxkIHVzZSBJY29uaWZ5LmFkZENvbGxlY3Rpb24uCi8vIFNlZSBidW5kbGVzIGZvciBTVkcgZnJhbWV3b3JrIGZvciBkZXRhaWxzLgpjb25zdCBwcmVsb2FkID0gdHJ1ZTsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KY29uc3QgdGFyZ2V0ID0gX19kaXJuYW1lICsgJy9hc3NldHMvaWNvbnMtYnVuZGxlLmpzJzsKCi8vIFNWRyBmaWxlcyBsb2NhdGlvbgpjb25zdCBzb3VyY2UgPSBfX2Rpcm5hbWUgKyAnL3N2Zyc7CgovLyBQcmVmaXggdG8gdXNlIGZvciBjdXN0b20gaWNvbnMKY29uc3QgcHJlZml4ID0gJ2N1c3RvbSc7CgovLyBJbXBvcnQgaWNvbnMKbGV0IGNvbGxlY3Rpb247CnRvb2xzCgkuSW1wb3J0RGlyKHNvdXJjZSwgewoJCXByZWZpeCwKCX0pCgkudGhlbigocmVzdWx0KSA9PiB7CgkJY29sbGVjdGlvbiA9IHJlc3VsdDsKCgkJLy8gU2V0IHByZWZpeAoJCWNvbGxlY3Rpb24ucHJlZml4ID0gcHJlZml4OwoKCQkvLyBPcHRpb25zIGZvciBTVkdPIG9wdGltaXphdGlvbgoJCWNvbnN0IFNWR09PcHRpb25zID0gewoJCQljb252ZXJ0U2hhcGVUb1BhdGg6IHRydWUsCgkJCW1lcmdlUGF0aHM6IHRydWUsCgkJfTsKCgkJLy8gT3B0aW1pemUgU1ZHIGZpbGVzCgkJLy8KCQkvLyBjb2xsZWN0aW9uLnByb21pc2VFYWNoKCkgaXRlcmF0ZXMgYWxsIGljb25zIGluIGNvbGxlY3Rpb24gYW5kIHJ1bnMKCQkvLyBwcm9taXNlIGZvciBlYWNoIGljb24sIG9uZSBhdCBhIHRpbWUuCgkJcmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJCShzdmcsIGtleSkgPT4KCQkJCW5ldyBQcm9taXNlKChmdWxmaWxsLCByZWplY3QpID0+IHsKCQkJCQl0b29scwoJCQkJCQkuU1ZHTyhzdmcsIFNWR09PcHRpb25zKQoJCQkJCQkudGhlbigocmVzKSA9PiB7CgkJCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQkJCX0pCgkJCQkJCS5jYXRjaCgoZXJyKSA9PiB7CgkJCQkJCQlyZWplY3QoJ0Vycm9yIG9wdGltaXppbmcgaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikpOwoJCQkJCQl9KTsKCQkJCX0pLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gQ2xlYW4gdXAgdGFncwoJCXJldHVybiBjb2xsZWN0aW9uLnByb21pc2VFYWNoKAoJCQkoc3ZnLCBrZXkpID0+CgkJCQluZXcgUHJvbWlzZSgoZnVsZmlsbCwgcmVqZWN0KSA9PiB7CgkJCQkJdG9vbHMKCQkJCQkJLlRhZ3Moc3ZnKQoJCQkJCQkudGhlbigocmVzKSA9PiB7CgkJCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQkJCX0pCgkJCQkJCS5jYXRjaCgoZXJyKSA9PiB7CgkJCQkJCQlyZWplY3QoCgkJCQkJCQkJJ0Vycm9yIGNoZWNraW5nIHRhZ3MgaW4gaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikKCQkJCQkJCSk7CgkJCQkJCX0pOwoJCQkJfSksCgkJCXRydWUKCQkpOwoJfSkKCS50aGVuKCgpID0+IHsKCQkvLyBDaGFuZ2UgY29sb3IgdG8gImN1cnJlbnRDb2xvciIgdG8gYWxsIGljb25zCgkJLy8gVXNlIHRoaXMgb25seSBmb3IgbW9ub3RvbmUgY29sbGVjdGlvbnMKCQljb25zdCBvcHRpb25zID0gewoJCQlkZWZhdWx0OiAnY3VycmVudENvbG9yJywgLy8gY2hhbmdlIGFsbCBjb2xvcnMgdG8gImN1cnJlbnRDb2xvciIKCQkJYWRkOiAnY3VycmVudENvbG9yJywgLy8gYWRkICJjdXJyZW50Q29sb3IiIHRvIHNoYXBlcyB0aGF0IGFyZSBtaXNzaW5nIGNvbG9yIHZhbHVlCgkJfTsKCgkJLyoKCQkvLyBGb3IgaWNvbnMgdGhhdCBoYXZlIHBhbGV0dGUgdXNlIHRoaXMgaW5zdGVhZDoKCQljb25zdCBvcHRpb25zID0gewoJCQlhZGQ6ICdjdXJyZW50Q29sb3InLAoJCX07CgkJKi8KCgkJcmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJCShzdmcpID0+IHRvb2xzLkNoYW5nZVBhbGV0dGUoc3ZnLCBvcHRpb25zKSwKCQkJdHJ1ZQoJCSk7Cgl9KQoJLnRoZW4oKHJlcykgPT4gewoJCS8vIEV4cG9ydCB0byBKU09OCgkJcmV0dXJuIHRvb2xzLkV4cG9ydEpTT04oY29sbGVjdGlvbiwgbnVsbCwgewoJCQlvcHRpbWl6ZTogdHJ1ZSwKCQl9KTsKCX0pCgkudGhlbigoanNvbikgPT4gewoJCS8vIEV4cG9ydCB0byBidW5kbGUKCQljb25zdCB0ZXh0ID0gSlNPTi5zdHJpbmdpZnkoanNvbik7CgkJY29uc3Qgb3V0cHV0ID0gcHJlbG9hZAoJCQk/ICdJY29uaWZ5UHJlbG9hZCA9IFsnICsgdGV4dCArICddO1xuJwoJCQk6ICdJY29uaWZ5LmFkZENvbGxlY3Rpb24oJyArIHRleHQgKyAnKTtcbic7CgoJCS8vIFNhdmUgdG8gZmlsZQoJCWZzLndyaXRlRmlsZVN5bmModGFyZ2V0LCBvdXRwdXQsICd1dGY4Jyk7CgoJCWNvbnNvbGUubG9nKGBTYXZlZCAke3RhcmdldH0gKCR7b3V0cHV0Lmxlbmd0aH0gYnl0ZXMpYCk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs"><span class="hljs-comment">/**<br>
+</ul><p>Below are two versions of the same code.</p><p>First version uses <span class="hljs-function">Promise</span> syntax, second version uses <span class="hljs-function">async</span> and <span class="hljs-function">await</span> syntax.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Promise syntax</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYW4gYWR2YW5jZWQgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqIEl0IGNyZWF0ZXMgYSBidW5kbGUgZnJvbSBhbGwgU1ZHIGZpbGVzIGluIGEgZGlyZWN0b3J5LgogKgogKiBUaGlzIGV4YW1wbGUgdXNlcyBJY29uaWZ5IFRvb2xzIHRvIGNvbnZlcnQgaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdC4KICogRm9yIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiB2aXNpdCBodHRwczovL2RvY3MuaWNvbmlmeS5kZXNpZ24vdG9vbHMvbm9kZS8KICovCmNvbnN0IGZzID0gcmVxdWlyZSgnZnMnKTsKCi8vIEluc3RhbGxhdGlvbjogbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBGaWxlIHRvIHNhdmUgYnVuZGxlIHRvCmNvbnN0IHRhcmdldCA9IF9fZGlybmFtZSArICcvYXNzZXRzL2ljb25zLWJ1bmRsZS5qcyc7CgovLyBTVkcgZmlsZXMgbG9jYXRpb24KY29uc3Qgc291cmNlID0gX19kaXJuYW1lICsgJy9zdmcnOwoKLy8gUHJlZml4IHRvIHVzZSBmb3IgY3VzdG9tIGljb25zCmNvbnN0IHByZWZpeCA9ICdjdXN0b20nOwoKLy8gSW1wb3J0IGljb25zCmxldCBjb2xsZWN0aW9uOwp0b29scwoJLkltcG9ydERpcihzb3VyY2UsIHsKCQlwcmVmaXgsCgl9KQoJLnRoZW4oKHJlc3VsdCkgPT4gewoJCWNvbGxlY3Rpb24gPSByZXN1bHQ7CgoJCS8vIFNldCBwcmVmaXgKCQljb2xsZWN0aW9uLnByZWZpeCA9IHByZWZpeDsKCgkJLy8gT3B0aW9ucyBmb3IgU1ZHTyBvcHRpbWl6YXRpb24KCQljb25zdCBTVkdPT3B0aW9ucyA9IHsKCQkJY29udmVydFNoYXBlVG9QYXRoOiB0cnVlLAoJCQltZXJnZVBhdGhzOiB0cnVlLAoJCX07CgoJCS8vIE9wdGltaXplIFNWRyBmaWxlcwoJCS8vCgkJLy8gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgpIGl0ZXJhdGVzIGFsbCBpY29ucyBpbiBjb2xsZWN0aW9uIGFuZCBydW5zCgkJLy8gcHJvbWlzZSBmb3IgZWFjaCBpY29uLCBvbmUgYXQgYSB0aW1lLgoJCXJldHVybiBjb2xsZWN0aW9uLnByb21pc2VFYWNoKAoJCQkoc3ZnLCBrZXkpID0+CgkJCQluZXcgUHJvbWlzZSgoZnVsZmlsbCwgcmVqZWN0KSA9PiB7CgkJCQkJdG9vbHMKCQkJCQkJLlNWR08oc3ZnLCBTVkdPT3B0aW9ucykKCQkJCQkJLnRoZW4oKHJlcykgPT4gewoJCQkJCQkJZnVsZmlsbChyZXMpOwoJCQkJCQl9KQoJCQkJCQkuY2F0Y2goKGVycikgPT4gewoJCQkJCQkJcmVqZWN0KCdFcnJvciBvcHRpbWl6aW5nIGljb24gJyArIGtleSArICdcbicgKyB1dGlsLmZvcm1hdChlcnIpKTsKCQkJCQkJfSk7CgkJCQl9KSwKCQkJdHJ1ZQoJCSk7Cgl9KQoJLnRoZW4oKCkgPT4gewoJCS8vIENsZWFuIHVwIHRhZ3MKCQlyZXR1cm4gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQkJKHN2Zywga2V5KSA9PgoJCQkJbmV3IFByb21pc2UoKGZ1bGZpbGwsIHJlamVjdCkgPT4gewoJCQkJCXRvb2xzCgkJCQkJCS5UYWdzKHN2ZykKCQkJCQkJLnRoZW4oKHJlcykgPT4gewoJCQkJCQkJZnVsZmlsbChyZXMpOwoJCQkJCQl9KQoJCQkJCQkuY2F0Y2goKGVycikgPT4gewoJCQkJCQkJcmVqZWN0KAoJCQkJCQkJCSdFcnJvciBjaGVja2luZyB0YWdzIGluIGljb24gJyArIGtleSArICdcbicgKyB1dGlsLmZvcm1hdChlcnIpCgkJCQkJCQkpOwoJCQkJCQl9KTsKCQkJCX0pLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gQ2hhbmdlIGNvbG9yIHRvICJjdXJyZW50Q29sb3IiIHRvIGFsbCBpY29ucwoJCS8vIFVzZSB0aGlzIG9ubHkgZm9yIG1vbm90b25lIGNvbGxlY3Rpb25zCgkJY29uc3Qgb3B0aW9ucyA9IHsKCQkJZGVmYXVsdDogJ2N1cnJlbnRDb2xvcicsIC8vIGNoYW5nZSBhbGwgY29sb3JzIHRvICJjdXJyZW50Q29sb3IiCgkJCWFkZDogJ2N1cnJlbnRDb2xvcicsIC8vIGFkZCAiY3VycmVudENvbG9yIiB0byBzaGFwZXMgdGhhdCBhcmUgbWlzc2luZyBjb2xvciB2YWx1ZQoJCX07CgoJCS8qCgkJLy8gRm9yIGljb25zIHRoYXQgaGF2ZSBwYWxldHRlIHVzZSB0aGlzIGluc3RlYWQ6CgkJY29uc3Qgb3B0aW9ucyA9IHsKCQkJYWRkOiAnY3VycmVudENvbG9yJywKCQl9OwoJCSovCgoJCXJldHVybiBjb2xsZWN0aW9uLnByb21pc2VFYWNoKAoJCQkoc3ZnKSA9PiB0b29scy5DaGFuZ2VQYWxldHRlKHN2Zywgb3B0aW9ucyksCgkJCXRydWUKCQkpOwoJfSkKCS50aGVuKChyZXMpID0+IHsKCQkvLyBFeHBvcnQgdG8gSlNPTgoJCXJldHVybiB0b29scy5FeHBvcnRKU09OKGNvbGxlY3Rpb24sIG51bGwsIHsKCQkJb3B0aW1pemU6IHRydWUsCgkJfSk7Cgl9KQoJLnRoZW4oKGpzb24pID0+IHsKCQkvLyBFeHBvcnQgdG8gYnVuZGxlCgkJbGV0IG91dHB1dCA9ICdhZGQoJyArIEpTT04uc3RyaW5naWZ5KGpzb24pICsgJyk7XG4nOwoKCQkvLyBXcmFwIGluIGN1c3RvbSBjb2RlIHRoYXQgY2hlY2tzIGZvciBJY29uaWZ5LmFkZENvbGxlY3Rpb24gYW5kIEljb25pZnlQcmVsb2FkCgkJb3V0cHV0ID0gYChmdW5jdGlvbigpIHsgCglmdW5jdGlvbiBhZGQoZGF0YSkgewoJCXRyeSB7CgkJCWlmICh0eXBlb2Ygc2VsZi5JY29uaWZ5ID09PSAnb2JqZWN0JyAmJiBzZWxmLkljb25pZnkuYWRkQ29sbGVjdGlvbikgewoJCQkJc2VsZi5JY29uaWZ5LmFkZENvbGxlY3Rpb24oZGF0YSk7CgkJCQlyZXR1cm47CgkJCX0KCQkJaWYgKHR5cGVvZiBzZWxmLkljb25pZnlQcmVsb2FkID09PSAndW5kZWZpbmVkJykgewoJCQkJc2VsZi5JY29uaWZ5UHJlbG9hZCA9IFtdOwoJCQl9CgkJCXNlbGYuSWNvbmlmeVByZWxvYWQucHVzaChkYXRhKTsKCQl9IGNhdGNoIChlcnIpIHsKCQl9Cgl9Cgkke291dHB1dH0KfSkoKTtcbmA7CgoJCS8vIFNhdmUgdG8gZmlsZQoJCWZzLndyaXRlRmlsZVN5bmModGFyZ2V0LCBvdXRwdXQsICd1dGY4Jyk7CgoJCWNvbnNvbGUubG9nKGBTYXZlZCAke3RhcmdldH0gKCR7b3V0cHV0Lmxlbmd0aH0gYnl0ZXMpYCk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs"><span class="hljs-comment">/**<br>
  * This is an advanced example for creating icon bundles for Iconify SVG Framework.<br>
  * It creates a bundle from all SVG files in a directory.<br>
  *<br>
@@ -102,11 +107,6 @@
 <br>
 <span class="hljs-comment">// Installation: npm install --save-dev @iconify/tools</span><br>
 <span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
-<br>
-<span class="hljs-comment">// True if bundle should use IconifyPreload.</span><br>
-<span class="hljs-comment">// False if bundle should use Iconify.addCollection.</span><br>
-<span class="hljs-comment">// See bundles for SVG framework for details.</span><br>
-<span class="hljs-keyword">const</span> preload = <span class="hljs-literal">true</span>;<br>
 <br>
 <span class="hljs-comment">// File to save bundle to</span><br>
 <span class="hljs-keyword">const</span> target = __dirname + <span class="hljs-string">&apos;/assets/icons-bundle.js&apos;</span>;<br>
@@ -201,10 +201,25 @@ tools<br>
  &#xA0; &#xA0;})<br>
  &#xA0; &#xA0;.then(<span class="hljs-function">(<span class="hljs-params">json</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Export to bundle</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> text = <span class="hljs-built_in">JSON</span>.stringify(json);<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">const</span> output = preload<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;? <span class="hljs-string">&apos;IconifyPreload = [&apos;</span> + text + <span class="hljs-string">&apos;];\n&apos;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;: <span class="hljs-string">&apos;Iconify.addCollection(&apos;</span> + text + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">let</span> output = <span class="hljs-string">&apos;add(&apos;</span> + <span class="hljs-built_in">JSON</span>.stringify(json) + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;output = <span class="hljs-string">`(function() { <br>
+ &#xA0; &#xA0;function add(data) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;try {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;if (typeof self.Iconify === &apos;object&apos; &amp;&amp; self.Iconify.addCollection) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.Iconify.addCollection(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;return;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;if (typeof self.IconifyPreload === &apos;undefined&apos;) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload = [];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload.push(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;} catch (err) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;<span class="hljs-subst">${output}</span><br>
+})();\n`</span>;<br>
 <br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Save to file</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</span>);<br>
@@ -214,7 +229,7 @@ tools<br>
  &#xA0; &#xA0;.catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-built_in">console</span>.error(err);<br>
  &#xA0; &#xA0;});<br>
-</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">async/await syntax</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYW4gYWR2YW5jZWQgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqIEl0IGNyZWF0ZXMgYSBidW5kbGUgZnJvbSBhbGwgU1ZHIGZpbGVzIGluIGEgZGlyZWN0b3J5LgogKgogKiBUaGlzIGV4YW1wbGUgdXNlcyBJY29uaWZ5IFRvb2xzIHRvIGNvbnZlcnQgaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdC4KICogRm9yIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiB2aXNpdCBodHRwczovL2RvY3MuaWNvbmlmeS5kZXNpZ24vdG9vbHMvbm9kZS8KICovCmNvbnN0IGZzID0gcmVxdWlyZSgnZnMnKTsKCi8vIEluc3RhbGxhdGlvbjogbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBUcnVlIGlmIGJ1bmRsZSBzaG91bGQgdXNlIEljb25pZnlQcmVsb2FkLgovLyBGYWxzZSBpZiBidW5kbGUgc2hvdWxkIHVzZSBJY29uaWZ5LmFkZENvbGxlY3Rpb24uCi8vIFNlZSBidW5kbGVzIGZvciBTVkcgZnJhbWV3b3JrIGZvciBkZXRhaWxzLgpjb25zdCBwcmVsb2FkID0gdHJ1ZTsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KY29uc3QgdGFyZ2V0ID0gX19kaXJuYW1lICsgJy9hc3NldHMvaWNvbnMtYnVuZGxlLmpzJzsKCi8vIFNWRyBmaWxlcyBsb2NhdGlvbgpjb25zdCBzb3VyY2UgPSBfX2Rpcm5hbWUgKyAnL3N2Zyc7CgovLyBQcmVmaXggdG8gdXNlIGZvciBjdXN0b20gaWNvbnMKY29uc3QgcHJlZml4ID0gJ2N1c3RvbSc7CgovLyBJbXBvcnQgaWNvbnMKKGFzeW5jIGZ1bmN0aW9uICgpIHsKCS8vIEltcG9ydCBpY29ucwoJY29uc3QgY29sbGVjdGlvbiA9IGF3YWl0IHRvb2xzLkltcG9ydERpcihzb3VyY2UsIHsKCQlwcmVmaXgsCgl9KTsKCgkvLyBTZXQgcHJlZml4Cgljb2xsZWN0aW9uLnByZWZpeCA9IHByZWZpeDsKCgkvLyBPcHRpb25zIGZvciBTVkdPIG9wdGltaXphdGlvbgoJY29uc3QgU1ZHT09wdGlvbnMgPSB7CgkJY29udmVydFNoYXBlVG9QYXRoOiB0cnVlLAoJCW1lcmdlUGF0aHM6IHRydWUsCgl9OwoKCS8vIE9wdGltaXplIFNWRyBmaWxlcwoJLy8KCS8vIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goKSBpdGVyYXRlcyBhbGwgaWNvbnMgaW4gY29sbGVjdGlvbiBhbmQgcnVucwoJLy8gcHJvbWlzZSBmb3IgZWFjaCBpY29uLCBvbmUgYXQgYSB0aW1lLgoJYXdhaXQgY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQlhc3luYyAoc3ZnLCBrZXkpID0+IGF3YWl0IHRvb2xzLlNWR08oc3ZnLCBTVkdPT3B0aW9ucyksCgkJdHJ1ZQoJKTsKCgkvLyBDbGVhbiB1cCB0YWdzCglhd2FpdCBjb2xsZWN0aW9uLnByb21pc2VFYWNoKGFzeW5jIChzdmcsIGtleSkgPT4gYXdhaXQgdG9vbHMuVGFncyhzdmcpLCB0cnVlKTsKCgkvLyBDaGFuZ2UgY29sb3IgdG8gImN1cnJlbnRDb2xvciIgdG8gYWxsIGljb25zCgkvLyBVc2UgdGhpcyBvbmx5IGZvciBtb25vdG9uZSBjb2xsZWN0aW9ucwoJY29uc3Qgb3B0aW9ucyA9IHsKCQlkZWZhdWx0OiAnY3VycmVudENvbG9yJywgLy8gY2hhbmdlIGFsbCBjb2xvcnMgdG8gImN1cnJlbnRDb2xvciIKCQlhZGQ6ICdjdXJyZW50Q29sb3InLCAvLyBhZGQgImN1cnJlbnRDb2xvciIgdG8gc2hhcGVzIHRoYXQgYXJlIG1pc3NpbmcgY29sb3IgdmFsdWUKCX07CgoJLyoKCS8vIEZvciBpY29ucyB0aGF0IGhhdmUgcGFsZXR0ZSB1c2UgdGhpcyBpbnN0ZWFkOgoJY29uc3Qgb3B0aW9ucyA9IHsKCQlhZGQ6ICdjdXJyZW50Q29sb3InLAoJfTsKCSovCgoJYXdhaXQgY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQlhc3luYyAoc3ZnKSA9PiBhd2FpdCB0b29scy5DaGFuZ2VQYWxldHRlKHN2Zywgb3B0aW9ucyksCgkJdHJ1ZQoJKTsKCgkvLyBFeHBvcnQgdG8gSlNPTgoJY29uc3QganNvbiA9IGF3YWl0IHRvb2xzLkV4cG9ydEpTT04oY29sbGVjdGlvbiwgbnVsbCwgewoJCW9wdGltaXplOiB0cnVlLAoJfSk7CgoJLy8gRXhwb3J0IHRvIGJ1bmRsZQoJY29uc3QgdGV4dCA9IEpTT04uc3RyaW5naWZ5KGpzb24pOwoJY29uc3Qgb3V0cHV0ID0gcHJlbG9hZAoJCT8gJ0ljb25pZnlQcmVsb2FkID0gWycgKyB0ZXh0ICsgJ107XG4nCgkJOiAnSWNvbmlmeS5hZGRDb2xsZWN0aW9uKCcgKyB0ZXh0ICsgJyk7XG4nOwoKCS8vIFNhdmUgdG8gZmlsZQoJZnMud3JpdGVGaWxlU3luYyh0YXJnZXQsIG91dHB1dCwgJ3V0ZjgnKTsKCgljb25zb2xlLmxvZyhgU2F2ZWQgJHt0YXJnZXR9ICgke291dHB1dC5sZW5ndGh9IGJ5dGVzKWApOwp9KSgpLmNhdGNoKChlcnIpID0+IHsKCWNvbnNvbGUuZXJyb3IoZXJyKTsKfSk7Cg=="><code class="highlight hljs"><span class="hljs-comment">/**<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">async/await syntax</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYW4gYWR2YW5jZWQgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqIEl0IGNyZWF0ZXMgYSBidW5kbGUgZnJvbSBhbGwgU1ZHIGZpbGVzIGluIGEgZGlyZWN0b3J5LgogKgogKiBUaGlzIGV4YW1wbGUgdXNlcyBJY29uaWZ5IFRvb2xzIHRvIGNvbnZlcnQgaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdC4KICogRm9yIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiB2aXNpdCBodHRwczovL2RvY3MuaWNvbmlmeS5kZXNpZ24vdG9vbHMvbm9kZS8KICovCmNvbnN0IGZzID0gcmVxdWlyZSgnZnMnKTsKCi8vIEluc3RhbGxhdGlvbjogbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS90b29scwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovLyBGaWxlIHRvIHNhdmUgYnVuZGxlIHRvCmNvbnN0IHRhcmdldCA9IF9fZGlybmFtZSArICcvYXNzZXRzL2ljb25zLWJ1bmRsZS5qcyc7CgovLyBTVkcgZmlsZXMgbG9jYXRpb24KY29uc3Qgc291cmNlID0gX19kaXJuYW1lICsgJy9zdmcnOwoKLy8gUHJlZml4IHRvIHVzZSBmb3IgY3VzdG9tIGljb25zCmNvbnN0IHByZWZpeCA9ICdjdXN0b20nOwoKLy8gSW1wb3J0IGljb25zCihhc3luYyBmdW5jdGlvbiAoKSB7CgkvLyBJbXBvcnQgaWNvbnMKCWNvbnN0IGNvbGxlY3Rpb24gPSBhd2FpdCB0b29scy5JbXBvcnREaXIoc291cmNlLCB7CgkJcHJlZml4LAoJfSk7CgoJLy8gU2V0IHByZWZpeAoJY29sbGVjdGlvbi5wcmVmaXggPSBwcmVmaXg7CgoJLy8gT3B0aW9ucyBmb3IgU1ZHTyBvcHRpbWl6YXRpb24KCWNvbnN0IFNWR09PcHRpb25zID0gewoJCWNvbnZlcnRTaGFwZVRvUGF0aDogdHJ1ZSwKCQltZXJnZVBhdGhzOiB0cnVlLAoJfTsKCgkvLyBPcHRpbWl6ZSBTVkcgZmlsZXMKCS8vCgkvLyBjb2xsZWN0aW9uLnByb21pc2VFYWNoKCkgaXRlcmF0ZXMgYWxsIGljb25zIGluIGNvbGxlY3Rpb24gYW5kIHJ1bnMKCS8vIHByb21pc2UgZm9yIGVhY2ggaWNvbiwgb25lIGF0IGEgdGltZS4KCWF3YWl0IGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJYXN5bmMgKHN2Zywga2V5KSA9PiBhd2FpdCB0b29scy5TVkdPKHN2ZywgU1ZHT09wdGlvbnMpLAoJCXRydWUKCSk7CgoJLy8gQ2xlYW4gdXAgdGFncwoJYXdhaXQgY29sbGVjdGlvbi5wcm9taXNlRWFjaChhc3luYyAoc3ZnLCBrZXkpID0+IGF3YWl0IHRvb2xzLlRhZ3Moc3ZnKSwgdHJ1ZSk7CgoJLy8gQ2hhbmdlIGNvbG9yIHRvICJjdXJyZW50Q29sb3IiIHRvIGFsbCBpY29ucwoJLy8gVXNlIHRoaXMgb25seSBmb3IgbW9ub3RvbmUgY29sbGVjdGlvbnMKCWNvbnN0IG9wdGlvbnMgPSB7CgkJZGVmYXVsdDogJ2N1cnJlbnRDb2xvcicsIC8vIGNoYW5nZSBhbGwgY29sb3JzIHRvICJjdXJyZW50Q29sb3IiCgkJYWRkOiAnY3VycmVudENvbG9yJywgLy8gYWRkICJjdXJyZW50Q29sb3IiIHRvIHNoYXBlcyB0aGF0IGFyZSBtaXNzaW5nIGNvbG9yIHZhbHVlCgl9OwoKCS8qCgkvLyBGb3IgaWNvbnMgdGhhdCBoYXZlIHBhbGV0dGUgdXNlIHRoaXMgaW5zdGVhZDoKCWNvbnN0IG9wdGlvbnMgPSB7CgkJYWRkOiAnY3VycmVudENvbG9yJywKCX07CgkqLwoKCWF3YWl0IGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJYXN5bmMgKHN2ZykgPT4gYXdhaXQgdG9vbHMuQ2hhbmdlUGFsZXR0ZShzdmcsIG9wdGlvbnMpLAoJCXRydWUKCSk7CgoJLy8gRXhwb3J0IHRvIEpTT04KCWNvbnN0IGpzb24gPSBhd2FpdCB0b29scy5FeHBvcnRKU09OKGNvbGxlY3Rpb24sIG51bGwsIHsKCQlvcHRpbWl6ZTogdHJ1ZSwKCX0pOwoKCS8vIEV4cG9ydCB0byBidW5kbGUKCWxldCBvdXRwdXQgPSAnYWRkKCcgKyBKU09OLnN0cmluZ2lmeShqc29uKSArICcpO1xuJzsKCgkvLyBXcmFwIGluIGN1c3RvbSBjb2RlIHRoYXQgY2hlY2tzIGZvciBJY29uaWZ5LmFkZENvbGxlY3Rpb24gYW5kIEljb25pZnlQcmVsb2FkCglvdXRwdXQgPSBgKGZ1bmN0aW9uKCkgeyAKCWZ1bmN0aW9uIGFkZChkYXRhKSB7CgkJdHJ5IHsKCQkJaWYgKHR5cGVvZiBzZWxmLkljb25pZnkgPT09ICdvYmplY3QnICYmIHNlbGYuSWNvbmlmeS5hZGRDb2xsZWN0aW9uKSB7CgkJCQlzZWxmLkljb25pZnkuYWRkQ29sbGVjdGlvbihkYXRhKTsKCQkJCXJldHVybjsKCQkJfQoJCQlpZiAodHlwZW9mIHNlbGYuSWNvbmlmeVByZWxvYWQgPT09ICd1bmRlZmluZWQnKSB7CgkJCQlzZWxmLkljb25pZnlQcmVsb2FkID0gW107CgkJCX0KCQkJc2VsZi5JY29uaWZ5UHJlbG9hZC5wdXNoKGRhdGEpOwoJCX0gY2F0Y2ggKGVycikgewoJCX0KCX0KCSR7b3V0cHV0fQp9KSgpO1xuYDsKCgkvLyBTYXZlIHRvIGZpbGUKCWZzLndyaXRlRmlsZVN5bmModGFyZ2V0LCBvdXRwdXQsICd1dGY4Jyk7CgoJY29uc29sZS5sb2coYFNhdmVkICR7dGFyZ2V0fSAoJHtvdXRwdXQubGVuZ3RofSBieXRlcylgKTsKfSkoKS5jYXRjaCgoZXJyKSA9PiB7Cgljb25zb2xlLmVycm9yKGVycik7Cn0pOwo="><code class="highlight hljs"><span class="hljs-comment">/**<br>
  * This is an advanced example for creating icon bundles for Iconify SVG Framework.<br>
  * It creates a bundle from all SVG files in a directory.<br>
  *<br>
@@ -225,11 +240,6 @@ tools<br>
 <br>
 <span class="hljs-comment">// Installation: npm install --save-dev @iconify/tools</span><br>
 <span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
-<br>
-<span class="hljs-comment">// True if bundle should use IconifyPreload.</span><br>
-<span class="hljs-comment">// False if bundle should use Iconify.addCollection.</span><br>
-<span class="hljs-comment">// See bundles for SVG framework for details.</span><br>
-<span class="hljs-keyword">const</span> preload = <span class="hljs-literal">true</span>;<br>
 <br>
 <span class="hljs-comment">// File to save bundle to</span><br>
 <span class="hljs-keyword">const</span> target = __dirname + <span class="hljs-string">&apos;/assets/icons-bundle.js&apos;</span>;<br>
@@ -293,10 +303,25 @@ tools<br>
  &#xA0; &#xA0;});<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Export to bundle</span><br>
- &#xA0; &#xA0;<span class="hljs-keyword">const</span> text = <span class="hljs-built_in">JSON</span>.stringify(json);<br>
- &#xA0; &#xA0;<span class="hljs-keyword">const</span> output = preload<br>
- &#xA0; &#xA0; &#xA0; &#xA0;? <span class="hljs-string">&apos;IconifyPreload = [&apos;</span> + text + <span class="hljs-string">&apos;];\n&apos;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;: <span class="hljs-string">&apos;Iconify.addCollection(&apos;</span> + text + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">let</span> output = <span class="hljs-string">&apos;add(&apos;</span> + <span class="hljs-built_in">JSON</span>.stringify(json) + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+<br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload</span><br>
+ &#xA0; &#xA0;output = <span class="hljs-string">`(function() { <br>
+ &#xA0; &#xA0;function add(data) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;try {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;if (typeof self.Iconify === &apos;object&apos; &amp;&amp; self.Iconify.addCollection) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.Iconify.addCollection(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;return;<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;if (typeof self.IconifyPreload === &apos;undefined&apos;) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload = [];<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;self.IconifyPreload.push(data);<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;} catch (err) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;}<br>
+ &#xA0; &#xA0;<span class="hljs-subst">${output}</span><br>
+})();\n`</span>;<br>
 <br>
  &#xA0; &#xA0;<span class="hljs-comment">// Save to file</span><br>
  &#xA0; &#xA0;fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</span>);<br>
@@ -312,9 +337,9 @@ tools<br>
 
 
 
-<section class="content-section content-section--2"><H1 id="usage-in-html" class="heading--2">Usage in HTML <a href="#usage-in-html" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If <span class="hljs-inline-var">preload</span> is set to <span class="hljs-literal">true</span>, bundle generated by script above must be included before SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9wcmVsb2FkLWljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+CgkJPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4xL2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4KCTwvaGVhZD4KCTxib2R5PgoJCTwhLS0gY29udGVudCBoZXJlIC0tPgoJPC9ib2R5Pgo8L2h0bWw+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
+<section class="content-section content-section--2"><H1 id="usage-in-html" class="heading--2">Usage in HTML <a href="#usage-in-html" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Bundle generated by script above can be included before SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9wcmVsb2FkLWljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+CgkJPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4xL2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4KCTwvaGVhZD4KCTxib2R5PgoJCTwhLS0gY29udGVudCBoZXJlIC0tPgoJPC9ib2R5Pgo8L2h0bWw+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/preload-icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.1/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
@@ -324,11 +349,11 @@ tools<br>
 </code></div><div class="code-block-hint">Loading bundle before SVG framework in head section.</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8Ym9keT4KCQk8IS0tIGNvbnRlbnQgaGVyZSAtLT4KCQk8c2NyaXB0IHNyYz0iL2Fzc2V0cy9wcmVsb2FkLWljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+CgkJPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8yLzIuMC4xL2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4KCTwvYm9keT4KPC9odG1sPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">&lt;!-- content here --&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/preload-icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.1/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br>
-</code></div><div class="code-block-hint">Loading bundle before SVG framework in footer.</div></div></div><p>If <span class="hljs-inline-var">preload</span> is set to <span class="hljs-literal">false</span>, bundle generated by script above must be included after SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jb2RlLmljb25pZnkuZGVzaWduLzIvMi4wLjEvaWNvbmlmeS5taW4uanMiPjwvc2NyaXB0PgoJCTxzY3JpcHQgc3JjPSIvYXNzZXRzL2ljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+Cgk8L2hlYWQ+Cgk8Ym9keT4KCQk8IS0tIGNvbnRlbnQgaGVyZSAtLT4KCTwvYm9keT4KPC9odG1sPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
+</code></div><div class="code-block-hint">Loading bundle before SVG framework in footer.</div></div></div><p>Bundle generated by script above can also be included after SVG framework:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PGh0bWw+Cgk8aGVhZD4KCQk8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jb2RlLmljb25pZnkuZGVzaWduLzIvMi4wLjEvaWNvbmlmeS5taW4uanMiPjwvc2NyaXB0PgoJCTxzY3JpcHQgc3JjPSIvYXNzZXRzL2ljb25zLWJ1bmRsZS5qcyI+PC9zY3JpcHQ+Cgk8L2hlYWQ+Cgk8Ym9keT4KCQk8IS0tIGNvbnRlbnQgaGVyZSAtLT4KCTwvYm9keT4KPC9odG1sPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/2/2.0.1/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/assets/icons-bundle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
@@ -342,12 +367,15 @@ tools<br>
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -356,18 +384,17 @@ tools<br>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svg-framework.html">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react.html">React</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api.html">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte.html">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--separator"><a href="./">Examples</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -420,7 +447,7 @@ tools<br>
 				</ul>
 			</div>
 		</footer>
-		<script src="../../../assets/bundle.js?241e"></script>
+		<script src="../../../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

@@ -1,45 +1,8 @@
 /develop/:
   title: For Developers
   children:
-    /sources/:
-      title: Sources
-      children:
-        ./api/:
-          title: Iconify API
-          children:
-            ./hosting.html:
-              title: Hosting API
-              children:
-                ./hosting-php/: PHP
-                ./hosting-js/: Node.js
-            ./providers.html:
-              title: API Providers
-            ./config.html:
-              title: Using custom API
-            ./queries.html:
-              title: API Queries
-              # wip: true
-        ./bundles/:
-          title: Bundled Icons
-          children:
-            ./api.html: Using Iconify API
-            ./json-tools.html: Using JSON Tools
-            ./svg-framework.html: SVG Framework
-            ./components.html:
-              title: Components
-              separator: true
-              clickable: false
-            ./react.html: React
-            ./vue.html: Vue 3
-            ./vue2.html: Vue 2
-            ./svelte.html: Svelte
-            ./examples/:
-              title: Examples
-              separator: true
-        ./npm/: Icon Packages
-        ./json/: Iconify Icon Sets
-    /implementations/:
-      title: Implementations
+    /icon-components/:
+      title: Icon Components
       children:
         ./svg-framework/:
           title: SVG Framework
@@ -100,79 +63,116 @@
               title: Getting SVG Data
               hidden: true
         ./components/:
-          title: Components
+          title: Icon Components
+          hidden: true
+        ./react/:
+          title: React
           children:
-            ../react/:
-              title: React
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+            ./offline.html: Offline Use
+            ./functions.html:
+              title: Functions
+              separator: true
+              clickable: false
+            # Getting icons
+            ./icon-exists.html: iconExists()
+            ./list-icons.html: listIcons()
+            ./get-icon.html: getIcon()
+            # Adding icons
+            ./add-icon.html: addIcon()
+            ./add-collection.html: addCollection()
+            # API
+            ./load-icons.html: loadIcons()
+            ./enable-cache.html: enableCache()
+            ./disable-cache.html: disableCache()
+            # Internal
+            ./replace-ids.html: replaceIDs()
+        ./react-with-api/:
+          title: React with API
+          hidden: true
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+            ./functions.html:
+              title: Functions
+              separator: true
+              clickable: false
+            # Getting icons
+            ./icon-exists.html: iconExists()
+            ./list-icons.html: listIcons()
+            ./get-icon.html: getIcon()
+            # Adding icons
+            ./add-icon.html: addIcon()
+            ./add-collection.html: addCollection()
+            # API
+            ./load-icons.html: loadIcons()
+            ./enable-cache.html: enableCache()
+            ./disable-cache.html: disableCache()
+            # Internal
+            ./replace-ids.html: replaceIDs()
+        ./vue/:
+          title: Vue 3
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+        ./vue2/:
+          title: Vue 2
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+        ./svelte/:
+          title: Svelte
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+    /sources/:
+      title: Sources
+      children:
+        ./api/:
+          title: Iconify API
+          children:
+            ./hosting.html:
+              title: Hosting API
               children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
-                ./inline.html: Inline Icons
-                ./offline.html: Offline Use
-                ./functions.html:
-                  title: Functions
-                  separator: true
-                  clickable: false
-                # Getting icons
-                ./icon-exists.html: iconExists()
-                ./list-icons.html: listIcons()
-                ./get-icon.html: getIcon()
-                # Adding icons
-                ./add-icon.html: addIcon()
-                ./add-collection.html: addCollection()
-                # API
-                ./load-icons.html: loadIcons()
-                ./enable-cache.html: enableCache()
-                ./disable-cache.html: disableCache()
-                # Internal
-                ./replace-ids.html: replaceIDs()
-            ../react-with-api/:
-              title: React with API
-              hidden: true
-              children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
-                ./inline.html: Inline Icons
-                ./functions.html:
-                  title: Functions
-                  separator: true
-                  clickable: false
-                # Getting icons
-                ./icon-exists.html: iconExists()
-                ./list-icons.html: listIcons()
-                ./get-icon.html: getIcon()
-                # Adding icons
-                ./add-icon.html: addIcon()
-                ./add-collection.html: addCollection()
-                # API
-                ./load-icons.html: loadIcons()
-                ./enable-cache.html: enableCache()
-                ./disable-cache.html: disableCache()
-                # Internal
-                ./replace-ids.html: replaceIDs()
-            ../vue/:
-              title: Vue 3
-              children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
-                ./inline.html: Inline Icons
-            ../vue2/:
-              title: Vue 2
-              children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
-                ./inline.html: Inline Icons
-            ../svelte/:
-              title: Svelte
-              children:
-                ./color.html: Icon Color
-                ./dimensions.html: Icon Dimensions
-                ./transform.html: Transformations
-                ./inline.html: Inline Icons
+                ./hosting-php/: PHP
+                ./hosting-js/: Node.js
+            ./providers.html:
+              title: API Providers
+            ./config.html:
+              title: Using custom API
+            ./queries.html:
+              title: API Queries
+              # wip: true
+        ./bundles/:
+          title: Bundled Icons
+          children:
+            ./api.html: Using Iconify API
+            ./json-tools.html: Using JSON Tools
+            ./svg-framework.html: SVG Framework
+            ./components.html:
+              title: Components
+              separator: true
+              clickable: false
+            ./react.html: React
+            ./vue.html: Vue 3
+            ./vue2.html: Vue 2
+            ./svelte.html: Svelte
+            ./examples/:
+              title: Examples
+              separator: true
+        ./npm/: Icon Packages
+        ./json/: Iconify Icon Sets
 /design/:
   title: For Designers
   children:

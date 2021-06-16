@@ -15,17 +15,22 @@
 			href="../../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?6674" />
+		<link rel="stylesheet" href="../../assets/style.css?1d42" />
 		<title>Generating Iconify Icon Bundles with JSON Tools</title>
 		
 	</head>
@@ -124,17 +129,20 @@
 <section class="content-section content-section--2"><H1 id="json" class="heading--2">Export to JSON string <a href="#json" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Then convert <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> to <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Y29uc3Qgc3RyID0gSlNPTi5zdHJpbmdpZnkoZGF0YSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> str = <span class="hljs-built_in">JSON</span>.stringify(data);<br>
 </code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JHN0ciA9IGpzb25fZW5jb2RlKCRkYXRhKTs="><code class="highlight hljs"><span class="hljs-variable">$str</span> = json_encode(<span class="hljs-variable">$data</span>);</code></div></div></div></section>
 
-<section class="content-section content-section--2"><H1 id="callback" class="heading--2">Wrap in a callback <a href="#callback" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This step is different for different Iconify implementations. See <a href="./#callbacks">icon bundles tutorial</a> for details.</p><p>Also check out <a href="./examples/">code examples</a> for full examples.</p></section>
+<section class="content-section content-section--2"><H1 id="callback" class="heading--2">Wrap in a callback <a href="#callback" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This step is different for different Iconify icon components. See <a href="./#callbacks">icon bundles tutorial</a> for details.</p><p>Also check out <a href="./examples/">code examples</a> for full examples.</p></section>
 
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -143,18 +151,17 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svg-framework.html">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react-with-api.html">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svelte.html">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./examples/">Examples</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -207,7 +214,7 @@
 				</ul>
 			</div>
 		</footer>
-		<script src="../../assets/bundle.js?241e"></script>
+		<script src="../../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

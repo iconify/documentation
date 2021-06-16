@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?1d42" />
+		<title>Custom dimensions and alignment</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<span
+							class="iconify"
+							data-width="164"
+							data-height="40"
+							data-icon="assets:logo-iconify"
+						></span>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation">Documentation</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								>GitHub</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">
+					Thousands of icons, one unified framework.
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/icon-sets/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./inline-vs-block.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Inline and Block Modes</a>
+<a href="./transformations.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Transformations</a>
+</div>
+<h1>Custom dimensions and alignment</h1>
+<div class="notice notice--legacy">
+	<span class="iconify-inline" data-icon="line-md:alert"></span>
+	<p>This article is for outdated Iconify SVG Framework version 1.0.</p>
+	<p>
+		Documentation for the latest version
+		<a href="../svg-framework/">is available here</a>.
+	</p>
+</div><p>Unlike other images, SVG keep proportions when custom width/height ratio does not match icon width/height ratio. That makes it possible to set custom dimensions without worrying about icon being distorted.</p>
+<p>By default, all icons have height of <span class="hljs-number">1em</span>, width is calculated automatically from original icon&apos;s width/height ratio.</p>
+<p>To change icon size set <span class="hljs-inline-prop">font-size</span>.</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PGRpdiBjbGFzcz0iYWxlcnQiPgoJPGljb25pZnktaWNvbiBkYXRhLWljb249ImxpbmUtbWQ6YWxlcnQiPjwvaWNvbmlmeS1pY29uPgo8L2Rpdj4KPHAgY2xhc3M9InNtYWxsIj4KCVNtYWxsIHRleHQgd2l0aCBhCgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJlbW9qaW9uZTpkb2ctZmFjZSI+PC9zcGFuPiBkb2cgZW1vamkhCjwvcD4KPHAgY2xhc3M9Im1lZGl1bSI+CglTb21lb25lIHdlbnQgb3ZlcmJvYXJkIHdpdGggZW1vamlzIGhlcmU6Cgk8c3BhbiBjbGFzcz0iaWNvbmlmeSIgZGF0YS1pY29uPSJlbW9qaW9uZS12MTp3YXRjaCI+PC9zcGFuPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZW1vamlvbmU6YW5ndWlzaGVkLWZhY2UiPjwvc3Bhbj4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImVtb2ppb25lOmFzdG9uaXNoZWQtZmFjZSI+PC9zcGFuPgoJPHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iZW1vamlvbmU6ZG9nLWZhY2UiPjwvc3Bhbj4KCTxzcGFuIGNsYXNzPSJpY29uaWZ5IiBkYXRhLWljb249ImVtb2ppb25lOmJpcmQiPjwvc3Bhbj4KPC9wPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alert&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:alert&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;small&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;Small text with a<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione:dog-face&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> dog emoji!<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;medium&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;Someone went overboard with emojis here:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione-v1:watch&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione:anguished-face&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione:astonished-face&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione:dog-face&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;emojione:bird&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyogQmlnIHJlZCBhbGVydCEgKi8Kc3ZnW2RhdGEtaWNvbj0nbGluZS1tZDphbGVydCddIHsKCWZvbnQtc2l6ZTogNDhweDsKCWNvbG9yOiAjYmEzMzI5Owp9CgovKiBEaWZmZXJlbnQgc2l6ZXMgZm9yIGRpZmZlcmVudCBwYXJhZ3JhcGhzICovCi5zbWFsbCB7Cglmb250LXNpemU6IDE2cHg7CglsaW5lLWhlaWdodDogMjBweDsKfQoKLm1lZGl1bSB7Cglmb250LXNpemU6IDIwcHg7CglsaW5lLWhlaWdodDogMjhweDsKfQo="><code class="highlight hljs"><span class="hljs-comment">/* Big red alert! */</span><br>
+svg<span class="hljs-selector-attr">[data-icon=<span class="hljs-string">&apos;line-md:alert&apos;</span>]</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">48px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ba3329</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">/* Different sizes for different paragraphs */</span><br>
+<span class="hljs-selector-class">.small</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">20px</span>;<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.medium</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">28px</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo"><div class="alert">
+	<span class="iconify" data-icon="line-md:alert"></span>
+</div>
+<p class="small">
+	Small text with a
+	<span class="iconify-inline" data-icon="emojione:dog-face"></span> dog emoji!
+</p>
+<p class="medium">
+	Someone went overboard with emojis here:
+	<span class="iconify-inline" data-icon="emojione-v1:watch"></span>
+	<span class="iconify-inline" data-icon="emojione:anguished-face"></span>
+	<span class="iconify-inline" data-icon="emojione:astonished-face"></span>
+	<span class="iconify-inline" data-icon="emojione:dog-face"></span>
+	<span class="iconify-inline" data-icon="emojione:bird"></span>
+</p>
+</div></div></div></div><p>Usually that&apos;s all you need to do. However, there are more options.</p>
+<p>You can set custom dimensions 3 ways:</p>
+<ul>
+<li>You can set <span class="hljs-inline-prop">font-size</span> (as shown above).</li>
+<li>You can set <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> in stylesheet.</li>
+<li>You can set <span class="hljs-inline-prop">data-width</span> and <span class="hljs-inline-prop">data-height</span> attributes.</li>
+</ul>
+<p>If you set only one of <span class="hljs-inline-prop">data-</span> attributes, other size is set using width/height ratio of icon. For example, if icon is 768x1024, you set <span class="hljs-inline-attr">data-height</span>=<span class="hljs-string">&quot;16&quot;</span>, width will be set to <span class="hljs-number">12</span>.</p>
+<section class="content-section content-section--2"><H1 id="data" class="heading--2">Using data-* attributes <a href="#data" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you set width and height using <span class="hljs-inline-prop">data-width</span> and/or <span class="hljs-inline-prop">data-height</span> attributes, Iconify assigns that width/height to SVG icon.</p><p>If only one attribute is set, another attribute is calculated using width/height ratio of original icon.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PGljb25pZnktaWNvbiBkYXRhLWljb249ImZhLWFkZHJlc3MtY2FyZCIgZGF0YS1oZWlnaHQ9IjQ4Ij48L2ljb25pZnktaWNvbj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-address-card&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+</code></div></div></div><p>Result:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAyMDQ4IDE1MzYiPgoJPHBhdGggZD0iLi4uIiBmaWxsPSJjdXJyZW50Q29sb3IiIC8+Cjwvc3ZnPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;64&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;48&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 2048 1536&quot;</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;...&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>Original icon&apos;s dimensions: 2048x1536</p><p>Custom height is <span class="hljs-number">48</span>, so Iconify sets width to <span class="hljs-number">48</span> * <span class="hljs-number">2048</span> / <span class="hljs-number">1536</span> = <span class="hljs-number">64</span>.</p><p>It works not only with raw numbers, but with units as well. If instead of <span class="hljs-number">48</span>, height value is set to &quot;<span class="hljs-string">4.8em</span>&quot;, Iconify would set width to &quot;<span class="hljs-string">6.4em</span>&quot; unless you specify custom width.</p></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="css" class="heading--2">Using width and height in stylesheet <a href="#css" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>If you set <span class="hljs-inline-prop">width</span> or <span class="hljs-inline-prop">height</span> using stylesheet, Iconify doesn&apos;t change any SVG attributes. Height is set to &quot;<span class="hljs-string">1em</span>&quot;, width is set to &quot;<span class="hljs-string">(icon-width / icon-height)em</span>&quot;.</p><p>Because of that, only 1 side is changed, which might result in bad width/height ratio. Therefore, you might want to change both width and height or use <span class="hljs-inline-prop">font-size</span> instead.</p><p>Examples are available below.</p><section class="content-section content-section--3"><H1 id="fixed-height" class="heading--3">Fixed height, dynamic width <a href="#fixed-height" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>This is default mode. By default, icons have height of 1em, width is dynamic.</p><p>Below is example of changing height to <span class="hljs-number">28px</span> using different methods. There are 2 available methods:</p><ul>
+<li>Using <span class="hljs-inline-prop">data-height</span> attribute.</li>
+<li>Using <span class="hljs-inline-prop">font-size</span> style.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+U2FtcGxlIHdpZGUgaWNvbjogImZhLWJhdHRlcnktMyIuIERlZmF1bHQgZGltZW5zaW9uczogMjMwNHgxMjgwLjwvcD4KPHA+U2FtcGxlIHNxdWFyZSBpY29uOiAiaW9uLWlvcy1yZWZyZXNoIi4gRGVmYXVsdCBkaW1lbnNpb25zOiA1MTJ4NTEyLjwvcD4KPHA+U2FtcGxlIHRoaW4gaWNvbjogIndoaC1idXNpbmVzcyIuIERlZmF1bHQgZGltZW5zaW9uczogMzg2eDEwMjQuPC9wPgo8cD4KCTFlbSBoZWlnaHQ6Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbiBkYXRhLWljb249IndoaC1idXNpbmVzcyI+PC9pY29uaWZ5LWljb24+CjwvcD4KPCEtLSAKICBDb3JyZWN0IHVzYWdlOiBtdWx0aXBsZSB3YXlzIHRvIHNldCBoZWlnaHQgdG8gMzJweCwgd2lkdGggdG8gZHluYW1pYyB2YWx1ZS4KLS0+CjxiciAvPgo8cD4KCTMycHggaGVpZ2h0IChhdHRyaWJ1dGUpOgoJPGljb25pZnktaWNvbiBkYXRhLWljb249ImZhLWJhdHRlcnktMyIgZGF0YS1oZWlnaHQ9IjMyIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giIGRhdGEtaGVpZ2h0PSIzMiI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0id2hoLWJ1c2luZXNzIiBkYXRhLWhlaWdodD0iMzIiPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJMzJweCBoZWlnaHQgKGlubGluZSBzdHlsZSB3aXRoIGZvbnQtc2l6ZSk6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJmYS1iYXR0ZXJ5LTMiCgkJc3R5bGU9ImZvbnQtc2l6ZTogMzJweDsiCgk+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giCgkJc3R5bGU9ImZvbnQtc2l6ZTogMzJweDsiCgk+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJ3aGgtYnVzaW5lc3MiCgkJc3R5bGU9ImZvbnQtc2l6ZTogMzJweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CgkzMnB4IGhlaWdodCAoY3NzIHdpdGggZm9udC1zaXplKToKCTxpY29uaWZ5LWljb24gY2xhc3M9ImZvbnQtMzIiIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gY2xhc3M9ImZvbnQtMzIiIGRhdGEtaWNvbj0iaW9uLWlvcy1yZWZyZXNoIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gY2xhc3M9ImZvbnQtMzIiIGRhdGEtaWNvbj0id2hoLWJ1c2luZXNzIj48L2ljb25pZnktaWNvbj4KPC9wPgo8IS0tCiAgSW5jb3JyZWN0IHVzYWdlOiBzZXR0aW5nIGhlaWdodCB3aXRoIGlubGluZSBzdHlsZSBvciBzdHlsZXNoZWV0LCBidXQgbm90IHNldHRpbmcgd2lkdGguCi0tPgo8YnIgLz4KPHA+RXhhbXBsZXMgb2YgaW5jb3JyZWN0IHVzYWdlOjwvcD4KPHA+CgkzMnB4IGhlaWdodCAoaW5saW5lIHN0eWxlIHdpdGggaGVpZ2h0KToKCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJmYS1iYXR0ZXJ5LTMiIHN0eWxlPSJoZWlnaHQ6IDMycHg7Ij48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249Imlvbi1pb3MtcmVmcmVzaCIKCQlzdHlsZT0iaGVpZ2h0OiAzMnB4OyIKCT48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJ3aGgtYnVzaW5lc3MiIHN0eWxlPSJoZWlnaHQ6IDMycHg7Ij48L2ljb25pZnktaWNvbj4KPC9wPgo8cD4KCTMycHggaGVpZ2h0IChjc3Mgd2l0aCBoZWlnaHQpOgoJPGljb25pZnktaWNvbiBjbGFzcz0iaGVpZ2h0LTMyIiBkYXRhLWljb249ImZhLWJhdHRlcnktMyI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGNsYXNzPSJoZWlnaHQtMzIiIGRhdGEtaWNvbj0iaW9uLWlvcy1yZWZyZXNoIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gY2xhc3M9ImhlaWdodC0zMiIgZGF0YS1pY29uPSJ3aGgtYnVzaW5lc3MiPjwvaWNvbmlmeS1pY29uPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;1em height:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!-- <br>
+ &#xA0;Correct usage: multiple ways to set height to 32px, width to dynamic value.<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;32px height (attribute):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;32&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;32&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span> <span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;32&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;32px height (inline style with font-size):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 32px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 32px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 32px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;32px height (css with font-size):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Incorrect usage: setting height with inline style or stylesheet, but not setting width.<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Examples of incorrect usage:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;32px height (inline style with height):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 32px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 32px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 32px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;32px height (css with height):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;height-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;height-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;height-32&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LmhlaWdodC0zMiB7CgloZWlnaHQ6IDMycHg7Cn0KLmZvbnQtMzIgewoJZm9udC1zaXplOiAzMnB4Owp9CgovKiBCb3hlcyB0byBzaG93IGljb24gZGltZW5zaW9ucyAqLwpzdmcgewoJYm94LXNoYWRvdzogMCAwIDAgMXB4ICMyZDljZjQ7Cn0Kc3ZnOmhvdmVyIHsKCWJveC1zaGFkb3c6IDAgMCAwIDFweCAjZjU1YjUwOwp9Cg=="><code class="highlight hljs"><span class="hljs-selector-class">.height-32</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">height</span>: <span class="hljs-number">32px</span>;<br>
+}<br>
+<span class="hljs-selector-class">.font-32</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">32px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">/* Boxes to show icon dimensions */</span><br>
+svg {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#2d9cf4</span>;<br>
+}<br>
+svg<span class="hljs-selector-pseudo">:hover</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#f55b50</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo-fixed-size"><p>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.</p>
+<p>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.</p>
+<p>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.</p>
+<p>
+	1em height:
+	<span class="iconify" data-icon="fa-battery-3"></span>
+	<span class="iconify" data-icon="ion-ios-refresh"></span>
+	<span class="iconify" data-icon="whh-business"></span>
+</p>
+<!-- 
+  Correct usage: multiple ways to set height to 32px, width to dynamic value.
+-->
+<br>
+<p>
+	32px height (attribute):
+	<span class="iconify" data-icon="fa-battery-3" data-height="32"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" data-height="32"></span>
+	<span class="iconify" data-icon="whh-business" data-height="32"></span>
+</p>
+<p>
+	32px height (inline style with font-size):
+	<span class="iconify" data-icon="fa-battery-3" style="font-size: 32px;"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" style="font-size: 32px;"></span>
+	<span class="iconify" data-icon="whh-business" style="font-size: 32px;"></span>
+</p>
+<p>
+	32px height (css with font-size):
+	<span class="iconify font-32" data-icon="fa-battery-3"></span>
+	<span class="iconify font-32" data-icon="ion-ios-refresh"></span>
+	<span class="iconify font-32" data-icon="whh-business"></span>
+</p>
+<!--
+  Incorrect usage: setting height with inline style or stylesheet, but not setting width.
+-->
+<br>
+<p>Examples of incorrect usage:</p>
+<p>
+	32px height (inline style with height):
+	<span class="iconify" data-icon="fa-battery-3" style="height: 32px;"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" style="height: 32px;"></span>
+	<span class="iconify" data-icon="whh-business" style="height: 32px;"></span>
+</p>
+<p>
+	32px height (css with height):
+	<span class="iconify height-32" data-icon="fa-battery-3"></span>
+	<span class="iconify height-32" data-icon="ion-ios-refresh"></span>
+	<span class="iconify height-32" data-icon="whh-business"></span>
+</p>
+</div></div></div></div><p>Last 2 examples show incorrect usage. Notice spacing above and below icon that should not be there. If you set <span class="hljs-inline-prop">height</span> via stylesheet (or inline style), make sure you set <span class="hljs-inline-prop">width</span> as well. Otherwise, you should use <span class="hljs-inline-prop">font-size</span>.</p><p>Never set <span class="hljs-inline-prop">width: auto</span> in stylesheet, it causes bugs in Internet Explorer that some visitors unfortunately still use.</p></section><section class="content-section content-section--3"><H1 id="fixed-width" class="heading--3">Fixed width, dynamic height <a href="#fixed-width" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are 2 ways to set height, but only 1 way to set width without changing height: using <span class="hljs-inline-prop">data-width</span> attribute.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+U2FtcGxlIHdpZGUgaWNvbjogImZhLWJhdHRlcnktMyIuIERlZmF1bHQgZGltZW5zaW9uczogMjMwNHgxMjgwLjwvcD4KPHA+U2FtcGxlIHNxdWFyZSBpY29uOiAiaW9uLWlvcy1yZWZyZXNoIi4gRGVmYXVsdCBkaW1lbnNpb25zOiA1MTJ4NTEyLjwvcD4KPHA+U2FtcGxlIHRoaW4gaWNvbjogIndoaC1idXNpbmVzcyIuIERlZmF1bHQgZGltZW5zaW9uczogMzg2eDEwMjQuPC9wPgo8cD4KCTFlbSBoZWlnaHQ6Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbiBkYXRhLWljb249IndoaC1idXNpbmVzcyI+PC9pY29uaWZ5LWljb24+CjwvcD4KPCEtLSAKICBDb3JyZWN0IHVzYWdlOiB1c2luZyBkYXRhLXdpZHRoIHRvIHNldCB3aWR0aCB0byA0OHB4LCBoZWlnaHQgdG8gZHluYW1pYyB2YWx1ZS4KLS0+CjxiciAvPgo8cD4KCTQ4cHggd2lkdGggKGF0dHJpYnV0ZSk6Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIiBkYXRhLXdpZHRoPSI0OCI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iaW9uLWlvcy1yZWZyZXNoIiBkYXRhLXdpZHRoPSI0OCI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0id2hoLWJ1c2luZXNzIiBkYXRhLXdpZHRoPSI0OCI+PC9pY29uaWZ5LWljb24+CjwvcD4KPCEtLQogIEluY29ycmVjdCB1c2FnZTogc2V0dGluZyB3aWR0aCB3aXRoIGlubGluZSBzdHlsZSBvciBzdHlsZXNoZWV0LCBidXQgbm90IHNldHRpbmcgaGVpZ2h0LgotLT4KPGJyIC8+CjxwPkV4YW1wbGVzIG9mIGluY29ycmVjdCB1c2FnZTo8L3A+CjxwPgoJMjhweCBoZWlnaHQgKGlubGluZSBzdHlsZSk6Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIiBzdHlsZT0id2lkdGg6IDQ4cHg7Ij48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giIHN0eWxlPSJ3aWR0aDogNDhweDsiPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbiBkYXRhLWljb249IndoaC1idXNpbmVzcyIgc3R5bGU9IndpZHRoOiA0OHB4OyI+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CgkyOHB4IGhlaWdodCAoY3NzKToKCTxpY29uaWZ5LWljb24gY2xhc3M9IndpZHRoLTQ4IiBkYXRhLWljb249ImZhLWJhdHRlcnktMyI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGNsYXNzPSJ3aWR0aC00OCIgZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbiBjbGFzcz0id2lkdGgtNDgiIGRhdGEtaWNvbj0id2hoLWJ1c2luZXNzIj48L2ljb25pZnktaWNvbj4KPC9wPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;1em height:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!-- <br>
+ &#xA0;Correct usage: using data-width to set width to 48px, height to dynamic value.<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;48px width (attribute):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span> <span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span> <span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span> <span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;48&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Incorrect usage: setting width with inline style or stylesheet, but not setting height.<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Examples of incorrect usage:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;28px height (inline style):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 48px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 48px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 48px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;28px height (css):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;width-48&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;width-48&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;width-48&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LndpZHRoLTQ4IHsKCXdpZHRoOiA0OHB4Owp9CgovKiBCb3hlcyB0byBzaG93IGljb24gZGltZW5zaW9ucyAqLwpzdmcgewoJYm94LXNoYWRvdzogMCAwIDAgMXB4ICMyZDljZjQ7Cn0Kc3ZnOmhvdmVyIHsKCWJveC1zaGFkb3c6IDAgMCAwIDFweCAjZjU1YjUwOwp9Cg=="><code class="highlight hljs"><span class="hljs-selector-class">.width-48</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">width</span>: <span class="hljs-number">48px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">/* Boxes to show icon dimensions */</span><br>
+svg {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#2d9cf4</span>;<br>
+}<br>
+svg<span class="hljs-selector-pseudo">:hover</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#f55b50</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo-fixed-size"><p>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.</p>
+<p>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.</p>
+<p>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.</p>
+<p>
+	1em height:
+	<span class="iconify" data-icon="fa-battery-3"></span>
+	<span class="iconify" data-icon="ion-ios-refresh"></span>
+	<span class="iconify" data-icon="whh-business"></span>
+</p>
+<!-- 
+  Correct usage: using data-width to set width to 48px, height to dynamic value.
+-->
+<br>
+<p>
+	48px width (attribute):
+	<span class="iconify" data-icon="fa-battery-3" data-width="48"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" data-width="48"></span>
+	<span class="iconify" data-icon="whh-business" data-width="48"></span>
+</p>
+<!--
+  Incorrect usage: setting width with inline style or stylesheet, but not setting height.
+-->
+<br>
+<p>Examples of incorrect usage:</p>
+<p>
+	28px height (inline style):
+	<span class="iconify" data-icon="fa-battery-3" style="width: 48px;"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" style="width: 48px;"></span>
+	<span class="iconify" data-icon="whh-business" style="width: 48px;"></span>
+</p>
+<p>
+	28px height (css):
+	<span class="iconify width-48" data-icon="fa-battery-3"></span>
+	<span class="iconify width-48" data-icon="ion-ios-refresh"></span>
+	<span class="iconify width-48" data-icon="whh-business"></span>
+</p>
+</div></div></div></div><p>Last 2 examples show incorrect usage. Notice space on left and right of icon. If you set <span class="hljs-inline-prop">width</span> via stylesheet (or inline style), make sure you set <span class="hljs-inline-prop">height</span> as well.</p></section><section class="content-section content-section--3"><H1 id="fixed-size" class="heading--3">Fixed width and height <a href="#fixed-size" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>When you need to fit icon into container, for example make icon square, set both width and height.</p><p>There are 2 ways to do it:</p><ul>
+<li>Using <span class="hljs-inline-prop">data-width</span> and <span class="hljs-inline-prop">data-height</span> attributes.</li>
+<li>Using <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> style.</li>
+</ul><p>This example changes icons to 24x24 square.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+U2FtcGxlIHdpZGUgaWNvbjogImZhLWJhdHRlcnktMyIuIERlZmF1bHQgZGltZW5zaW9uczogMjMwNHgxMjgwLjwvcD4KPHA+U2FtcGxlIHNxdWFyZSBpY29uOiAiaW9uLWlvcy1yZWZyZXNoIi4gRGVmYXVsdCBkaW1lbnNpb25zOiA1MTJ4NTEyLjwvcD4KPHA+U2FtcGxlIHRoaW4gaWNvbjogIndoaC1idXNpbmVzcyIuIERlZmF1bHQgZGltZW5zaW9uczogMzg2eDEwMjQuPC9wPgo8cD4KCTFlbSBoZWlnaHQ6Cgk8aWNvbmlmeS1pY29uIGRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIj48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbiBkYXRhLWljb249IndoaC1idXNpbmVzcyI+PC9pY29uaWZ5LWljb24+CjwvcD4KPGJyIC8+CjxwPgoJMjRweCB3aWR0aCBhbmQgaGVpZ2h0IHVzaW5nIGRhdGEtd2lkdGggYW5kIGRhdGEtaGVpZ2h0OgoJPGljb25pZnktaWNvbgoJCWRhdGEtaWNvbj0iZmEtYmF0dGVyeS0zIgoJCWRhdGEtd2lkdGg9IjI0IgoJCWRhdGEtaGVpZ2h0PSIyNCIKCT48L2ljb25pZnktaWNvbj4KCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249Imlvbi1pb3MtcmVmcmVzaCIKCQlkYXRhLXdpZHRoPSIyNCIKCQlkYXRhLWhlaWdodD0iMjQiCgk+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJ3aGgtYnVzaW5lc3MiCgkJZGF0YS13aWR0aD0iMjQiCgkJZGF0YS1oZWlnaHQ9IjI0IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJMjRweCB3aWR0aCBhbmQgaGVpZ2h0IHVzaW5nIGlubGluZSBzdHlsZToKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImZhLWJhdHRlcnktMyIKCQlzdHlsZT0id2lkdGg6IDI0cHg7IGhlaWdodDogMjRweDsiCgk+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJpb24taW9zLXJlZnJlc2giCgkJc3R5bGU9IndpZHRoOiAyNHB4OyBoZWlnaHQ6IDI0cHg7IgoJPjwvaWNvbmlmeS1pY29uPgoJPGljb25pZnktaWNvbgoJCWRhdGEtaWNvbj0id2hoLWJ1c2luZXNzIgoJCXN0eWxlPSJ3aWR0aDogMjRweDsgaGVpZ2h0OiAyNHB4OyIKCT48L2ljb25pZnktaWNvbj4KPC9wPgo8cD4KCTI0cHggd2lkdGggYW5kIGhlaWdodCB1c2luZyBjc3M6Cgk8aWNvbmlmeS1pY29uIGNsYXNzPSJpY29uLTI0IiBkYXRhLWljb249ImZhLWJhdHRlcnktMyI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGNsYXNzPSJpY29uLTI0IiBkYXRhLWljb249Imlvbi1pb3MtcmVmcmVzaCI+PC9pY29uaWZ5LWljb24+Cgk8aWNvbmlmeS1pY29uIGNsYXNzPSJpY29uLTI0IiBkYXRhLWljb249IndoaC1idXNpbmVzcyI+PC9pY29uaWZ5LWljb24+CjwvcD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;1em height:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;24px width and height using data-width and data-height:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-width</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-height</span>=<span class="hljs-string">&quot;24&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;24px width and height using inline style:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;24px width and height using css:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-24&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;fa-battery-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-24&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;ion-ios-refresh&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-24&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;whh-business&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Lmljb24tMjQgewoJd2lkdGg6IDI0cHg7CgloZWlnaHQ6IDI0cHg7Cn0KCi8qIEJveGVzIHRvIHNob3cgaWNvbiBkaW1lbnNpb25zICovCnN2ZyB7Cglib3gtc2hhZG93OiAwIDAgMCAxcHggIzJkOWNmNDsKfQpzdmc6aG92ZXIgewoJYm94LXNoYWRvdzogMCAwIDAgMXB4ICNmNTViNTA7Cn0K"><code class="highlight hljs"><span class="hljs-selector-class">.icon-24</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">width</span>: <span class="hljs-number">24px</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">height</span>: <span class="hljs-number">24px</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">/* Boxes to show icon dimensions */</span><br>
+svg {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#2d9cf4</span>;<br>
+}<br>
+svg<span class="hljs-selector-pseudo">:hover</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#f55b50</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo-fixed-size"><p>Sample wide icon: &quot;fa-battery-3&quot;. Default dimensions: 2304x1280.</p>
+<p>Sample square icon: &quot;ion-ios-refresh&quot;. Default dimensions: 512x512.</p>
+<p>Sample thin icon: &quot;whh-business&quot;. Default dimensions: 386x1024.</p>
+<p>
+	1em height:
+	<span class="iconify" data-icon="fa-battery-3"></span>
+	<span class="iconify" data-icon="ion-ios-refresh"></span>
+	<span class="iconify" data-icon="whh-business"></span>
+</p>
+<br>
+<p>
+	24px width and height using data-width and data-height:
+	<span class="iconify" data-icon="fa-battery-3" data-width="24" data-height="24"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" data-width="24" data-height="24"></span>
+	<span class="iconify" data-icon="whh-business" data-width="24" data-height="24"></span>
+</p>
+<p>
+	24px width and height using inline style:
+	<span class="iconify" data-icon="fa-battery-3" style="width: 24px; height: 24px;"></span>
+	<span class="iconify" data-icon="ion-ios-refresh" style="width: 24px; height: 24px;"></span>
+	<span class="iconify" data-icon="whh-business" style="width: 24px; height: 24px;"></span>
+</p>
+<p>
+	24px width and height using css:
+	<span class="iconify icon-24" data-icon="fa-battery-3"></span>
+	<span class="iconify icon-24" data-icon="ion-ios-refresh"></span>
+	<span class="iconify icon-24" data-icon="whh-business"></span>
+</p>
+</div></div></div></div></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="align" class="heading--2">Alignment <a href="#align" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>When width/height ratio does not match original icon&apos;s width/height ratio, icon is aligned to center of container (see example above).</p><p>However, you can change that. You can change horizontal and vertical alignment by adding data-align attribute.</p><p>There are 3 options for horizontal alignment:</p><ul>
+<li>&quot;<span class="hljs-string">left</span>&quot;</li>
+<li>&quot;<span class="hljs-string">center</span>&quot; (default)</li>
+<li>&quot;<span class="hljs-string">right</span>&quot;</li>
+</ul><p>3 options for vertical alignment:</p><ul>
+<li>&quot;<span class="hljs-string">top</span>&quot;</li>
+<li>&quot;<span class="hljs-string">middle</span>&quot; (default)</li>
+<li>&quot;<span class="hljs-string">bottom</span>&quot;</li>
+</ul><p>2 options for cropping:</p><ul>
+<li>&quot;<span class="hljs-string">crop</span>&quot;</li>
+<li>&quot;<span class="hljs-string">meet</span>&quot; (default)</li>
+</ul><p>All those options matter only if you set custom width and height that doesn&apos;t match icon&apos;s width/height ratio.</p><p>If you make icon wider than original icon, you can use horizontal alignment to align icon to left, center or right.</p><p>If you make icon taller than original icon, you can use vertical alignment to align icon to top, middle or bottom.</p><p>You can mix those options by separating them with comma or space: <span class="hljs-inline-attr">data-align</span>=<span class="hljs-string">&quot;left,top,meet&quot;</span> <span class="hljs-inline-attr">data-align</span>=<span class="hljs-string">&quot;right bottom crop&quot;</span></p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Horizontal alignment example:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglPcmlnaW5hbCBzcXVhcmUgaWNvbjoKCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiPjwvaWNvbmlmeS1pY29uPgo8L3A+CjwhLS0KICBXaWRlIGljb24KLS0+CjxwPgoJTGVmdCBhbGlnbm1lbnQ6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJZGF0YS1hbGlnbj0ibGVmdCIKCQlzdHlsZT0id2lkdGg6IDI0cHg7IGhlaWdodDogMTZweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CglDZW50ZXIgYWxpZ25tZW50IChkZWZhdWx0KToKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIKCQlzdHlsZT0id2lkdGg6IDI0cHg7IGhlaWdodDogMTZweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CglSaWdodCBhbGlnbm1lbnQ6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJZGF0YS1hbGlnbj0icmlnaHQiCgkJc3R5bGU9IndpZHRoOiAyNHB4OyBoZWlnaHQ6IDE2cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjwhLS0KICBUYWxsIGljb24KLS0+CjxwPgoJTGVmdCBhbGlnbm1lbnQgd2l0aCBjcm9wOgoJPGljb25pZnktaWNvbgoJCWRhdGEtaWNvbj0ibGluZS1tZDppbWFnZS10d290b25lIgoJCWRhdGEtYWxpZ249ImxlZnQgY3JvcCIKCQlzdHlsZT0id2lkdGg6IDE0cHg7IGhlaWdodDogMjRweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CglDZW50ZXIgYWxpZ25tZW50IHdpdGggY3JvcDoKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIKCQlkYXRhLWFsaWduPSJjcm9wIgoJCXN0eWxlPSJ3aWR0aDogMTRweDsgaGVpZ2h0OiAyNHB4OyIKCT48L2ljb25pZnktaWNvbj4KPC9wPgo8cD4KCVJpZ2h0IGFsaWdubWVudCB3aXRoIGNyb3A6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJZGF0YS1hbGlnbj0icmlnaHQgdG9wIGNyb3AiCgkJc3R5bGU9IndpZHRoOiAxNHB4OyBoZWlnaHQ6IDI0cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Original square icon:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Wide icon<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Left alignment:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;left&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Center alignment (default):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Right alignment:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;right&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Tall icon<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Left alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;left crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Center alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Right alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;right top crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo-fixed-size"><p>
+	Original square icon:
+	<span class="iconify" data-icon="line-md:image-twotone"></span>
+</p>
+<!--
+  Wide icon
+-->
+<p>
+	Left alignment:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="left" style="width: 24px; height: 16px;"></span>
+</p>
+<p>
+	Center alignment (default):
+	<span class="iconify" data-icon="line-md:image-twotone" style="width: 24px; height: 16px;"></span>
+</p>
+<p>
+	Right alignment:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="right" style="width: 24px; height: 16px;"></span>
+</p>
+<!--
+  Tall icon
+-->
+<p>
+	Left alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="left crop" style="width: 14px; height: 24px;"></span>
+</p>
+<p>
+	Center alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="crop" style="width: 14px; height: 24px;"></span>
+</p>
+<p>
+	Right alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="right top crop" style="width: 14px; height: 24px;"></span>
+</p>
+</div></div></div></div><p>Horizontal alignment without crop makes sense only when icon is too wide, therefore first 3 examples have width bigger than height.</p><p>Horizontal alignment with crop makes sense only when icon is too tall, therefore last 2 examples have width smaller than height.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Vertical alignment example:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHA+CglPcmlnaW5hbCBzcXVhcmUgaWNvbjoKCTxpY29uaWZ5LWljb24gZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiPjwvaWNvbmlmeS1pY29uPgo8L3A+CjwhLS0KICBUYWxsIGljb24KLS0+CjxwPgoJVG9wIGFsaWdubWVudDoKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIKCQlkYXRhLWFsaWduPSJ0b3AiCgkJc3R5bGU9IndpZHRoOiAxNHB4OyBoZWlnaHQ6IDI0cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJTWlkZGxlIGFsaWdubWVudCAoZGVmYXVsdCk6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJc3R5bGU9IndpZHRoOiAxNHB4OyBoZWlnaHQ6IDI0cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJQm90dG9tIGFsaWdubWVudDoKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIKCQlkYXRhLWFsaWduPSJib3R0b20iCgkJc3R5bGU9IndpZHRoOiAxNHB4OyBoZWlnaHQ6IDI0cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjwhLS0KICBXaWRlIGljb24KLS0+CjxwPgoJVG9wIGFsaWdubWVudCB3aXRoIGNyb3A6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJZGF0YS1hbGlnbj0idG9wIGNyb3AiCgkJc3R5bGU9IndpZHRoOiAyNHB4OyBoZWlnaHQ6IDE2cHg7IgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJTWlkZGxlIGFsaWdubWVudCB3aXRoIGNyb3A6Cgk8aWNvbmlmeS1pY29uCgkJZGF0YS1pY29uPSJsaW5lLW1kOmltYWdlLXR3b3RvbmUiCgkJZGF0YS1hbGlnbj0iY3JvcCIKCQlzdHlsZT0id2lkdGg6IDI0cHg7IGhlaWdodDogMTZweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CglCb3R0b20gYWxpZ25tZW50IHdpdGggY3JvcDoKCTxpY29uaWZ5LWljb24KCQlkYXRhLWljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIKCQlkYXRhLWFsaWduPSJib3R0b20gY3JvcCIKCQlzdHlsZT0id2lkdGg6IDI0cHg7IGhlaWdodDogMTZweDsiCgk+PC9pY29uaWZ5LWljb24+CjwvcD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Original square icon:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Tall icon<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Top alignment:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;top&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Middle alignment (default):<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Bottom alignment:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;bottom&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 14px; height: 24px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-comment">&lt;!--<br>
+ &#xA0;Wide icon<br>
+--&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Top alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;top crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Middle alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;Bottom alignment with crop:<br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">data-align</span>=<span class="hljs-string">&quot;bottom crop&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 24px; height: 16px;&quot;</span><br>
+ &#xA0; &#xA0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo iconify1-size-demo-fixed-size"><p>
+	Original square icon:
+	<span class="iconify" data-icon="line-md:image-twotone"></span>
+</p>
+<!--
+  Tall icon
+-->
+<p>
+	Top alignment:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="top" style="width: 14px; height: 24px;"></span>
+</p>
+<p>
+	Middle alignment (default):
+	<span class="iconify" data-icon="line-md:image-twotone" style="width: 14px; height: 24px;"></span>
+</p>
+<p>
+	Bottom alignment:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="bottom" style="width: 14px; height: 24px;"></span>
+</p>
+<!--
+  Wide icon
+-->
+<p>
+	Top alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="top crop" style="width: 24px; height: 16px;"></span>
+</p>
+<p>
+	Middle alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="crop" style="width: 24px; height: 16px;"></span>
+</p>
+<p>
+	Bottom alignment with crop:
+	<span class="iconify" data-icon="line-md:image-twotone" data-align="bottom crop" style="width: 24px; height: 16px;"></span>
+</p>
+</div></div></div></div><p>Vertical alignment without crop makes sense only when icon is too tall, therefore first 3 examples have width smaller than height.</p><p>Vertical alignment with crop makes sense only when icon is too wide, therefore last 2 examples have width bigger than height.</p></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icon Components<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG Framework 1.0<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline-vs-block.html">Inline and Block Modes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./custom-dimensions.html">Dimensions and Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transformations.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./without-api.html">No API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-aliases.html">Icon Aliases</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./rtl-support.html">RTL Support</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./functions.html">Iconify Functions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--design">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--integration">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-finder/packages/">Packages</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../code/">Code<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/">Development Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<span class="iconify" data-icon="line-md:home-twotone-alt"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<span class="iconify" data-icon="line-md:document-list"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/icon-sets/" title="Icons">
+							<span class="iconify" data-icon="line-md:image-twotone"></span>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<span class="iconify" data-icon="line-md:document-code"></span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<span class="iconify" data-icon="line-md:github"></span>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						© 2020, 2021 Iconify OÜ •
+						<a href="https://iconify.design/about/">About Iconify</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?14e2"></script>
+		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
+	</body>
+</html>

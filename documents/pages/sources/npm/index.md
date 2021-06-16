@@ -10,7 +10,7 @@ replacements:
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 functions:
-  addIcon: ../../implementations/svg-framework/add-icon.md
+  addIcon: ../../icon-components/svg-framework/add-icon.md
 ```
 
 # Icon packages
@@ -31,7 +31,7 @@ For more information about `[type]IconifyIcon` type see [IconifyIcon documentati
 
 Icon data can be used in Iconify components, providing icon data instead of icon name:
 
-`include implementations/components`
+`include icon-components/components`
 
 Icon data is passed as parameter to Iconify icon component, like this (example for React component):
 
@@ -59,7 +59,7 @@ export function MyComponent() {
 
 It can also be used with `[func]addIcon()` function.
 
-In [SVG framework](../../implementations/svg-framework/index.md) you cannot pass icon data as parameter, but you can use `[func]addIcon()` to set a name for icon:
+In [SVG framework](../../icon-components/svg-framework/index.md) you cannot pass icon data as parameter, but you can use `[func]addIcon()` to set a name for icon:
 
 ```js
 Iconify.addIcon('custom-icon', {
@@ -129,4 +129,4 @@ Few examples of icon names:
 
 See Iconify components for usage:
 
-`include implementations/components`
+`include icon-components/components`

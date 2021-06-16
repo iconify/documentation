@@ -71,6 +71,6 @@ extra:
 
 ## Wrap in a callback {#callback}
 
-This step is different for different Iconify implementations. See [icon bundles tutorial](./index.md#callbacks) for details.
+This step is different for different Iconify icon components. See [icon bundles tutorial](./index.md#callbacks) for details.
 
 Also check out [code examples](./examples/index.md) for full examples.

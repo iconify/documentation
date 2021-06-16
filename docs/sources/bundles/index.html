@@ -15,17 +15,22 @@
 			href="../../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../assets/style.css?6674" />
+		<link rel="stylesheet" href="../../assets/style.css?1d42" />
 		<title>Iconify Icon Bundles</title>
 		
 	</head>
@@ -110,11 +115,11 @@
 		<p>Icon bundle is a simple <a href="../../types/iconify-json.html">JSON object</a> that contains data for multiple icons from the same icon set, wrapped in a callback.</p>
 		<p>It provides alternative to loading icon data from Iconify API.</p>
 	</dd>
-</dl><section class="content-section content-section--2"><H1 id="offline-use" class="heading--2">Offline use <a href="#offline-use" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundle is the easiest way to make Iconify implementations that rely on API, such as <a href="../../implementations/svg-framework/">SVG framework</a> and <a href="../../implementations/react-with-api/">React component</a>, work without the internet access. Instead of loading icon data from API, you can provide icon by loading icon bundle.</p></section>
+</dl><section class="content-section content-section--2"><H1 id="offline-use" class="heading--2">Offline use <a href="#offline-use" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundle is the easiest way to make Iconify <a href="../../icon-components/svg-framework/">SVG framework</a> and <a href="../../icon-components/components/">various component</a> work without the internet access. Instead of loading icon data from Iconify API, you can provide icon by loading icon bundle.</p></section>
 
-<section class="content-section content-section--2"><H1 id="smaller-bundle-size" class="heading--2">Smaller bundle size <a href="#smaller-bundle-size" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>For components that do not rely on API, such as <a href="../../implementations/react/">basic React component</a> and <a href="../../implementations/vue/">Vue component</a>, you can use bundles to import multiple icons at the same time instead of importing icons one by one.</p></section>
+<section class="content-section content-section--2"><H1 id="smaller-bundle-size" class="heading--2">Smaller bundle size <a href="#smaller-bundle-size" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>For components that do have support for Iconify API, such as <a href="../../icon-components/react/offline.html">React offline component</a>, you can use bundles to import multiple icons at the same time instead of importing icons one by one. This reduces bundle size.</p></section>
 
-<section class="content-section content-section--2"><H1 id="speed-up-loading" class="heading--2">Speed up loading <a href="#speed-up-loading" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundles can be used to speed up loading for <a href="../../implementations/svg-framework/">SVG framework</a> and <a href="../../implementations/react-with-api/">React component</a>.</p><p><a href="../../implementations/">Iconify implementation</a> queries API for icon data when it needs to render that icon. Even though loading icon data from API is very fast, it is not instant. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly.</p></section>
+<section class="content-section content-section--2"><H1 id="speed-up-loading" class="heading--2">Speed up loading <a href="#speed-up-loading" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Icon bundles can be used to speed up loading for <a href="../../icon-components/svg-framework/">SVG framework</a> and <a href="../../icon-components/components/">various components</a>.</p><p>When you tell Iconify component to render an icon, if icon data is not available, component attempts to load data for icon from Iconify API. Even though loading icon data from API is very fast, it is not instant and it requires internet access. By providing icon data for most used icons, you guarantee that icon data is ready when a component needs it, rendering icon instantly and it can be used offline.</p></section>
 
 
 <section class="content-section content-section--2"><H1 id="create" class="heading--2">How to create icons bundle? <a href="#create" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You need to:</p><ol>
@@ -139,7 +144,7 @@
  &#xA0; &#xA0;<span class="hljs-attr">&quot;width&quot;</span>: <span class="hljs-number">24</span>,<br>
  &#xA0; &#xA0;<span class="hljs-attr">&quot;height&quot;</span>: <span class="hljs-number">24</span><br>
 }<br>
-</code></div></div></div><p>This is the same format that is used to store an icon set, but without metadata and contains only icons that you need.</p><p>You need to wrap that data in a function or assign it to a variable. This step is different for different <a href="../../implementations/">Iconify implementations</a>. For example, in bundles for <a href="./svg-framework.html">SVG framework</a> function name is <span class="hljs-function">Iconify.addCollection</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCSdhY2NvdW50LWJveCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNNiAxN2MwLTIgNC0zLjEgNi0zLjFzNiAxLjEgNiAzLjF2MUg2bTktOWEzIDMgMCAwIDEtMyAzYTMgMyAwIDAgMS0zLTNhMyAzIDAgMCAxIDMtM2EzIDMgMCAwIDEgMyAzTTMgNXYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ySDVhMiAyIDAgMCAwLTIgMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudC1jYXNoJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdob21lJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs">Iconify.addCollection({<br>
+</code></div></div></div><p>This is the same format that is used to store an icon set, but without metadata and contains only icons that you need.</p><p>You need to wrap that data in a function or assign it to a variable. For <a href="./svg-framework.html">SVG framework</a> function name is <span class="hljs-function">Iconify.addCollection</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCSdhY2NvdW50LWJveCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNNiAxN2MwLTIgNC0zLjEgNi0zLjFzNiAxLjEgNiAzLjF2MUg2bTktOWEzIDMgMCAwIDEtMyAzYTMgMyAwIDAgMS0zLTNhMyAzIDAgMCAxIDMtM2EzIDMgMCAwIDEgMyAzTTMgNXYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ySDVhMiAyIDAgMCAwLTIgMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudC1jYXNoJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudCc6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdob21lJzogewoJCQlib2R5OgoJCQkJJzxwYXRoIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs">Iconify.addCollection({<br>
  &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-box&apos;</span>: {<br>
@@ -162,7 +167,33 @@
  &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
  &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
 });<br>
-</code></div></div></div><p>Each set of data can include only icons from one icon set. If you want to bundle icons from multiple icon sets, you need to repeat same process for each icon set. The only exception is using <span class="hljs-inline-var">IconifyPreload</span> for SVG framework, which can be used with an array of data sets (see below).</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gTG9hZCBmZXcgaWNvbnMgZnJvbSBNYXRlcmlhbCBEZXNpZ24gSWNvbnMKSWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCWFjY291bnQ6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCWhvbWU6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzTDIgMTJoM3Y4aDV6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCX0sCgl9LAoJd2lkdGg6IDI0LAoJaGVpZ2h0OiAyNCwKfSk7CgovLyBMb2FkIGZldyBpY29ucyBmcm9tIFVuaWNvbnMKSWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ3VpbCcsCglpY29uczogewoJCWhvbWU6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMjEuNjYgMTAuMjVsLTktOGExIDEgMCAwIDAtMS4zMiAwbC05IDhhMSAxIDAgMCAwLS4yNyAxLjExQTEgMSAwIDAgMCAzIDEyaDF2OWExIDEgMCAwIDAgMSAxaDE0YTEgMSAwIDAgMCAxLTF2LTloMWExIDEgMCAwIDAgLjkzLS42NGExIDEgMCAwIDAtLjI3LTEuMTF6TTEzIDIwaC0ydi0zYTEgMSAwIDAgMSAyIDB6bTUgMGgtM3YtM2EzIDMgMCAwIDAtNiAwdjNINnYtOGgxMnpNNS42MyAxMEwxMiA0LjM0TDE4LjM3IDEweiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCWxvY2s6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTcgOVY3QTUgNSAwIDAgMCA3IDd2MmEzIDMgMCAwIDAtMyAzdjdhMyAzIDAgMCAwIDMgM2gxMGEzIDMgMCAwIDAgMy0zdi03YTMgMyAwIDAgMC0zLTN6TTkgN2EzIDMgMCAwIDEgNiAwdjJIOXptOSAxMmExIDEgMCAwIDEtMSAxSDdhMSAxIDAgMCAxLTEtMXYtN2ExIDEgMCAwIDEgMS0xaDEwYTEgMSAwIDAgMSAxIDF6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCX0sCgl9LAoJd2lkdGg6IDI0LAoJaGVpZ2h0OiAyNCwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-comment">// Load few icons from Material Design Icons</span><br>
+</code></div></div></div><p>For <a href="../../icon-components/components/">various components</a>, you need to import function <span class="hljs-function">addCollection</span> from component package:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsgLy8gRVMgY29kZQovLyBjb25zdCB7IGFkZENvbGxlY3Rpb24gfSA9IHJlcXVpcmUoJ0BpY29uaWZ5L3JlYWN0Jyk7IC8vIENvbW1vbkpTIGNvZGUKCi8vIGltcG9ydCB7IGFkZENvbGxlY3Rpb24gfSBmcm9tICdAaWNvbmlmeS92dWUnOwovLyBpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnQGljb25pZnkvdnVlMic7Ci8vIGltcG9ydCB7IGFkZENvbGxlY3Rpb24gfSBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoKYWRkQ29sbGVjdGlvbih7CglwcmVmaXg6ICdtZGknLAoJaWNvbnM6IHsKCQknYWNjb3VudC1ib3gnOiB7CgkJCWJvZHk6ICc8cGF0aCBkPSJNNiAxN2MwLTIgNC0zLjEgNi0zLjFzNiAxLjEgNiAzLjF2MUg2bTktOWEzIDMgMCAwIDEtMyAzYTMgMyAwIDAgMS0zLTNhMyAzIDAgMCAxIDMtM2EzIDMgMCAwIDEgMyAzTTMgNXYxNGEyIDIgMCAwIDAgMiAyaDE0YTIgMiAwIDAgMCAyLTJWNWEyIDIgMCAwIDAtMi0ySDVhMiAyIDAgMCAwLTIgMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYWNjb3VudC1jYXNoJzogewoJCQlib2R5OiAnPHBhdGggZD0iTTExIDhjMCAyLjIxLTEuNzkgNC00IDRzLTQtMS43OS00LTRzMS43OS00IDQtNHM0IDEuNzkgNCA0bTAgNi43MlYyMEgwdi0yYzAtMi4yMSAzLjEzLTQgNy00YzEuNSAwIDIuODcuMjcgNCAuNzJNMjQgMjBIMTNWM2gxMXYxN20tOC04LjVhMi41IDIuNSAwIDAgMSA1IDBhMi41IDIuNSAwIDAgMS01IDBNMjIgN2EyIDIgMCAwIDEtMi0yaC0zYzAgMS4xMS0uODkgMi0yIDJ2OWEyIDIgMCAwIDEgMiAyaDNjMC0xLjEuOS0yIDItMlY3eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdhY2NvdW50JzogewoJCQlib2R5OiAnPHBhdGggZD0iTTEyIDRhNCA0IDAgMCAxIDQgNGE0IDQgMCAwIDEtNCA0YTQgNCAwIDAgMS00LTRhNCA0IDAgMCAxIDQtNG0wIDEwYzQuNDIgMCA4IDEuNzkgOCA0djJINHYtMmMwLTIuMjEgMy41OC00IDgtNHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknaG9tZSc6IHsKCQkJYm9keTogJzxwYXRoIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNXoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCgl3aWR0aDogMjQsCgloZWlnaHQ6IDI0LAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { addCollection } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>; <span class="hljs-comment">// ES code</span><br>
+<span class="hljs-comment">// const { addCollection } = require(&apos;@iconify/react&apos;); // CommonJS code</span><br>
+<br>
+<span class="hljs-comment">// import { addCollection } from &apos;@iconify/vue&apos;;</span><br>
+<span class="hljs-comment">// import { addCollection } from &apos;@iconify/vue2&apos;;</span><br>
+<span class="hljs-comment">// import { addCollection } from &apos;@iconify/svelte&apos;;</span><br>
+<br>
+addCollection({<br>
+ &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-box&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account-cash&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;account&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;home&apos;</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-attr">width</span>: <span class="hljs-number">24</span>,<br>
+ &#xA0; &#xA0;<span class="hljs-attr">height</span>: <span class="hljs-number">24</span>,<br>
+});<br>
+</code></div></div></div><p>Each set of data can include only icons from one icon set. If you want to bundle icons from multiple icon sets, you need to call <span class="hljs-function">addCollection</span> for each icon set.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gTG9hZCBmZXcgaWNvbnMgZnJvbSBNYXRlcmlhbCBEZXNpZ24gSWNvbnMKSWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ21kaScsCglpY29uczogewoJCWFjY291bnQ6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCWhvbWU6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzTDIgMTJoM3Y4aDV6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCX0sCgl9LAoJd2lkdGg6IDI0LAoJaGVpZ2h0OiAyNCwKfSk7CgovLyBMb2FkIGZldyBpY29ucyBmcm9tIFVuaWNvbnMKSWNvbmlmeS5hZGRDb2xsZWN0aW9uKHsKCXByZWZpeDogJ3VpbCcsCglpY29uczogewoJCWhvbWU6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMjEuNjYgMTAuMjVsLTktOGExIDEgMCAwIDAtMS4zMiAwbC05IDhhMSAxIDAgMCAwLS4yNyAxLjExQTEgMSAwIDAgMCAzIDEyaDF2OWExIDEgMCAwIDAgMSAxaDE0YTEgMSAwIDAgMCAxLTF2LTloMWExIDEgMCAwIDAgLjkzLS42NGExIDEgMCAwIDAtLjI3LTEuMTF6TTEzIDIwaC0ydi0zYTEgMSAwIDAgMSAyIDB6bTUgMGgtM3YtM2EzIDMgMCAwIDAtNiAwdjNINnYtOGgxMnpNNS42MyAxMEwxMiA0LjM0TDE4LjM3IDEweiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCWxvY2s6IHsKCQkJYm9keToKCQkJCSc8cGF0aCBkPSJNMTcgOVY3QTUgNSAwIDAgMCA3IDd2MmEzIDMgMCAwIDAtMyAzdjdhMyAzIDAgMCAwIDMgM2gxMGEzIDMgMCAwIDAgMy0zdi03YTMgMyAwIDAgMC0zLTN6TTkgN2EzIDMgMCAwIDEgNiAwdjJIOXptOSAxMmExIDEgMCAwIDEtMSAxSDdhMSAxIDAgMCAxLTEtMXYtN2ExIDEgMCAwIDEgMS0xaDEwYTEgMSAwIDAgMSAxIDF6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCX0sCgl9LAoJd2lkdGg6IDI0LAoJaGVpZ2h0OiAyNCwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-comment">// Load few icons from Material Design Icons</span><br>
 Iconify.addCollection({<br>
  &#xA0; &#xA0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;mdi&apos;</span>,<br>
  &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
@@ -202,21 +233,14 @@ Iconify.addCollection({<br>
 
 
 
+
 <section class="content-section content-section--2"><H1 id="data" class="heading--2">Generating icon bundle data <a href="#data" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several ways to generate data for icon bundles:</p><ul>
 <li><a href="./api.html">Using Iconify API to generate bundle</a>.</li>
 <li><a href="./json-tools.html">Using Iconify JSON Tools to generate bundle</a>.</li>
 </ul></section>
 
 
-<section class="content-section content-section--2"><H1 id="callbacks" class="heading--2">Wrapping data in callback <a href="#callbacks" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You need to make sure icon bundle is loaded before implementation attempts to render an icon. Otherwise, implementation might send a redundant API query to retrieve icon data.</p><section class="content-section content-section--3"><H1 id="svg-framework" class="heading--3">SVG framework <a href="#svg-framework" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>SVG framework supports 2 ways of adding icon bundles:</p><ul>
-<li>Loading icon bundles before loading Iconify.</li>
-<li>Loading icon bundles after loading Iconify.</li>
-</ul><p>See <a href="./svg-framework.html">bundles for SVG framework</a> for details.</p></section><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Most components expose method <span class="hljs-function">addCollection()</span>. You need to use that method to import icon bundles.</p><p>See <a href="./react.html">bundles for React component</a> for details.</p></section></section>
-
-
-
-
-
+<section class="content-section content-section--2"><H1 id="callbacks" class="heading--2">Wrapping data in callback <a href="#callbacks" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You need to make sure icon bundle is loaded before icon component attempts to render an icon. Otherwise, component might send a redundant API query to retrieve icon data.</p><p>If you are using component, most likely icon data will be bundled with component in same JavaScript file, so it is done automatically.</p><p>If you are using SVG framework and are linking to SVG framework JavaScript file separately, it gets a bit more complex. See <a href="./svg-framework.html">bundles for SVG framework</a> for solutions.</p></section>
 
 
 
@@ -224,12 +248,15 @@ Iconify.addCollection({<br>
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -238,18 +265,17 @@ Iconify.addCollection({<br>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svg-framework.html">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react-with-api.html">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svelte.html">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./examples/">Examples</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -302,7 +328,7 @@ Iconify.addCollection({<br>
 				</ul>
 			</div>
 		</footer>
-		<script src="../../assets/bundle.js?241e"></script>
+		<script src="../../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

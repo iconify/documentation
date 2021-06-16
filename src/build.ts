@@ -6,6 +6,7 @@ import { navigationURLs, NavigationItem } from './navigation/loader';
 import { urlToFile, indexFile, fileToURL } from './navigation/helpers';
 import { rawReplacements } from './replacements';
 import { relativeToAbsolute } from './urls';
+import { createLegacyRedirect, legacyFiles } from './legacy-redirects';
 
 // Overwrite console.error with function that changes color, making it easy to see errors
 const oldLogError = console.error;
@@ -201,6 +202,7 @@ export function build() {
 
 		// Store file
 		write(paths.html + page, buildHTML(result, nav));
+		createLegacyRedirect(page, result.metadata.redirect);
 	});
 
 	// Test for missing standalone files
@@ -224,7 +226,7 @@ export function build() {
 	});
 	builtFiles.forEach((file) => {
 		const source = file.slice(0, file.length - 4) + 'md';
-		if (files.indexOf(source) === -1) {
+		if (files.indexOf(source) === -1 && legacyFiles.indexOf(file) === -1) {
 			console.log(`Removed unused old file: ${file}`);
 			try {
 				fs.unlinkSync(paths.html + file);

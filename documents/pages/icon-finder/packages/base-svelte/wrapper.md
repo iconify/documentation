@@ -29,7 +29,7 @@ This tutorial is part of [Svelte Components for Iconify Icon Finder tutorial](./
 
 `[class]Wrapper` is the main class that creates Icon Finder Core instance, renders container component, manages state and parameters.
 
-It uses callback to notify implementation of any changes (such as new icon was selected or button was clicked) and has several functions that can be used to control Icon Finder instance.
+It uses callback to notify parent code of any changes (such as new icon was selected or button was clicked) and has several functions that can be used to control Icon Finder instance.
 
 You can import `[class]Wrapper` class from `[file]src/icon-finder/wrapper.ts`.
 

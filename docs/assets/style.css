@@ -568,7 +568,7 @@ body {
 	padding: 0;
 	background: #f2f2f2;
 	color: #313131;
-	font: normal 16px / 24px PT Sans, Open Sans, Droid Sans, sans-serif;
+	font: normal 16px / 24px Source Sans Pro, Open Sans, Droid Sans, sans-serif;
 	min-width: 320px;
 }
 
@@ -1920,7 +1920,7 @@ h1:target .link-back:hover {
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .hljs-number,
@@ -1949,7 +1949,7 @@ h1:target .link-back:hover {
 .hljs-type,
 .hljs-class .hljs-title {
 	color: #125487;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .hljs-tag,
@@ -1978,7 +1978,7 @@ h1:target .link-back:hover {
 
 .hljs-meta {
 	color: #959595;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .hljs-deletion {
@@ -1994,7 +1994,7 @@ h1:target .link-back:hover {
 }
 
 .hljs-strong {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .hljs-inline-icon {
@@ -2309,6 +2309,10 @@ h1:target .link-back:hover {
 
 .docs-process dt .code-blocks {
 	margin: 0;
+}
+
+.docs-process dt .code-blocks + .code-blocks {
+	margin-top: 4px;
 }
 
 .docs-process dt .code-block-content {
@@ -2914,4 +2918,223 @@ h1:target .link-back:hover {
 	100% {
 		opacity: 1;
 	}
+}
+
+.api-namespaces {
+	position: relative;
+	width: 680px;
+	margin: 0 auto;
+	height: 208px;
+}
+
+.api-namespaces p {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.api-namespaces .ns--1 {
+	color: #506874;
+}
+
+.api-namespaces .ns--2 {
+	color: #007267;
+}
+
+.api-namespaces .ns--3 {
+	color: #1769aa;
+}
+
+.api-namespaces-sources {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 72px;
+}
+
+.api-namespaces-impl {
+	position: absolute;
+	right: 0;
+	top: 72px;
+	width: 72px;
+	height: 64px;
+	color: #626262;
+}
+
+.api-namespaces-set {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 64px;
+}
+
+.api-namespaces-set .iconify {
+	font-size: 24px;
+	line-height: 1em;
+	position: absolute;
+	left: 50%;
+}
+
+.api-namespaces-set .iconify [fill-opacity] {
+	fill: #ffffff;
+	fill-opacity: 1;
+}
+
+.api-namespaces-set .icon1 {
+	top: 0;
+	margin-left: -14px;
+}
+
+.api-namespaces-set .icon2 {
+	top: 20px;
+	margin-left: -26px;
+}
+
+.api-namespaces-set .icon3 {
+	top: 16px;
+	margin-left: 2px;
+}
+
+.api-namespaces-set p {
+	top: 44px;
+}
+
+.api-namespaces-set--2 {
+	top: 72px;
+}
+
+.api-namespaces-set--3 {
+	top: 144px;
+}
+
+.api-namespaces-arrows {
+	position: absolute;
+	left: 80px;
+	right: 80px;
+	top: 0;
+}
+
+.api-namespaces-arrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 64px;
+	overflow: hidden;
+	transform-origin: 0 50%;
+}
+
+.api-namespaces-arrow--1 {
+	transform: rotate(5deg);
+	left: 2px;
+}
+
+.api-namespaces-arrow--2 {
+	top: 72px;
+}
+
+.api-namespaces-arrow--3 {
+	top: 144px;
+	transform: rotate(-5deg);
+	left: 2px;
+}
+
+.api-namespaces-arrow svg {
+	position: relative;
+	top: 12px;
+	opacity: 0.8;
+}
+
+.api-namespaces-arrow p {
+	position: relative;
+	top: 4px;
+}
+
+@media (max-width: 980px) {
+	.api-namespaces {
+		width: 480px;
+	}
+	.api-namespaces-arrow--1 {
+		transform: rotate(8deg);
+		left: 0;
+		right: -6px;
+	}
+	.api-namespaces-arrow--3 {
+		transform: rotate(-8deg);
+		left: 0;
+		right: -6px;
+	}
+}
+
+@media (max-width: 500px) {
+	.api-namespaces {
+		width: 320px;
+	}
+	.api-namespaces-arrow--1 {
+		transform: rotate(12deg);
+		left: 0;
+		right: -8px;
+	}
+	.api-namespaces-arrow--3 {
+		transform: rotate(-12deg);
+		left: 0;
+		right: -8px;
+	}
+}
+
+.api-icon-name table {
+	text-align: center;
+}
+
+.api-icon-name tr {
+	margin: 0;
+	padding: 0;
+}
+
+.api-icon-name td {
+	margin: 0;
+	padding: 0;
+	color: #626262;
+	position: relative;
+}
+
+.api-icon-name td:nth-child(2n) {
+	padding: 0 0.25em;
+}
+
+.api-icon-name td:first-child {
+	color: #506874;
+}
+
+.api-icon-name td:nth-child(3) {
+	color: #007267;
+}
+
+.api-icon-name td:nth-child(5) {
+	color: #1769aa;
+}
+
+.api-icon-name tbody td {
+	text-align: left;
+}
+
+.api-icon-name .api-icon-name-provider {
+	color: #506874;
+}
+
+.api-icon-name .api-icon-name-prefix {
+	color: #007267;
+}
+
+.api-icon-name .api-icon-name-name {
+	color: #506874;
 }

@@ -40,6 +40,7 @@ export function defaultTheme(file: string): Theme | null {
 		case 'develop':
 		case 'sources':
 		case 'implementations':
+		case 'icon-components':
 			if (dir2 === 'iconify1') {
 				return 'legacy';
 			}

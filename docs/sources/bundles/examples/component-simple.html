@@ -15,17 +15,22 @@
 			href="../../../assets/images/favicon@192.png"
 			sizes="192x192"
 		/>
-		<link
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
-		<link rel="stylesheet" href="../../../assets/style.css?6674" />
+		<link rel="stylesheet" href="../../../assets/style.css?1d42" />
 		<title>Icon Bundle Examples: Components</title>
 		
 	</head>
@@ -91,14 +96,15 @@ npm install --save-dev @iconify/json-tools @iconify/json<br>
 composer require iconify/json-tools iconify/json<br>
 </code></div></div></div><p>PHP version assumes you are using Composer to manage dependencies.</p><p>Usage:</p><ul>
 <li>Change value of <span class="hljs-inline-var">component</span> to correct component. See below.</li>
+<li>If you want script to output CommonJS code (that uses <span class="hljs-function">require()</span>), set <span class="hljs-inline-var">commoonJS</span> to <span class="hljs-literal">true</span>.</li>
 <li>Change value of <span class="hljs-inline-var">target</span> to correct location of bundle.</li>
 <li>Change list of icons in variable <span class="hljs-inline-var">icons</span> to icons you want to bundle.</li>
 <li>Run script.</li>
-</ul><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Available values for variable <span class="hljs-inline-var">component</span>:</p><ul>
-<li>&quot;<span class="hljs-string">react</span>&quot; to build a bundle for <a href="../../../implementations/react/">Iconify for React</a>.</li>
-<li>&quot;<span class="hljs-string">react-with-api</span>&quot; to build a bundle for <a href="../../../implementations/react-with-api/">Iconify for React with API</a>.</li>
-<li>&quot;<span class="hljs-string">vue</span>&quot; to build a bundle for <a href="../../../implementations/vue/">Iconify for Vue 3</a>.</li>
-<li>&quot;<span class="hljs-string">vue2</span>&quot; to build a bundle for <a href="../../../implementations/vue2/">Iconify for Vue 2</a>.</li>
+</ul><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Values for variable <span class="hljs-inline-var">component</span> are package names for components:</p><ul>
+<li>&quot;<span class="hljs-string">@iconify/react</span>&quot; to build a bundle for <a href="../../../icon-components/react/">Iconify for React</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/vue</span>&quot; to build a bundle for <a href="../../../icon-components/vue/">Iconify for Vue 3</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/vue2</span>&quot; to build a bundle for <a href="../../../icon-components/vue2/">Iconify for Vue 2</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/svelte</span>&quot; to build a bundle for <a href="../../../icon-components/svelte/">Iconify for Svelte</a>.</li>
 </ul></section></section>
 
 
@@ -107,7 +113,7 @@ composer require iconify/json-tools iconify/json<br>
 
 
 
-<section class="content-section content-section--2"><H1 id="add-collection" class="heading--2">Bundle script <a href="#add-collection" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Example below create JavaScript files with icon data loaded with <span class="hljs-function">addCollection</span> function that is imported from a component package.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IGNvbXBvbmVudHMuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgaWNvbiBzZXRzLgogKiBGb3IgYnVuZGxpbmcgY3VzdG9tIGljb25zIHNlZSBvdGhlciBjb2RlIGV4YW1wbGVzIGluIGRvY3VtZW50YXRpb24uCiAqLwpjb25zdCBmcyA9IHJlcXVpcmUoJ2ZzJyk7CgovLyBJbnN0YWxsYXRpb246IG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvanNvbi10b29scyBAaWNvbmlmeS9qc29uCmNvbnN0IHsgQ29sbGVjdGlvbiB9ID0gcmVxdWlyZSgnQGljb25pZnkvanNvbi10b29scycpOwoKLy8gSWNvbmlmeSBjb21wb25lbnQgKHRoaXMgY2hhbmdlcyBpbXBvcnQgc3RhdGVtZW50IGluIGdlbmVyYXRlZCBmaWxlKQovLyBBdmFpbGFibGUgb3B0aW9uczogJ3JlYWN0JywgJ3JlYWN0LXdpdGgtYXBpJywgJ3Z1ZScgKGZvciBWdWUgMyksICd2dWUyJwpjb25zdCBjb21wb25lbnQgPSAncmVhY3QnOwoKLy8gRmlsZSB0byBzYXZlIGJ1bmRsZSB0bwpjb25zdCB0YXJnZXQgPSBfX2Rpcm5hbWUgKyAnL3NyYy9pY29ucy1idW5kbGUuanMnOwoKLy8gSWNvbnMgdG8gYnVuZGxlLCBhcnJheQpsZXQgaWNvbnMgPSBbCgknbWRpOmhvbWUnLAoJJ21kaTphY2NvdW50JywKCSdtZGk6bG9naW4nLAoJJ21kaTpsb2dvdXQnLAoJJ29wZW5tb2ppOmJpcnRoZGF5LWNha2UnLAoJJ29wZW5tb2ppOmNsaW5raW5nLWdsYXNzZXMnLApdOwoKLy8gT3JnYW5pemUgaWNvbnMgYnkgcHJlZml4Cmljb25zID0gb3JnYW5pemVJY29uc0xpc3QoaWNvbnMpOwoKLy8gTG9hZCBpY29ucyBkYXRhCmxldCBvdXRwdXQgPSBnZXRJbXBvcnQoY29tcG9uZW50KSArICdcblxuJzsKT2JqZWN0LmtleXMoaWNvbnMpLmZvckVhY2goKHByZWZpeCkgPT4gewoJY29uc3QgaWNvbnNMaXN0ID0gaWNvbnNbcHJlZml4XTsKCgkvLyBMb2FkIGljb24gc2V0Cgljb25zdCBjb2xsZWN0aW9uID0gbmV3IENvbGxlY3Rpb24ocHJlZml4KTsKCWlmICghY29sbGVjdGlvbi5sb2FkSWNvbmlmeUNvbGxlY3Rpb24ocHJlZml4KSkgewoJCXRocm93IG5ldyBFcnJvcigKCQkJYEljb25zIHdpdGggcHJlZml4ICIke3ByZWZpeH0iIGRvIG5vdCBleGlzdCBpbiBJY29uaWZ5LiBVcGRhdGUgQGljb25pZnkvanNvbj9gCgkJKTsKCX0KCgkvLyBNYWtlIHN1cmUgYWxsIGljb25zIGV4aXN0CglpY29uc0xpc3QuZm9yRWFjaCgobmFtZSkgPT4gewoJCWlmICghY29sbGVjdGlvbi5pY29uRXhpc3RzKG5hbWUpKSB7CgkJCS8vIFVuY29tbWVudCBuZXh0IGxpbmUgdG8gdGhyb3cgZXJyb3IgaWYgYW4gaWNvbiBkb2VzIG5vdCBleGlzdAoJCQkvLyB0aHJvdyBuZXcgRXJyb3IoYENvdWxkIG5vdCBmaW5kIGljb246ICIke3ByZWZpeH06JHtuYW1lfSJgKTsKCQkJY29uc29sZS5lcnJvcihgQ291bGQgbm90IGZpbmQgaWNvbjogIiR7cHJlZml4fToke25hbWV9ImApOwoJCX0KCX0pOwoKCS8vIEdldCBkYXRhIGZvciBhbGwgaWNvbnMgYXMgc3RyaW5nCglvdXRwdXQgKz0gY29sbGVjdGlvbi5zY3JpcHRpZnkoewoJCWljb25zOiBpY29uc0xpc3QsCgkJY2FsbGJhY2s6ICdhZGRDb2xsZWN0aW9uJywKCQlvcHRpbWl6ZTogdHJ1ZSwKCX0pOwp9KTsKCi8vIFNhdmUgdG8gZmlsZQpmcy53cml0ZUZpbGVTeW5jKHRhcmdldCwgb3V0cHV0LCAndXRmOCcpOwoKY29uc29sZS5sb2coYFNhdmVkICR7dGFyZ2V0fSAoJHtvdXRwdXQubGVuZ3RofSBieXRlcylgKTsKCi8qKgogKiBPcmdhbml6ZSBpY29ucyBsaXN0IGJ5IHByZWZpeAogKgogKiBSZXN1bHQgaXMgYW4gb2JqZWN0LCB3aGVyZSBrZXkgaXMgcHJlZml4LCB2YWx1ZSBpcyBhcnJheSBvZiBpY29uIG5hbWVzCiAqLwpmdW5jdGlvbiBvcmdhbml6ZUljb25zTGlzdChpY29ucykgewoJY29uc3QgcmVzdWx0cyA9IE9iamVjdC5jcmVhdGUobnVsbCk7CgoJaWNvbnMuZm9yRWFjaCgoc3RyKSA9PiB7CgkJLy8gU3BsaXQgaWNvbiB0byBwcmVmaXggYW5kIG5hbWUKCQljb25zdCBpY29uID0gc3RyaW5nVG9JY29uKHN0cik7CgkJaWYgKGljb24gPT09IG51bGwgfHwgaWNvbi5wcm92aWRlciAhPT0gJycpIHsKCQkJLy8gSW52YWxpZCBuYW1lIG9yIGljb24gbmFtZSBoYXMgcHJvdmlkZXIuCgkJCS8vIEFsbCBpY29ucyBpbiB0aGlzIGV4YW1wbGUgYXJlIGZyb20gSWNvbmlmeSwgc28gcHJvdmlkZXJzIGFyZSBub3Qgc3VwcG9ydGVkLgoJCQl0aHJvdyBuZXcgRXJyb3IoYEludmFsaWQgaWNvbiBuYW1lOiAke3N0cn1gKTsKCQl9CgoJCWNvbnN0IHByZWZpeCA9IGljb24ucHJlZml4OwoJCWNvbnN0IG5hbWUgPSBpY29uLm5hbWU7CgoJCS8vIEFkZCBpY29uIHRvIHJlc3VsdHMKCQlpZiAocmVzdWx0c1twcmVmaXhdID09PSB2b2lkIDApIHsKCQkJcmVzdWx0c1twcmVmaXhdID0gW25hbWVdOwoJCQlyZXR1cm47CgkJfQoJCWlmIChyZXN1bHRzW3ByZWZpeF0uaW5kZXhPZihuYW1lKSA9PT0gLTEpIHsKCQkJcmVzdWx0c1twcmVmaXhdLnB1c2gobmFtZSk7CgkJfQoJfSk7CgoJcmV0dXJuIHJlc3VsdHM7Cn0KCi8qKgogKiBDb252ZXJ0IGljb24gbmFtZSBmcm9tIHN0cmluZyB0byBvYmplY3QuCiAqCiAqIE9iamVjdCBwcm9wZXJ0aWVzOgogKiAtIHByb3ZpZGVyIChpZ25vcmVkIGluIHRoaXMgZXhhbXBsZSkKICogLSBwcmVmaXgKICogLSBuYW1lCiAqCiAqIFRoaXMgZnVuY3Rpb24gd2FzIGNvcGllZCBmcm9tIEBpY29uaWZ5L2NvcmUvc3JjL2ljb24vbmFtZS50cwogKiBTZWUgaHR0cHM6Ly9naXRodWIuY29tL2ljb25pZnkvaWNvbmlmeS9ibG9iL21hc3Rlci9wYWNrYWdlcy9jb3JlL3NyYy9pY29uL25hbWUudHMKICovCmZ1bmN0aW9uIHN0cmluZ1RvSWNvbih2YWx1ZSkgewoJbGV0IHByb3ZpZGVyID0gJyc7Cgljb25zdCBjb2xvblNlcGFyYXRlZCA9IHZhbHVlLnNwbGl0KCc6Jyk7CgoJLy8gQ2hlY2sgZm9yIHByb3ZpZGVyIHdpdGggY29ycmVjdCAnQCcgYXQgc3RhcnQKCWlmICh2YWx1ZS5zbGljZSgwLCAxKSA9PT0gJ0AnKSB7CgkJLy8gRmlyc3QgcGFydCBpcyBwcm92aWRlcgoJCWlmIChjb2xvblNlcGFyYXRlZC5sZW5ndGggPCAyIHx8IGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDMpIHsKCQkJLy8gIkBwcm92aWRlcjpwcmVmaXg6bmFtZSIgb3IgIkBwcm92aWRlcjpwcmVmaXgtbmFtZSIKCQkJcmV0dXJuIG51bGw7CgkJfQoJCXByb3ZpZGVyID0gY29sb25TZXBhcmF0ZWQuc2hpZnQoKS5zbGljZSgxKTsKCX0KCgkvLyBDaGVjayBzcGxpdCBieSBjb2xvbjogInByZWZpeDpuYW1lIiwgInByb3ZpZGVyOnByZWZpeDpuYW1lIgoJaWYgKGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDMgfHwgIWNvbG9uU2VwYXJhdGVkLmxlbmd0aCkgewoJCXJldHVybiBudWxsOwoJfQoJaWYgKGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDEpIHsKCQkvLyAicHJlZml4Om5hbWUiCgkJY29uc3QgbmFtZSA9IGNvbG9uU2VwYXJhdGVkLnBvcCgpOwoJCWNvbnN0IHByZWZpeCA9IGNvbG9uU2VwYXJhdGVkLnBvcCgpOwoJCXJldHVybiB7CgkJCS8vIEFsbG93IHByb3ZpZGVyIHdpdGhvdXQgJ0AnOiAicHJvdmlkZXI6cHJlZml4Om5hbWUiCgkJCXByb3ZpZGVyOiBjb2xvblNlcGFyYXRlZC5sZW5ndGggPiAwID8gY29sb25TZXBhcmF0ZWRbMF0gOiBwcm92aWRlciwKCQkJcHJlZml4LAoJCQluYW1lLAoJCX07Cgl9CgoJLy8gQXR0ZW1wdCB0byBzcGxpdCBieSBkYXNoOiAicHJlZml4LW5hbWUiCgljb25zdCBkYXNoU2VwYXJhdGVkID0gY29sb25TZXBhcmF0ZWRbMF0uc3BsaXQoJy0nKTsKCWlmIChkYXNoU2VwYXJhdGVkLmxlbmd0aCA+IDEpIHsKCQlyZXR1cm4gewoJCQlwcm92aWRlcjogcHJvdmlkZXIsCgkJCXByZWZpeDogZGFzaFNlcGFyYXRlZC5zaGlmdCgpLAoJCQluYW1lOiBkYXNoU2VwYXJhdGVkLmpvaW4oJy0nKSwKCQl9OwoJfQoKCXJldHVybiBudWxsOwp9CgovKioKICogR2V0IGltcG9ydCBzdGF0ZW1lbnQgZm9yIGNvbXBvbmVudAogKi8KZnVuY3Rpb24gZ2V0SW1wb3J0KGNvbXBvbmVudCkgewoJY29uc3QgaW1wb3J0cyA9IHsKCQkncmVhY3QnOiAiaW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsiLAoJCSdyZWFjdC13aXRoLWFwaSc6CgkJCSJpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnQGljb25pZnkvcmVhY3Qtd2l0aC1hcGknOyIsCgkJJ3Z1ZSc6ICJpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsiLAoJCSd2dWUyJzoKCQkJImltcG9ydCBJY29uaWZ5SWNvbiBmcm9tICdAaWNvbmlmeS92dWUnO1xuXG5jb25zdCBhZGRDb2xsZWN0aW9uID0gSWNvbmlmeUljb24uYWRkQ29sbGVjdGlvbjsiLAoJfTsKCglpZiAoaW1wb3J0c1tjb21wb25lbnRdICE9PSB2b2lkIDApIHsKCQlyZXR1cm4gaW1wb3J0c1tjb21wb25lbnRdOwoJfQoKCXRocm93IG5ldyBFcnJvcigKCQlgSW52YWxpZCB2YWx1ZSBmb3IgImNvbXBvbmVudCIgdmFyaWFibGUuIFBvc3NpYmxlIHZhbHVlczogJyR7T2JqZWN0LmtleXMoCgkJCWltcG9ydHMKCQkpLmpvaW4oIicsICciKX0nYAoJKTsKfQo="><code class="highlight hljs"><span class="hljs-comment">/**<br>
+<section class="content-section content-section--2"><H1 id="add-collection" class="heading--2">Bundle script <a href="#add-collection" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Example below create JavaScript files with icon data loaded with <span class="hljs-function">addCollection</span> function that is imported from a component package.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IGNvbXBvbmVudHMuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgaWNvbiBzZXRzLgogKiBGb3IgYnVuZGxpbmcgY3VzdG9tIGljb25zIHNlZSBvdGhlciBjb2RlIGV4YW1wbGVzIGluIGRvY3VtZW50YXRpb24uCiAqLwpjb25zdCBmcyA9IHJlcXVpcmUoJ2ZzJyk7CgovLyBJbnN0YWxsYXRpb246IG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvanNvbi10b29scyBAaWNvbmlmeS9qc29uCmNvbnN0IHsgQ29sbGVjdGlvbiB9ID0gcmVxdWlyZSgnQGljb25pZnkvanNvbi10b29scycpOwoKLy8gSWNvbmlmeSBjb21wb25lbnQgKHRoaXMgY2hhbmdlcyBpbXBvcnQgc3RhdGVtZW50IGluIGdlbmVyYXRlZCBmaWxlKQovLyBBdmFpbGFibGUgb3B0aW9uczogJ0BpY29uaWZ5L3JlYWN0JyBmb3IgUmVhY3QsICdAaWNvbmlmeS92dWUnIGZvciBWdWUgMywgJ0BpY29uaWZ5L3Z1ZTInIGZvciBWdWUgMiwgJ0BpY29uaWZ5L3N2ZWx0ZScgZm9yIFN2ZWx0ZQpjb25zdCBjb21wb25lbnQgPSAnQGljb25pZnkvcmVhY3QnOwoKLy8gU2V0IHRvIHRydWUgdG8gdXNlIHJlcXVpcmUoKSBpbnN0ZWFkIG9mIGltcG9ydApjb25zdCBjb21tb29uSlMgPSBmYWxzZTsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KY29uc3QgdGFyZ2V0ID0gX19kaXJuYW1lICsgJy9zcmMvaWNvbnMtYnVuZGxlLmpzJzsKCi8vIEljb25zIHRvIGJ1bmRsZSwgYXJyYXkKbGV0IGljb25zID0gWwoJJ21kaTpob21lJywKCSdtZGk6YWNjb3VudCcsCgknbWRpOmxvZ2luJywKCSdtZGk6bG9nb3V0JywKCSdvcGVubW9qaTpiaXJ0aGRheS1jYWtlJywKCSdvcGVubW9qaTpjbGlua2luZy1nbGFzc2VzJywKXTsKCi8vIE9yZ2FuaXplIGljb25zIGJ5IHByZWZpeAppY29ucyA9IG9yZ2FuaXplSWNvbnNMaXN0KGljb25zKTsKCi8vIExvYWQgaWNvbnMgZGF0YQpsZXQgb3V0cHV0ID0gY29tbW9vbkpTCgk/ICJjb25zdCB7IGFkZENvbGxlY3Rpb24gfSA9IHJlcXVpcmUoJyIgKyBjb21wb25lbnQgKyAiJyk7XG5cbiIKCTogImltcG9ydCB7IGFkZENvbGxlY3Rpb24gfSBmcm9tICciICsgY29tcG9uZW50ICsgIic7XG5cbiI7Ck9iamVjdC5rZXlzKGljb25zKS5mb3JFYWNoKChwcmVmaXgpID0+IHsKCWNvbnN0IGljb25zTGlzdCA9IGljb25zW3ByZWZpeF07CgoJLy8gTG9hZCBpY29uIHNldAoJY29uc3QgY29sbGVjdGlvbiA9IG5ldyBDb2xsZWN0aW9uKHByZWZpeCk7CglpZiAoIWNvbGxlY3Rpb24ubG9hZEljb25pZnlDb2xsZWN0aW9uKHByZWZpeCkpIHsKCQl0aHJvdyBuZXcgRXJyb3IoCgkJCWBJY29ucyB3aXRoIHByZWZpeCAiJHtwcmVmaXh9IiBkbyBub3QgZXhpc3QgaW4gSWNvbmlmeS4gVXBkYXRlIEBpY29uaWZ5L2pzb24/YAoJCSk7Cgl9CgoJLy8gTWFrZSBzdXJlIGFsbCBpY29ucyBleGlzdAoJaWNvbnNMaXN0LmZvckVhY2goKG5hbWUpID0+IHsKCQlpZiAoIWNvbGxlY3Rpb24uaWNvbkV4aXN0cyhuYW1lKSkgewoJCQkvLyBVbmNvbW1lbnQgbmV4dCBsaW5lIHRvIHRocm93IGVycm9yIGlmIGFuIGljb24gZG9lcyBub3QgZXhpc3QKCQkJLy8gdGhyb3cgbmV3IEVycm9yKGBDb3VsZCBub3QgZmluZCBpY29uOiAiJHtwcmVmaXh9OiR7bmFtZX0iYCk7CgkJCWNvbnNvbGUuZXJyb3IoYENvdWxkIG5vdCBmaW5kIGljb246ICIke3ByZWZpeH06JHtuYW1lfSJgKTsKCQl9Cgl9KTsKCgkvLyBHZXQgZGF0YSBmb3IgYWxsIGljb25zIGFzIHN0cmluZwoJb3V0cHV0ICs9IGNvbGxlY3Rpb24uc2NyaXB0aWZ5KHsKCQlpY29uczogaWNvbnNMaXN0LAoJCWNhbGxiYWNrOiAnYWRkQ29sbGVjdGlvbicsCgkJb3B0aW1pemU6IHRydWUsCgl9KTsKfSk7CgovLyBTYXZlIHRvIGZpbGUKZnMud3JpdGVGaWxlU3luYyh0YXJnZXQsIG91dHB1dCwgJ3V0ZjgnKTsKCmNvbnNvbGUubG9nKGBTYXZlZCAke3RhcmdldH0gKCR7b3V0cHV0Lmxlbmd0aH0gYnl0ZXMpYCk7CgovKioKICogT3JnYW5pemUgaWNvbnMgbGlzdCBieSBwcmVmaXgKICoKICogUmVzdWx0IGlzIGFuIG9iamVjdCwgd2hlcmUga2V5IGlzIHByZWZpeCwgdmFsdWUgaXMgYXJyYXkgb2YgaWNvbiBuYW1lcwogKi8KZnVuY3Rpb24gb3JnYW5pemVJY29uc0xpc3QoaWNvbnMpIHsKCWNvbnN0IHJlc3VsdHMgPSBPYmplY3QuY3JlYXRlKG51bGwpOwoKCWljb25zLmZvckVhY2goKHN0cikgPT4gewoJCS8vIFNwbGl0IGljb24gdG8gcHJlZml4IGFuZCBuYW1lCgkJY29uc3QgaWNvbiA9IHN0cmluZ1RvSWNvbihzdHIpOwoJCWlmIChpY29uID09PSBudWxsIHx8IGljb24ucHJvdmlkZXIgIT09ICcnKSB7CgkJCS8vIEludmFsaWQgbmFtZSBvciBpY29uIG5hbWUgaGFzIHByb3ZpZGVyLgoJCQkvLyBBbGwgaWNvbnMgaW4gdGhpcyBleGFtcGxlIGFyZSBmcm9tIEljb25pZnksIHNvIHByb3ZpZGVycyBhcmUgbm90IHN1cHBvcnRlZC4KCQkJdGhyb3cgbmV3IEVycm9yKGBJbnZhbGlkIGljb24gbmFtZTogJHtzdHJ9YCk7CgkJfQoKCQljb25zdCBwcmVmaXggPSBpY29uLnByZWZpeDsKCQljb25zdCBuYW1lID0gaWNvbi5uYW1lOwoKCQkvLyBBZGQgaWNvbiB0byByZXN1bHRzCgkJaWYgKHJlc3VsdHNbcHJlZml4XSA9PT0gdm9pZCAwKSB7CgkJCXJlc3VsdHNbcHJlZml4XSA9IFtuYW1lXTsKCQkJcmV0dXJuOwoJCX0KCQlpZiAocmVzdWx0c1twcmVmaXhdLmluZGV4T2YobmFtZSkgPT09IC0xKSB7CgkJCXJlc3VsdHNbcHJlZml4XS5wdXNoKG5hbWUpOwoJCX0KCX0pOwoKCXJldHVybiByZXN1bHRzOwp9CgovKioKICogQ29udmVydCBpY29uIG5hbWUgZnJvbSBzdHJpbmcgdG8gb2JqZWN0LgogKgogKiBPYmplY3QgcHJvcGVydGllczoKICogLSBwcm92aWRlciAoaWdub3JlZCBpbiB0aGlzIGV4YW1wbGUpCiAqIC0gcHJlZml4CiAqIC0gbmFtZQogKgogKiBUaGlzIGZ1bmN0aW9uIHdhcyBjb3BpZWQgZnJvbSBAaWNvbmlmeS91dGlscy9zcmMvaWNvbi9uYW1lLnRzCiAqIFNlZSBodHRwczovL2dpdGh1Yi5jb20vaWNvbmlmeS9pY29uaWZ5L2Jsb2IvZGV2L3BhY2thZ2VzL3V0aWxzL3NyYy9pY29uL25hbWUudHMKICovCmZ1bmN0aW9uIHN0cmluZ1RvSWNvbih2YWx1ZSkgewoJbGV0IHByb3ZpZGVyID0gJyc7Cgljb25zdCBjb2xvblNlcGFyYXRlZCA9IHZhbHVlLnNwbGl0KCc6Jyk7CgoJLy8gQ2hlY2sgZm9yIHByb3ZpZGVyIHdpdGggY29ycmVjdCAnQCcgYXQgc3RhcnQKCWlmICh2YWx1ZS5zbGljZSgwLCAxKSA9PT0gJ0AnKSB7CgkJLy8gRmlyc3QgcGFydCBpcyBwcm92aWRlcgoJCWlmIChjb2xvblNlcGFyYXRlZC5sZW5ndGggPCAyIHx8IGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDMpIHsKCQkJLy8gIkBwcm92aWRlcjpwcmVmaXg6bmFtZSIgb3IgIkBwcm92aWRlcjpwcmVmaXgtbmFtZSIKCQkJcmV0dXJuIG51bGw7CgkJfQoJCXByb3ZpZGVyID0gY29sb25TZXBhcmF0ZWQuc2hpZnQoKS5zbGljZSgxKTsKCX0KCgkvLyBDaGVjayBzcGxpdCBieSBjb2xvbjogInByZWZpeDpuYW1lIiwgInByb3ZpZGVyOnByZWZpeDpuYW1lIgoJaWYgKGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDMgfHwgIWNvbG9uU2VwYXJhdGVkLmxlbmd0aCkgewoJCXJldHVybiBudWxsOwoJfQoJaWYgKGNvbG9uU2VwYXJhdGVkLmxlbmd0aCA+IDEpIHsKCQkvLyAicHJlZml4Om5hbWUiCgkJY29uc3QgbmFtZSA9IGNvbG9uU2VwYXJhdGVkLnBvcCgpOwoJCWNvbnN0IHByZWZpeCA9IGNvbG9uU2VwYXJhdGVkLnBvcCgpOwoJCXJldHVybiB7CgkJCS8vIEFsbG93IHByb3ZpZGVyIHdpdGhvdXQgJ0AnOiAicHJvdmlkZXI6cHJlZml4Om5hbWUiCgkJCXByb3ZpZGVyOiBjb2xvblNlcGFyYXRlZC5sZW5ndGggPiAwID8gY29sb25TZXBhcmF0ZWRbMF0gOiBwcm92aWRlciwKCQkJcHJlZml4LAoJCQluYW1lLAoJCX07Cgl9CgoJLy8gQXR0ZW1wdCB0byBzcGxpdCBieSBkYXNoOiAicHJlZml4LW5hbWUiCgljb25zdCBkYXNoU2VwYXJhdGVkID0gY29sb25TZXBhcmF0ZWRbMF0uc3BsaXQoJy0nKTsKCWlmIChkYXNoU2VwYXJhdGVkLmxlbmd0aCA+IDEpIHsKCQlyZXR1cm4gewoJCQlwcm92aWRlcjogcHJvdmlkZXIsCgkJCXByZWZpeDogZGFzaFNlcGFyYXRlZC5zaGlmdCgpLAoJCQluYW1lOiBkYXNoU2VwYXJhdGVkLmpvaW4oJy0nKSwKCQl9OwoJfQoKCXJldHVybiBudWxsOwp9Cg=="><code class="highlight hljs"><span class="hljs-comment">/**<br>
  * This is a simple example for creating icon bundles for Iconify components.<br>
  *<br>
  * It bundles only icons from Iconify icon sets.<br>
@@ -119,8 +125,11 @@ composer require iconify/json-tools iconify/json<br>
 <span class="hljs-keyword">const</span> { Collection } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/json-tools&apos;</span>);<br>
 <br>
 <span class="hljs-comment">// Iconify component (this changes import statement in generated file)</span><br>
-<span class="hljs-comment">// Available options: &apos;react&apos;, &apos;react-with-api&apos;, &apos;vue&apos; (for Vue 3), &apos;vue2&apos;</span><br>
-<span class="hljs-keyword">const</span> component = <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-comment">// Available options: &apos;@iconify/react&apos; for React, &apos;@iconify/vue&apos; for Vue 3, &apos;@iconify/vue2&apos; for Vue 2, &apos;@iconify/svelte&apos; for Svelte</span><br>
+<span class="hljs-keyword">const</span> component = <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Set to true to use require() instead of import</span><br>
+<span class="hljs-keyword">const</span> commoonJS = <span class="hljs-literal">false</span>;<br>
 <br>
 <span class="hljs-comment">// File to save bundle to</span><br>
 <span class="hljs-keyword">const</span> target = __dirname + <span class="hljs-string">&apos;/src/icons-bundle.js&apos;</span>;<br>
@@ -139,7 +148,9 @@ composer require iconify/json-tools iconify/json<br>
 icons = organizeIconsList(icons);<br>
 <br>
 <span class="hljs-comment">// Load icons data</span><br>
-<span class="hljs-keyword">let</span> output = getImport(component) + <span class="hljs-string">&apos;\n\n&apos;</span>;<br>
+<span class="hljs-keyword">let</span> output = commoonJS<br>
+ &#xA0; &#xA0;? <span class="hljs-string">&quot;const { addCollection } = require(&apos;&quot;</span> + component + <span class="hljs-string">&quot;&apos;);\n\n&quot;</span><br>
+ &#xA0; &#xA0;: <span class="hljs-string">&quot;import { addCollection } from &apos;&quot;</span> + component + <span class="hljs-string">&quot;&apos;;\n\n&quot;</span>;<br>
 <span class="hljs-built_in">Object</span>.keys(icons).forEach(<span class="hljs-function">(<span class="hljs-params">prefix</span>) =&gt;</span> {<br>
  &#xA0; &#xA0;<span class="hljs-keyword">const</span> iconsList = icons[prefix];<br>
 <br>
@@ -214,8 +225,8 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
  * - prefix<br>
  * - name<br>
  *<br>
- * This function was copied from @iconify/core/src/icon/name.ts<br>
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts<br>
+ * This function was copied from @iconify/utils/src/icon/name.ts<br>
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts<br>
  */</span><br>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringToIcon</span>(<span class="hljs-params">value</span>) </span>{<br>
  &#xA0; &#xA0;<span class="hljs-keyword">let</span> provider = <span class="hljs-string">&apos;&apos;</span>;<br>
@@ -259,31 +270,7 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
 <br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
 }<br>
-<br>
-<span class="hljs-comment">/**<br>
- * Get import statement for component<br>
- */</span><br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getImport</span>(<span class="hljs-params">component</span>) </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">const</span> imports = {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react&apos;</span>: <span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react-with-api&apos;</span>:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react-with-api&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;vue&apos;</span>: <span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/vue&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;vue2&apos;</span>:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import IconifyIcon from &apos;@iconify/vue&apos;;\n\nconst addCollection = IconifyIcon.addCollection;&quot;</span>,<br>
- &#xA0; &#xA0;};<br>
-<br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (imports[component] !== <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> imports[component];<br>
- &#xA0; &#xA0;}<br>
-<br>
- &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">`Invalid value for &quot;component&quot; variable. Possible values: &apos;<span class="hljs-subst">${<span class="hljs-built_in">Object</span>.keys(<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;imports<br>
- &#xA0; &#xA0; &#xA0; &#xA0;).join(<span class="hljs-string">&quot;&apos;, &apos;&quot;</span>)}</span>&apos;`</span><br>
- &#xA0; &#xA0;);<br>
-}<br>
-</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PD9waHAKLyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IGNvbXBvbmVudHMuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgaWNvbiBzZXRzLgogKiBGb3IgYnVuZGxpbmcgY3VzdG9tIGljb25zIHNlZSBvdGhlciBjb2RlIGV4YW1wbGVzIGluIGRvY3VtZW50YXRpb24uCiAqLwoKcmVxdWlyZSAnLi92ZW5kb3IvYXV0b2xvYWQucGhwJzsKCi8vIEluc3RhbGxhdGlvbjogY29tcG9zZXIgcmVxdWlyZSBpY29uaWZ5L2pzb24tdG9vbHMgaWNvbmlmeS9qc29uCnVzZSBJY29uaWZ5XEpTT05Ub29sc1xDb2xsZWN0aW9uOwoKLy8gSWNvbmlmeSBjb21wb25lbnQgKHRoaXMgY2hhbmdlcyBpbXBvcnQgc3RhdGVtZW50IGluIGdlbmVyYXRlZCBmaWxlKQovLyBBdmFpbGFibGUgb3B0aW9uczogJ3JlYWN0JywgJ3JlYWN0LXdpdGgtYXBpJywgJ3Z1ZScgKGZvciBWdWUgMyksICd2dWUyJwokY29tcG9uZW50ID0gJ3JlYWN0JzsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KJHRhcmdldCA9IF9fRElSX18gLiAnL3NyYy9pY29ucy1idW5kbGUuanMnOwoKLy8gSWNvbnMgdG8gYnVuZGxlLCBhcnJheQokaWNvbnMgPSBbCiAgICAnbWRpOmhvbWUnLAogICAgJ21kaTphY2NvdW50JywKICAgICdtZGk6bG9naW4nLAogICAgJ21kaTpsb2dvdXQnLAogICAgJ29wZW5tb2ppOmJpcnRoZGF5LWNha2UnLAogICAgJ29wZW5tb2ppOmNsaW5raW5nLWdsYXNzZXMnLApdOwoKLy8gT3JnYW5pemUgaWNvbnMgYnkgcHJlZml4CiRpY29ucyA9IG9yZ2FuaXplSWNvbnNMaXN0KCRpY29ucyk7CgovLyBMb2FkIGljb25zIGRhdGEKJG91dHB1dCA9IGdldEltcG9ydCgkY29tcG9uZW50KSAuICJcblxuIjsKZm9yZWFjaCAoJGljb25zIGFzICRwcmVmaXggPT4gJGljb25zTGlzdCkgewogICAgLy8gTG9hZCBpY29uIHNldAogICAgJGNvbGxlY3Rpb24gPSBuZXcgQ29sbGVjdGlvbigkcHJlZml4KTsKICAgIGlmICghJGNvbGxlY3Rpb24tPmxvYWRJY29uaWZ5Q29sbGVjdGlvbigkcHJlZml4KSkgewogICAgICAgIHRocm93IG5ldyBFcnJvcigKICAgICAgICAgICAgJ0ljb25zIHdpdGggcHJlZml4ICInIC4gJHByZWZpeCAuICciIGRvIG5vdCBleGlzdCBpbiBJY29uaWZ5LiBVcGRhdGUgaWNvbmlmeS9qc29uPycKICAgICAgICApOwogICAgfQoKICAgIC8vIE1ha2Ugc3VyZSBhbGwgaWNvbnMgZXhpc3QKICAgIGZvcmVhY2ggKCRpY29uc0xpc3QgYXMgJG5hbWUpIHsKICAgICAgICBpZiAoISRjb2xsZWN0aW9uLT5pY29uRXhpc3RzKCRuYW1lKSkgewogICAgICAgICAgICAvLyBVbmNvbW1lbnQgbmV4dCBsaW5lIHRvIHRocm93IGVycm9yIGlmIGFuIGljb24gZG9lcyBub3QgZXhpc3QKICAgICAgICAgICAgLy8gdGhyb3cgbmV3IEVycm9yKCdDb3VsZCBub3QgZmluZCBpY29uOiAiJyAuICRwcmVmaXggLiAnOicgLiAkbmFtZSAuICciJyk7CiAgICAgICAgICAgIGVjaG8gJ0NvdWxkIG5vdCBmaW5kIGljb246ICInLCAkcHJlZml4LCAnOicsICRuYW1lLCAiXCJcbiI7CiAgICAgICAgfQogICAgfQoKICAgIC8vIEdldCBkYXRhIGZvciBhbGwgaWNvbnMgYXMgc3RyaW5nCiAgICAkb3V0cHV0IC49ICRjb2xsZWN0aW9uLT5zY3JpcHRpZnkoWwogICAgICAgICdpY29ucycgPT4gJGljb25zTGlzdCwKICAgICAgICAnY2FsbGJhY2snID0+ICdhZGRDb2xsZWN0aW9uJywKICAgICAgICAnb3B0aW1pemUnID0+IHRydWUsCiAgICBdKTsKfQoKLy8gU2F2ZSB0byBmaWxlCmZpbGVfcHV0X2NvbnRlbnRzKCR0YXJnZXQsICRvdXRwdXQpOwoKZWNobyAnU2F2ZWQgJywgJHRhcmdldCwgJyAoJywgc3RybGVuKCRvdXRwdXQpLCAiIGJ5dGVzKVxuIjsKCi8qKgogKiBPcmdhbml6ZSBpY29ucyBsaXN0IGJ5IHByZWZpeAogKgogKiBSZXN1bHQgaXMgYW4gb2JqZWN0LCB3aGVyZSBrZXkgaXMgcHJlZml4LCB2YWx1ZSBpcyBhcnJheSBvZiBpY29uIG5hbWVzCiAqLwpmdW5jdGlvbiBvcmdhbml6ZUljb25zTGlzdCgkaWNvbnMpCnsKICAgICRyZXN1bHRzID0gW107CgogICAgZm9yZWFjaCAoJGljb25zIGFzICRzdHIpIHsKICAgICAgICAvLyBTcGxpdCBpY29uIHRvIHByZWZpeCBhbmQgbmFtZQogICAgICAgICRpY29uID0gc3RyaW5nVG9JY29uKCRzdHIpOwogICAgICAgIGlmICgkaWNvbiA9PT0gbnVsbCB8fCAkaWNvblsncHJvdmlkZXInXSAhPT0gJycpIHsKICAgICAgICAgICAgLy8gSW52YWxpZCBuYW1lIG9yIGljb24gbmFtZSBoYXMgcHJvdmlkZXIuCiAgICAgICAgICAgIC8vIEFsbCBpY29ucyBpbiB0aGlzIGV4YW1wbGUgYXJlIGZyb20gSWNvbmlmeSwgc28gcHJvdmlkZXJzIGFyZSBub3Qgc3VwcG9ydGVkLgogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoJ0ludmFsaWQgaWNvbiBuYW1lOiAnIC4gJHN0cik7CiAgICAgICAgfQoKICAgICAgICAkcHJlZml4ID0gJGljb25bJ3ByZWZpeCddOwogICAgICAgICRuYW1lID0gJGljb25bJ25hbWUnXTsKCiAgICAgICAgLy8gQWRkIGljb24gdG8gcmVzdWx0cwogICAgICAgIGlmICghaXNzZXQoJHJlc3VsdHNbJHByZWZpeF0pKSB7CiAgICAgICAgICAgICRyZXN1bHRzWyRwcmVmaXhdID0gWyRuYW1lXTsKICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgfQogICAgICAgIGlmICghaW5fYXJyYXkoJG5hbWUsICRyZXN1bHRzWyRwcmVmaXhdKSkgewogICAgICAgICAgICAkcmVzdWx0c1skcHJlZml4XVtdID0gJG5hbWU7CiAgICAgICAgfQogICAgfQoKICAgIHJldHVybiAkcmVzdWx0czsKfQoKLyoqCiAqIENvbnZlcnQgaWNvbiBuYW1lIGZyb20gc3RyaW5nIHRvIG9iamVjdC4KICoKICogT2JqZWN0IHByb3BlcnRpZXM6CiAqIC0gcHJvdmlkZXIgKGlnbm9yZWQgaW4gdGhpcyBleGFtcGxlKQogKiAtIHByZWZpeAogKiAtIG5hbWUKICoKICogVGhpcyBmdW5jdGlvbiB3YXMgY29udmVydGVkIHRvIFBIUCBmcm9tIEBpY29uaWZ5L2NvcmUvc3JjL2ljb24vbmFtZS50cwogKiBTZWUgaHR0cHM6Ly9naXRodWIuY29tL2ljb25pZnkvaWNvbmlmeS9ibG9iL21hc3Rlci9wYWNrYWdlcy9jb3JlL3NyYy9pY29uL25hbWUudHMKICovCmZ1bmN0aW9uIHN0cmluZ1RvSWNvbigkdmFsdWUpCnsKICAgICRwcm92aWRlciA9ICcnOwogICAgJGNvbG9uU2VwYXJhdGVkID0gZXhwbG9kZSgnOicsICR2YWx1ZSk7CgogICAgLy8gQ2hlY2sgZm9yIHByb3ZpZGVyIHdpdGggY29ycmVjdCAnQCcgYXQgc3RhcnQKICAgIGlmIChzdWJzdHIoJHZhbHVlLCAwLCAxKSA9PT0gJ0AnKSB7CiAgICAgICAgLy8gRmlyc3QgcGFydCBpcyBwcm92aWRlcgogICAgICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpIDwgMiB8fCBjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMykgewogICAgICAgICAgICAvLyAiQHByb3ZpZGVyOnByZWZpeDpuYW1lIiBvciAiQHByb3ZpZGVyOnByZWZpeC1uYW1lIgogICAgICAgICAgICByZXR1cm4gbnVsbDsKICAgICAgICB9CiAgICAgICAgJHByb3ZpZGVyID0gc3Vic3RyKGFycmF5X3NoaWZ0KCRjb2xvblNlcGFyYXRlZCksIDEpOwogICAgfQoKICAgIC8vIENoZWNrIHNwbGl0IGJ5IGNvbG9uOiAicHJlZml4Om5hbWUiLCAicHJvdmlkZXI6cHJlZml4Om5hbWUiCiAgICBpZiAoY291bnQoJGNvbG9uU2VwYXJhdGVkKSA+IDMgfHwgIWNvdW50KCRjb2xvblNlcGFyYXRlZCkpIHsKICAgICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMSkgewogICAgICAgIC8vICJwcmVmaXg6bmFtZSIKICAgICAgICAkbmFtZSA9IGFycmF5X3BvcCgkY29sb25TZXBhcmF0ZWQpOwogICAgICAgICRwcmVmaXggPSBhcnJheV9wb3AoJGNvbG9uU2VwYXJhdGVkKTsKICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAvLyBBbGxvdyBwcm92aWRlciB3aXRob3V0ICdAJzogInByb3ZpZGVyOnByZWZpeDpuYW1lIgogICAgICAgICAgICAncHJvdmlkZXInID0+IGNvdW50KCRjb2xvblNlcGFyYXRlZCkgPiAwID8gJGNvbG9uU2VwYXJhdGVkWzBdIDogJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiAkcHJlZml4LAogICAgICAgICAgICAnbmFtZScgPT4gJG5hbWUsCiAgICAgICAgXTsKICAgIH0KCiAgICAvLyBBdHRlbXB0IHRvIHNwbGl0IGJ5IGRhc2g6ICJwcmVmaXgtbmFtZSIKICAgICRkYXNoU2VwYXJhdGVkID0gZXhwbG9kZSgnLScsICRjb2xvblNlcGFyYXRlZFswXSk7CiAgICBpZiAoY291bnQoJGRhc2hTZXBhcmF0ZWQpID4gMSkgewogICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICdwcm92aWRlcicgPT4gJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiBhcnJheV9zaGlmdCgkZGFzaFNlcGFyYXRlZCksCiAgICAgICAgICAgICduYW1lJyA9PiBpbXBsb2RlKCctJywgJGRhc2hTZXBhcmF0ZWQpLAogICAgICAgIF07CiAgICB9CgogICAgcmV0dXJuIG51bGw7Cn0KCi8qKgogKiBHZXQgaW1wb3J0IHN0YXRlbWVudCBmb3IgY29tcG9uZW50CiAqLwpmdW5jdGlvbiBnZXRJbXBvcnQoJGNvbXBvbmVudCkKewogICAgJGltcG9ydHMgPSBbCiAgICAgICAgJ3JlYWN0JyA9PiAiaW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsiLAogICAgICAgICdyZWFjdC13aXRoLWFwaScgPT4KICAgICAgICAiaW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsiLAogICAgICAgICd2dWUnID0+ICJpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsiLAogICAgICAgICd2dWUyJyA9PgogICAgICAgICJpbXBvcnQgSWNvbmlmeUljb24gZnJvbSAnQGljb25pZnkvdnVlJztcblxuY29uc3QgYWRkQ29sbGVjdGlvbiA9IEljb25pZnlJY29uLmFkZENvbGxlY3Rpb247IiwKICAgIF07CgogICAgaWYgKGlzc2V0KCRpbXBvcnRzWyRjb21wb25lbnRdKSkgewogICAgICAgIHJldHVybiAkaW1wb3J0c1skY29tcG9uZW50XTsKICAgIH0KCiAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgICAgJ0ludmFsaWQgdmFsdWUgZm9yICJjb21wb25lbnQiIHZhcmlhYmxlLiBQb3NzaWJsZSB2YWx1ZXM6IFwnJyAuCiAgICAgICAgaW1wbG9kZSgiJywgJyIsIGFycmF5X2tleXMoJGltcG9ydHMpKSAuICdcJycKICAgICk7Cn0K"><code class="highlight hljs"><span class="hljs-meta">&lt;?php</span><br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PD9waHAKLyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IGNvbXBvbmVudHMuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgaWNvbiBzZXRzLgogKiBGb3IgYnVuZGxpbmcgY3VzdG9tIGljb25zIHNlZSBvdGhlciBjb2RlIGV4YW1wbGVzIGluIGRvY3VtZW50YXRpb24uCiAqLwoKcmVxdWlyZSAnLi92ZW5kb3IvYXV0b2xvYWQucGhwJzsKCi8vIEluc3RhbGxhdGlvbjogY29tcG9zZXIgcmVxdWlyZSBpY29uaWZ5L2pzb24tdG9vbHMgaWNvbmlmeS9qc29uCnVzZSBJY29uaWZ5XEpTT05Ub29sc1xDb2xsZWN0aW9uOwoKLy8gSWNvbmlmeSBjb21wb25lbnQgKHRoaXMgY2hhbmdlcyBpbXBvcnQgc3RhdGVtZW50IGluIGdlbmVyYXRlZCBmaWxlKQovLyBBdmFpbGFibGUgb3B0aW9uczogJ0BpY29uaWZ5L3JlYWN0JyBmb3IgUmVhY3QsICdAaWNvbmlmeS92dWUnIGZvciBWdWUgMywgJ0BpY29uaWZ5L3Z1ZTInIGZvciBWdWUgMiwgJ0BpY29uaWZ5L3N2ZWx0ZScgZm9yIFN2ZWx0ZQokY29tcG9uZW50ID0gJ0BpY29uaWZ5L3JlYWN0JzsKCi8vIFNldCB0byB0cnVlIHRvIHVzZSByZXF1aXJlKCkgaW5zdGVhZCBvZiBpbXBvcnQKJGNvbW1vb25KUyA9IGZhbHNlOwoKLy8gRmlsZSB0byBzYXZlIGJ1bmRsZSB0bwokdGFyZ2V0ID0gX19ESVJfXyAuICcvc3JjL2ljb25zLWJ1bmRsZS5qcyc7CgovLyBJY29ucyB0byBidW5kbGUsIGFycmF5CiRpY29ucyA9IFsKICAgICdtZGk6aG9tZScsCiAgICAnbWRpOmFjY291bnQnLAogICAgJ21kaTpsb2dpbicsCiAgICAnbWRpOmxvZ291dCcsCiAgICAnb3Blbm1vamk6YmlydGhkYXktY2FrZScsCiAgICAnb3Blbm1vamk6Y2xpbmtpbmctZ2xhc3NlcycsCl07CgovLyBPcmdhbml6ZSBpY29ucyBieSBwcmVmaXgKJGljb25zID0gb3JnYW5pemVJY29uc0xpc3QoJGljb25zKTsKCi8vIExvYWQgaWNvbnMgZGF0YQokb3V0cHV0ID0gJGNvbW1vb25KUyA/ICJjb25zdCB7IGFkZENvbGxlY3Rpb24gfSA9IHJlcXVpcmUoJyRjb21wb25lbnQnKTtcblxuIiA6ICJpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnJGNvbXBvbmVudCc7XG5cbiI7CmZvcmVhY2ggKCRpY29ucyBhcyAkcHJlZml4ID0+ICRpY29uc0xpc3QpIHsKICAgIC8vIExvYWQgaWNvbiBzZXQKICAgICRjb2xsZWN0aW9uID0gbmV3IENvbGxlY3Rpb24oJHByZWZpeCk7CiAgICBpZiAoISRjb2xsZWN0aW9uLT5sb2FkSWNvbmlmeUNvbGxlY3Rpb24oJHByZWZpeCkpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgICAgICAgICdJY29ucyB3aXRoIHByZWZpeCAiJyAuICRwcmVmaXggLiAnIiBkbyBub3QgZXhpc3QgaW4gSWNvbmlmeS4gVXBkYXRlIGljb25pZnkvanNvbj8nCiAgICAgICAgKTsKICAgIH0KCiAgICAvLyBNYWtlIHN1cmUgYWxsIGljb25zIGV4aXN0CiAgICBmb3JlYWNoICgkaWNvbnNMaXN0IGFzICRuYW1lKSB7CiAgICAgICAgaWYgKCEkY29sbGVjdGlvbi0+aWNvbkV4aXN0cygkbmFtZSkpIHsKICAgICAgICAgICAgLy8gVW5jb21tZW50IG5leHQgbGluZSB0byB0aHJvdyBlcnJvciBpZiBhbiBpY29uIGRvZXMgbm90IGV4aXN0CiAgICAgICAgICAgIC8vIHRocm93IG5ldyBFcnJvcignQ291bGQgbm90IGZpbmQgaWNvbjogIicgLiAkcHJlZml4IC4gJzonIC4gJG5hbWUgLiAnIicpOwogICAgICAgICAgICBlY2hvICdDb3VsZCBub3QgZmluZCBpY29uOiAiJywgJHByZWZpeCwgJzonLCAkbmFtZSwgIlwiXG4iOwogICAgICAgIH0KICAgIH0KCiAgICAvLyBHZXQgZGF0YSBmb3IgYWxsIGljb25zIGFzIHN0cmluZwogICAgJG91dHB1dCAuPSAkY29sbGVjdGlvbi0+c2NyaXB0aWZ5KFsKICAgICAgICAnaWNvbnMnID0+ICRpY29uc0xpc3QsCiAgICAgICAgJ2NhbGxiYWNrJyA9PiAnYWRkQ29sbGVjdGlvbicsCiAgICAgICAgJ29wdGltaXplJyA9PiB0cnVlLAogICAgXSk7Cn0KCi8vIFNhdmUgdG8gZmlsZQpmaWxlX3B1dF9jb250ZW50cygkdGFyZ2V0LCAkb3V0cHV0KTsKCmVjaG8gJ1NhdmVkICcsICR0YXJnZXQsICcgKCcsIHN0cmxlbigkb3V0cHV0KSwgIiBieXRlcylcbiI7CgovKioKICogT3JnYW5pemUgaWNvbnMgbGlzdCBieSBwcmVmaXgKICoKICogUmVzdWx0IGlzIGFuIG9iamVjdCwgd2hlcmUga2V5IGlzIHByZWZpeCwgdmFsdWUgaXMgYXJyYXkgb2YgaWNvbiBuYW1lcwogKi8KZnVuY3Rpb24gb3JnYW5pemVJY29uc0xpc3QoJGljb25zKQp7CiAgICAkcmVzdWx0cyA9IFtdOwoKICAgIGZvcmVhY2ggKCRpY29ucyBhcyAkc3RyKSB7CiAgICAgICAgLy8gU3BsaXQgaWNvbiB0byBwcmVmaXggYW5kIG5hbWUKICAgICAgICAkaWNvbiA9IHN0cmluZ1RvSWNvbigkc3RyKTsKICAgICAgICBpZiAoJGljb24gPT09IG51bGwgfHwgJGljb25bJ3Byb3ZpZGVyJ10gIT09ICcnKSB7CiAgICAgICAgICAgIC8vIEludmFsaWQgbmFtZSBvciBpY29uIG5hbWUgaGFzIHByb3ZpZGVyLgogICAgICAgICAgICAvLyBBbGwgaWNvbnMgaW4gdGhpcyBleGFtcGxlIGFyZSBmcm9tIEljb25pZnksIHNvIHByb3ZpZGVycyBhcmUgbm90IHN1cHBvcnRlZC4KICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCdJbnZhbGlkIGljb24gbmFtZTogJyAuICRzdHIpOwogICAgICAgIH0KCiAgICAgICAgJHByZWZpeCA9ICRpY29uWydwcmVmaXgnXTsKICAgICAgICAkbmFtZSA9ICRpY29uWyduYW1lJ107CgogICAgICAgIC8vIEFkZCBpY29uIHRvIHJlc3VsdHMKICAgICAgICBpZiAoIWlzc2V0KCRyZXN1bHRzWyRwcmVmaXhdKSkgewogICAgICAgICAgICAkcmVzdWx0c1skcHJlZml4XSA9IFskbmFtZV07CiAgICAgICAgICAgIGNvbnRpbnVlOwogICAgICAgIH0KICAgICAgICBpZiAoIWluX2FycmF5KCRuYW1lLCAkcmVzdWx0c1skcHJlZml4XSkpIHsKICAgICAgICAgICAgJHJlc3VsdHNbJHByZWZpeF1bXSA9ICRuYW1lOwogICAgICAgIH0KICAgIH0KCiAgICByZXR1cm4gJHJlc3VsdHM7Cn0KCi8qKgogKiBDb252ZXJ0IGljb24gbmFtZSBmcm9tIHN0cmluZyB0byBvYmplY3QuCiAqCiAqIE9iamVjdCBwcm9wZXJ0aWVzOgogKiAtIHByb3ZpZGVyIChpZ25vcmVkIGluIHRoaXMgZXhhbXBsZSkKICogLSBwcmVmaXgKICogLSBuYW1lCiAqCiAqIFRoaXMgZnVuY3Rpb24gd2FzIGNvbnZlcnRlZCB0byBQSFAgZnJvbSBAaWNvbmlmeS91dGlscy9zcmMvaWNvbi9uYW1lLnRzCiAqIFNlZSBodHRwczovL2dpdGh1Yi5jb20vaWNvbmlmeS9pY29uaWZ5L2Jsb2IvZGV2L3BhY2thZ2VzL3V0aWxzL3NyYy9pY29uL25hbWUudHMKICovCmZ1bmN0aW9uIHN0cmluZ1RvSWNvbigkdmFsdWUpCnsKICAgICRwcm92aWRlciA9ICcnOwogICAgJGNvbG9uU2VwYXJhdGVkID0gZXhwbG9kZSgnOicsICR2YWx1ZSk7CgogICAgLy8gQ2hlY2sgZm9yIHByb3ZpZGVyIHdpdGggY29ycmVjdCAnQCcgYXQgc3RhcnQKICAgIGlmIChzdWJzdHIoJHZhbHVlLCAwLCAxKSA9PT0gJ0AnKSB7CiAgICAgICAgLy8gRmlyc3QgcGFydCBpcyBwcm92aWRlcgogICAgICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpIDwgMiB8fCBjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMykgewogICAgICAgICAgICAvLyAiQHByb3ZpZGVyOnByZWZpeDpuYW1lIiBvciAiQHByb3ZpZGVyOnByZWZpeC1uYW1lIgogICAgICAgICAgICByZXR1cm4gbnVsbDsKICAgICAgICB9CiAgICAgICAgJHByb3ZpZGVyID0gc3Vic3RyKGFycmF5X3NoaWZ0KCRjb2xvblNlcGFyYXRlZCksIDEpOwogICAgfQoKICAgIC8vIENoZWNrIHNwbGl0IGJ5IGNvbG9uOiAicHJlZml4Om5hbWUiLCAicHJvdmlkZXI6cHJlZml4Om5hbWUiCiAgICBpZiAoY291bnQoJGNvbG9uU2VwYXJhdGVkKSA+IDMgfHwgIWNvdW50KCRjb2xvblNlcGFyYXRlZCkpIHsKICAgICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMSkgewogICAgICAgIC8vICJwcmVmaXg6bmFtZSIKICAgICAgICAkbmFtZSA9IGFycmF5X3BvcCgkY29sb25TZXBhcmF0ZWQpOwogICAgICAgICRwcmVmaXggPSBhcnJheV9wb3AoJGNvbG9uU2VwYXJhdGVkKTsKICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAvLyBBbGxvdyBwcm92aWRlciB3aXRob3V0ICdAJzogInByb3ZpZGVyOnByZWZpeDpuYW1lIgogICAgICAgICAgICAncHJvdmlkZXInID0+IGNvdW50KCRjb2xvblNlcGFyYXRlZCkgPiAwID8gJGNvbG9uU2VwYXJhdGVkWzBdIDogJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiAkcHJlZml4LAogICAgICAgICAgICAnbmFtZScgPT4gJG5hbWUsCiAgICAgICAgXTsKICAgIH0KCiAgICAvLyBBdHRlbXB0IHRvIHNwbGl0IGJ5IGRhc2g6ICJwcmVmaXgtbmFtZSIKICAgICRkYXNoU2VwYXJhdGVkID0gZXhwbG9kZSgnLScsICRjb2xvblNlcGFyYXRlZFswXSk7CiAgICBpZiAoY291bnQoJGRhc2hTZXBhcmF0ZWQpID4gMSkgewogICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICdwcm92aWRlcicgPT4gJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiBhcnJheV9zaGlmdCgkZGFzaFNlcGFyYXRlZCksCiAgICAgICAgICAgICduYW1lJyA9PiBpbXBsb2RlKCctJywgJGRhc2hTZXBhcmF0ZWQpLAogICAgICAgIF07CiAgICB9CgogICAgcmV0dXJuIG51bGw7Cn0K"><code class="highlight hljs"><span class="hljs-meta">&lt;?php</span><br>
 <span class="hljs-comment">/**<br>
  * This is a simple example for creating icon bundles for Iconify components.<br>
  *<br>
@@ -297,8 +284,11 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
 <span class="hljs-keyword">use</span> <span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">Collection</span>;<br>
 <br>
 <span class="hljs-comment">// Iconify component (this changes import statement in generated file)</span><br>
-<span class="hljs-comment">// Available options: &apos;react&apos;, &apos;react-with-api&apos;, &apos;vue&apos; (for Vue 3), &apos;vue2&apos;</span><br>
-<span class="hljs-variable">$component</span> = <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-comment">// Available options: &apos;@iconify/react&apos; for React, &apos;@iconify/vue&apos; for Vue 3, &apos;@iconify/vue2&apos; for Vue 2, &apos;@iconify/svelte&apos; for Svelte</span><br>
+<span class="hljs-variable">$component</span> = <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Set to true to use require() instead of import</span><br>
+<span class="hljs-variable">$commoonJS</span> = <span class="hljs-literal">false</span>;<br>
 <br>
 <span class="hljs-comment">// File to save bundle to</span><br>
 <span class="hljs-variable">$target</span> = <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/src/icons-bundle.js&apos;</span>;<br>
@@ -317,7 +307,7 @@ fs.writeFileSync(target, output, <span class="hljs-string">&apos;utf8&apos;</spa
 <span class="hljs-variable">$icons</span> = organizeIconsList(<span class="hljs-variable">$icons</span>);<br>
 <br>
 <span class="hljs-comment">// Load icons data</span><br>
-<span class="hljs-variable">$output</span> = getImport(<span class="hljs-variable">$component</span>) . <span class="hljs-string">&quot;\n\n&quot;</span>;<br>
+<span class="hljs-variable">$output</span> = <span class="hljs-variable">$commoonJS</span> ? <span class="hljs-string">&quot;const { addCollection } = require(&apos;<span class="hljs-subst">$component</span>&apos;);\n\n&quot;</span> : <span class="hljs-string">&quot;import { addCollection } from &apos;<span class="hljs-subst">$component</span>&apos;;\n\n&quot;</span>;<br>
 <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$prefix</span> =&gt; <span class="hljs-variable">$iconsList</span>) {<br>
  &#xA0; &#xA0;<span class="hljs-comment">// Load icon set</span><br>
  &#xA0; &#xA0;<span class="hljs-variable">$collection</span> = <span class="hljs-keyword">new</span> Collection(<span class="hljs-variable">$prefix</span>);<br>
@@ -391,8 +381,8 @@ file_put_contents(<span class="hljs-variable">$target</span>, <span class="hljs-
  * - prefix<br>
  * - name<br>
  *<br>
- * This function was converted to PHP from @iconify/core/src/icon/name.ts<br>
- * See https://github.com/iconify/iconify/blob/master/packages/core/src/icon/name.ts<br>
+ * This function was converted to PHP from @iconify/utils/src/icon/name.ts<br>
+ * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts<br>
  */</span><br>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringToIcon</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)<br>
 </span>{<br>
@@ -437,42 +427,23 @@ file_put_contents(<span class="hljs-variable">$target</span>, <span class="hljs-
 <br>
  &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
 }<br>
-<br>
-<span class="hljs-comment">/**<br>
- * Get import statement for component<br>
- */</span><br>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getImport</span>(<span class="hljs-params"><span class="hljs-variable">$component</span></span>)<br>
-</span>{<br>
- &#xA0; &#xA0;<span class="hljs-variable">$imports</span> = [<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react&apos;</span> =&gt; <span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;react-with-api&apos;</span> =&gt;<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/react-with-api&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;vue&apos;</span> =&gt; <span class="hljs-string">&quot;import { addCollection } from &apos;@iconify/vue&apos;;&quot;</span>,<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;vue2&apos;</span> =&gt;<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&quot;import IconifyIcon from &apos;@iconify/vue&apos;;\n\nconst addCollection = IconifyIcon.addCollection;&quot;</span>,<br>
- &#xA0; &#xA0;];<br>
-<br>
- &#xA0; &#xA0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$imports</span>[<span class="hljs-variable">$component</span>])) {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> <span class="hljs-variable">$imports</span>[<span class="hljs-variable">$component</span>];<br>
- &#xA0; &#xA0;}<br>
-<br>
- &#xA0; &#xA0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-string">&apos;Invalid value for &quot;component&quot; variable. Possible values: \&apos;&apos;</span> .<br>
- &#xA0; &#xA0; &#xA0; &#xA0;implode(<span class="hljs-string">&quot;&apos;, &apos;&quot;</span>, array_keys(<span class="hljs-variable">$imports</span>)) . <span class="hljs-string">&apos;\&apos;&apos;</span><br>
- &#xA0; &#xA0;);<br>
-}<br>
 </code></div></div></div><p>Bundle generated by script above must be imported in your application:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0ICcuL2ljb25zLWJ1bmRsZS5qcyc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./icons-bundle.js&apos;</span>;<br>
+</code></div></div></div><p>If you are using <span class="hljs-function">require()</span> and have set <span class="hljs-inline-var">commonJS</span> to <span class="hljs-literal">true</span>, use this code:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmVxdWlyZSgnLi9pY29ucy1idW5kbGUuanMnKTsK"><code class="highlight hljs"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./icons-bundle.js&apos;</span>);<br>
 </code></div></div></div></section>
+
 
 
 </article>
 				<nav
-					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+					class="
+						docs-navigation docs-navigation--visible docs-navigation--no-button
+					"
 				>
 					<div class="docs-navigation-button"></div>
 					<div class="docs-navigation-content-wrapper">
 						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--develop">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../develop/">For Developers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icon Components</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Sources<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../api/">Iconify API</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Bundled Icons<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -481,18 +452,17 @@ file_put_contents(<span class="hljs-variable">$target</span>, <span class="hljs-
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svg-framework.html">SVG Framework</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Components:</li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react.html">React</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react-with-api.html">React with API</a></li>
-	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue.html">Vue</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte.html">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--separator"><a href="./">Examples</a></li>
-	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Components</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../npm/">Icon Packages</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../json/">Iconify Icon Sets</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../implementations/">Implementations</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../design/">For Designers<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/figma/">Figma Plug-In</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/sketch/">Sketch Plug-In</a></li>
-	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/adobe-xd/">Adobe XD Plug-In</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--integration">
 	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icon-finder/">Icon Finder<span class="iconify" data-icon="line-md:chevron-small-down"></span></a></li>
@@ -545,7 +515,7 @@ file_put_contents(<span class="hljs-variable">$target</span>, <span class="hljs-
 				</ul>
 			</div>
 		</footer>
-		<script src="../../../assets/bundle.js?241e"></script>
+		<script src="../../../assets/bundle.js?14e2"></script>
 		<script src="https://code.iconify.design/2/2.0.1/iconify.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712817-1"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>
 	</body>

@@ -8,7 +8,7 @@ replacements:
 
 # Iconify API
 
-Iconify API sends icon data on demand to [SVG Framework](../../implementations/svg-framework/index.md) or one of [Iconify components](../../implementations/components/index.md).
+Iconify API sends icon data on demand to [SVG Framework](../../icon-components/svg-framework/index.md) or one of [Iconify components](../../icon-components/components/index.md).
 
 ## How does it work? {#concept}
 
@@ -18,17 +18,17 @@ Iconify API sends icon data on demand to [SVG Framework](../../implementations/s
 
 When you are using an icon font, font contains all icons, even ones you do not need. That limits number of icons that a font can have.
 
-When you are using Iconify implementation that relies on Iconify API, such as [SVG Framework](../../implementations/svg-framework/index.md) or [Iconify components](../../implementations/components/index.md), implementation requests data only for icons that are used on the current page. Iconify API sends only data for icons that implementation has requested.
+When you are using [Iconify icon component](../../icon-components/index.md) that relies on Iconify API, icon component requests data only for icons that are used on the current page. Iconify API sends only data for icons that icon component has requested.
 
-Because implementations do not load icons they do not need, Iconify API can host many icons. Visitors do not waste bandwidth loading icons they do not see.
+Because icon components do not load icons they do not need, Iconify API can host many icons. Visitors do not waste bandwidth loading icons they do not see.
 
 ### Iconify public API
 
-By default, Iconify implementations use Iconify public API.
+By default, Iconify icon components use Iconify public API.
 
 Iconify public API offers over 70 icon sets that include over 60k icons. All icons are from free icon sets.
 
-To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within 1/10 of a second. Iconify implementations also cache loaded icons in browser cache and/or browser storage, so icon data needs to be loaded only once.
+To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within 1/10 of a second. Iconify icon components also cache loaded icons in browser cache and/or browser storage, so icon data needs to be loaded only once.
 
 ### Custom API
 

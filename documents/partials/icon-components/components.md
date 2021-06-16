@@ -1,0 +1,4 @@
+- [Iconify for React](/icon-components/react/index.md).
+- [Iconify for Vue](/icon-components/vue/index.md).
+- [Iconify for Vue 2](/icon-components/vue2/index.md).
+- [Iconify for Svelte](/icon-components/svelte/index.md).
