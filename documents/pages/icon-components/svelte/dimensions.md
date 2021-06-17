@@ -26,13 +26,13 @@ Examples of `[num]24px` icon:
 
 ```jsx
 // Number
-<Icon icon={homeIcon} height={24} />
+<Icon icon="mdi:home" height={24} />
 // String without units
-<Icon icon={homeIcon} height="24" />
+<Icon icon="mdi:home" height="24" />
 // String with units
-<Icon icon={homeIcon} height="24px" />
+<Icon icon="mdi:home" height="24px" />
 // String with units, font-size is 16px
-<Icon icon={homeIcon} height="1.5em" />
+<Icon icon="mdi:home" height="1.5em" />
 ```
 
 ## Keyword "auto" {#auto}
@@ -44,7 +44,7 @@ It is enough to set one dimension to `[str]auto`, other dimension will be set to
 For example, if `[attr]viewBox="0 0 24 24"` and `[prop]height` is set to `[str]auto`, `[prop]height` will be set to `[num]24`.
 
 ```jsx
-<Icon icon={homeIcon} height="auto" />
+<Icon icon="mdi:home" height="auto" />
 ```
 
 ## Setting only width or height

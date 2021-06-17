@@ -20,18 +20,8 @@ This tutorial is part of [Iconify for React functions tutorial](./index.md#funct
 
 ## Example
 
-```jsx
-import { addAPIProvider, Icon } from '@iconify/react';
-
-addAPIProvider('local', {
-	// Array of host names
-	resources: ['http://localhost:3000'],
-});
-
-// Demo using provider in icon name
-export function renderHomeIcon() {
-	return <Icon icon="@local:material-icons:home" />;
-}
+```yaml
+src: icon-components/common/add-api-provider.jsx
 ```
 
 `include icon-components/functions/add-api-provider/footer`

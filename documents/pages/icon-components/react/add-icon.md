@@ -19,14 +19,8 @@ Function `[func]addIcon()` add one icon to SVG framework storage.
 
 ## Examples
 
-```js
-import { addIcon } from '@iconify/react';
-
-addIcon('mdi:account-box', {
-	body: '<path d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" fill="currentColor"/>',
-	width: 24,
-	height: 24,
-});
+```yaml
+src: icon-components/common/add-icon.js
 ```
 
 `include icon-components/functions/add-icon/notes`
@@ -37,14 +31,8 @@ addIcon('mdi:account-box', {
 
 Example:
 
-```js
-import { addIcon } from '@iconify/react';
-
-addIcon('@custom:md:test', {
-	body: '<path d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z" fill="currentColor"/>',
-	width: 24,
-	height: 24,
-});
+```yaml
+src: icon-components/common/add-icon2.js
 ```
 
 Code above adds the following icon:
@@ -53,7 +41,7 @@ Code above adds the following icon:
 - `[prop]prefix` is `[str]md`.
 - `[prop]name` is `[str]test`.
 
-In component this icon can be used like this:
+In component JSX this icon can be used like this:
 
 ```jsx
 <Icon icon="@custom:md:test" />

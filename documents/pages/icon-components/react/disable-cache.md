@@ -22,18 +22,12 @@ This tutorial is part of [Iconify for React functions tutorial](./index.md#funct
 
 ## Examples
 
-```js
-import { disableCache } from '@iconify/react';
-
-// Disable caching in localStorage
-disableCache('local');
+```yaml
+src: icon-components/common/disable-cache.js
 ```
 
-```js
-import { disableCache } from '@iconify/react';
-
-// Disable all caching
-disableCache('all');
+```yaml
+src: icon-components/common/disable-cache2.js
 ```
 
 ## Notes

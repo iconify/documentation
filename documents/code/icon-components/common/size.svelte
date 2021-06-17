@@ -1,9 +1,5 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify-icons/cil
 	import Icon from '@iconify/svelte';
-	import locomotiveIcon from '@iconify-icons/cil/locomotive';
-	import paperPlane from '@iconify-icons/cil/paper-plane';
-	import truckIcon from '@iconify-icons/cil/truck';
 </script>
 
 <style>
@@ -26,7 +22,7 @@
 </style>
 
 <div>
-	<Icon icon={locomotiveIcon} />
-	<Icon icon={paperPlane} style="font-size: 36px" />
-	<Icon icon={truckIcon} class="big-icon" />
+	<Icon icon="cil:locomotive" />
+	<Icon icon="cil:paper-plane" style="font-size: 36px" />
+	<Icon icon="cil:truck" class="big-icon" />
 </div>

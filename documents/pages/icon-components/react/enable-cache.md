@@ -22,11 +22,8 @@ This tutorial is part of [Iconify for React functions tutorial](./index.md#funct
 
 ## Examples
 
-```js
-import { enableCache } from '@iconify/react';
-
-// Enable caching in localStorage
-enableCache('local');
+```yaml
+src: icon-components/common/enable-cache.js
 ```
 
 ## Notes

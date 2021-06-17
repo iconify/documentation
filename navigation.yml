@@ -136,6 +136,24 @@
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
             ./inline.html: Inline Icons
+            ./offline.html: Offline Use
+            ./functions.html:
+              title: Functions
+              separator: true
+              clickable: false
+            # Getting icons
+            ./icon-exists.html: iconExists()
+            ./list-icons.html: listIcons()
+            ./get-icon.html: getIcon()
+            # Adding icons
+            ./add-icon.html: addIcon()
+            ./add-collection.html: addCollection()
+            # API
+            ./load-icons.html: loadIcons()
+            ./enable-cache.html: enableCache()
+            ./disable-cache.html: disableCache()
+            # Internal
+            ./replace-ids.html: replaceIDs()
     /sources/:
       title: Sources
       children:

@@ -18,14 +18,6 @@ This tutorial is part of [Iconify for React functions tutorial](./index.md#funct
 
 `include icon-components/functions/replace-ids/example-component`
 
-```js
-import { replaceIDs, getIcon } from '@iconify/react';
-
-// Get icon data
-const data = getIcon('carbon:deploy');
-
-// Get content
-const body = replaceIDs(data.body);
-
-console.log('Icon content:', body);
+```yaml
+src: icon-components/common/replace-ids.js
 ```

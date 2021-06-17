@@ -89,7 +89,7 @@
 			<div class="page-width page-content docs-container">
 				<article class="docs"><div class="docs-short-navigation">
 <a href="./transform.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Transformations</a>
-<a href="../../sources/" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Sources</a>
+<a href="./offline.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Offline Use</a>
 </div>
 <h1>Inline icons</h1>
 <p>This tutorial is part of <a href="./">Iconify for Svelte tutorial</a>.</p>
@@ -97,27 +97,19 @@
 <p>Inline icons are aligned slightly below baseline, so they look centred compared to text, like glyph fonts.</p>
 <p>Block icons do not have alignment, like images, which aligns them to baseline by default.</p>
 <p>Alignment option was added to make icons look like continuation of text, behaving like glyph fonts. This should make migration from glyph fonts easier.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL21kaSBAaWNvbmlmeS1pY29ucy9saW5lLW1kCglpbXBvcnQgSWNvbiBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoJaW1wb3J0IGltYWdlVHdvdG9uZSBmcm9tICdAaWNvbmlmeS1pY29ucy9saW5lLW1kL2ltYWdlLXR3b3RvbmUnOwoJaW1wb3J0IGFjY291bnRCb3hPdXRsaW5lIGZyb20gJ0BpY29uaWZ5LWljb25zL21kaS9hY2NvdW50LWJveC1vdXRsaW5lJzsKPC9zY3JpcHQ+Cgo8cD4KCUJsb2NrOgoJPCEtLQoJQWRkaW5nIGNsYXNzIHRvIGZpcnN0IGljb24gdG8gdHJpZ2dlciBhbmltYXRpb25zIHVzZWQgYnkgbGluZS1tZCBpY29uIHNldC4KCVNWRyBmcmFtZXdvcmsgYXV0b21hdGljYWxseSBhZGRzIGNsYXNzZXMgYmFzZWQgb24gaWNvbiBwcmVmaXgsCglidXQgY29tcG9uZW50cyBkbyBub3QgYmVjYXVzZSB0aGV5IGhhbmRsZSByYXcgaWNvbiBkYXRhLiAKCS0tPgoJPEljb24gaWNvbj17aW1hZ2VUd290b25lfSBjbGFzcz0iaWNvbmlmeS0tbGluZS1tZCIgLz4KCTxJY29uIGljb249e2FjY291bnRCb3hPdXRsaW5lfSAvPgo8L3A+CjxwPgoJSW5saW5lOgoJPEljb24gaWNvbj17aW1hZ2VUd290b25lfSBjbGFzcz0iaWNvbmlmeS0tbGluZS1tZCIgaW5saW5lPXt0cnVlfSAvPgoJPEljb24gaWNvbj17YWNjb3VudEJveE91dGxpbmV9IGlubGluZT17dHJ1ZX0gLz4KPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/mdi @iconify-icons/line-md</span><br>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHA+CglCbG9jazoKCTxJY29uIGljb249ImxpbmUtbWQ6aW1hZ2UtdHdvdG9uZSIgLz4KCTxJY29uIGljb249Im1kaTphY2NvdW50LWJveC1vdXRsaW5lIiAvPgo8L3A+CjxwPgoJSW5saW5lOgoJPEljb24gaWNvbj0ibGluZS1tZDppbWFnZS10d290b25lIiBpbmxpbmU9e3RydWV9IC8+Cgk8SWNvbiBpY29uPSJtZGk6YWNjb3VudC1ib3gtb3V0bGluZSIgaW5saW5lPXt0cnVlfSAvPgo8L3A+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> imageTwotone <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/line-md/image-twotone&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> accountBoxOutline <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi/account-box-outline&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0;</span><span class="hljs-comment">&lt;!--<br>
- &#xA0; &#xA0;Adding class to first icon to trigger animations used by line-md icon set.<br>
- &#xA0; &#xA0;SVG framework automatically adds classes based on icon prefix,<br>
- &#xA0; &#xA0;but components do not because they handle raw icon data. <br>
- &#xA0; &#xA0;--&gt;</span><span class="xml"><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{imageTwotone}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify--line-md&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{accountBoxOutline}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{imageTwotone}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify--line-md&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{accountBoxOutline}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;line-md:image-twotone&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:account-box-outline&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 </span></code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="cCB7Cglwb3NpdGlvbjogcmVsYXRpdmU7Cglmb250LXNpemU6IDI0cHg7CglsaW5lLWhlaWdodDogMzJweDsKfQoKLy8gQm9yZGVycyBhYm92ZSBhbmQgYmVsb3cgdGV4dCB0byBoaWdobGlnaHQgaWNvbiBhbGlnbm1lbnQKcDphZnRlciwKcDpiZWZvcmUgewoJY29udGVudDogJyc7Cglwb3NpdGlvbjogYWJzb2x1dGU7CglsZWZ0OiAwOwoJcmlnaHQ6IDA7Cglib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNjY2M7Cn0KcDpiZWZvcmUgewoJdG9wOiA2cHg7Cn0KcDphZnRlciB7Cglib3R0b206IDdweDsKfQo="><code class="highlight hljs"><span class="hljs-selector-tag">p</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attribute">position</span>: relative;<br>
@@ -153,25 +145,21 @@ p:before {<br>
 </div></div></div></div><section class="content-section content-section--2"><H1 id="syntax" class="heading--2">Syntax <a href="#syntax" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>By default, icon is treated as block icon. It has no custom <span class="hljs-inline-prop">vertical-align</span>, so you can add it as necessary in a stylesheet.</p><p>You can change that behaviour by:</p><ul>
 <li>Adding <span class="hljs-inline-prop">inline</span> attribute.</li>
 <li>Adding <span class="hljs-inline-prop">vertical-align</span> style with value <span class="hljs-number">-0.125em</span>.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL21kaSBAaWNvbmlmeS1pY29ucy9lbW9qaW9uZS12MSBAaWNvbmlmeS1pY29ucy91aW0KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7CglpbXBvcnQgaG9tZUljb24gZnJvbSAnQGljb25pZnktaWNvbnMvbWRpL2hvbWUnOwoJaW1wb3J0IGJpcmRJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL2Vtb2ppb25lLXYxL2JpcmQnOwoJaW1wb3J0IHNjZW5lcnlJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL3VpbS9zY2VuZXJ5JzsKPC9zY3JpcHQ+Cgo8cD4KCUJsb2NrOgoJPEljb24gaWNvbj17aG9tZUljb259IC8+Cgk8SWNvbiBpY29uPXtiaXJkSWNvbn0gaW5saW5lPXtmYWxzZX0gLz4KCTxJY29uIGljb249e3NjZW5lcnlJY29ufSBzdHlsZT0idmVydGljYWwtYWxpZ246IDA7IiAvPgo8L3A+CjxwPgoJSW5saW5lOgoJPEljb24gaWNvbj17aG9tZUljb259IGlubGluZT17dHJ1ZX0gLz4KCTxJY29uIGljb249e2JpcmRJY29ufSBpbmxpbmU9e3RydWV9IC8+Cgk8SWNvbiBpY29uPXtzY2VuZXJ5SWNvbn0gc3R5bGU9InZlcnRpY2FsLWFsaWduOiAtMC4xMjVlbTsiIC8+CjwvcD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/mdi @iconify-icons/emojione-v1 @iconify-icons/uim</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHA+CglCbG9jazoKCTxJY29uIGljb249Im1kaTpob21lIiAvPgoJPEljb24gaWNvbj0iZW1vamlvbmUtdjE6YmlyZCIgaW5saW5lPXtmYWxzZX0gLz4KCTxJY29uIGljb249InVpbTpzY2VuZXJ5IiBzdHlsZT0idmVydGljYWwtYWxpZ246IDA7IiAvPgo8L3A+CjxwPgoJSW5saW5lOgoJPEljb24gaWNvbj0ibWRpOmhvbWUiIGlubGluZT17dHJ1ZX0gLz4KCTxJY29uIGljb249ImVtb2ppb25lLXYxOmJpcmQiIGlubGluZT17dHJ1ZX0gLz4KCTxJY29uIGljb249InVpbTpzY2VuZXJ5IiBzdHlsZT0idmVydGljYWwtYWxpZ246IC0wLjEyNWVtOyIgLz4KPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> homeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/mdi/home&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> birdIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/emojione-v1/bird&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> sceneryIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/uim/scenery&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Block:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{homeIcon}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{birdIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">false</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{sceneryIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: 0;&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">false</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: 0;&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Inline:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{homeIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{birdIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{sceneryIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: -0.125em;&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;emojione-v1:bird&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;uim:scenery&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;vertical-align: -0.125em;&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 </span></code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo iconify-inline-block"><p>
 	Block:
@@ -210,6 +198,17 @@ p:before {<br>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./offline.html">Offline Use</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
 </ul>
 <ul class="docs-navigation-section docs-navigation-section--design">

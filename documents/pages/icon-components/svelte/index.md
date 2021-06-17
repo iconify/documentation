@@ -5,68 +5,82 @@ replacements:
     value: '${counters.icons}'
   - code: '80+'
     value: '${counters.sets}+'
+  - code: '@iconify/svelte@2'
+    value: '${svelte.import}'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
+functions:
+  addCollection: './add-collection.md'
+  addIcon: './add-icon.md'
+  iconExists: './icon-exists.md'
+  listIcons: './list-icons.md'
+  loadIcons: './load-icons.md'
+  getIcon: './get-icon.md'
+  enableCache: './enable-cache.md'
+  disableCache: './disable-cache.md'
+  addAPIProvider: './add-api-provider.md'
 ```
 
 # Iconify for Svelte
 
-In addition to [SVG framework](../svg-framework/index.md), Iconify offers native components for several popular UI frameworks. Iconify for Svelte is one of such components.
-
-Yet another icon component? What are advantages over other icon components?
-
-- One syntax for over 60,000 icons from 80+ icon sets.
-- Renders SVG. Many components simply render icon fonts, which look ugly. Iconify renders pixel perfect SVG.
+```yaml
+include: icon-components/components/intro
+replacements:
+  - search: React
+    replace: Svelte
+```
 
 ## Installation
 
 If you are using NPM:
 
 ```bash
-npm install --save-dev @iconify/svelte
+npm install --save-dev @iconify/svelte@2
 ```
 
 If you are using Yarn:
 
 ```bash
-yarn add --dev @iconify/svelte
+yarn add --dev @iconify/svelte@2
 ```
-
-This package does not include icons. Icons are split into separate packages that available at NPM. See below.
 
 ## Usage
 
-Iconify for Svelte is a basic component. It works offline and does not have any dependencies. Icon data is provided as parameter to component.
-
-Install `[npm]@iconify/svelte` and packages for selected icon sets. Import component from `[npm]@iconify/svelte` and icon data for icon you want to use:
+Install `[npm]@iconify/svelte@2` and import component from it (component is exported as default export):
 
 ```js
-// Import component
-import IconifyIcon from '@iconify/svelte';
-
-// Import icon data
-// You can use any variable name instead of 'home'
-// because exports are not named
-import home from '@iconify-icons/mdi-light/home';
+import Icon from '@iconify/svelte';
 ```
 
-Then use `[var]IconifyIcon` component with imported icon's data as `[prop]icon` parameter:
+Then use `[var]Icon` component with imported icon's data as `[prop]icon` parameter:
 
 ```jsx
-<IconifyIcon icon={home} />
+<Icon icon="mdi-light:home" />
 ```
 
-## Sapper
+### Offline use
 
-Component is compatible with Sapper. Syntax is the same as with Svelte.
+```yaml
+include: icon-components/components/intro-offline
+```
+
+See [icon bundles for Iconify for Svelte](../../sources/bundles/svelte.md) documentation.
+
+### Sapper / SvelteKit {#sapper}
+
+Component is compatible with Sapper and SvelteKit. Syntax is the same as with Svelte.
+
+Component does not retrieve icon data until it is mounted. For server side rendering it means HTML will not include SVGs, they will be dynamically added only when hydrating DOM on client side.
+
+If you do want to render SVGs on server side, use either [offline bundle](./offline.md) or provide icon data as parameter instead of icon name.
 
 ## Properties
 
-You can pass any custom properties to component.
+You can pass any custom properties to `[var]Icon`.
 
 Required properties:
 
-- `[prop]icon`, `[type]IconifyIcon | string` icon data.
+- `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
 
 `include icon-components/component-optional-props`
 
@@ -74,61 +88,78 @@ See below for more information on each optional property.
 
 In addition to the properties mentioned above, the icon component accepts any other properties. All other properties will be passed to generated SVG element, so you can do stuff like setting the inline style, add title and so on.
 
-In Svelte it is not possible to pass events to child components, so component does not handle any events. If you need to make an icon clickable, wrap it in a button or a link and assign an event to that button or link.
+Unlike React component, Svelte component does not support events.
 
 ## Icon
 
-`include icon-components/icon-packages`
-
-Examples:
-
-- `[icon]mdi-light:login` from [Material Design Light Icons](https://iconify.design/icon-sets/mdi-light/) can be imported from `[npm]@iconify-icons/mdi-light/login`.
-- `[icon]ri:login-circle-fill` from [Remix Icons](https://iconify.design/icon-sets/ri/) can be imported from `[npm]@iconify-icons/ri/login-circle-fill`.
-- `[icon]tabler:barcode` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/barcode`.
-
-...and so on.
-
-Variable name in import statement is irrelevant because all exports are default exports.
-
-### CommonJS icon packages {#commonjs}
-
-`include icon-components/icon-packages-exports`
+```yaml
+include: icon-components/components/intro-icon
+```
 
 ## Color
 
-You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.
-
-To add color to a monotone icon simply change text color.
+```yaml
+include: icon-components/components/intro-color
+```
 
 ```jsx
-<IconifyIcon icon={home} style="color: red" />
+<Icon icon="mdi:home" style="color: red" />
 ```
 
 For various ways to set color, see [how to change icon color in Iconify for Svelte](./color.md).
 
 ## Dimensions and alignment
 
-By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio. This makes it easy to change icon size by changing `[attr]font-size` in the stylesheet, just like icon fonts.
-
-There are several ways to change icon dimensions:
-
-- Setting `[prop]font-size` in style.
-- Setting `[prop]width` and/or `[prop]height` property.
-
-Values for `[prop]width` and `[prop]height` can be numbers or strings.
-
-If you set only one dimension, another dimension will be calculated using the icon's width to height ratio. For example, if the icon size is 16 x 24, you set the height to 48, the width will be set to 32. Calculations work not only with numbers, but also with string values.
+```yaml
+include: icon-components/components/intro-size
+```
 
 ```jsx
-<Icon icon={home} style="font-size: 24px;" />
+<Icon icon="mdi:home" style="font-size: 24px;" />
 ```
 
 For various ways to change icon dimensions and alignment, see [how to change icon dimensions in Iconify for Svelte](./dimensions.md).
 
 ## Transformations
 
-An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.
-
-These are not CSS transformations, transformations are applied inside SVG.
+```yaml
+include: icon-components/components/intro-transform
+```
 
 For more details see [how to transform icon in Iconify for Svelte](./transform.md).
+
+## Functions {#functions}
+
+```yaml
+include: icon-components/components/functions-list/header
+```
+
+### Check available icons {#getting-icons}
+
+```yaml
+include: icon-components/components/functions-list/getting-icons
+```
+
+### Adding icons {#adding-icons}
+
+```yaml
+include: icon-components/components/functions-list/adding-icons
+```
+
+### Helper functions {#helper}
+
+```yaml
+include: icon-components/components/functions-list/helpers
+```
+
+### API functions {#api}
+
+```yaml
+include: icon-components/components/functions-list/api
+```
+
+### Internal API functions {#internal}
+
+```yaml
+include: icon-components/components/functions-list/internal
+```

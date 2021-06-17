@@ -1,16 +1,13 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify-icons/bi @iconify-icons/bx @iconify-icons/noto
 	import IconifyIcon from '@iconify/svelte';
-	import bellFill from '@iconify-icons/bi/bell-fill';
-	import stopwatchIcon from '@iconify-icons/bi/stopwatch';
-	import bxHome from '@iconify-icons/bx/bx-home';
-	import paintbrushIcon from '@iconify-icons/noto/paintbrush';
 </script>
 
 <style>
 	/* 
 		Cannot target component in CSS, target SVG 
 		instead using Svelte's :global() function 
+
+		This is equivalent of adding inline={true} to each icon
 	*/
 	div :global(svg) {
 		vertical-align: -0.125em;
@@ -42,22 +39,22 @@
 <div>
 	<div class="light-blue-block">
 		All icons inside this div are light blue, including a bell icon
-		<IconifyIcon icon={bellFill} />
+		<IconifyIcon icon="bi:bell-fill" />
 		and stopwatch icon
-		<IconifyIcon icon={stopwatchIcon} />
+		<IconifyIcon icon="bi:stopwatch" />
 	</div>
 	<div class="orange-block">
 		This text and icon are orange:
-		<IconifyIcon icon={bellFill} />
+		<IconifyIcon icon="bi:bell-fill" />
 	</div>
 	<div>
 		Red home icons (shows different ways to change color):
-		<IconifyIcon class="red-icon" icon={bxHome} />
-		<IconifyIcon style="color: red" icon={bxHome} />
-		<IconifyIcon color="red" icon={bxHome} />
+		<IconifyIcon class="red-icon" icon="bx:bx-home" />
+		<IconifyIcon style="color: red" icon="bx:bx-home" />
+		<IconifyIcon color="red" icon="bx:bx-home" />
 	</div>
 	<div>
 		Icon with palette:
-		<IconifyIcon icon={paintbrushIcon} />
+		<IconifyIcon icon="noto:paintbrush" />
 	</div>
 </div>

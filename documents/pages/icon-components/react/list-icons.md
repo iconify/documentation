@@ -14,17 +14,10 @@ This tutorial is part of [Iconify for React functions tutorial](./index.md#funct
 
 ## Examples
 
-```js
-import { listIcons } from '@iconify/react';
-
-// List all icons
-console.log(listIcons());
+```yaml
+src: icon-components/common/list-icons.js
 ```
 
-```js
-import { listIcons } from '@iconify/react';
-
-// List all loaded Material Design Icons
-console.log(listIcons('', 'mdi'));
-// ["mdi:alert", "mdi:home", "mdi:account-box-outline", "mdi:eyedropper", "mdi:account-off", "mdi:account", "mdi:account-box", "mdi:account-cash"]
+```yaml
+src: icon-components/common/list-icons2.js
 ```
