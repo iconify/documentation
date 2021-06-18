@@ -1,13 +1,10 @@
 ```yaml
-title: Transforming Icon in Iconify for Vue
-replacements:
-  - code: '@iconify/vue@1'
-    value: '${vue.import-vue2}'
+title: Transforming Icon in Iconify for Vue 2
 ```
 
 # Transformations
 
-This tutorial is part of [Iconify for Vue tutorial](./index.md).
+This tutorial is part of [Iconify for Vue 2 tutorial](./index.md).
 
 `include icon-components/transform-intro`
 
@@ -18,58 +15,55 @@ This tutorial is part of [Iconify for Vue tutorial](./index.md).
 Example:
 
 ```yaml
-src: icon-components/vue2/rotate-comparison.vue
+src: icon-components/common/rotate-comparison.vue
 demo: icon-components/common/rotate-comparison.html
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
+replacements:
+  - search: iconify/vue
+    replace: iconify/vue2
 ```
 
-In example above, first icon is rotated using `[attr]rotate` attribute, second icon is rotated using CSS. First icon kept its 1em height, second icon became taller than it should be.
-
-Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to inline style.
+`include icon-components/transform-compare-footer`
 
 ## Flip
 
-You can flip icon horizontally and/or vertically.
-
-One way to do that is to add `[attr]flip` attribute with comma separated values. Possible values:
-
-- `[str]horizontal`: flip icon horizontally.
-- `[str]vertical`: flip icon vertically.
-
-You can also do that by setting `[attr]horizontalFlip` and / or `[attr]verticalFlip` attributes to `[bool]true`.
-
-Example:
+```yaml
+include: icon-components/components/transform-flip
+replacements:
+  - search: hFlip
+    replace: horizontalFlip
+  - search: vFlip
+    replace: verticalFlip
+```
 
 ```yaml
-src: icon-components/vue2/flip.vue
+src: icon-components/common/flip.vue
 hint: Using "flip" attribute
 demo: icon-components/common/flip.html
 extra:
-  - src: icon-components/vue2/flip-alt.vue
+  - src: icon-components/common/flip-alt.vue
     hint: Using "horizontalFlip" and "verticalFlip" attributes
+replacements:
+  - search: iconify/vue
+    replace: iconify/vue2
 ```
 
 ## Rotation
 
-You can rotate icon by `[num]90`, `[num]180` and `[num]270` degrees.
-
-To do that, add `[attr]rotate` attribute. Possible values:
-
-- `[str]90deg`, `[str]1`: rotate by `[num]90` degrees.
-- `[str]180deg`, `[str]2`: rotate by `[num]180` degrees.
-- `[str]270deg`, `[str]3`: rotate by `[num]270` degrees.
-
-Example:
+`include icon-components/components/transform-rotate`
 
 ```yaml
-src: icon-components/vue2/rotate.vue
+src: icon-components/common/rotate.vue
 demo: icon-components/common/rotate.html
+replacements:
+  - search: iconify/vue
+    replace: iconify/vue2
 ```
 
 ## Rotate and flip
 
-You can use both rotation and flip on an icon. The icon is flipped first, then rotated.
+`include icon-components/components/transform-footer`
 
 ## Property names
 

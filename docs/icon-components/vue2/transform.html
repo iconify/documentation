@@ -31,7 +31,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?1d42" />
-		<title>Transforming Icon in Iconify for Vue</title>
+		<title>Transforming Icon in Iconify for Vue 2</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -92,7 +92,7 @@
 <a href="./inline.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> Inline Icons</a>
 </div>
 <h1>Transformations</h1>
-<p>This tutorial is part of <a href="./">Iconify for Vue tutorial</a>.</p>
+<p>This tutorial is part of <a href="./">Iconify for Vue 2 tutorial</a>.</p>
 <p>An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.</p>
 <p>There are two types of transformations:</p>
 <ul>
@@ -102,30 +102,31 @@
 <section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
 <li>If you rotate an icon by 90 degrees in CSS, icon&apos;s bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.</li>
 <li>If you rotate an icon by 90 degrees in SVG Framework, icon&apos;s dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJVGVzdCBpY29uCgkJCTxJY29uaWZ5SWNvbiBpY29uPSJoYW5kc2hha2UiIDppbmxpbmU9InRydWUiIHJvdGF0ZT0iOTBkZWciIC8+d2l0aCB0ZXh0IGFyb3VuZAoJCQlpdAoJCTwvcD4KCQk8cD4KCQkJVGVzdCBpY29uCgkJCTxJY29uaWZ5SWNvbiBpY29uPSJoYW5kc2hha2UiIDppbmxpbmU9InRydWUiIDpzdHlsZT0ieyB0cmFuc2Zvcm06ICdyb3RhdGUoOTBkZWcpJyB9IiAvPndpdGggdGV4dCBhcm91bmQgaXQKCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvdnVlQF4xIEBpY29uaWZ5LWljb25zL2ZhLXJlZ3VsYXIKaW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CmltcG9ydCBoYW5kc2hha2VJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL2ZhLXJlZ3VsYXIvaGFuZHNoYWtlJzsKCkljb25pZnlJY29uLmFkZEljb24oJ2hhbmRzaGFrZScsIGhhbmRzaGFrZUljb24pOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUljb25pZnlJY29uLAoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJVGVzdCBpY29uCgkJCTxJY29uIGljb249ImZhLXJlZ3VsYXI6aGFuZHNoYWtlIiA6aW5saW5lPSJ0cnVlIiByb3RhdGU9IjkwZGVnIiAvPiB3aXRoCgkJCXRleHQgYXJvdW5kIGl0CgkJPC9wPgoJCTxwPgoJCQlUZXN0IGljb24KCQkJPEljb24KCQkJCWljb249ImZhLXJlZ3VsYXI6aGFuZHNoYWtlIgoJCQkJOmlubGluZT0idHJ1ZSIKCQkJCTpzdHlsZT0ieyB0cmFuc2Zvcm06ICdyb3RhdGUoOTBkZWcpJyB9IgoJCQkvPgoJCQl3aXRoIHRleHQgYXJvdW5kIGl0CgkJPC9wPgoJPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0PgppbXBvcnQgeyBJY29uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsKCmV4cG9ydCBkZWZhdWx0IHsKCWNvbXBvbmVudHM6IHsKCQlJY29uLAoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Test icon<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;handshake&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span>with text around<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;it<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span> with<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;text around it<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Test icon<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;handshake&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{ transform: &apos;rotate(90deg)&apos; }&quot;</span> /&gt;</span>with text around it<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{ transform: &apos;rotate(90deg)&apos; }&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;/&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;with text around it<br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
-<span class="hljs-comment">// npm install --save-dev @iconify/vue@^1 @iconify-icons/fa-regular</span><br>
-<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> handshakeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/fa-regular/handshake&apos;</span>;<br>
-<br>
-IconifyIcon.addIcon(<span class="hljs-string">&apos;handshake&apos;</span>, handshakeIcon);<br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue2&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
@@ -149,71 +150,65 @@ IconifyIcon.addIcon(<span class="hljs-string">&apos;handshake&apos;</span>, hand
 <section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>One way to do that is to add <span class="hljs-inline-prop">flip</span> attribute with comma separated values. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
 <li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
-</ul><p>You can also do that by setting <span class="hljs-inline-prop">horizontalFlip</span> and / or <span class="hljs-inline-prop">verticalFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJTm8gZmxpcDoKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIC8+CgkJPC9wPgoJCTxwPgoJCQlIb3Jpem9udGFsIGZsaXA6CgkJCTxJY29uaWZ5SWNvbiBpY29uPSJkZW1vIiA6aW5saW5lPSJ0cnVlIiBmbGlwPSJob3Jpem9udGFsIiAvPgoJCTwvcD4KCQk8cD4KCQkJVmVydGljYWwgZmxpcDoKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIGZsaXA9InZlcnRpY2FsIiAvPgoJCTwvcD4KCQk8cD4KCQkJQm90aCAob3IgMTgwwrAgcm90YXRpb24pOgoJCQk8SWNvbmlmeUljb24gaWNvbj0iZGVtbyIgOmlubGluZT0idHJ1ZSIgZmxpcD0iaG9yaXpvbnRhbCx2ZXJ0aWNhbCIgLz4KCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvdnVlQF4xIEBpY29uaWZ5LWljb25zL2JpCmltcG9ydCBJY29uaWZ5SWNvbiBmcm9tICdAaWNvbmlmeS92dWUnOwppbXBvcnQgY2hlY2syQ2lyY2xlIGZyb20gJ0BpY29uaWZ5LWljb25zL2JpL2NoZWNrMi1jaXJjbGUnOwoKSWNvbmlmeUljb24uYWRkSWNvbignZGVtbycsIGNoZWNrMkNpcmNsZSk7CgpleHBvcnQgZGVmYXVsdCB7Cgljb21wb25lbnRzOiB7CgkJSWNvbmlmeUljb24sCgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+</ul><p>You can also do that by setting <span class="hljs-inline-prop">horizontalFlip</span> and / or <span class="hljs-inline-prop">verticalFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD5ObyBmbGlwOiA8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiA6aW5saW5lPSJ0cnVlIiAvPjwvcD4KCQk8cD4KCQkJSG9yaXpvbnRhbCBmbGlwOgoJCQk8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiA6aW5saW5lPSJ0cnVlIiBmbGlwPSJob3Jpem9udGFsIiAvPgoJCTwvcD4KCQk8cD4KCQkJVmVydGljYWwgZmxpcDoKCQkJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgZmxpcD0idmVydGljYWwiIC8+CgkJPC9wPgoJCTxwPgoJCQlCb3RoIChvciAxODDCsCByb3RhdGlvbik6CgkJCTxJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIDppbmxpbmU9InRydWUiIGZsaXA9Imhvcml6b250YWwsdmVydGljYWwiIC8+CgkJPC9wPgoJPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0PgppbXBvcnQgeyBJY29uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsKCmV4cG9ydCBkZWZhdWx0IHsKCWNvbXBvbmVudHM6IHsKCQlJY29uLAoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;No flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>No flip: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Horizontal flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Vertical flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Both (or 180&#xB0; rotation):<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
-<span class="hljs-comment">// npm install --save-dev @iconify/vue@^1 @iconify-icons/bi</span><br>
-<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
-<br>
-IconifyIcon.addIcon(<span class="hljs-string">&apos;demo&apos;</span>, check2Circle);<br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue2&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
-</span></code></div><div class="code-block-hint">Using &quot;flip&quot; attribute</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJTm8gZmxpcDoKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIC8+CgkJPC9wPgoJCTxwPgoJCQlIb3Jpem9udGFsIGZsaXA6CgkJCTxJY29uaWZ5SWNvbiBpY29uPSJkZW1vIiA6aW5saW5lPSJ0cnVlIiA6aG9yaXpvbnRhbEZsaXA9InRydWUiIC8+CgkJPC9wPgoJCTxwPgoJCQlWZXJ0aWNhbCBmbGlwOgoJCQk8SWNvbmlmeUljb24gaWNvbj0iZGVtbyIgOmlubGluZT0idHJ1ZSIgOnZlcnRpY2FsRmxpcD0idHJ1ZSIgLz4KCQk8L3A+CgkJPHA+CgkJCUJvdGggKG9yIDE4MMKwIHJvdGF0aW9uKToKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIDpob3Jpem9udGFsRmxpcD0idHJ1ZSIgOnZlcnRpY2FsRmxpcD0idHJ1ZSIgLz4KCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvdnVlQF4xIEBpY29uaWZ5LWljb25zL2JpCmltcG9ydCBJY29uaWZ5SWNvbiBmcm9tICdAaWNvbmlmeS92dWUnOwppbXBvcnQgY2hlY2syQ2lyY2xlIGZyb20gJ0BpY29uaWZ5LWljb25zL2JpL2NoZWNrMi1jaXJjbGUnOwoKSWNvbmlmeUljb24uYWRkSWNvbignZGVtbycsIGNoZWNrMkNpcmNsZSk7CgpleHBvcnQgZGVmYXVsdCB7Cgljb21wb25lbnRzOiB7CgkJSWNvbmlmeUljb24sCgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+</span></code></div><div class="code-block-hint">Using &quot;flip&quot; attribute</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJTm8gZmxpcDoKCQkJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgLz4KCQk8L3A+CgkJPHA+CgkJCUhvcml6b250YWwgZmxpcDoKCQkJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgOmhvcml6b250YWxGbGlwPSJ0cnVlIiAvPgoJCTwvcD4KCQk8cD4KCQkJVmVydGljYWwgZmxpcDoKCQkJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgOnZlcnRpY2FsRmxpcD0idHJ1ZSIgLz4KCQk8L3A+CgkJPHA+CgkJCUJvdGggKG9yIDE4MMKwIHJvdGF0aW9uKToKCQkJPEljb24KCQkJCWljb249ImJpOmNoZWNrMi1jaXJjbGUiCgkJCQk6aW5saW5lPSJ0cnVlIgoJCQkJOmhvcml6b250YWxGbGlwPSJ0cnVlIgoJCQkJOnZlcnRpY2FsRmxpcD0idHJ1ZSIKCQkJLz4KCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+CmltcG9ydCB7IEljb24gfSBmcm9tICdAaWNvbmlmeS92dWUnOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUljb24sCgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;No flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Horizontal flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:horizontalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:horizontalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Vertical flip:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:verticalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:verticalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Both (or 180&#xB0; rotation):<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:horizontalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:verticalFlip</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">:horizontalFlip</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">:verticalFlip</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;/&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
-<span class="hljs-comment">// npm install --save-dev @iconify/vue@^1 @iconify-icons/bi</span><br>
-<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
-<br>
-IconifyIcon.addIcon(<span class="hljs-string">&apos;demo&apos;</span>, check2Circle);<br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue2&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
@@ -242,37 +237,29 @@ IconifyIcon.addIcon(<span class="hljs-string">&apos;demo&apos;</span>, check2Cir
 <li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by <span class="hljs-number">90</span> degrees.</li>
 <li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by <span class="hljs-number">180</span> degrees.</li>
 <li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by <span class="hljs-number">270</span> degrees.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD4KCQkJTm8gcm90YXRpb246CgkJCTxJY29uaWZ5SWNvbiBpY29uPSJkZW1vIiA6aW5saW5lPSJ0cnVlIiAvPgoJCTwvcD4KCQk8cD4KCQkJOTDCsCByb3RhdGlvbjoKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIHJvdGF0ZT0iOTBkZWciIC8+CgkJPC9wPgoJCTxwPgoJCQkxODDCsCByb3RhdGlvbjoKCQkJPEljb25pZnlJY29uIGljb249ImRlbW8iIDppbmxpbmU9InRydWUiIHJvdGF0ZT0iMTgwZGVnIiAvPgoJCTwvcD4KCQk8cD4KCQkJMjcwwrAgcm90YXRpb246CgkJCTxJY29uaWZ5SWNvbiBpY29uPSJkZW1vIiA6aW5saW5lPSJ0cnVlIiA6cm90YXRlPSIzIiAvPgoJCTwvcD4KCTwvZGl2Pgo8L3RlbXBsYXRlPgoKPHNjcmlwdD4KLy8gbnBtIGluc3RhbGwgLS1zYXZlLWRldiBAaWNvbmlmeS92dWVAXjEgQGljb25pZnktaWNvbnMvYmkKaW1wb3J0IEljb25pZnlJY29uIGZyb20gJ0BpY29uaWZ5L3Z1ZSc7CmltcG9ydCBjaGVjazJDaXJjbGUgZnJvbSAnQGljb25pZnktaWNvbnMvYmkvY2hlY2syLWNpcmNsZSc7CgpJY29uaWZ5SWNvbi5hZGRJY29uKCdkZW1vJywgY2hlY2syQ2lyY2xlKTsKCmV4cG9ydCBkZWZhdWx0IHsKCWNvbXBvbmVudHM6IHsKCQlJY29uaWZ5SWNvbiwKCX0sCn07Cjwvc2NyaXB0Pgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD5ObyByb3RhdGlvbjogPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgLz48L3A+CgkJPHA+CgkJCTkwwrAgcm90YXRpb246CgkJCTxJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIDppbmxpbmU9InRydWUiIHJvdGF0ZT0iOTBkZWciIC8+CgkJPC9wPgoJCTxwPgoJCQkxODDCsCByb3RhdGlvbjoKCQkJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgcm90YXRlPSIxODBkZWciIC8+CgkJPC9wPgoJCTxwPgoJCQkyNzDCsCByb3RhdGlvbjogPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgOmlubGluZT0idHJ1ZSIgOnJvdGF0ZT0iMyIgLz4KCQk8L3A+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+CmltcG9ydCB7IEljb24gfSBmcm9tICdAaWNvbmlmeS92dWUnOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUljb24sCgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;No rotation:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>No rotation: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;90&#xB0; rotation:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;180&#xB0; rotation:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;270&#xB0; rotation:<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">IconifyIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:rotate</span>=<span class="hljs-string">&quot;3&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;270&#xB0; rotation: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:rotate</span>=<span class="hljs-string">&quot;3&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
-<span class="hljs-comment">// npm install --save-dev @iconify/vue@^1 @iconify-icons/bi</span><br>
-<span class="hljs-keyword">import</span> IconifyIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
-<br>
-IconifyIcon.addIcon(<span class="hljs-string">&apos;demo&apos;</span>, check2Circle);<br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue2&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;IconifyIcon,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
@@ -320,6 +307,17 @@ IconifyIcon.addIcon(<span class="hljs-string">&apos;demo&apos;</span>, check2Cir
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./offline.html">Offline Use</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>
 </ul>

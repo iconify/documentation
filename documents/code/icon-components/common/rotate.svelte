@@ -1,22 +1,34 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify-icons/bi
 	import Icon from '@iconify/svelte';
-	import check2Circle from '@iconify-icons/bi/check2-circle';
 </script>
+
+<style>
+	/* 
+		Align icon to bottom of text, like in icon fonts.
+
+		Cannot target component in CSS, target SVG 
+		instead using Svelte's :global() function 
+
+		This is the same as adding inline={true} to each <Icon />
+	*/
+	p :global(svg) {
+		vertical-align: -0.125em;
+	}
+</style>
 
 <p>
 	No rotation:
-	<Icon icon={check2Circle} />
+	<Icon icon="bi:check2-circle" />
 </p>
 <p>
 	90° rotation:
-	<Icon icon={check2Circle} rotate="90deg" />
+	<Icon icon="bi:check2-circle" rotate="90deg" />
 </p>
 <p>
 	180° rotation:
-	<Icon icon={check2Circle} rotate="180deg" />
+	<Icon icon="bi:check2-circle" rotate="180deg" />
 </p>
 <p>
 	270° rotation:
-	<Icon icon={check2Circle} rotate={3} />
+	<Icon icon="bi:check2-circle" rotate={3} />
 </p>

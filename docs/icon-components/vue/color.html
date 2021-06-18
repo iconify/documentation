@@ -94,49 +94,35 @@
 <h1>Icon color</h1>
 <p>This tutorial is part of <a href="./">Iconify for Vue tutorial</a>.</p>
 <p>You can only change color of monotone icons. Some icons, such as emoji, have a hardcoded palette that cannot be changed.</p>
-<p>To change color of a monotone icon simply change text color or use <span class="hljs-inline-prop">color</span> attribute.</p>
-<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Vue:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8ZGl2IGNsYXNzPSJsaWdodC1ibHVlLWJsb2NrIj4KCQkJQWxsIGljb25zIGluc2lkZSB0aGlzIGRpdiBhcmUgbGlnaHQgYmx1ZSwgaW5jbHVkaW5nIGEgYmVsbCBpY29uCgkJCTxJbmxpbmVJY29uIDppY29uPSJpY29ucy5iZWxsRmlsbCIgLz4KCQkJYW5kIHN0b3B3YXRjaCBpY29uCgkJCTxJbmxpbmVJY29uIDppY29uPSJpY29ucy5zdG9wd2F0Y2giIC8+CgkJPC9kaXY+CgkJPGRpdiBjbGFzcz0ib3JhbmdlLWJsb2NrIj4KCQkJVGhpcyB0ZXh0IGFuZCBpY29uIGFyZSBvcmFuZ2U6IDxJbmxpbmVJY29uIDppY29uPSJpY29ucy5iZWxsRmlsbCIgLz4KCQk8L2Rpdj4KCQk8ZGl2PgoJCQlSZWQgaG9tZSBpY29ucyAoc2hvd3MgZGlmZmVyZW50IHdheXMgdG8gY2hhbmdlIGNvbG9yKToKCQkJPElubGluZUljb24gY2xhc3M9InJlZC1pY29uIiA6aWNvbj0iaWNvbnMuYnhIb21lIiAvPgoJCQk8SW5saW5lSWNvbiA6c3R5bGU9InsgY29sb3I6ICdyZWQnIH0iIDppY29uPSJpY29ucy5ieEhvbWUiIC8+CgkJCTxJbmxpbmVJY29uIGNvbG9yPSJyZWQiIDppY29uPSJpY29ucy5ieEhvbWUiIC8+CgkJPC9kaXY+CgkJPGRpdj5JY29uIHdpdGggcGFsZXR0ZTogPElubGluZUljb24gOmljb249Imljb25zLnBhaW50YnJ1c2giIC8+PC9kaXY+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+Ci8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvdnVlQG5leHQgQGljb25pZnktaWNvbnMvYmkgQGljb25pZnktaWNvbnMvYnggQGljb25pZnktaWNvbnMvbm90bwppbXBvcnQgeyBJbmxpbmVJY29uIH0gZnJvbSAnQGljb25pZnkvdnVlJzsKaW1wb3J0IGJlbGxGaWxsIGZyb20gJ0BpY29uaWZ5LWljb25zL2JpL2JlbGwtZmlsbCc7CmltcG9ydCBzdG9wd2F0Y2hJY29uIGZyb20gJ0BpY29uaWZ5LWljb25zL2JpL3N0b3B3YXRjaCc7CmltcG9ydCBieEhvbWUgZnJvbSAnQGljb25pZnktaWNvbnMvYngvYngtaG9tZSc7CmltcG9ydCBwYWludGJydXNoSWNvbiBmcm9tICdAaWNvbmlmeS1pY29ucy9ub3RvL3BhaW50YnJ1c2gnOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUlubGluZUljb24sCgl9LAoJZGF0YSgpIHsKCQlyZXR1cm4gewoJCQlpY29uczogewoJCQkJYmVsbEZpbGw6IGJlbGxGaWxsLAoJCQkJc3RvcHdhdGNoOiBzdG9wd2F0Y2hJY29uLAoJCQkJYnhIb21lOiBieEhvbWUsCgkJCQlwYWludGJydXNoOiBwYWludGJydXNoSWNvbiwKCQkJfSwKCQl9OwoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+<p>To change color of a monotone icon simply change text color or use <span class="hljs-inline-prop">color</span> attribute or add <span class="hljs-inline-prop">style</span> with color.</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Vue:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8ZGl2IGNsYXNzPSJsaWdodC1ibHVlLWJsb2NrIj4KCQkJQWxsIGljb25zIGluc2lkZSB0aGlzIGRpdiBhcmUgbGlnaHQgYmx1ZSwgaW5jbHVkaW5nIGEgYmVsbCBpY29uCgkJCTxJY29uIGljb249ImJpOmJlbGwtZmlsbCIgOmlubGluZT0idHJ1ZSIgLz4KCQkJYW5kIHN0b3B3YXRjaCBpY29uCgkJCTxJY29uIGljb249ImJpOnN0b3B3YXRjaCIgOmlubGluZT0idHJ1ZSIgLz4KCQk8L2Rpdj4KCQk8ZGl2IGNsYXNzPSJvcmFuZ2UtYmxvY2siPgoJCQlUaGlzIHRleHQgYW5kIGljb24gYXJlIG9yYW5nZToKCQkJPEljb24gaWNvbj0iYmk6YmVsbC1maWxsIiA6aW5saW5lPSJ0cnVlIiAvPgoJCTwvZGl2PgoJCTxkaXY+CgkJCVJlZCBob21lIGljb25zIChzaG93cyBkaWZmZXJlbnQgd2F5cyB0byBjaGFuZ2UgY29sb3IpOgoJCQk8SWNvbiBjbGFzcz0icmVkLWljb24iIGljb249ImJ4OmJ4LWhvbWUiIDppbmxpbmU9InRydWUiIC8+CgkJCTxJY29uIDpzdHlsZT0ieyBjb2xvcjogJ3JlZCcgfSIgaWNvbj0iYng6YngtaG9tZSIgOmlubGluZT0idHJ1ZSIgLz4KCQkJPEljb24gY29sb3I9InJlZCIgaWNvbj0iYng6YngtaG9tZSIgOmlubGluZT0idHJ1ZSIgLz4KCQk8L2Rpdj4KCQk8ZGl2Pkljb24gd2l0aCBwYWxldHRlOiA8SWNvbiBpY29uPSJub3RvOnBhaW50YnJ1c2giIDppbmxpbmU9InRydWUiIC8+PC9kaXY+Cgk8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQ+CmltcG9ydCB7IEljb24gfSBmcm9tICdAaWNvbmlmeS92dWUnOwoKZXhwb3J0IGRlZmF1bHQgewoJY29tcG9uZW50czogewoJCUljb24sCgl9LAp9Owo8L3NjcmlwdD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;light-blue-block&quot;</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;All icons inside this div are light blue, including a bell icon<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bellFill&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:bell-fill&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;and stopwatch icon<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.stopwatch&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:stopwatch&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;orange-block&quot;</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;This text and icon are orange: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bellFill&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;This text and icon are orange:<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:bell-fill&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Red home icons (shows different ways to change color):<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red-icon&quot;</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bxHome&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{ color: &apos;red&apos; }&quot;</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bxHome&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.bxHome&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;red-icon&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;{ color: &apos;red&apos; }&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bx:bx-home&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Icon with palette: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;icons.paintbrush&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Icon with palette: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;noto:paintbrush&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
-<span class="hljs-comment">// npm install --save-dev @iconify/vue@next @iconify-icons/bi @iconify-icons/bx @iconify-icons/noto</span><br>
-<span class="hljs-keyword">import</span> { InlineIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
-<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/bell-fill&apos;</span>;<br>
-<span class="hljs-keyword">import</span> stopwatchIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/stopwatch&apos;</span>;<br>
-<span class="hljs-keyword">import</span> bxHome <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bx/bx-home&apos;</span>;<br>
-<span class="hljs-keyword">import</span> paintbrushIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/noto/paintbrush&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
 <br>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
  &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;InlineIcon,<br>
- &#xA0; &#xA0;},<br>
- &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">icons</span>: {<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">bellFill</span>: bellFill,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">stopwatch</span>: stopwatchIcon,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">bxHome</span>: bxHome,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">paintbrush</span>: paintbrushIcon,<br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;},<br>
- &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
  &#xA0; &#xA0;},<br>
 };<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
@@ -198,6 +184,17 @@
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
 	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Inline Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./offline.html">Offline Use</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
 	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
 	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../sources/">Sources</a></li>

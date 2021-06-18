@@ -102,10 +102,8 @@
 <section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
 <li>If you rotate an icon by 90 degrees in CSS, icon&apos;s bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.</li>
 <li>If you rotate an icon by 90 degrees in SVG Framework, icon&apos;s dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL2ZhLXJlZ3VsYXIKCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7CglpbXBvcnQgaGFuZHNoYWtlSWNvbiBmcm9tICdAaWNvbmlmeS1pY29ucy9mYS1yZWd1bGFyL2hhbmRzaGFrZSc7Cjwvc2NyaXB0PgoKPHN0eWxlPgoJLyogCgkJQWxpZ24gaWNvbiB0byBib3R0b20gb2YgdGV4dCwgbGlrZSBpbiBpY29uIGZvbnRzLgoKCQlDYW5ub3QgdGFyZ2V0IGNvbXBvbmVudCBpbiBDU1MsIHRhcmdldCBTVkcgCgkJaW5zdGVhZCB1c2luZyBTdmVsdGUncyA6Z2xvYmFsKCkgZnVuY3Rpb24gCgkqLwoJcCA6Z2xvYmFsKHN2ZykgewoJCXZlcnRpY2FsLWFsaWduOiAtMC4xMjVlbTsKCX0KPC9zdHlsZT4KCjxwPgoJVGVzdCBpY29uCgk8SWNvbiBpY29uPXtoYW5kc2hha2VJY29ufSByb3RhdGU9IjkwZGVnIiAvPgoJd2l0aCB0ZXh0IGFyb3VuZCBpdAo8L3A+CjxwPgoJVGVzdCBpY29uCgk8SWNvbiBpY29uPXtoYW5kc2hha2VJY29ufSBzdHlsZT0idHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOyIgLz4KCXdpdGggdGV4dCBhcm91bmQgaXQKPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/fa-regular</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHN0eWxlPgoJLyogCgkJQWxpZ24gaWNvbiB0byBib3R0b20gb2YgdGV4dCwgbGlrZSBpbiBpY29uIGZvbnRzLgoKCQlDYW5ub3QgdGFyZ2V0IGNvbXBvbmVudCBpbiBDU1MsIHRhcmdldCBTVkcgCgkJaW5zdGVhZCB1c2luZyBTdmVsdGUncyA6Z2xvYmFsKCkgZnVuY3Rpb24gCgoJCVRoaXMgaXMgdGhlIHNhbWUgYXMgYWRkaW5nIGlubGluZT17dHJ1ZX0gdG8gZWFjaCA8SWNvbiAvPgoJKi8KCXAgOmdsb2JhbChzdmcpIHsKCQl2ZXJ0aWNhbC1hbGlnbjogLTAuMTI1ZW07Cgl9Cjwvc3R5bGU+Cgo8cD4KCVRlc3QgaWNvbgoJPEljb24gaWNvbj0iZmEtcmVndWxhcjpoYW5kc2hha2UiIHJvdGF0ZT0iOTBkZWciIC8+Cgl3aXRoIHRleHQgYXJvdW5kIGl0CjwvcD4KPHA+CglUZXN0IGljb24KCTxJY29uIGljb249ImZhLXJlZ3VsYXI6aGFuZHNoYWtlIiBzdHlsZT0idHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOyIgLz4KCXdpdGggdGV4dCBhcm91bmQgaXQKPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> handshakeIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/fa-regular/handshake&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="css"><br>
@@ -114,6 +112,8 @@
 <br>
  &#xA0; &#xA0; &#xA0; &#xA0;Cannot target component in CSS, target SVG <br>
  &#xA0; &#xA0; &#xA0; &#xA0;instead using Svelte&apos;s :global() function <br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;This is the same as adding inline={true} to each &lt;Icon /&gt;<br>
  &#xA0; &#xA0;*/</span><br>
  &#xA0; &#xA0;<span class="hljs-selector-tag">p</span> :<span class="hljs-built_in">global</span>(svg) {<br>
  &#xA0; &#xA0; &#xA0; &#xA0;vertical-align: -<span class="hljs-number">0.125em</span>;<br>
@@ -122,12 +122,12 @@
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Test icon<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{handshakeIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0;with text around it<br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Test icon<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{handshakeIcon}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;transform: rotate(90deg);&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;transform: rotate(90deg);&quot;</span> /&gt;</span><br>
  &#xA0; &#xA0;with text around it<br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 </span></code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--with-hint"><div class="code-demo highlight-box"><p>
@@ -150,49 +150,45 @@
 <section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>One way to do that is to add <span class="hljs-inline-prop">flip</span> attribute with comma separated values. Possible values:</p><ul>
 <li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
 <li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
-</ul><p>You can also do that by setting <span class="hljs-inline-prop">hFlip</span> and / or <span class="hljs-inline-prop">vFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL2JpCglpbXBvcnQgSWNvbiBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoJaW1wb3J0IGNoZWNrMkNpcmNsZSBmcm9tICdAaWNvbmlmeS1pY29ucy9iaS9jaGVjazItY2lyY2xlJzsKPC9zY3JpcHQ+Cgo8cD4KCU5vIGZsaXA6Cgk8SWNvbiBpY29uPXtjaGVjazJDaXJjbGV9IC8+CjwvcD4KPHA+CglIb3Jpem9udGFsIGZsaXA6Cgk8SWNvbiBpY29uPXtjaGVjazJDaXJjbGV9IGZsaXA9Imhvcml6b250YWwiIC8+CjwvcD4KPHA+CglWZXJ0aWNhbCBmbGlwOgoJPEljb24gaWNvbj17Y2hlY2syQ2lyY2xlfSBmbGlwPSJ2ZXJ0aWNhbCIgLz4KPC9wPgo8cD4KCUJvdGggKG9yIDE4MMKwIHJvdGF0aW9uKToKCTxJY29uIGljb249e2NoZWNrMkNpcmNsZX0gZmxpcD0iaG9yaXpvbnRhbCx2ZXJ0aWNhbCIgLz4KPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/bi</span><br>
+</ul><p>You can also do that by setting <span class="hljs-inline-prop">hFlip</span> and / or <span class="hljs-inline-prop">vFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHA+CglObyBmbGlwOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgaW5saW5lPXt0cnVlfSAvPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgaW5saW5lPXt0cnVlfSBmbGlwPSJob3Jpem9udGFsIiAvPgo8L3A+CjxwPgoJVmVydGljYWwgZmxpcDoKCTxJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIGlubGluZT17dHJ1ZX0gZmxpcD0idmVydGljYWwiIC8+CjwvcD4KPHA+CglCb3RoIChvciAxODDCsCByb3RhdGlvbik6Cgk8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBpbmxpbmU9e3RydWV9IGZsaXA9Imhvcml6b250YWwsdmVydGljYWwiIC8+CjwvcD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;No flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Horizontal flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Vertical flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Both (or 180&#xB0; rotation):<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
-</span></code></div><div class="code-block-hint">Using &quot;flip&quot; attribute</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL2JpCglpbXBvcnQgSWNvbiBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoJaW1wb3J0IGNoZWNrMkNpcmNsZSBmcm9tICdAaWNvbmlmeS1pY29ucy9iaS9jaGVjazItY2lyY2xlJzsKPC9zY3JpcHQ+Cgo8cD4KCU5vIGZsaXA6Cgk8SWNvbiBpY29uPXtjaGVjazJDaXJjbGV9IC8+CjwvcD4KPHA+CglIb3Jpem9udGFsIGZsaXA6Cgk8SWNvbiBpY29uPXtjaGVjazJDaXJjbGV9IGhGbGlwPXt0cnVlfSAvPgo8L3A+CjxwPgoJVmVydGljYWwgZmxpcDoKCTxJY29uIGljb249e2NoZWNrMkNpcmNsZX0gdkZsaXA9e3RydWV9IC8+CjwvcD4KPHA+CglCb3RoIChvciAxODDCsCByb3RhdGlvbik6Cgk8SWNvbiBpY29uPXtjaGVjazJDaXJjbGV9IGhGbGlwPXt0cnVlfSB2RmxpcD17dHJ1ZX0gLz4KPC9wPgo="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/bi</span><br>
+</span></code></div><div class="code-block-hint">Using &quot;flip&quot; attribute</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHA+CglObyBmbGlwOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgaW5saW5lPXt0cnVlfSAvPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgaW5saW5lPXt0cnVlfSBoRmxpcD17dHJ1ZX0gLz4KPC9wPgo8cD4KCVZlcnRpY2FsIGZsaXA6Cgk8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBpbmxpbmU9e3RydWV9IHZGbGlwPXt0cnVlfSAvPgo8L3A+CjxwPgoJQm90aCAob3IgMTgwwrAgcm90YXRpb24pOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgaW5saW5lPXt0cnVlfSBoRmxpcD17dHJ1ZX0gdkZsaXA9e3RydWV9IC8+CjwvcD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;No flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Horizontal flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">hFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">hFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Vertical flip:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">vFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">vFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;Both (or 180&#xB0; rotation):<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">hFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">vFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">hFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">vFlip</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 </span></code></div><div class="code-block-hint">Using &quot;hFlip&quot; and &quot;vFlip&quot; attributes</div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>
 	No flip: <span class="iconify-inline" data-icon="bi:check2-circle"></span>
@@ -219,27 +215,39 @@
 <li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by <span class="hljs-number">90</span> degrees.</li>
 <li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by <span class="hljs-number">180</span> degrees.</li>
 <li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by <span class="hljs-number">270</span> degrees.</li>
-</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCS8vIG5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvc3ZlbHRlIEBpY29uaWZ5LWljb25zL2JpCglpbXBvcnQgSWNvbiBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoJaW1wb3J0IGNoZWNrMkNpcmNsZSBmcm9tICdAaWNvbmlmeS1pY29ucy9iaS9jaGVjazItY2lyY2xlJzsKPC9zY3JpcHQ+Cgo8cD4KCU5vIHJvdGF0aW9uOgoJPEljb24gaWNvbj17Y2hlY2syQ2lyY2xlfSAvPgo8L3A+CjxwPgoJOTDCsCByb3RhdGlvbjoKCTxJY29uIGljb249e2NoZWNrMkNpcmNsZX0gcm90YXRlPSI5MGRlZyIgLz4KPC9wPgo8cD4KCTE4MMKwIHJvdGF0aW9uOgoJPEljb24gaWNvbj17Y2hlY2syQ2lyY2xlfSByb3RhdGU9IjE4MGRlZyIgLz4KPC9wPgo8cD4KCTI3MMKwIHJvdGF0aW9uOgoJPEljb24gaWNvbj17Y2hlY2syQ2lyY2xlfSByb3RhdGU9ezN9IC8+CjwvcD4K"><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-comment">// npm install --save-dev @iconify/svelte @iconify-icons/bi</span><br>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uIGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7Cjwvc2NyaXB0PgoKPHN0eWxlPgoJLyogCgkJQWxpZ24gaWNvbiB0byBib3R0b20gb2YgdGV4dCwgbGlrZSBpbiBpY29uIGZvbnRzLgoKCQlDYW5ub3QgdGFyZ2V0IGNvbXBvbmVudCBpbiBDU1MsIHRhcmdldCBTVkcgCgkJaW5zdGVhZCB1c2luZyBTdmVsdGUncyA6Z2xvYmFsKCkgZnVuY3Rpb24gCgoJCVRoaXMgaXMgdGhlIHNhbWUgYXMgYWRkaW5nIGlubGluZT17dHJ1ZX0gdG8gZWFjaCA8SWNvbiAvPgoJKi8KCXAgOmdsb2JhbChzdmcpIHsKCQl2ZXJ0aWNhbC1hbGlnbjogLTAuMTI1ZW07Cgl9Cjwvc3R5bGU+Cgo8cD4KCU5vIHJvdGF0aW9uOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgLz4KPC9wPgo8cD4KCTkwwrAgcm90YXRpb246Cgk8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiByb3RhdGU9IjkwZGVnIiAvPgo8L3A+CjxwPgoJMTgwwrAgcm90YXRpb246Cgk8SWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiByb3RhdGU9IjE4MGRlZyIgLz4KPC9wPgo8cD4KCTI3MMKwIHJvdGF0aW9uOgoJPEljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgcm90YXRlPXszfSAvPgo8L3A+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
  &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> check2Circle <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/check2-circle&apos;</span>;<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+<br>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="css"><br>
+ &#xA0; &#xA0;<span class="hljs-comment">/* <br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Align icon to bottom of text, like in icon fonts.<br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Cannot target component in CSS, target SVG <br>
+ &#xA0; &#xA0; &#xA0; &#xA0;instead using Svelte&apos;s :global() function <br>
+<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;This is the same as adding inline={true} to each &lt;Icon /&gt;<br>
+ &#xA0; &#xA0;*/</span><br>
+ &#xA0; &#xA0;<span class="hljs-selector-tag">p</span> :<span class="hljs-built_in">global</span>(svg) {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;vertical-align: -<span class="hljs-number">0.125em</span>;<br>
+ &#xA0; &#xA0;}<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>
 <br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;No rotation:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;90&#xB0; rotation:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;180&#xB0; rotation:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
  &#xA0; &#xA0;270&#xB0; rotation:<br>
- &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{check2Circle}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">rotate</span>=</span></span><span class="javascript">{<span class="hljs-number">3</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=</span></span><span class="javascript">{<span class="hljs-number">3</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
 </span></code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>
 	No rotation: <span class="iconify-inline" data-icon="bi:check2-circle"></span>

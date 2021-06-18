@@ -11,7 +11,7 @@ functions:
 
 This tutorial is part of [Iconify for Svelte functions tutorial](./index.md#functions).
 
-Function `[func]addIcon()` add one icon to SVG framework storage.
+`include icon-components/functions/add-icon/intro`
 
 ## Usage
 

@@ -1,7 +1,5 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify-icons/fa-regular
 	import Icon from '@iconify/svelte';
-	import handshakeIcon from '@iconify-icons/fa-regular/handshake';
 </script>
 
 <style>
@@ -10,6 +8,8 @@
 
 		Cannot target component in CSS, target SVG 
 		instead using Svelte's :global() function 
+
+		This is the same as adding inline={true} to each <Icon />
 	*/
 	p :global(svg) {
 		vertical-align: -0.125em;
@@ -18,11 +18,11 @@
 
 <p>
 	Test icon
-	<Icon icon={handshakeIcon} rotate="90deg" />
+	<Icon icon="fa-regular:handshake" rotate="90deg" />
 	with text around it
 </p>
 <p>
 	Test icon
-	<Icon icon={handshakeIcon} style="transform: rotate(90deg);" />
+	<Icon icon="fa-regular:handshake" style="transform: rotate(90deg);" />
 	with text around it
 </p>

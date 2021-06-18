@@ -25,8 +25,8 @@
 		"import": "@iconify/react@alpha"
 	},
 	"vue": {
-		"import-vue2": "@iconify/vue@^1",
-		"import-vue3": "@iconify/vue@next"
+		"import-vue2": "@iconify/vue2",
+		"import": "@iconify/vue@alpha"
 	},
 	"svelte": {
 		"import": "@iconify/svelte@alpha"

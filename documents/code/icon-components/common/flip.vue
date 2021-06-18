@@ -1,25 +1,27 @@
 <template>
 	<div>
-		<p>No flip: <InlineIcon icon="demo" /></p>
-		<p>Horizontal flip: <InlineIcon icon="demo" flip="horizontal" /></p>
-		<p>Vertical flip: <InlineIcon icon="demo" flip="vertical" /></p>
+		<p>No flip: <Icon icon="bi:check2-circle" :inline="true" /></p>
+		<p>
+			Horizontal flip:
+			<Icon icon="bi:check2-circle" :inline="true" flip="horizontal" />
+		</p>
+		<p>
+			Vertical flip:
+			<Icon icon="bi:check2-circle" :inline="true" flip="vertical" />
+		</p>
 		<p>
 			Both (or 180° rotation):
-			<InlineIcon icon="demo" flip="horizontal,vertical" />
+			<Icon icon="bi:check2-circle" :inline="true" flip="horizontal,vertical" />
 		</p>
 	</div>
 </template>
 
 <script>
-// npm install --save-dev @iconify/vue@2 @iconify-icons/bi
-import { InlineIcon, addIcon } from '@iconify/vue';
-import check2Circle from '@iconify-icons/bi/check2-circle';
-
-addIcon('demo', check2Circle);
+import { Icon } from '@iconify/vue';
 
 export default {
 	components: {
-		InlineIcon,
+		Icon,
 	},
 };
 </script>

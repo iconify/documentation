@@ -1,22 +1,20 @@
 <script>
-	// npm install --save-dev @iconify/svelte @iconify-icons/bi
 	import Icon from '@iconify/svelte';
-	import check2Circle from '@iconify-icons/bi/check2-circle';
 </script>
 
 <p>
 	No flip:
-	<Icon icon={check2Circle} />
+	<Icon icon="bi:check2-circle" inline={true} />
 </p>
 <p>
 	Horizontal flip:
-	<Icon icon={check2Circle} hFlip={true} />
+	<Icon icon="bi:check2-circle" inline={true} hFlip={true} />
 </p>
 <p>
 	Vertical flip:
-	<Icon icon={check2Circle} vFlip={true} />
+	<Icon icon="bi:check2-circle" inline={true} vFlip={true} />
 </p>
 <p>
 	Both (or 180° rotation):
-	<Icon icon={check2Circle} hFlip={true} vFlip={true} />
+	<Icon icon="bi:check2-circle" inline={true} hFlip={true} vFlip={true} />
 </p>

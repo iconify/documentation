@@ -1,22 +1,26 @@
 <template>
 	<div>
-		<p>No rotation: <InlineIcon icon="demo" /></p>
-		<p>90° rotation: <InlineIcon icon="demo" rotate="90deg" /></p>
-		<p>180° rotation: <InlineIcon icon="demo" rotate="180deg" /></p>
-		<p>270° rotation: <InlineIcon icon="demo" :rotate="3" /></p>
+		<p>No rotation: <Icon icon="bi:check2-circle" :inline="true" /></p>
+		<p>
+			90° rotation:
+			<Icon icon="bi:check2-circle" :inline="true" rotate="90deg" />
+		</p>
+		<p>
+			180° rotation:
+			<Icon icon="bi:check2-circle" :inline="true" rotate="180deg" />
+		</p>
+		<p>
+			270° rotation: <Icon icon="bi:check2-circle" :inline="true" :rotate="3" />
+		</p>
 	</div>
 </template>
 
 <script>
-// npm install --save-dev @iconify/vue@2 @iconify-icons/bi
-import { InlineIcon, addIcon } from '@iconify/vue';
-import check2Circle from '@iconify-icons/bi/check2-circle';
-
-addIcon('demo', check2Circle);
+import { Icon } from '@iconify/vue';
 
 export default {
 	components: {
-		InlineIcon,
+		Icon,
 	},
 };
 </script>

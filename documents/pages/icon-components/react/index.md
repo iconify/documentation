@@ -19,6 +19,7 @@ functions:
   enableCache: './enable-cache.md'
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
+  replaceIDs: './replace-ids.md'
 ```
 
 # Iconify for React
@@ -66,6 +67,14 @@ include: icon-components/components/intro-offline
 ```
 
 See [icon bundles for Iconify for React](../../sources/bundles/react.md) documentation.
+
+### Nuxt.js {#ssr}
+
+Component is compatible with Next.js.
+
+Component does not retrieve icon data until it is mounted. For server side rendering it means HTML will not include SVGs, they will be dynamically added only when hydrating DOM on client side.
+
+If you do want to render SVGs on server side, use either [offline bundle](./offline.md) or provide icon data as parameter instead of icon name.
 
 ## Properties
 

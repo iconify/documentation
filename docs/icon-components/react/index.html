@@ -111,7 +111,11 @@
 </ul><section class="content-section content-section--3"><H1 id="offline-use" class="heading--3">Offline use <a href="#offline-use" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Retrieving icon data from Iconify API requires visitor to be online. What if you want to use component offline or on local network?</p><p>There are several options:</p><ul>
 <li>You can build <a href="../../sources/bundles/">icon bundles</a> for icons that are used in your application, making icon data available offline.</li>
 <li>You can use <a href="../../sources/npm/">icon packages</a>, which is similar to icon bundles, but import icons one by one and are easier to use.</li>
-</ul><p>See <a href="../../sources/bundles/react.html">icon bundles for Iconify for React</a> documentation.</p></section></section>
+</ul><p>See <a href="../../sources/bundles/react.html">icon bundles for Iconify for React</a> documentation.</p></section><section class="content-section content-section--3"><H1 id="ssr" class="heading--3">Nuxt.js <a href="#ssr" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Component is compatible with Next.js.</p><p>Component does not retrieve icon data until it is mounted. For server side rendering it means HTML will not include SVGs, they will be dynamically added only when hydrating DOM on client side.</p><p>If you do want to render SVGs on server side, use either <a href="./offline.html">offline bundle</a> or provide icon data as parameter instead of icon name.</p></section></section>
+
+
+
+
 
 
 
@@ -227,7 +231,7 @@
 <li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
 <li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
 </ul><p>Note: icons added to component with these functions are not stored in cache. Component caches only icons retrieved from API.</p></section><section class="content-section content-section--3"><H1 id="helper" class="heading--3">Helper functions <a href="#helper" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
-<li><span class="hljs-function">replaceIDs(html)</span>. Randomizes IDs in generated string. This should be used when rendering icon based on data returned by <a href="./get-icon.html" title="getIcon() documentation"><span class="hljs-function hljs-linkable">getIcon()</span></a> to make sure elements inside each icon have unique IDs.</li>
+<li><a href="./replace-ids.html" title="replaceIDs() documentation"><span class="hljs-function hljs-linkable">replaceIDs(html)</span></a>. Randomizes IDs in generated string. This should be used when rendering icon based on data returned by <a href="./get-icon.html" title="getIcon() documentation"><span class="hljs-function hljs-linkable">getIcon()</span></a> to make sure elements inside each icon have unique IDs.</li>
 <li><span class="hljs-function">calculateSize()</span>. Calculates icon size. It is used to calculate <span class="hljs-inline-prop">width</span> if only <span class="hljs-inline-prop">height</span> is set and vice versa.</li>
 </ul></section><section class="content-section content-section--3"><H1 id="api" class="heading--3">API functions <a href="#api" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><ul>
 <li><a href="./load-icons.html" title="loadIcons() documentation"><span class="hljs-function hljs-linkable">loadIcons(icons, callback?)</span></a>. Loads icons from API, calls optional callback when either all or part of icons have been loaded.</li>
@@ -237,7 +241,7 @@
 </ul></section><section class="content-section content-section--3"><H1 id="internal" class="heading--3">Internal API functions <a href="#internal" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>There are several internal API functions that are exposed. They are intended to be used by developers that need more control over component. For example, it is used in <a href="../../icon-finder/">Iconify Icon Finder</a>. Use them carefully.</p><p>All internal API functions are exposed as properties of <span class="hljs-inline-var">_api</span> object:</p><ul>
 <li><span class="hljs-function">getAPI()</span>. Returns internal API module.</li>
 <li><span class="hljs-function">getAPIConfig()</span>. Returns API configuration.</li>
-<li><span class="hljs-function">setAPIModule(provider)</span>. Sets API module for provider. This is experimental function intended for custom API providers. API provider functionality is in development.</li>
+<li><span class="hljs-function">setAPIModule(provider)</span>. Sets API module for provider. This is experimental function intended for custom API providers that use custom module for retrieving data from API.</li>
 </ul></section></section>
 
 

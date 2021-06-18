@@ -1,8 +1,5 @@
 ```yaml
 title: Inline Icons in Iconify for Vue
-replacements:
-  - code: '@iconify/vue@2'
-    value: '${vue.import-vue3}'
 ```
 
 # Inline icons
@@ -23,15 +20,7 @@ class: iconify-inline-block
 
 ## Syntax
 
-By default, icon is treated as block icon. It has no custom `[prop]vertical-align`, so you can add it as necessary in a stylesheet.
-
-You can change that behaviour by:
-
-- Swapping `[var]Icon` component with `[var]InlineIcon`.
-- Adding `[attr]inline` attribute.
-- Adding `[prop]vertical-align` style with value `[num]-0.125em`.
-
-Example:
+`include icon-components/components/inline-basic`
 
 ```yaml
 src: icon-components/common/inline-block2.vue
