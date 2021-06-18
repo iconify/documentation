@@ -43,3 +43,28 @@ Offline component has only the following functions available:
 ```yaml
 src: icon-components/common/offline.svelte
 ```
+
+## Available icons
+
+`include sources/npm/packages-intro`
+
+If you want to use icon packages, as shown in example above, see [icon packages documentation](../../sources/npm/index.md) for more information.
+
+### Icon packages {#modules}
+
+Example above imports icon from package `[npm]@iconify-icons/bi`, which is a ES module.
+
+If you are experiencing errors using packages from `[npm]@iconify-icons`, there are CommonJS packages with exactly the same data. To switch to CommonJS package, instead of `[npm]@iconify-icons/bi` use `[npm]@iconify/icons-bi`, so import line looks like this:
+
+```js
+import bellFill from '@iconify/icons-bi/bell-fill';
+```
+
+Format for icon data packages:
+
+- ES package: `[npm]@iconify-icons/{prefix}`
+- CommonJS package: `[npm]@iconify/icons-{prefix}`
+
+where `[str]{prefix}` is icon set prefix. Use ES package whenever possible, switch to CommonJS package if your bundler does not support ES modules or if you need to use it in Node.js.
+
+See [icon packages documentation](../../sources/npm/index.md).

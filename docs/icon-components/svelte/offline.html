@@ -105,11 +105,11 @@
 </code></div></div></div><p>Offline component has only the following functions available:</p><ul>
 <li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
 <li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
-</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uLCB7IGFkZEljb24sIGFkZENvbGxlY3Rpb24gfSBmcm9tICdAaWNvbmlmeS9zdmVsdGUvZGlzdC9vZmZsaW5lJzsKCWltcG9ydCBiZWxsRmlsbCBmcm9tICdAaWNvbmlmeS9pY29ucy1iaS9iZWxsLWZpbGwnOwoKCS8vIFNldCBhbGlhcyBmb3IgaWNvbiBkYXRhCglhZGRJY29uKCdiZWxsJywgYmVsbEZpbGwpOwo8L3NjcmlwdD4KCjxkaXY+Cgk8ZGl2PgoJCUljb24gcmVmZXJlbmNlZCBieSBuYW1lOiA8SWNvbiBpY29uPSJiZWxsIiBpbmxpbmU9e3RydWV9IC8+Cgk8L2Rpdj4KCTxkaXY+CgkJSWNvbiByZWZlcmVuY2VkIGJ5IG9iamVjdDogPEljb24gaWNvbj17YmVsbEZpbGx9IGlubGluZT17dHJ1ZX0gLz4KCTwvZGl2Pgo8L2Rpdj4="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon, { addIcon, addCollection } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte/dist/offline&apos;</span>;<br>
- &#xA0; &#xA0;<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/bell-fill&apos;</span>;<br>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCWltcG9ydCBJY29uLCB7IGFkZEljb24gfSBmcm9tICdAaWNvbmlmeS9zdmVsdGUvZGlzdC9vZmZsaW5lJzsKCWltcG9ydCBiZWxsRmlsbCBmcm9tICdAaWNvbmlmeS1pY29ucy9iaS9iZWxsLWZpbGwnOwoKCS8vIEFzc2lnbiBpY29uIGRhdGEgdG8gbmFtZSAiYmVsbCIgdXNlZCBpbiBmaXJzdCBleGFtcGxlCglhZGRJY29uKCdiZWxsJywgYmVsbEZpbGwpOwo8L3NjcmlwdD4KCjxkaXY+Cgk8ZGl2PgoJCUljb24gcmVmZXJlbmNlZCBieSBuYW1lOiA8SWNvbiBpY29uPSJiZWxsIiBpbmxpbmU9e3RydWV9IC8+Cgk8L2Rpdj4KCTxkaXY+CgkJSWNvbiByZWZlcmVuY2VkIGJ5IG9iamVjdDogPEljb24gaWNvbj17YmVsbEZpbGx9IGlubGluZT17dHJ1ZX0gLz4KCTwvZGl2Pgo8L2Rpdj4="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+ &#xA0; &#xA0;<span class="hljs-keyword">import</span> Icon, { addIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte/dist/offline&apos;</span>;<br>
+ &#xA0; &#xA0;<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/bell-fill&apos;</span>;<br>
 <br>
- &#xA0; &#xA0;<span class="hljs-comment">// Set alias for icon data</span><br>
+ &#xA0; &#xA0;<span class="hljs-comment">// Assign icon data to name &quot;bell&quot; used in first example</span><br>
  &#xA0; &#xA0;addIcon(<span class="hljs-string">&apos;bell&apos;</span>, bellFill);<br>
 </span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
 <br>
@@ -121,6 +121,20 @@
  &#xA0; &#xA0; &#xA0; &#xA0;Icon referenced by object: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=</span></span><span class="javascript">{bellFill}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">inline</span>=</span></span><span class="javascript">{<span class="hljs-literal">true</span>}</span><span class="xml"><span class="hljs-tag"> /&gt;</span><br>
  &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></div></div></div></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="available-icons" class="heading--2">Available icons <a href="#available-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All icon sets available with <a href="../../sources/api/">Iconify API</a> are available as standalone icon packages. There are over 80,000 icons from more than 90 icon sets.</p><p>If you want to use icon packages, as shown in example above, see <a href="../../sources/npm/">icon packages documentation</a> for more information.</p><section class="content-section content-section--3"><H1 id="modules" class="heading--3">Icon packages <a href="#modules" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Example above imports icon from package <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi</span>, which is a ES module.</p><p>If you are experiencing errors using packages from <span class="hljs-inline-package hljs-linkable">@iconify-icons</span>, there are CommonJS packages with exactly the same data. To switch to CommonJS package, instead of <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi</span> use <span class="hljs-inline-package hljs-linkable">@iconify/icons-bi</span>, so import line looks like this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IGJlbGxGaWxsIGZyb20gJ0BpY29uaWZ5L2ljb25zLWJpL2JlbGwtZmlsbCc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/bell-fill&apos;</span>;<br>
+</code></div></div></div><p>Format for icon data packages:</p><ul>
+<li>ES package: <span class="hljs-inline-package hljs-linkable">@iconify-icons/{prefix}</span></li>
+<li>CommonJS package: <span class="hljs-inline-package hljs-linkable">@iconify/icons-{prefix}</span></li>
+</ul><p>where &quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix. Use ES package whenever possible, switch to CommonJS package if your bundler does not support ES modules or if you need to use it in Node.js.</p><p>See <a href="../../sources/npm/">icon packages documentation</a>.</p></section></section>
+
+
+
 
 
 

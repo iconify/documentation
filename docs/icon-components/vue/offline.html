@@ -31,7 +31,7 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
 		/>
 		<link rel="stylesheet" href="../../assets/style.css?1d42" />
-		<title>Iconify for React Offline Use</title>
+		<title>Iconify for Vue Offline Use</title>
 		
 	</head>
 	<body class="website-docs theme-develop">
@@ -91,39 +91,60 @@
 <a href="./inline.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><span class="iconify" data-icon="line-md:chevron-small-double-left"></span> Inline Icons</a>
 <a href="./icon-exists.html" class="docs-short-navigation-link docs-short-navigation-link--next"><span class="iconify" data-icon="line-md:chevron-small-double-right"></span> iconExists()</a>
 </div>
-<h1>Iconify for React offline use</h1>
+<h1>Iconify for Vue offline use</h1>
 <p>Retrieving icon data from Iconify API requires visitor to be online. What if you want to use component offline or on local network?</p>
 <p>There are several options:</p>
 <ul>
 <li>You can build <a href="../../sources/bundles/">icon bundles</a> for icons that are used in your application, making icon data available offline.</li>
 <li>You can use <a href="../../sources/npm/">icon packages</a>, which is similar to icon bundles, but import icons one by one and are easier to use.</li>
 </ul>
-<p>See <a href="../../sources/bundles/react.html">icon bundles for Iconify for React</a> documentation.</p>
-<section class="content-section content-section--2"><H1 id="offline-component" class="heading--2">Offline component <a href="#offline-component" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Additionally, if you do not want to include API functionality, you can import component without API support. It is a bit smaller than full component.</p><p>In your code replace:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0JzsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
-</code></div></div></div><p>with</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0L2Rpc3Qvb2ZmbGluZSc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react/dist/offline&apos;</span>;<br>
+<p>See <a href="../../sources/bundles/vue.html">icon bundles for Iconify for Vue</a> documentation.</p>
+<section class="content-section content-section--2"><H1 id="offline-component" class="heading--2">Offline component <a href="#offline-component" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Additionally, if you do not want to include API functionality, you can import component without API support. It is a bit smaller than full component.</p><p>In your code replace:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3Z1ZSc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue&apos;</span>;<br>
+</code></div></div></div><p>with</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3Z1ZS9kaXN0L29mZmxpbmUnOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue/dist/offline&apos;</span>;<br>
 </code></div></div></div><p>Offline component has only the following functions available:</p><ul>
 <li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
 <li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
-</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvbiwgYWRkSWNvbiwgYWRkQ29sbGVjdGlvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0L2Rpc3Qvb2ZmbGluZSc7CmltcG9ydCBiZWxsRmlsbCBmcm9tICdAaWNvbmlmeS9pY29ucy1iaS9iZWxsLWZpbGwnOwoKLy8gU2V0IGFsaWFzIGZvciBpY29uIGRhdGEKYWRkSWNvbignYmVsbCcsIGJlbGxGaWxsKTsKCi8vIFRlc3QgY29tcG9uZW50CmV4cG9ydCBmdW5jdGlvbiBpY29uRGVtbygpIHsKCXJldHVybiAoCgkJPGRpdj4KCQkJPGRpdj4KCQkJCUljb24gcmVmZXJlbmNlZCBieSBuYW1lOiA8SW5saW5lSWNvbiBpY29uPSJiZWxsIiAvPgoJCQk8L2Rpdj4KCQkJPGRpdj4KCQkJCUljb24gcmVmZXJlbmNlZCBieSBvYmplY3Q6IDxJbmxpbmVJY29uIGljb249e2JlbGxGaWxsfSAvPgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCSk7Cn0K"><code class="highlight hljs"><span class="hljs-keyword">import</span> { Icon, addIcon, addCollection } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react/dist/offline&apos;</span>;<br>
-<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/bell-fill&apos;</span>;<br>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHRlbXBsYXRlPgoJPGRpdj4KCQk8cD5JY29uIHJlZmVyZW5jZWQgYnkgbmFtZTogPEljb24gaWNvbj0iYmVsbCIgOmlubGluZT0idHJ1ZSIgLz48L3A+CgkJPHA+SWNvbiByZWZlcmVuY2VkIGJ5IG9iamVjdDogPEljb24gOmljb249ImJlbGxJY29uIiA6aW5saW5lPSJ0cnVlIiAvPjwvcD4KCTwvZGl2Pgo8L3RlbXBsYXRlPgoKPHNjcmlwdD4KaW1wb3J0IHsgSWNvbiwgYWRkSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3Z1ZS9kaXN0L29mZmxpbmUnOwppbXBvcnQgYmVsbEZpbGwgZnJvbSAnQGljb25pZnktaWNvbnMvYmkvYmVsbC1maWxsJzsKCi8vIEFzc2lnbiBpY29uIGRhdGEgdG8gbmFtZSAiYmVsbCIgdXNlZCBpbiBmaXJzdCBleGFtcGxlCmFkZEljb24oJ2JlbGwnLCBiZWxsRmlsbCk7CgpleHBvcnQgZGVmYXVsdCB7Cgljb21wb25lbnRzOiB7CgkJSWNvbiwKCX0sCglkYXRhKCkgewoJCXJldHVybiB7CgkJCS8vIEFzc2lnbiBpY29uIGRhdGEgdG8gdmFyaWFibGUgImJlbGxJY29uIiB1c2VkIGluIHNlY29uZCBleGFtcGxlCgkJCWJlbGxJY29uOiBiZWxsRmlsbCwKCQl9OwoJfSwKfTsKPC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Icon referenced by name: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bell&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Icon referenced by object: <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">:icon</span>=<span class="hljs-string">&quot;bellIcon&quot;</span> <span class="hljs-attr">:inline</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+ &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>
 <br>
-<span class="hljs-comment">// Set alias for icon data</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="javascript"><br>
+<span class="hljs-keyword">import</span> { Icon, addIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/vue/dist/offline&apos;</span>;<br>
+<span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify-icons/bi/bell-fill&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Assign icon data to name &quot;bell&quot; used in first example</span><br>
 addIcon(<span class="hljs-string">&apos;bell&apos;</span>, bellFill);<br>
 <br>
-<span class="hljs-comment">// Test component</span><br>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">iconDemo</span>(<span class="hljs-params"></span>) </span>{<br>
- &#xA0; &#xA0;<span class="hljs-keyword">return</span> (<br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Icon referenced by name: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bell&quot;</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;Icon referenced by object: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{bellFill}</span> /&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>
- &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
- &#xA0; &#xA0;);<br>
-}<br>
-</code></div></div></div></section>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br>
+ &#xA0; &#xA0;<span class="hljs-attr">components</span>: {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;Icon,<br>
+ &#xA0; &#xA0;},<br>
+ &#xA0; &#xA0;<span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-keyword">return</span> {<br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-comment">// Assign icon data to variable &quot;bellIcon&quot; used in second example</span><br>
+ &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;<span class="hljs-attr">bellIcon</span>: bellFill,<br>
+ &#xA0; &#xA0; &#xA0; &#xA0;};<br>
+ &#xA0; &#xA0;},<br>
+};<br>
+</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</span></code></div></div></div></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="available-icons" class="heading--2">Available icons <a href="#available-icons" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>All icon sets available with <a href="../../sources/api/">Iconify API</a> are available as standalone icon packages. There are over 80,000 icons from more than 90 icon sets.</p><p>If you want to use icon packages, as shown in example above, see <a href="../../sources/npm/">icon packages documentation</a> for more information.</p><section class="content-section content-section--3"><H1 id="modules" class="heading--3">Icon packages <a href="#modules" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>Example above imports icon from package <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi</span>, which is a ES module.</p><p>If you are experiencing errors using packages from <span class="hljs-inline-package hljs-linkable">@iconify-icons</span>, there are CommonJS packages with exactly the same data. To switch to CommonJS package, instead of <span class="hljs-inline-package hljs-linkable">@iconify-icons/bi</span> use <span class="hljs-inline-package hljs-linkable">@iconify/icons-bi</span>, so import line looks like this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IGJlbGxGaWxsIGZyb20gJ0BpY29uaWZ5L2ljb25zLWJpL2JlbGwtZmlsbCc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> bellFill <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/icons-bi/bell-fill&apos;</span>;<br>
+</code></div></div></div><p>Format for icon data packages:</p><ul>
+<li>ES package: <span class="hljs-inline-package hljs-linkable">@iconify-icons/{prefix}</span></li>
+<li>CommonJS package: <span class="hljs-inline-package hljs-linkable">@iconify/icons-{prefix}</span></li>
+</ul><p>where &quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix. Use ES package whenever possible, switch to CommonJS package if your bundler does not support ES modules or if you need to use it in Node.js.</p><p>See <a href="../../sources/npm/">icon packages documentation</a>.</p></section></section>
+
+
+
+
 
 
 

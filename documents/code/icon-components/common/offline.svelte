@@ -1,8 +1,8 @@
 <script>
-	import Icon, { addIcon, addCollection } from '@iconify/svelte/dist/offline';
-	import bellFill from '@iconify/icons-bi/bell-fill';
+	import Icon, { addIcon } from '@iconify/svelte/dist/offline';
+	import bellFill from '@iconify-icons/bi/bell-fill';
 
-	// Set alias for icon data
+	// Assign icon data to name "bell" used in first example
 	addIcon('bell', bellFill);
 </script>
 
