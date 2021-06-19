@@ -2,19 +2,19 @@
 $default_theme: 'develop';
 $themes_map: (
 	// palette('blue', 600)
-		$default_theme: #1769aa,
+	$default_theme: #1769aa,
 	// palette('green', 600)
-		'design': #327335,
+	'design': #327335,
 	// palette('cyan', 600)
-		'integration': #00717f,
+	'code': #00717f,
 	// custom
-		'publish': #2e7a55,
+	'publish': #2e7a55,
 	// palette('light-blue', 600)
-		'code': #026c9c,
+	'integration': #026c9c,
 	// mix(palette('indigo', 600), palette('deep-purple', 550))
-		'tips': #5a4fb7,
+	'tips': #5a4fb7,
 	// palette('blue-gray', 600)
-		'legacy': #506874
+	'legacy': #506874
 );
 
 // Extra colors for future use:

@@ -85,7 +85,7 @@ export function getMetaData(
 			switch (theme) {
 				case 'develop':
 				case 'design':
-				case 'integration':
+				// case 'integration':
 				case 'publish':
 				case 'code':
 				case 'tips':
@@ -129,7 +129,7 @@ export function getMetaData(
 
 			default:
 				// Copy value
-				((result as unknown) as Record<string, unknown>)[attr] = value;
+				(result as unknown as Record<string, unknown>)[attr] = value;
 		}
 	}
 

@@ -191,7 +191,7 @@
             # Internal
             ./replace-ids.html: replaceIDs()
     /sources/:
-      title: Sources
+      title: Icon Sources
       children:
         ./api/:
           title: Iconify API
@@ -227,6 +227,38 @@
               separator: true
         ./npm/: Icon Packages
         ./json/: Iconify Icon Sets
+    /icon-finder/:
+      title: Icon Finder
+      wip: true
+      children:
+        ./packages/:
+          title: Packages
+          children:
+            ./core/:
+              title: Core
+              children:
+                ./core.html: IconFinderCore
+                ./render.html: Render Callback
+                ./routes.html: Routes
+                ./blocks.html: Blocks
+                ./actions.html:
+                  title: Actions
+                  wip: true
+                ./custom-view.html: Custom View
+                ./config.html: Core Configuration
+                ./registry.html: Registry
+                ./router.html: Router
+                ./types.html: Types
+                ./node-js.html: Node.js Usage
+            ./base-svelte/:
+              title: Svelte Components
+              wip: true
+              children:
+                ./components-config.html: Configuration
+                ./wrapper.html: Wrapper
+                ./callback.html: Callback
+                ./types.html: Types
+                ./examples.html: Project Forks
 /design/:
   title: For Designers
   children:
@@ -238,38 +270,6 @@
       title: Adobe XD Plug-In
       wip: true
       hidden: true
-/icon-finder/:
-  title: Icon Finder
-  wip: true
-  children:
-    ./packages/:
-      title: Packages
-      children:
-        ./core/:
-          title: Core
-          children:
-            ./core.html: IconFinderCore
-            ./render.html: Render Callback
-            ./routes.html: Routes
-            ./blocks.html: Blocks
-            ./actions.html:
-              title: Actions
-              wip: true
-            ./custom-view.html: Custom View
-            ./config.html: Core Configuration
-            ./registry.html: Registry
-            ./router.html: Router
-            ./types.html: Types
-            ./node-js.html: Node.js Usage
-        ./base-svelte/:
-          title: Svelte Components
-          wip: true
-          children:
-            ./components-config.html: Configuration
-            ./wrapper.html: Wrapper
-            ./callback.html: Callback
-            ./types.html: Types
-            ./examples.html: Project Forks
 /code/:
   title: Code
   children:

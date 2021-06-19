@@ -8,7 +8,7 @@ import { indexFile } from './navigation/helpers';
 export type Theme =
 	| 'develop'
 	| 'design'
-	| 'integration'
+	// | 'integration'
 	| 'publish'
 	| 'code'
 	| 'tips'
@@ -51,7 +51,8 @@ export function defaultTheme(file: string): Theme | null {
 
 		case 'integrate':
 		case 'icon-finder':
-			return 'integration';
+			return 'develop';
+		// return 'integration';
 
 		case 'publish':
 			return 'publish';

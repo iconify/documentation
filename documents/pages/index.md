@@ -26,6 +26,12 @@ This documentation is split into several parts.
 
 `include develop/sources`
 
+### Icon Finder
+
+Icon Finder section is in development.
+
+Upcoming [Iconify Icon Finder](./icon-finder/index.md) will make it easy to integrate icon picker into projects, allowing customers to choose icons.
+
 ## Iconify for designers {#for-designers}
 
 [For designers section](./design/index.md) is for UI designers.
@@ -33,12 +39,6 @@ This documentation is split into several parts.
 Iconify offers plug-ins for popular software:
 
 `include design/plugins`
-
-## Integration
-
-Integration section is in development.
-
-It will include documentation for [Iconify Icon Finder](./icon-finder/index.md) and related tools that can help integrate Iconify into other projects.
 
 ## Code
 
