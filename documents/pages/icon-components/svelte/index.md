@@ -129,6 +129,10 @@ include: icon-components/components/intro-transform
 
 For more details see [how to transform icon in Iconify for Svelte](./transform.md).
 
+## onLoad
+
+`include icon-components/components/onload`
+
 ## Functions {#functions}
 
 ```yaml

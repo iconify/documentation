@@ -113,7 +113,20 @@ Required properties:
 
 - `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
 
-`include icon-components/component-optional-props`
+Optional properties:
+
+- `[prop]inline`, `[type]boolean` toggles inline or block mode.
+- `[prop]width`, `[type]string | number` icon width.
+- `[prop]height`, `[type]string | number` icon height.
+- `[prop]hFlip`, `[type]boolean` flips icon horizontally.
+- `[prop]vFlip`, `[type]boolean` flips icon vertically.
+- `[prop]flip`, `[type]string` alternative to `[prop]hFlip` and `[prop]vFlip`.
+- `[prop]rotate`, `[type]number | string` rotates icon.
+- `[prop]color`, `[type]string` changes icon color.
+- `[prop]hAlign` horizontally aligns content inside icon.
+- `[prop]vAlign` vertically aligns content inside icon.
+- `[prop]slice` alignment behaviour: `[str]meet` or `[str]slice`.
+- `[prop]align`, `[type]string` aligns content inside icon, alternative to `[prop]hAlign`, `[prop]vAlign` and `[prop]slice`.
 
 See below for more information on each optional property.
 

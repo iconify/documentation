@@ -12,3 +12,4 @@ Optional properties:
 - `[prop]vAlign` vertically aligns content inside icon.
 - `[prop]slice` alignment behaviour: `[str]meet` or `[str]slice`.
 - `[prop]align`, `[type]string` aligns content inside icon, alternative to `[prop]hAlign`, `[prop]vAlign` and `[prop]slice`.
+- `[prop]onLoad`, `[type]function` is a callback that is called when icon data has been loaded. See below.

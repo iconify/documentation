@@ -142,6 +142,7 @@
 <li><span class="hljs-inline-prop">vAlign</span> vertically aligns content inside icon.</li>
 <li><span class="hljs-inline-prop">slice</span> alignment behaviour: &quot;<span class="hljs-string">meet</span>&quot; or &quot;<span class="hljs-string">slice</span>&quot;.</li>
 <li><span class="hljs-inline-prop">align</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> aligns content inside icon, alternative to <span class="hljs-inline-prop">hAlign</span>, <span class="hljs-inline-prop">vAlign</span> and <span class="hljs-inline-prop">slice</span>.</li>
+<li><span class="hljs-inline-prop">onLoad</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span> is a callback that is called when icon data has been loaded. See below.</li>
 </ul><p>See below for more information on each optional property.</p><p>In addition to the properties mentioned above, the icon component accepts any other properties and events. All other properties and events will be passed to generated SVG element, so you can do stuff like assigning <span class="hljs-inline-prop">onClick</span> event, setting the inline style, add title and so on.</p></section>
 
 
@@ -220,6 +221,16 @@
 
 
 <section class="content-section content-section--2"><H1 id="transformations" class="heading--2">Transformations <a href="#transformations" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p>An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.</p><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>For more details see <a href="./transform.html">how to transform icon in Iconify for React</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="onload" class="heading--2">onLoad <a href="#onload" class="link-back" title="Link to this section"><span class="iconify" data-icon="line-md:hash-small"></span></a></H1><p><span class="hljs-inline-prop">onLoad</span> property is an optional callback function. It is called when icon data has been loaded.</p><p>It is not an event, such as <span class="hljs-inline-prop">click</span> event for links, it is a simple callback function.</p><p>When <span class="hljs-inline-prop">onLoad</span> is called:</p><ul>
+<li>If value of <span class="hljs-inline-prop">icon</span> property is an object, <span class="hljs-inline-prop">onLoad</span> is not called.</li>
+<li>If value of <span class="hljs-inline-prop">icon</span> property is a string and icon data is available, <span class="hljs-inline-prop">onLoad</span> is called on first render.</li>
+<li>If value of <span class="hljs-inline-prop">icon</span> property is a string and icon data is not available, <span class="hljs-inline-prop">onLoad</span> is called on first re-render after icon data is retrieved from API.</li>
+</ul><p>What is the purpose of <span class="hljs-inline-prop">onLoad</span>? To let you know when <span class="hljs-inline-var">Icon</span> component renders an icon and when it does not render anything. This allows you to do things like adding class name for parent element, such as &quot;<span class="hljs-string">container--with-icon</span>&quot; that modify layout if icon is being displayed.</p></section>
+
+
 
 
 

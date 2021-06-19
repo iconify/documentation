@@ -85,7 +85,18 @@ Required properties:
 
 - `[prop]icon`, `[type]IconifyIcon | string` icon name or icon data.
 
-`include icon-components/component-optional-props-vue`
+```yaml
+include: icon-components/component-optional-props
+replacements:
+  - search: hAlign
+    replace: horizontalAlign
+  - search: vAlign
+    replace: verticalAlign
+  - search: hFlip
+    replace: horizontalFlip
+  - search: vFlip
+    replace: verticalFlip
+```
 
 See below for more information on each optional property.
 
@@ -128,6 +139,10 @@ include: icon-components/components/intro-transform
 ```
 
 For more details see [how to transform icon in Iconify for Vue](./transform.md).
+
+## onLoad
+
+`include icon-components/components/onload`
 
 ## Functions {#functions}
 
