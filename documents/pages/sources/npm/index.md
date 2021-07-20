@@ -114,9 +114,9 @@ All icons in ES6 and CommonJS packages have `[file].d.ts` files, so they can be 
 
 Few examples of icon names:
 
-- `[icon]mdi:login-variant` from [Material Design Icons](https://iconify.design/icon-sets/mdi/) can be imported from `[npm]@iconify-icons/mdi/login-variant` (ES6) or `[npm]@iconify/icons-mdi/login-variant` (CommonJS).
-- `[icon]bi:chat-quote` from [Bootstrap Icons](https://iconify.design/icon-sets/bi/) can be imported from `[npm]@iconify-icons/bi/chat-quote` (ES6) or `[npm]@iconify/icons-bi/chat-quote` (CommonJS).
-- `[icon]tabler:info-circle` from [Tabler Icons](https://iconify.design/icon-sets/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle` (ES6) or `[npm]@iconify-icons/tabler/info-circle` (CommonJS).
+- `[icon]mdi:login-variant` from [Material Design Icons](https://icon-sets.iconify.design/mdi/) can be imported from `[npm]@iconify-icons/mdi/login-variant` (ES6) or `[npm]@iconify/icons-mdi/login-variant` (CommonJS).
+- `[icon]bi:chat-quote` from [Bootstrap Icons](https://icon-sets.iconify.design/bi/) can be imported from `[npm]@iconify-icons/bi/chat-quote` (ES6) or `[npm]@iconify/icons-bi/chat-quote` (CommonJS).
+- `[icon]tabler:info-circle` from [Tabler Icons](https://icon-sets.iconify.design/tabler/) can be imported from `[npm]@iconify-icons/tabler/info-circle` (ES6) or `[npm]@iconify-icons/tabler/info-circle` (CommonJS).
 
 See Iconify components for usage:
 

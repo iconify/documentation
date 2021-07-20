@@ -50,7 +50,7 @@ Install `[npm]@iconify/react@2` and import `[var]Icon` component from it:
 import { Icon } from '@iconify/react';
 ```
 
-Then use `[var]Icon` component with icon name or data as `[prop]icon` parameter:
+Then use `[var]Icon` component with icon name as `[prop]icon` parameter:
 
 ```jsx
 <Icon icon="mdi-light:home" />

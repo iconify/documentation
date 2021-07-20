@@ -53,7 +53,7 @@ Install `[npm]@iconify/svelte@2` and import component from it (component is expo
 import Icon from '@iconify/svelte';
 ```
 
-Then in template use `[var]Icon` component with imported icon's data as `[prop]icon` parameter:
+Then in template use `[var]Icon` component with icon name as `[prop]icon` parameter:
 
 ```jsx
 <Icon icon="mdi-light:home" />

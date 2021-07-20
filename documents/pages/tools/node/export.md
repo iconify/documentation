@@ -94,7 +94,7 @@ There are other options, but they are very specific to importers. See source cod
 
 Function `[func]ExportComponent` creates single files for all icons, which can be used with various Iconify icon components, such as [Iconify for React](../../icon-components/react/index.md), [Iconify for Vue](../../icon-components/vue/index.md) and [Iconify for Svelte](../../icon-components/svelte/index.md).
 
-TODO
+This function is currently unstable, it will be rewritten, so documentation is not available yet.
 
 ## Exporting to PNG {#export-png}
 

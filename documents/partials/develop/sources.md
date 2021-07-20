@@ -6,7 +6,7 @@ replacements:
 
 You can use Iconify with any icons.
 
-By default, Iconify includes over 60k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets. You can browse all icons by [clicking "Browse Icons" link in navigation](https://iconify.design/icon-sets/).
+By default, Iconify includes over 60k free icons from various icon sets, including the most popular icon sets: Material Design Icons, FontAwesome, Bootstrap Icons, EmojiOne, Noto Emoji and many other icon sets. You can browse all icons by [clicking "Browse Icons" link in navigation](https://icon-sets.iconify.design/).
 
 Icon components do not include data for icons.
 

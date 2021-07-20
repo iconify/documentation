@@ -190,6 +190,31 @@
             ./disable-cache.html: disableCache()
             # Internal
             ./replace-ids.html: replaceIDs()
+        ./ember/:
+          title: Ember
+          children:
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Inline Icons
+            ./offline.html: Offline Use
+            ./functions.html:
+              title: Functions
+              separator: true
+              clickable: false
+            # Getting icons
+            ./icon-exists.html: iconExists()
+            ./list-icons.html: listIcons()
+            ./get-icon.html: getIcon()
+            # Adding icons
+            ./add-icon.html: addIcon()
+            ./add-collection.html: addCollection()
+            # API
+            ./load-icons.html: loadIcons()
+            ./enable-cache.html: enableCache()
+            ./disable-cache.html: disableCache()
+            # Internal
+            ./replace-ids.html: replaceIDs()
     /sources/:
       title: Icon Sources
       children:
@@ -222,6 +247,7 @@
             ./vue.html: Vue 3
             ./vue2.html: Vue 2
             ./svelte.html: Svelte
+            ./ember.html: Ember
             ./examples/:
               title: Examples
               separator: true

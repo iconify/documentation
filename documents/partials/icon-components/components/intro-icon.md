@@ -12,14 +12,14 @@ Icon name is a string, which has 3 parts:
 
 Examples of valid icon names:
 
-- `[icon]flat-color-icons:voice-presentation` - icon is `[str]voice-presentation` from [Flat Color Icons](https://iconify.design/icon-sets/flat-color-icons/) icon set, from public Iconify API.
-- `[icon]mdi-light:home` - icon is `[str]home` from [Material Design Light](https://iconify.design/icon-sets/mdi-light/) icon set, from public Iconify API.
+- `[icon]flat-color-icons:voice-presentation` - icon is `[str]voice-presentation` from [Flat Color Icons](https://icon-sets.iconify.design/flat-color-icons/) icon set, from public Iconify API.
+- `[icon]mdi-light:home` - icon is `[str]home` from [Material Design Light](https://icon-sets.iconify.design/mdi-light/) icon set, from public Iconify API.
 
 Exceptions:
 
 - If API provider is empty, it can be skipped (like in examples above).
 - If prefix does not contain `[str]-`, prefix and icon name can be separated with dash. This is to support people migrating from icon fonts. For example, `[icon]fa:arrow-left` and `[icon]fa-arrow-left` are identical because `[str]fa` does not contain dash.
 
-There are over 60,000 icons available from 80+ icon sets. [Browse icons sets](https://iconify.design/icon-sets/) to see all available icons.
+There are over 60,000 icons available from 80+ icon sets. [Browse icons sets](https://icon-sets.iconify.design/) to see all available icons.
 
 You can also add custom API providers for more icon choices. See [API providers documentation](/sources/api/providers.md).

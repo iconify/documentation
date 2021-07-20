@@ -55,7 +55,7 @@ Install `[npm]@iconify/vue@3` and import component from it (component is exporte
 import { Icon } from '@iconify/vue';
 ```
 
-Then in template use `[var]Icon` component with imported icon's data as `[prop]icon` parameter:
+Then in template use `[var]Icon` component with icon name as `[prop]icon` parameter:
 
 ```jsx
 <Icon icon="mdi-light:home" />
