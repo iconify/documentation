@@ -84,7 +84,6 @@ export function parsePartial(file: string, relativeFile: string): ParseResult {
 		throw new Error(`Unable to locate partial file "${file}"`);
 	}
 
-	let content: string;
 	switch (item.ext) {
 		case 'md':
 			return parseFile(item.dir, item.filename, relativeFile);

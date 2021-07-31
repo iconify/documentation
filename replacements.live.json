@@ -1,6 +1,7 @@
 {
 	"mode": "production",
 	"html": {
-		"footer": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-111712817-1\"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>"
+		"footer": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-111712817-1\"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-111712817-1'); </script>",
+		"ad": "<script async type=\"text/javascript\" src=\"//cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign\" id=\"_carbonads_js\"></script>"
 	}
 }

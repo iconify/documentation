@@ -2,7 +2,8 @@
 	"mode": "development",
 	"html": {
 		"header": "",
-		"footer": ""
+		"footer": "",
+		"ad": ""
 	},
 	"iconify1": {
 		"version": {

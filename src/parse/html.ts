@@ -4,7 +4,7 @@ import { paths } from '../files';
 import { replaceAll } from '../str';
 import { defaultTheme } from '../themes';
 import { NavigationItem } from '../navigation/loader';
-import { replaceText } from '../replacements';
+import { rawReplacements, replaceText } from '../replacements';
 import { prepareNavigation } from '../navigation/prepare';
 import { minifiedNavigation } from '../navigation/minify';
 import { fileToURL } from '../navigation/helpers';
@@ -93,6 +93,15 @@ export function buildHTML(
 	// Add prev/next links
 	if (shortNavigation.prev || shortNavigation.next) {
 		html = generateShortNavigation(currentURL, shortNavigation) + html;
+	}
+
+	// Add ad
+	const ad = rawReplacements.html.ad;
+	if (ad !== '') {
+		const sectionIndex = html.indexOf('<section');
+		if (sectionIndex !== -1) {
+			html = html.slice(0, sectionIndex) + ad + html.slice(sectionIndex);
+		}
 	}
 
 	// Generate replacements
