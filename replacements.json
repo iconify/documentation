@@ -23,14 +23,14 @@
 		"import": "@iconify/iconify"
 	},
 	"react": {
-		"import": "@iconify/react@alpha"
+		"import": "@iconify/react"
 	},
 	"vue": {
 		"import-vue2": "@iconify/vue2",
-		"import": "@iconify/vue@alpha"
+		"import": "@iconify/vue"
 	},
 	"svelte": {
-		"import": "@iconify/svelte@alpha"
+		"import": "@iconify/svelte"
 	},
 	"counters": {
 		"sets": "100",
