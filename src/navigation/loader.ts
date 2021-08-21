@@ -13,6 +13,7 @@ const maxLevel = 5;
  */
 export interface YamlNavigationItemValue {
 	title: string; // Item title
+	headline?: string; // Headline for page
 	wip?: boolean; // True if work in progress
 	hidden?: boolean; // True if item is hidden
 	separator?: boolean; // True if line should be placed above navigation item
@@ -26,6 +27,7 @@ export type YamlNavigation = Record<string, string | YamlNavigationItemValue>;
 // Default values
 export const defaultYamlNavigationItem: Required<YamlNavigationItemValue> = {
 	title: '',
+	headline: '',
 	wip: false,
 	hidden: false,
 	separator: false,
@@ -48,6 +50,7 @@ export interface NavigationItem {
 	hidden: boolean;
 	theme: Theme;
 	level: number;
+	headline?: string;
 	styles: NavigationItemStyles[];
 	unclickable: boolean;
 	children: NavigationItem[];
@@ -96,6 +99,7 @@ function parseString(
 		styles: [],
 		unclickable: false,
 		children: [],
+		headline: parent.headline,
 		parent,
 	};
 }
@@ -141,6 +145,9 @@ function parseObject(
 		unclickable = true;
 	}
 
+	// Headline
+	const headline = item.headline ? item.headline : parent?.headline;
+
 	// Create item
 	const result: NavigationItem = {
 		url,
@@ -151,6 +158,7 @@ function parseObject(
 		level,
 		styles,
 		unclickable,
+		headline,
 		children: [],
 		parent,
 	};
@@ -229,9 +237,8 @@ export const navigationTree: NavigationItem[] = parseRawData(rawData, 0);
 /**
  * Storage for navigation by URL for quick access and validation
  */
-export const navigationURLs: Record<string, NavigationItem> = Object.create(
-	null
-);
+export const navigationURLs: Record<string, NavigationItem> =
+	Object.create(null);
 
 /**
  * Create list and URLs from tree

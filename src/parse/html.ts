@@ -24,6 +24,9 @@ const hash = '' + Math.round(Date.now() / 1000);
 // Wrapper
 const wrappers: Record<string, string> = {};
 
+// Default headline
+const defaultHeadline = 'Thousands of icons, one unified framework.';
+
 /**
  * Build HTML
  */
@@ -113,6 +116,9 @@ export function buildHTML(
 		'${content}': html,
 		'${redirect}': hasRedirect ? item.metadata.redirect! : '',
 		'${theme-class}': theme ? ' theme-' + theme : '',
+		'${headline}': navigationRef?.headline
+			? navigationRef.headline
+			: defaultHeadline,
 		'${navigation}': navigation,
 	};
 

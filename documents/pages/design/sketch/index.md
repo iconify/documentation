@@ -11,7 +11,7 @@ replacements:
 
 Want to add icons to your designs?
 
-Iconify for Sketch got you covered. One plug-in offers over 60,000 icons from 70+ icon sets.
+Iconify for Sketch got you covered. One plugin offers over 60,000 icons from 70+ icon sets.
 
 With Sketch plug-in you can:
 
@@ -19,7 +19,7 @@ With Sketch plug-in you can:
 - Search icon sets.
 - Import any icon as vector shape to Sketch document.
 
-It is completely free! All icon sets offered with Iconify are available with open source licenses.
+It is completely free! Unlike other plugins that offer many icons, but require payment to use SVG, Iconify always imports icons as SVG. Iconify project is open source and offers only open source icon sets.
 
 ## Installation
 
@@ -36,16 +36,21 @@ Browse or search icons, select any icon, click `[str]Import` button. Plug-in wil
 ## Screenshots
 
 Importing icon:
+
 ![Iconify for Sketch: footer](https://docs.iconify.design/assets/images/plugins/sketch_footer.png)
 
 Big choice of `[str]home` icons:
+
 ![Iconify for Sketch: search results](https://docs.iconify.design/assets/images/plugins/sketch_home_grid.png)
 
 Collections list:
+
 ![Iconify for Sketch: browse collections](https://docs.iconify.design/assets/images/plugins/sketch_index.png)
+
 ![Iconify for Sketch: browse collections](https://docs.iconify.design/assets/images/plugins/sketch_emoji.png)
 
 Importing multiple icons:
+
 ![Iconify for Sketch: browsing icons set](https://docs.iconify.design/assets/images/plugins/sketch_select_multiple.png)
 
 ## Available icons

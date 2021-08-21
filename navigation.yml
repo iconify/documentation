@@ -3,6 +3,7 @@
   children:
     /icon-components/:
       title: Icon Components
+      headline: One icon framework to replace them all.
       children:
         ./svg-framework/:
           title: SVG Framework
@@ -287,13 +288,14 @@
                 ./examples.html: Project Forks
 /design/:
   title: For Designers
+  headline: One icon plugin to replace them all.
   children:
     ./figma/:
-      title: Figma Plug-In
+      title: Figma Plugin
     ./sketch/:
-      title: Sketch Plug-In
+      title: Sketch Plugin
     ./adobe-xd/:
-      title: Adobe XD Plug-In
+      title: Adobe XD Plugin
       wip: true
       hidden: true
 /code/:
