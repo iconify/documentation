@@ -5,8 +5,6 @@ replacements:
     value: '${counters.icons}'
   - code: '70+'
     value: '${counters.sets}+'
-  - code: 'https://docs.iconify.design/assets/images/plugins/figma_'
-    value: 'http://lib.ansidia.com/websites/iconify/docs2-public/assets/images/plugins/figma_'
 ```
 
 # Iconify for Figma
@@ -107,4 +105,4 @@ Options are stored in Figma application (or current browser if you are using Fig
 
 ## Support
 
-If you have any questions, support for plugin is available at [Iconify for Figma GitHub repository](http://github.com/iconify/iconify-figma/).
+If you have any questions, support for plugin is available at [Iconify for Figma GitHub repository](https://github.com/iconify/iconify-figma/).
