@@ -317,6 +317,16 @@
                 ./import-fa-pro.html: FontAwesome Pro
                 ./import-font.html: Import Icon Font
                 ./bundle.html: Icons Bundle
+        ./utils/:
+          title: Iconify Utils
+          children:
+            ./functions.html:
+              title: Icon Sets
+              separator: true
+              clickable: false
+            ./validate-icon-set.html: validateIconSet()
+            ./get-icons.html: getIcons()
+            ./get-icon-data.html: getIconData()
         ./json/:
           title: Iconify JSON Tools
           children:
