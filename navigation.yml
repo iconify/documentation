@@ -319,6 +319,7 @@
                 ./bundle.html: Icons Bundle
         ./utils/:
           title: Iconify Utils
+          wip: true
           children:
             ./functions.html:
               title: Icon Sets
