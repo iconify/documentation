@@ -2,13 +2,17 @@
 title: Iconify Utils
 types:
   IconifyIcon: '../../types/iconify-icon.md'
-  FullIconifyIcon: '../../types/iconify-icon.md'
   IconifyJSON: '../../types/iconify-json.md'
+  IconifyInfo: '../../types/iconify-info.md'
+  FullIconifyIcon: './full-iconify-icon.md'
   IconifyIconName: './icon-name.md'
 functions:
   validateIconSet: './validate-icon-set.md'
   getIcons: './get-icons.md'
   getIconData: './get-icon-data.md'
+  minifyIconSet: './minify-icon-set.md'
+  expandIconSet: './expand-icon-set.md'
+  convertIconSetInfo: './convert-info.md'
 ```
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:

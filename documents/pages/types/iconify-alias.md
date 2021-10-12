@@ -11,7 +11,7 @@ All Iconify libraries share common object structures. They are described as type
 
 For description of types and short explanation of TypeScript see [types documentation](./index.md).
 
-This article explains `[type]IconifyAlias` type.
+This article describes `[type]IconifyAlias` type.
 
 ## IconifyAlias type {#iconify-alias}
 

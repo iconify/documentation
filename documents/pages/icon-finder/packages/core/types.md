@@ -5,7 +5,7 @@ classes:
   Registry: ./registry.md
   Router: ./router.md
 types:
-  IconifyInfo: ../../../types/iconify-json-metadata.md#iconify-info
+  IconifyInfo: ../../../types/iconify-info.md
   RouterEvent: ./render.md#router-event
 ```
 
@@ -98,7 +98,7 @@ This type is used to show information about an icon set.
 
 It extends type `[type]IconifyInfo` from `[npm]@iconify/types` package.
 
-`include types/iconify-info`
+See `[type]IconifyInfo` for details.
 
 `include types/collection-info`
 

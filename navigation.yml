@@ -328,6 +328,9 @@
             ./validate-icon-set.html: validateIconSet()
             ./get-icons.html: getIcons()
             ./get-icon-data.html: getIconData()
+            ./minify-icon-set.html: minifyIconSet()
+            ./expand-icon-set.html: expandIconSet()
+            ./convert-info.html: convertIconSetInfo()
         ./json/:
           title: Iconify JSON Tools
           children:
@@ -343,3 +346,4 @@
           children:
             ./iconify-json-metadata.html: Metadata
         ./iconify-alias.html: IconifyAlias
+        ./iconify-info.html: IconifyInfo

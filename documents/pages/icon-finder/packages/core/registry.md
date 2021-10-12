@@ -5,7 +5,6 @@ classes:
   Router: ./router.md
 types:
   CollectionInfo: ./types.md#collection-info
-  IconifyInfo: ../../../types/iconify-json-metadata.md#iconify-info
   RouterEvent: ./render.md#router-event
 ```
 

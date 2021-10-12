@@ -11,14 +11,14 @@ All Iconify libraries share common object structures. They are described as type
 
 For description of types and short explanation of TypeScript see [types documentation](./index.md).
 
-This article explains `[type]IconifyIcon` type.
+This article describes `[type]IconifyIcon` type.
 
 ## Structure
 
 Type `[type]IconifyIcon` is a simple object. It has two parts:
 
-- `[type]IconifyOptional` that describes all optional properties.
-- `[prop]body` property that contains icon body. Type is `[type]string`.
+- `[prop]body`, `[type]string` contains icon content, mandatory.
+- Optional `[type]IconifyOptional` properties that contain icon dimensions and transformations.
 
 Example of a basic icon:
 
@@ -36,6 +36,7 @@ Why not store entire `[tag]svg`? Because:
 
 - Contents can be manipulated, such as rotating or flipping an icon. This is much easier to do when there is no need to strip `[tag]svg` tag.
 - It gives components full control over `[tag]svg` tag, allowing addition/removal of custom attributes.
+- Makes it easy to use in various frameworks (such as React, Vue, Svelte), where `[tag]svg` element is created using framework's native code and content is set as its property.
 
 What if you need to set custom attributes to `[tag]svg`? You shouldn't need to do that. Components should have full control over `[tag]svg`, setting all events, ids, titles, customizing `[attr]viewBox`, appending additional shapes. If you want to set something like `[attr]fill` or `[attr]stroke`, wrap contents in `[tag]g` tag with those attributes.
 

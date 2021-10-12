@@ -4,6 +4,7 @@ types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
   IconifyJSON: './iconify-json.md'
+  IconifyInfo: './iconify-info.md'
 ```
 
 # Iconify types
@@ -53,3 +54,5 @@ Type `[type]IconifyJSON` is used for representing an entire icon set. It stores 
 ## Additional types
 
 Type `[type]IconifyAlias` is used for icon aliases.
+
+Type `[type]IconifyInfo` is used for icon set information.

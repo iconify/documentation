@@ -3,7 +3,7 @@ title: getIconData() in Iconify Utils
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
-  FullIconifyIcon: '../../types/iconify-icon.md'
+  FullIconifyIcon: './full-iconify-icon.md'
 ```
 
 # getIconData()

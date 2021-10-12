@@ -5,6 +5,7 @@ classes:
   Registry: ./registry.md
   Router: ./routes.md
 types:
+  IconifyInfo: ../../../types/iconify-info.md
   Icon: ./types.md#icon
   CollectionInfo: ./types.md#collection-info
   CollectionsFilterBlock: '#collections-filter'
@@ -84,7 +85,7 @@ Example of collections list data:
 
 Icon set information, if available, is stored in `[prop]info` object.
 
-`include types/iconify-info`
+See `[type]IconifyInfo` for details.
 
 `include types/collection-info`
 

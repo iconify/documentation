@@ -5,7 +5,7 @@ classes:
   Router: ./router.md
 types:
   CollectionInfo: ./types.md#collection-info
-  IconifyInfo: ../../../types/iconify-json-metadata.md#iconify-info
+  IconifyInfo: ../../../types/iconify-info.md
 ```
 
 # IconFinderCore class in Iconify Icon Finder

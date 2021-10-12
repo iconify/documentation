@@ -4,6 +4,7 @@ types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
   IconifyJSON: './iconify-json.md'
+  IconifyInfo: './iconify-info.md'
 ```
 
 # IconifyJSON metadata
@@ -19,7 +20,7 @@ types:
 
 Information is stored in `[prop]info` object.
 
-`include types/iconify-info`
+See `[type]IconifyInfo` documentation.
 
 ## Categories {#iconify-categories}
 
