@@ -13,6 +13,7 @@ functions:
   minifyIconSet: './minify-icon-set.md'
   expandIconSet: './expand-icon-set.md'
   convertIconSetInfo: './convert-info.md'
+  parseIconSet: './parse-icon-set.md'
 ```
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:

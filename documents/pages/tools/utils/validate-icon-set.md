@@ -22,7 +22,7 @@ Function has the following parameters:
 - `[prop]data`, `[type]object`. Data to validate.
 - `[prop]options`, `[type]object`. Optional options object.
 
-### Options
+### Options {#options}
 
 Options object has the following properties:
 

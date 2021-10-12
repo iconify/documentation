@@ -331,6 +331,7 @@
             ./minify-icon-set.html: minifyIconSet()
             ./expand-icon-set.html: expandIconSet()
             ./convert-info.html: convertIconSetInfo()
+            ./parse-icon-set.html: parseIconSet()
         ./json/:
           title: Iconify JSON Tools
           children:
