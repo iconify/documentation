@@ -344,11 +344,14 @@
               clickable: false
             ./merge-customisations.html: mergeCustomisations()
             ./defaults.html: defaults
+            ./compare.html: compare()
             ./functions.html#svg:
               title: SVG
               separator: true
               clickable: false
             ./icon-to-svg.html: iconToSVG()
+            ./calculate-size.html: calculateSize()
+            ./replace-ids.html: replaceIDs()
             ./functions.html#icon-name:
               title: Icon Name
               separator: true
