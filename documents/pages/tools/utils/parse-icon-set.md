@@ -6,7 +6,7 @@ types:
   IconSetValidationOptions: './validate-icon-set.md#options'
 ```
 
-# getIconData()
+# parseIconSet()
 
 This function is part of [Iconify Utils package](./index.md).
 

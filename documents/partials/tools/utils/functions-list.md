@@ -16,6 +16,8 @@ functions:
   parseIconSet: './parse-icon-set.md'
   mergeIconData: './merge-icon-data.md'
   fullIcon: './full-icon.md'
+  mergeCustomisations: './merge-customisations.md'
+  iconToSVG: './icon-to-svg.md'
   matchName: './match-name.md'
   stringToIcon: './string-to-icon.md'
   validateIcon: './validate-icon.md'
@@ -37,9 +39,9 @@ Functions for working with `[type]IconifyIcon` format that represents one icon:
 
 When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconifyIconCustomisations` type. Functions for working with customisations:
 
-- `[prop]defaults` exported from `[file]lib/customisations` contains default customisations.
 - `[func]mergeCustomisations(defaults, custom)` function converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
 - `[func]compare(item1, item2)` exported from `[file]lib/customisations/compare` compares customisation objects.
+- `[prop]defaults` exported from `[file]lib/customisations` contains default customisations.
 - `[func]toBoolean(name, value, defaultValue)` converts various strings to boolean. Used by icon components to clean up parameters that can be boolean or string.
 - `[func]rotateFromString(value)` converts various methods of rotating icon (such as `[str]90deg` or `[str]25%`) to a number.
 - `[func]flipFromString(customisations, value)` applies flip string (such as `[attr]flip="horizontal,vertical"`) to customisations.

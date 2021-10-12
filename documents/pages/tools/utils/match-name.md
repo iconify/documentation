@@ -8,7 +8,7 @@ functions:
 
 # matchName
 
-This function is part of [Iconify Utils package](./index.md).
+This constant is part of [Iconify Utils package](./index.md).
 
 Constant `[func]matchName` is used to validate all parts of icon name.
 

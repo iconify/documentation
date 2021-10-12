@@ -1,16 +1,16 @@
 ```yaml
-title: stringToIcon() in Iconify Utils
+title: mergeCustomisations() in Iconify Utils
 types:
-  IconifyIconName: './icon-name.md'
+  FullIconCustomisations: './icon-customisations.md'
 functions:
   validateIcon: './validate-icon.md'
 ```
 
-# stringToIcon()
+# mergeCustomisations()
 
 This function is part of [Iconify Utils package](./index.md).
 
-Function `[func]stringToIcon()` converts icon name string to `[type]IconifyIconName` object.
+Function `[func]mergeCustomisations()` converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
 
 ## Usage
 

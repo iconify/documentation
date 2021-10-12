@@ -2,6 +2,11 @@
 title: IconifyIconCustomisations Type
 standalone: true
 navigation: './index.md'
+types:
+  IconifyIconSize: './icon-customisations.md#icon-size'
+functions:
+  defaults: './defaults.md'
+  iconToSVG: './icon-to-svg.md'
 ```
 
 # IconifyIconCustomisations type
@@ -10,76 +15,65 @@ navigation: './index.md'
 
 You can find this type in `[file]src/customisations/index.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/master/packages/utils).
 
-Type is an object, with the following optional properties:
+Type is an object, with the following properties, split into groups:
 
-- `[prop]inline` true if generated icon should have negative `[prop]verticalAlign`.
+## Display mode
 
-## RGB
+Display mode has only one property:
 
-RGB color, usually converted from hexadecimal color like `[str]#ff8080`, color keyword `[str]red` or RGBA color like `[str]rgba(255, 128, 128, 0.5)`.
+- `[prop]inline`, `[type]boolean`. `true` if generated icon should have negative `[prop]verticalAlign`.
 
-It has the following properties:
+Adding `[str]verticalAlign: -0.125em` makes icon aligned below baseline, so it behaves like an icon font glyph instead of image.
 
-- `[prop]type` = `[str]rgb`.
-- `[prop]r`, `[prop]g`, `[prop]b` red, green and blue color components (0 - 255).
-- `[prop]alpha` alpha (0 - 1).
+## Dimensions {#icon-size}
 
-## HSL
+Icon dimensions have 2 properties:
 
-HSL color, usually converted from HSL or HSLA color like `[str]hsla(90, 50%, 50%, 0.5)`.
+- `[prop]width`, `[type]IconifyIconSize` icon width.
+- `[prop]height`, `[type]IconifyIconSize` icon height.
 
-It has the following properties:
+Type `[type]IconifyIconSize` is alias for `[type]null | string | number`. Possible values are:
 
-- `[prop]type` = `[str]hsl`.
-- `[prop]h` hue that can be any number, but usually is in 0 - 360 range.
-- `[prop]s`, `[prop]l` saturation and lightness components (0 - 100).
-- `[prop]alpha` alpha (0 - 1).
+- `[type]null` not set.
+- `[type]number` number in pixels.
+- `[type]string` number with units, such as `[str]1em`.
+- `[str]auto` is a special keyword, which sets dimension to value from icon's `[attr]viewBox`. So if icon has `[attr]viewBox="0 0 24 24"`, setting `[prop]width` to `[str]auto` sets it to `[num]24`.
 
-## LAB
+When calculating icon dimensions, setting one dimension (usually `[attr]height`) is enough. Another dimension will be automatically calculated using icon's proportions.
 
-Lab color, currently being implemented by browsers, is converted from color strings like `[str]lab(50% 50 50 / 1)`.
+If both `[prop]width` and `[prop]height` are not set (or `null`), by default `[prop]height` will be set to `[str]1em`.
 
-It has the following properties:
+## Alignment
 
-- `[prop]type` = `[str]lab`.
-- `[prop]l` lightness (0 - 100).
-- `[prop]a`, `[prop]b` are distances along `[prop]a` and `[prop]b` axis in Lab color space.
-- `[prop]alpha` alpha (0 - 1).
+Unlike other images, if you use incorrect proportions for icon dimensions, SVG does not stretch.
 
-## LCH
+So if you set both `[prop]width` and `[prop]height` with proportions that do not match icon's proportions, you can align icon using these properties:
 
-LCH color, currently being implemented by browsers, is converted from color strings like `[str]lch(50% 50 50 / 1)`.
+- `[prop]hAlign` is for horizontal alignment. Possible values are `[str]left`, `[str]center` (default), `[str]right`.
+- `[prop]vAlign` is for vertical alignment. Possible values are `[str]top`, `[str]middle` (default), `[str]bottom`.
+- `[prop]slice`, `[type]boolean` tells browser how to fill icon. If `true`, icon will be resized to fill entire area, slicing parts that do not fit. If `false` (default), icon will be resized to fit, adding extra space on sides.
 
-It has the following properties:
+## Transformations
 
-- `[prop]type` = `[str]lab`.
-- `[prop]l` lightness (0 - 100).
-- `[prop]c` chroma, usually in 0 - 230 range, but it can be higher.
-- `[prop]h` hue angle.
-- `[prop]alpha` alpha (0 - 1).
+Icon can be transformed. Transformations are done by rotating or flipping content inside SVG, these are not CSS transformations. Properties for transforming icon:
 
-## Keywords
+- `[prop]hFlip`, `[type]boolean`. Flips icon horizontally.
+- `[prop]vFlip`, `[type]boolean`. Flips icon vertically.
+- `[prop]rotate`, `[type]number`. Rotates icon in 90 degrees steps. `[num]1` is `[prop]90deg`, `[num]2` is `[prop]180deg`, `[num]3` is `[prop]270deg`. Rotation is limited only to these angles because these angles guarantee that icon content does not go beyond `[prop]viewBox` boundaries. If you want to rotate using different angle, use CSS rotation that rotates an entire icon with bounding box.
 
-Several keywords have their own types that represent special colors.
+## FullIconifyIconCustomisations type
 
-They exist because functions for parsing colors can be used for cleaning up and parsing various icons, where finding values like `[str]currentColor` and `[str]none` could be important.
+Type `[type]FullIconifyIconCustomisations` is the same as `[type]IconifyIconCustomisations`, but all properties are required.
 
-### Transparent
+Use `[func]default` constant to get all default values and merged it with your values:
 
-Transparent color has special type with only one property:
+```ts
+import { defaults } from '@iconify/utils/lib/customisations';
 
-- `[prop]type` = `[str]transparent`.
+const fullCustomisations = {
+	...defaults,
+	hFlip: true,
+};
+```
 
-When converting transparent colors like `[str]rgba(0, 0, 0, 0)`, convertion function will return `[prop]transparent` type, making it easier to compare various colors.
-
-### None
-
-`[str]none` also has special type with only one property:
-
-- `[prop]type` = `[str]none`.
-
-### CurrentColor
-
-`[str]currentColor` also has special type with only one property:
-
-- `[prop]type` = `[str]current`.
+Then result can be used with `[func]iconToSVG()` function.
