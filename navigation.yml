@@ -332,6 +332,19 @@
             ./expand-icon-set.html: expandIconSet()
             ./convert-info.html: convertIconSetInfo()
             ./parse-icon-set.html: parseIconSet()
+            ./functions.html#icon:
+              title: Icon
+              separator: true
+              clickable: false
+            ./merge-icon-data.html: mergeIconData()
+            ./full-icon.html: fullIcon()
+            ./functions.html#icon-name:
+              title: Icon Name
+              separator: true
+              clickable: false
+            ./match-name.html: matchName
+            ./string-to-icon.html: stringToIcon()
+            ./validate-icon.html: validateIcon()
         ./json/:
           title: Iconify JSON Tools
           children:

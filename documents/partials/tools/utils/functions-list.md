@@ -14,6 +14,11 @@ functions:
   expandIconSet: './expand-icon-set.md'
   convertIconSetInfo: './convert-info.md'
   parseIconSet: './parse-icon-set.md'
+  mergeIconData: './merge-icon-data.md'
+  fullIcon: './full-icon.md'
+  matchName: './match-name.md'
+  stringToIcon: './string-to-icon.md'
+  validateIcon: './validate-icon.md'
 ```
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:
@@ -24,13 +29,11 @@ Icon sets are stored in `[type]IconifyJSON` format. Functions for working with i
 - `[func]expandIconSet(data)` is the opposite of function above.
 - `[func]convertIconSetInfo(data)` converts legacy icon set format to correct `[type]IconifyInfo` type.
 - `[func]parseIconSet(data, callback)` parses icon set, calling `[attr]callback` function for every icon. Can be used to extract all icons from icon set.
-  type or throw error.
 
 Functions for working with `[type]IconifyIcon` format that represents one icon:
 
 - `[func]mergeIconData(icon, alias)` merges data for icon and alias. Used by functions that extract icon data from icon set.
 - `[func]fullIcon(data)` adds optional properties to `[type]IconifyIcon` object, converting it to `[type]FullIconifyIcon`.
-- `[prop]matchName` constant is a regular expression to test parts of icon name.
 
 When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconifyIconCustomisations` type. Functions for working with customisations:
 
@@ -48,8 +51,9 @@ Functions for rendering icon:
 - `[func]calculateSize(size, ratio)` calculates icon dimensions. It is used when building icons using `[func]iconToSVG()`.
 - `[func]replaceIDs(content)` replaces IDs in SVG with unique IDs. IDs used in elements like masks and they must be unique, so multiple icons displayed on the same page using same IDs will result in chaos. This function prevents that chaos.
 
-Helper functions:
+Functions for working with icon names:
 
+- `[func]matchName` constant is a regular expression to test parts of icon name.
 - `[func]stringToIcon(value)` converts icon name, such as `[str]mdi-light:home` into an `[type]IconifyIconName` object and optionally validates it.
 - `[func]validateIcon(icon)` validates `[type]IconifyIconName` object.
 

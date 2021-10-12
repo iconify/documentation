@@ -4,6 +4,8 @@ standalone: true
 navigation: './index.md'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
+functions:
+  fullIcon: './full-icon.md'
 ```
 
 # FullIconifyIcon type
@@ -36,3 +38,7 @@ See `[type]IconifyIcon` type for details.
 	"hFlip": false
 }
 ```
+
+## Usage
+
+To convert `[type]IconifyIcon` to `[type]FullIconifyIcon`, use function `[func]fullIcon()`.
