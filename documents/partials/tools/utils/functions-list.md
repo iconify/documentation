@@ -6,6 +6,9 @@ types:
   IconifyInfo: '../../types/iconify-info.md'
   FullIconifyIcon: './full-iconify-icon.md'
   IconifyIconName: './icon-name.md'
+  Color: './color.md'
+  FullIconCustomisations: './icon-customisations.md'
+  IconCustomisations: './icon-customisations.md'
 functions:
   validateIconSet: './validate-icon-set.md'
   getIcons: './get-icons.md'
@@ -29,6 +32,9 @@ functions:
   matchName: './match-name.md'
   stringToIcon: './string-to-icon.md'
   validateIcon: './validate-icon.md'
+  stringToColor: './string-to-color.md'
+  compareColors: './compare-colors.md'
+  colorToString: './color-to-string.md'
 ```
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:
@@ -45,7 +51,7 @@ Functions for working with `[type]IconifyIcon` format that represents one icon:
 - `[func]mergeIconData(icon, alias)` merges data for icon and alias. Used by functions that extract icon data from icon set.
 - `[func]fullIcon(data)` adds optional properties to `[type]IconifyIcon` object, converting it to `[type]FullIconifyIcon`.
 
-When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconifyIconCustomisations` type. Functions for working with customisations:
+When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconCustomisations` type. Functions for working with customisations:
 
 - `[func]mergeCustomisations(defaults, custom)` function converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
 - `[func]compare(item1, item2)` exported from `[file]lib/customisations/compare` compares customisation objects.

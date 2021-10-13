@@ -319,7 +319,6 @@
                 ./bundle.html: Icons Bundle
         ./utils/:
           title: Iconify Utils
-          wip: true
           children:
             ./functions.html:
               title: Icon Sets
@@ -363,6 +362,13 @@
             ./match-name.html: matchName
             ./string-to-icon.html: stringToIcon()
             ./validate-icon.html: validateIcon()
+            ./functions.html#colors:
+              title: Colors
+              separator: true
+              clickable: false
+            ./string-to-color.html: stringToColor()
+            ./compare-colors.html: compareColors()
+            ./color-to-string.html: colorToString()
         ./json/:
           title: Iconify JSON Tools
           children:

@@ -62,7 +62,7 @@ Several keywords have their own types that represent special colors.
 
 They exist because functions for parsing colors can be used for cleaning up and parsing various icons, where finding values like `[str]currentColor` and `[str]none` could be important.
 
-### Transparent
+### transparent
 
 Transparent color has special type with only one property:
 
@@ -70,14 +70,18 @@ Transparent color has special type with only one property:
 
 When converting transparent colors like `[str]rgba(0, 0, 0, 0)`, convertion function will return `[prop]transparent` type, making it easier to compare various colors.
 
-### None
+### none
 
 `[str]none` also has special type with only one property:
 
 - `[prop]type` = `[str]none`.
 
-### CurrentColor
+### currentColor
 
 `[str]currentColor` also has special type with only one property:
 
 - `[prop]type` = `[str]current`.
+
+## Other colors
+
+This type is meant for parsing colors in SVG, not full color parsing, so it is limited only to simple colors and keywords that are important when parsing icons.

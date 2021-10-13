@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify Utils
-wip: true
 ```
 
 # Iconify Utils
