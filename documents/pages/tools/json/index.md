@@ -4,6 +4,8 @@ title: Iconify JSON Tools
 
 # Iconify JSON Tools
 
+`include notices/json-tools`
+
 Iconify JSON Tools is a lightweight library for working with icon sets in Iconify JSON format.
 
 Library is available in 2 languages: JavaScript that runs in Node.js environment and PHP.

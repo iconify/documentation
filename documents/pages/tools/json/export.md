@@ -4,6 +4,8 @@ title: Exporting icons with Iconify JSON Tools
 
 # Exporting icons with Iconify JSON Tools
 
+`include notices/json-tools`
+
 Iconify JSON Tools is a library for manipulating JSON icon sets. The library is available for PHP and Node.js, code in both versions is almost identical. See [Iconify JSON Tools documentation](./index.md).
 
 This document shows how to export JSON icon set to individual SVG files.

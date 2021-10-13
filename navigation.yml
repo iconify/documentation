@@ -371,6 +371,7 @@
             ./color-to-string.html: colorToString()
         ./json/:
           title: Iconify JSON Tools
+          hidden: true
           children:
             ./collection.html: Collection Class
             ./svg.html: SVG Class

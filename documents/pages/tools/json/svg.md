@@ -4,6 +4,8 @@ title: SVG class in Iconify JSON Tools
 
 # SVG class in Iconify JSON Tools
 
+`include notices/json-tools`
+
 Iconify JSON Tools is a lightweight library for working with icon sets in Iconify JSON format. See [Iconify JSON Tools documentation](./index.md).
 
 SVG class represents an icon.
