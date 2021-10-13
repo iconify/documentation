@@ -32,6 +32,10 @@
 	"svelte": {
 		"import": "@iconify/svelte"
 	},
+	"tools": {
+		"import-tools1": "@iconify/tools",
+		"import-tools2": "@iconify/tools@next"
+	},
 	"counters": {
 		"sets": "100",
 		"icons": "100,000",

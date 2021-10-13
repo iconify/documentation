@@ -317,6 +317,13 @@
                 ./import-fa-pro.html: FontAwesome Pro
                 ./import-font.html: Import Icon Font
                 ./bundle.html: Icons Bundle
+        ./tools2/:
+          title: Iconify Tools 2
+          hidden: true
+          wip: true
+          children:
+            ./svg.html: SVG Class
+            ./icon-set/: IconSet Class
         ./utils/:
           title: Iconify Utils
           children:

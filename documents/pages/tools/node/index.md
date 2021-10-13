@@ -1,5 +1,8 @@
 ```yaml
 title: Iconify Tools
+replacements:
+  - code: '@iconify/tools@2'
+    value: '${tools.import-tools1}'
 ```
 
 # Iconify Tools
