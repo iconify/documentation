@@ -11,8 +11,17 @@ types:
   IconCustomisations: '../utils/icon-customisations.md'
   SVG: './svg.md'
   IconSet: './icon-set/index.md'
+functions:
+  mergeIconSets: './icon-set/merge.md'
 ```
 
-All functions either work with `[type]SVG` instances of icon set.
+In Iconify Tools there are 2 main classes:
 
-...TODO
+- `[type]SVG` represents one icon. This class is used when icon's elements need to be manipulated.
+- `[type]IconSet` represents an icon set with easy to use functions for managing icons.
+
+Everything else is done by separate functions that work with either `[type]SVG` or `[type]IconSet`.
+
+Functions for working with icon sets:
+
+- `[func]mergeIconSets(oldIcons, newIcons)` merges two icon sets. This is used to update icon sets that are imported from some source: import icon set first, then merge it with old data to make sure old icons are still available (but hidden).

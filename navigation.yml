@@ -323,7 +323,10 @@
           wip: true
           children:
             ./svg.html: SVG Class
-            ./icon-set/: IconSet Class
+            ./icon-set/:
+              title: IconSet Class
+              children:
+                ./merge.html: Merge Icon Sets
         ./utils/:
           title: Iconify Utils
           children:
