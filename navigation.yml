@@ -345,6 +345,10 @@
             ./merge-customisations.html: mergeCustomisations()
             ./defaults.html: defaults
             ./compare.html: compare()
+            ./to-boolean.html: toBoolean()
+            ./rotate-from-string.html: rotateFromString()
+            ./flip-from-string.html: flipFromString()
+            ./alignment-from-string.html: alignmentFromString()
             ./functions.html#svg:
               title: SVG
               separator: true
