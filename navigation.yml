@@ -337,7 +337,10 @@
                 ./to-svg.html: toSVG()
                 ./export.html: export()
                 ./chars.html: chars()
+                ./count.html: count()
+                ./list-category.html: listCategory()
                 ./from-svg.html: fromSVG()
+                ./toggle-category.html: toggleCategory()
                 ./toggle-character.html: toggleCharacter()
                 ./functions.html#actions:
                   title: Actions

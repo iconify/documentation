@@ -34,7 +34,7 @@
 	},
 	"tools": {
 		"import-tools1": "@iconify/tools",
-		"import-tools2": "@iconify/tools@next"
+		"import-tools2": "@iconify/tools@dev"
 	},
 	"counters": {
 		"sets": "100",

@@ -20,6 +20,9 @@ functions:
   toSVG: './to-svg.md'
   export: './export.md'
   chars: './chars.md'
+  count: './count.md'
+  listCategory: './list-category.md'
+  toggleCategory: './toggle-category.md'
   fromSVG: './from-svg.md'
   toggleCharacter: './toggle-character.md'
 ```
