@@ -4,7 +4,7 @@ standalone: true
 navigation: './index.md'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
-  FullIconifyIcon: './full-iconify-icon.md'
+  FullIconifyIcon: '../utils/full-iconify-icon.md'
   IconSet: './icon-set/index.md'
 ```
 

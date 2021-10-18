@@ -326,6 +326,23 @@
             ./icon-set/:
               title: IconSet Class
               children:
+                ./functions.html:
+                  title: Methods
+                  separator: true
+                  clickable: false
+                ./load.html: load()
+                ./list.html: list()
+                ./resolve.html: resolve()
+                ./to-string.html: toString()
+                ./to-svg.html: toSVG()
+                ./export.html: export()
+                ./chars.html: chars()
+                ./from-svg.html: fromSVG()
+                ./toggle-character.html: toggleCharacter()
+                ./functions.html#actions:
+                  title: Actions
+                  separator: true
+                  clickable: false
                 ./merge.html: Merge Icon Sets
         ./utils/:
           title: Iconify Utils

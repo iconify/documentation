@@ -51,7 +51,7 @@ export function checkLinkables(
 
 	function checkItem($child: cheerio.Cheerio, content: string): boolean {
 		const item = content.split('(').shift()!;
-		if (items[item] !== void 0) {
+		if (typeof items[item] === 'string') {
 			const target = buildLink(items[item]);
 			$child.wrap(
 				'<a href="' +
