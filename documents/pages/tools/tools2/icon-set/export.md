@@ -13,7 +13,9 @@ Function `[func]export()` exports icon set as `[type]IconifyJSON` object.
 
 ## Usage
 
-Function has no parameters.
+Function has the following parameters:
+
+- `[prop]validate`, `[type]boolean`. Optional. If enabled, icons will be validated before export.
 
 Function returns `[type]IconifyJSON` object.
 

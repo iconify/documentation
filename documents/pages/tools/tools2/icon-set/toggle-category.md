@@ -3,6 +3,9 @@ title: Assign category to icons in icon set
 types:
   IconSet: './index.md'
   IconifyJSON: '../../../types/iconify-json.md'
+  IconCategory: './categories.md'
+functions:
+  categories: './categories.md'
 ```
 
 # toggleCategory()

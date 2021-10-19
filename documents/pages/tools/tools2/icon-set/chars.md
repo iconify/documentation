@@ -16,7 +16,9 @@ Function `[func]chars()` exports characters map. Function is used by `[func]expo
 
 ## Usage
 
-Function has no parameters.
+Function has one parameter:
+
+- `[prop]names`, `[type]string[]`. Optional. List of icons to check.
 
 Function returns a simple `[type]Record<string, string>` object. Key is character, in hexadecimal form (such as `[str]u1f3cc`), value is name of icon.
 

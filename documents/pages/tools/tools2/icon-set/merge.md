@@ -1,5 +1,5 @@
 ```yaml
-title: mergeIconSets() in Iconify Tools
+title: Merge icon sets with Iconify Tools
 types:
   IconSet: './index.md'
 ```

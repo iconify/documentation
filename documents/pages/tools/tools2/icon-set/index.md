@@ -44,18 +44,6 @@ const iconSet = blankIconSet('some-prefix');
 
 Constructor does not validate icon set. If you are not sure about source, you need to validate it using `[func]validateIconSet()` from [Iconify Utils](../../utils/index.md).
 
-## Properties
-
-`[type]IconSet` instance has several properties. Properties that you can change directly:
-
-- `[prop]prefix`, `[type]string`. Icon set prefix.
-- `[prop]info`, `[type]IconifyInfo`. Icon set information.
-
-Properties that use internal types, which you can change directly if you want to, but there are methods for working with this data:
-
-- `[prop]entries` contains data for all icons and aliases. Use functinos like `[func]setIcon()`, `[func]remove()`, `[func]rename()`
-- `[prop]categories` contains data for categories.
-
-## Methods
+## Functions
 
 `include tools/tools2/icon-set/methods-list`

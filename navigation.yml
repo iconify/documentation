@@ -326,27 +326,48 @@
             ./icon-set/:
               title: IconSet Class
               children:
-                ./functions.html:
-                  title: Methods
+                ./functions.html#icons:
+                  title: Icons
                   separator: true
                   clickable: false
-                ./load.html: load()
                 ./list.html: list()
-                ./resolve.html: resolve()
-                ./to-string.html: toString()
-                ./to-svg.html: toSVG()
-                ./export.html: export()
-                ./chars.html: chars()
+                ./exists.html: exists()
                 ./count.html: count()
-                ./list-category.html: listCategory()
-                ./from-svg.html: fromSVG()
-                ./toggle-category.html: toggleCategory()
-                ./toggle-character.html: toggleCharacter()
-                ./functions.html#actions:
-                  title: Actions
+                ./remove.html: remove()
+                ./rename.html: rename()
+                ./set-item.html: setItem()
+                ./set-icon.html: setIcon()
+                ./set-variation.html: setVariation()
+                ./set-alias.html: setAlias()
+                ./entries.html: entries
+                ./functions.html#import:
+                  title: Importing/Exporting
                   separator: true
                   clickable: false
-                ./merge.html: Merge Icon Sets
+                ./prefix.html: prefix
+                ./resolve.html: resolve()
+                ./load.html: load()
+                ./export.html: export()
+                ./to-svg.html: toSVG()
+                ./from-svg.html: fromSVG()
+                ./to-string.html: toString()
+                ./functions.html#metadata:
+                  title: Metadata
+                  separator: true
+                  clickable: false
+                ./info.html: info
+                ./chars.html: chars()
+                ./toggle-character.html: toggleCharacter()
+                ./list-category.html: listCategory()
+                ./toggle-category.html: toggleCategory()
+                ./categories.html: categories
+                ./check-theme.html: checkTheme()
+                ./themes.html: suffixes/prefixes
+                ./functions.html#other:
+                  title: Other
+                  separator: true
+                  clickable: false
+                ./merge.html: mergeIconSets()
         ./utils/:
           title: Iconify Utils
           children:

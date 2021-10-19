@@ -1,5 +1,7 @@
 ```yaml
 title: IconSet Functions
+standalone: true
+navigation: './index.md'
 types:
   IconSet: './index.md'
 ```

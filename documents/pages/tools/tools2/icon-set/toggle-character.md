@@ -5,6 +5,7 @@ types:
   IconifyJSON: '../../../types/iconify-json.md'
 functions:
   chars: './chars.md'
+  entries: './entries.md'
 ```
 
 # toggleCharacter()
@@ -43,7 +44,7 @@ if (item?.type !== 'alias') {
 }
 ```
 
-It is safe to modify characters directly in `[prop]entries` property.
+It is safe to modify characters directly in `[func]entries` property.
 
 ## Example
 

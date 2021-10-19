@@ -3,6 +3,8 @@ title: List icons in icon set
 types:
   IconifyJSON: '../../../types/iconify-json.md'
   IconSet: './index.md'
+functions:
+  mergeIconSets: './merge.md'
 ```
 
 # list()
