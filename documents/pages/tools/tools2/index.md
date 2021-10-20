@@ -13,7 +13,7 @@ types:
   Color: '../utils/color.md'
   FullIconCustomisations: '../utils/icon-customisations.md'
   IconCustomisations: '../utils/icon-customisations.md'
-  SVG: './svg.md'
+  SVG: './svg/index.md'
   IconSet: './icon-set/index.md'
 functions:
   mergeIconSets: './icon-set/merge.md'

@@ -2,7 +2,7 @@
 title: Remove icon from icon set
 types:
   IconSet: './index.md'
-  SVG: '../svg.md'
+  SVG: '../svg/index.md'
 ```
 
 # remove()

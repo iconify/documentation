@@ -5,6 +5,7 @@ types:
   IconifyInfo: '../../../types/iconify-info.md'
 functions:
   validateIconSet: '../../utils/validate-icon-set.md'
+  forEach: './for-each.md'
 ```
 
 # IconSet class
@@ -47,3 +48,13 @@ Constructor does not validate icon set. If you are not sure about source, you ne
 ## Functions
 
 `include tools/tools2/icon-set/methods-list`
+
+## Working with icons
+
+All icon optimisation and parsing functions work with `[type]SVG` instances. How to apply those functions to an entire icon set?
+
+It can be done by icons using `[func]forEach()` method:
+
+```yaml
+src: tools/tools2/icon/icon-set.ts
+```

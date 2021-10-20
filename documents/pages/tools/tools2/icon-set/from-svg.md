@@ -2,7 +2,7 @@
 title: Import icon from SVG to icon set
 types:
   IconSet: './index.md'
-  SVG: '../svg.md'
+  SVG: '../svg/index.md'
 ```
 
 # fromSVG()

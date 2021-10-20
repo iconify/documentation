@@ -322,7 +322,7 @@
           hidden: true
           wip: true
           children:
-            ./svg.html: SVG Class
+            ./svg/: SVG Class
             ./icon-set/:
               title: IconSet Class
               children:
@@ -331,6 +331,7 @@
                   separator: true
                   clickable: false
                 ./list.html: list()
+                ./for-each.html: forEach()
                 ./exists.html: exists()
                 ./count.html: count()
                 ./remove.html: remove()
@@ -368,6 +369,11 @@
                   separator: true
                   clickable: false
                 ./merge.html: mergeIconSets()
+            ./icon/cleanup.html: Cleanup/Validation
+            ./icon/:
+              title: Icon Manipulation
+              children:
+                ./svgo.html: runSVGO()
         ./utils/:
           title: Iconify Utils
           children:

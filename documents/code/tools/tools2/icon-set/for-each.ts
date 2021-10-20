@@ -27,32 +27,34 @@ const iconSet = new IconSet({
 	},
 });
 
-// List icons and variations
-// [ 'add', 'debug-pause', 'triangle-left', 'triangle-right' ]
-console.log(iconSet.list());
+// Synchronous example: renaming all icons
+console.log('Starting synchronous forEach()');
+iconSet.forEach((name) => {
+	iconSet.rename(name, 'renamed-' + name);
+	console.log(`Renaming: ${name}`);
+});
+console.log('Completed synchronous forEach()');
 
-// List everything
-// [ 'add', 'debug-pause', 'triangle-left', 'plus', 'triangle-right' ]
-console.log(iconSet.list(['icon', 'variation', 'alias']));
-
-// Icons only
-// [ 'add', 'debug-pause', 'triangle-left' ]
-console.log(iconSet.list(['icon']));
-
-// Function can also be used to parse all icons in icon set
+// Async example: cleaning up icons.
+// Wrap code in anonymous async function for asynchronous use case.
+console.log('Starting async forEach()');
 (async () => {
-	const icons = iconSet.list();
-	for (let i = 0; i < icons.length; i++) {
-		const name = icons[i];
+	await iconSet.forEach(async (name, type) => {
+		if (type !== 'icon') {
+			// Ignore aliases and variations: they inherit content from parent icon, so there is nothing to change
+			return;
+		}
+
 		const svg = iconSet.toSVG(name);
 		if (svg) {
 			// Clean up icon
+			console.log(`Cleaning up: ${name}`);
 			try {
 				await cleanupSVG(svg);
 			} catch (err) {
 				// Something went wrong: remove icon
 				iconSet.remove(name);
-				continue;
+				return;
 			}
 
 			// Change colors to red
@@ -68,8 +70,11 @@ console.log(iconSet.list(['icon']));
 			// Update code
 			iconSet.fromSVG(name, svg);
 		}
-	}
+	});
 
-	// Export updated icon set
-	console.log(iconSet.export());
+	console.log('Completed async forEach()');
 })();
+
+console.log(
+	'End of code... (this code is executed before icons are cleaned up, this is why async anonymous function is needed)'
+);

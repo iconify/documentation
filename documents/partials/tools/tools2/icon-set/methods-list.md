@@ -9,10 +9,11 @@ types:
   Color: '../../utils/color.md'
   FullIconCustomisations: '../../utils/icon-customisations.md'
   IconCustomisations: '../../utils/icon-customisations.md'
-  SVG: '../svg.md'
+  SVG: '../svg/index.md'
   ResolvedIconifyIcon: '../iconify-icon.md'
 functions:
   list: './list.md'
+  forEach: './for-each.md'
   exists: './exists.md'
   count: './count.md'
   remove: './remove.md'
@@ -45,6 +46,7 @@ functions:
 Working with icons:
 
 - `[func]list()` lists all icons.
+- `[func]forEach()` runs callback for all icons. Supports asynchronous callbacks.
 - `[func]exists(name)` checks if icon exists.
 - `[func]count()` counts number of icons in icon set.
 - `[func]remove(name)` removes icon.

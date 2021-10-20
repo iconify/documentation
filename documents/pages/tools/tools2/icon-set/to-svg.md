@@ -2,7 +2,7 @@
 title: Export icon as SVG instance in icon set
 types:
   IconSet: './index.md'
-  SVG: '../svg.md'
+  SVG: '../svg/index.md'
 functions:
   fromSVG: './from-svg.md'
 ```

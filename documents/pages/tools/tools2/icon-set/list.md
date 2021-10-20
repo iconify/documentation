@@ -32,4 +32,7 @@ Function returns array of icon names `[type]string[]`.
 ```yaml
 src: tools/tools2/icon-set/list.ts
 title: 'example.ts'
+extra:
+  - src: tools/tools2/icon-set/list.json
+    title: 'Result of export():'
 ```
