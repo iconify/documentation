@@ -1,6 +1,6 @@
 import { IconSet } from '@iconify/tools/lib/icon-set';
 import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
-import { parseColors, isKeywordColor } from '@iconify/tools/lib/colors/parse';
+import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
 
 const iconSet = new IconSet({
 	prefix: 'codicon',
@@ -61,7 +61,7 @@ console.log('Starting async forEach()');
 			await parseColors(svg, {
 				defaultColor: 'red',
 				callback: (attr, color) => {
-					return typeof color === 'string' || !isKeywordColor(color)
+					return typeof color === 'string' || isEmptyColor(color)
 						? color
 						: 'red';
 				},

@@ -21,13 +21,13 @@ SVG files might also contain scripts and links to external resources.
 
 To clean up and validate icon, run `[func]cleanupSVG()`.
 
-Clean up function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
-
 Function has only one parameter:
 
 - `[prop]svg`, `[type]SVG`. Icon instance.
 
 Function does not return anything, it applies changes to `[type]SVG` instance.
+
+Clean up function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
 
 On error function will throw an exception.
 

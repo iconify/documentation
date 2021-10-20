@@ -9,6 +9,7 @@ const idMatch = /^[a-z][a-z0-9-]*[a-z0-9]$/;
 function getIdFromString(text: string, filename: string): string {
 	let id = text
 		.toLowerCase()
+		.replace(/\(\)/g, '')
 		.replace(/[\?\!]/g, '')
 		.split(/[\s\/]+/)
 		.join('-');

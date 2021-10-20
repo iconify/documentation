@@ -374,6 +374,8 @@
               title: Icon Manipulation
               children:
                 ./svgo.html: runSVGO()
+                ./colors.html: parseColors()
+                ./paths.html: deOptimisePaths()
         ./utils/:
           title: Iconify Utils
           children:

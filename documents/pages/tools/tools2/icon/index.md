@@ -4,10 +4,12 @@ types:
   IconSet: '../icon-set/index.md'
   SVG: '../svg/index.md'
 functions:
-  cleanupSVG: './cleanup.md'
-  runSVGO: './svgo.md'
   list: '../icon-set/list.md'
   forEach: '../icon-set/for-each.md'
+  cleanupSVG: './cleanup.md'
+  runSVGO: './svgo.md'
+  parseColors: './colors.md'
+  deOptimisePaths: './paths.md'
 ```
 
 # Changing icon content
@@ -46,30 +48,32 @@ It can be done by using `[func]forEach()` method:
 src: tools/tools2/icon/icon-set.ts
 ```
 
-## Validating and cleaning up icon
+## Cleanup
 
-Unfortunately many editors leave lots of junk in SVG files, sometimes multiplying icon file size several times.
+Before running any icon manipulation function, you should validate and clean up icon. See `[func]cleanupSVG()` function.
 
-SVG files might also contain scripts and links to external resources.
+## Functions
 
-This is why after loading icon, it should be validated and cleaned up. See `[func]cleanupSVG()` function.
+There are several functions for manipulating icons:
 
-## Optimising icon
+### runSVGO()
 
-Cleanup process is very basic, it does bare minimum to get rid of bad stuff. However, icons often contain unnecessary or unused elements and attributes. To fix it, you can optimise icon.
+Function `[func]runSVGO()` optimises icon.
 
-To optimise icon run `[func]runSVGO()`.
+Cleaning up icons with `[func]cleanupSVG()` is not enough. That function is very basic, it does bare minimum to get rid of bad stuff.
 
-## Fixing palette
+Use `[func]runSVGO()` to properly clean up and optimise icons.
 
-Usually icons either do not have palette, relying on `[prop]fill` style or use black colors. Neither option is acceptable for using icons with Iconify.
+### parseColors()
 
-In Iconify all icons that do not have hardcoded palette should use `[prop]currentColor`.
+Function `[func]parseColors()` is used to analize icon's palette or change it.
 
-To fix palette run `[func]parseColors()`.
+Usually icons either do not have palette, relying on `[prop]fill` style or use black colors. Neither option is acceptable for using icons with Iconify. Iconify all icons that do not have hardcoded palette should use `[prop]currentColor`.
 
-## Supporting old software
+This function can be used to change colors, make sure icon does not have colors it is not supposed to have, add colors to shapes that rely on default colors.
+
+### deOptimisePaths()
+
+Function `[func]deOptimisePaths()` makes sure icon would work with old software.
 
 All browsers support modern SVG, which include compressed arcs in `[tag]path` elements. However, there is plenty of software that does not. Usually it is image editing software that rely on ancient SVG parsing libraries.
-
-Iconify Tools has function to de-optimise icons to make them compatible with old software: `[func]deOptimisePaths()`.

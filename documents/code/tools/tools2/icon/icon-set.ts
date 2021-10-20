@@ -11,7 +11,7 @@
 			await parseColors(svg, {
 				defaultColor: 'red',
 				callback: (attr, color) => {
-					return typeof color === 'string' || !isKeywordColor(color)
+					return typeof color === 'string' || isEmptyColor(color)
 						? color
 						: 'red';
 				},

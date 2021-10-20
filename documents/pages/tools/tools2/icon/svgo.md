@@ -13,12 +13,12 @@ Function `[func]runSVGO()` optimises icon using popular SVG optimisation tool SV
 
 ## Usage
 
-Function has only the following parameters:
+Function has the following parameters:
 
 - `[prop]svg`, `[type]SVG`. Icon instance.
 - `[prop]options`, `[type]object`. Options (optional).
 
-Function is asynchronous.
+Function is asynchronous. That means you need to handle it as `[class]Promise` instance, usually by adding `[js]await` before function call.
 
 ## Options
 

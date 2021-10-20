@@ -1,5 +1,5 @@
 import { blankIconSet } from '@iconify/tools/lib/icon-set';
-import { parseColors, isKeywordColor } from '@iconify/tools/lib/colors/parse';
+import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
 
 // Wrap in async anonymous function to allow 'await'
 (async () => {
@@ -23,8 +23,8 @@ import { parseColors, isKeywordColor } from '@iconify/tools/lib/colors/parse';
 		// Callback to change colors. Not called in this example because there are no colors in sample icon.
 		callback: (attr, color) => {
 			// typeof color === 'string' -> color cannot be parsed, return as is
-			// isKeywordColor(color) -> color is a keyword, such as 'none'
-			return typeof color === 'string' || isKeywordColor(color)
+			// isEmptyColor(color) -> color is empty: 'none' or 'transparent'
+			return typeof color === 'string' || isEmptyColor(color)
 				? color
 				: 'currentColor';
 		},
