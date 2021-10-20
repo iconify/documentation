@@ -376,6 +376,7 @@
                 ./svgo.html: runSVGO()
                 ./colors.html: parseColors()
                 ./paths.html: deOptimisePaths()
+                ./scale.html: scaleSVG()
         ./utils/:
           title: Iconify Utils
           children:

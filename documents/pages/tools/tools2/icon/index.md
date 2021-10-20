@@ -10,6 +10,7 @@ functions:
   runSVGO: './svgo.md'
   parseColors: './colors.md'
   deOptimisePaths: './paths.md'
+  scaleSVG: './scale.md'
 ```
 
 # Changing icon content
@@ -77,3 +78,7 @@ This function can be used to change colors, make sure icon does not have colors 
 Function `[func]deOptimisePaths()` makes sure icon would work with old software.
 
 All browsers support modern SVG, which include compressed arcs in `[tag]path` elements. However, there is plenty of software that does not. Usually it is image editing software that rely on ancient SVG parsing libraries.
+
+### scaleSVG()
+
+Function `[func]scaleSVG()` changes icon dimensions.
