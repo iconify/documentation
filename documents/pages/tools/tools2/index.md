@@ -17,6 +17,7 @@ types:
   IconSet: './icon-set/index.md'
 functions:
   mergeIconSets: './icon-set/merge.md'
+  setIcon: './icon-set/set-icon.md'
 ```
 
 # Iconify Tools
@@ -41,4 +42,8 @@ npm install @iconify/tools@2 --save
 
 To start working with icon set, you can either create blank icon set or import icon set from some source.
 
-...TODO, see `[type]IconSet` class.
+Documentation from importing icons:
+
+- [Importing Iconify JSON data](./import/json.md).
+- [Importing SVG](./import/svg.md).
+- [Importing all SVG in directory](./import/directory.md).

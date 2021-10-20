@@ -1,0 +1,63 @@
+```yaml
+title: Importing icons
+types:
+  IconSet: '../icon-set/index.md'
+  SVG: '../svg/index.md'
+  IconifyJSON: '../../../types/iconify-json.md'
+functions:
+  forEach: '../icon-set/for-each.md'
+  cleanupSVG: '../icon/cleanup.md'
+  runSVGO: '../icon/svgo.md'
+  parseColors: '../icon/colors.md'
+  deOptimisePaths: '../icon/paths.md'
+```
+
+# Importing icons
+
+[Iconify Tools](./index.md) can import icons from several sources.
+
+## Usage
+
+All functions listed below are asynchronous. Most functions create `[type]IconSet` instances.
+
+### Async
+
+If you are not familiar with asynchronous functions in JavaScript, read up on `[type]Promise` class, `[func]async` and `[func]await` keywords.
+
+Simplest way to use asynchronous functions is to wrap all your code in anonymous asynchronous function, then `[func]await` functions:
+
+```yaml
+src: tools/tools2/icon/async.ts
+```
+
+To catch errors, use `[func]try` and `[func]catch`:
+
+```yaml
+src: tools/tools2/icon/async-errors.ts
+```
+
+Check out various tutorials for `[func]async` and `[func]await`. There are many free good tutorials on YouTube.
+
+## Cleanup
+
+After importing icons, make sure you validate them. See `[func]cleanupSVG()` function.
+
+## Import functions
+
+There are several functions for importing icons:
+
+### importDirectory()
+
+Function `[func]importDirectory()` imports SVG files from directory.
+
+### Importing single icon
+
+Making a function for importing single file is redundant. All you have to do is read file and create `[type]SVG` instance.
+
+See [importing SVG](./svg.md) documentation.
+
+### Importing Iconify icon set
+
+Making a function for importing `[type]IconifyJSON` data is also redundant. All you have to do is read file and create `[type]IconSet` instance.
+
+See [importing Iconify icon set](./json.md) documentation.

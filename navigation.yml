@@ -377,6 +377,12 @@
                 ./colors.html: parseColors()
                 ./paths.html: deOptimisePaths()
                 ./scale.html: scaleSVG()
+            ./import/:
+              title: Import
+              children:
+                ./json.html: IconifyJSON
+                ./svg.html: Single SVG
+                ./directory.html: Directory
         ./utils/:
           title: Iconify Utils
           children:
