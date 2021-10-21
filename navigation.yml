@@ -319,8 +319,6 @@
                 ./bundle.html: Icons Bundle
         ./tools2/:
           title: Iconify Tools 2
-          hidden: true
-          wip: true
           children:
             ./svg/: SVG Class
             ./icon-set/:
@@ -383,6 +381,11 @@
                 ./json.html: IconifyJSON
                 ./svg.html: Single SVG
                 ./directory.html: Directory
+            ./export/:
+              title: Export
+              children:
+                ./json.html: IconifyJSON
+                ./svg.html: SVG
         ./utils/:
           title: Iconify Utils
           children:

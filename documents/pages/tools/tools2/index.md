@@ -1,6 +1,5 @@
 ```yaml
 title: Iconify Tools 2
-wip: true
 replacements:
   - code: '@iconify/tools@2'
     value: '${tools.import-tools2}'
@@ -18,6 +17,7 @@ types:
 functions:
   mergeIconSets: './icon-set/merge.md'
   setIcon: './icon-set/set-icon.md'
+  cleanupSVG: './icon/cleanup.md'
 ```
 
 # Iconify Tools
@@ -25,6 +25,8 @@ functions:
 Iconify Tools is a set of reusable functions for importing, exporting and parsing icons.
 
 Library is written in TypeScript, is available as ES modules for modern development and CommonJS for older scripts.
+
+`include notices/tools2`
 
 ## Installation
 
@@ -47,3 +49,31 @@ Documentation from importing icons:
 - [Importing Iconify JSON data](./import/json.md).
 - [Importing SVG](./import/svg.md).
 - [Importing all SVG in directory](./import/directory.md).
+
+## Cleanup and validation
+
+Cleaning up and validating icons is the first thing you should do after importing icons if icons come from:
+
+- Image editing software. Often software leave a lot of junk code in icons, which must be removed.
+- Third party. You need to make sure icons do not contain scripts, events.
+
+See `[func]cleanupSVG()` documentation.
+
+## Manipulation
+
+Iconify Tools offer several functions for manipulating icons. You can:
+
+- Check or change color palette.
+- Optimise icon.
+- Fix `[tag]path` elements to support old software.
+
+See [icon manipulation functions](./icon/index.md) for list of available functions.
+
+## Export
+
+After manipulating icons, you can export icon set to various formats.
+
+Documentation from exporting icons:
+
+- [Exporting Iconify JSON data](./export/json.md).
+- [Exporting SVG](./export/svg.md).
