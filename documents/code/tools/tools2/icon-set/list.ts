@@ -58,10 +58,8 @@ console.log(iconSet.list(['icon']));
 			// Change colors to red
 			await parseColors(svg, {
 				defaultColor: 'red',
-				callback: (attr, color) => {
-					return typeof color === 'string' || isEmptyColor(color)
-						? color
-						: 'red';
+				callback: (attr, colorStr, color) => {
+					return !color || isEmptyColor(color) ? colorStr : 'red';
 				},
 			});
 

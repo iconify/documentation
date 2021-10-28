@@ -28,10 +28,8 @@ import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
 			await cleanupSVG(svg);
 			await parseColors(svg, {
 				defaultColor: 'currentColor',
-				callback: (attr, color) => {
-					return typeof color === 'string' || isEmptyColor(color)
-						? color
-						: 'currentColor';
+				callback: (attr, colorStr, color) => {
+					return !color || isEmptyColor(color) ? colorStr : 'currentColor';
 				},
 			});
 			await runSVGO(svg);

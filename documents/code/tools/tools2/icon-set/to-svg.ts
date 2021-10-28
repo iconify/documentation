@@ -21,12 +21,12 @@ import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
 		defaultColor: 'currentColor',
 
 		// Callback to change colors. Not called in this example because there are no colors in sample icon.
-		callback: (attr, color) => {
-			// typeof color === 'string' -> color cannot be parsed, return as is
-			// isEmptyColor(color) -> color is empty: 'none' or 'transparent'
-			return typeof color === 'string' || isEmptyColor(color)
-				? color
-				: 'currentColor';
+		callback: (attr, colorStr, color) => {
+			// color === null -> color cannot be parsed -> return colorStr
+			// isEmptyColor() -> checks if color is empty: 'none' or 'transparent' -> return color object
+			//		 without changes (though color string can also be returned, but using object is faster)
+			// for everything else return 'currentColor'
+			return !color ? colorStr : isEmptyColor(color) ? color : 'currentColor';
 		},
 	});
 

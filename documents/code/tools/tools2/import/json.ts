@@ -35,10 +35,8 @@ import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
 				// Fix colors
 				await parseColors(svg, {
 					defaultColor: 'currentColor',
-					callback: (attr, color) => {
-						return typeof color === 'string' || isEmptyColor(color)
-							? color
-							: 'currentColor';
+					callback: (attr, colorStr, color) => {
+						return !color || isEmptyColor(color) ? colorStr : 'currentColor';
 					},
 				});
 

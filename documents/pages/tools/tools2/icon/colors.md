@@ -88,12 +88,13 @@ With `[prop]callback` option you can replace colors.
 Callback has the following parameters:
 
 - `[prop]attr`, `[type]string`. Attribute where color is used, such as `[str]fill` or `[str]stroke`.
-- `[prop]color`, `[type]Color | string`. Color value. If color can be parsed, callback will have `[type]Color` value. If color cannot be parsed, callback will have `[type]string` value.
+- `[prop]colorStr`, `[type]string`. Color value as string.
+- `[prop]color`, `[type]Color | null`. Parsed color value. If color can be parsed, callback will have `[type]Color` value. If color cannot be parsed, callback will have `[type]null` value.
 - `[prop]tagName`, `[type]string`. Optional parameter. Name of tag where color is found. If color is found in stylesheet, parameter will be `[type]undefined`.
 
 Callback should return:
 
-- `[type]Color` or `[type]string` to set new color. If you do not want to change color, return color passed to callback.
+- `[type]Color` or `[type]string` to set new color. If you do not want to change color, return color passed to callback (either `[prop]colorStr` or non-null `[prop]color` object).
 - `[type]undefined` to remove color.
 
 Callback can be asynchronous.

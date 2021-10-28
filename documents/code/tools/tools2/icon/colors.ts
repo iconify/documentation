@@ -40,11 +40,14 @@ const iconSet = new IconSet({
 				defaultColor: 'currentColor',
 
 				// Callback to parse each color
-				callback: (attr, color) => {
-					// string -> color cannot be parsed -> return without changes
-					// isEmptyColor() -> checks if color is empty: 'none' or 'transparent' -> return without changes
+				callback: (attr, colorStr, color) => {
+					// color === null -> color cannot be parsed -> return colorStr
+					// isEmptyColor() -> checks if color is empty: 'none' or 'transparent' -> return color object
+					//		 without changes (though color string can also be returned, but using object is faster)
 					// for everything else return 'currentColor'
-					return typeof color === 'string' || isEmptyColor(color)
+					return !color
+						? colorStr
+						: isEmptyColor(color)
 						? color
 						: 'currentColor';
 				},
