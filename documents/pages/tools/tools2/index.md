@@ -49,6 +49,7 @@ Documentation from importing icons:
 - [Importing Iconify JSON data](./import/json.md).
 - [Importing SVG](./import/svg.md).
 - [Importing all SVG in directory](./import/directory.md).
+- [Importing icons from Figma](./import/figma/index.md).
 
 ## Cleanup and validation
 
@@ -76,4 +77,5 @@ After manipulating icons, you can export icon set to various formats.
 Documentation from exporting icons:
 
 - [Exporting Iconify JSON data](./export/json.md).
+- [Exporting SVG to directory (simplified version)](./export/directory.md).
 - [Exporting SVG](./export/svg.md).

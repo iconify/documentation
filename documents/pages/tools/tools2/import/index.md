@@ -56,13 +56,13 @@ Function `[func]importDirectory()` imports SVG files from directory.
 
 Function `[func]importFromFigma()` imports icons from Figma document.
 
-### Importing single icon
+### Importing single icon {#svg}
 
 Making a function for importing single file is redundant. All you have to do is read file and create `[type]SVG` instance.
 
 See [importing SVG](./svg.md) documentation.
 
-### Importing Iconify icon set
+### Importing Iconify icon set {#json}
 
 Making a function for importing `[type]IconifyJSON` data is also redundant. All you have to do is read file and create `[type]IconSet` instance.
 

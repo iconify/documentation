@@ -386,7 +386,8 @@
               title: Export
               children:
                 ./json.html: IconifyJSON
-                ./svg.html: SVG
+                ./svg.html: Single SVG
+                ./directory.html: Directory
         ./utils/:
           title: Iconify Utils
           children:

@@ -13,6 +13,7 @@ functions:
   blankIconSet: '../icon-set/index.md'
   export: '../icon-set/export.md'
   toString: '../icon-set/to-string.md'
+  exportToDirectory: './directory.md'
 ```
 
 # Exporting icons
@@ -33,13 +34,17 @@ See [icon manipulation functions](../icon/index.md).
 
 There are several functions for exporting icons:
 
-### Exporting Iconify icon set
+### Exporting Iconify icon set {#json}
 
 `[type]IconSet` instance has `[func]export()` function that creates `[type]IconifyJSON` data. All you have to do is write it to file.
 
 See [exporting Iconify icon set](./json.md) documentation.
 
-### Exporting as SVG
+### Exporting SVG (simplified version) {#directory}
+
+Function `[func]exportToDirectory()` exports all icons as SVG to a directory.
+
+### Exporting as SVG {#svg}
 
 `[type]IconSet` instance has `[func]toString()` function that generates `[type]string` for icon. You can use `[func]forEach()` to loop all icons in icon set.
 
