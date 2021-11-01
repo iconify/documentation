@@ -15,6 +15,8 @@ This function is part of [import functions](./index.md) in [Iconify Tools](../in
 
 Function `[func]importDirectory()` finds and imports all SVG files from a directory.
 
+It creates `[type]IconSet` instance, which [can be exported to various formats](../export/index.md).
+
 ## Usage
 
 Function has the following parameters:

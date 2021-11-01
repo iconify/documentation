@@ -57,12 +57,15 @@ The following properties exist only in `[type]IconSetIcon` type:
 The following properties exist on `[type]IconSetIcon` and `[type]IconSetIconVariation` types:
 
 - `[prop]props`, `[type]CommonIconProps`. Icon data. See below.
-- `[prop]chars`, `[type]Set<string>`. List of characters, see `[func]chars()` function.
 - `[prop]categories`, `[type]Set<IconCategory>`. List of categories, see `[func]categories` property.
 
 The following properties exist on `[type]IconSetIconVariation` and `[type]IconSetIconAlias` types:
 
 - `[prop]parent`, `[type]string`. Parent item. Parent item can be any type, though usually it is an icon.
+
+The following properties exist on all types:
+
+- `[prop]chars`, `[type]Set<string>`. List of characters, see `[func]chars()` function.
 
 ### CommonIconProps type {#common}
 

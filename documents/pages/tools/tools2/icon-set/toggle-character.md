@@ -38,10 +38,8 @@ If you want to know characters assigned to an icon, use code like this:
 
 ```ts
 const item = iconSet.entries['some-icon'];
-if (item?.type !== 'alias') {
-	// Set<string>
-	console.log(item.chars);
-}
+// Set<string>
+console.log(item.chars);
 ```
 
 It is safe to modify characters directly in `[func]entries` property.

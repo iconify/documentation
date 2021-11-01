@@ -10,6 +10,8 @@ functions:
   runSVGO: '../icon/svgo.md'
   parseColors: '../icon/colors.md'
   deOptimisePaths: '../icon/paths.md'
+  importDirectory: './directory.md'
+  importFromFigma: './figma/index.md'
 ```
 
 # Importing icons
@@ -49,6 +51,10 @@ There are several functions for importing icons:
 ### importDirectory()
 
 Function `[func]importDirectory()` imports SVG files from directory.
+
+### importFromFigma()
+
+Function `[func]importFromFigma()` imports icons from Figma document.
 
 ### Importing single icon
 
