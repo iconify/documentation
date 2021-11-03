@@ -1,5 +1,7 @@
 ```yaml
 title: Tools for Developers
+types:
+  IconifyJSON: '../types/iconify-json.md'
 ```
 
 # Tools for developers
@@ -8,9 +10,39 @@ Iconify offers several libraries that help with converting icons, manipulating i
 
 Available libraries:
 
-- [Iconify Utils](./utils/index.md) is a set of reusable functions for working with icon sets and icon data. Supports TypeScript and ES modules.
-- [Iconify Tools](./node/index.md) is a large package for converting and manipulating icons. It can import icons from various sources, clean them up and export to various formats. Version 1 does not support TypeScript, but version 2 is currently in development.
+## Utils
 
-Old libraries:
+[Iconify Utils](./utils/index.md) is a set of reusable functions used by icon components and other packages. Its main purpose is to read `[type]IconifyJSON` icon sets and extract data from it.
 
-- [Iconify JSON Tools](./json/index.md) is similar to [Iconify Utils](./utils/index.md), but has been deprecated. Switch to [Iconify Utils](./utils/index.md).
+Utils package contains the following functions:
+
+- Reading `[type]IconifyJSON` icon sets.
+- Extracting subsets of icons or single icons.
+- Generating SVG.
+- Validating icon names used by icon components, such as `[icon]mdi:home`.
+
+Additionally, it contains functions for:
+
+- Parsing and validating colors. This can used by color input in icon picker.
+
+Package works in any environment: node, browser, deno, and closed JavaScript environment.
+
+## Tools
+
+[Iconify Tools](./node/index.md) is a large package, its main purpose is to retrieve icons from various sources, validate them, clean them up and generate `[type]IconifyJSON` icon sets.
+
+Version 1 does not support TypeScript, but version 2 is currently in development.
+
+Tools package contains the following functions:
+
+- Importing icons from various sources: SVG, icon fonts, Figma documents, etc...
+- Validating icons, cleaning up content, optimising icons.
+- Exporting icons to `[type]IconifyJSON` icon sets and few other formats.
+
+This package works only in node environment, not usable for browser oriented packages.
+
+Main purpose is to generate [Iconify icon sets](../sources/json/index.md). Tools are used to retrieve icons from various sources, clean them up, then export icon set, then it can be used by various components with help of [Iconify Utils](./utils/index.md).
+
+## Old libraries
+
+[Iconify JSON Tools](./json/index.md) is similar to [Iconify Utils](./utils/index.md), but has been deprecated. Switch to [Iconify Utils](./utils/index.md).
