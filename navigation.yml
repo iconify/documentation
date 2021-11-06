@@ -305,7 +305,8 @@
       title: Development Tools
       children:
         ./node/:
-          title: Iconify Tools
+          title: Iconify Tools v1
+          hidden: true
           children:
             ./import.html: Importing Icons
             ./export.html: Exporting Icons
@@ -318,7 +319,7 @@
                 ./import-font.html: Import Icon Font
                 ./bundle.html: Icons Bundle
         ./tools2/:
-          title: Iconify Tools 2
+          title: Iconify Tools
           children:
             ./svg/: SVG Class
             ./icon-set/:

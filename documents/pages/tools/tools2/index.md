@@ -26,8 +26,6 @@ Iconify Tools is a set of reusable functions for importing, exporting and parsin
 
 Library is written in TypeScript, is available as ES modules for modern development and CommonJS for older scripts.
 
-`include notices/tools2`
-
 ## Installation
 
 To install library run:

@@ -29,15 +29,13 @@ Package works in any environment: node, browser, deno, and closed JavaScript env
 
 ## Tools
 
-[Iconify Tools](./node/index.md) is a large package, its main purpose is to retrieve icons from various sources, validate them, clean them up and generate `[type]IconifyJSON` icon sets.
-
-Version 1 does not support TypeScript, but version 2 is currently in development.
+[Iconify Tools](./tools2/index.md) is a large package, its main purpose is to retrieve icons from various sources, validate them, clean them up and generate `[type]IconifyJSON` icon sets as well as various NPM packages.
 
 Tools package contains the following functions:
 
-- Importing icons from various sources: SVG, icon fonts, Figma documents, etc...
+- Importing icons from SVG icon sets, Figma documents.
 - Validating icons, cleaning up content, optimising icons.
-- Exporting icons to `[type]IconifyJSON` icon sets and few other formats.
+- Exporting icons to `[type]IconifyJSON` icon sets and several NPM packages.
 
 This package works only in node environment, not usable for browser oriented packages.
 
@@ -46,3 +44,5 @@ Main purpose is to generate [Iconify icon sets](../sources/json/index.md). Tools
 ## Old libraries
 
 [Iconify JSON Tools](./json/index.md) is similar to [Iconify Utils](./utils/index.md), but has been deprecated. Switch to [Iconify Utils](./utils/index.md).
+
+[Iconify Tools v1](./node/index.md) is an older version of [Iconify Tools](./tools2/index.md).

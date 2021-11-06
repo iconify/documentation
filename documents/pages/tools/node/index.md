@@ -1,7 +1,7 @@
 ```yaml
 title: Iconify Tools
 replacements:
-  - code: '@iconify/tools@2'
+  - code: '@iconify/tools@1'
     value: '${tools.import-tools1}'
 ```
 
@@ -20,7 +20,7 @@ Its main purpose is to convert icon sets and fonts to Iconify JSON collections, 
 To install Iconify Tools run this:
 
 ```bash
-npm install @iconify/tools --save
+npm install @iconify/tools@1 --save
 ```
 
 Then you can use it in your Node.js files:

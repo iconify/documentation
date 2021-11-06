@@ -33,8 +33,8 @@
 		"import": "@iconify/svelte"
 	},
 	"tools": {
-		"import-tools1": "@iconify/tools",
-		"import-tools2": "@iconify/tools@dev"
+		"import-tools1": "@iconify/tools@1",
+		"import-tools2": "@iconify/tools"
 	},
 	"counters": {
 		"sets": "100",
