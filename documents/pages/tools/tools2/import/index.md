@@ -16,7 +16,7 @@ functions:
 
 # Importing icons
 
-[Iconify Tools](./index.md) can import icons from several sources.
+[Iconify Tools](../index.md) can import icons from several sources.
 
 ## Usage
 

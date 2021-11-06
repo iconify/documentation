@@ -14,11 +14,13 @@ functions:
   export: '../icon-set/export.md'
   toString: '../icon-set/to-string.md'
   exportToDirectory: './directory.md'
+  exportIconPackage: './icon-package.md'
+  exportJSONPackage: './json-package.md'
 ```
 
 # Exporting icons
 
-[Iconify Tools](./index.md) can export icons to several formats.
+[Iconify Tools](../index.md) can export icons to several formats.
 
 ## Usage
 
@@ -49,3 +51,12 @@ Function `[func]exportToDirectory()` exports all icons as SVG to a directory.
 `[type]IconSet` instance has `[func]toString()` function that generates `[type]string` for icon. You can use `[func]forEach()` to loop all icons in icon set.
 
 See [exporting icons as SVG](./svg.md) documentation.
+
+### Exporting NPM packages {#npm}
+
+There are different types of icon packages published at NPM, there are functions for exporting each type:
+
+- Function `[func]exportIconPackage()` creates NPM package with one file per icon. This is used when user needs only only few icons.
+- Function `[func]exportJSONPackage()` creates NPM package with entire icon set in one file. This is used to get an entire icon set.
+
+Functions do not publish packages, they only generate contents. Run `[bash]npm publish` to publish generated packages.

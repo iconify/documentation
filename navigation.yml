@@ -388,6 +388,8 @@
                 ./json.html: IconifyJSON
                 ./svg.html: Single SVG
                 ./directory.html: Directory
+                ./icon-package.html: Icon Package
+                ./json-package.html: IconifyJSON Package
         ./utils/:
           title: Iconify Utils
           children:

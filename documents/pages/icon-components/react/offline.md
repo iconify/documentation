@@ -34,26 +34,8 @@ Offline component has only the following functions available:
 - `[func]addIcon()`. Adds one icon.
 - `[func]addCollection()`. Adds an icon set.
 
-```js
-import { Icon, addIcon, addCollection } from '@iconify/react/dist/offline';
-import bellFill from '@iconify-icons/bi/bell-fill';
-
-// Assign icon data to name "bell" used in first example
-addIcon('bell', bellFill);
-
-// Test component
-export function iconDemo() {
-	return (
-		<div>
-			<div>
-				Icon referenced by name: <Icon icon="bell" />
-			</div>
-			<div>
-				Icon referenced by object: <Icon icon={bellFill} />
-			</div>
-		</div>
-	);
-}
+```yaml
+src: icon-components/common/offline.jsx
 ```
 
 ## Available icons

@@ -79,3 +79,5 @@ Documentation from exporting icons:
 - [Exporting Iconify JSON data](./export/json.md).
 - [Exporting SVG to directory (simplified version)](./export/directory.md).
 - [Exporting SVG](./export/svg.md).
+- [Exporting icon packages](./export/icon-package.md).
+- [Exporting Iconify JSON packages](./export/json-package.md).
