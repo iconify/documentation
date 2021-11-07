@@ -10,6 +10,13 @@ functions:
   downloadGitHubRepo: './github.md'
   downloadNPMPackage: './npm.md'
   compareDirectories: './compare.md'
+  sendAPIQuery: './api-query.md'
+  downloadFile: './download-file.md'
+  bumpVersion: './bump-version.md'
+  getPackageVersion: './package-version.md'
+  getNPMVersion: './npm-version.md'
+  getGitRepoHash: './git-repo-hash.md'
+  getGitHubRepoHash: './github-commit.md'
 ```
 
 # Managing packages

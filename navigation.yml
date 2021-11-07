@@ -406,6 +406,21 @@
                   separator: true
                   clickable: false
                 ./compare.html: Compare Directories
+                ./#versions:
+                  title: Versions
+                  separator: true
+                  clickable: false
+                ./bump-version.html: Increase Version
+                ./npm-version.html: NPM Version
+                ./package-version.html: Package Version
+                ./git-repo-hash.html: Git Repo Hash
+                ./github-commit.html: GitHub Last Commit
+                ./#misc:
+                  title: Other
+                  separator: true
+                  clickable: false
+                ./api-query.html: Send API Query
+                ./download-file.html: Download File
         ./utils/:
           title: Iconify Utils
           children:
