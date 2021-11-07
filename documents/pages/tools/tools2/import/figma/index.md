@@ -58,14 +58,14 @@ Icons cannot contain:
 
 ## Usage
 
-Function has the following parameters:
+Function has the following parameter:
 
 - `[prop]options`, `[type]object`. Options.
 
 Function returns:
 
 - `[type]FigmaImportResult` object on success.
-- `[str]not_modified` string if file has not been modified since last run (see `[prop]ifModifiedSince` option).
+- `[str]not_modified` string if file has not been modified since last run (can be returned only if `[prop]ifModifiedSince` option is set).
 
 In case of error, import might throw an exception, which you can catch using `[func]try` and `[func]catch`.
 

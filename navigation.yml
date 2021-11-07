@@ -391,6 +391,21 @@
                 ./directory.html: Directory
                 ./icon-package.html: Icon Package
                 ./json-package.html: IconifyJSON Package
+            ./package/:
+              title: Managing Packages
+              children:
+                ./#download:
+                  title: Download
+                  separator: true
+                  clickable: false
+                ./git.html: Git Repository
+                ./github.html: GitHub API
+                ./npm.html: NPM Package
+                ./#compare:
+                  title: Compare
+                  separator: true
+                  clickable: false
+                ./compare.html: Compare Directories
         ./utils/:
           title: Iconify Utils
           children:

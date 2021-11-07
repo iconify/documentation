@@ -70,7 +70,7 @@ See [icon manipulation functions](./icon/index.md) for list of available functio
 
 ## Export
 
-After manipulating icons, you can export icon set to various formats.
+After manipulating icons, you can [export icon set to various formats](./export/index.md).
 
 Documentation from exporting icons:
 
@@ -79,3 +79,13 @@ Documentation from exporting icons:
 - [Exporting SVG](./export/svg.md).
 - [Exporting icon packages](./export/icon-package.md).
 - [Exporting Iconify JSON packages](./export/json-package.md).
+
+## Package functions {#package}
+
+In addition to managing icons, Iconify Tools has several [functions to manage packages and repositories](./package/index.md):
+
+- [Download Git repository](./package/git.md)
+- [Download GitHub repository using GitHub API](./package/github.md)
+- [Download NPM package](./package/npm.md)
+- [Compare directories](./package/compare.md)
+- [Manage versions of packages or repositories](./package/index.md#versions)

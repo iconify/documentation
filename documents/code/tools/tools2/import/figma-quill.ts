@@ -74,12 +74,16 @@ const cacheDir = 'cache/quill';
 		},
 	});
 
-	// console.log(result);
+	/*
+	// 'not_modified' can be returned only if 'ifModifiedSince' option was set, so uncomment ifModifiedSince option
+	// and this code, otherwise TypeScript will complain that result cannot be 'not_modified'
 	if (result === 'not_modified') {
 		// This result is possible if ifModifiedSince option is set
 		console.log('Not modified');
 		return;
 	}
+	*/
+
 	const iconSet = result.iconSet;
 
 	// Check colors in icons
