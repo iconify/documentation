@@ -1,5 +1,4 @@
-import { SVG } from '@iconify/tools/lib/svg';
-import { parseColors } from '@iconify/tools/lib/colors/parse';
+import { SVG, parseColors } from '@iconify/tools';
 
 (async () => {
 	const svg = new SVG(

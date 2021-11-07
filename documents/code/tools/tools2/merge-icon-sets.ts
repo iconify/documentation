@@ -1,5 +1,4 @@
-import { IconSet } from '@iconify/tools/lib/icon-set';
-import { mergeIconSets } from '@iconify/tools/lib/icon-set/merge';
+import { IconSet, mergeIconSets } from '@iconify/tools';
 
 // Merge 2 icon sets
 const merged = mergeIconSets(

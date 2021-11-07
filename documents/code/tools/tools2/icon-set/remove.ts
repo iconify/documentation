@@ -1,4 +1,4 @@
-import { IconSet } from '@iconify/tools/lib/icon-set';
+import { IconSet } from '@iconify/tools';
 
 const iconSet = new IconSet({
 	prefix: 'codicon',

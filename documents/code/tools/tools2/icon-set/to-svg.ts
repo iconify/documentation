@@ -1,5 +1,4 @@
-import { blankIconSet } from '@iconify/tools/lib/icon-set';
-import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
+import { blankIconSet, parseColors, isEmptyColor } from '@iconify/tools';
 
 // Wrap in async anonymous function to allow 'await'
 (async () => {

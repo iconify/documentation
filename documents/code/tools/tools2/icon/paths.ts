@@ -1,5 +1,4 @@
-import { SVG } from '@iconify/tools/lib/svg';
-import { deOptimisePaths } from '@iconify/tools/lib/optimise/flags';
+import { SVG, deOptimisePaths } from '@iconify/tools';
 
 (async () => {
 	const svg = new SVG(

@@ -1,5 +1,4 @@
-import { exportToDirectory } from '@iconify/tools/lib/export/directory';
-import { IconSet } from '@iconify/tools/lib/icon-set';
+import { exportToDirectory, IconSet } from '@iconify/tools';
 
 (async () => {
 	// Import icons

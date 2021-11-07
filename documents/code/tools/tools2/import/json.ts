@@ -1,8 +1,11 @@
 import { promises as fs } from 'fs';
-import { IconSet } from '@iconify/tools/lib/icon-set';
-import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
-import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
-import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
+import {
+	IconSet,
+	cleanupSVG,
+	runSVGO,
+	parseColors,
+	isEmptyColor,
+} from '@iconify/tools';
 import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
 
 (async () => {

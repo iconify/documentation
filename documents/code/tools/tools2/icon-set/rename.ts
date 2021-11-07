@@ -1,4 +1,4 @@
-import { IconSet } from '@iconify/tools/lib/icon-set';
+import { IconSet } from '@iconify/tools';
 
 // Import icon set
 const iconSet = new IconSet({

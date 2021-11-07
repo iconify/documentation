@@ -1,7 +1,5 @@
 import { promises as fs } from 'fs';
-import { IconSet } from '@iconify/tools/lib/icon-set';
-import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
-import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
+import { IconSet, validateIconSet, cleanupSVG } from '@iconify/tools';
 
 (async () => {
 	// Read data, parse JSON

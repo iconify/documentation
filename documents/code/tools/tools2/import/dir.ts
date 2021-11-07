@@ -1,7 +1,10 @@
-import { importDirectory } from '@iconify/tools/lib/import/directory';
-import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
-import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
-import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
+import {
+	importDirectory,
+	cleanupSVG,
+	runSVGO,
+	parseColors,
+	isEmptyColor,
+} from '@iconify/tools';
 
 (async () => {
 	// Import icons

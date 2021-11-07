@@ -16,7 +16,7 @@ functions:
 To create an instance, use this code:
 
 ```ts
-import { SVG } from '@iconify/tools/lib/svg';
+import { SVG } from '@iconify/tools';
 
 const svg = new SVG(
 	'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6v12l10-6z" fill="currentColor"/></svg>'

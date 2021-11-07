@@ -17,7 +17,7 @@ functions:
 To create an instance, use this code to import existing `[type]IconifyJSON` data:
 
 ```ts
-import { IconSet } from '@iconify/tools/lib/icon-set';
+import { IconSet } from '@iconify/tools';
 
 const iconSet = new IconSet({
 	prefix: 'codicon',
@@ -38,7 +38,7 @@ const iconSet = new IconSet({
 or this to create an empty icon set:
 
 ```ts
-import { blankIconSet } from '@iconify/tools/lib/icon-set';
+import { blankIconSet } from '@iconify/tools';
 
 const iconSet = blankIconSet('some-prefix');
 ```

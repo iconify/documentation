@@ -1,6 +1,4 @@
-import { exportJSONPackage } from '@iconify/tools/lib/export/json-package';
-import { IconSet } from '@iconify/tools/lib/icon-set';
-// import { execAsync } from '@iconify/tools/lib/misc/exec';
+import { exportJSONPackage, IconSet, execAsync } from '@iconify/tools';
 
 // Import icon set
 const iconSet = new IconSet({

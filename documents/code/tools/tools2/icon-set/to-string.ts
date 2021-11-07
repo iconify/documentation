@@ -1,4 +1,4 @@
-import { blankIconSet } from '@iconify/tools/lib/icon-set';
+import { blankIconSet } from '@iconify/tools';
 
 const iconSet = blankIconSet('');
 iconSet.setIcon('add', {

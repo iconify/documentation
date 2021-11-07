@@ -1,4 +1,4 @@
-import { blankIconSet } from '@iconify/tools/lib/icon-set';
+import { blankIconSet } from '@iconify/tools';
 
 // Create icon set, add few icons and characters
 const iconSet = blankIconSet('test-prefix');

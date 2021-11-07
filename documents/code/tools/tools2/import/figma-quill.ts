@@ -1,5 +1,4 @@
-import { importFromFigma } from '@iconify/tools/lib/import/figma';
-import { parseColors } from '@iconify/tools/lib/colors/parse';
+import { importFromFigma, parseColors } from '@iconify/tools';
 
 /**
  * Important: set 'token' option before running this code. Token is mandatory.

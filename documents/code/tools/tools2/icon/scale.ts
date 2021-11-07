@@ -1,6 +1,4 @@
-import { SVG } from '@iconify/tools/lib/svg';
-import { scaleSVG } from '@iconify/tools/lib/optimise/scale';
-import { runSVGO } from '@iconify/tools/lib/optimise/svgo';
+import { SVG, scaleSVG, runSVGO } from '@iconify/tools';
 
 (async () => {
 	const svg = new SVG(

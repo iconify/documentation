@@ -1,6 +1,4 @@
-import { IconSet } from '@iconify/tools/lib/icon-set';
-import { cleanupSVG } from '@iconify/tools/lib/svg/cleanup';
-import { parseColors, isEmptyColor } from '@iconify/tools/lib/colors/parse';
+import { IconSet, cleanupSVG, parseColors, isEmptyColor } from '@iconify/tools';
 
 const iconSet = new IconSet({
 	prefix: 'codicon',
