@@ -23,15 +23,13 @@ functions:
 
 [Iconify Tools](../index.md) has several functions to help automate downloading, comparing and updating packages.
 
-## Usage
+## Async
 
 Most functions listed below are asynchronous.
 
-### Async
-
 `include tools/tools2/async`
 
-## Download
+## Downloading packages
 
 These functions download packages from various sources.
 
@@ -48,14 +46,6 @@ Additionally, there are few functions to download files by URL:
 - `[func]sendAPIQuery()` is a wrapper for `[func]fetch` with support for cache. It is used by functions like `[func]importFromFigma()`.
 - `[func]downloadFile()` is also a wrapper for `[func]fetch` that simplifies downloading of binary files, such as archives. It is used by GitHub and NPM downloaders.
 
-## Comparing
-
-When automating build process, publishing new package when nothing was changed makes no sense. There is a function in Iconify Tools to check for changes:
-
-- `[func]compareDirectories()` compares contents of two directories.
-
-Unlike simple comparison, this function ignores version numbers in `[file]package.json`, hidden files and different line endings.
-
 ## Versions {#versions}
 
 When publishing packages, you might want to change package version. Iconify Tools offers several functions to help you automate process:
@@ -71,3 +61,11 @@ Functiosn to get version number or commit hash from remote package/repository:
 
 - `[func]getNPMVersion()` retrieves latest version of package from NPM registry.
 - `[func]getGitHubRepoHash()` retrieves hash of last commit from remote GitHub repository.
+
+## Comparing directories
+
+When automating build process, publishing new package when nothing was changed makes no sense. There is a function in Iconify Tools to check for changes:
+
+- `[func]compareDirectories()` compares contents of two directories.
+
+Unlike simple comparison, this function ignores version numbers in `[file]package.json`, hidden files and different line endings.

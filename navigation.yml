@@ -395,17 +395,12 @@
               title: Managing Packages
               children:
                 ./#download:
-                  title: Download
+                  title: Download Packages
                   separator: true
                   clickable: false
                 ./git.html: Git Repository
                 ./github.html: GitHub API
                 ./npm.html: NPM Package
-                ./#compare:
-                  title: Compare
-                  separator: true
-                  clickable: false
-                ./compare.html: Compare Directories
                 ./#versions:
                   title: Versions
                   separator: true
@@ -419,6 +414,7 @@
                   title: Other
                   separator: true
                   clickable: false
+                ./compare.html: Compare Directories
                 ./api-query.html: Send API Query
                 ./download-file.html: Download File
         ./utils/:
