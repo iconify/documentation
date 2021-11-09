@@ -27,7 +27,7 @@ Function returns list of parsed icons as `[type]string[]`.
 Options object has the following properties:
 
 - `[prop]validate`, `[type]boolean | IconSetValidationOptions`. Validates icon set before parsing it. If value is `false`, validation will be disabled. When value is `true`, it is equivalent of `[js]{fix: true}` of `[type]IconSetValidationOptions` type. By default, validation is enabled.
-- `[prop]aliases`, `[type]ParseIconSetAliases`. Defines how to parse icon aliases. See below.
+- `[prop]aliases`, `[type]ParseIconSetAliases`. Defines how to parse icon aliases. Default value is `[str]all`. See below.
 
 ## Parsing icon aliases
 
@@ -54,3 +54,13 @@ title: 'count.ts'
 ```
 
 Code used in example above should be used to count icons in icon set when calculating number of icons for `[type]IconifyInfo` data. It counts all icons, excluding hidden icons and basic aliases.
+
+### JSON Modules
+
+When using ES modules, examples above might require running node with `[str]--experimental-json-modules` flag.
+
+Until JSON modules support in Node.js becomes stable, you can avoid using flag by replacing `[func]import` with `[func]require()` because `[func]require()` supports JSON files:
+
+```js
+const { icons } = require('@iconify-json/codicon');
+```

@@ -10,6 +10,7 @@ replacements:
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyInfo: '../../types/iconify-json-metadata.md'
+  LegacyIconifyInfo: '../../types/iconify-json-metadata.md'
   IconifyChars: '../../types/iconify-json-metadata.md#chars'
   IconifyMetaData: '../../types/iconify-json-metadata.md#iconify-categories'
 functions:
@@ -113,17 +114,48 @@ For reading icon sets, you can use:
 
 ## Helper functions {#helpers}
 
-Package contains simple helper functions for Node.js and PHP:
+Package contains simple helper functions for Node.js and PHP.
 
-- `[func]collections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]IconifyInfo` format.
+### Node.js functions for version 1 {#functions-legacy}
+
+Versions 1 of `[npm]@iconify/json` contain synchronous functions:
+
+- `[func]collections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]LegacyIconifyInfo` format.
 - `[func]locate(prefix)` returns location of JSON file for an icon set.
+
+### Node.js functions for version 2 {#functions-node}
+
+In versions 2 of `[npm]@iconify/json` functions are asynchronous:
+
+- `[func]lookupCollections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]IconifyInfo` format.
+- `[func]lookupCollection(prefix)` loads an icon set. Result is `[type]IconifyJSON` object.
+
+All functions listed above are asynchronous and require using `[func]await` before function name (see example below).
+
+There are also few synchronous functions:
+
+- `[func]locate(prefix)` returns location of JSON file for an icon set.
+
+### PHP functions
+
+PHP is a synchronous language, so functions for PHP are identical for versions 1 and 2.
+
+Use `[prop]Iconify\IconsJSON\Finder` class that has the following static functions:
+
+- `[func]collections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set. For version 1 data is in `[type]LegacyIconifyInfo` format, for version 2 data is in `[type]IconifyInfo` format.
+- `[func]locate(prefix)` returns location of JSON file for an icon set.
+- `[func]rootDir()` returns location of root directory of package.
+
+### Example
 
 Example:
 
 ```yaml
 src: sources/json/finder.js
-title: Node.js
+title: Node.js (for version 2.x)
 extra:
+  - src: sources/json/finder-old.js
+    title: Node.js (for version 1.x)
   - src: sources/json/finder.php
     title: PHP
 ```
