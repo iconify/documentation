@@ -47,7 +47,7 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.0.4/iconify.min.js",
+		"iconify": "https://code.iconify.design/2/2.1.0/iconify.min.js",
 		"issues": "https://github.com/iconify/iconify/issues",
 		"sponsor": "https://github.com/iconify/iconify",
 		"figma3-repo": "https://github.com/iconify/iconify-figma"
