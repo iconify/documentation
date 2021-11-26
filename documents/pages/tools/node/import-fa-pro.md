@@ -8,6 +8,8 @@ This example shows how to convert FontAwesome Pro SVG files to Iconify JSON form
 
 `include notices/tools1`
 
+This example uses Iconify Tools 1. Modern version that uses Iconify Tools 2 [is available here](../tools2/examples/import-fa-pro.md).
+
 Initialize project by running these commands:
 
 ```bash

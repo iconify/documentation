@@ -165,7 +165,7 @@ title: 'create-bundle.ts'
 src: sources/bundles/bundle-svg-full.ts
 ```
 
-Part of code is taken from [Iconify Tools import examples](../../../tools/tools2/import-mdi.md).
+Part of code is taken from [Iconify Tools import examples](../../../tools/tools2/examples/import-mdi.md).
 
 ## Importing bundle
 

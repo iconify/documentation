@@ -8,6 +8,8 @@ This example shows how to convert directory full of SVG files to Iconify JSON fo
 
 `include notices/tools1`
 
+This example uses Iconify Tools 1. Modern version that uses Iconify Tools 2 [is available here](../tools2/examples/import-mdi.md).
+
 As a source, lets take Material Design icons from [Templarian/MaterialDesign-SVG](https://github.com/Templarian/MaterialDesign-SVG) repository that is also available as `[npm]@mdi/svg` NPM package.
 
 Initialize project by running these commands:
