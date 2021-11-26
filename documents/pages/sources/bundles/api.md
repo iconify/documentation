@@ -32,7 +32,7 @@ Copy contents to clipboard, paste it in your bundle file, wrapped in callback.
 
 API can wrap data in a callback, skipping second step in bundle creation process.
 
-Name of callback varies, see [icon bundles tutorial](./index.md#callbacks) for details.
+Name of callback varies, see [wrapper function for icon bundles](./wrapper.md) for details.
 
 To wrap data in a callback, you need to:
 

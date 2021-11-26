@@ -19,7 +19,7 @@ Installation:
 
 ```bash
 # Node.js
-npm install --save-dev @iconify/json-tools @iconify/json
+npm install --save-dev @iconify/utils @iconify/json
 # PHP
 composer require iconify/json-tools iconify/json
 ```
@@ -37,7 +37,7 @@ Usage:
 Example below create JavaScript files with icon data loaded with `[func]Iconify.addCollection` or assigned to `[var]IconifyPreload` variable, whatever is available. This means bundle can be imported before Iconify SVG framework or after it.
 
 ```yaml
-src: sources/bundles/bundle-svg-simple-universal.js
+src: sources/bundles/bundle-svg-simple-universal.ts
 title: Node.js
 extra:
   - src: sources/bundles/bundle-svg-simple-universal.php

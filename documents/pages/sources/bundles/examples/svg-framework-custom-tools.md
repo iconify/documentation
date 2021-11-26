@@ -13,7 +13,7 @@ types:
 
 This article is a part of [Iconify icon bundles code examples](./index.md).
 
-This example show how to create icon bundles for SVG framework from SVG files. It uses [Iconify Tools](../../../tools/node/index.md) to import SVG, clean them up, optimize and export to bundle.
+This example show how to create icon bundles for SVG framework from SVG files. It uses [Iconify Tools](../../../tools/tools2/index.md) to import SVG, clean them up, optimize and export to bundle.
 
 ## Instructions
 
@@ -30,21 +30,14 @@ Usage:
 - Optionally change `[var]prefix` to prefix you want to use for imported icons.
 - Run script.
 
-Below are two versions of the same code.
-
-First version uses `[func]Promise` syntax, second version uses `[func]async` and `[func]await` syntax.
-
 ```yaml
-title: 'Promise syntax'
-src: sources/bundles/bundle-svg-tools.js
+title: 'create-bundle.ts'
+src: sources/bundles/bundle-svg-tools.ts
 ```
 
-```yaml
-title: 'async/await syntax'
-src: sources/bundles/bundle-svg-tools-async.js
-```
+Code above is written with TypeScript. If you want simple JavaScript file, remove types.
 
-Part of code is taken from [Iconify Tools import examples](../../../tools/node/import-mdi.md).
+Code is asynchronous. It is wrapped in anonymous asynchronous function because top level `[js]await`, at moment of writing documentation, is not available in all currently used versions of Node.
 
 ## Usage in HTML
 

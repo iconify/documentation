@@ -16,7 +16,7 @@ Installation:
 
 ```bash
 # Node.js
-npm install --save-dev @iconify/json-tools @iconify/json
+npm install --save-dev @iconify/utils @iconify/json
 # PHP
 composer require iconify/json-tools iconify/json
 ```
@@ -26,7 +26,7 @@ PHP version assumes you are using Composer to manage dependencies.
 Usage:
 
 - Change value of `[var]component` to correct component. See below.
-- If you want script to output CommonJS code (that uses `[func]require()`), set `[var]commoonJS` to `true`.
+- If you want script to output CommonJS code (that uses `[func]require()`), set `[var]commonJS` to `true`.
 - Change value of `[var]target` to correct location of bundle.
 - Change list of icons in variable `[var]icons` to icons you want to bundle.
 - Run script.
@@ -42,7 +42,7 @@ include: sources/bundles/example-components
 Example below create JavaScript files with icon data loaded with `[func]addCollection` function that is imported from a component package.
 
 ```yaml
-src: sources/bundles/bundle-component-simple.js
+src: sources/bundles/bundle-component-simple.ts
 title: Node.js
 extra:
   - src: sources/bundles/bundle-component-simple.php

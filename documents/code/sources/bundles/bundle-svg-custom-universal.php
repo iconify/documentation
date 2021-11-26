@@ -15,10 +15,10 @@ require './vendor/autoload.php';
 use Iconify\JSONTools\Collection;
 
 // File to save bundle to
-$target = __DIR__ . '/assets/icons-bundle.js';
+$target = 'assets/icons-bundle.js';
 
 // JSON files location. Filename inside directory must match prefix. For example, for "line-md" prefix icons should be stored in "line-md.json"
-$source = __DIR__ . '/json';
+$source = 'json';
 
 // Icons to bundle, array
 $icons = [
@@ -124,7 +124,7 @@ function organizeIconsList($icons)
  * - name
  *
  * This function was converted to PHP from @iconify/utils/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/master/packages/utils/src/icon/name.ts
  */
 function stringToIcon($value)
 {

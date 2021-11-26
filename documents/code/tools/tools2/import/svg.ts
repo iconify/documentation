@@ -16,14 +16,19 @@ import {
 	const content = await fs.readFile('files/home.svg', 'utf8');
 	const svg = new SVG(content);
 
-	// Clean up, fix colors and optimise
+	// Clean up icon code
 	await cleanupSVG(svg);
+
+	// Assume icon is monotone: replace color with currentColor, add if missing
+	// If icon is not monotone, remove this code
 	await parseColors(svg, {
 		defaultColor: 'currentColor',
 		callback: (attr, colorStr, color) => {
 			return !color || isEmptyColor(color) ? colorStr : 'currentColor';
 		},
 	});
+
+	// Optimise
 	await runSVGO(svg);
 
 	// Add icon to icon set

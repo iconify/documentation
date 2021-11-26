@@ -4,10 +4,10 @@ const fs = require('fs');
 const tools = require('@iconify/json-tools');
 
 // Source file
-let source = __dirname + '/mdi.json';
+let source = 'mdi.json';
 
 // Target directory
-let target = __dirname + '/output';
+let target = 'output';
 
 // Load collection
 let collection = new tools.Collection();

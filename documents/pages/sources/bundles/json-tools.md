@@ -1,8 +1,5 @@
 ```yaml
 title: Generating Iconify Icon Bundles with JSON Tools
-replacements:
-  - code: '60k'
-    value: '${counters.icons-short}'
 types:
   IconifyJSON: '../../types/iconify-json.md'
 ```
@@ -15,14 +12,18 @@ You can use [Iconify JSON Tools](../../tools/json/index.md) to generate data for
 
 [Iconify JSON Tools](../../tools/json/index.md) library is available in Node.js and PHP, so you can choose which programming language to use. See [Iconify JSON Tools](../../tools/json/index.md) for installation instructions.
 
+## Requirements
+
+Node.js (deprecated, use [Iconify Utils](./utils.md) instead) or PHP.
+
 ## Steps
 
 Logic of creating bundle with Iconify JSON Tools:
 
 1. Load icon set.
 2. Filter icons.
-3. Export to JSON string.
-4. Wrap in a callback, see [icon bundles tutorial](./index.md#use) for details.
+3. Convert to string.
+4. Wrap in a function, see [wrapper functions](./wrapper.md) for details.
 
 ## Loading icon set {#load}
 
@@ -71,6 +72,6 @@ extra:
 
 ## Wrap in a callback {#callback}
 
-This step is different for different Iconify icon components. See [icon bundles tutorial](./index.md#callbacks) for details.
+This step is different for different Iconify icon components. See [wrapper function for icon bundles](./wrapper.md).
 
 Also check out [code examples](./examples/index.md) for full examples.

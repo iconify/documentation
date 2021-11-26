@@ -32,7 +32,7 @@ You need to configure script before running it.
 Installation:
 
 ```bash
-npm install --save-dev @iconify/tools @iconify/json-tools @iconify/json @iconify/iconify@2
+npm install --save-dev @iconify/tools @iconify/json @iconify/iconify@2
 ```
 
 Usage:
@@ -48,15 +48,15 @@ Comment out sources that you do not need.
 
 Available sources:
 
-### iconify
+### SVG framework
 
-This option bundles Iconify SVG framework.
+Option `[prop]svgFramework` bundles Iconify SVG framework.
 
 If you want to bundle entire Iconify SVG framework, use this configuration:
 
 ```js
 const sources = {
-	iconify: require.resolve('@iconify/iconify'),
+	svgFramework: require.resolve('@iconify/iconify'),
 
 	// ...
 };
@@ -66,7 +66,9 @@ If you want to make sure API is not available, bundle Iconify SVG framework with
 
 ```js
 const sources = {
-	iconify: require.resolve('@iconify/iconify/dist/iconify.without-api.min'),
+	svgFramework: require.resolve(
+		'@iconify/iconify/dist/iconify.without-api.min'
+	),
 
 	// ...
 };
@@ -74,13 +76,7 @@ const sources = {
 
 Build script will also copy TypeScript definitions file to target location. This makes it easy to use bundle with TypeScript and code completion in tools like VSCode.
 
-If you do not want to bundle Iconify SVG framework, comment out `[prop]iconify` property:
-
-```js
-const sources = {
-	// iconify: require.resolve('@iconify/iconify/dist/iconify.without-api.min'),
-};
-```
+If you do not want to bundle Iconify SVG framework, remove `[prop]iconify` property from configuration.
 
 ### svg
 
@@ -101,7 +97,7 @@ For example:
 ```js
 const sources = {
     svg: [
-        dir: __dirname + '/svg',
+        dir: 'svg',
         monotone: true,
         prefix: 'custom'
     ]
@@ -114,59 +110,23 @@ If you have icon `[file]svg/home.svg`, after importing it, that icon in SVG fram
 <span class="iconify" data-icon="custom:home"></span>
 ```
 
-If you do not want to import SVG, comment out that section of configuration:
-
-```js
-const sources = {
-	// ...
-	/*
-	svg: [
-		{
-			dir: __dirname + '/svg',
-			monotone: true,
-			prefix: 'custom',
-		},
-		{
-			dir: __dirname + '/emojis',
-			monotone: false,
-			prefix: 'emoji',
-		},
-	],
-*/
-	// ...
-};
-```
-
 ### iconifyIcons
 
 This option bundles icons from Iconify icon sets. It is similar to [basic importer example](./svg-framework-simple.md).
 
-If you do not want to bundle any icons, comment out section or change value to an empty array:
-
-```js
-const sources = {
-	// ...
-	/*
-	iconifyIcons: [
-		'mdi:home',
-		'mdi:account',
-		'mdi:login',
-		'mdi:logout',
-		'octicon:book-24',
-		'octicon:code-square-24',
-	],
-*/
-	// ...
-};
-```
+Value is an array of icon names, including icon set prefix.
 
 ### json
 
-This option will bundle entire Iconify JSON files.
+This option will bundle Iconify JSON files.
 
-Use this if you want to use Iconify offline with full icon sets.
+Value is an array of filenames.
 
-To bundle custom JSON file, point to location of that file. To bundle Iconify icon set, use `[func]require.resolve()` to get its location:
+If you want to include only few icons from JSON file, instead of filename you can provide an object with 2 properties: `[prop]filename` that points to JSON file and `[prop]icons` that lists icons you want to filter.
+
+To bundle Iconify icon set, use `[func]require.resolve()` to get its location.
+
+Example that uses all variations:
 
 ```js
 const sources = {
@@ -174,54 +134,12 @@ const sources = {
 
 	json: [
 		// Custom JSON file
-		__dirname + '/json/gg.json',
+		'json/gg.json',
 		// Iconify JSON file (@iconify/json is a package name, /json/ is directory where files are, then filename)
 		require.resolve('@iconify/json/json/tabler.json'),
-	],
-
-	// ...
-};
-```
-
-For example, to bundle Material Design Icons, use `[js]require.resolve('@iconify/json/json/mdi.json')`.
-
-If you do not want to bundle any JSON files, comment out section or change value to an empty array:
-
-```js
-const sources = {
-	// ...
-	/*
-	json: [
-		// Custom JSON file
-		__dirname + '/json/gg.json',
-		// Iconify JSON file (@iconify/json is a package name, /json/ is directory where files are, then filename)
-		require.resolve('@iconify/json/json/tabler.json'),
-	],
-    */
-	// ...
-};
-```
-
-### customIcons
-
-This option bundles icons from custom JSON files.
-
-This is similar to previous option, but instead of loading Iconify icon sets, you specify location of JSON file.
-
-Value is array of entries, each entry is an object with the following properties:
-
-- `[prop]json`: location of JSON file.
-- `[prop]icons`: list of icons to get from that JSON file.
-
-If you do not want to bundle any icons from custom JSON files, comment out section or change value to an empty array:
-
-```js
-const sources = {
-	// ...
-	/*
-	customIcons: [
+		// Custom file with only few icons
 		{
-			json: __dirname + '/json/line-md.json',
+			filename: require.resolve('@iconify/json/json/line-md.json'),
 			icons: [
 				'home-twotone-alt',
 				'github',
@@ -231,27 +149,23 @@ const sources = {
 			],
 		},
 	],
-    */
+
+	// ...
 };
 ```
 
 ## Code
 
-Below are two versions of the same code.
+Code below is written with TypeScript. If you want simple JavaScript file, remove types and `[js]import type` line.
 
-First version uses `[func]Promise` syntax, second version uses `[func]async` and `[func]await` syntax.
-
-```yaml
-title: 'Promise syntax'
-src: sources/bundles/bundle-svg-full.js
-```
+Code is asynchronous. It is wrapped in anonymous asynchronous function because top level `[js]await`, at moment of writing documentation, is not available in all currently used versions of Node.
 
 ```yaml
-title: 'async/await syntax'
-src: sources/bundles/bundle-svg-full-async.js
+title: 'create-bundle.ts'
+src: sources/bundles/bundle-svg-full.ts
 ```
 
-Part of code is taken from [Iconify Tools import examples](../../../tools/node/import-mdi.md).
+Part of code is taken from [Iconify Tools import examples](../../../tools/tools2/import-mdi.md).
 
 ## Importing bundle
 

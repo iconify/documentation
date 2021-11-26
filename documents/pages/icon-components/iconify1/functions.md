@@ -172,8 +172,7 @@ Iconify.addCollection({
 	prefix: 'custom',
 	icons: {
 		icon1: {
-			body:
-				'<path d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z" fill="currentColor"/>',
+			body: '<path d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z" fill="currentColor"/>',
 		},
 	},
 	width: 24,
@@ -315,7 +314,7 @@ Result is an object with list of attributes for `[tag]svg` and `[attr]body` attr
 
 This function is used to create plugins that convert custom placeholders to Iconify icons.
 
-You can find several examples in [Iconify plugins repository on GitHub](https://github.com/iconify/iconify/tree/master/src/browser/plugins).
+You can find several examples in [Iconify v1 plugins repository on GitHub](https://github.com/iconify/iconify/tree/iconify1/src/browser/plugins).
 
 First argument is plugin name, second argument is object containing plugin functions and properties.
 

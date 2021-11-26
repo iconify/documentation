@@ -16,10 +16,10 @@ use Iconify\JSONTools\Collection;
 $component = '@iconify/react';
 
 // Set to true to use require() instead of import
-$commoonJS = false;
+$commonJS = false;
 
 // File to save bundle to
-$target = __DIR__ . '/src/icons-bundle.js';
+$target = 'assets/icons-bundle.js';
 
 // Icons to bundle, array
 $icons = [
@@ -35,7 +35,7 @@ $icons = [
 $icons = organizeIconsList($icons);
 
 // Load icons data
-$output = $commoonJS ? "const { addCollection } = require('$component');\n\n" : "import { addCollection } from '$component';\n\n";
+$output = $commonJS ? "const { addCollection } = require('$component');\n\n" : "import { addCollection } from '$component';\n\n";
 foreach ($icons as $prefix => $iconsList) {
     // Load icon set
     $collection = new Collection($prefix);
@@ -110,7 +110,7 @@ function organizeIconsList($icons)
  * - name
  *
  * This function was converted to PHP from @iconify/utils/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/dev/packages/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/master/packages/utils/src/icon/name.ts
  */
 function stringToIcon($value)
 {

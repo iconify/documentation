@@ -237,21 +237,22 @@
         ./bundles/:
           title: Bundled Icons
           children:
+            ./wrapper.html: Wrapper Function
             ./api.html: Using Iconify API
+            ./utils.html: Using Iconify Utils
             ./json-tools.html: Using JSON Tools
-            ./svg-framework.html: SVG Framework
-            ./components.html:
-              title: Components
+            ./examples/:
+              title: Examples
+            ./#usage:
+              title: Usage
               separator: true
               clickable: false
+            ./svg-framework.html: SVG Framework
             ./react.html: React
             ./vue.html: Vue 3
             ./vue2.html: Vue 2
             ./svelte.html: Svelte
             ./ember.html: Ember
-            ./examples/:
-              title: Examples
-              separator: true
         ./npm/: Icon Packages
         ./json/: Iconify Icon Sets
     /icon-finder/:

@@ -3,10 +3,10 @@
 require('./vendor/autoload.php');
 
 // Source file
-$source = __DIR__ . '/mdi.json';
+$source = 'mdi.json';
 
 // Target directory
-$target = __DIR__ . '/output';
+$target = 'output';
 
 // Load collection
 $collection = new \Iconify\JSONTools\Collection();

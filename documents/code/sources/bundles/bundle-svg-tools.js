@@ -20,93 +20,62 @@ const source = __dirname + '/svg';
 const prefix = 'custom';
 
 // Import icons
-let collection;
-tools
-	.ImportDir(source, {
+(async function () {
+	// Import icons
+	const collection = await tools.ImportDir(source, {
 		prefix,
-	})
-	.then((result) => {
-		collection = result;
+	});
 
-		// Set prefix
-		collection.prefix = prefix;
+	// Set prefix
+	collection.prefix = prefix;
 
-		// Options for SVGO optimization
-		const SVGOOptions = {
-			convertShapeToPath: true,
-			mergePaths: true,
-		};
+	// Options for SVGO optimization
+	const SVGOOptions = {
+		convertShapeToPath: true,
+		mergePaths: true,
+	};
 
-		// Optimize SVG files
-		//
-		// collection.promiseEach() iterates all icons in collection and runs
-		// promise for each icon, one at a time.
-		return collection.promiseEach(
-			(svg, key) =>
-				new Promise((fulfill, reject) => {
-					tools
-						.SVGO(svg, SVGOOptions)
-						.then((res) => {
-							fulfill(res);
-						})
-						.catch((err) => {
-							reject('Error optimizing icon ' + key + '\n' + util.format(err));
-						});
-				}),
-			true
-		);
-	})
-	.then(() => {
-		// Clean up tags
-		return collection.promiseEach(
-			(svg, key) =>
-				new Promise((fulfill, reject) => {
-					tools
-						.Tags(svg)
-						.then((res) => {
-							fulfill(res);
-						})
-						.catch((err) => {
-							reject(
-								'Error checking tags in icon ' + key + '\n' + util.format(err)
-							);
-						});
-				}),
-			true
-		);
-	})
-	.then(() => {
-		// Change color to "currentColor" to all icons
-		// Use this only for monotone collections
-		const options = {
-			default: 'currentColor', // change all colors to "currentColor"
-			add: 'currentColor', // add "currentColor" to shapes that are missing color value
-		};
+	// Optimize SVG files
+	//
+	// collection.promiseEach() iterates all icons in collection and runs
+	// promise for each icon, one at a time.
+	await collection.promiseEach(
+		async (svg, key) => await tools.SVGO(svg, SVGOOptions),
+		true
+	);
 
-		/*
-		// For icons that have palette use this instead:
-		const options = {
-			add: 'currentColor',
-		};
-		*/
+	// Clean up tags
+	await collection.promiseEach(async (svg, key) => await tools.Tags(svg), true);
 
-		return collection.promiseEach(
-			(svg) => tools.ChangePalette(svg, options),
-			true
-		);
-	})
-	.then((res) => {
-		// Export to JSON
-		return tools.ExportJSON(collection, null, {
-			optimize: true,
-		});
-	})
-	.then((json) => {
-		// Export to bundle
-		let output = 'add(' + JSON.stringify(json) + ');\n';
+	// Change color to "currentColor" to all icons
+	// Use this only for monotone collections
+	const options = {
+		default: 'currentColor', // change all colors to "currentColor"
+		add: 'currentColor', // add "currentColor" to shapes that are missing color value
+	};
 
-		// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
-		output = `(function() { 
+	/*
+	// For icons that have palette use this instead:
+	const options = {
+		add: 'currentColor',
+	};
+	*/
+
+	await collection.promiseEach(
+		async (svg) => await tools.ChangePalette(svg, options),
+		true
+	);
+
+	// Export to JSON
+	const json = await tools.ExportJSON(collection, null, {
+		optimize: true,
+	});
+
+	// Export to bundle
+	let output = 'add(' + JSON.stringify(json) + ');\n';
+
+	// Wrap in custom code that checks for Iconify.addCollection and IconifyPreload
+	output = `(function() { 
 	function add(data) {
 		try {
 			if (typeof self.Iconify === 'object' && self.Iconify.addCollection) {
@@ -123,11 +92,10 @@ tools
 	${output}
 })();\n`;
 
-		// Save to file
-		fs.writeFileSync(target, output, 'utf8');
+	// Save to file
+	fs.writeFileSync(target, output, 'utf8');
 
-		console.log(`Saved ${target} (${output.length} bytes)`);
-	})
-	.catch((err) => {
-		console.error(err);
-	});
+	console.log(`Saved ${target} (${output.length} bytes)`);
+})().catch((err) => {
+	console.error(err);
+});

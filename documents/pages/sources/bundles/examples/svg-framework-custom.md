@@ -17,13 +17,13 @@ These examples show how to create icon bundles for SVG framework from custom ico
 
 ## Instructions
 
-This example assumes you have converted custom icon set to `[type]IconifyJSON` format. If not, see [Iconify Tools documentation](../../../tools/node/index.md).
+This example assumes you have converted custom icon set to `[type]IconifyJSON` format. If not, see [similar example that uses Iconify Tools](./svg-framework-custom-tools.md).
 
 Installation:
 
 ```bash
 # Node.js
-npm install --save-dev @iconify/json-tools
+npm install --save-dev @iconify/utils
 # PHP
 composer require iconify/json-tools
 ```
@@ -33,7 +33,7 @@ PHP version assumes you are using Composer to manage dependencies.
 Usage:
 
 - Change variable `[var]target` to correct location of bundle.
-- Change variable `[var]sources` to correct location of JSON files.
+- Change variable `[var]source` to correct location of JSON files.
 - Change list of icons in variable `[var]icons` to icons you want to bundle.
 - Run script.
 
@@ -42,7 +42,7 @@ Usage:
 Example below create JavaScript files with icon data loaded with `[func]Iconify.addCollection` or assigned to `[var]IconifyPreload` variable, whatever is available. This means bundle can be imported before Iconify SVG framework or after it.
 
 ```yaml
-src: sources/bundles/bundle-svg-custom-universal.js
+src: sources/bundles/bundle-svg-custom-universal.ts
 title: Node.js
 extra:
   - src: sources/bundles/bundle-svg-custom-universal.php

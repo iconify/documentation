@@ -11,6 +11,12 @@ This example show how to create icon bundles for SVG framework from SVG files. I
 
 For more information about icon bundles, see [icon bundles documentation](../../sources/bundles/index.md).
 
+## Legacy
+
+This example is outdated.
+
+[New version built with Iconify Tools 2 and TypeScript is available here](../../sources/bundles/examples/svg-framework-full.md).
+
 ## Instructions
 
 Configure script:

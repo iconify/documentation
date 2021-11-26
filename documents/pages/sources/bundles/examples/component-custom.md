@@ -14,13 +14,13 @@ These examples show how to create icon bundles for Iconify components from custo
 
 ## Instructions
 
-This example assumes you have converted custom icon set to `[type]IconifyJSON` format. If not, see [Iconify Tools documentation](../../../tools/node/index.md).
+This example assumes you have converted custom icon set to `[type]IconifyJSON` format. If not, see [similar example that uses Iconify Tools](./component-custom-tools.md).
 
 Installation:
 
 ```bash
 # Node.js
-npm install --save-dev @iconify/json-tools
+npm install --save-dev @iconify/utils
 # PHP
 composer require iconify/json-tools
 ```
@@ -30,7 +30,7 @@ PHP version assumes you are using Composer to manage dependencies.
 Usage:
 
 - Change value of `[var]component` to correct component. See below.
-- If you want script to output CommonJS code (that uses `[func]require()`), set `[var]commoonJS` to `true`.
+- If you want script to output CommonJS code (that uses `[func]require()`), set `[var]commonJS` to `true`.
 - Change value of `[var]target` to correct location of bundle.
 - Change value of `[var]sources` to correct location of JSON files.
 - Change list of icons in variable `[var]icons` to icons you want to bundle.
@@ -47,7 +47,7 @@ include: sources/bundles/example-components
 Example below create JavaScript files with icon data loaded with `[func]addCollection` function that is imported from a component package.
 
 ```yaml
-src: sources/bundles/bundle-component-custom.js
+src: sources/bundles/bundle-component-custom.ts
 title: Node.js
 extra:
   - src: sources/bundles/bundle-component-custom.php

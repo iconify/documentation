@@ -36,6 +36,8 @@ import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
 				await cleanupSVG(svg);
 
 				// Fix colors
+				// This example assumes that icon is monotone: replaces color with currentColor, adds currentColor if missing
+				// If icon is not monotone, remove this code
 				await parseColors(svg, {
 					defaultColor: 'currentColor',
 					callback: (attr, colorStr, color) => {
