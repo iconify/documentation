@@ -41,4 +41,4 @@ Icon packages are very easy to use: import icon data from icon package and pass 
 
 All sources listed above are not tied to only icons available with Iconify.
 
-You can use Iconify with any icons. Iconify offers [various tools](../tools/index.md) for importing, manipulating and exporting icon sets. There are [several examples](../tools/node/examples.md) showing how to import some popular icon sets, such as [FontAwesome Pro](../tools/node/import-fa-pro.md).
+You can use Iconify with any icons. Iconify offers [various tools](../tools/index.md) for importing, manipulating and exporting icon sets. There are [several examples](../tools/tools2/examples/index.md) showing how to import some popular icon sets, such as [FontAwesome Pro](../tools/tools2/examples/import-fa-pro.md).
