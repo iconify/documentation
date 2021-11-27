@@ -10,7 +10,8 @@ replacements:
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 functions:
-  addIcon: ../../icon-components/svg-framework/add-icon.md
+  addIcon: '../../icon-components/svg-framework/add-icon.md'
+  exportIconPackage: '../../tools/tools2/export/icon-package.md'
 ```
 
 # Icon packages
@@ -121,3 +122,7 @@ Few examples of icon names:
 See Iconify components for usage:
 
 `include icon-components/components-offline`
+
+## Creating packages
+
+If you want to create a custom icon package, see `[func]exportIconPackage()` function of [Iconify Tools](../../tools/tools2/index.md).
