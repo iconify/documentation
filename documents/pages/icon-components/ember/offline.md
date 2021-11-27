@@ -15,9 +15,9 @@ See [icon bundles for Iconify for Ember](../../icon-components/bundles/ember.md)
 
 ## Available icons
 
-`include sources/npm/packages-intro`
+`include icons/packages-intro`
 
-If you want to use icon packages, as shown in example above, see [icon packages documentation](../../sources/npm/index.md) for more information.
+If you want to use icon packages, as shown in example above, see [icon packages documentation](../../icons/icons.md) for more information.
 
 ### Icon packages {#modules}
 
@@ -30,7 +30,7 @@ where `[str]{prefix}` is icon set prefix.
 
 In Ember components you should always use ES packages. CommonJS packages are for use with Node.js and outdated frameworks that do not support ES modules.
 
-See [icon packages documentation](../../sources/npm/index.md).
+See [individual icon packages documentation](../../icons/icons.md).
 
 #### Usage in Ember
 

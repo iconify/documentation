@@ -10,10 +10,8 @@ By default, Iconify includes over 60k free icons from various icon sets, includi
 
 Icon components do not include data for icons.
 
-[Sources section](/sources/index.md) explains how icon components can get icon data, show various ways to retrieve icon data.
+There are several ways of getting icons:
 
-Sources are split into several parts:
-
-- [Iconify API](/api/index.md). It is used by [icon components](/icon-components/index.md) and [Icon Finder](/icon-finder/index.md).
+- [Iconify API](/api/index.md). It is used by [icon components](/icon-components/index.md) to load icon data on demand.
 - [Bundled icons](/icon-components/bundles/index.md). You can create icon bundles, making it easy to use icon components offline.
-- [Icon packages](/sources/npm/index.md). Similar to icon bundles, but imports icons one by one and is easier to use.
+- [Individual icon packages](/icons/icons.md). Similar to icon bundles, but imports icons one by one and is easier to use.

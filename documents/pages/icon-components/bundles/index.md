@@ -29,7 +29,7 @@ This also allows rendering icons when internet access is not available and you a
 
 ### Smaller bundle size {#size}
 
-Compares to [icon packages](../../sources/npm/index.md) that contain data for each icon separately, icon bundles import multiple icons at the same time. This reduces bundle size.
+Compares to [individual icon packages](../../icons/icons.md) that contain data for each icon separately, icon bundles import multiple icons at the same time. This reduces bundle size.
 
 ## How to create icons bundle? {#create}
 

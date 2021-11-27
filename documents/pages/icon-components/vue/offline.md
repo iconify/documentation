@@ -40,9 +40,9 @@ src: icon-components/common/offline.vue
 
 ## Available icons
 
-`include sources/npm/packages-intro`
+`include icons/packages-intro`
 
-If you want to use icon packages, as shown in example above, see [icon packages documentation](../../sources/npm/index.md) for more information.
+If you want to use icon packages, as shown in example above, see [icon packages documentation](../../icons/icons.md) for more information.
 
 ### Icon packages {#modules}
 
@@ -61,4 +61,4 @@ Format for icon data packages:
 
 where `[str]{prefix}` is icon set prefix. Use ES package whenever possible, switch to CommonJS package if your bundler does not support ES modules or if you need to use it in Node.js.
 
-See [icon packages documentation](../../sources/npm/index.md).
+See [individual icon packages documentation](../../icons/icons.md).

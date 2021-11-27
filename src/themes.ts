@@ -30,6 +30,7 @@ export function defaultTheme(file: string): Theme | null {
 
 	const dir2 = parts.shift();
 	switch (dir) {
+		// Components
 		case 'develop':
 		case 'implementations':
 		case 'icon-components':
@@ -40,18 +41,22 @@ export function defaultTheme(file: string): Theme | null {
 			}
 			return 'develop';
 
+		// Plugins
 		case 'design':
 			return 'design';
 
+		// Icons
 		case 'icons':
 		case 'sources':
 			return 'icons';
 
+		// API
 		case 'api':
 			return 'api';
 
+		// Libraries
 		case 'tools':
-			if (dir2 === 'node') {
+			if (dir2 === 'node' || dir2 === 'json') {
 				return 'legacy';
 			}
 		case 'code':

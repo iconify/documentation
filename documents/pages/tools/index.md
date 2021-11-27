@@ -39,7 +39,7 @@ Tools package contains the following functions:
 
 This package works only in node environment, not usable for browser oriented packages.
 
-Main purpose is to generate [Iconify icon sets](../sources/json/index.md). Tools are used to retrieve icons from various sources, clean them up, then export icon set, then it can be used by various components with help of [Iconify Utils](./utils/index.md).
+Main purpose is to generate [Iconify icon sets](../icons/index.md). Tools are used to retrieve icons from various sources, clean them up, then export icon set, then it can be used by various components with help of [Iconify Utils](./utils/index.md).
 
 ## Old libraries
 

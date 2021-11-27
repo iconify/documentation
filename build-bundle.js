@@ -89,6 +89,13 @@ const preloadIcons = {
 	'entypo:attachment',
 	// Rotation and flip
 	'bi:check2-circle',
+	// Icons page
+	'mdi:material-design',
+	'akar-icons:bootstrap-fill',
+	'carbon:carbon',
+	'tabler:brand-tabler',
+	'twemoji:dizzy',
+	'openmoji:face-with-tongue',
 ].forEach((icon) => {
 	const parts = icon.split(':');
 	if (parts.length !== 2) {

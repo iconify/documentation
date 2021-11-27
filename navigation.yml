@@ -1,12 +1,11 @@
-/sources/:
+/icons/:
   title: Icons
   children:
-    ./npm.html:
-      title: NPM Packages
-      children:
-        ./json/: Iconify JSON
-        ./npm/: Individual Icons
-        ./custom.html: Custom Icons
+    ./all.html: All Icon Sets
+    ./json.html: Individual Icon Sets
+    ./icons.html: Individual Icons
+    ./collections.html: Icon Sets List
+    # ./custom.html: Custom Icons
 /api/:
   title: Iconify API
   children:
