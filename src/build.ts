@@ -131,7 +131,7 @@ export function build() {
 		if (navigationListItem === void 0) {
 			if (
 				// Index should not be in navigation
-				file !== indexFile &&
+				file !== '/' + indexFile &&
 				// Standalone files and redirects should not be in navigation
 				!result.metadata.standalone &&
 				!result.metadata.redirect &&
@@ -145,7 +145,7 @@ export function build() {
 				hasInvalidFiles = true;
 			}
 		} else {
-			if (file === indexFile) {
+			if (file === '/' + indexFile) {
 				throw new Error(
 					'Index file is present in navigation. It should not be there.'
 				);
