@@ -65,7 +65,7 @@ What are the advantages of this approach?
 What are the disadvantages?
 
 - It requires an internet connection. However, there is a solution for offline use, see [Iconify icon bundles](../../icon-components/bundles/index.md).
-- Relies on third party service. However, there is an option to host your own Iconify API, see [self-hosted API](../../sources/api/hosting.md).
+- Relies on third party service. However, there is an option to host your own Iconify API, see [self-hosted API](../../api/hosting.md).
 
 ### Usage without API
 

@@ -13,13 +13,13 @@ There are multiple ways to provide data for icons, each has its advantages and d
 
 ## Iconify API {#api}
 
-[Iconify API](./api/index.md) is the main source of icons.
+[Iconify API](../api/index.md) is the main source of icons.
 
 API sends data for icons on demand. Loading icons on demand has massive advantages over other methods:
 
 - No need to pre-package icons. Icons are loaded dynamically when needed. That makes it very easy to use.
 - Only the icons used on web pages are loaded. No need to waste bandwidth on loading icons that are not displayed.
-- Tools can be developed that allow users choose any icon available on Iconify API. There are over 60k icons to choose from with public Iconify API and you can add [custom API providers](./api/providers.md) for even more icons.
+- Tools can be developed that allow users choose any icon available on Iconify API. There are over 60k icons to choose from with public Iconify API and you can add [custom API providers](../api/providers.md) for even more icons.
 
 Disadvantage of using API is API must be reachable. This means your applications must have access to internet. If you need to use icons offline, use one of other methods.
 

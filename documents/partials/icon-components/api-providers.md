@@ -1,10 +1,10 @@
 API providers allow using icons from multiple API in the same document. For example, you can use default Iconify icons and custom icons from IconScout or Icons8 or custom API.
 
-`include sources/api/namespaces/animation`
+`include api/namespaces/animation`
 
 To support providers, syntax for icon names have been extended. Icon names in Iconify icon components have 3 parts:
 
-`include sources/api/namespaces/name`
+`include api/namespaces/name`
 
 All parts are separated by `[str]:`, provider is optional and can be skipped if empty.
 

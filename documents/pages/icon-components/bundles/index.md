@@ -29,7 +29,7 @@ This also allows rendering icons when internet access is not available and you a
 
 ### Smaller bundle size {#size}
 
-Compares to [icon packages](../npm/index.md) that contain data for each icon separately, icon bundles import multiple icons at the same time. This reduces bundle size.
+Compares to [icon packages](../../sources/npm/index.md) that contain data for each icon separately, icon bundles import multiple icons at the same time. This reduces bundle size.
 
 ## How to create icons bundle? {#create}
 
@@ -45,7 +45,7 @@ First you need to get data for icons.
 Icon data is a simple `[type]IconifyJSON` object, like this:
 
 ```yaml
-src: sources/api/mdi.json
+src: api/mdi.json
 ```
 
 There are several ways to generate data for icon bundles:
@@ -59,7 +59,7 @@ There are several ways to generate data for icon bundles:
 After retrieving data, you need to convert it to string and wrap that data in a callback to create a JavaScript file:
 
 ```yaml
-src: sources/api/mdi.js
+src: api/mdi.js
 ```
 
 Then you can bundle it with your application or load separately.

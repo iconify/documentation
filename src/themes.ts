@@ -55,6 +55,8 @@ export function defaultTheme(file: string): Theme | null {
 		// return 'integration';
 
 		case 'publish':
+		case 'icons':
+		case 'api':
 			return 'publish';
 
 		case 'tools':

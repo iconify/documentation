@@ -1,1 +1,1 @@
-See [API providers documentation](/sources/api/providers.md) for details.
+See [API providers documentation](/api/providers.md) for details.

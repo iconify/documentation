@@ -14,6 +14,6 @@ Icon components do not include data for icons.
 
 Sources are split into several parts:
 
-- [Iconify API](/sources/api/index.md). It is used by [icon components](/icon-components/index.md) and [Icon Finder](/icon-finder/index.md).
+- [Iconify API](/api/index.md). It is used by [icon components](/icon-components/index.md) and [Icon Finder](/icon-finder/index.md).
 - [Bundled icons](/icon-components/bundles/index.md). You can create icon bundles, making it easy to use icon components offline.
 - [Icon packages](/sources/npm/index.md). Similar to icon bundles, but imports icons one by one and is easier to use.

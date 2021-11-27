@@ -55,7 +55,7 @@ Importing multiple icons:
 
 ## Available icons
 
-By default, it offers all icons available on [Iconify API](../../sources/api/index.md) to Sketch projects.
+By default, it offers all icons available on [Iconify API](../../api/index.md) to Sketch projects.
 
 Plug-in is open source and can be customised. You can:
 

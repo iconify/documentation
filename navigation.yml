@@ -7,20 +7,20 @@
         ./json/: Iconify JSON
         ./npm/: Individual Icons
         ./custom.html: Custom Icons
-    ./api/:
-      title: Iconify API
+/api/:
+  title: Iconify API
+  children:
+    ./hosting.html:
+      title: Hosting API
       children:
-        ./hosting.html:
-          title: Hosting API
-          children:
-            ./hosting-php/: PHP
-            ./hosting-js/: Node.js
-        ./providers.html:
-          title: API Providers
-        ./config.html:
-          title: Using custom API
-        ./queries.html:
-          title: API Queries
+        ./hosting-php/: PHP
+        ./hosting-js/: Node.js
+    ./providers.html:
+      title: API Providers
+    ./config.html:
+      title: Using custom API
+    ./queries.html:
+      title: API Queries
 /develop/:
   title: Components
   children:

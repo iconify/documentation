@@ -19,7 +19,7 @@ functions:
 
 # Iconify icon sets
 
-All icon sets available with [Iconify API](../api/index.md) are available for developers to use with their own tools and projects.
+All icon sets available with [Iconify API](../../api/index.md) are available for developers to use with their own tools and projects.
 
 Iconify is designed to be used with any icons. To make things easier, Iconify offers collection of the most popular icon sets as a package. There are over 60,000 icons from more than 80 icon sets.
 
@@ -103,7 +103,7 @@ import { collections } from '@iconify/collections';
 
 Package is automatically updated every few days, so it always includes the latest icons. If you want to use the latest icons, all you have to do is keep dependencies in your project up to date.
 
-If you are using [Iconify API](../api/index.md), you do not need to do anything because changes are automatically pushed to API servers within minutes after being published.
+If you are using [Iconify API](../../api/index.md), you do not need to do anything because changes are automatically pushed to API servers within minutes after being published.
 
 ## Reading data {#tools}
 

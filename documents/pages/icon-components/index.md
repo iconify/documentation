@@ -45,7 +45,7 @@ Iconify offers components for several popular component frameworks:
 
 `include icon-components/components`
 
-All icon components support loading icon data on demand from [Iconify API](../sources/api/index.md).
+All icon components support loading icon data on demand from [Iconify API](../api/index.md).
 
 If you want to use component offline, all components also support various options to render icons without API: [icon bundles](../icon-components/bundles/index.md), [icon components](../sources/npm/index.md).
 

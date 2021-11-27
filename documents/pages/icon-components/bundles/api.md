@@ -23,7 +23,7 @@ You can add `[url]&pretty=1` to URL to generate pretty markup.
 Example: `[url]https://api.iconify.design/mdi.json?icons=account-box,account-cash,account,home&pretty=1`
 
 ```yaml
-src: sources/api/mdi.json
+src: api/mdi.json
 ```
 
 Copy contents to clipboard, paste it in your bundle file, wrapped in callback.
