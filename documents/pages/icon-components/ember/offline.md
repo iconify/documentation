@@ -11,7 +11,7 @@ functions:
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for Ember](../../sources/bundles/ember.md) documentation.
+See [icon bundles for Iconify for Ember](../../icon-components/bundles/ember.md) documentation.
 
 ## Available icons
 

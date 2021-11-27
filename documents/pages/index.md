@@ -3,7 +3,6 @@ title: Iconify Documentation
 replacements:
   - code: '60k'
     value: '${counters.icons-short}'
-wip: true
 ```
 
 # Iconify documentation

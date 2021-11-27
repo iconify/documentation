@@ -48,7 +48,7 @@ export function createLegacyRedirect(
 		// Create alias
 		if (redirect !== void 0) {
 			throw new Error(
-				'Cannot handle redirects for redirects yet. Update src/legacy-redirects.ts code'
+				`Cannot handle redirects for redirects yet. Update src/legacy-redirects.ts code. Attempted to redirect from "${currentFile}" to "${implementationsTarget}"`
 			);
 		}
 

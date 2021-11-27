@@ -11,7 +11,7 @@ functions:
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for Svelte](../../sources/bundles/react.md) documentation.
+See [icon bundles for Iconify for Svelte](../../icon-components/bundles/react.md) documentation.
 
 ## Offline component
 

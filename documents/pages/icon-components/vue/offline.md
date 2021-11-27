@@ -11,7 +11,7 @@ functions:
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for Vue](../../sources/bundles/vue.md) documentation.
+See [icon bundles for Iconify for Vue](../../icon-components/bundles/vue.md) documentation.
 
 ## Offline component
 

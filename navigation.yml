@@ -1,5 +1,28 @@
+/sources/:
+  title: Icons
+  children:
+    ./npm.html:
+      title: NPM Packages
+      children:
+        ./json/: Iconify JSON
+        ./npm/: Individual Icons
+        ./custom.html: Custom Icons
+    ./api/:
+      title: Iconify API
+      children:
+        ./hosting.html:
+          title: Hosting API
+          children:
+            ./hosting-php/: PHP
+            ./hosting-js/: Node.js
+        ./providers.html:
+          title: API Providers
+        ./config.html:
+          title: Using custom API
+        ./queries.html:
+          title: API Queries
 /develop/:
-  title: For Developers
+  title: Components
   children:
     /icon-components/:
       title: Icon Components
@@ -216,26 +239,9 @@
             ./disable-cache.html: disableCache()
             # Internal
             ./replace-ids.html: replaceIDs()
-    /sources/:
-      title: Icon Sources
-      children:
-        ./api/:
-          title: Iconify API
-          children:
-            ./hosting.html:
-              title: Hosting API
-              children:
-                ./hosting-php/: PHP
-                ./hosting-js/: Node.js
-            ./providers.html:
-              title: API Providers
-            ./config.html:
-              title: Using custom API
-            ./queries.html:
-              title: API Queries
-              # wip: true
         ./bundles/:
-          title: Bundled Icons
+          title: Icon Bundles
+          separator: true
           children:
             ./wrapper.html: Wrapper Function
             ./api.html: Using Iconify API
@@ -253,8 +259,6 @@
             ./vue2.html: Vue 2
             ./svelte.html: Svelte
             ./ember.html: Ember
-        ./npm/: Icon Packages
-        ./json/: Iconify Icon Sets
     /icon-finder/:
       title: Icon Finder
       wip: true
@@ -288,7 +292,7 @@
                 ./types.html: Types
                 ./examples.html: Project Forks
 /design/:
-  title: For Designers
+  title: Plugins
   headline: One icon plugin to replace them all.
   children:
     ./figma/:
@@ -299,189 +303,9 @@
       title: Adobe XD Plugin
       wip: true
       hidden: true
-/code/:
-  title: Code
+/tools/:
+  title: Libraries
   children:
-    /tools/:
-      title: Development Tools
-      children:
-        ./node/:
-          title: Iconify Tools v1
-          hidden: true
-          children:
-            ./import.html: Importing Icons
-            ./export.html: Exporting Icons
-            ./manipulation.html: Manipulating Icons
-            ./examples.html:
-              title: Examples
-              children:
-                ./import-mdi.html: Import MDI
-                ./import-fa-pro.html: FontAwesome Pro
-                ./import-font.html: Import Icon Font
-                ./bundle.html: Icons Bundle
-        ./tools2/:
-          title: Iconify Tools
-          children:
-            ./svg/: SVG Class
-            ./icon-set/:
-              title: IconSet Class
-              children:
-                ./functions.html#icons:
-                  title: Icons
-                  separator: true
-                  clickable: false
-                ./list.html: list()
-                ./for-each.html: forEach()
-                ./exists.html: exists()
-                ./count.html: count()
-                ./remove.html: remove()
-                ./rename.html: rename()
-                ./set-item.html: setItem()
-                ./set-icon.html: setIcon()
-                ./set-variation.html: setVariation()
-                ./set-alias.html: setAlias()
-                ./entries.html: entries
-                ./functions.html#import:
-                  title: Importing/Exporting
-                  separator: true
-                  clickable: false
-                ./prefix.html: prefix
-                ./resolve.html: resolve()
-                ./load.html: load()
-                ./export.html: export()
-                ./to-svg.html: toSVG()
-                ./from-svg.html: fromSVG()
-                ./to-string.html: toString()
-                ./functions.html#metadata:
-                  title: Metadata
-                  separator: true
-                  clickable: false
-                ./info.html: info
-                ./chars.html: chars()
-                ./toggle-character.html: toggleCharacter()
-                ./list-category.html: listCategory()
-                ./toggle-category.html: toggleCategory()
-                ./categories.html: categories
-                ./check-theme.html: checkTheme()
-                ./themes.html: suffixes/prefixes
-                ./functions.html#other:
-                  title: Other
-                  separator: true
-                  clickable: false
-                ./merge.html: mergeIconSets()
-            ./icon/cleanup.html: Cleanup/Validation
-            ./icon/:
-              title: Icon Manipulation
-              children:
-                ./svgo.html: runSVGO()
-                ./colors.html: parseColors()
-                ./paths.html: deOptimisePaths()
-                ./scale.html: scaleSVG()
-            ./import/:
-              title: Import
-              children:
-                ./json.html: IconifyJSON
-                ./svg.html: Single SVG
-                ./directory.html: Directory
-                ./figma/: Figma
-            ./export/:
-              title: Export
-              children:
-                ./json.html: IconifyJSON
-                ./svg.html: Single SVG
-                ./directory.html: Directory
-                ./icon-package.html: Icon Package
-                ./json-package.html: IconifyJSON Package
-            ./package/:
-              title: Managing Packages
-              children:
-                ./#download:
-                  title: Download Packages
-                  separator: true
-                  clickable: false
-                ./git.html: Git Repository
-                ./github.html: GitHub API
-                ./npm.html: NPM Package
-                ./#versions:
-                  title: Versions
-                  separator: true
-                  clickable: false
-                ./bump-version.html: Increase Version
-                ./npm-version.html: NPM Version
-                ./package-version.html: Package Version
-                ./git-repo-hash.html: Git Repo Hash
-                ./github-commit.html: GitHub Last Commit
-                ./#misc:
-                  title: Other
-                  separator: true
-                  clickable: false
-                ./compare.html: Compare Directories
-                ./api-query.html: Send API Query
-                ./download-file.html: Download File
-            ./examples/:
-              title: Examples
-              children:
-                ./import-mdi.html: Import MDI
-                ./import-fa-pro.html: FontAwesome Pro
-        ./utils/:
-          title: Iconify Utils
-          children:
-            ./functions.html:
-              title: Icon Sets
-              separator: true
-              clickable: false
-            ./validate-icon-set.html: validateIconSet()
-            ./get-icons.html: getIcons()
-            ./get-icon-data.html: getIconData()
-            ./minify-icon-set.html: minifyIconSet()
-            ./expand-icon-set.html: expandIconSet()
-            ./convert-info.html: convertIconSetInfo()
-            ./parse-icon-set.html: parseIconSet()
-            ./functions.html#icon:
-              title: Icon
-              separator: true
-              clickable: false
-            ./merge-icon-data.html: mergeIconData()
-            ./full-icon.html: fullIcon()
-            ./functions.html#customisations:
-              title: Customisations
-              separator: true
-              clickable: false
-            ./merge-customisations.html: mergeCustomisations()
-            ./defaults.html: defaults
-            ./compare.html: compare()
-            ./to-boolean.html: toBoolean()
-            ./rotate-from-string.html: rotateFromString()
-            ./flip-from-string.html: flipFromString()
-            ./alignment-from-string.html: alignmentFromString()
-            ./functions.html#svg:
-              title: SVG
-              separator: true
-              clickable: false
-            ./icon-to-svg.html: iconToSVG()
-            ./calculate-size.html: calculateSize()
-            ./replace-ids.html: replaceIDs()
-            ./functions.html#icon-name:
-              title: Icon Name
-              separator: true
-              clickable: false
-            ./match-name.html: matchName
-            ./string-to-icon.html: stringToIcon()
-            ./validate-icon.html: validateIcon()
-            ./functions.html#colors:
-              title: Colors
-              separator: true
-              clickable: false
-            ./string-to-color.html: stringToColor()
-            ./compare-colors.html: compareColors()
-            ./color-to-string.html: colorToString()
-        ./json/:
-          title: Iconify JSON Tools
-          hidden: true
-          children:
-            ./collection.html: Collection Class
-            ./svg.html: SVG Class
-            ./export.html: Export Icons
     /types/:
       title: Iconify Types
       children:
@@ -492,3 +316,180 @@
             ./iconify-json-metadata.html: Metadata
         ./iconify-alias.html: IconifyAlias
         ./iconify-info.html: IconifyInfo
+    ./node/:
+      title: Iconify Tools v1
+      hidden: true
+      children:
+        ./import.html: Importing Icons
+        ./export.html: Exporting Icons
+        ./manipulation.html: Manipulating Icons
+        ./examples.html:
+          title: Examples
+          children:
+            ./import-mdi.html: Import MDI
+            ./import-fa-pro.html: FontAwesome Pro
+            ./import-font.html: Import Icon Font
+            ./bundle.html: Icons Bundle
+    ./tools2/:
+      title: Iconify Tools
+      children:
+        ./svg/: SVG Class
+        ./icon-set/:
+          title: IconSet Class
+          children:
+            ./functions.html#icons:
+              title: Icons
+              separator: true
+              clickable: false
+            ./list.html: list()
+            ./for-each.html: forEach()
+            ./exists.html: exists()
+            ./count.html: count()
+            ./remove.html: remove()
+            ./rename.html: rename()
+            ./set-item.html: setItem()
+            ./set-icon.html: setIcon()
+            ./set-variation.html: setVariation()
+            ./set-alias.html: setAlias()
+            ./entries.html: entries
+            ./functions.html#import:
+              title: Importing/Exporting
+              separator: true
+              clickable: false
+            ./prefix.html: prefix
+            ./resolve.html: resolve()
+            ./load.html: load()
+            ./export.html: export()
+            ./to-svg.html: toSVG()
+            ./from-svg.html: fromSVG()
+            ./to-string.html: toString()
+            ./functions.html#metadata:
+              title: Metadata
+              separator: true
+              clickable: false
+            ./info.html: info
+            ./chars.html: chars()
+            ./toggle-character.html: toggleCharacter()
+            ./list-category.html: listCategory()
+            ./toggle-category.html: toggleCategory()
+            ./categories.html: categories
+            ./check-theme.html: checkTheme()
+            ./themes.html: suffixes/prefixes
+            ./functions.html#other:
+              title: Other
+              separator: true
+              clickable: false
+            ./merge.html: mergeIconSets()
+        ./icon/cleanup.html: Cleanup/Validation
+        ./icon/:
+          title: Icon Manipulation
+          children:
+            ./svgo.html: runSVGO()
+            ./colors.html: parseColors()
+            ./paths.html: deOptimisePaths()
+            ./scale.html: scaleSVG()
+        ./import/:
+          title: Import
+          children:
+            ./json.html: IconifyJSON
+            ./svg.html: Single SVG
+            ./directory.html: Directory
+            ./figma/: Figma
+        ./export/:
+          title: Export
+          children:
+            ./json.html: IconifyJSON
+            ./svg.html: Single SVG
+            ./directory.html: Directory
+            ./icon-package.html: Icon Package
+            ./json-package.html: IconifyJSON Package
+        ./package/:
+          title: Managing Packages
+          children:
+            ./#download:
+              title: Download Packages
+              separator: true
+              clickable: false
+            ./git.html: Git Repository
+            ./github.html: GitHub API
+            ./npm.html: NPM Package
+            ./#versions:
+              title: Versions
+              separator: true
+              clickable: false
+            ./bump-version.html: Increase Version
+            ./npm-version.html: NPM Version
+            ./package-version.html: Package Version
+            ./git-repo-hash.html: Git Repo Hash
+            ./github-commit.html: GitHub Last Commit
+            ./#misc:
+              title: Other
+              separator: true
+              clickable: false
+            ./compare.html: Compare Directories
+            ./api-query.html: Send API Query
+            ./download-file.html: Download File
+        ./examples/:
+          title: Examples
+          children:
+            ./import-mdi.html: Import MDI
+            ./import-fa-pro.html: FontAwesome Pro
+    ./utils/:
+      title: Iconify Utils
+      children:
+        ./functions.html:
+          title: Icon Sets
+          separator: true
+          clickable: false
+        ./validate-icon-set.html: validateIconSet()
+        ./get-icons.html: getIcons()
+        ./get-icon-data.html: getIconData()
+        ./minify-icon-set.html: minifyIconSet()
+        ./expand-icon-set.html: expandIconSet()
+        ./convert-info.html: convertIconSetInfo()
+        ./parse-icon-set.html: parseIconSet()
+        ./functions.html#icon:
+          title: Icon
+          separator: true
+          clickable: false
+        ./merge-icon-data.html: mergeIconData()
+        ./full-icon.html: fullIcon()
+        ./functions.html#customisations:
+          title: Customisations
+          separator: true
+          clickable: false
+        ./merge-customisations.html: mergeCustomisations()
+        ./defaults.html: defaults
+        ./compare.html: compare()
+        ./to-boolean.html: toBoolean()
+        ./rotate-from-string.html: rotateFromString()
+        ./flip-from-string.html: flipFromString()
+        ./alignment-from-string.html: alignmentFromString()
+        ./functions.html#svg:
+          title: SVG
+          separator: true
+          clickable: false
+        ./icon-to-svg.html: iconToSVG()
+        ./calculate-size.html: calculateSize()
+        ./replace-ids.html: replaceIDs()
+        ./functions.html#icon-name:
+          title: Icon Name
+          separator: true
+          clickable: false
+        ./match-name.html: matchName
+        ./string-to-icon.html: stringToIcon()
+        ./validate-icon.html: validateIcon()
+        ./functions.html#colors:
+          title: Colors
+          separator: true
+          clickable: false
+        ./string-to-color.html: stringToColor()
+        ./compare-colors.html: compareColors()
+        ./color-to-string.html: colorToString()
+    ./json/:
+      title: Iconify JSON Tools
+      hidden: true
+      children:
+        ./collection.html: Collection Class
+        ./svg.html: SVG Class
+        ./export.html: Export Icons

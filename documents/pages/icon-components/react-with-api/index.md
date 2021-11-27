@@ -61,7 +61,7 @@ import { Icon } from '@iconify/react-with-api';
 <Icon icon="mdi-light:home" />
 ```
 
-Downside of such component is it requires internet access to retrieve icon data. You can provide icon data using [icon bundles](../../sources/bundles/index.md) to allow it to work offline.
+Downside of such component is it requires internet access to retrieve icon data. You can provide icon data using [icon bundles](../../icon-components/bundles/index.md) to allow it to work offline.
 
 ## Installation
 
@@ -103,7 +103,7 @@ include: icon-components/components/intro-online
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for React](../../sources/bundles/react.md) documentation.
+See [icon bundles for Iconify for React](../../icon-components/bundles/react.md) documentation.
 
 ## Properties
 

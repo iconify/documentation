@@ -77,4 +77,4 @@ If in your development process you are creating script bundles, where you put ev
 
 This will reduce number of HTTP queries and it will make sure icon data is available instantly.
 
-See [bundled icons page](../../sources/bundles/index.md) for details.
+See [bundled icons page](../../icon-components/bundles/index.md) for details.

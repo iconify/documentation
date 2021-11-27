@@ -1,3 +1,4 @@
 ```yaml
-redirect: ./component-simple.html
+title: Iconify Integration
+redirect: /icon-components/bundles/examples/component-simple.html
 ```

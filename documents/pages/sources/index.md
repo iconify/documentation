@@ -27,7 +27,7 @@ By default, using API means relying on third party service. However, [API softwa
 
 ## Bundled icons
 
-[Icon bundles](./bundles/index.md) are sets of icon data. You can build icon bundles for icons that are used in your application, making icon data available offline.
+[Icon bundles](../icon-components/bundles/index.md) are sets of icon data. You can build icon bundles for icons that are used in your application, making icon data available offline.
 
 This requires a bit of coding. Icon sets are available on NPM and Packagist, making it easy to use with Node.js and PHP build tools.
 

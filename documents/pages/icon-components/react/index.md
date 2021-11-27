@@ -66,7 +66,7 @@ include: icon-components/components/intro-online
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for React](../../sources/bundles/react.md) documentation.
+See [icon bundles for Iconify for React](../../icon-components/bundles/react.md) documentation.
 
 ### Nuxt.js {#ssr}
 

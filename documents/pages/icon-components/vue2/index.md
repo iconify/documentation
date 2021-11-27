@@ -67,7 +67,7 @@ Then in template use `[var]Icon` component with icon name as `[prop]icon` parame
 include: icon-components/components/intro-offline
 ```
 
-See [icon bundles for Iconify for Vue 2](../../sources/bundles/vue2.md) documentation.
+See [icon bundles for Iconify for Vue 2](../../icon-components/bundles/vue2.md) documentation.
 
 ### Nuxt.js {#ssr}
 

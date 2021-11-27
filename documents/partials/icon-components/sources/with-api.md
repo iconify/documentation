@@ -4,5 +4,5 @@ They fetch icons as needed from Iconify API, so developers do not need to create
 
 There are several downsides to using API:
 
-- API requires visitor to be online. [Iconify API](/sources/api/index.md) software is available, so organizations can mitigate it by hosting Iconify API on internal servers. You can also create [icon bundles](/sources/bundles/index.md).
+- API requires visitor to be online. [Iconify API](/sources/api/index.md) software is available, so organizations can mitigate it by hosting Iconify API on internal servers. You can also create [icon bundles](/icon-components/bundles/index.md).
 - Code is a bit bigger because it includes API support. Difference isn't big, just about 10-15kb.
