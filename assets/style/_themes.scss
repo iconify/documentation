@@ -1,18 +1,18 @@
 // Also see: src/themes.ts
-$default_theme: 'develop';
+$default_theme: 'icons';
 $themes_map: (
 	// palette('blue', 600)
 	$default_theme: #1769aa,
 	// palette('green', 600)
-	'design': #327335,
+	'api': #327335,
 	// palette('cyan', 600)
 	'code': #00717f,
 	// custom
-	'publish': #2e7a55,
+	// 'develop': #2e7a55,
 	// palette('light-blue', 600)
-	'integration': #026c9c,
+	'develop': #026c9c,
 	// mix(palette('indigo', 600), palette('deep-purple', 550))
-	'tips': #5a4fb7,
+	'design': #5a4fb7,
 	// palette('blue-gray', 600)
 	'legacy': #506874
 );

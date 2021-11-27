@@ -85,10 +85,9 @@ export function getMetaData(
 			switch (theme) {
 				case 'develop':
 				case 'design':
-				// case 'integration':
-				case 'publish':
+				case 'icons':
 				case 'code':
-				case 'tips':
+				case 'api':
 				case 'legacy':
 					result.theme = theme;
 					break;

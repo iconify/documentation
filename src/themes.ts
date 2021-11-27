@@ -5,14 +5,7 @@ import { indexFile } from './navigation/helpers';
  *
  * Also see: _themes.scss
  */
-export type Theme =
-	| 'develop'
-	| 'design'
-	// | 'integration'
-	| 'publish'
-	| 'code'
-	| 'tips'
-	| 'legacy';
+export type Theme = 'develop' | 'design' | 'code' | 'icons' | 'api' | 'legacy';
 
 /**
  * Get default theme for file
@@ -38,9 +31,10 @@ export function defaultTheme(file: string): Theme | null {
 	const dir2 = parts.shift();
 	switch (dir) {
 		case 'develop':
-		case 'sources':
 		case 'implementations':
 		case 'icon-components':
+		case 'icon-finder':
+		case 'integrate':
 			if (dir2 === 'iconify1') {
 				return 'legacy';
 			}
@@ -49,24 +43,20 @@ export function defaultTheme(file: string): Theme | null {
 		case 'design':
 			return 'design';
 
-		case 'integrate':
-		case 'icon-finder':
-			return 'develop';
-		// return 'integration';
-
-		case 'publish':
 		case 'icons':
+		case 'sources':
+			return 'icons';
+
 		case 'api':
-			return 'publish';
+			return 'api';
 
 		case 'tools':
+			if (dir2 === 'node') {
+				return 'legacy';
+			}
 		case 'code':
 		case 'types':
-		case 'tests':
 			return 'code';
-
-		case 'tips':
-			return 'tips';
 
 		default:
 			throw new Error(`No theme for directory "${dir}"`);
