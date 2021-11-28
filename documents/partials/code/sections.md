@@ -1,2 +1,0 @@
-- [Iconify types](/types/index.md) section describes common types used in Iconify ecosystem.
-- [Development tools](/tools/index.md) section includes documentation for tools used to convert and manipulate icons and icon sets.

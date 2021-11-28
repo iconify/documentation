@@ -8,7 +8,12 @@ replacements:
 
 # Iconify API
 
-Iconify API sends icon data on demand to [SVG Framework](../icon-components/svg-framework/index.md) or one of [Iconify components](../icon-components/components/index.md).
+Iconify API stores all icon data.
+
+API is used to:
+
+- provide icon data on demand for [Iconify icon components](../icon-components/components/index.md).
+- search icons for [Iconify plug-ins](../design/index.md).
 
 ## How does it work? {#concept}
 
@@ -26,7 +31,7 @@ Because icon components do not load icons they do not need, Iconify API can host
 
 By default, Iconify icon components use Iconify public API.
 
-Iconify public API offers over 70 icon sets that include over 60k icons. All icons are from free icon sets.
+Iconify public API offers over 70 icon sets that include over 60k icons. All icons are from open source icon sets.
 
 To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within 1/10 of a second. Iconify icon components also cache loaded icons in browser cache and/or browser storage, so icon data needs to be loaded only once.
 

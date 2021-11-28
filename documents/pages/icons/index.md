@@ -17,7 +17,7 @@ types:
 
 Iconify is a universal framework that can work with any icon set.
 
-To make things easier, Iconify includes over 60,000 icons from more than 80 open source icon sets. Some examples:
+Iconify offers more than 80 open source icon sets with over 60,000 icons. All icons are validated, cleaned up, optimised and ready for use. Few examples:
 
 `include icons/examples`
 
