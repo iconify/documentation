@@ -258,6 +258,7 @@
             ./vue2.html: Vue 2
             ./svelte.html: Svelte
             ./ember.html: Ember
+    /icon-components/unplugin-icons.html: Unplugin Icons
     /icon-finder/:
       title: Icon Finder
       wip: true

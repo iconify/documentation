@@ -33,7 +33,7 @@ See [icons section](./icons/index.md) for list of various packages and formats.
 
 ## API
 
-In addition to offering packages, Iconify has public API.
+In addition to offering open source icon data as packages, Iconify has public API.
 
 API is used to:
 

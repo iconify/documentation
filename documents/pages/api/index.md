@@ -43,6 +43,8 @@ All icons available on Iconify public API are available on GitHub, which means y
 
 You can also use Iconify API software to host custom or premium icon sets.
 
+Currently API package does not include search engine. It is in todo list, which is very long because Iconify project is very complex and has no funding, so many things to do and little time to do it. For now search engine functionality is available only at Iconify public API servers.
+
 ## Documentation
 
 Available documentation for Iconify API:
