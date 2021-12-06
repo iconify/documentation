@@ -40,7 +40,7 @@ API is used to:
 - provide icon data on demand for [Iconify icon components](./icon-components/components/index.md).
 - search icons for [Iconify plug-ins](./design/index.md).
 
-With API you can create search for icons, dynamically load icon data for icon components. It can be used to create icon pickers for projects like website customisers.
+With API you can search for icons, dynamically load icon data for icon components. It can be used to create icon pickers for projects like website customisers.
 
 ## Components
 
