@@ -16,6 +16,21 @@ import { importHTMLPartials } from './html/includes';
 import { parseHTMLImages } from './html/images';
 import { linkClasses } from './html/classes';
 
+interface HiddenPair {
+	start: string;
+	end: string;
+}
+const hiddenPairs: HiddenPair[] = [
+	{
+		start: '[hidden]',
+		end: '[/hidden]',
+	},
+	{
+		start: '<!-- ',
+		end: ' -->',
+	},
+];
+
 /**
  * Parse MD
  */
@@ -43,15 +58,16 @@ export function parseMD(source: ReadResult, relativeFile: string): ParseResult {
 		.use(parseMDHeadings.bind(null, context));
 
 	// Remove hidden stuff
-	let index: number;
-	while ((index = text.indexOf('[hidden]')) !== -1) {
-		const match = '[/hidden]';
-		const end = text.indexOf(match);
-		if (end <= index) {
-			throw new Error(`Missing ${match} in ${filename}`);
+	hiddenPairs.forEach(({ start, end }) => {
+		let index: number;
+		while ((index = text.indexOf(start)) !== -1) {
+			const endIndex = text.indexOf(end);
+			if (endIndex <= index) {
+				throw new Error(`Missing ${end} in ${filename}`);
+			}
+			text = text.slice(0, index) + text.slice(endIndex + end.length);
 		}
-		text = text.slice(0, index) + text.slice(end + match.length);
-	}
+	});
 
 	// Render HTML
 	let html = markdown.render(text);
