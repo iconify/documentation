@@ -26,13 +26,13 @@ import Icon from '@iconify/svelte';
 with
 
 ```js
-import Icon from '@iconify/svelte/dist/offline';
+import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
 ```
 
-or, if you want to link to uncompiled component instead of compiled bundle, use
+or, if you want to link to compiled component instead of `[file].svelte` file, use
 
 ```js
-import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
+import Icon from '@iconify/svelte/dist/offline';
 ```
 
 Offline component has only the following functions available:

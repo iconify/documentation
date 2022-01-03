@@ -1,5 +1,6 @@
 <script>
-	import Icon, { addIcon } from '@iconify/svelte/dist/offline';
+	import Icon, { addIcon } from '@iconify/svelte/dist/OfflineIcon.svelte';
+	// import Icon, { addIcon } from '@iconify/svelte/dist/offline';
 	import bellFill from '@iconify-icons/bi/bell-fill';
 
 	// Assign icon data to name "bell" used in first example
