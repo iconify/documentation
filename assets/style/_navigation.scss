@@ -80,6 +80,11 @@ $nav-mq-tiny: $mq-medium;
 			margin: ($base-spacing-unit * 2) auto $base-spacing-unit;
 		}
 
+		a,
+		a:hover {
+			@include all-themes(color, 'link');
+		}
+
 		span {
 			display: none;
 		}
