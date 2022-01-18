@@ -12,10 +12,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	function copyCode(node, code) {
 		const rawCode = atob(code).trim();
 
+		const parentNode = node.parentNode;
 		const textarea = document.createElement('textarea');
 		textarea.value = rawCode;
 		textarea.style.height = 0;
-		node.appendChild(textarea);
+		parentNode.insertBefore(textarea, node);
 
 		textarea.focus();
 		textarea.select();
@@ -36,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		// Remove textarea on next tick
 		setTimeout(() => {
-			node.removeChild(textarea);
+			parentNode.removeChild(textarea);
 		});
 
 		return copied;
