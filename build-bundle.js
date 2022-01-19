@@ -1,10 +1,7 @@
 const fs = require('fs');
-const tools = require('@iconify/tools');
-const tools2 = require('@iconify/json-tools');
+const { blankIconSet, IconSet, SVG } = require('@iconify/tools');
+const { getIcons, minifyIconSet } = require('@iconify/utils');
 const { paths, mkdir } = require('./lib/files');
-
-const Collection = tools.Collection;
-const JSONCollection = tools2.Collection;
 
 const jsSourceDir = paths.sourceAssets + '/js';
 const iconSourceDir = paths.sourceAssets + '/svg';
@@ -54,7 +51,7 @@ const preloadIcons = {
 		'navigation-left-up',
 		// partials/visual-blocks/bundle.html (re-using footer)
 		'home-twotone-alt',
-		'github',
+		// 'github', // replaced with assets:github in footer
 		'document-list',
 		'document-code',
 		'image-twotone',
@@ -118,7 +115,7 @@ const preload = [];
 const collections = Object.create(null);
 
 // Get all icons and icon sets
-const customCollection = new Collection(customPrefix);
+const customCollection = blankIconSet(customPrefix);
 
 /**
  * Bundle scripts
@@ -143,124 +140,101 @@ function loadScripts() {
  * Load assets and custom icon sets
  */
 function loadIconSets() {
-	return new Promise((fulfill, reject) => {
-		fs.readdirSync(iconSourceDir).forEach((file) => {
-			const parts = file.split('.');
-			const ext = parts.pop();
-			if (parts.length !== 1 || parts[0].slice(0, 1) === '_') {
-				return;
-			}
+	fs.readdirSync(iconSourceDir).forEach((file) => {
+		const parts = file.split('.');
+		const ext = parts.pop();
+		if (parts.length !== 1 || parts[0].slice(0, 1) === '_') {
+			return;
+		}
 
-			const name = parts.shift().replace(/_/g, '-');
-			switch (ext) {
-				case 'svg':
-					// Custom icon
-					const content = fs
-						.readFileSync(iconSourceDir + '/' + file, 'utf8')
-						.replace(/\s*\n\s*/g, '');
+		const name = parts.shift().replace(/_/g, '-');
+		switch (ext) {
+			case 'svg': {
+				// Custom icon
+				const content = fs
+					.readFileSync(iconSourceDir + '/' + file, 'utf8')
+					.replace(/\s*\n\s*/g, ' ')
+					.replace(/\s([<>])/g, '$1');
 
-					// Add icon
-					try {
-						const svg = new tools.SVG(content);
-						if (!(svg instanceof tools.SVG)) {
-							throw new Error(`Bad icon: ${file}`);
-						}
-						customCollection.add(name, svg);
-
-						if (preloadIcons[customPrefix] === void 0) {
-							preloadIcons[customPrefix] = [];
-						}
-						preloadIcons[customPrefix].push(name);
-					} catch (err) {
-						reject(err);
-						throw new Error(err);
+				// Add icon
+				try {
+					const svg = new SVG(content);
+					if (!(svg instanceof SVG)) {
+						throw new Error(`Bad icon: ${file}`);
 					}
-					break;
+					customCollection.fromSVG(name, svg);
 
-				case 'json':
-					// Custom icon set
-					const iconSet = new JSONCollection();
-					if (!iconSet.loadFromFile(iconSourceDir + '/' + file)) {
-						const err = `Bad JSON file: ${file}`;
-						reject(err);
-						throw new Error(err);
+					if (preloadIcons[customPrefix] === void 0) {
+						preloadIcons[customPrefix] = [];
 					}
-					if (iconSet.prefix() !== name) {
-						const err = `Bad prefix "${iconSet.prefix()}" in JSON file: ${file}`;
-						reject(err);
-						throw new Error(err);
-					}
-					collections[name] = iconSet;
-					break;
-			}
-		});
-
-		// Export custom icons
-		tools
-			.ExportJSON(customCollection, null, {
-				optimize: true,
-				minify: true,
-			})
-			.then((json) => {
-				json.prefix = customPrefix;
-
-				const iconSet = new JSONCollection();
-				if (!iconSet.loadJSON(json)) {
-					const err = `Error loading custom icons`;
+					preloadIcons[customPrefix].push(name);
+				} catch (err) {
 					reject(err);
-					return;
+					throw new Error(err);
 				}
+				break;
+			}
 
-				collections[customPrefix] = iconSet;
-				fulfill();
-			})
-			.catch(reject);
+			case 'json': {
+				// Custom icon set
+				const content = JSON.parse(
+					fs.readFileSync(iconSourceDir + '/' + file, 'utf8')
+				);
+				const iconSet = new IconSet(content);
+				if (iconSet.prefix !== name) {
+					const err = `Bad prefix "${iconSet.prefix}" in JSON file: ${file}`;
+					reject(err);
+					throw new Error(err);
+				}
+				collections[name] = iconSet;
+				break;
+			}
+		}
 	});
+
+	// Export custom icons
+	collections[customPrefix] = customCollection;
 }
 
 /**
  * Load default icon set
  */
 function loadDefaultSet(prefix) {
-	const collection = new JSONCollection(prefix);
-	collection.loadFromFile(
-		require.resolve('@iconify/json/json/' + prefix + '.json')
+	const content = JSON.parse(
+		fs.readFileSync(
+			require.resolve('@iconify/json/json/' + prefix + '.json'),
+			'utf8'
+		)
 	);
-	return collection;
+	return new IconSet(content);
 }
 
 // Do stuff
-loadIconSets()
-	.then(() => {
-		// Filter icons
-		Object.keys(preloadIcons).forEach((prefix) => {
-			let collection;
-			if (collections[prefix] === void 0) {
-				collection = loadDefaultSet(prefix);
-			} else {
-				collection = collections[prefix];
-			}
+loadIconSets();
 
-			const json = collection.getIcons(preloadIcons[prefix], true);
-			if (json.not_found !== void 0) {
-				throw new Error(
-					`Could not find icons in "${prefix}": ${json.not_found.join(', ')}`
-				);
-			}
+// Filter icons
+Object.keys(preloadIcons).forEach((prefix) => {
+	let collection;
+	if (collections[prefix] === void 0) {
+		collection = loadDefaultSet(prefix);
+	} else {
+		collection = collections[prefix];
+	}
 
-			JSONCollection.optimize(json);
-			preload.push(JSON.stringify(json));
-		});
+	const fullJSON = collection.export();
+	const json = getIcons(fullJSON, preloadIcons[prefix], true);
+	if (json.not_found !== void 0) {
+		throw new Error(
+			`Could not find icons in "${prefix}": ${json.not_found.join(', ')}`
+		);
+	}
 
-		// Export file
-		const content =
-			loadScripts() +
-			'var IconifyPreload = [\n\t' +
-			preload.join(',\n\t') +
-			'\n];';
-		fs.writeFileSync(outputFile, content, 'utf8');
-		console.log(`Saved bundle.js (${content.length} bytes)`);
-	})
-	.catch((err) => {
-		throw new Error(err);
-	});
+	minifyIconSet(json);
+	preload.push(JSON.stringify(json));
+});
+
+// Export file
+const content =
+	loadScripts() + 'var IconifyPreload = [\n\t' + preload.join(',\n\t') + '\n];';
+fs.writeFileSync(outputFile, content, 'utf8');
+console.log(`Saved bundle.js (${content.length} bytes)`);
