@@ -66,6 +66,7 @@
                 ./load-icons.html:
                   title: loadIcons()
                   separator: true
+                ./load-icon.html: loadIcon()
                 ./enable-cache.html: enableCache()
                 ./disable-cache.html: disableCache()
                 # Internal
@@ -109,6 +110,7 @@
             ./add-collection.html: addCollection()
             # API
             ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
             # Internal
@@ -159,6 +161,7 @@
             ./add-collection.html: addCollection()
             # API
             ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
             # Internal
@@ -184,6 +187,7 @@
             ./add-collection.html: addCollection()
             # API
             ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
             # Internal
@@ -209,6 +213,7 @@
             ./add-collection.html: addCollection()
             # API
             ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
             # Internal
@@ -234,6 +239,7 @@
             ./add-collection.html: addCollection()
             # API
             ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
             # Internal

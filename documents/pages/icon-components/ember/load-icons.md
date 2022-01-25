@@ -4,9 +4,10 @@ types:
   IconifyIconName: './icon-name.md'
 functions:
   getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 ```
 
-# Iconify for Vue function: loadIcons
+# Iconify for Ember function: loadIcons
 
 This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
 
@@ -47,3 +48,5 @@ replacements:
   - search: '@iconify/react'
     replace: '@iconify/ember/components/iconify-icon'
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.

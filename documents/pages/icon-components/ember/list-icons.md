@@ -2,7 +2,7 @@
 title: 'Iconify for Ember Function: listIcons'
 ```
 
-# Iconify for Vue function: listIcons
+# Iconify for Ember function: listIcons
 
 This tutorial is part of [Iconify for Ember functions tutorial](./index.md#functions).
 

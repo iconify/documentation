@@ -2,6 +2,8 @@
 title: 'Iconify SVG Framework Function: loadIcons'
 functions:
   scan: './scan.md'
+  getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 types:
   IconifyIconName: './icon-name.md'
 ```
@@ -100,3 +102,5 @@ async function test() {
 }
 test();
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.

@@ -1,5 +1,8 @@
 ```yaml
 title: 'Iconify for React Function: loadIcons'
+functions:
+  getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 types:
   IconifyIconName: './icon-name.md'
 ```
@@ -39,3 +42,5 @@ Async version of `[func]loadIcons()`:
 ```yaml
 src: icon-components/common/load-icons-async.js
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.

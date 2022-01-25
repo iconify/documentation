@@ -1,5 +1,8 @@
 ```yaml
 title: 'Iconify for Svelte Function: loadIcons'
+functions:
+  getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 types:
   IconifyIconName: './icon-name.md'
 ```
@@ -53,3 +56,5 @@ This example renders `[html]<slot />` while icon is being loaded, emulating beha
 ```yaml
 src: icon-components/common/get-icon.svelte
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.

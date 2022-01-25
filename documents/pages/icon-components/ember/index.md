@@ -13,6 +13,7 @@ functions:
   iconExists: './icon-exists.md'
   listIcons: './list-icons.md'
   loadIcons: './load-icons.md'
+  loadIcon: './load-icon.md'
   getIcon: './get-icon.md'
   enableCache: './enable-cache.md'
   disableCache: './disable-cache.md'

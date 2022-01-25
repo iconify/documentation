@@ -27,6 +27,7 @@ functions:
   pauseObserver: './pause-observer.md'
   resumeObserver: './resume-observer.md'
   loadIcons: './load-icons.md'
+  loadIcon: './load-icon.md'
   enableCache: './enable-cache.md'
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
@@ -43,25 +44,18 @@ Iconify SVG framework has many functions that you can use to use SVG framework i
 There are two ways of using SVG framework functions:
 
 - By using `[var]Iconify` global.
-- By importing `[var]Iconify` from `[npm]@iconify/iconify@2` if you are bundling SVG framework with your scripts.
+- By importing `[var]Iconify` (or named functions you want to import) from `[npm]@iconify/iconify@2` if you are bundling SVG framework with your scripts.
 
-Examples of using `[func]loadIcons` function:
+Examples of using `[func]loadIcon` function:
 
-```html
-<script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
-<script>
-	Iconify.loadIcons(['mdi:home'], () => {
-		console.log('Loaded home icon!');
-	});
-</script>
-```
-
-```js
-import Iconify from '@iconify/iconify';
-
-Iconify.loadIcons(['mdi:home'], () => {
-	console.log('Loaded home icon!');
-});
+```yaml
+src: icon-components/iconify/load-icon-global.html
+title: 'Browser:'
+extra:
+  - src: icon-components/iconify/load-icon-promise.js
+    title: 'Node.js:'
+  - src: icon-components/iconify/load-icon-await.js
+    title: 'async/await syntax:'
 ```
 
 Even if you use bundle (method shown in second example), `[var]Iconify` global is also available because SVG framework exports functions and creates a global variable regardless of how you use it. That means you can use method shown in first example regardless of how you import SVG framework.
@@ -88,20 +82,18 @@ In this section there is only one function:
 
 ## Getting icons {#getting-icons}
 
-There are several functions in this section:
-
-- `[func]iconExists(name)`. Checks if an icon exists, returns `[type]boolean`.
-- `[func]listIcons()`. Lists available icons, returns `[type]string[]`.
-- `[func]getIcon(name)`. Returns icon data, returns `[type]IconifyIcon` object.
+```yaml
+include: icon-components/components/functions-list/getting-icons
+```
 
 ## Adding icons {#adding-icons}
 
-Functions for adding icons to SVG framework:
-
-- `[func]addIcon()`. Adds one icon.
-- `[func]addCollection()`. Adds an icon set.
-
-Note: icons added to SVG framework with these functions are not stored in cache. SVG framework caches only icons retrieved from API.
+```yaml
+include: icon-components/components/functions-list/adding-icons
+replacements:
+  - search: 'component'
+    replace: 'SVG framework'
+```
 
 ## Rendering icons {#render}
 
@@ -137,10 +129,9 @@ Few helper functions that are exposed because they might be useful when creating
 
 These functions are not available in module without API.
 
-- `[func]loadIcons(icons, callback?)`. Loads icons from API, calls optional callback when either all or part of icons have been loaded.
-- `[func]enableCache()`. Enables caching in `[prop]localStorage` and `[prop]sessionStorage`.
-- `[func]disableCache()`. Disables caching in `[prop]localStorage` and `[prop]sessionStorage`.
-- `[func]addAPIProvider()`. Adds custom API provider. This is experimental function. API provider functionality is in development.
+```yaml
+include: icon-components/components/functions-list/api
+```
 
 ## Internal API functions {#internal}
 

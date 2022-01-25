@@ -1,5 +1,8 @@
 ```yaml
 title: 'Iconify for Vue 2 Function: loadIcons'
+functions:
+  getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 types:
   IconifyIconName: './icon-name.md'
 ```
@@ -45,3 +48,5 @@ replacements:
   - search: react
     replace: vue2
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.

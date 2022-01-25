@@ -4,6 +4,7 @@ types:
   IconifyIconName: './icon-name.md'
 functions:
   getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
 ```
 
 # Iconify for Vue function: loadIcons
@@ -119,3 +120,5 @@ export default defineComponent({
 	},
 });
 ```
+
+If you want to load only one icon, there is also `[func]loadIcon()` that is easier to use.
