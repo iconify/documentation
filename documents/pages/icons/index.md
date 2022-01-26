@@ -43,7 +43,7 @@ All icon sets are stored in `[type]IconifyJSON` format.
 
 ## Sources
 
-All icon sets are stored in one [public GitHub repository](https://github.com/iconify/collections-json).
+All icon sets are stored in one [public GitHub repository](https://github.com/iconify/icon-sets).
 
 That repository is main source of icon sets. There are other ways to get icon data, all are generated from that repository:
 

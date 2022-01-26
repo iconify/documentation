@@ -20,7 +20,7 @@ Everything you need is available at [Iconify GitHub repositories](https://github
 
 - [Node.js version of Iconify API](https://github.com/iconify/api.js)
 - [PHP version of Iconify API](https://github.com/iconify/api.php)
-- [Default icon data](https://github.com/iconify/collections-json)
+- [Open source icon sets](https://github.com/iconify/icon-sets)
 
 ## PHP
 

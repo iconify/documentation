@@ -25,7 +25,7 @@ This article describes full icons package.
 
 You can get the latest version of package from the following sources:
 
-- From GitHub: [https://github.com/iconify/collections-json](https://github.com/iconify/collections-json)
+- From GitHub: [https://github.com/iconify/icon-sets](https://github.com/iconify/icon-sets)
 - From NPM: `[npm]@iconify/json`
 - From Packagist: `[packagist]iconify/json`
 
@@ -57,16 +57,9 @@ For reading icon sets, you can use:
 
 Package contains simple helper functions for Node.js and PHP.
 
-### Node.js functions for version 1 {#functions-legacy}
+### Node.js functions {#functions-node}
 
-Versions 1 of `[npm]@iconify/json` contain synchronous functions:
-
-- `[func]collections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]LegacyIconifyInfo` format.
-- `[func]locate(prefix)` returns location of JSON file for an icon set.
-
-### Node.js functions for version 2 {#functions-node}
-
-In versions 2 of `[npm]@iconify/json` functions are asynchronous:
+In Node.js version of `[npm]@iconify/json` functions are asynchronous:
 
 - `[func]lookupCollections()` returns list of collections. It is a simple object, where key is prefix, value is information about icon set in `[type]IconifyInfo` format.
 - `[func]lookupCollection(prefix)` loads an icon set. Result is `[type]IconifyJSON` object.
@@ -93,10 +86,8 @@ Example:
 
 ```yaml
 src: icons/json/finder.js
-title: Node.js (for version 2.x)
+title: Node.js
 extra:
-  - src: icons/json/finder-old.js
-    title: Node.js (for version 1.x)
   - src: icons/json/finder.php
     title: PHP
 ```
@@ -107,7 +98,7 @@ For reading icon sets, you can use [Iconify Utils](../tools/utils/index.md) or [
 
 ## Adding icon sets {#submit}
 
-Do you know a good open source icon set that is missing in Iconify icon sets? [Open an issue on GitHub](https://github.com/iconify/collections-json/issues) to request to add it to Iconify icon sets.
+Do you know a good open source icon set that is missing in Iconify icon sets? [Open an issue on GitHub](https://github.com/iconify/icon-sets/issues) to request to add it to Iconify icon sets.
 
 ## Licences
 

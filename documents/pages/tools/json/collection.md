@@ -116,7 +116,7 @@ extra:
 
 ### loadIconifyCollection() {#load-iconify}
 
-This function loads Iconify icon set from [@iconify/json](https://github.com/iconify/collections-json) repository.
+This function loads Iconify icon set from [@iconify/json](https://github.com/iconify/icon-sets) repository.
 
 Function parameters:
 
@@ -423,7 +423,7 @@ extra:
 
 ### findIconifyCollection() {#find-iconify-collection}
 
-This is a static function locates Iconify icon set from [@iconify/json](https://github.com/iconify/collections-json) repository.
+This is a static function locates Iconify icon set from [@iconify/json](https://github.com/iconify/icon-sets) repository.
 
 Function parameters:
 
