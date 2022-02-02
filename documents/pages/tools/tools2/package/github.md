@@ -38,7 +38,7 @@ Options object has the following mandatory properties:
 and the following optional properties:
 
 - `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string`. If set, function will check if repository has been updated.
+- `[prop]ifModifiedSince`, `[type]string | DownloadGitHubRepoResult`. If set, function will check if repository has been updated.
 
 Function downloads archive, puts it in `[prop]target` directory, then unpacks it in sub-directory. There are two optional properties that allow you remove outdated files without removing everything. Options do not work if `[prop]cleanup` is enabled because `[prop]cleanup` removes everything.
 
@@ -61,7 +61,10 @@ Never commit token to a repository or publish it anywhere! Keep it secret. There
 
 Option `[prop]ifModifiedSince` is used when you want to retrieve data only if repository has been updated.
 
-Value is hash of last commit. You can get it from `[prop]hash` property of result of previous run.
+Value can be one of the following:
+
+- Commit hash as `[type]string`. You can get it from `[prop]hash` property of result of previous run.
+- `[type]DownloadGitHubRepoResult` value from previous run.
 
 If repository has not been modified, function will return string `[str]not_modified`.
 
@@ -71,16 +74,18 @@ If option is not set, function cannot return `[str]not_modified`.
 
 Result object has the following properties:
 
+- `[prop]downloadType` = `[str]github`.
 - `[prop]rootDir`, `[type]string`. Target directory. It is normalized version of `[prop]target` option, without trailing `[str]/` and with `[str]{hash}` replaced with commit hash.
-- `[prop]actualDir`, `[type]string`. Directory where archive was unpacked.
+- `[prop]contentsDir`, `[type]string`. Directory where archive was unpacked.
 - `[prop]hash`, `[type]string`. Last commit hash.
 
-Value is `[prop]actualDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
+Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
 
 ```json
 {
+	"downloadType": "github",
 	"rootDir": "output/github-test",
-	"actualDir": "output/github-test/iconify-collections-json-4049946",
+	"contentsDir": "output/github-test/iconify-collections-json-4049946",
 	"hash": "40499460e21011478a64c1cb1212f3308168462c"
 }
 ```

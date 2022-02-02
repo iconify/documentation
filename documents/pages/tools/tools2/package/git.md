@@ -40,7 +40,7 @@ Options object has the following mandatory properties:
 and the following optional properties:
 
 - `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string | true`. If set, function will check if repository has been updated.
+- `[prop]ifModifiedSince`, `[type]string | true | DownloadGitRepoResult`. If set, function will check if repository has been updated.
 
 #### ifModifiedSince
 
@@ -50,6 +50,7 @@ Value can be one of the following:
 
 - Commit hash as `[type]string`. You can get it from `[prop]hash` property of result of previous run.
 - If value is `true`, function compare hash in remote repository with hash from previously downloaded files in `[prop]target` directory.
+- `[type]DownloadGitRepoResult` value from previous run.
 
 If repository has not been modified, function will return string `[str]not_modified`.
 
@@ -59,7 +60,8 @@ If option is not set, function cannot return `[str]not_modified`.
 
 Result object has the following properties:
 
-- `[prop]target`, `[type]string`. Directory where repository was cloned to. It is normalized version of `[prop]target` option, without trailing `[str]/` and with `[str]{hash}` replaced with commit hash.
+- `[prop]downloadType` = `[str]git`.
+- `[prop]contentsDir`, `[type]string`. Directory where repository was cloned to. It is normalized version of `[prop]target` option, without trailing `[str]/` and with `[str]{hash}` replaced with commit hash.
 - `[prop]hash`, `[type]string`. Last commit hash.
 
 ## Example

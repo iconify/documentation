@@ -38,7 +38,7 @@ and the following optional properties:
 
 - `[prop]tag`, `[type]string`. NPM tag. Default is `[str]latest`.
 - `[prop]cleanup`, `[type]boolean`. If `true`, target directory will be emptied before exporting icons. Default is `false`.
-- `[prop]ifModifiedSince`, `[type]string | true`. If set, function will check if repository has been updated.
+- `[prop]ifModifiedSince`, `[type]string | true | DownloadNPMPackageResult`. If set, function will check if repository has been updated.
 
 #### ifModifiedSince
 
@@ -48,6 +48,7 @@ Value can be one of the following:
 
 - Version as `[type]string`. You can get it from `[prop]version` property of result of previous run.
 - If value is `true`, function compare latest version in NPM registry with version from previously downloaded files in `[prop]target` directory.
+- `[type]DownloadNPMPackageResult` value from previous run.
 
 If package has not been updated, function will return string `[str]not_modified`.
 
@@ -57,16 +58,18 @@ If option is not set, function cannot return `[str]not_modified`.
 
 Result object has the following properties:
 
+- `[prop]downloadType` = `[str]npm`.
 - `[prop]rootDir`, `[type]string`. Target directory. It is normalized version of `[prop]target` option, without trailing `[str]/`.
-- `[prop]actualDir`, `[type]string`. Directory where archive was unpacked.
+- `[prop]contentsDir`, `[type]string`. Directory where archive was unpacked.
 - `[prop]version`, `[type]string`. Package version.
 
-Value is `[prop]actualDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
+Value is `[prop]contentsDir` always contains `[prop]rootDir` because archives are unpacked in sub-directory of `[prop]rootDir`. For example:
 
 ```json
 {
+	"downloadType": "npm",
 	"rootDir": "output/npm-test",
-	"actualDir": "output/npm-test/package",
+	"contentsDir": "output/npm-test/package",
 	"version": "1.0.1"
 }
 ```
