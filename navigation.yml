@@ -418,6 +418,7 @@
               clickable: false
             ./git.html: Git Repository
             ./github.html: GitHub API
+            ./gitlab.html: GitLab API
             ./npm.html: NPM Package
             ./#versions:
               title: Versions
@@ -428,6 +429,7 @@
             ./package-version.html: Package Version
             ./git-repo-hash.html: Git Repo Hash
             ./github-commit.html: GitHub Last Commit
+            ./gitlab-commit.html: GitLab Last Commit
             ./#misc:
               title: Other
               separator: true

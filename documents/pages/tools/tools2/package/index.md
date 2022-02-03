@@ -8,6 +8,7 @@ functions:
   importFromFigma: '../import/figma/index.md'
   downloadGitRepo: './git.md'
   downloadGitHubRepo: './github.md'
+  downloadGitLabRepo: './gitlab.md'
   downloadNPMPackage: './npm.md'
   compareDirectories: './compare.md'
   sendAPIQuery: './api-query.md'
@@ -17,6 +18,7 @@ functions:
   getNPMVersion: './npm-version.md'
   getGitRepoHash: './git-repo-hash.md'
   getGitHubRepoHash: './github-commit.md'
+  getGitLabRepoHash: './gitlab-commit.md'
 ```
 
 # Managing packages
@@ -39,12 +41,13 @@ Functions can also be used to compare exported data with previously published da
 
 - `[func]downloadGitRepo()` creates a shallow clone of Git repository.
 - `[func]downloadGitHubRepo()` downloads a GitHub repository using GitHub API. It is similar to `[func]downloadGitRepo()`, but uses API instead of Git client.
+- `[func]downloadGitLabRepo()` downloads a GitLab repository using GitLab API. It is similar to `[func]downloadGitRepo()`, but uses API instead of Git client.
 - `[func]downloadNPMPackage()` downloads NPM package from registry.
 
 Additionally, there are few functions to download files by URL:
 
 - `[func]sendAPIQuery()` is a wrapper for `[func]fetch` with support for cache. It is used by functions like `[func]importFromFigma()`.
-- `[func]downloadFile()` is also a wrapper for `[func]fetch` that simplifies downloading of binary files, such as archives. It is used by GitHub and NPM downloaders.
+- `[func]downloadFile()` is also a wrapper for `[func]fetch` that simplifies downloading of binary files, such as archives. It is used by GitHub, GitLab and NPM downloaders.
 
 ## Versions {#versions}
 
@@ -57,10 +60,11 @@ Functions to get version number or commit hash from local files:
 - `[func]getPackageVersion()` retrieves version number from `[file]package.json`.
 - `[func]getGitRepoHash()` retrieves hash of local git repository.
 
-Functiosn to get version number or commit hash from remote package/repository:
+Functions to get version number or commit hash from remote package/repository:
 
 - `[func]getNPMVersion()` retrieves latest version of package from NPM registry.
 - `[func]getGitHubRepoHash()` retrieves hash of last commit from remote GitHub repository.
+- `[func]getGitLabRepoHash()` retrieves hash of last commit from remote GitLab repository.
 
 ## Comparing directories
 
