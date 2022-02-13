@@ -24,7 +24,7 @@
     </g>
     <g data-part="smile" fill="none" stroke-linecap="round">
         <circle cx="32" cy="20" r="15" stroke="currentColor" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 32 20)">
-            <animate attributeName="stroke-dashoffset" values="100;0" dur="0.7s" />
+            <animate attributeName="stroke-dashoffset" values="100;0" dur="0.7s" fill="freeze" />
         </circle>
         <path data-part="left eye stroke" d="M26.5 15.5v2" stroke="currentColor" stroke-width="3" stroke-dasharray="5" stroke-dashoffset="5">
             <animate attributeName="stroke-dashoffset" values="5;0" dur="0.3s" begin="0.7s" fill="freeze" />
