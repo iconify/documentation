@@ -12,12 +12,12 @@
             <path d="M120.999 29c-.151-.18-.29-.361-.463-.535a5.001 5.001 0 1 0 .463 6.537V33H120m5 4V27l7 10V27" />
         </g>
     </mask>
-    <g data-part="code" fill="none" stroke="#979797" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22" stroke-dashoffset="22">
-        <path data-part="left" d="M8 13l-7 7l7 7">
+    <g data-part="code" fill="none" stroke="#979797" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22">
+        <path data-part="left" d="M8 13l-7 7l7 7" stroke-dashoffset="22">
             <animateMotion path="M0 0h2z" dur="1.5s" repeatCount="indefinite" />
             <animate attributeName="stroke-dashoffset" values="22;0" dur="0.3s" begin="1.2s" fill="freeze" />
         </path>
-        <path data-part="right" d="M56 13l7 7l-7 7">
+        <path data-part="right" d="M56 13l7 7l-7 7" stroke-dashoffset="22">
             <animateMotion path="M0 0h-2z" dur="1.5s" repeatCount="indefinite" />
             <animate attributeName="stroke-dashoffset" values="22;0" dur="0.3s" begin="1.5s" fill="freeze" />
         </path>
