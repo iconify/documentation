@@ -21,6 +21,8 @@ functions:
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
   replaceIDs: './replace-ids.md'
+  buildIcon: './build-icon.md'
+  setFetch: './set-fetch.md'
 ```
 
 # Iconify for Vue 2
@@ -77,6 +79,27 @@ Component is compatible with Nuxt.js.
 Component does not retrieve icon data until it is mounted. For server side rendering it means HTML will not include SVGs, they will be dynamically added only when hydrating DOM on client side.
 
 If you do want to render SVGs on server side, use either [offline bundle](./offline.md) or provide icon data as parameter instead of icon name.
+
+#### API support in Nuxt.js {#ssr-api}
+
+If you want to use icon component's functions that load icon data from API in Nuxt.js, you need Fetch API.
+
+```yaml
+include: icon-components/functions/set-fetch/nodejs
+```
+
+How to support API in server side rendering?
+
+```yaml
+include: icon-components/functions/set-fetch/component
+replacements:
+  - search: '@iconify/svelte'
+    replace: '@iconify/vue2'
+```
+
+```yaml
+include: icon-components/functions/set-fetch/bundle
+```
 
 ## Properties
 

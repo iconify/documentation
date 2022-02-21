@@ -31,6 +31,8 @@ functions:
   enableCache: './enable-cache.md'
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
+  buildIcon: './build-icon.md'
+  fetFetch: './set-fetch.md'
 ```
 
 # SVG framework functions
@@ -102,6 +104,7 @@ Functions that generate SVG or data:
 - `[func]renderSVG(name, customisations?)`. Creates `[tag]svg` element.
 - `[func]renderHTML(name, customisations?)`. Returns `[tag]svg` string.
 - `[func]renderIcon(name, customisations?)`. Generates data used by functions above. This can be used if you prefer to generate `[tag]svg` yourself. Data includes attributes for `[tag]svg` and inner HTML.
+- `[func]buildIcon(data, customisations)` is identical to `[func]renderIcon()`, but uses icon data as first parameter
 
 ## Scanning and observing DOM {#scanner}
 

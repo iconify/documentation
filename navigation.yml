@@ -54,6 +54,7 @@
                 ./render-html.html: renderHTML()
                 ./render-icon.html: renderIcon()
                 ./replace-ids.html: replaceIDs()
+                ./build-icon.html: buildIcon()
                 # Observer
                 ./scan.html:
                   title: scan()
@@ -70,6 +71,7 @@
                 ./enable-cache.html: enableCache()
                 ./disable-cache.html: disableCache()
                 # Internal
+                ./set-fetch.html: setFetch()
             ./optimizations.html:
               title: Optimizations
         ./iconify1/:
@@ -113,8 +115,11 @@
             ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
             # Internal
             ./replace-ids.html: replaceIDs()
+            ./set-fetch.html: setFetch()
         ./react-with-api/:
           title: React with API
           hidden: true
@@ -164,8 +169,11 @@
             ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
             # Internal
             ./replace-ids.html: replaceIDs()
+            ./set-fetch.html: setFetch()
         ./vue2/:
           title: Vue 2
           children:
@@ -190,8 +198,11 @@
             ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
             # Internal
             ./replace-ids.html: replaceIDs()
+            ./set-fetch.html: setFetch()
         ./svelte/:
           title: Svelte
           children:
@@ -216,8 +227,11 @@
             ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
             # Internal
             ./replace-ids.html: replaceIDs()
+            ./set-fetch.html: setFetch()
         ./ember/:
           title: Ember
           children:
@@ -242,8 +256,11 @@
             ./load-icon.html: loadIcon()
             ./enable-cache.html: enableCache()
             ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
             # Internal
             ./replace-ids.html: replaceIDs()
+            ./set-fetch.html: setFetch()
         ./bundles/:
           title: Icon Bundles
           separator: true

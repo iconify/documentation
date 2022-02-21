@@ -19,6 +19,8 @@ functions:
   disableCache: './disable-cache.md'
   addAPIProvider: './add-api-provider.md'
   replaceIDs: './replace-ids.md'
+  buildIcon: './build-icon.md'
+  setFetch: './set-fetch.md'
 ```
 
 # Iconify for Ember
@@ -167,4 +169,19 @@ include: icon-components/components/functions-list/api
 
 ```yaml
 include: icon-components/components/functions-list/internal
+```
+
+## Server side rendering {#ssr}
+
+```yaml
+include: icon-components/functions/set-fetch/nodejs
+```
+
+How to support API in server side rendering?
+
+```yaml
+include: icon-components/functions/set-fetch/component
+replacements:
+  - search: '@iconify/svelte'
+    replace: '@iconify/ember/components/iconify-icon'
 ```

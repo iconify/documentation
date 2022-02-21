@@ -7,6 +7,9 @@ replacements:
     value: '${counters.icons-short}'
   - code: '@iconify/iconify@2'
     value: '${iconify2.import}'
+functions:
+  buildIcon: './build-icon.md'
+  setFetch: './set-fetch.md'
 ```
 
 # Iconify SVG framework
@@ -139,3 +142,17 @@ Iconify SVG framework offers many functions, which developers can use to control
 - ...and many other functions.
 
 For more details see [Iconify SVG framework functions](./functions.md).
+
+## Server side rendering {#ssr}
+
+SVG Framework can be used in Node.js scripts, but because there is no DOM, it can be used only to generate data using functions such as `[func]buildIcon()`.
+
+```yaml
+include: icon-components/functions/set-fetch/nodejs
+```
+
+How to solve this problem?
+
+```yaml
+include: icon-components/functions/set-fetch/svg-framework
+```

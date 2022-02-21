@@ -4,6 +4,9 @@ functions:
   renderSVG: './render-svg.md'
   renderHTML: './render-html.md'
   replaceIDs: './replace-ids.md'
+  getIcon: './get-icon.md'
+  loadIcon: './load-icon.md'
+  iconExists: './icon-exists.md'
 ```
 
 # SVG framework function: renderIcon
@@ -25,12 +28,12 @@ Function returns `[type]object` containing icon data, `null` if icon is not avai
 
 ## Result
 
-Result object has the following properties:
-
-- `[prop]attributes`, `[type]object`. List of attributes for `[tag]svg` element.
-- `[prop]body`, `[type]string`. Icon contents.
-
-Attributes list does not include standard attributes: `[attr]xmlns`, `[attr]xmlns:link`. It also does not include attributes that are added by Iconify SVG framework: `[attr]aria-hidden`, `[attr]focusable`, `[attr]role`, `[attr]class`, `[attr]style`. It is up to you to decide what attributes you want to add.
+```yaml
+include: icon-components/functions/build-icon/result
+replacements:
+  - search: 'icon component'
+    replace: 'SVG framework'
+```
 
 ## Change IDs! {#important}
 
