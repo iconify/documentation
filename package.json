@@ -13,8 +13,8 @@
 	"author": "Iconify OÜ",
 	"license": "Apache 2.0",
 	"devDependencies": {
-		"@iconify/json": "^1.1.434",
-		"@iconify/tools": "^2.0.3",
+		"@iconify/json": "^2.1.17",
+		"@iconify/tools": "^2.0.14",
 		"@types/cheerio": "^0.22.22",
 		"@types/markdown-it": "^12.2.3",
 		"@types/node": "^17.0.10",
