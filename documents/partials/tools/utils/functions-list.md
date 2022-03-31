@@ -11,6 +11,7 @@ types:
   IconCustomisations: './icon-customisations.md'
 functions:
   validateIconSet: './validate-icon-set.md'
+  quicklyValidateIconSet: './quickly-validate-icon-set.md'
   getIcons: './get-icons.md'
   getIconData: './get-icon-data.md'
   minifyIconSet: './minify-icon-set.md'
@@ -39,12 +40,14 @@ functions:
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:
 
-- `[func]validateIconSet(data)` validates icon set. If you are not sure if source is a valid icon set, run this function. It will convert data to correct `[type]IconifyJSON` - `[func]getIcons(data, icons)` extracts few icons from icon set. Can be used to reduce icon set to few icons that are used by your project.
+- `[func]validateIconSet(data)` validates icon set. If you are not sure if source is a valid icon set, run this function to validate icon set. It will convert data to correct `[type]IconifyJSON` and will attempt to fix errors.
+- `[func]quicklyValidateIconSet(data)` same as above, but does basic validation. Use it if you do not care about metadata being invalid, if you do not want to attempt to fix errors in icon set, or if you want to reduce bundle size.
+- `[func]getIcons(data, icons)` extracts few icons from icon set. Can be used to reduce icon set to few icons that are used by your project.
 - `[func]getIconData(data, icon)` extracts data for one icon from icon set.
 - `[func]minifyIconSet(data)` minifies icon set, removing redundant data. Used to reduce file size.
 - `[func]expandIconSet(data)` is the opposite of function above.
 - `[func]convertIconSetInfo(data)` converts legacy icon set format to correct `[type]IconifyInfo` type.
-- `[func]parseIconSet(data, callback)` parses icon set, calling `[attr]callback` function for every icon. Can be used to extract all icons from icon set.
+- `[func]parseIconSet(data, callback)` parses icon set, calling `[attr]callback` function for every icon. Can be used to extract all icons from icon set. Validate icon set before parsing it.
 
 Functions for working with `[type]IconifyIcon` format that represents one icon:
 

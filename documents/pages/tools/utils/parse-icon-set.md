@@ -4,6 +4,9 @@ types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyInfo: '../../types/iconify-info.md'
   IconSetValidationOptions: './validate-icon-set.md#options'
+functions:
+  validateIconSet: './validate-icon-set.md'
+  quicklyValidateIconSet: './quickly-validate-icon-set.md'
 ```
 
 # parseIconSet()
@@ -26,7 +29,6 @@ Function returns list of parsed icons as `[type]string[]`.
 
 Options object has the following properties:
 
-- `[prop]validate`, `[type]boolean | IconSetValidationOptions`. Validates icon set before parsing it. If value is `false`, validation will be disabled. When value is `true`, it is equivalent of `[js]{fix: true}` of `[type]IconSetValidationOptions` type. By default, validation is enabled.
 - `[prop]aliases`, `[type]ParseIconSetAliases`. Defines how to parse icon aliases. Default value is `[str]all`. See below.
 
 ## Parsing icon aliases
@@ -54,6 +56,10 @@ title: 'count.ts'
 ```
 
 Code used in example above should be used to count icons in icon set when calculating number of icons for `[type]IconifyInfo` data. It counts all icons, excluding hidden icons and basic aliases.
+
+### Validation
+
+Function does not check icon set for errors. Before using it, validate icon set using `[func]validateIconSet()` or `[func]quicklyValidateIconSet()`.
 
 ### JSON Modules
 

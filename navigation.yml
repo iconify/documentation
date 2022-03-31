@@ -467,6 +467,7 @@
           separator: true
           clickable: false
         ./validate-icon-set.html: validateIconSet()
+        ./quickly-validate-icon-set.html: quicklyValidateIconSet()
         ./get-icons.html: getIcons()
         ./get-icon-data.html: getIconData()
         ./minify-icon-set.html: minifyIconSet()

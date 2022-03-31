@@ -1,11 +1,15 @@
 import { promises as fs } from 'fs';
 import { icons } from '@iconify-json/codicon';
+import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
 import { parseIconSet } from '@iconify/utils/lib/icon-set/parse';
 import { iconToSVG } from '@iconify/utils/lib/svg/build';
 import { defaults } from '@iconify/utils/lib/customisations';
 
 // Storage for all icons
 const exportedSVG: Record<string, string> = Object.create(null);
+
+// Validate icon set before parsing it. Will throw an exception on error
+validateIconSet(icons);
 
 // Parse all icons
 parseIconSet(icons, (iconName, iconData) => {
