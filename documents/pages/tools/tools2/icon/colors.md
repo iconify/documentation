@@ -95,7 +95,8 @@ Callback has the following parameters:
 Callback should return:
 
 - `[type]Color` or `[type]string` to set new color. If you do not want to change color, return color passed to callback (either `[prop]colorStr` or non-null `[prop]color` object).
-- `[type]undefined` to remove color.
+- `[str]remove` to remove element. This is used to remove stuff like white background rectangle left by some editors.
+- `[str]unset` to remove color.
 
 Callback can be asynchronous.
 

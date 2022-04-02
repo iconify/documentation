@@ -91,7 +91,7 @@ const preloadIcons = {
 	'akar-icons:bootstrap-fill',
 	'carbon:carbon',
 	'tabler:brand-tabler',
-	'twemoji:dizzy',
+	'twemoji:dizzy', // also articles
 	'openmoji:face-with-tongue',
 ].forEach((icon) => {
 	const parts = icon.split(':');

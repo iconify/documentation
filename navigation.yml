@@ -519,3 +519,13 @@
         ./collection.html: Collection Class
         ./svg.html: SVG Class
         ./export.html: Export Icons
+/articles/:
+  title: Articles
+  children:
+    ./cleaning-up-icons/:
+      title: Cleaning Up Icons
+      children:
+        ./cleanup.html: Code Cleanup
+        ./validate.html: Validating SVG
+        ./palette.html: Icon Palette
+        ./optimise.html: Optimisation

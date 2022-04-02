@@ -89,6 +89,7 @@ export function getMetaData(
 				case 'code':
 				case 'api':
 				case 'legacy':
+				case 'articles':
 					result.theme = theme;
 					break;
 

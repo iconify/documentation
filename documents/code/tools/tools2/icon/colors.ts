@@ -1,3 +1,4 @@
+import { compareColors, stringToColor } from '@iconify/utils/lib/colors';
 import { IconSet, parseColors, isEmptyColor } from '@iconify/tools';
 
 const iconSet = new IconSet({
@@ -40,15 +41,32 @@ const iconSet = new IconSet({
 
 				// Callback to parse each color
 				callback: (attr, colorStr, color) => {
-					// color === null -> color cannot be parsed -> return colorStr
-					// isEmptyColor() -> checks if color is empty: 'none' or 'transparent' -> return color object
-					//		 without changes (though color string can also be returned, but using object is faster)
-					// for everything else return 'currentColor'
-					return !color
-						? colorStr
-						: isEmptyColor(color)
-						? color
-						: 'currentColor';
+					if (!color) {
+						// color === null, so color cannot be parsed
+						// Return colorStr to keep old value
+						return colorStr;
+					}
+
+					if (isEmptyColor(color)) {
+						// Color is empty: 'none' or 'transparent'
+						// Return color object to keep old value
+						return color;
+					}
+
+					// Black color: change to 'currentColor'
+					if (compareColors(color, stringToColor('black'))) {
+						return 'currentColor';
+					}
+
+					// White color: belongs to white background rectangle: remove rectangle
+					if (compareColors(color, stringToColor('white'))) {
+						return 'remove';
+					}
+
+					// Unexpected color. Add code to check for it
+					throw new Error(
+						`Unexpected color "${colorStr}" in attribute ${attr}`
+					);
 				},
 			});
 

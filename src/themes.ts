@@ -5,7 +5,14 @@ import { indexFile } from './navigation/helpers';
  *
  * Also see: _themes.scss
  */
-export type Theme = 'develop' | 'design' | 'code' | 'icons' | 'api' | 'legacy';
+export type Theme =
+	| 'develop'
+	| 'design'
+	| 'code'
+	| 'icons'
+	| 'api'
+	| 'legacy'
+	| 'articles';
 
 /**
  * Get default theme for file
@@ -62,6 +69,10 @@ export function defaultTheme(file: string): Theme | null {
 		case 'code':
 		case 'types':
 			return 'code';
+
+		// Articles
+		case 'articles':
+			return 'articles';
 
 		default:
 			throw new Error(`No theme for directory "${dir}"`);
