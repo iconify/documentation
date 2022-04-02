@@ -522,6 +522,7 @@
 /articles/:
   title: Articles
   children:
+    ./add-icon-set/: Add Icon Set to Iconify
     ./cleaning-up-icons/:
       title: Cleaning Up Icons
       children:
