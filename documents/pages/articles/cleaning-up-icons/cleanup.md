@@ -28,16 +28,16 @@ src: articles/el-cloud.cleanup.svg
 
 Icon is not yet finalised. It still requires optimisation.
 
-If you think code above contains just a little bit of useless tags, so it is not a big deal, it was a short example. There are icons in some icon sets with tens of killobytes of junk data.
+If you think the code above contains just a little bit of useless tags, so it is not a big deal, it was a short example. There are icons in some icon sets with tens of kilobytes of junk data.
 
 ## Process
 
-Clean up process does not optimise icon. It only does the following:
+Clean up process does not optimise the icon. It only does the following:
 
 - Removes useless code.
 - Converts style to attributes.
 - [Validates icon](./validate.md).
 
-It is done with `[func]cleanupSVG()` function from [Iconify Tools](../../tools/tools2/index.md).
+It is done with the `[func]cleanupSVG()` function from [Iconify Tools](../../tools/tools2/index.md).
 
 [Optimisation is done later](./optimise.md), after [parsing palette](./palette.md).

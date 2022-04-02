@@ -12,19 +12,19 @@ SVG can contain a lot of stuff that might be dangerous: scripts and external res
 
 ## Style
 
-Global `[tag]style` as well as `[attr]style` attribute are converted to attributes.
+Global `[tag]style` and inline `[attr]style` are converted to attributes.
 
-Style complicates process of analysing icon structure, which is needed to later get rid of unused elements and check palette, so style should go. If style is too complex to parse or style overrides attribute, an exception is thrown.
+Style complicates the process of analysing an icon structure, which is needed to later get rid of unused elements and parse the palette, so style should go. If style is too complex to parse or style overrides attribute, an exception is thrown.
 
 ## Bad tags
 
-During [clean up](./cleanup.md), icon is also checked for bad stuff.
+During [clean up](./cleanup.md), the icon is also checked for bad stuff.
 
 Validation is very strict and opinionated.
 
 Things that will cause validation to fail (function will throw an exception):
 
-- `[tag]script` is found or event listener is found.
+- `[tag]script` is found or an event listener is found.
 - Text or font. See below.
 - Any external resources.
 - Raster images. See below.
@@ -40,12 +40,12 @@ src: articles/image.svg
 
 ## Removed tags
 
-Clean up function has list of all allowed SVG tags and their attributes.
+Clean up function has a list of all allowed SVG tags and their attributes.
 
 If an unknown tag is encountered, this happens:
 
-- If tag belongs to a namespace, such as `[tag]rdf:RDF`, it is removed with all its children elements.
-- If tag does not have a namespace, an exception is thrown.
+- If a tag belongs to a namespace, such as `[tag]rdf:RDF`, it is removed with all its children elements.
+- If a tag does not have a namespace, an exception is thrown.
 
 ## Attributes
 
@@ -53,7 +53,7 @@ Clean up function also checks each attribute on each element.
 
 All attributes that do not affect icon rendering are removed.
 
-If an event listener is found, function throws an exception.
+If an event listener is found, the function throws an exception.
 
 `[attr]class` attribute is allowed.
 
@@ -63,7 +63,7 @@ Inline `[attr]style` is converted to attributes (before parsing other attributes
 
 All text tags are not allowed.
 
-Why? Because different operating systems have different fonts, so it will cause icon to render differently.
+Why? Because different operating systems have different fonts, it will cause the icon to render differently.
 
 This rule cannot be disabled.
 
@@ -78,10 +78,10 @@ Sometimes raster images are used by icons for various purposes, usually masks or
 They are not allowed. Why?
 
 - They do not scale, thus it is no longer a vector icon.
-- Validating them adds unnecessary complication. Having content that cannot be fully validated in SVG is not acceptable.
+- Validating them adds unnecessary complications. Having content that cannot be fully validated in SVG is not acceptable.
 
 ## Clean up
 
 Validation is done during [clean up process](./cleanup.md).
 
-It is done with `[func]cleanupSVG()` function from [Iconify Tools](../../tools/tools2/index.md).
+It is done with the `[func]cleanupSVG()` function from [Iconify Tools](../../tools/tools2/index.md).

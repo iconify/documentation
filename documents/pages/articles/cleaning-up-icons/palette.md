@@ -8,11 +8,11 @@ functions:
 
 This article is part of [SVG clean up article](./index.md).
 
-After initial [clean up and validation](./cleanup.md), icon palette is changed.
+After initial [clean up and validation](./cleanup.md), the icon palette is changed.
 
 There can only be two types of icons:
 
-- Icons with hardcoded palette.
+- Icons with a hardcoded palette.
 - Monotone icons, which have only one color.
 
 ## Icons with palette {#palette}
@@ -21,9 +21,9 @@ Some icons have hardcoded palette:
 
 `include articles/icon-palette`
 
-Colors of these icons cannot be easily changed with stylesheet.
+Colors of these icons cannot be easily changed with a stylesheet.
 
-When such icons are cleaned up, parser verifies that icon does not follow system default color (black color for `[attr]fill`) and does not contain `[prop]currentColor`.
+When such icons are cleaned up, the parser verifies that the icon does not follow system default color (black color for `[attr]fill`) and does not contain `[prop]currentColor`.
 
 ## Monotone icons {#monotone}
 
@@ -31,7 +31,7 @@ Most icons are monotone. They have only one color, which can be changed.
 
 `include articles/icon-monotone`
 
-When parsing monotone icons, color is changed to `[prop]currentColor` to make sure icon follows text color. This way it is easy to change color for any icon, regardless if icon uses `[prop]fill` or `[prop]stroke`:
+When parsing monotone icons, color is changed to `[prop]currentColor` to make sure the icon follows text color. This way it is easy to change color for any icon, regardless if icon uses `[prop]fill` or `[prop]stroke`:
 
 ```css
 svg {
@@ -45,7 +45,7 @@ Sometimes icons also include white background, which needs to be removed. Parser
 
 ### System color
 
-Usuaully, icons that use `[prop]fill`, do not have any colors:
+Usually, icons that use `[prop]fill`, do not have any colors:
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -103,10 +103,10 @@ svg {
 
 Icons that mix `[prop]currentColor` and hardcoded palette are not allowed.
 
-Such icons cannot be used in stylesheet. In stylesheet monotone icons are used as masks, icons with palette are used as background. When component detects `[prop]currentColor` in icon, it assumes that icon is monotone as uses it as mask, resulting in mess.
+Such icons cannot be used in a stylesheet. In stylesheet monotone icons are used as masks, icons with palette are used as background. When the icon component detects `[prop]currentColor` in the icon, it assumes that the icon is monotone and uses it as a mask, displaying it incorrectly.
 
-Also such icons assume that `[prop]currentColor` is either light or dark or cannot be certain hue. It is just bad design.
+Also such icons assume that `[prop]currentColor` is either light or dark or cannot be a certain hue. It is just a bad design.
 
 ## Code
 
-Palette is parsed using `[func]parseColors()` function from [Iconify Tools](../../tools/tools2/index.md).
+Palette is parsed using the `[func]parseColors()` function from [Iconify Tools](../../tools/tools2/index.md).

@@ -9,7 +9,7 @@ functions:
 
 This article is part of [SVG clean up article](./index.md).
 
-After initial [clean up and validation](./cleanup.md), [changing icon palette](./palette.md), icon is optimised.
+After initial [clean up and validation](./cleanup.md), [changing icon palette](./palette.md), the icon is optimised.
 
 Optimisation is done by SVGO. Not much to write about it, [you can try SVGO optimisation yourself using SVGOMG project](https://jakearchibald.github.io/svgomg/).
 
