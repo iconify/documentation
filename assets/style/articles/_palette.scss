@@ -1,31 +1,31 @@
 .icon-example--monotone {
 	.iconify {
-		color: palette('gray', 600);
+		color: palette('blue-gray', 600);
 		transition: color 0.2s ease;
-		animation: icon-example-palette 10s infinite;
+		// animation: icon-example-palette 10s infinite;
 	}
 	&:hover {
 		.iconify {
 			color: palette($link-hover-palette, $link-shade);
-			animation: none;
+			// animation: none;
 		}
 	}
 }
 
-@keyframes icon-example-palette {
-	0% {
-		color: palette('blue', 600);
-	}
-	25% {
-		color: palette('green', 600);
-	}
-	50% {
-		color: palette('cyan', 600);
-	}
-	75% {
-		color: palette('purple', 600);
-	}
-	100% {
-		color: palette('blue', 600);
-	}
-}
+// @keyframes icon-example-palette {
+// 	0% {
+// 		color: palette('blue', 600);
+// 	}
+// 	25% {
+// 		color: palette('green', 600);
+// 	}
+// 	50% {
+// 		color: palette('cyan', 600);
+// 	}
+// 	75% {
+// 		color: palette('purple', 600);
+// 	}
+// 	100% {
+// 		color: palette('blue', 600);
+// 	}
+// }

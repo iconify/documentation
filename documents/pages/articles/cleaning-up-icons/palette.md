@@ -45,7 +45,7 @@ Sometimes icons also include white background, which needs to be removed. Parser
 
 ### System color
 
-Usuaully icons that use `[prop]fill`, do not have any colors:
+Usuaully, icons that use `[prop]fill`, do not have any colors:
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ Usuaully icons that use `[prop]fill`, do not have any colors:
 </svg>
 ```
 
-Colors in those icons is intended to be changed by changing `[prop]fill` property:
+Color in those icons is intended to be changed by changing `[prop]fill` property:
 
 ```css
 svg {
@@ -61,9 +61,9 @@ svg {
 }
 ```
 
-Problem is, many icons use `[prop]stroke` instead of `[prop]fill`, so such approach cannot be used.
+Problem is, many icons use `[prop]stroke` instead of `[prop]fill`, so this approach does not apply to many icon sets, therefore it cannot be used.
 
-Parser modifies those icons by setting `[prop]fill` to `[prop]currentColor`:
+Parser modifies those icons by setting `[prop]fill` to `[prop]currentColor` on elements that use system default `[prop]fill`:
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ Parser changes it to `[prop]currentColor`:
 
 ### Result
 
-After changes, no matter if monotone icon uses `[prop]fill` or `[prop]stroke`, color will be set to `[prop]currentColor`, which means icon uses same color as text and can be styled as text:
+After changes, all shapes that use `[prop]fill` have `[prop]fill` set to `[prop]currentColor`, all shapes that use `[prop]stroke` have `[prop]stroke` set to `[prop]currentColor`, which means icon uses same color as text and can be styled as text:
 
 ```css
 svg {
