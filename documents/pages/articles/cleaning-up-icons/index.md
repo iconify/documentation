@@ -11,13 +11,27 @@ functions:
 
 All icon sets available with Iconify pass validation and clean up process.
 
-What exactly is happening and why is it needed? This article explains the process in detail.
+Why is it needed? SVG is not like other images, it can contain a lot of things, making it hard to work with.
 
-When using Iconify with custom icons, consider using a similar clean up process. All tools you need are available in [Iconify Tools](../../tools/tools2/index.md).
+Often icons contain a lot of useless code (especially when exported from old software).
 
-## Clean up and validation {#cleanup}
+Icons can even contain malicious code, such as scripts, event listeners and links to external resources.
 
-First part is code clean up and validation.
+When working with monotone icons (icons that have only one color, which supposed to be changeable), some icons use `[attr]fill`, some `[attr]stroke`, some rely on system default colors, some use `[prop]black` color, some use seemingly random colors.
+
+All the tools you need are available in [Iconify Tools](../../tools/tools2/index.md) package.
+
+## Process
+
+Clean up process is done in 3 steps:
+
+- Validation and initial clean up.
+- Changing icon palette.
+- Optimisation.
+
+### Validation and initial clean up {#cleanup}
+
+First part is code validation and initial clean up.
 
 When a designer exports an icon from an editor, often SVG contains a lot of extra code that is not needed to display an icon.
 
@@ -25,7 +39,7 @@ Icons can also contain dangerous elements, such as scripts or external resources
 
 See [example of bad code](./cleanup.md) and [explanation of how SVG validation works](./validate.md).
 
-## Palette changes {#palette}
+### Palette changes {#palette}
 
 After initial clean up and validation, the icon palette is changed.
 
@@ -35,7 +49,7 @@ For icons with a hardcoded palette, the parser checks that the icon does not use
 
 See [article explaining palette changes](./palette.md).
 
-## Optimisation {#optimisation}
+### Optimisation {#optimisation}
 
 Last step is optimisation. It reduces icon size by removing unnecessary code and optimising paths.
 
