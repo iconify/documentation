@@ -24,7 +24,7 @@
   title: Components
   children:
     /icon-components/:
-      title: Icon Components
+      title: Iconify Icon
       headline: One icon framework to replace them all.
       children:
         ./svg-framework/:
@@ -282,6 +282,7 @@
             ./svelte.html: Svelte
             ./ember.html: Ember
     /icon-components/unplugin-icons.html: Unplugin Icons
+    /icon-components/unocss.html: UnoCSS
     /icon-finder/:
       title: Icon Finder
       wip: true

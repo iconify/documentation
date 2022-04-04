@@ -4,9 +4,9 @@ title: Unplugin Icons
 
 # Unplugin Icons
 
-unplugin-icons is an alternative to [Iconify icon components](./index.md), developed by Anthony Fu.
+`[npm]unplugin-icons` is an alternative to [Iconify icon components](./index.md), developed by Anthony Fu.
 
-It uses [Iconify icon packages](../icons/all.md) for source, just like Iconify icon components.
+It generates icon components on demand for multiple frameworks and supports all popular build tools.
 
 Latest documentation is available at [unplugin-icons GitHub repository](https://github.com/antfu/unplugin-icons).
 
@@ -14,13 +14,15 @@ Latest documentation is available at [unplugin-icons GitHub repository](https://
 
 What is the difference from Iconify icon components?
 
-unplugin-icons does not load icon data from API. It detects icons that you are using in your project and bundles them during build process.
+`[npm]unplugin-icons` does not load icon data from API. It detects icons that you are using in your project and bundles them during build process.
 
 It is very easy to use.
 
 ## Usage
 
-unplugin-icons works with multiple frameworks: React, Vue, Svelte, Solid.
+`[npm]unplugin-icons` generates icon components for the following frameworks:
+
+`include icon-components/unplugin-icons-frameworks`
 
 Usage example for React:
 
@@ -39,3 +41,9 @@ function App() {
 ```
 
 See [unplugin-icons GitHub repository](https://github.com/antfu/unplugin-icons) for more information.
+
+## Custom icons
+
+You can use `[npm]unplugin-icons` with custom icons. During build process you can import, clean up and optimise icons using [Iconify Tools](../tools/tools2/index.md).
+
+See [demo from Iconify Tools package](https://github.com/iconify/tools/tree/main/%40iconify-demo/unplugin-svelte). Configuration is in `[file]svelte.config.js`.

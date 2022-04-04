@@ -1,11 +1,11 @@
 ```yaml
-title: Icon Components
+title: Iconify Icon Components
 replacements:
   - code: '60k'
     value: '${counters.icons-short}'
 ```
 
-# Icon components
+# Iconify icon components
 
 Icon components render icons.
 
@@ -34,7 +34,7 @@ It offers all the advantages of icons fonts:
 
 It does not have disadvantages of icons fonts:
 
-- Framework renders pixel-perfect SVG, not blurred glyphs.
+- SVG framework renders pixel-perfect SVG, not blurred glyphs.
 - Only icons that are used on page are loaded. This means no bandwidth wasted on loading icons you do not need. This also made it possible to offer over 60k icons.
 
 For more details, see [Iconify SVG framework](./svg-framework/index.md).

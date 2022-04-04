@@ -21,7 +21,7 @@ This documentation is split into several parts.
 
 ## Icons
 
-There is no standard for designing or publishing icons. Each icon set is different. Some use stroke for colors, some use fill, some use hardcoded palette. Usually icons contain a lot of unnecessary code. Every icon set has its own way of using icons.
+There is no standard for designing or publishing icons. Each icon set is different. Some use `[attr]stroke` for colors, some use `[attr]fill`, some use hardcoded palette. Usually icons contain a lot of unnecessary code. Every icon set has its own way of using icons.
 
 Iconify attempts to streamline that, by parsing icons and converting them to the same easy to use format.
 
@@ -37,14 +37,21 @@ In addition to offering open source icon data as packages, Iconify has public AP
 
 API is used to:
 
-- provide icon data on demand for [Iconify icon components](./icon-components/components/index.md).
-- search icons for [Iconify plug-ins](./design/index.md).
-
-With API you can search for icons, dynamically load icon data for icon components. It can be used to create icon pickers for projects like website customisers.
+- provide icon data on demand, which is used by [Iconify icon components](./icon-components/components/index.md).
+- browse and search icons, which is used by [Iconify plug-ins](./design/index.md).
 
 ## Components
 
-`include develop/components`
+Having 60k+ icons is not helpful without ability to use it in your projects.
+
+There are various ways to use icons:
+
+- [Iconify icon components](./icon-components/components/index.md) are available for most popular frameworks: Vue, React, Svelte, etc...
+- [Iconify SVG framework](./icon-components/svg-framework/index.md) makes it easy to use icons in HTML without UI frameworks.
+- [Unplugin Icons](./icon-components/unplugin-icons.md) dynamically generates icon components for many frameworks: Vue, React, Svelte, Solid, etc... and it works with all popular bundlers.
+- [UnoCSS](./icon-components/unocss.md) with `[npm]@unocss/preset-icons` package allows you to use icons in a stylesheet.
+
+Missing component for your framework or want to create your own component? See "Libraries" section below. Components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
 
 In addition to icon components, [Icon Finder](./icon-finder/index.md) is in development.
 
