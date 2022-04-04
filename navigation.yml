@@ -288,6 +288,7 @@
       children:
         ./packages/:
           title: Packages
+          hidden: true
           children:
             ./core/:
               title: Core
