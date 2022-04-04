@@ -132,7 +132,7 @@ For more information see [UnoCSS GitHub repository](https://github.com/unocss/un
 
 ### Astro Icon
 
-Astro Icon is a component for Astro static site builder.
+Astro Icon is a component for [Astro static site builder](https://github.com/withastro/astro).
 
 Usage example:
 
@@ -147,7 +147,7 @@ import { Icon } from 'astro-icon';
 
 For more information see [Astro Icon GitHub repository](https://github.com/natemoo-re/astro-icon).
 
-## Icon finder
+## Icon Finder
 
 [Iconify Icon Finder](../icon-finder/index.md) is currently in development.
 
