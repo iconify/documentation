@@ -50,6 +50,7 @@ There are various ways to use icons:
 - [Iconify SVG framework](./icon-components/svg-framework/index.md) makes it easy to use icons in HTML without UI frameworks.
 - [Unplugin Icons](./icon-components/unplugin-icons.md) dynamically generates icon components for many frameworks: Vue, React, Svelte, Solid, etc... and it works with all popular bundlers.
 - [UnoCSS](./icon-components/unocss.md) with `[npm]@unocss/preset-icons` package allows you to use icons in a stylesheet.
+- [Astro Icon](https://github.com/natemoo-re/astro-icon) component for Astro static website builder.
 
 Missing an icon component for UI framework of your choice or want to create your own icon component? See "Libraries" section below. Components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
 

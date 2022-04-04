@@ -75,7 +75,7 @@ src: icon-components/iconify/script.html
 
 For more details, see [Iconify SVG framework](../icon-components/svg-framework/index.md).
 
-### Unplugin icons
+### Unplugin Icons
 
 [unplugin-icons](../icon-components/unplugin-icons.md) generates icon components on demand, developed by Anthony Fu.
 
@@ -129,6 +129,23 @@ UnoCSS will generate stylesheet for it:
 For monotone icons it uses `[attr]mask` (as you can see from example above), which renders icon with text color, for icons with palette it uses `[attr]background`.
 
 For more information see [UnoCSS GitHub repository](https://github.com/unocss/unocss) and [preset-icons package](https://github.com/unocss/unocss/tree/main/packages/preset-icons/).
+
+### Astro Icon
+
+Astro Icon is a component for Astro static site builder.
+
+Usage example:
+
+```jsx
+---
+import { Icon } from 'astro-icon';
+---
+
+<Icon pack="mdi" name="account" />
+<Icon name="mdi:account" />
+```
+
+For more information see [Astro Icon GitHub repository](https://github.com/natemoo-re/astro-icon).
 
 ## Icon finder
 
