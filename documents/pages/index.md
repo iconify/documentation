@@ -42,7 +42,7 @@ API is used to:
 
 ## Components
 
-Having 60k+ icons is not helpful without ability to use it in your projects.
+Having 60k+ icons is not really helpful without ability to use them in your projects.
 
 There are various ways to use icons:
 
@@ -51,13 +51,13 @@ There are various ways to use icons:
 - [Unplugin Icons](./icon-components/unplugin-icons.md) dynamically generates icon components for many frameworks: Vue, React, Svelte, Solid, etc... and it works with all popular bundlers.
 - [UnoCSS](./icon-components/unocss.md) with `[npm]@unocss/preset-icons` package allows you to use icons in a stylesheet.
 
-Missing component for your framework or want to create your own component? See "Libraries" section below. Components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
+Missing an icon component for UI framework of your choice or want to create your own icon component? See "Libraries" section below. Components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
 
 In addition to icon components, [Icon Finder](./icon-finder/index.md) is in development.
 
 ## Plugins
 
-Iconify offers plug-ins for popular software:
+In addition to icon data and components, Iconify offers plug-ins for popular software for UI design:
 
 `include design/plugins`
 
