@@ -40,6 +40,7 @@ export function defaultTheme(file: string): Theme | null {
 		// Components
 		case 'develop':
 		case 'implementations':
+		case 'iconify-icon':
 		case 'icon-components':
 		case 'icon-finder':
 		case 'integrate':

@@ -23,8 +23,14 @@
 /develop/:
   title: Components
   children:
+    /iconify-icon/:
+      title: Icon Web Component
+      children:
+        ./ssr.html:
+          title: Server Side Rendering
+          # separator: true
     /icon-components/:
-      title: Iconify Icon
+      title: Icon Components
       headline: One icon framework to replace them all.
       children:
         ./svg-framework/:

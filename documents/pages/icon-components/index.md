@@ -9,6 +9,8 @@ replacements:
 
 Icon components render icons.
 
+Components are available for multiple frameworks.
+
 ## Source independent {#sources}
 
 `include icon-components/sources/heading`
@@ -44,6 +46,8 @@ For more details, see [Iconify SVG framework](./svg-framework/index.md).
 Iconify offers components for several popular component frameworks:
 
 `include icon-components/components`
+
+If you are using framework not listed above, you can use [web component](../iconify-icon/index.md) that works with all modern frameworks. Web component is also preferred if you are using server side rendering.
 
 All icon components support loading icon data on demand from [Iconify API](../api/index.md).
 

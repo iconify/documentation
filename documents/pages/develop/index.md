@@ -21,9 +21,27 @@ At first, there were only [Iconify icon components](../icon-components/index.md)
 
 Data for 70+ icon sets and utilities to work with that data are all open source and can be used by anyone, allowing developers to create components for various frameworks.
 
+There are several components designed by various authors. Choose what better fits your needs.
+
+### Iconify icon web component
+
+[Iconify icon web component](../iconify-icon/index.md) uses [Iconify API](../api/index.md) to dynamically load icon data as needed.
+
+It is a web component, not specific to any framework. It works without framework, but it can also be used with most frameworks: React,
+
 ### Iconify icon components
 
-[Iconify icon components](../icon-components/index.md) rely on [Iconify API](../api/index.md) to dynamically load icon data as needed. That makes them easy to use, without any configuration.
+[Iconify icon components](../icon-components/index.md) are the same as Iconify Icon web component mentioned above, but they are framework native components that do not use web component.
+
+Differences:
+
+- Iconify icon components render icon in current document. Web component uses shadow DOM, hiding actual icon code from document.
+- Iconify icon components use framework specific rendering methods.
+
+What to use?
+
+- If you are using server side rendering, use [web component](../iconify-icon/index.md). See [using web component for SRR](../iconify-icon/ssr.md) for details.
+- If you need to access icon elements or if icons use things like CSS animations, relying on document's stylesheet, use [framework native icon component](../icon-components/index.md).
 
 Available components:
 
