@@ -79,7 +79,7 @@ export function renderNavigation(data: PrepareNavigationResult): string {
 		let icon = '';
 		if (item.children.length && item.expanded) {
 			// icon = item.expanded ? expandedIcon : expandIcon;
-			icon = '<span class="iconify" data-icon="' + expandedIcon + '"></span>';
+			icon = '<iconify-icon icon="' + expandedIcon + '"></iconify-icon>';
 		}
 
 		// Generate HTML

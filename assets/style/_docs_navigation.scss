@@ -44,7 +44,7 @@
 	li.docs-navigation-link--active a {
 		color: theme($default_theme, 'link');
 
-		svg {
+		iconify-icon {
 			color: theme($default_theme, 'nav-arrow');
 		}
 	}
@@ -77,7 +77,7 @@
 				&:hover .docs-navigation-link a,
 				li.docs-navigation-link--active a {
 					color: theme($theme, 'link');
-					svg {
+					iconify-icon {
 						color: theme($theme, 'nav-arrow');
 					}
 				}
@@ -106,7 +106,7 @@
 		&--3 a,
 		&--4 a {
 			color: $text-dimmed-color;
-			svg {
+			iconify-icon {
 				color: $text-muted-color;
 			}
 		}
@@ -154,7 +154,7 @@
 		font-size: 14px;
 	}
 
-	svg {
+	iconify-icon {
 		position: absolute;
 		top: 50%;
 		right: 8px;
@@ -218,7 +218,7 @@
 		display: block;
 		padding: ($navigation-button-size - $icon-size) / 2;
 	}
-	svg {
+	iconify-icon {
 		font-size: $icon-size;
 		line-height: 1em;
 	}
@@ -245,7 +245,7 @@
 	// Arrow icons
 	&:hover,
 	&:focus-within {
-		svg {
+		iconify-icon {
 			display: block;
 		}
 	}
@@ -329,7 +329,7 @@
 		font-size: $base-font-size;
 		line-height: $base-line-height;
 
-		.iconify {
+		iconify-icon {
 			position: absolute;
 			top: 0;
 			font-size: $icon-size;
@@ -340,7 +340,7 @@
 		&--prev {
 			float: left;
 			padding-left: $icon-size;
-			.iconify {
+			iconify-icon {
 				left: 0;
 			}
 		}
@@ -348,14 +348,14 @@
 			float: right;
 			text-align: right;
 			padding-right: $icon-size;
-			.iconify {
+			iconify-icon {
 				right: 0;
 			}
 		}
 
 		&:hover {
 			text-decoration: underline;
-			.iconify {
+			iconify-icon {
 				color: inherit;
 			}
 		}

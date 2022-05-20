@@ -24,7 +24,6 @@ If you do not set any dimensions, `[prop]height` will be set to `[str]1em` and `
 	height="1em"
 	preserveAspectRatio="xMidYMid meet"
 	viewBox="0 0 448 512"
-	style="transform: rotate(360deg);"
 >
 	<path d="..." fill="currentColor"></path>
 </svg>

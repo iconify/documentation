@@ -165,8 +165,6 @@ To flip an icon, add `[attr]data-flip` attribute:
 ```yaml
 src: iconify1/index-transform-flip.html
 title: 'HTML:'
-css: iconify1/index-transform-flip.scss
-cssTitle: 'Stylesheet:'
 demo: true
 demoTitle: 'Demo:'
 class: iconify1-index-transform-flip
@@ -185,8 +183,6 @@ To rotate an icon, add `[attr]data-rotate` attribute:
 ```yaml
 src: iconify1/index-transform-rotate.html
 title: 'HTML:'
-css: iconify1/index-transform-rotate.scss
-cssTitle: 'Stylesheet:'
 demo: true
 demoTitle: 'Demo:'
 class: iconify1-index-transform-rotate

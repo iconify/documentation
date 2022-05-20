@@ -42,7 +42,7 @@
 		}
 	}
 
-	svg {
+	iconify-icon {
 		color: $big-notice-icon-color;
 		font-size: $icon-size;
 		line-height: 1em;
@@ -54,7 +54,7 @@
 
 	&--legacy {
 		border-color: mix($legacy-notice-color, palette($body-palette, 0), 25%);
-		svg,
+		iconify-icon,
 		a {
 			color: $legacy-notice-color;
 		}
@@ -62,7 +62,7 @@
 
 	&--warning {
 		border-color: mix($warning-notice-color, palette($body-palette, 0), 25%);
-		svg,
+		iconify-icon,
 		a {
 			color: $warning-notice-color;
 		}
@@ -70,7 +70,7 @@
 
 	&--gray {
 		border-color: mix($gray-notice-color, palette($body-palette, 0), 25%);
-		svg,
+		iconify-icon,
 		a {
 			color: $gray-notice-color;
 		}

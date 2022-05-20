@@ -8,7 +8,7 @@ export function changeHeadingLinks($html: cheerio.Root) {
 	const icon = rawReplacements.icons.hash;
 	$html('a.link-back').each((index, link) => {
 		const $link = $html(link);
-		$link.html('<span class="iconify" data-icon="' + icon + '"></span>');
+		$link.html('<iconify-icon icon="' + icon + '"></iconify-icon>');
 		$link.attr('title', 'Link to this section');
 	});
 }

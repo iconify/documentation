@@ -1,13 +1,14 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-	const noButtonClass = 'docs-navigation--no-button';
-	const hasButtonClass = 'docs-navigation--has-button';
-	const containerVisibleClass = 'docs-navigation--visible';
+	const baseClass = 'docs-navigation';
+	const noButtonClass = baseClass + '--no-button';
+	const hasButtonClass = baseClass + '--has-button';
+	const containerVisibleClass = baseClass + '--visible';
 
 	const visibleIcon = 'line-md:menu-unfold-left';
 	const hiddenIcon = 'line-md:menu-fold-right';
 
-	const container = document.querySelector('.docs-navigation');
-	const buttonsContainer = document.querySelector('.docs-navigation-button');
+	const container = document.querySelector('.' + baseClass);
+	const buttonsContainer = document.querySelector('.' + baseClass + '-button');
 
 	// Make sure contains are there and classList is supported
 	try {
@@ -33,9 +34,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	// Add link
 	buttonsContainer.innerHTML =
-		'<a href="#" title="Navigation"><span class="iconify" data-icon="' +
+		'<a href="#" title="Navigation"><iconify-icon icon="' +
 		visibleIcon +
-		'"></span></a>';
+		'"></iconify-icon></a>';
 
 	const linkNode = buttonsContainer.querySelector('a');
 
@@ -45,8 +46,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		visible = !visible;
 		containerClasses.toggle(containerVisibleClass);
 		linkNode.innerHTML =
-			'<span class="iconify" data-icon="' +
+			'<iconify-icon icon="' +
 			(visible ? hiddenIcon : visibleIcon) +
-			'"></span>';
+			'"></iconify-icon>';
+	});
+
+	// Restart animations on hover
+	container.addEventListener('mouseenter', () => {
+		restartAnimations(container);
 	});
 });

@@ -9,6 +9,7 @@ import { paths, exists } from '../../files';
 import { readFileSync } from 'fs';
 import { replaceAll } from '../../str';
 import { InlineCodeReplacement } from './includes';
+import { isDevMode } from '../../replacements';
 
 // Import additional syntax highlight modules
 hljs_svelte(hljs);
@@ -86,6 +87,7 @@ type TabTypes = 'src' | 'css' | 'demo';
 
 interface CodeTab {
 	type: TabTypes;
+	src: string;
 	title: string;
 	lang: string;
 	raw: string;
@@ -319,21 +321,33 @@ export function renderCode(context: MDContext, md: md) {
 	/**
 	 * Add code
 	 */
-	function renderTab(
-		tabs: CodeTab[],
-		type: TabTypes,
-		title: string,
-		lang: string,
-		code: string,
-		hint: string,
-		replace: typeof returnContent
-	) {
+	interface RenderTabProps {
+		tabs: CodeTab[];
+		type: TabTypes;
+		src: string;
+		title: string;
+		lang: string;
+		code: string;
+		hint: string;
+		replace: typeof returnContent;
+	}
+	function renderTab({
+		tabs,
+		type,
+		src,
+		title,
+		lang,
+		code,
+		hint,
+		replace,
+	}: RenderTabProps) {
 		// Change content
 		code = cleanupCode(lang, code);
 
 		// Add tab
 		tabs.push({
 			type,
+			src,
 			title,
 			lang,
 			raw: code,
@@ -346,29 +360,47 @@ export function renderCode(context: MDContext, md: md) {
 	/**
 	 * Render demo
 	 */
-	function renderDemo(
-		tabs: CodeTab[],
-		css: string,
-		title: string,
-		html: string,
-		hint: string,
-		replace: typeof returnContent
-	) {
+	interface RenderDemoProps {
+		tabs: CodeTab[];
+		src: string;
+		css: string;
+		title: string;
+		html: string;
+		hint: string;
+		replace: typeof returnContent;
+	}
+	function renderDemo({
+		tabs,
+		src,
+		css,
+		title,
+		html,
+		hint,
+		replace,
+	}: RenderDemoProps) {
 		if (css !== '') {
 			// Remove extensions
 			const parts = css.split('.');
 			css = parts.shift()!;
 		}
 
+		const debugAttr =
+			src && isDevMode()
+				? ' data-debug-src="' + encodeURIComponent(src) + '"'
+				: '';
+
 		tabs.push({
 			type: 'demo',
+			src,
 			title,
 			lang: 'html',
 			raw: '',
 			html:
 				'<div class="code-demo' +
 				(css === '' ? '' : ' ' + css) +
-				'">' +
+				'"' +
+				debugAttr +
+				'>' +
 				replace(html) +
 				'</div>',
 			hint,
@@ -385,7 +417,16 @@ export function renderCode(context: MDContext, md: md) {
 
 		if (typeof data !== 'object' || typeof data.src !== 'string') {
 			// Do not treat it as custom code
-			renderTab(tabs, 'src', '', 'yaml', code, '', returnContent);
+			renderTab({
+				tabs,
+				type: 'src',
+				src: '',
+				title: '',
+				lang: 'yaml',
+				code,
+				hint: '',
+				replace: returnContent,
+			});
 			return;
 		}
 
@@ -528,61 +569,64 @@ export function renderCode(context: MDContext, md: md) {
 		].concat(data.extra);
 
 		sources.forEach((source) => {
-			const sourceFile = locateCode(source.src, 'src');
+			const src = source.src;
+			const sourceFile = locateCode(src, 'src');
 			if (sourceFile === null) {
 				throw new Error(
-					`Unable to locate file "${source.src}" in code block in ${context.filename}.`
+					`Unable to locate file "${src}" in code block in ${context.filename}.`
 				);
 			}
-			renderTab(
+			renderTab({
 				tabs,
-				'src',
-				source.title,
-				source.src.split('.').pop()!,
-				getFile(sourceFile),
-				source.hint,
-				replaceContent
-			);
+				type: 'src',
+				src,
+				title: source.title,
+				lang: source.src.split('.').pop()!,
+				code: getFile(sourceFile),
+				hint: source.hint,
+				replace: replaceContent,
+			});
 		});
 
 		// Get stylesheet
 		if (data.css !== '') {
-			const stylesheetFile = locateCode(data.css, 'css');
+			const cssSource = data.css;
+			const stylesheetFile = locateCode(cssSource, 'css');
 			if (stylesheetFile === null) {
 				throw new Error(
-					`Unable to locate file "${data.css}" in code block in ${context.filename}.`
+					`Unable to locate file "${cssSource}" in code block in ${context.filename}.`
 				);
 			}
-			renderTab(
+			renderTab({
 				tabs,
-				'css',
-				data.cssTitle,
-				'scss',
-				getFile(stylesheetFile),
-				data.cssHint,
-				replaceContent
-			);
+				type: 'css',
+				src: cssSource,
+				title: data.cssTitle,
+				lang: 'scss',
+				code: getFile(stylesheetFile),
+				hint: data.cssHint,
+				replace: replaceContent,
+			});
 		}
 
 		// Demo
 		if (data.demo) {
-			const demoFile = locateCode(
-				typeof data.demo === 'string' ? data.demo : data.src,
-				'demo'
-			);
+			const demoSource = typeof data.demo === 'string' ? data.demo : data.src;
+			const demoFile = locateCode(demoSource, 'demo');
 			if (demoFile === null) {
 				throw new Error(
-					`Unable to locate demo file "${data.src}" in code block in ${context.filename}. Demo file must match source file, but end with ".demo.html" or ".html"`
+					`Unable to locate demo file "${demoSource}" in code block in ${context.filename}. Demo file must match source file, but end with ".demo.html" or ".html"`
 				);
 			}
-			renderDemo(
+			renderDemo({
 				tabs,
-				data.class,
-				data.demoTitle,
-				getFile(demoFile),
-				data.demoHint,
-				replaceContent
-			);
+				src: demoSource,
+				css: data.class,
+				title: data.demoTitle,
+				html: getFile(demoFile),
+				hint: data.demoHint,
+				replace: replaceContent,
+			});
 		}
 	}
 
@@ -591,19 +635,27 @@ export function renderCode(context: MDContext, md: md) {
 	 */
 	function renderTabs(tabs: CodeTab[]): string {
 		let code = '<div class="code-blocks">';
-		tabs.forEach((tab, index) => {
+		tabs.forEach((tab) => {
 			let raw = '';
 			if (tab.raw !== '') {
 				const buff = Buffer.from(tab.raw, 'utf8');
 				raw = tab.replace(buff.toString('base64'));
 			}
 
+			// Add debug attribute
+			const debugAttr =
+				tab.src && isDevMode()
+					? ' data-debug-src="' + encodeURIComponent(tab.src) + '"'
+					: '';
+
 			// Container
 			code +=
 				'<div class="code-block code-block--' +
 				tab.type +
 				(tab.title === '' ? '' : ' code-block--with-title') +
-				'">';
+				'"' +
+				debugAttr +
+				'>';
 
 			// Title
 			if (tab.title !== '') {
@@ -655,7 +707,16 @@ export function renderCode(context: MDContext, md: md) {
 		if (lang === 'yaml') {
 			parseYaml(tabs, code);
 		} else {
-			renderTab(tabs, 'src', '', lang, code, '', returnContent);
+			renderTab({
+				tabs,
+				type: 'src',
+				src: '',
+				title: '',
+				lang,
+				code,
+				hint: '',
+				replace: returnContent,
+			});
 		}
 
 		return renderTabs(tabs);

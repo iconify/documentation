@@ -123,6 +123,9 @@ const customCollection = blankIconSet(customPrefix);
 function loadScripts() {
 	let content = '';
 
+	const webComponent = require.resolve('iconify-icon/dist/iconify-icon.min.js');
+	content += fs.readFileSync(webComponent, 'utf8') + '\n';
+
 	fs.readdirSync(jsSourceDir).forEach((file) => {
 		const parts = file.split('.');
 		const ext = parts.pop();
@@ -235,6 +238,18 @@ Object.keys(preloadIcons).forEach((prefix) => {
 
 // Export file
 const content =
-	loadScripts() + 'var IconifyPreload = [\n\t' + preload.join(',\n\t') + '\n];';
+	loadScripts() +
+	`(function() {
+	function add(data) {
+		try {
+			window.customElements
+				.get('iconify-icon')
+				.addCollection(data);
+			return;
+		} catch (err) {}
+	}\n\t` +
+	preload.map((data) => 'add(' + data + ');').join('\n\t') +
+	`\n})();
+`;
 fs.writeFileSync(outputFile, content, 'utf8');
 console.log(`Saved bundle.js (${content.length} bytes)`);

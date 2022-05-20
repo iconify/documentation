@@ -216,7 +216,7 @@ export function generateShortNavigation(
 			(next ? 'next' : 'prev');
 		const icon = rawReplacements.icons[next ? 'chevron-right' : 'chevron-left'];
 
-		return `<a href="${url}" class="${className}"><span class="iconify" data-icon="${icon}"></span> ${item.title}</a>\n`;
+		return `<a href="${url}" class="${className}"><iconify-icon icon="${icon}"></iconify-icon> ${item.title}</a>\n`;
 	}
 
 	let html = '<div class="docs-short-navigation">\n';

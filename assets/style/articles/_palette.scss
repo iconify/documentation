@@ -1,11 +1,11 @@
 .icon-example--monotone {
-	.iconify {
+	iconify-icon {
 		color: palette('blue-gray', 600);
 		transition: color 0.2s ease;
 		// animation: icon-example-palette 10s infinite;
 	}
 	&:hover {
-		.iconify {
+		iconify-icon {
 			color: palette($link-hover-palette, $link-shade);
 			// animation: none;
 		}

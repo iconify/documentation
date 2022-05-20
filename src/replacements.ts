@@ -120,3 +120,10 @@ export function replacementsToPairs(
 	});
 	return replacements;
 }
+
+/**
+ * Is dev mode?
+ */
+export function isDevMode() {
+	return rawReplacements['mode'] === 'development';
+}

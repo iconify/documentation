@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		.querySelectorAll('.visual-block--bundle .demo-icons')
 		.forEach((container) => {
 			// Hide child nodes
-			const children = container.querySelectorAll('.iconify');
+			const children = container.querySelectorAll('iconify-icon');
 			children.forEach((node) => {
 				node.style.display = 'none';
 			});
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				if (index < 1) {
 					index += count;
 				}
-				return container.querySelector('.iconify:nth-child(' + index + ')');
+				return container.querySelector('iconify-icon:nth-child(' + index + ')');
 			}
 
 			// Show on timer
@@ -33,6 +33,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 					if (node) {
 						node.classList.remove('fade');
 						node.style.display = '';
+						try {
+							node.restartAnimation();
+						} catch (err) {
+							//
+						}
 					}
 
 					// Node to fade

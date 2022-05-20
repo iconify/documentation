@@ -75,7 +75,7 @@ $namespace-total-height: $namespace-height * 3 + $namespace-vertical-spacing * 2
 	top: 0;
 	height: $namespace-height;
 
-	.iconify {
+	iconify-icon {
 		font-size: $icon-size;
 		line-height: 1em;
 		position: absolute;
@@ -149,7 +149,7 @@ $namespace-total-height: $namespace-height * 3 + $namespace-vertical-spacing * 2
 		left: 2px;
 	}
 
-	svg {
+	iconify-icon {
 		position: relative;
 		top: 12px;
 		opacity: 0.8;

@@ -93,7 +93,7 @@
 		transition: color 0.2s ease;
 		transition-property: color, background-color;
 
-		svg {
+		iconify-icon {
 			display: block;
 		}
 
@@ -126,7 +126,7 @@
 
 		animation: show-code-notice 2s ease forwards;
 
-		svg {
+		iconify-icon {
 			float: left;
 			font-size: $icon-size;
 			line-height: 1em;

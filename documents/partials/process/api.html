@@ -3,9 +3,7 @@
 		<dt>
 			<p>
 				<code data-wrap="block">&lt;Icon icon="mdi:home" /&gt;</code>
-				<code data-wrap="block"
-					>&lt;span data-icon="mdi:alert" class="iconify" /&gt;</code
-				>
+				<code data-wrap="block">&lt;iconify-icon icon="mdi:alert" /&gt;</code>
 			</p>
 		</dt>
 		<dd>
@@ -38,11 +36,12 @@
 				>&lt;/svg&gt;
 			</code>
 			<code data-wrap="block">
-				&lt;svg class="iconify iconify--mdi" data-icon="mdi:alert" width="1em"
-				height="1em" viewBox="0 0 24 24"
+				&lt;iconify-icon icon="mdi:alert"&gt;<span class="hljs-comment"
+					>#shadow-root</span
+				>&lt;svg width="1em" height="1em" viewBox="0 0 24 24"
 				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment"
 					>...</span
-				>&lt;/svg&gt;
+				>&lt;/svg&gt;&lt;/iconify-icon&gt;
 			</code>
 		</dt>
 		<dd>Component renders SVG using data retrieved from Iconify API.</dd>

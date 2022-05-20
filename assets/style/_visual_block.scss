@@ -21,14 +21,14 @@ $visual-block-bundle-bg-length: 240px * 2 + 142px * 2;
 		height: $visual-block-icon-height;
 		float: left;
 
-		svg,
+		iconify-icon,
 		p {
 			position: absolute;
 			margin: 0;
 			padding: 0;
 		}
 
-		svg {
+		iconify-icon {
 			font-size: $icon-size;
 			line-height: 1em;
 			color: $text-muted-color;
@@ -84,7 +84,7 @@ $visual-block-bundle-bg-length: 240px * 2 + 142px * 2;
 
 		// Icons
 		.demo-icons {
-			.iconify {
+			iconify-icon {
 				&.fade {
 					animation: visual-block-fade-out 1s forwards;
 				}

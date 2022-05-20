@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				const noticeNode = document.createElement('div');
 				noticeNode.className = noticeClass;
 				noticeNode.innerHTML =
-					'<span class="iconify" data-icon="line-md:confirm"></span> Copied to clipboard';
+					'<iconify-icon icon="line-md:confirm"></iconify-icon> Copied to clipboard';
 				node.appendChild(noticeNode);
 
 				// Remove notice after delay
@@ -91,8 +91,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		buttonNode.className = buttonClass;
 		buttonNode.innerHTML =
-			'<span class="iconify" data-icon="line-md:clipboard-arrow"></span>';
+			'<iconify-icon icon="line-md:clipboard-arrow"></iconify-icon>';
 
 		node.appendChild(buttonNode);
+
+		// Restart animations on hover
+		node.addEventListener('mouseenter', () => {
+			restartAnimations(node);
+		});
 	});
 });
