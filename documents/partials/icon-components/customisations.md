@@ -13,14 +13,6 @@ If neither of dimensions is set, `[prop]height` defaults to `[str]1em`.
 
 Keyword `[str]auto` sets dimension to original icon's dimensions found in `[attr]viewBox`.
 
-Alignment:
-
-- `[prop]hAlign`. Horizontal alignment: `[str]left`, `[str]center`, `[str]right`. The default value is `[str]center`.
-- `[prop]vAlign`. Vertical alignment: `[str]top`, `[str]middle`, `[str]bottom`. The default value is `[str]middle`.
-- `[prop]slice`, `[type]boolean`. What to do with incorrectly scaled icon: resize to fit container (`[bool]true`) or display an entire icon (`[bool]false`, the default value).
-
-Alignment matters only if you set both `[prop]width` and `[prop]height` and width to height ratio does not match icon's width to height ratio. Unlike other images, browsers do not stretch SVG.
-
 Transformations:
 
 - `[prop]hFlip`, `[type]boolean`. Flip icon horizontally. The default value is `[bool]false`.

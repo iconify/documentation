@@ -160,7 +160,7 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style={{ fontSize: '24px' }} />
 ```
 
-For various ways to change icon dimensions and alignment, see [how to change icon dimensions in Iconify for React](./dimensions.md).
+For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for React](./dimensions.md).
 
 ## Transformations
 

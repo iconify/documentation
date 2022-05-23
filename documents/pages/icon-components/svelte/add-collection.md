@@ -42,7 +42,7 @@ replacements:
 Example:
 
 ```yaml
-src: icon-components/common/add-collection2.js
+src: icon-components/common/add-collection3.js
 replacements:
   - search: react
     replace: svelte

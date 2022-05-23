@@ -22,6 +22,9 @@
 		"size-without-api": "17kb",
 		"import": "@iconify/iconify"
 	},
+	"iconify-icon": {
+		"version": "0.0.6"
+	},
 	"react": {
 		"import": "@iconify/react"
 	},

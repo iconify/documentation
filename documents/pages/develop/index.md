@@ -27,7 +27,21 @@ There are several components designed by various authors. Choose what better fit
 
 [Iconify icon web component](../iconify-icon/index.md) uses [Iconify API](../api/index.md) to dynamically load icon data as needed.
 
-It is a web component, not specific to any framework. It works without framework, but it can also be used with most frameworks: React,
+It is a web component, not specific to any framework. It works without framework, but it can also be used with most frameworks: React, Svelte, Vue, Solid, Lit and many other frameworks.
+
+Web component is easy to use: bundle it, create `[tag]iconify-icon` element with icon name attribute. Component will dynamically load data for icon from API and render it.
+
+```html
+<iconify-icon icon="mdi:home-outline"></iconify-icon>
+<iconify-icon
+	icon="tabler:building-pavilon"
+	style="color: red; font-size: 24px"
+></iconify-icon>
+```
+
+Where `[str]mdi` is name of icon set, `[str]home-outline` is name of icon.
+
+For more details, see [Iconify icon web component](../iconify-icon/index.md).
 
 ### Iconify icon components
 
@@ -36,11 +50,11 @@ It is a web component, not specific to any framework. It works without framework
 Differences:
 
 - Iconify icon components render icon in current document. Web component uses shadow DOM, hiding actual icon code from document.
-- Iconify icon components use framework specific rendering methods.
+- Iconify icon components use framework specific rendering methods. There is no real advantage of doing that, unless you need to access SVG nodes.
 
 What to use?
 
-- If you are using server side rendering, use [web component](../iconify-icon/index.md). See [using web component for SRR](../iconify-icon/ssr.md) for details.
+- If you are using server side rendering, use [web component](../iconify-icon/index.md#ssr).
 - If you need to access icon elements or if icons use things like CSS animations, relying on document's stylesheet, use [framework native icon component](../icon-components/index.md).
 
 Available components:
@@ -63,35 +77,6 @@ These components are easy to use: import icon component and pass parameter with 
 Where `[str]mdi` is name of icon set, `[str]home-outline` is name of icon.
 
 For more details, see [Iconify icon components](../icon-components/index.md).
-
-#### SVG framework
-
-Additionally, [Iconify SVG framework](../icon-components/svg-framework/index.md) is available. It is similar to components listed above (and shares common code), but works as simple script without any UI framework. It is a modern replacement for outdated icon fonts.
-
-It offers all the advantages of icons fonts:
-
-- Syntax is very simple and similar to icon fonts: it uses a placeholder element with `[attr]class` set to `[str]iconify` and `[attr]data-icon` attribute with icon name. SVG framework searches for those elements in DOM and replaces them with `[tag]svg`.
-- You can change size and color by changing `[attr]font-size` and `[attr]color` in stylesheet.
-
-It does not have disadvantages of icons fonts:
-
-- SVG framework renders pixel-perfect SVG, not blurred glyphs.
-- Only icons that are used on page are loaded. This means no bandwidth wasted on loading icons you do not need. This also made it possible to offer over 60k icons.
-
-```yaml
-src: icon-components/iconify/script.html
-```
-
-```html
-<span class="iconify" data-icon="mdi:home-outline"></span>
-<span
-	class="iconify"
-	data-icon="tabler:building-pavilon"
-	style="color: red; font-size: 24px"
-></span>
-```
-
-For more details, see [Iconify SVG framework](../icon-components/svg-framework/index.md).
 
 ### Unplugin Icons
 

@@ -107,7 +107,7 @@ To add color to the monotone icon simply change text color.
 
 For various ways to set color, see [changing icon color tutorial](./color.md).
 
-## Dimensions and alignment
+## Dimensions
 
 By default, icon height is set to `[str]"1em"`, icon width is changed dynamically based on the icon's width to height ratio.
 
@@ -121,7 +121,7 @@ This makes it easy to change icon size by changing `[attr]font-size` in the styl
 ></span>
 ```
 
-For various ways to change icon dimensions and alignment, see [changing icon dimensions tutorial](./dimensions.md).
+For various ways to change icon dimensions, see [changing icon dimensions tutorial](./dimensions.md).
 
 ## Transformations
 

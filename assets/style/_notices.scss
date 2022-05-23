@@ -20,7 +20,7 @@
 		margin: 0;
 		padding: 0;
 		+ p {
-			margin-top: 4px;
+			margin-top: 8px;
 		}
 	}
 
@@ -32,13 +32,17 @@
 		}
 	}
 
-	a {
-		color: $big-notice-color;
-		text-decoration: underline;
-		&:hover,
-		&:focus {
-			color: palette($link-hover-palette, $link-hover-shade);
+	&--legacy,
+	&--warning,
+	&--gray {
+		a {
+			color: $big-notice-color;
 			text-decoration: underline;
+			&:hover,
+			&:focus {
+				color: palette($link-hover-palette, $link-hover-shade);
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -50,6 +54,10 @@
 		top: 50%;
 		left: 12px;
 		margin-top: (0 - $icon-size) / 2;
+	}
+
+	&--no-icon {
+		padding: 16px;
 	}
 
 	&--legacy {

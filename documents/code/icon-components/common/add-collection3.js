@@ -1,6 +1,7 @@
 import { addCollection } from '@iconify/react';
 
 addCollection(
+	// Icon set: prefix and icons
 	{
 		prefix: 'md',
 		icons: {
@@ -11,5 +12,6 @@ addCollection(
 		width: 24,
 		height: 24,
 	},
+	// API provider
 	'custom'
 );

@@ -133,7 +133,7 @@ include: icon-components/components/intro-color
 
 For various ways to set color, see [how to change icon color in Iconify for Svelte](./color.md).
 
-## Dimensions and alignment
+## Dimensions
 
 ```yaml
 include: icon-components/components/intro-size
@@ -143,7 +143,7 @@ include: icon-components/components/intro-size
 <Icon icon="mdi:home" style="font-size: 24px;" />
 ```
 
-For various ways to change icon dimensions and alignment, see [how to change icon dimensions in Iconify for Svelte](./dimensions.md).
+For various ways to change icon dimensions, see [how to change icon dimensions in Iconify for Svelte](./dimensions.md).
 
 ## Transformations
 

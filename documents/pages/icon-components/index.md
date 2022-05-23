@@ -27,7 +27,7 @@ Icon components do not include data for icons.
 
 ## SVG framework
 
-[Iconify SVG framework](./svg-framework/index.md) is a modern replacement for outdated icon fonts.
+[Iconify SVG framework](./svg-framework/index.md) was designed as replacement for outdated icon fonts.
 
 It offers all the advantages of icons fonts:
 
@@ -41,9 +41,11 @@ It does not have disadvantages of icons fonts:
 
 For more details, see [Iconify SVG framework](./svg-framework/index.md).
 
+`include notices/web-component/svg-framework`
+
 ## Component frameworks
 
-Iconify offers components for several popular component frameworks:
+Iconify offers icon components for several popular component frameworks:
 
 `include icon-components/components`
 

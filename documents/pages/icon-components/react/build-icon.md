@@ -29,7 +29,7 @@ Second parameter is optional icon customizations. Available customizations:
 
 `include icon-components/customisations`
 
-For more details about dimensions and alignment see [icon dimensions documentation](./dimensions.md).
+For more details about dimensions see [icon dimensions documentation](./dimensions.md).
 
 For more details about transformations see [icon transformations documentation](./transform.md).
 

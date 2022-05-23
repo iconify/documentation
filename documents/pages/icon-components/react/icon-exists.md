@@ -26,6 +26,9 @@ function renderLeftArrow() {
 
 	// Load icon. Bad example because this should use a callback to re-render arrow in a stateful
 	// component, but this code example is about iconExists(), not loadIcons()
+
+	// Function loadIcons() is asynchronous, so in this example it will only trigger loading, but
+	// icon data will not be available immediately
 	loadIcons(['bi:arrow-left']);
 
 	// Return '<'

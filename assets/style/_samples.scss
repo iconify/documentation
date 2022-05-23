@@ -3,6 +3,121 @@
 	line-height: 32px;
 }
 
+// Restart animation in code block
+.restart-animation {
+	iconify-icon {
+		font-size: 24px;
+		line-height: 24px;
+		vertical-align: -0.25em;
+	}
+	small {
+		padding-left: 8px;
+		font-size: 14px;
+		line-height: 24px;
+		color: $text-muted-color;
+		pointer-events: none;
+		transition: opacity 0.2s;
+	}
+	&:hover {
+		color: palette($link-hover-palette, $link-hover-shade);
+		small {
+			opacity: 0;
+		}
+	}
+}
+
+// Rendering delay animation
+.delay-demo-wrapper {
+	iframe {
+		display: block;
+		width: 100%;
+		height: 112px;
+		overflow-y: auto;
+		border: 1px solid $code-border-color;
+		border-radius: $code-border-radius;
+		background: $code-background;
+	}
+	small {
+		padding: 8px;
+		font-size: 14px;
+		line-height: 24px;
+		color: $text-muted-color;
+		pointer-events: none;
+		transition: opacity 0.2s;
+	}
+	&.restarting {
+		small {
+			opacity: 0;
+		}
+	}
+
+	&--short {
+		iframe {
+			height: 80px;
+		}
+	}
+}
+
+// Modes demo
+.modes-demo {
+	border: 1px solid $code-border-color;
+	border-radius: $code-border-radius;
+	background: $code-background;
+	padding: 0 16px;
+
+	// animation: 10s infinite modes-demo-color;
+	span {
+		display: inline-block;
+		min-width: 48px;
+	}
+
+	small {
+		color: $text-muted-color;
+		// padding-left: 8px;
+	}
+
+	iconify-icon {
+		font-size: 24px;
+		line-height: 1em;
+		vertical-align: -0.25em;
+		margin: 0 8px;
+		color: palette('green', 600);
+
+		&.success {
+			// box-shadow: 0 0 3px palette('green', 600);
+		}
+		&.error {
+			box-shadow: 0 0 2px palette('red', 600);
+		}
+	}
+
+	&:hover {
+		iconify-icon {
+			color: palette($link-hover-palette, $link-hover-shade);
+		}
+	}
+}
+
+/*
+@keyframes modes-demo-color {
+	0% {
+		color: palette('blue', $link-shade);
+	}
+	25% {
+		color: palette('red', $link-shade);
+	}
+	50% {
+		color: palette('green', $link-shade);
+	}
+	75% {
+		color: palette('gray', $link-shade);
+	}
+	100% {
+		color: palette('blue', $link-shade);
+	}
+}
+*/
+
 // Show icon size using box-shadow
 .highlight-box iconify-icon {
 	box-shadow: 0 0 0 1px #e00;
@@ -71,4 +186,9 @@
 
 .css-flip {
 	@import './samples/common/css-flip';
+}
+
+// Icon
+.icon-size {
+	@import './samples/icon/size';
 }

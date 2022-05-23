@@ -26,9 +26,34 @@
     /iconify-icon/:
       title: Icon Web Component
       children:
-        ./ssr.html:
-          title: Server Side Rendering
-          # separator: true
+        ./color.html: Icon Color
+        ./dimensions.html: Icon Dimensions
+        ./transform.html: Transformations
+        ./inline.html: Inline Icons
+        ./modes.html: Rendering Modes
+        ./without-api.html:
+          title: Use Without API
+          separator: true
+        ./index.html#functions:
+          title: Functions
+          separator: true
+          clickable: false
+        # Getting icons
+        ./icon-exists.html: iconExists()
+        ./list-icons.html: listIcons()
+        ./get-icon.html: getIcon()
+        # Adding icons
+        ./add-icon.html: addIcon()
+        ./add-collection.html: addCollection()
+        # API
+        ./load-icons.html: loadIcons()
+        ./load-icon.html: loadIcon()
+        ./enable-cache.html: enableCache()
+        ./disable-cache.html: disableCache()
+        # Rendering icons
+        ./build-icon.html: buildIcon()
+        # Internal
+        ./set-fetch.html: setFetch()
     /icon-components/:
       title: Icon Components
       headline: One icon framework to replace them all.

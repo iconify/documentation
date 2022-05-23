@@ -1,1 +1,1 @@
-Function `[func]listIcons()` lists available icons.
+Function `[func]listIcons()` lists loaded icons.
