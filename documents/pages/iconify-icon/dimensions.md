@@ -12,7 +12,7 @@ include: icon-components/components/size-intro
 
 ```yaml
 src: icon-components/icon/size-icon.html
-title: 'JSX:'
+title: 'HTML:'
 css: icon/size.scss
 cssTitle: 'Stylesheet:'
 demo: true
@@ -27,12 +27,13 @@ Both `[prop]width` and `[prop]height` can be used as properties and attributes.
 Examples of `[num]24px` icon:
 
 ```html
-<!-- String without units -->
 <iconify-icon icon="mdi:home" height="24"></iconify-icon>
-<!-- String with units -->
 <iconify-icon icon="mdi:home" height="24px"></iconify-icon>
-<!-- String with units, font-size is 16px -->
-<iconify-icon icon="mdi:home" height="1.5em"></iconify-icon>
+<iconify-icon
+	icon="mdi:home"
+	style="font-size: 16px;"
+	height="1.5em"
+></iconify-icon>
 ```
 
 ## Keyword "auto" {#auto}

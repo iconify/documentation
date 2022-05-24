@@ -42,7 +42,7 @@ export default defineComponent({
 		// Icon status
 		const loaded = ref(null);
 
-		// Function to check if icon exists
+		// Function to check if icon data is available
 		const check = (icon: string) => {
 			const isLoaded = (loaded.value = iconExists(icon));
 

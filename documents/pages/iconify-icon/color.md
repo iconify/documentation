@@ -12,7 +12,7 @@ include: icon-components/components/color-intro
 
 ```yaml
 src: icon-components/icon/color.html
-title: 'JSX:'
+title: 'HTML:'
 css: components/color.scss
 cssTitle: 'Stylesheet:'
 demo: true

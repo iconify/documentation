@@ -189,6 +189,12 @@ console.log(node.iconExists('mdi:home'));
 
 Functions are split in several groups (click function name to see more details and examples):
 
+### Instance functions {#instance}
+
+These functions are available only on web component nodes:
+
+- `[func]restartAnimation()`. Restarts SVG animation, useful if you want to restart animation on hover event, as shown in right side navigation of this website.
+
 ### Check available icons {#getting-icons}
 
 ```yaml
@@ -203,9 +209,8 @@ include: icon-components/components/functions-list/adding-icons
 
 ### Helper functions {#helper}
 
-```yaml
-include: icon-components/components/functions-list/helpers
-```
+- `[func]calculateSize()`. Calculates icon size. It is used to calculate `[attr]width` if only `[attr]height` is set and vice versa.
+- `[func]buildIcon(icon, customisations?)`. Generates data used by icon component. This can be used if you prefer to generate `[tag]svg` yourself. Data includes attributes for `[tag]svg` and inner HTML.
 
 ### API functions {#api}
 

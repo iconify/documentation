@@ -27,14 +27,10 @@ include: icon-components/components/size-units
 ```
 
 ```hbs
-<!-- Number -->
 <IconifyIcon @icon='mdi:home' @height={{24}} />
-<!-- String without units -->
 <IconifyIcon @icon='mdi:home' @height='24' />
-<!-- String with units -->
 <IconifyIcon @icon='mdi:home' @height='24px' />
-<!-- String with units, font-size is 16px -->
-<IconifyIcon @icon='mdi:home' @height='1.5em' />
+<IconifyIcon @icon='mdi:home' @height='1.5em' style='font-size: 16px;' />
 ```
 
 ## Keyword "auto" {#auto}

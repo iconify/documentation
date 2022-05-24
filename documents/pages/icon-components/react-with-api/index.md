@@ -180,7 +180,7 @@ Functions are split in several groups (click function name to see more details a
 
 There are several functions in this section:
 
-- `[func]iconExists(name)`. Checks if an icon exists, returns `[type]boolean`.
+- `[func]iconExists(name)`. Checks if data for icon is available, returns `[type]boolean`.
 - `[func]listIcons()`. Lists available icons, returns `[type]string[]`.
 - `[func]getIcon(name)`. Returns icon data, returns `[type]IconifyIcon` object.
 

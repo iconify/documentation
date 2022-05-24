@@ -14,7 +14,7 @@ This tutorial is part of [Iconify Icon web component tutorial](./index.md#functi
 
 ## Example
 
-```jsx
+```js
 import { iconExists, loadIcons } from 'iconify-icon';
 
 function renderLeftArrow() {
