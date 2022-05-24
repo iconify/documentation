@@ -563,3 +563,4 @@
         ./validate.html: Validating SVG
         ./palette.html: Icon Palette
         ./optimise.html: Optimisation
+    ./svg-animation-issues/: SVG Animation Issues

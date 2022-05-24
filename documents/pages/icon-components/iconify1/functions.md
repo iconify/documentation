@@ -27,7 +27,7 @@ Available functions:
 - [setCustomAPI(prefix, url)](#api-custom) sets custom API URL for icons with specific prefix.
 - [addCollection(data)](#add-collection) adds icons to storage.
 - [addIcon(name, data)](#add-icon) adds one icon to storage.
-- [iconExists(name)](#icon-exists) checks data for icon is available in storage.
+- [iconExists(name)](#icon-exists) checks if data for icon is available in storage.
 - [listIcons()](#list-icons) retrieves list of all loaded icons.
 - [getIcon(name)](#get-icon) retrieves raw data for icon.
 - [getSVG(name, properties)](#get-svg) retrieves SVG string for icon.

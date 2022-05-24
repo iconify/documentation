@@ -54,8 +54,9 @@ Differences:
 
 What to use?
 
-- If you are using server side rendering, use [web component](../iconify-icon/index.md#ssr).
+- If you are using server side rendering, use [web component](../iconify-icon/index.md#ssr). It works better with hydration.
 - If you need to access icon elements or if icons use things like CSS animations, relying on document's stylesheet, use [framework native icon component](../icon-components/index.md).
+- If you are using SVG animations, use [web component](../iconify-icon/index.md). It includes [workarounds for multiple SVG animation bugs](../iconify-icon/modes.md).
 
 Available components:
 

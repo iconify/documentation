@@ -47,7 +47,7 @@ SVG animations cannot start until document is ready. It might seem like a small 
 
 ### Animation delay demo {#delay-demo}
 
-Below is a `[tag]iframe` that shows icon rendering issue. It contains animated icon, rendered as `[tag]svg` and as background image. Both icons render instantly, but animation in `[tag]svg` does not start for few seconds because document is still loading.
+Below is an `[tag]iframe` that shows icon rendering issue. It contains animated icon, rendered as `[tag]svg` and as background image. Both icons render instantly, but animation in `[tag]svg` does not start for few seconds because document is still loading.
 
 `include icon-components/frames/delay-demo-1up`
 

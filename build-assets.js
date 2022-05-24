@@ -91,6 +91,9 @@ copy(paths.sourceAssets + '/images', assetsPath + '/images');
 					background: transparent;
 					color: #000;
 				}
+				body:hover {
+					color: #ba3329;
+				}
 	
 				p {
 					margin: 8px;
@@ -117,7 +120,7 @@ copy(paths.sourceAssets + '/images', assetsPath + '/images');
 				});
 			</script>
 			<p>
-				Icon: <iconify-icon icon="${iconName}"></iconify-icon>
+				Icon working as expected: <iconify-icon icon="${iconName}"></iconify-icon>
 			</p>
 			<p id="loading">Loading script...</p>
 			<script src="https://iconify.design/delay.php?delay=1"></script>
