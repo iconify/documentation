@@ -17,10 +17,12 @@ const preloadIcons = {
 	'line-md': [
 		// Footer
 		'home-twotone-alt',
-		'github',
+		'github-loop',
 		'document-list',
 		'document-code',
 		'image-twotone',
+		'twitter',
+		'discord',
 		// Breadcrumbs
 		'chevron-small-double-left',
 		'chevron-small-double-right',
@@ -51,7 +53,7 @@ const preloadIcons = {
 		'navigation-left-up',
 		// partials/visual-blocks/bundle.html (re-using footer)
 		'home-twotone-alt',
-		// 'github', // replaced with assets:github in footer
+		'github',
 		'document-list',
 		'document-code',
 		'image-twotone',

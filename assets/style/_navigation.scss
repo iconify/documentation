@@ -130,6 +130,10 @@ $nav-mq-tiny: $mq-medium;
 			text-decoration: none;
 			white-space: nowrap;
 		}
+		iconify-icon {
+			font-size: 24px;
+			vertical-align: -6px;
+		}
 
 		@media (max-width: $nav-mq-tiny) {
 			font-size: $nav-small-font-size;

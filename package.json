@@ -13,7 +13,7 @@
 	"author": "Iconify OÜ",
 	"license": "Apache 2.0",
 	"devDependencies": {
-		"@iconify/json": "^2.1.47",
+		"@iconify/json": "^2.1.53",
 		"@iconify/tools": "^2.0.17",
 		"@types/cheerio": "^0.22.22",
 		"@types/markdown-it": "^12.2.3",
