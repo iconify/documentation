@@ -4,21 +4,21 @@ title: How to add icon set to Iconify
 
 # How to add icon set to Iconify
 
-If you have designed an icon set and you want to add it to Iconify. How to do it?
+If you have created an icon set, please consider sharing it with Iconify community.
 
-## Custom icon sets
+## Benefits
 
-Sometimes developers confuse adding an icon set to Iconify with using custom icon sets.
+What are the benefits of publishing an icon set to Iconify?
 
-You can use custom icon sets with almost any software that uses Iconify icon sets: Iconify icon components, Unplugin Icons, UnoCSS. To use your icons with those tools, you do not need to add them to Iconify icon sets. All those tools have the option to load custom icon sets.
-
-Adding your icon set to Iconify means publishing it to the community, making it available to everyone who uses Iconify. New icon sets are always welcome!
+- Icons become available to thousands of users that use projects that get icon data from Iconify: [Iconify icon components](../../iconify-icon/index.md), [UnoCSS](../../icon-components/unocss.md), [Unplugin Icons](../../icon-components/unplugin-icons.md) and other projects.
+- Iconify is open source, all icon sets are also open source and they are used by many open source projects. Do you feel like contributing to open source projects?
+- Each icon set has an information section, which includes author name and link to repository. It is shown on websites that list icons, it is shown in Figma and Sketch plugin. It might get you some visitors, followers and links for search engines.
 
 ## Adding icon set
 
-In the roadmap for Iconify, publishing icon sets can be done directly from Figma. However, that functionality is in development and it will take a long time to complete.
+To add an icon set to Iconify you need to [open an issue on Iconify icon sets repository on GitHub](https://github.com/iconify/icon-sets). Post link to icon set source (see below), preferred icon set prefix.
 
-Until then, to add an icon set to Iconify you need to [open an issue on Iconify icon sets repository on GitHub](https://github.com/iconify/icon-sets). Post link to icon set source (see below), preferred icon set prefix.
+In the roadmap for Iconify, publishing icon sets can be done directly from Figma. However, that functionality is in development and it will take a while to complete.
 
 Make sure your icon set matches these requirements:
 
@@ -26,16 +26,23 @@ Make sure your icon set matches these requirements:
 
 All icon sets must be open source and have a valid open source license.
 
+If you are not sure about licenses, [check out various icon sets](https://icon-sets.iconify.design/). Click any icon set, it will show license and link to license text.
+
+Popular licenses:
+
+- [MIT](https://opensource.org/licenses/MIT).
+- [Apache 2.0](https://opensource.org/licenses/Apache-2.0).
+- [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+See [Open Source Initiative](https://opensource.org/licenses) for more licenses.
+
 ### Useful to everyone
 
-Icons must be useful to other developers.
+If icon set is specific to your website, it is not really useful to other developers.
 
-Icon sets that are:
+You can use custom icon sets with almost any software that uses Iconify icon sets. To use your icons with those tools, you do not need to add them to Iconify icon sets. All those tools have possibility to load custom icon sets.
 
-- Too niche, useful only for several websites
-- Contain elements specific to a website
-
-... are not accepted because they are useless for almost all developers.
+Adding your icon set to Iconify means publishing it to the community, making it available to everyone who uses Iconify. New icon sets are always welcome, but not ones that are useful only to you.
 
 ### Can be updated
 
@@ -57,22 +64,15 @@ There are currently several such icon sets in Iconify repository, but that is on
 
 ### Icons, not pictures {#no-pictures}
 
-Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of high detail vector images that are meant to be used as large images are not acceptable.
+Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of vector images with high details, that are meant to be used as large images are not acceptable.
 
 ### Quality
 
-Additionally, an icon set might be denied on the basis of low quality.
+Additionally, addition of an icon set might be declined on the basis of low quality.
 
 If you are new to icon design, [Google Material Icons website has excellent guidelines for designing icons](https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes).
 
 Those guidelines are specific to material design, but the same principles apply to most icons. Even though icons are vector images, displays are pixel devices and icon edges are blurred if shape is not aligned to the edge of a pixel. Icon sets that follow a specific grid, have padding, shapes aligned to pixel edges, are the best looking icon sets.
-
-## Benefits
-
-With that in mind, if you still want to add an icon set, what are the benefits of doing it?
-
-- Iconify is open source, all icon sets are also open source and they are used by many open source projects. Do you feel like contributing to open source projects?
-- Each icon set has an information section, which includes author name and link to repository. It is shown on websites that list icons, it is shown in Figma and Sketch plugin. It might get you some visitors, followers and links for search engines.
 
 ## Submit icon set
 

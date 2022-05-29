@@ -15,9 +15,9 @@ types:
 
 # Available icons
 
-Iconify is a universal framework that can work with any icon set.
+Iconify can work with any icon set.
 
-Iconify offers more than 80 open source icon sets with over 60,000 icons. All icons are validated, cleaned up, optimised and ready for use. Few examples:
+By default, Iconify offers more than 80 open source icon sets with over 60,000 icons. All icons are validated, cleaned up, optimised and ready for use. Few examples:
 
 `include icons/examples`
 
@@ -25,11 +25,21 @@ Then there are several sets of emojis:
 
 `include icons/examples-emoji`
 
+Some icon sets use SVG animations:
+
+`include icons/examples-animated`
+
 and many other icon sets. See [icon sets list](https://icon-sets.iconify.design/).
+
+## Submit icon set
+
+If you have created an icon set, please [consider sharing it with Iconify community](../articles/add-icon-set/index.md).
 
 ## One standard
 
-There is no standard for designing or publishing icons. Each icon set is different. Some use stroke for colors, some use fill, some use hardcoded palette. Usually icons contain a lot of unnecessary code. Every icon set has its own way of using icons. Iconify attempts to streamline that, by parsing icons and converting them to the same easy to use format.
+There is no standard for designing or publishing icons. Each icon set is different. Some use `[attr]stroke` for colors, some use `[attr]fill`. Some use `[prop]currentColor`, some use black color, some use hardcoded palette. Usually icons contain a lot of unnecessary code. Every icon set has its own way of using icons.
+
+Iconify attempts to streamline that, by parsing icons and converting them to the same easy to use format.
 
 All icons available with Iconify are pre-processed:
 
@@ -40,6 +50,8 @@ All icons available with Iconify are pre-processed:
 - All icon names are streamlined to use similar naming scheme. Allowed characters are `[str]a-z`, numbers and `[str]-`.
 
 All icon sets are stored in `[type]IconifyJSON` format.
+
+See [how icons are processed](../articles/cleaning-up-icons/index.md) for more details and code examples.
 
 ## Sources
 
