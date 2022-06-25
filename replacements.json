@@ -23,7 +23,7 @@
 		"import": "@iconify/iconify"
 	},
 	"iconify-icon": {
-		"version": "0.0.6"
+		"version": "0.0.7"
 	},
 	"react": {
 		"import": "@iconify/react"
