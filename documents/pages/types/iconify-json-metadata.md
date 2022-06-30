@@ -11,10 +11,17 @@ types:
 
 `[type]IconifyJSON` can also contain additional data that is used for displaying icons list:
 
+- Last modification time (since version 2).
 - Icon set info.
 - Categories. Each icon can belong to multiple categories.
 - Themes. They are used for variations of the same icon that have different start or end part.
 - Characters map. This is used for icons imported from icon fonts.
+
+## Last modification time #{last-modified}
+
+Last modification time is used to check if icon set was updated. Icon components use it to invalidate old cache.
+
+Value is a number, which needs to be higher than in previously released version of icon set.
 
 ## Information {#iconify-info}
 

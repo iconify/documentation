@@ -87,3 +87,13 @@ extra:
   - src: types/alias2-merged.json
     title: 'Merged "home" icon as IconifyIcon:'
 ```
+
+```yaml
+src: types/alias3-raw.json
+title: 'IconifyAlias:'
+extra:
+  - src: types/alias3-json.json
+    title: 'IconifyJSON:'
+  - src: types/alias3-merged.json
+    title: 'Merged "house-32" icon as IconifyIcon:'
+```

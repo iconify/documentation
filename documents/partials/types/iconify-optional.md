@@ -1,5 +1,3 @@
-`[type]IconifyOptional` is a simple object with the following properties, all properties are optional:
-
 Properties for `[attr]viewBox`:
 
 - `[prop]left`, `[type]number`. Left position of `[attr]viewBox`. Default value is `[num]0`.
