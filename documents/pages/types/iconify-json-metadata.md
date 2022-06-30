@@ -17,7 +17,7 @@ types:
 - Themes. They are used for variations of the same icon that have different start or end part.
 - Characters map. This is used for icons imported from icon fonts.
 
-## Last modification time #{last-modified}
+## Last modification time {#last-modified}
 
 Last modification time is used to check if icon set was updated. Icon components use it to invalidate old cache.
 
