@@ -3,7 +3,6 @@ title: getIconData() in Iconify Utils
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
-  FullIconifyIcon: './full-iconify-icon.md'
 functions:
   iconToSVG: './icon-to-svg.md'
 ```
@@ -20,7 +19,8 @@ Function has the following parameters:
 
 - `[prop]data`, `[type]IconifyJSON`. Icon set data.
 - `[prop]name`, `[type]string`. Icon name.
-- `[prop]full`, `[type]boolean`. Optional. If set, result will include full icon data `[type]FullIconifyIcon`, which is needed for functions such as `[func]iconToSVG()`.
+
+Function returns icon data with type `[type]IconifyIcon`, `null` on error.
 
 ## Example
 
