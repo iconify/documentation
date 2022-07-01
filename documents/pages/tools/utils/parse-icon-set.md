@@ -3,7 +3,7 @@ title: parseIconSet() in Iconify Utils
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyInfo: '../../types/iconify-info.md'
-  IconSetValidationOptions: './validate-icon-set.md#options'
+  IconifyIcon: '../../types/iconify-icon.md'
 functions:
   validateIconSet: './validate-icon-set.md'
   quicklyValidateIconSet: './quickly-validate-icon-set.md'
@@ -20,9 +20,18 @@ Function `[func]parseIconSet()` parses icon set, calling custom function for eve
 Function has the following parameters:
 
 - `[prop]data`, `[type]IconifyJSON`. Icon set data.
-- `[prop]callback`, `[type]string`. Icon name.
+- `[prop]callback`, `[type]function`. Callback, called for each icon found in icon set.
 
 Function returns list of parsed icons as `[type]string[]`.
+
+### Callback
+
+Callback function has 2 parameters:
+
+- `[prop]name`, `[type]string`. Icon name.
+- `[prop]data`, `[type]IconifyIcon | null`. Icon data, `null` if icon is invalid.
+
+Callback is called for each entry in icon set: all icons and all aliases.
 
 ## Example
 

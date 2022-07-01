@@ -1,11 +1,6 @@
 import { promises as fs } from 'fs';
 import { icons } from '@iconify-json/codicon';
-import {
-	validateIconSet,
-	parseIconSet,
-	iconToSVG,
-	defaultIconCustomisations,
-} from '@iconify/utils';
+import { validateIconSet, parseIconSet, iconToSVG } from '@iconify/utils';
 
 // Storage for all icons
 const exportedSVG: Record<string, string> = Object.create(null);
@@ -23,7 +18,6 @@ parseIconSet(icons, (iconName, iconData) => {
 
 	// Render icon
 	const renderData = iconToSVG(iconData, {
-		...defaultIconCustomisations,
 		height: 'auto',
 	});
 
