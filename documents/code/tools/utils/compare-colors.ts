@@ -1,4 +1,4 @@
-import { compareColors, stringToColor } from '@iconify/utils/lib/colors';
+import { compareColors, stringToColor } from '@iconify/utils';
 
 // Identical colors, function returns `true`
 compareColors(stringToColor('rgb(0, 0, 0, 1)')!, stringToColor('#000000')!);

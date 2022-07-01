@@ -2,10 +2,12 @@
 import { icons } from '@iconify-json/mdi-light';
 
 // Various functions from Iconify Utils
-import { getIconData } from '@iconify/utils/lib/icon-set/get-icon';
-import { iconToSVG } from '@iconify/utils/lib/svg/build';
-import { defaults } from '@iconify/utils/lib/customisations';
-// import { replaceIDs } from '@iconify/utils/lib/svg/id';
+import {
+	getIconData,
+	iconToSVG,
+	defaultIconCustomisations,
+	replaceIDs,
+} from '@iconify/utils';
 
 // Get ful data for 'mdi-light:home'
 const iconData = getIconData(icons, 'home', true);
@@ -15,7 +17,7 @@ if (!iconData) {
 
 // Generate data for rendering SVG
 // Second parameter is customisations, in this example using default values
-const renderData = iconToSVG(iconData, defaults);
+const renderData = iconToSVG(iconData, defaultIconCustomisations);
 
 /*
 
@@ -25,7 +27,6 @@ renderData = {
   attributes: {
     width: '1em',
     height: '1em',
-    preserveAspectRatio: 'xMidYMid meet',
     viewBox: '0 0 24 24'
   },
   body: '<path d="M16 8.414l-4.5-4.5L4.414 11H6v8h3v-6h5v6h3v-8h1.586L17 9.414V6h-1v2.414zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v7.998h-5v-6h-3v6H5V12H2z" fill="currentColor"/>'
@@ -39,9 +40,6 @@ const svgAttributes: Record<string, string> = {
 	'xmlns:xlink': 'http://www.w3.org/1999/xlink',
 	...renderData.attributes,
 };
-if (renderData.inline) {
-	svgAttributes.style = 'vertical-align: -0.125em;';
-}
 const svgAttributesStr = Object.keys(svgAttributes)
 	.map(
 		(attr) =>

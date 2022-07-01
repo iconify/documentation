@@ -2,30 +2,43 @@
 title: mergeCustomisations() in Iconify Utils
 types:
   FullIconCustomisations: './icon-customisations.md'
+  IconifyIconCustomisations: './icon-customisations.md'
+  IconifyIconName: './icon-name.md'
 functions:
-  validateIcon: './validate-icon.md'
+  validateIconName: './validate-icon.md'
 ```
 
 # mergeCustomisations()
 
 This function is part of [Iconify Utils package](./index.md).
 
-Function `[func]mergeCustomisations()` converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
+Function `[func]mergeCustomisations()` merges default customisations, presented as `[type]FullIconCustomisations` object and partial customosations. It also validates types, so it can be used to clean up user input.
 
 ## Usage
 
 Function has the following parameters:
 
-- `[prop]value`, `[type]string`. Icon name.
-- `[prop]validate`, `[type]boolean`. Optional. If `true`, icon name will be validated using `[func]validateIcon()`.
-- `[prop]allowSimpleName`, `[type]boolean`. Optional. If `true`, simple names without prefix are considered valid.
-- `[prop]provider`, `[type]string`. Optional. API provider to add to icon name if provider is missing.
+- `[prop]defaults`, `[type]FullIconCustomisations`. Full customisations.
+- `[prop]item`, `[type]IconifyIconCustomisations`. Partial customisations that need to be merged with `[prop]defaults`.
 
-Function returns icon name with type `[type]IconifyIconName` on success, `[type]null` on failure.
+Function returns merged customisations with same type as passed in first parameter (which makes it possible to use function with extended types).
 
 ## Example
 
 ```yaml
-src: tools/utils/string-to-icon.ts
-title: 'examples.ts'
+src: tools/utils/merge-customisations2.ts
+title: 'example.ts'
 ```
+
+## Merge
+
+Why not just merge objects, like this?
+
+```yaml
+src: tools/utils/merge-customisations.ts
+title: 'bad-example.ts'
+```
+
+That works only with default customisations, but not if both objects have transformations.
+
+Function `[func]mergeCustomisations()` should be used when, for example, you are merging customisations from icon, which might include transformations and user's customisations. It can also be used to merge customisations when resolving icon alias.

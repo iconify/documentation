@@ -5,7 +5,7 @@ navigation: './index.md'
 types:
   IconifyIcon: '../../types/iconify-icon.md'
 functions:
-  fullIcon: './full-icon.md'
+  defaultIconProps: './default-icon-props.md'
 ```
 
 # FullIconifyIcon type
@@ -41,4 +41,12 @@ See `[type]IconifyIcon` type for details.
 
 ## Usage
 
-To convert `[type]IconifyIcon` to `[type]FullIconifyIcon`, use function `[func]fullIcon()`.
+To convert `[type]IconifyIcon` to `[type]FullIconifyIcon`, merge `[func]defaultIconProps` with your data:
+
+```yaml
+src: tools/utils/full-iconify-icon.ts
+title: 'usage.ts'
+extra:
+  - src: tools/utils/full-iconify-icon.json
+    title: 'Result:'
+```

@@ -1,4 +1,4 @@
-import { stringToColor } from '@iconify/utils/lib/colors';
+import { stringToColor } from '@iconify/utils';
 
 // { type: 'rgb', r: 128, g: 0, b: 128, alpha: 1 }
 console.log(stringToColor('purple'));

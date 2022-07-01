@@ -3,7 +3,7 @@ title: minifyIconSet() in Iconify Utils
 types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
-  IconifyOptional: '../../types/iconify-icon.md#iconify-optional'
+  IconifyDimenisons: '../../types/iconify-icon.md#iconify-optional'
   FullIconifyIcon: './full-iconify-icon.md'
 ```
 
@@ -73,7 +73,7 @@ In example above, icons `[str]icon1` and `[str]icon2` have identical `[prop]widt
 
 Function `[func]minifyIconSet()` finds common properties in icon set and moves them to root object.
 
-What properties can be minified? Properties defined in `[type]IconifyOptional` type.
+What properties can be minified? Properties defined in `[type]IconifyDimenisons` type: `[prop]left`, `[prop]top`, `[prop]width` and `[prop]height`.
 
 See `[type]IconifyJSON` type for more information.
 

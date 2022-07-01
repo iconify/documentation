@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { validateIconSet } from '@iconify/utils/lib/icon-set/validate';
+import { validateIconSet } from '@iconify/utils';
 
 (async () => {
 	// Load data from file

@@ -1,19 +1,19 @@
-import { validateIcon } from '@iconify/utils/lib/icon/name';
+import { validateIconName } from '@iconify/utils';
 
 // Valid names: function returns `true`
-validateIcon({
+validateIconName({
 	provider: '',
 	prefix: 'mdi-light',
 	name: 'home',
 });
 
-validateIcon({
+validateIconName({
 	provider: 'my-api',
 	prefix: 'awesome-test',
 	name: 'alert-outline',
 });
 
-validateIcon(
+validateIconName(
 	{
 		provider: '',
 		prefix: '',
@@ -23,19 +23,19 @@ validateIcon(
 );
 
 // Invalid names: function returns `false`
-validateIcon({
+validateIconName({
 	provider: '',
 	prefix: '', // Empty prefix
 	name: 'home',
 });
 
-validateIcon({
+validateIconName({
 	provider: '',
 	prefix: 'my_set', // `_` is not allowed
 	name: 'home',
 });
 
-validateIcon(
+validateIconName(
 	{
 		provider: 'my-api',
 		prefix: '', // prefix cannot be empty if provider is set, even if second option is `true`

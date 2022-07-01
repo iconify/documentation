@@ -1,8 +1,10 @@
 import type { IconifyIcon } from '@iconify/types';
-import { fullIcon } from '@iconify/utils/lib/icon';
-import { iconToSVG } from '@iconify/utils/lib/svg/build';
-import { defaults } from '@iconify/utils/lib/customisations';
-// import { replaceIDs } from '@iconify/utils/lib/svg/id';
+import {
+	defaultIconProps,
+	iconToSVG,
+	defaultIconCustomisations,
+	replaceIDs,
+} from '@iconify/utils';
 
 // Icon data in IconifyIcon format
 const data: IconifyIcon = {
@@ -11,12 +13,16 @@ const data: IconifyIcon = {
 	height: 24,
 };
 
-// Add optional properties to icon data
-const iconData = fullIcon(data);
-
 // Generate data for rendering SVG
-// Second parameter is customisations, in this example setting dimensions to icon's viewBox
-const renderData = iconToSVG(iconData, { ...defaults, height: 'auto' });
+const renderData = iconToSVG(
+	// Add all missing properties to icon to provide full icon data
+	{
+		...defaultIconProps,
+		...data,
+	},
+	// Add all missing customisations to provide full customisations
+	{ ...defaultIconCustomisations, height: 'auto' }
+);
 
 /*
 
@@ -26,7 +32,6 @@ renderData = {
   attributes: {
     width: '24',
     height: '24',
-    preserveAspectRatio: 'xMidYMid meet',
     viewBox: '0 0 24 24'
   },
   body: '<path d="M16 8.414l-4.5-4.5L4.414 11H6v8h3v-6h5v6h3v-8h1.586L17 9.414V6h-1v2.414zM2 12l9.5-9.5L15 6V5h3v4l3 3h-3v7.998h-5v-6h-3v6H5V12H2z" fill="currentColor"/>'
@@ -40,9 +45,6 @@ const svgAttributes: Record<string, string> = {
 	'xmlns:xlink': 'http://www.w3.org/1999/xlink',
 	...renderData.attributes,
 };
-if (renderData.inline) {
-	svgAttributes.style = 'vertical-align: -0.125em;';
-}
 const svgAttributesStr = Object.keys(svgAttributes)
 	.map(
 		(attr) =>

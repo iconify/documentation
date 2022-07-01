@@ -21,23 +21,8 @@ Function has the following parameters:
 
 - `[prop]data`, `[type]IconifyJSON`. Icon set data.
 - `[prop]callback`, `[type]string`. Icon name.
-- `[prop]options`. Optional options, see below.
 
 Function returns list of parsed icons as `[type]string[]`.
-
-## Options
-
-Options object has the following properties:
-
-- `[prop]aliases`, `[type]ParseIconSetAliases`. Defines how to parse icon aliases. Default value is `[str]all`. See below.
-
-## Parsing icon aliases
-
-`[prop]options.aliases` defines how to parse icon aliases:
-
-- `[str]none` icon aliases will not be parsed.
-- `[str]variations` parses only icon aliases that have transformation. This is useful to count actual icons in icon set because it excludes simple aliases.
-- `[str]all` parses all aliases.
 
 ## Example
 

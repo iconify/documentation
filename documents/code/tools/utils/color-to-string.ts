@@ -1,4 +1,4 @@
-import { colorToString } from '@iconify/utils/lib/colors';
+import { colorToString } from '@iconify/utils';
 
 // #800080
 console.log(colorToString({ type: 'rgb', r: 128, g: 0, b: 128, alpha: 1 }));

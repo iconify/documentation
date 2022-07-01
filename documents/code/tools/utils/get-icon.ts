@@ -1,20 +1,16 @@
 import { icons } from '@iconify-json/codicon';
-import { getIconData } from '@iconify/utils/lib/icon-set/get-icon';
-import { iconToSVG } from '@iconify/utils/lib/svg/build';
-import { defaults } from '@iconify/utils/lib/customisations';
-import { replaceIDs } from '@iconify/utils/lib/svg/id';
+import { getIconData, iconToSVG, replaceIDs } from '@iconify/utils';
 
 const iconName = 'debug-console';
 
 // Get content for icon
-const iconData = getIconData(icons, iconName, true);
+const iconData = getIconData(icons, iconName);
 if (!iconData) {
 	throw new Error(`Icon "${iconName}" is missing`);
 }
 
 // Use it to render icon
 const renderData = iconToSVG(iconData, {
-	...defaults,
 	height: 'auto',
 });
 
@@ -24,9 +20,6 @@ const svgAttributes: Record<string, string> = {
 	'xmlns:xlink': 'http://www.w3.org/1999/xlink',
 	...renderData.attributes,
 };
-if (renderData.inline) {
-	svgAttributes.style = 'vertical-align: -0.125em;';
-}
 const svgAttributesStr = Object.keys(svgAttributes)
 	.map(
 		(attr) =>

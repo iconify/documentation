@@ -1,5 +1,5 @@
 import type { IconifyJSON } from '@iconify/types';
-import { minifyIconSet } from '@iconify/utils/lib/icon-set/minify';
+import { minifyIconSet } from '@iconify/utils';
 
 // Original data
 const data: IconifyJSON = {

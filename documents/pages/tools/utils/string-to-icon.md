@@ -3,7 +3,7 @@ title: stringToIcon() in Iconify Utils
 types:
   IconifyIconName: './icon-name.md'
 functions:
-  validateIcon: './validate-icon.md'
+  validateIconName: './validate-icon.md'
 ```
 
 # stringToIcon()
@@ -17,7 +17,7 @@ Function `[func]stringToIcon()` converts icon name string to `[type]IconifyIconN
 Function has the following parameters:
 
 - `[prop]value`, `[type]string`. Icon name.
-- `[prop]validate`, `[type]boolean`. Optional. If `true`, icon name will be validated using `[func]validateIcon()`.
+- `[prop]validate`, `[type]boolean`. Optional. If `true`, icon name will be validated using `[func]validateIconName()`.
 - `[prop]allowSimpleName`, `[type]boolean`. Optional. If `true`, simple names without prefix are considered valid.
 - `[prop]provider`, `[type]string`. Optional. API provider to add to icon name if provider is missing.
 

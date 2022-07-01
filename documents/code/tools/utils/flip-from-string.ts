@@ -1,5 +1,5 @@
-import type { IconifyIconCustomisations } from '@iconify/utils/lib/customisations';
-import { flipFromString } from '@iconify/utils/lib/customisations/shorthand';
+import type { IconifyIconCustomisations } from '@iconify/utils';
+import { flipFromString } from '@iconify/utils';
 
 let customisations: IconifyIconCustomisations;
 

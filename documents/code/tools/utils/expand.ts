@@ -1,5 +1,5 @@
 import type { IconifyJSON } from '@iconify/types';
-import { expandIconSet } from '@iconify/utils/lib/icon-set/expand';
+import { expandIconSet } from '@iconify/utils';
 
 // Original data
 const data: IconifyJSON = {

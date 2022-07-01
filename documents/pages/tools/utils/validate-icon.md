@@ -1,14 +1,14 @@
 ```yaml
-title: validateIcon() in Iconify Utils
+title: validateIconName() in Iconify Utils
 types:
   IconifyIconName: './icon-name.md'
 ```
 
-# validateIcon()
+# validateIconName()
 
 This function is part of [Iconify Utils package](./index.md).
 
-Function `[func]validateIcon()` validates icon name.
+Function `[func]validateIconName()` validates icon name.
 
 ## Usage
 

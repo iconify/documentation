@@ -1,4 +1,4 @@
-import { rotateFromString } from '@iconify/utils/lib/customisations/rotate';
+import { rotateFromString } from '@iconify/utils';
 
 /**
  * Function returns value in 0-3 range.

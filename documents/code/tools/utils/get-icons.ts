@@ -1,5 +1,5 @@
 import { icons } from '@iconify-json/mdi-light';
-import { getIcons } from '@iconify/utils/lib/icon-set/get-icons';
+import { getIcons } from '@iconify/utils';
 
 // Get few icons
 const reducedIconSet = getIcons(icons, [

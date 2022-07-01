@@ -20,11 +20,7 @@ The only exeption is `[prop]provider`, which can be empty.
 
 Expression for validation can be imported from Iconify Utils:
 
-```js
-import { matchName } from '@iconify/utils/lib/icon';
-
-const prefix = 'test-prefix';
-if (prefix.match(matchName)) {
-	// Prefix is valid
-}
+```yaml
+src: tools/utils/match-name.ts
+title: 'example.ts'
 ```

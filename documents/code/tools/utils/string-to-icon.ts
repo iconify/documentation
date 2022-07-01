@@ -1,4 +1,4 @@
-import { stringToIcon } from '@iconify/utils/lib/icon/name';
+import { stringToIcon } from '@iconify/utils';
 
 // { provider: '', prefix: 'mdi', name: 'home' }
 console.log(stringToIcon('mdi:home'));

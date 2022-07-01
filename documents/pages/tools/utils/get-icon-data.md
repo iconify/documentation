@@ -4,6 +4,8 @@ types:
   IconifyJSON: '../../types/iconify-json.md'
   IconifyIcon: '../../types/iconify-icon.md'
   FullIconifyIcon: './full-iconify-icon.md'
+functions:
+  iconToSVG: './icon-to-svg.md'
 ```
 
 # getIconData()

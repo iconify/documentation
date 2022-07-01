@@ -1,4 +1,4 @@
-import { convertIconSetInfo } from '@iconify/utils/lib/icon-set/convert-info';
+import { convertIconSetInfo } from '@iconify/utils';
 
 // Original data
 const data = {

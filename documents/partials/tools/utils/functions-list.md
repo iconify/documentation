@@ -19,20 +19,21 @@ functions:
   convertIconSetInfo: './convert-info.md'
   parseIconSet: './parse-icon-set.md'
   mergeIconData: './merge-icon-data.md'
-  fullIcon: './full-icon.md'
+  defaultIconProps: './default-icon-props.md'
   mergeCustomisations: './merge-customisations.md'
-  compare: './compare.md'
+  compareObjects: './objects.md#compare'
+  unmergeObjects: './objects.md#unmerge'
+  commonObjectProps: './objects.md#common'
   toBoolean: './to-boolean.md'
   rotateFromString: './rotate-from-string.md'
   flipFromString: './flip-from-string.md'
-  alignmentFromString: './alignment-from-string.md'
-  defaults: './defaults.md'
+  defaultIconCustomisations: './default-icon-customisations.md'
   iconToSVG: './icon-to-svg.md'
   calculateSize: './calculate-size.md'
   replaceIDs: './replace-ids.md'
-  matchName: './match-name.md'
+  matchIconName: './match-name.md'
   stringToIcon: './string-to-icon.md'
-  validateIcon: './validate-icon.md'
+  validateIconName: './validate-icon.md'
   stringToColor: './string-to-color.md'
   compareColors: './compare-colors.md'
   colorToString: './color-to-string.md'
@@ -52,17 +53,15 @@ Icon sets are stored in `[type]IconifyJSON` format. Functions for working with i
 Functions for working with `[type]IconifyIcon` format that represents one icon:
 
 - `[func]mergeIconData(icon, alias)` merges data for icon and alias. Used by functions that extract icon data from icon set.
-- `[func]fullIcon(data)` adds optional properties to `[type]IconifyIcon` object, converting it to `[type]FullIconifyIcon`.
+- `[func]defaultIconProps` contains default values for optional properties to `[type]IconifyIcon` object.
 
 When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by `[type]IconCustomisations` type. Functions for working with customisations:
 
-- `[func]mergeCustomisations(defaults, custom)` function converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
-- `[func]compare(item1, item2)` exported from `[file]lib/customisations/compare` compares customisation objects.
-- `[func]defaults` exported from `[file]lib/customisations` contains default customisations.
+- `[func]mergeCustomisations(defaultIconCustomisations, custom)` function converts object to `[type]FullIconCustomisations` type. It also validates types, so it can be used to clean up user input.
+- `[func]defaultIconCustomisations` exported from `[file]lib/customisations/defaults` contains default customisations.
 - `[func]toBoolean(name, value, defaultValue)` converts various strings to boolean. Used by icon components to clean up parameters that can be boolean or string.
 - `[func]rotateFromString(value)` converts various methods of rotating icon (such as `[str]90deg` or `[str]25%`) to a number.
 - `[func]flipFromString(customisations, value)` applies flip string (such as `[attr]flip="horizontal,vertical"`) to customisations.
-- `[func]alignmentFromString(customisations, value)` applies alignment string (such as `[attr]align="left,top"`) to customisations.
 
 Functions for rendering icon:
 
@@ -72,9 +71,9 @@ Functions for rendering icon:
 
 Functions for working with icon names:
 
-- `[func]matchName` constant is a regular expression to test parts of icon name.
+- `[func]matchIconName` constant is a regular expression to test parts of icon name.
 - `[func]stringToIcon(value)` converts icon name, such as `[str]mdi-light:home` into an `[type]IconifyIconName` object and optionally validates it.
-- `[func]validateIcon(icon)` validates `[type]IconifyIconName` object.
+- `[func]validateIconName(icon)` validates `[type]IconifyIconName` object.
 
 There are also reusable functions for working with colors. They do not really belong to this package, however, they are used by few projects and making a separate package just for colors did not make much sense, so these functions were moved to Iconify Utils package:
 

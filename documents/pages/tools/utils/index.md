@@ -13,7 +13,7 @@ Library is written in TypeScript, is available as ES modules for modern developm
 To install library run:
 
 ```sh
-npm install @iconify/utils --save
+npm install @iconify/utils@next --save
 ```
 
 ## Examples

@@ -65,8 +65,10 @@ const svg = replaceIDs(
 result will contain something like this:
 
 ```html
-<linearGradient id="my-prefix-0" x1="4.416" ...>...</linearGradient>
-<path ... fill="url(#my-prefix-0)" />
+<svg ...>
+	<linearGradient id="my-prefix-0" x1="4.416" ...>...</linearGradient>
+	<path ... fill="url(#my-prefix-0)" />
+</svg>
 ```
 
 Icons will use custom prefix and a number added after it. Counter is not reset, so each icon will have different IDs.

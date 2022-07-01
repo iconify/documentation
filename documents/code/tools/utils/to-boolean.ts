@@ -1,4 +1,4 @@
-import { toBoolean } from '@iconify/utils/lib/customisations/bool';
+import { toBoolean } from '@iconify/utils';
 
 /**
  * Using React or Svelte syntax for attributes for demo

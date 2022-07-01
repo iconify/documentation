@@ -1,6 +1,5 @@
 import { icons } from '@iconify-json/fa-regular';
-import { getIconData } from '@iconify/utils/lib/icon-set/get-icon';
-import { calculateSize } from '@iconify/utils/lib/svg/size';
+import { getIconData, calculateSize } from '@iconify/utils';
 
 // Get 384 x 512 icon
 const iconData = getIconData(icons, 'bookmark', true);
