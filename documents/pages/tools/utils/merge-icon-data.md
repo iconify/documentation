@@ -3,8 +3,6 @@ title: mergeIconData() in Iconify Utils
 types:
   IconifyIcon: '../../types/iconify-icon.md'
   IconifyOptional: '../../types/iconify-icon.md#iconify-optional'
-functions:
-  fullIcon: './full-icon.md'
 ```
 
 # mergeIconData()

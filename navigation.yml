@@ -407,6 +407,7 @@
             ./set-icon.html: setIcon()
             ./set-variation.html: setVariation()
             ./set-alias.html: setAlias()
+            ./get-tree.html: getTree()
             ./entries.html: entries
             ./functions.html#import:
               title: Importing/Exporting

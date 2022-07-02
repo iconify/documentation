@@ -41,6 +41,7 @@ functions:
   prefixes: './themes.md'
   validateIconSet: '../../utils/validate-icon-set.md'
   mergeIconSets: './merge.md'
+  getTree: './get-tree.md'
 ```
 
 Working with icons:
@@ -55,6 +56,7 @@ Working with icons:
 - `[func]setIcon(name, icon)` adds/updates icon, using `[type]IconifyIcon` data.
 - `[func]setVariation(name, parent, props)` creates a variation (alias with customisations) for icon.
 - `[func]setAlias(name, parent)` creates an alias for icon.
+- `[func]getTree()` returns list of parent icons for each icon, `null` if icon is invalid.
 - `[func]entries` property contains data for all icons and aliases. You can access it directly, but most changes can be done using functions listed above.
 
 Functions for importing/exporting icon set:

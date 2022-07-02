@@ -4,8 +4,6 @@ types:
   IconifyIconCustomisations: './icon-customisations.md'
   IconifyIcon: '../../types/iconify-icon.md'
   IconifyIconBuildResult: './icon-to-svg.md#build-result'
-functions:
-  validateIcon: './validate-icon.md'
 ```
 
 # iconToSVG()
