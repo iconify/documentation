@@ -31,6 +31,8 @@ functions:
 include: icon-components/components/intro
 ```
 
+`include notices/web-component/notice`
+
 ## Installation
 
 If you are using NPM:

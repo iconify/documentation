@@ -11,6 +11,8 @@ Icon components render icons.
 
 Components are available for multiple frameworks.
 
+`include notices/web-component/components`
+
 ## Source independent {#sources}
 
 `include icon-components/sources/heading`
@@ -40,8 +42,6 @@ It does not have disadvantages of icons fonts:
 - Only icons that are used on page are loaded. This means no bandwidth wasted on loading icons you do not need. This also made it possible to offer over 60k icons.
 
 For more details, see [Iconify SVG framework](./svg-framework/index.md).
-
-`include notices/web-component/svg-framework`
 
 ## Component frameworks
 

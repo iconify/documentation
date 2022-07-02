@@ -26,6 +26,18 @@
     /iconify-icon/:
       title: Icon Web Component
       children:
+        # Wrappers
+        ./index.html#wrappers:
+          title: Wrappers for
+          separator: true
+          clickable: false
+        ./react.html: React
+        ./solid.html: Solid
+        # Properties
+        ./index.html#attributes:
+          title: Attributes
+          separator: true
+          clickable: false
         ./color.html: Icon Color
         ./dimensions.html: Icon Dimensions
         ./transform.html: Transformations

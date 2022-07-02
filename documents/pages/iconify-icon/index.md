@@ -22,9 +22,9 @@ functions:
   setFetch: './set-fetch.md'
 ```
 
-# Iconify icon web component
+# Iconify Icon web component
 
-Iconify icon web component renders icons.
+Iconify Icon is a web component renders icons.
 
 ## Usage
 
@@ -36,13 +36,31 @@ demo: true
 class: sample-big
 ```
 
+### Supported frameworks
+
+Web component can be used in HTML without any UI framework. See usage examples below.
+
+It also works great with all modern frameworks that support web components:
+
+- Svelte and SvelteKit/Sapper.
+- Vue 2 and Vue 3. Requires custom config when used in Nuxt (see below).
+- Lit.
+- Ember.
+- React and Next, but with small differences, such as using `[prop]class` instead of `[prop]className`. [Wrapper fixes it](./react.md).
+
+However, some UI frameworks require custom wrappers:
+
+- Solid. See [Iconify icon web component for Solid](./solid.md).
+
 ## Icon data on demand
 
 Instead of embedding an entire icon, all you need to do is provide an icon name in `[prop]icon` attribute.
 
 Web component will retrieve icon data from [Iconify API](../api/index.md), then will render SVG in shadow DOM.
 
-Don't want to rely on third party API servers? You can [use web component without API](./without-api.md) or you can [host your own Iconify API](../api/hosting.md).
+There are over 60k icons available from many open source icon sets.
+
+Don't want to rely on third party API servers? You can [use web component without API](./without-api.md) or you can [host your own Iconify API](../api/hosting.md). You can also use it with your own icons.
 
 ## Shadow DOM
 
@@ -158,7 +176,9 @@ Optional attributes:
 
 ## Functions
 
-In addition to properties, web component offers several functions to control it.
+For advanced developers, web component offers several functions to control it.
+
+These functions can be used to load custom icons, get icon data, preload icons from API, configure custom API and so on. See functions list below.
 
 Functions can be imported from:
 
@@ -169,22 +189,40 @@ Functions can be imported from:
 First method is the most reliable because it is a simple import. It is used in all examples:
 
 ```js
-import { iconExists } from 'iconify-icon';
-console.log(iconExists('mdi:home'));
+import { loadIcon } from 'iconify-icon';
+
+const name = 'mdi:home';
+loadIcon(name)
+	.then((data) => {
+		console.log('Loaded data for', name);
+	})
+	.catch(console.error);
 ```
 
 For second method, class can be retrieved from custom elements registry:
 
 ```js
 const IconifyIcon = window.customElements.get('iconify-icon');
-console.log(IconifyIcon.iconExists('mdi:home'));
+
+const name = 'mdi:home';
+IconifyIcon.loadIcon(name)
+	.then((data) => {
+		console.log('Loaded data for', name);
+	})
+	.catch(console.error);
 ```
 
 Third method can be used after creating a new icon element or accessing an existing element:
 
 ```js
-const node = document.createElement('iconify-icon');
-console.log(node.iconExists('mdi:home'));
+const IconifyIcon = document.createElement('iconify-icon');
+
+const name = 'mdi:home';
+IconifyIcon.loadIcon(name)
+	.then((data) => {
+		console.log('Loaded data for', name);
+	})
+	.catch(console.error);
 ```
 
 Functions are split in several groups (click function name to see more details and examples):
