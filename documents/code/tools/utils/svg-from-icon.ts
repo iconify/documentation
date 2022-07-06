@@ -1,10 +1,5 @@
 import type { IconifyIcon } from '@iconify/types';
-import {
-	defaultIconProps,
-	iconToSVG,
-	defaultIconCustomisations,
-	replaceIDs,
-} from '@iconify/utils';
+import { iconToSVG, replaceIDs } from '@iconify/utils';
 
 // Icon data in IconifyIcon format
 const data: IconifyIcon = {
@@ -14,15 +9,7 @@ const data: IconifyIcon = {
 };
 
 // Generate data for rendering SVG
-const renderData = iconToSVG(
-	// Add all missing properties to icon to provide full icon data
-	{
-		...defaultIconProps,
-		...data,
-	},
-	// Add all missing customisations to provide full customisations
-	{ ...defaultIconCustomisations, height: 'auto' }
-);
+const renderData = iconToSVG(data, { height: 'auto' });
 
 /*
 

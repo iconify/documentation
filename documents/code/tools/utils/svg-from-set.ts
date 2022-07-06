@@ -2,22 +2,17 @@
 import { icons } from '@iconify-json/mdi-light';
 
 // Various functions from Iconify Utils
-import {
-	getIconData,
-	iconToSVG,
-	defaultIconCustomisations,
-	replaceIDs,
-} from '@iconify/utils';
+import { getIconData, iconToSVG, replaceIDs } from '@iconify/utils';
 
 // Get ful data for 'mdi-light:home'
-const iconData = getIconData(icons, 'home', true);
+const iconData = getIconData(icons, 'home');
 if (!iconData) {
 	throw new Error('Home icon does not exist');
 }
 
 // Generate data for rendering SVG
-// Second parameter is customisations, in this example using default values
-const renderData = iconToSVG(iconData, defaultIconCustomisations);
+// Second optional parameter is customisations
+const renderData = iconToSVG(iconData);
 
 /*
 
