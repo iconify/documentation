@@ -1,7 +1,7 @@
 {
 	"mode": "production",
 	"html": {
-		"footer": "<script src=\"https://cdn.usefathom.com/script.js\" data-site=\"GHNZLVZT\" defer></script>",
+		"footer": "",
 		"ad": "<script async type=\"text/javascript\" src=\"//cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign\" id=\"_carbonads_js\"></script>"
 	}
 }
