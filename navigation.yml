@@ -575,3 +575,4 @@
         ./palette.html: Icon Palette
         ./optimise.html: Optimisation
     ./svg-animation-issues/: SVG Animation Issues
+    ./vendor-lock-in.html: Vendor Lock-in and Icons
