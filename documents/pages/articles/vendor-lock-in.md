@@ -24,7 +24,7 @@ Issues:
 
 You are forced to choose bad icons or spend a lot of time.
 
-### Themes and customisable software
+### Vendor lock-in with customisable software
 
 Worst case of vendor lock-in, is when you are working with customisable software, who's authors made a choice to use a specific icon set or icon font. Very common cases are popular forum and blogging software packages.
 
@@ -47,7 +47,9 @@ Iconify was designed to be as flexible as possible, the only way you can get mor
 
 ### Icons
 
-One big difference is choice of icons. When using any icon set, you are limited to that icon set. When using Iconify, you can use over 70 icon sets.
+One big difference is choice of icons. When using any icon set, you are limited to that icon set.
+
+When using Iconify, you can use over 70 icon sets.
 
 ### Custom icons
 

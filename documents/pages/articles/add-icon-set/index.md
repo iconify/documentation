@@ -16,11 +16,24 @@ What are the benefits of publishing an icon set to Iconify?
 
 ## Adding icon set
 
-To add an icon set to Iconify you need to [open an issue on Iconify icon sets repository on GitHub](https://github.com/iconify/icon-sets). Post link to icon set source (see below), preferred icon set prefix.
+To add an icon set to Iconify, all you need to is [open an issue on Iconify icon sets repository on GitHub](https://github.com/iconify/icon-sets).
+
+In opened issue you:
+
+- Need to post a link to icons. See below.
+- Each icon set has a prefix, such as `[icon]mdi-light`. You can post prefix you want be assigned to your icon set.
 
 In the roadmap for Iconify, publishing icon sets can be done directly from Figma. However, that functionality is in development and it will take a while to complete.
 
-Make sure your icon set matches these requirements:
+### Icon set source
+
+Icon sets are automatically updated several times a week. In order to update icon set, icons must be published and maintained by developer on one of the following sources:
+
+- Public git repository (GitHub, GitLab, etc...) containing SVG files.
+- NPM package containing SVG files.
+- Figma document. You need to share file and post link to it. It must be a Figma file, not community resource.
+
+Downloading an icon set from a third party website is not an option.
 
 ### Open source
 
@@ -36,44 +49,18 @@ Popular licenses:
 
 See [Open Source Initiative](https://opensource.org/licenses) for more licenses.
 
-### Useful to everyone
+### Bad icon sets
 
-If icon set is specific to your website, it is not really useful to other developers.
+Not all icon sets are the same. There are good and bad icon sets. Bad icon sets are not accepted.
 
-You can use custom icon sets with almost any software that uses Iconify icon sets. To use your icons with those tools, you do not need to add them to Iconify icon sets. All those tools have possibility to load custom icon sets.
+Most common reasons:
 
-Adding your icon set to Iconify means publishing it to the community, making it available to everyone who uses Iconify. New icon sets are always welcome, but not ones that are useful only to you.
+- Icon set should be useful to community. If icon set is specific to your website, it is not really useful to other developers.
+- Icons, not pictures. Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of vector images with high details, that are meant to be used as large images are not acceptable.
+- No icons exported from fonts. Icons exported from fonts are almost always badly aligned, not following any logical grid system. They are very low quality and not usable as SVG.
 
-### Can be updated
-
-Icon sets are automatically updated several times a week. In order to update icon set, icons must be published and maintained by developer on one of the following sources:
-
-- Public git repository (GitHub, GitLab, etc...).
-- NPM package.
-- Public Figma file.
-
-Downloading an icon set from a third party website is not an option.
-
-### No icon fonts
-
-Icon sets exported from icon fonts are not accepted.
-
-They are almost always badly aligned, not following any logical grid system. Overall they are very low quality and not usable as SVG.
-
-There are currently several such icon sets in Iconify repository, but that is only because when Iconify project was in early development, there were very few icon sets to work with and icon fonts were dominating the UI world, so they were added. But today it is not acceptable.
-
-### Icons, not pictures {#no-pictures}
-
-Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of vector images with high details, that are meant to be used as large images are not acceptable.
-
-### Quality
-
-Additionally, addition of an icon set might be declined on the basis of low quality.
+## Design tips
 
 If you are new to icon design, [Google Material Icons website has excellent guidelines for designing icons](https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes).
 
 Those guidelines are specific to material design, but the same principles apply to most icons. Even though icons are vector images, displays are pixel devices and icon edges are blurred if shape is not aligned to the edge of a pixel. Icon sets that follow a specific grid, have padding, shapes aligned to pixel edges, are the best looking icon sets.
-
-## Submit icon set
-
-If the wall of text above was too big, you might have missed the link to submit an icon set. See "Adding icon set" section above.
