@@ -28,6 +28,7 @@ Then it has many optional properties, most of these properties are intended for 
 - `[prop]height`, `[type]number | number[]`. Icon grid. If icon set has mix of icons with different height values, such as half of icons are `[num]16` pixels high, half are `[num]24` pixels high, value can be array.
 - `[prop]displayHeight`, `[type]number`. Height to use when showing samples. Value should be between `[num]16` and `[num]24`.
 - `[prop]category`, `[type]string`. Category in icon sets list.
+- `[prop]tags`, `[type]string[]`. List of tags, which can be used to filter icon sets (added in version 2).
 - `[prop]palette`, `[type]boolean`. Set to `true` if all icons use hardcoded colors, set to `false` if all icons use `[attr]currentColor`.
 
 ## Author

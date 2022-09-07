@@ -1,0 +1,5 @@
+- [Unplugin Icons](https://github.com/antfu/unplugin-icons) (supports many UI frameworks).
+- [UnoCSS](/icon-components/unocss.md) (icons in CSS).
+- [Astro Icon](https://github.com/natemoo-re/astro-icon) (Astro).
+- [Iconify Prerendered](https://github.com/cawa-93/iconify-prerendered) (Vue).
+- [Nuxt Icon](https://github.com/nuxt-modules/icon) (Nuxt).

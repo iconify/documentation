@@ -1,0 +1,2 @@
+- [Iconify Icon web component](/iconify-icon/index.md) (HTML with or without UI frameworks. Works great with SSR).
+- [Iconify framework native components](/icon-components/index.md) (React, Vue, Svelte, Ember).

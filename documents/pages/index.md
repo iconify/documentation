@@ -21,15 +21,17 @@ This documentation is split into several parts.
 
 ## Icons
 
-There is no standard for designing or publishing icons. Each icon set is different. Some use `[attr]stroke` for colors, some use `[attr]fill`, some use hardcoded palette. Usually icons contain a lot of unnecessary code. Every icon set has its own way of using icons.
-
-Iconify attempts to streamline that, by parsing icons and converting them to the same easy to use format.
-
 Iconify offers more than 80 open source icon sets with over 60,000 icons. All icons are pre-processed and stored in `[type]IconifyJSON` format.
+
+Data for icons is open source and is available for everyone as big package that contains everything or small packages.
+
+You can use it in your own icon components, to export raw SVG.
 
 See [icons section](./icons/index.md) for list of various packages and formats.
 
 [Browse icons](https://icon-sets.iconify.design) to see what is available.
+
+If you have designed an icon set, [consider adding it to Iconify](./articles/add-icon-set/index.md).
 
 ## API
 
@@ -46,13 +48,13 @@ Having 60k+ icons is not really helpful without ability to use them in your proj
 
 There are various ways to use icons:
 
-- [Iconify icon components](./icon-components/components/index.md) are available for most popular frameworks: Vue, React, Svelte, etc...
-- [Iconify SVG framework](./icon-components/svg-framework/index.md) makes it easy to use icons in HTML without UI frameworks.
-- [Unplugin Icons](./icon-components/unplugin-icons.md) dynamically generates icon components for many frameworks: Vue, React, Svelte, Solid, etc... and it works with all popular bundlers.
-- [UnoCSS](./icon-components/unocss.md) with `[npm]@unocss/preset-icons` package allows you to use icons in a stylesheet.
-- [Astro Icon](https://github.com/natemoo-re/astro-icon) component for [Astro](https://github.com/withastro/astro).
+`include icon-components/list/main`
 
-Missing an icon component for UI framework of your choice or want to create your own icon component? See "Libraries" section below. Components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
+Iconify is supported by a growing community. In addition to Iconify icon components, there are now more ways to use icons, created by amazing open source developers:
+
+`include icon-components/list/community`
+
+Want to create your own icon component? See "Libraries" section below. Most components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
 
 In addition to icon components, [Icon Finder](./icon-finder/index.md) is in development.
 
