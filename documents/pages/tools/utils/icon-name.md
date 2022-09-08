@@ -8,7 +8,7 @@ navigation: './index.md'
 
 `[type]IconifyIconName` type is used in [Iconify Utils](./index.md) to handle icon names.
 
-You can find this type in `[file]src/icon/name.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/master/packages/utils).
+You can find this type in `[file]src/icon/name.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
 
 `include types/iconify-icon-name`
 

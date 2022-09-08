@@ -12,7 +12,7 @@ functions:
 
 `[type]FullIconifyIcon` type is used in [Iconify Utils](./index.md) to handle icon data.
 
-You can find this type in `[file]src/icon/index.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/master/packages/utils).
+You can find this type in `[file]src/icon/index.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
 
 This type is identical to `[type]IconifyIcon`, except that all properties are mandatory.
 

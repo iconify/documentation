@@ -4,7 +4,7 @@ title: Iconify Icon Finder Packages
 
 # Iconify Icon Finder packages
 
-This document explains structure of packages in [Icon Finder source](http://github.com/iconify/icon-finder). It is for developers that want to create custom Icon Finder forks.
+This document explains structure of packages in [Icon Finder source](https://github.com/iconify/icon-finder). It is for developers that want to create custom Icon Finder forks.
 
 Icon Finder is designed to be flexible. It can be used to create custom icon search applications. Icon Finder is available as a basic set of:
 

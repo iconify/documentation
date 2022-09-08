@@ -63,7 +63,7 @@ Example of collections list data:
 		"version": "5.12.0",
 		"author": {
 			"name": "Dave Gandy",
-			"url": "http://fontawesome.io/"
+			"url": "https://fontawesome.io/"
 		},
 		"license": {
 			"title": "CC BY 4.0",

@@ -14,7 +14,7 @@ functions:
 
 `[type]IconifyIconCustomisations` type is used in [Iconify Utils](./index.md) in functions for generating SVG.
 
-You can find this type in `[file]src/customisations/defaults.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/master/packages/utils).
+You can find this type in `[file]src/customisations/defaults.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
 
 Type is an object, with the following properties, split into groups:
 

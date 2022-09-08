@@ -8,7 +8,7 @@ navigation: './index.md'
 
 `[type]Color` type is used in [Iconify Utils](./index.md) in functions for parsing colors.
 
-You can find this type in `[file]src/colors/types.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/master/packages/utils).
+You can find this type in `[file]src/colors/types.ts` of [Iconify Utils source code](https://github.com/iconify/iconify/tree/main/packages/utils).
 
 Type is an object, with `[prop]type` property showing what color type it is, then optional properties for that type.
 
