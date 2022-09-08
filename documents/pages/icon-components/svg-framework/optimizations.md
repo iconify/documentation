@@ -2,7 +2,7 @@
 title: Iconify SVG Framework Optimizations
 replacements:
   - code: '22kb'
-    value: '${iconify2.size}'
+    value: '${svg-framework.size}'
 ```
 
 # SVG framework optimizations

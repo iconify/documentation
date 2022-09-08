@@ -2,7 +2,7 @@
 title: Configuring custom Iconify API
 replacements:
   - code: '/2/2.0.0/'
-    value: '/${iconify2.version.major}/${iconify2.version.full}/'
+    value: '/${svg-framework.version.major}/${svg-framework.version.full}/'
 ```
 
 # Configuring custom Iconify API

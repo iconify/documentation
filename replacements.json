@@ -20,10 +20,19 @@
 		},
 		"size": "32kb",
 		"size-without-api": "17kb",
+		"import": "@iconify/iconify@2"
+	},
+	"svg-framework": {
+		"version": {
+			"major": "3",
+			"full": "3.0.0"
+		},
+		"size": "25kb",
+		"size-without-api": "9kb",
 		"import": "@iconify/iconify"
 	},
 	"iconify-icon": {
-		"version": "1.0.0-beta.3"
+		"version": "1.0.0"
 	},
 	"react": {
 		"import": "@iconify/react"
@@ -50,7 +59,7 @@
 		"chevron-right": "line-md:chevron-small-double-right"
 	},
 	"links": {
-		"iconify": "https://code.iconify.design/2/2.2.1/iconify.min.js",
+		"iconify": "https://code.iconify.design/3/3.0.0/iconify.min.js",
 		"issues": "https://github.com/iconify/iconify/issues",
 		"sponsor": "https://github.com/iconify/iconify",
 		"figma3-repo": "https://github.com/iconify/iconify-figma"

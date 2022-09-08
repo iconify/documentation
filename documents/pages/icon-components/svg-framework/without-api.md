@@ -2,11 +2,11 @@
 title: Using Iconify SVG Framework Without API
 replacements:
   - code: '/2/2.0.0/'
-    value: '/${iconify2.version.major}/${iconify2.version.full}/'
+    value: '/${svg-framework.version.major}/${svg-framework.version.full}/'
   - code: '60k'
     value: '${counters.icons-short}'
   - code: '@iconify/iconify@2'
-    value: '${iconify2.import}'
+    value: '${svg-framework.import}'
 ```
 
 # SVG framework without API
