@@ -38,7 +38,7 @@ src: iconify1/index-sample0.html
 demo: true
 ```
 
-To change an icon, write a different icon name in the `[attr]data-icon` attribute instead of `[str]"fa-regular:home"`.
+To change an icon, write a different icon name in the `[attr]data-icon` attribute instead of `[str]"fa-solid:home"`.
 
 Look in [icon collections](https://icon-sets.iconify.design/) to find icons. Click an icon to see HTML code for that icon.
 
