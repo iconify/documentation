@@ -1,7 +1,7 @@
 {
 	"mode": "production",
 	"html": {
-		"footer": "<script async src=\"https://ackee-iconify.vercel.app/tracker.js\" data-ackee-server=\"https://ackee-iconify.vercel.app\" data-ackee-domain-id=\"41fac50c-fb7f-43a0-9e78-b614e4d4d0b1\"></script>",
+		"footer": "",
 		"ad": "<script async type=\"text/javascript\" src=\"//cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign\" id=\"_carbonads_js\"></script>"
 	}
 }
