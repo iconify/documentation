@@ -41,6 +41,7 @@ interface CodeSample {
 
 	// Demo
 	demo?: boolean | string; // True if demo should be shown below code, optional filename for demo
+	demoFirst?: boolean; // True if demo should be rendered before code samples
 	demoTitle?: string; // Demo tab title
 	demoHint?: string;
 	class?: string; // Class name to wrap demo
@@ -65,6 +66,7 @@ const defaultCodeSample: Required<CodeSample> = {
 	cssHint: '',
 	class: '',
 	demo: false,
+	demoFirst: true,
 	demoTitle: '',
 	demoHint: '',
 	replacements: [],
@@ -559,6 +561,31 @@ export function renderCode(context: MDContext, md: md) {
 			}
 		}
 
+		// Reusable function to render demo
+		const renderDemoSample = (showTitle: boolean) => {
+			const demoSource = typeof data.demo === 'string' ? data.demo : data.src;
+			const demoFile = locateCode(demoSource, 'demo');
+			if (demoFile === null) {
+				throw new Error(
+					`Unable to locate demo file "${demoSource}" in code block in ${context.filename}. Demo file must match source file, but end with ".demo.html" or ".html"`
+				);
+			}
+			renderDemo({
+				tabs,
+				src: demoSource,
+				css: data.class,
+				title: showTitle ? data.demoTitle : '',
+				html: getFile(demoFile),
+				hint: data.demoHint,
+				replace: replaceContent,
+			});
+		};
+
+		// Demo, before code
+		if (data.demo && data.demoFirst) {
+			renderDemoSample(false);
+		}
+
 		// Get code
 		const sources: CodeSampleChunk[] = [
 			{
@@ -610,23 +637,8 @@ export function renderCode(context: MDContext, md: md) {
 		}
 
 		// Demo
-		if (data.demo) {
-			const demoSource = typeof data.demo === 'string' ? data.demo : data.src;
-			const demoFile = locateCode(demoSource, 'demo');
-			if (demoFile === null) {
-				throw new Error(
-					`Unable to locate demo file "${demoSource}" in code block in ${context.filename}. Demo file must match source file, but end with ".demo.html" or ".html"`
-				);
-			}
-			renderDemo({
-				tabs,
-				src: demoSource,
-				css: data.class,
-				title: data.demoTitle,
-				html: getFile(demoFile),
-				hint: data.demoHint,
-				replace: replaceContent,
-			});
+		if (data.demo && !data.demoFirst) {
+			renderDemoSample(true);
 		}
 	}
 
