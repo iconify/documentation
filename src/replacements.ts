@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-import { argv } from 'process';
 import { paths } from './files';
 import { replaceAll } from './str';
 import { TextReplacement } from './meta-data';
+import { cmd } from './cmd';
 
 const replacements: Record<string, string> = {};
 
@@ -15,20 +15,8 @@ if (typeof rawReplacements !== 'object' || !rawReplacements) {
 }
 
 // Try extra config
-let extraConfig = '';
-argv.slice(2).forEach((arg) => {
-	if (extraConfig === '' && arg.slice(0, 2) === '--') {
-		extraConfig = arg.slice(2);
-		if (extraConfig.match(/^[a-z0-9]+$/)) {
-			return;
-		}
-	}
-
-	throw new Error(`Invalid parameter: ${arg}`);
-});
-
-if (extraConfig !== '') {
-	const extraReplacementsFile = 'replacements.' + extraConfig + '.json';
+if (cmd.config) {
+	const extraReplacementsFile = 'replacements.' + cmd.config + '.json';
 	console.log('Loading custom replacements from', extraReplacementsFile);
 	const rawReplacements2 = JSON.parse(
 		readFileSync(paths.root + '/' + extraReplacementsFile, 'utf8')

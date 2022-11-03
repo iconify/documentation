@@ -28,6 +28,18 @@ sass.render(
 		}
 
 		fs.writeFileSync(outputFile, result.css);
-		console.log(`Saved style.css (${result.css.length} bytes)`);
+
+		// Check for quiet mode, log output
+		let quiet = false;
+		process.argv.slice(2).forEach((arg) => {
+			switch (arg) {
+				case '--quiet':
+					quiet = true;
+					return;
+			}
+		});
+		if (!quiet) {
+			console.log(`Saved style.css (${result.css.length} bytes)`);
+		}
 	}
 );

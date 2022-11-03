@@ -5,13 +5,25 @@ const { paths, mkdir, list } = require('./lib/files');
 const assetsPath = paths.html + '/assets';
 mkdir(assetsPath);
 
+// Check for quiet mode
+let quiet = false;
+process.argv.slice(2).forEach((arg) => {
+	switch (arg) {
+		case '--quiet':
+			quiet = true;
+			return;
+	}
+});
+
 /**
  * Save file
  */
 function save(target, content) {
 	const cleanFile = target.slice(paths.root.length + 1);
 	fs.writeFileSync(target, content, 'utf8');
-	console.log(`Writing ${cleanFile} (${content.length} bytes)`);
+	if (!quiet) {
+		console.log(`Writing ${cleanFile} (${content.length} bytes)`);
+	}
 }
 
 /**

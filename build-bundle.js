@@ -119,6 +119,16 @@ const collections = Object.create(null);
 // Get all icons and icon sets
 const customCollection = blankIconSet(customPrefix);
 
+// Check for quiet mode
+let quiet = false;
+process.argv.slice(2).forEach((arg) => {
+	switch (arg) {
+		case '--quiet':
+			quiet = true;
+			return;
+	}
+});
+
 /**
  * Bundle scripts
  */
@@ -254,4 +264,6 @@ const content =
 	`\n})();
 `;
 fs.writeFileSync(outputFile, content, 'utf8');
-console.log(`Saved bundle.js (${content.length} bytes)`);
+if (!quiet) {
+	console.log(`Saved bundle.js (${content.length} bytes)`);
+}

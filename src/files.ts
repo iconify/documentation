@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { dirname } from 'path';
+import { cmd } from './cmd';
 
 /**
  * Root path
@@ -247,7 +248,9 @@ export const cleanup = (
 export const write = (file: string, content: string): void => {
 	// Log
 	const cleanFile = file.slice(paths.root.length + 1);
-	console.log(`Writing ${cleanFile} (${content.length} bytes)`);
+	if (!cmd.quiet) {
+		console.log(`Writing ${cleanFile} (${content.length} bytes)`);
+	}
 
 	// Create directories
 	const parts = file.split('/');
