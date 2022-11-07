@@ -1,166 +1,165 @@
 ```yaml
-title: Iconify in CSS
-standalone: true
-navigation: './index.md'
+title: SVG in CSS
 ```
 
-# How to use Iconify in CSS
-
-`include notices/css`
+# How to use SVG in CSS
 
 If you are migrating from font, you might be used to adding icons by adding pseudo elements to stylesheet, something like this:
 
 ```css
-.whatever:after {
+.test:after {
 	content: '\f015';
-	font-family: FontAwesome;
+	font-family: SomeIconFont;
 }
 ```
 
-It can be done with Iconify too, but it is a bit harder and not recommended.
+It can be done with SVG too!
 
-Iconify API can generate background images that you can use in stylesheet. You can use it as content for pseudo elements or as background images:
+## Usage
+
+There are several ways to use SVG in CSS:
+
+- Content of pseudo-selector.
+- Background image.
+- Mask image, combined with background color set to `[prop]currentColor`.
+
+First 2 methods can be used with icons that have hardcoded palette. If you use it with monotone icon that uses `[prop]currentColor`, it will be rendered black.
+
+Last method can be used with monotone icons. Icon shape will be used as mask, which will be filled with `[prop]currentColor`, so it behaves similar to icon font, following text color.
+
+```yaml
+src: common/css-demo.html
+title: 'HTML:'
+css: common/css-demo.scss
+cssTitle: 'Stylesheet:'
+demo: true
+demoTitle: 'Demo:'
+class: css-demo css-demo-common
+```
+
+Below is detailed explanation of each method.
+
+### Content in pseudo-selector
+
+You can use SVG as `[prop]content` in pseudo-selector:
 
 ```css
 /* SVG as pseudo element's content */
-.some-item:after {
-	content: url('https://api.iconify.design/fa-solid/home.svg?color=%23ba3329&height=16');
+.test:after {
+	content: url('https://api.iconify.design/bi/bell-fill.svg?height=16');
 }
+```
 
+This method inserts SVG as external image, similar to `[html]<img />`.
+
+Differences from other methods:
+
+- Can be used for images with hardcoded palette.
+- `[prop]currentColor` is ignored. You need icon to have hardcoded color, otherwise image will be black.
+- Pseudo element is scaled to image dimensions. You should specify image dimensions in parameters when loading it from API.
+
+### Background
+
+You can use SVG as background image:
+
+```css
 /* SVG as pseudo element's background image */
-.another-item:after {
+.test:after {
 	content: '';
 	width: 1em;
 	height: 1em;
 	display: inline-block;
-	background: url('https://api.iconify.design/fa-solid/home.svg?color=%23ba3329')
-		no-repeat center center / contain;
+	background: url('https://api.iconify.design/bi/bell-fill.svg') no-repeat
+		center center / 100% 100%;
 }
 
 /* SVG as background image */
-.third-item {
-	background: url('https://api.iconify.design/fa-solid/home.svg?color=%23ba3329')
-		no-repeat center center / contain;
+.test {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background: url('https://api.iconify.design/bi/bell-fill.svg') no-repeat
+		center center / 100% 100%;
 }
 ```
 
-However, there are several issues:
+Differences from other methods:
 
-- SVG as pseudo element content cannot inherit color from parent element. That is not an issue for colored images, but it is an issue for monotone images.
-- If you are using image as pseudo element's content (see examples above), you must specify width or height.
-- Every image will be loaded separately. That increases number of HTTP(S) requests and increases page loading time. Try to avoid using background images.
+- Can be used for images with hardcoded palette.
+- `[prop]currentColor` is ignored. You need icon to have hardcoded color, otherwise image will be black.
+- You need to resize element (or pseudo element) to fit image.
 
-## Syntax
+### Mask
 
-Each method uses SVG URL.
-
-Syntax for SVG URL is simple:
-
-1. `[str]url('https://api.iconify.design/`
-2. icon set prefix, such as `[str]fa-solid` in an example above
-3. `[str]/`
-4. icon name, such as `[str]home` in an example above
-5. `[str].svg`
-6. optional parameters, such as `[attr]color` or `[attr]height`: `[str]?color=red`
-7. `[str]')`
-
-```raw
-url('<span class="hljs-string">https://api.iconify.design/fa-solid/home.svg?color=red</span>')
-```
-
-## Color
-
-One downside of using SVG as external resource is it cannot inherit color from parent element. Browsers will use black instead of `[key]currentColor`.
-
-This example shows 3 monotone icons, one is used as DOM element, one as pseudo element's content, one as background:
-
-```yaml
-src: common/css-demo1.html
-title: 'HTML:'
-css: common/css-demo1.scss
-cssTitle: 'Stylesheet:'
-demo: true
-demoTitle: 'Demo:'
-class: css-demo1
-```
-
-To change color add parameter `[attr]color` to icon URL:
+Mask, combined with background color set to `[prop]currentColor`, can be used to render monotone icons that use `[prop]currentColor` as icon color.
 
 ```css
-.pseudo-test:after {
-	content: url('https://api.iconify.design/fa-solid/home.svg?height=16&color=%23ba3329');
+/* SVG as pseudo element's mask image */
+.test:after {
+	content: '';
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background-color: currentColor;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-image: url('https://api.iconify.design/bi/bell-fill.svg');
+	mask-image: url('https://api.iconify.design/bi/bell-fill.svg');
+}
+
+/* SVG as mask image */
+.test {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background-color: currentColor;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-image: url('https://api.iconify.design/bi/bell-fill.svg');
+	mask-image: url('https://api.iconify.design/bi/bell-fill.svg');
 }
 ```
 
-This applies only to monotone icons. Icons that have hardcoded palette don't need `[attr]color` attribute.
+Differences from other methods:
 
-If you are using hexadecimal color, make sure to replace `[str]#` with `[str]%23`:
+- Cannot be used for images with hardcoded palette because color is removed.
+- `[prop]currentColor` is used to fill mask, so it can be used for monotone images without specifying color.
+- You need to resize element (or pseudo element) to fit image.
 
-```raw
-https://api.iconify.design/fa-solid/home.svg?color=%23ba3329
-```
+## Demo
 
-## Dimensions
+Why monotone icon cannot be used as background or content? Why icons with multiple colors cannot be used as mask? See demos below, which show what happens if you use icon incorrectly.
 
-You can also specify dimensions to SVG URL as parameters. It is pointless if you are using `[prop]background-size` to resize background (see `[str]"/ contain"` part of code in examples above), but it is needed for using SVG as pseudo element's content.
-
-To specify custom dimensions add width and/or height parameters:
-
-```raw
-https://api.iconify.design/fa-solid/home.svg?width=24&height=24
-```
-
-If you don't specify units, API assumes its pixels.
-
-If you specify only one size attribute, other attribute is calculated using width/height ratio of icon. For example, if original icon is 512x1024, setting `[prop]?height=16` will result in `[attr]width="8"`.
-
-There is special keyword auto that sets dimensions to original dimensions of icon:
-
-```raw
-https://api.iconify.design/fa-solid/home.svg?height=auto
-```
-
-No need to set both width and height to `[str]auto`, one parameter is enough (see above about width/height ratio).
-
-## Transformations
-
-You can transform SVG generated by Iconify API, same as with placeholder elements.
-
-Possible transformations:
-
-- Rotations: 90°, 180°, 270°
-- Horizontal and vertical flip
-
-### Rotating background {#rotate}
-
-To rotate icon add `[prop]rotate` parameter. Value can be in degrees: `[attr]rotate=90deg` or as numbers: `[attr]rotate=1` (where 1 = 90deg, 2 = 180deg, 3 = 270deg).
-
-All transformations are done using SVG transforms, not CSS.
+Various usages of monotone icon:
 
 ```yaml
-src: common/css-rotation.html
+src: common/css-demo-monotone.html
 title: 'HTML:'
-css: common/css-rotation.scss
+css: common/css-demo-monotone.scss
 cssTitle: 'Stylesheet:'
 demo: true
 demoTitle: 'Demo:'
-class: css-rotation
+class: css-demo-monotone css-demo-common
 ```
 
-### Flipping background {#flip}
-
-To flip icon add `[prop]flip` parameter. Value is `[str]horizontal` or `[str]vertical`. If you want both, use `[str]horizontal,vertical` or rotate icon by 180 degrees.
-
-All transformations are done using SVG transforms, not CSS.
+Various usages of icon with hardcoded palette:
 
 ```yaml
-src: common/css-flip.html
+src: common/css-demo-palette.html
 title: 'HTML:'
-css: common/css-flip.scss
+css: common/css-demo-palette.scss
 cssTitle: 'Stylesheet:'
 demo: true
 demoTitle: 'Demo:'
-class: css-flip
+class: css-demo-palette css-demo-common
 ```
 
-You can use both rotation and flip on icon. Icon is flipped first, then rotated.
+## Iconify API
+
+You can use Iconify API to dynamically generate images for stylesheet.
+
+See [Iconify API documentation](../api/svg.md).

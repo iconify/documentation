@@ -2,15 +2,11 @@
 
 This article explains how to host Iconify on your server, so your website does not rely on Iconify public API servers.
 
-[Iconify API](./index.md) software is available in 2 versions: Node.js and PHP
-
-If you can, use Node.js version.
-
-Node.js version is slightly faster. This is because in Node.js server uses one persistent process and all data is already in memory, so everything is ready for each request. PHP needs to load data on every request. PHP version has cache to improve speed, but it is still slower than Node.js.
+[Iconify API](./index.md) software is available as Node.js script.
 
 ## Django Iconify
 
-In addition to Iconify API servers mentioned above, there is a community created alternative for Django users: [django-iconify](https://pypi.org/project/django-iconify/).
+In addition to Iconify API mentioned above, there is a community created alternative for Django users: [django-iconify](https://pypi.org/project/django-iconify/).
 
 See [django-iconify project page](https://pypi.org/project/django-iconify/) for configuration options and usage.
 
@@ -18,19 +14,10 @@ See [django-iconify project page](https://pypi.org/project/django-iconify/) for 
 
 Everything you need is available at [Iconify GitHub repositories](https://github.com/iconify):
 
-- [Node.js version of Iconify API](https://github.com/iconify/api.js)
-- [PHP version of Iconify API](https://github.com/iconify/api.php)
+- [Iconify API](https://github.com/iconify/api)
 - [Open source icon sets](https://github.com/iconify/icon-sets)
 
-## PHP
-
-PHP version of API is easier to install.
-
-See [Iconify API: PHP](./hosting-php/index.md) for installation and configuration instructions.
-
-## Node.js {#node}
-
-Node.js version of API is harder to install, but it is faster, so try it if you can.
+## Node.js API {#node}
 
 See [Iconify API: Node.js](./hosting-js/index.md) for installation and configuration instructions.
 

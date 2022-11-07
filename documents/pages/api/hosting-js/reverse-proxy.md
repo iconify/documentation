@@ -1,6 +1,6 @@
 ```yaml
 title: Reverse Proxy for Iconify API
-navigation: ./index.md
+navigation: ./config.md
 standalone: true
 ```
 
@@ -10,16 +10,16 @@ This tutorial is a part of [Iconify API installation instructions](./index.md). 
 
 Running Node.js applications on port `[num]3000` without reverse proxy is fine for localhost development, but it is not fine for production.
 
-In production environment you want stability and HTTPS support. Node.js server is very basic, it cannot handle that. Reverse proxy allows you to add HTTPS support, add security features such as rate limiting.
+In a production environment you want stability and HTTPS support. That should be delegated to a reverse proxy. Reverse proxy allows you to add HTTPS support, add security features such as rate limiting.
 
-You can hide Node.js application behind reverse proxy. What reverse proxy does is, it handles HTTP and HTTPS requests, forwards them to Node.js application and returns response to customer. It is useful if you want to:
+Reverse proxy handles HTTP and HTTPS requests, forwards them to Node.js application and returns response to customer. It is useful if you want to:
 
-- Run API on different port, so you can host multiple websites on same server instead of only hosting API.
+- Run API on a different port, so you can host multiple websites on the same server instead of only hosting API.
 - Handle HTTPS requests. All SSL stuff will be handled by web server.
 - Dealing with bad customers. You can use web server rules to block misbehaving customers and bots.
 - Using API on sub-directory rather than custom sub-domain.
 
-Before configuring reverse proxy, you need to make sure Iconify API runs on a port hidden from outside world. Default port is `[num]3000`. See [tutorial for hosting Iconify API](./custom.md) for details.
+Before configuring reverse proxy, you need to make sure Iconify API runs on a port hidden from outside world. Default port is `[num]3000`. See [API configuration](./config.md) for details.
 
 ## Apache 2.4 {#apache}
 
@@ -144,7 +144,3 @@ That error is likely to be caused by NGINX having wrong permissions. Run this to
 ```bash
 sudo chmod +x /var/lib/nginx -R
 ```
-
-## Next steps
-
-After setting up reverse proxy, start both reverse proxy and API. See [tutorial on hosting API in a custom environment](./custom.md).

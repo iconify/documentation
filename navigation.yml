@@ -12,14 +12,27 @@
     ./hosting.html:
       title: Hosting API
       children:
-        ./hosting-php/: PHP
-        ./hosting-js/: Node.js
+        ./hosting-php/:
+          title: PHP API
+          hidden: true
+        ./hosting-js/:
+          title: Node.js API
+          children:
+            ./config.html: Configuration
+            ./headers.html: HTTP Headers
+    ./queries.html:
+      title: API Queries
+      children:
+        ./svg.html: Generate SVG
+        ./icon-data.html: Icon Data
+        ./last-modified.html: Last Modified
+        ./collections.html: List of Icon Sets
+        ./collection.html: List of Icons
+        ./search.html: Search Icons
     ./providers.html:
       title: API Providers
     ./config.html:
       title: Using custom API
-    ./queries.html:
-      title: API Queries
 /develop/:
   title: Components
   children:
@@ -326,6 +339,7 @@
             ./ember.html: Ember
     /icon-components/unplugin-icons.html: Unplugin Icons
     /icon-components/unocss.html: UnoCSS
+    /icon-components/css.html: SVG in CSS
     /icon-finder/:
       title: Icon Finder
       wip: true

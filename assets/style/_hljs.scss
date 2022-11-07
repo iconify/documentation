@@ -116,6 +116,10 @@
 
 .hljs-inline-link {
 	border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+	a & {
+		color: inherit;
+		border-bottom-width: 0;
+	}
 }
 
 .hljs-inline-var {

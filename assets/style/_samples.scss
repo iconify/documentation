@@ -176,8 +176,17 @@
 }
 
 // Common
-.css-demo1 {
-	@import './samples/common/css-demo1';
+.css-demo-common {
+	@import './samples/common/css-demo-common';
+}
+.css-demo {
+	@import './samples/common/css-demo';
+}
+.css-demo-monotone {
+	@import './samples/common/css-demo-monotone';
+}
+.css-demo-palette {
+	@import './samples/common/css-demo-palette';
 }
 
 .css-rotation {

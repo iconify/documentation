@@ -9,111 +9,88 @@ types:
 
 This tutorial is for developers that want to create their own tools to access Iconify API.
 
-Iconify API has several types of queries:
+Iconify API supports the following basic queries:
 
-- Query to retrieve icon data.
-- Query to render SVG.
-- Administrative queries.
-- Search queries.
+- [`[url]/{prefix}/{icon}.svg`](./svg.md) dynamically generates SVG.
+- [`[url]/{prefix}.json?icons={icons}`](./icon-data.md) retrieves icon data.
+- [`[url]/last-modified?prefixes={prefixes}`](./last-modified.md) returns last modification time of requested icon sets, which can be used to invalidate old icon data cache.
 
-Documentation below is not complete. For now, it just lists queries, more details will be added later.
+If list of icons is enabled, custom icon pickers can use the following queries to browse icons:
 
-## JSONP responses
+- [`[url]/collections`](./collections.md) returns list of available icon sets.
+- [`[url]/collection?prefix={prefix}`](./collection.md) returns list of icons in an icon set.
 
-API supports JSON and JSONP responses.
+If search engine is enabled, icon pickers can implement search functionality using these queries:
 
-JSON response returns data in JSON format:
+- [`[url]/search?query={keyword}`](./search.md) returns list of icons that match keyword.
+- `[url]/keywords?prefix={keyword}` or `[url]/keywords?keyword={keyword}` returns list of keywords that contain requested keyword, which can be used for autocomplete.
 
-```yaml
-hint: /mdi.json?icons=account-box,account-cash,account,home&pretty=1
-src: api/mdi.json
-```
+Maintenance queries:
 
-JSONP response is similar to JSON, but it returns a JavaScript file. JSON response is wrapped in a callback. What's the point of JSONP? No need to deal with CORS settings, easy to use, works with very old browsers. Just set up a global callback in visitor's browser, add `[tag]script` tag and wait for callback to be called.
+- `[url]/version` shows API version as plain text, unless disabled. If you are running multiple API servers, like public Iconify API does, this can be used to check which server visitor is connected to.
+- `[url]/update` updates icon sets from its source without restarting API. This can be used to automatically keep API up to date using GitHub hooks or similar methods.
 
-[Iconify SVG Framework version 1.0](../icon-components/iconify1/index.md) uses JSONP to retrieve icon data. Newer versions use Fetch API, but with JSONP as a backup for browsers that do not support Fetch API.
+### API versions
 
-Example of a JSONP response:
+In code samples some queries above are marked as API v2, some as API v3.
 
-```yaml
-hint: /mdi.js?icons=account-box,account-cash,account,home&pretty=1&callback=Iconify.addCollection
-src: api/mdi.js
-```
+Differences:
 
-By default, API will return JSON data. If you want a JSONP response, do this:
+- API v2 queries existed since version 2 of Iconify API, but were not documented. They are supported and will continue being supported, but at some point improved v3 versions of same queries can be added.
+- API v3 queries are available since version 3 of Iconify API.
 
-- Add `[prop]callback` parameter.
-- If query ends with `[str].json`, replace it with `[str].js` (this is used in queries to retrieve icon data).
+You can use both versions at the same time. Improved versions of old queries might be added to solve various issues, but no need to switch to new version right away, old versions will continue to be supported.
 
-Examples:
-
-- JSON query: `[url]/mdi.json?icons=home`
-- JSONP query: `[url]/mdi.js?icons=home&callback=Iconify.addCollection`
+API even supports v1 queries that aren't documented and should not be used. They are supported because they can still be found in some legacy applications, such as older versions of Iconify plug-in for Sketch.
 
 ## Common parameters
 
-All JSON and JSONP queries have several common parameters:
+All queries that return JSON data have one common parameter:
 
-- `[prop]callback` is used for JSONP queries. It is mandatory for most JSONP queries.
 - `[prop]pretty` is used to format JSON data, making it easy to read. Set to `[number]1` or `[bool]true` to enable.
-
-## Query to retrieve icon data
-
-To retrieve icon data, use `[url]{prefix}.json?icons={icons}`.
-
-Replace `[str]{prefix}` with icon set prefix.
-
-You cannot request data for multiple icon sets in same query. It is one query per icon set.
-
-Number of icons per query is not limited, however be aware that browsers have limit on URL length. [Iconify icon components](../icon-components/index.md) limit URL length to 500. If URL is longer than 500 characters, API query is split into multiple queries.
-
-Parameters:
-
-- `[prop]icons` is list of icons, without prefix. Separate icon names with comma. It is better to sort icon names alphabetically to make sure they are always requested in the same order. This way there is a chance browser will find matching query in cache and return cached response.
-
-Examples:
-
-- `[url]/mdi.json?icons=account-box,account-cash,account,home`
-- `[url]/fa-regular.js?icons=circle,check-circle,comments,dot-circle&pretty=1&callback=Iconify.addCollection`
-
-API returns `[type]IconifyJSON` object.
-
-Example:
-
-```yaml
-hint: /uil.json?icons=cake,lock,lock-open-alt&pretty=1
-src: api/uil.json
-```
 
 ## SVG
 
-Iconify API can also generate SVG, which can be used as a background image.
+Iconify API can dynamically generate SVG, which can be used in HTML or in CSS.
 
 Query format: `[url]/{prefix}/{name}.svg`
 
-See [using Iconify in CSS](../icon-components/css.md) for list of parameters.
+Replace `[str]{prefix}` with icon set prefix, `[str]{name}` with icon name.
 
-In addition to parameters described in [using Iconify in CSS tutorial](../icon-components/css.md), there are few parameters that do not apply to CSS:
+See [SVG query documentation](./svg.md) for list of parameters and usage examples.
 
-- `[prop]download` forces browser to download file: `[str]download=1`.
-- `[prop]box` adds an empty rectangle to SVG that matches `[attr]viewBox`.
+## Icon data
 
-Some software ignore `[attr]viewBox` when importing icons. They create groups that automatically resize to fit content. Icons usually have empty pixels around icon, so such software crops those empty pixels when importing SVG. This applies to most UI design tools.
+To retrieve icon data, use `[url]/{prefix}.json?icons={icons}`.
 
-Parameter `[prop]box` adds empty rectangle to SVG, which fixes icon import issue in such software: `[url]/mdi/home.svg?box=1`.
+Replace `[str]{prefix}` with icon set prefix, `[str]{icons}` with comma separated list of icon names. Result is `[type]IconifyJSON` data, 404 error if icon set is not available.
 
-Combined with `[prop]download` parameter, `[prop]box` parameter this can be used to download SVG that will be imported correctly in software that does not support `[attr]viewBox`: `[url]/mdi/home.svg?box=1&download=1`.
+See [icons data query](./icon-data.md) for more details.
 
-[hidden]
+## Icons list
 
-## Other queries
+If option to list icon sets is enabled, the following queries become available:
 
-Other queries will be added to documentation later.
+- `[url]/collections` will return list of available icon sets.
+- `[url]/collection?prefix={prefix}` will return list of icons in an icon set.
 
-Icon finder queries:
+## Search
 
-- `[url]/collections` will return list of available collections.
-- `[url]/collection?prefix={prefix}` will return list of icons in a collection.
-- `[url]/search?query={query}` will search icons. By default, API will return only up to 64 results, you can set limit up to 999 by adding `[prop]limit` parameter. You can also set prefixes that you want to search by adding `[prop]prefixes` parameter with comma separated list of prefixes.
+If search engine is enabled, the following queries become available:
 
-[/hidden]
+- `[url]/search?query={query}` will search icons.
+- `[url]/keywords` will retrieve list of keywords that contain requested keyword, which can be used for autocomplete.
+
+By default, API will return only up to 64 results, you can set limit up to 999 by adding `[prop]limit` parameter. You can also set prefixes that you want to search by adding `[prop]prefixes` parameter with comma separated list of prefixes.
+
+## Misc queries
+
+Other queries to help with various tasks:
+
+### Last modification time
+
+To check if icon data was updated, you can use query to check last modification time of icon sets: `[url]/last-modified`.
+
+### Version
+
+To get version of software running API, use `[url]/version`.

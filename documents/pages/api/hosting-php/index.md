@@ -1,13 +1,12 @@
 # Iconify API: PHP
 
-There are 2 versions of Iconify API:
+PHP version of Iconify API is deprecated. Switch to [Node.js version](../hosting-js/index.md).
 
-- [Node.js version](../hosting-js/index.md).
-- PHP version.
+PHP version is:
 
-This documentation is for the PHP version of [Iconify API](../index.md).
-
-[Node.js version of Iconify API](../hosting-js/index.md) is harder to use, but it is preferred solution. It is slightly faster than the PHP version because all collections are loaded only once.
+- Much slower.
+- Does not support search engine.
+- No longer maintained.
 
 ## Requirements
 

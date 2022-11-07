@@ -1,253 +1,77 @@
 ```yaml
-title: 'Iconify API Configuration: Node.js'
-navigation: ./index.md
-standalone: true
+title: Iconify API Configuration
 ```
 
 # Iconify API configuration
 
 This tutorial is a part of [Iconify API installation instructions](./index.md) for Node.js. This part of tutorial explains API configuration options.
 
-Configuration is stored in file `[file]config.json`. It is used only for customized values, so you do not need to store entire configuration.
+There are several ways to change configuration:
 
-Default configuration is stored in `[file]config-default.json`.
+- Editing files in `[file]src/config/`, then rebuilding script. This is required for some advanced options, such as using API with custom icons.
+- Using environment variables, such as `[bash]PORT=3100 npm run start`.
+- Using `[file].env` file to store environment variables.
 
-If your API is already running, after changing configuration you must restart API. Configuration in Node.js version of API cannot be reloaded without downtime.
+If your API is already running, after changing configuration you must restart API. Configuration cannot be reloaded without downtime.
 
-## Main options
+## Env options
 
-### port
+Options that can be changed with environment variables and their default values (you can find all of them in `[file]src/config/app.ts`):
 
-By default, script runs on port `[num]3000`. You might need to change it. There are 2 ways to change port:
+- `[bash]HOST=0.0.0.0`: IP address or hostname HTTP server listens on.
+- `[bash]PORT=3000`: port HTTP server listens on.
+- `[bash]REDIRECT_INDEX=https://iconify.design/`: redirect for `[url]/` route. API does not serve any pages, so index page redirects to main website.
+- `[bash]STATUS_REGION=`: custom text to add to `[url]/version` route response. Iconify API is ran on network of servers, visitor is routed to closest server. It is used to tell which server user is connected to.
+- `[bash]CACHE_ROOT_DIR=cache`: cache directory, relative to app directory, without trailing `[str]/`.
+- `[bash]ENABLE_ICON_LISTS=true`: enables `[url]/collections` route that lists icon sets and `[url]/collection?prefix=whatever` route to get list of icons. Used by icon pickers. Disable it if you are using API only to serve icon data.
+- `[bash]ENABLE_SEARCH_ENGINE=true`: enables `[url]/search` route. Requires `[bash]ENABLE_ICON_LISTS=true`.
+- `[bash]ALLOW_FILTER_ICONS_BY_STYLE=true`: allows searching for icons based on fill or stroke, such as adding `[url]style=fill` to search query. This feature uses a bit of memory, so it can be disabled. Requires `[bash]ENABLE_SEARCH_ENGINE=true`.
 
-- Set environment variable `[str]PORT` (does not work if you have disabled `[prop]env-port` in configuration).
-- Change `[prop]port` value in `[file]config.json`.
+## Updating icons
 
-You can use environment variable in command line when starting API:
+Icons are automatically updated when server starts.
 
-```bash
-PORT=3000 npm start
-```
+In addition to that, API can update icon sets without restarting server.
 
-To change port in configuration, add `[prop]port` property:
+To enable automatic update, you must set `[bash]APP_UPDATE_SECRET` environment variable. Without it, update will not work.
 
-```json
-{
-	"port": 3000
-}
-```
+- `[bash]ALLOW_UPDATE=true`: enables `[url]/update` route.
+- `[bash]UPDATE_REQUIRED_PARAM=secret`: key from secret key/value pair. Cannot be empty.
+- `[bash]APP_UPDATE_SECRET=`: value from secret key/value pair. Cannot be empty.
+- `[bash]UPDATE_THROTTLE=60`: number of seconds to wait before running update.
 
-### env-port
+To trigger icon sets update, open `[url]/update?foo=bar`, where `[prop]foo` is value of `[bash]UPDATE_REQUIRED_PARAM`, `[prop]bar` is value of `[bash]APP_UPDATE_SECRET`.
 
-If you set value to `[bool]false`, environment variable `[str]PORT` will be ignored. Then port can only be changed by changing `[prop]port` in configuration.
+Update will not be triggered immediately, it will be ran after `[bash]UPDATE_THROTTLE` seconds. This is done to prevent multiple checks when update is triggered several times in a row by something like GitHub hooks.
 
-### region and env-region
+If update is triggered while update process is already running (as in, source was checked for update, but download is still in progress), another update check will be ran after currently running update ends.
 
-Region is used as server identification. If you are running multiple Iconify API instances, by setting different `[prop]region` values you can check which server you are connected to.
+Response to `[url]/update` route is always the same, regardless of outcome. This is done to make it impossible to try to guess key/value pair or even see if route is enabled. To see actual result, you need to check console. Successful request and update process will be logged.
 
-How to check region? Open `[url]/version` end point in browser: `[url]https://api.iconify.design/version`. That page will show you API version, language (Node or PHP) and region.
+## HTTP headers
 
-Additionally, region can be set using environment variable `[str]region`.
+By default, server sends the following HTTP headers:
 
-### custom-icons-dir
+- Various CORS headers, allowing access from anywhere.
+- Cache headers to cache responses for 604800 seconds (7 days).
 
-Directory where custom icon sets are stored.
+See [how to change HTTP headers in API](./headers.md) for more details.
 
-Icon sets must be stored in [Iconify JSON format](../../types/iconify-json.md).
+## Memory management
 
-Filename must match prefix, for example `[icon]awesome-icons:home` should be stored in `[file]awesome-icons.json`.
+API does not store all loaded icons in memory. Instead, it splits icon sets into smaller chunks, stores them in cache and loads those chunks from cache when needed. After loading chunk from cache, it is stored in memory for a while. This way, the most used icons are in memory, rarely used icons are not using memory.
 
-Default directory name is `[str]{dir}/json`, where `[str]{dir}` is replaced by API root directory.
+There are two configuration variables that deal with that:
 
-### serve-default-icons
+- `[var]splitIconSetConfig` in `[file]src/config/app.ts` that manages splitting big icon sets in smaller chunks.
+- `[var]storageConfig` in `[file]src/config/app.ts` that manages cache.
 
-If disabled, API will not load the default Iconify icon sets.
+All properties in those config objects can be changed via environment variables. Convert property to underscore-separated upper case, add `[str]SPLIT_` prefix for `[var]splitIconSetConfig`, `[str]STORAGE_` prefix for `[var]storageConfig`.
 
-### index-page
+Config values that you might want to change, as environment variables:
 
-URL to redirect browser to when browsing `[url]/`. Redirection is permanent.
+- `[bash]STORAGE_CACHE_DIR={cache}/storage`: directory where cache is stored, relative to app directory, without trailing `[str]/`. Use `[str]{cache}` to point to root cache directory set in `[bash]CACHE_ROOT_DIR` variable.
+- `[bash]STORAGE_MAX_COUNT=100`: maximum number of stored items in memory. Reduce number if memory usage is too high. Set to `[num]0` to disable.
+- `[bash]STORAGE_TIMER=60000`: timer to check for expired items.
 
-## Browser cache
-
-Cache configuration is stored in `[prop]cache` object.
-
-Object properties:
-
-- `[prop]timeout`, `[type]number`. Cache timeout in seconds.
-- `[prop]min-refresh`, `[type]number`. Minimum page refresh timeout. Usually the same as `[prop]timeout` value.
-- `[prop]private`, `[type]boolean`. Set to `[bool]true` if page cache should be treated as private.
-
-Example:
-
-```json
-{
-	"cache": {
-		"timeout": 604800,
-		"min-refresh": 604800,
-		"private": false
-	}
-}
-```
-
-## CORS headers {#cors}
-
-CORS stands for Cross-Origin Resource Sharing. API needs to send CORS headers to allow other websites read API responses.
-
-Without CORS headers modern browsers will ignore API response.
-
-CORS configuration is stored in `[prop]cors` object.
-
-Object properties:
-
-- `[prop]origins`, `[type]string`. Allowed origins. Used as value for `[str]Access-Control-Allow-Origin` header.
-- `[prop]methods`, `[type]string`. Allowed methods. Used as value for `[str]Access-Control-Allow-Methods` header.
-- `[prop]headers`, `[type]string`. Allowed headers. Used as value for `[str]Access-Control-Allow-Headers` header.
-- `[prop]timeout`, `[type]number`. Cache time in seconds.
-
-Example:
-
-```json
-{
-	"cors": {
-		"origins": "*",
-		"timeout": 86400,
-		"methods": "GET, OPTIONS",
-		"headers": "Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding"
-	}
-}
-```
-
-### Disabling CORS
-
-CORS headers cannot be sent twice. If you are using [reverse proxy](./reverse-proxy.md) that is configured to send CORS headers, you need to disable CORS headers in Node.js app to avoid sending duplicate headers.
-
-To disable CORS headers set `[prop]cors` value to `[bool]false`:
-
-```json
-{
-	"cors": false
-}
-```
-
-### Configuring CORS in Apache {#cors-apache}
-
-If you are using Apache as reverse proxy, you can disable CORS in API and enable it in Apache.
-
-To enable CORS in Apache, add this to Apache configuration:
-
-```apache
-Header always set Access-Control-Allow-Origin "*"
-Header always set Access-Control-Allow-Methods "GET, OPTIONS"
-Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding"
-Header always set Access-Control-Max-Age "86400"
-```
-
-### Configuring CORS in NGINX {#cors-nginx}
-
-If you are using NGINX as reverse proxy, you can disable CORS in API and enable it in NGINX.
-
-To enable CORS in NGINX, add this to NGINX configuration under `[prop]http` -> `[prop]server` -> `[prop]location`:
-
-```nginx
-if ($request_method = 'POST') {
-   add_header 'Access-Control-Allow-Origin' '*';
-   add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-   add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
-   add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
-}
-if ($request_method = 'GET') {
-   add_header 'Access-Control-Allow-Origin' '*';
-   add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-   add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
-   add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
-}
-
-```
-
-## Synchronizing icon sets with Git {#sync}
-
-In addition to reloading all collections without restarting server, API can pull collections from Git service and reload collections without restarting. This can be used to push collections to server whenever it is updated without downtime.
-
-There are two collections available: `[str]iconify` and `[str]custom`.
-
-All configuration options are in `[prop]sync` object. Use `[str]{dir}` variable in directories to point to API application root directory.
-
-To synchronize repository send GET request to `[url]/sync?repo=iconify&key=your-sync-key` Replace `[prop]repo` with `[str]custom` to synchronize custom repository and `[prop]key` with value of `[prop]sync.secret`.
-
-Server will respond identically with `[str]ok` message regardless of status to prevent visitors from trying to guess your secret key. You can only tell if request worked by looking at logs.
-
-Sync function is meant to be used with GitHub web hooks function. To avoid synchronizing icon sets too often, synchronization is delayed by `[num]60` seconds (configure `[prop]sync.sync-delay` option to change it). This way when there are multiple commits submitted within a minute, synchronization is done only once 60 seconds after the first commit.
-
-Sync object properties:
-
-- `[prop]secret`, `[type]string`. Secret key. This is a required option.
-- `[prop]sync-on-startup`, `[type]string`. See below.
-- `[prop]sync-delay`, `[type]number`. Delay for synchronization, in seconds. See documentation above.
-- `[prop]repeated-sync-delay`, `[type]number`. If synchronization request was sent while synchronization is already in progress, this is amount of time application will wait until initializing next synchronization. Value is in seconds.
-- `[prop]versions`, `[type]string`. Location of `[file]versions.json` file that stores information about the latest synchronized repositories.
-- `[prop]storage`, `[type]string`. Location of directory where repositories will be stored.
-- `[prop]git`, `[type]string`. Git command. You can change it if you need to customize command that is executed to clone repository. `[str]{repo}` will be replaced with repository URL, `[str]{target}` will be replaced with target directory.
-- `[prop]iconify`, `[type]string`. URL of Iconify repository.
-- `[prop]custom`, `[type]string`. URL of the custom repository.
-- `[prop]custom-dir`, `[type]string`. Location of JSON files in custom repository, relative to root directory of repository.
-
-Never change `[prop]sync` configuration in `[file]config-default.json`! Change it only in `[file]config.json`. Otherwise, it might be committed by mistake to a public repository, allowing everyone to see your secret words.
-
-Example:
-
-```json
-{
-	"sync": {
-		"sync-on-startup": "always",
-		"custom": "https://github.com/cyberalien/animated-icons.git",
-		"custom-dir": "final",
-		"secret": "test" // Do not store this in config.json !!!
-	}
-}
-```
-
-### custom-dir
-
-Property `[prop]sync.custom-dir` points to the location of JSON files in custom repository, relative to root directory of repository.
-
-For example, if JSON files are located in directory `[str]json` in your repository (like they are in Iconify repository), set `[prop]sync.custom-dir` value to `[str]json`.
-
-### sync-on-startup
-
-This option automatically pulls the latest repositories when application is started.
-
-Possible values:
-
-- `[str]never`: disabled.
-- `[str]always`: always synchronize all available repositories.
-- `[str]missing`: synchronize only repositories that are missing.
-
-If enabled, synchronization on startup will start immediately. It is not affected by `[prop]sync.sync-delay`.
-
-## Logging errors {#mail}
-
-Server can automatically email you if something happens, so you don't need to check logs.
-
-Email configuration is in `[prop]mail` object.
-
-Object properties:
-
-- `[prop]active`, `[type]boolean`. Enables logging to email.
-- `[prop]throttle`, `[type]number`. Number of seconds to delay email sending. See below.
-- `[prop]repeat`, `[type]number`. This option prevents script from sending similar errors too often. See below.
-- `[prop]from`, `[type]string`. Sender email address. Set this to valid email address.
-- `[prop]to`, `[type]string`. Receiver email address. Set this to valid email address.
-- `[prop]subject`, `[type]string`. Subject of emails. All emails will have the same subject.
-- `[prop]transport`, `[type]object`. SMTP settings object: `[prop]host`, `[prop]port`, `[prop]secure`, `[prop]auth`.
-
-If you are using secure connection, set `[prop]mail.transport.secure` to `[bool]true` and `[prop]mail.transport.port` to `[num]465`, unless you are running SMTP server on a different port.
-
-If you are running Iconify API on multiple servers, use different subjects in `[prop]mail.subject` for different servers to identify which server email came from.
-
-### Throttling emails
-
-Option `[prop]mail.throttle` prevents API from sending too many emails. Default value is `[num]30` seconds. All error messages within `[num]30` seconds will be combined to one email instead of sending multiple emails.
-
-Option `[prop]mail.repeat` prevents script from sending similar errors too often. Value is the number of minutes. Default value is `[num]180` (3 hours).
-
-Combined, these two options prevent API from flooding your inbox when something happens.
+If you want to always keep icon data in memory, set `[bash]SPLIT_CHUNK_SIZE=0` and `[bash]STORAGE_MAX_COUNT=0`. This is useful to make responses as fast as possible if your API instance does not serve hundreds of thousands of icons.

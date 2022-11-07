@@ -8,46 +8,62 @@ replacements:
 
 # Iconify API
 
-Iconify API stores all icon data.
+Iconify API is an open source hosted (or self-hosted) service for developers. What is Iconify API for?
 
-API is used to:
+- API provides icon data, which made it possible to create [Iconify icon components](../icon-components/components/index.md) that load icons demand.
+- API generates SVG, which developers can link to in HTML or stylesheet.
+- API has a search engine for hosted icons, which can be used by icon pickers. Currently used by [Iconify plug-ins](../design/index.md) for various UI design tools.
 
-- provide icon data on demand for [Iconify icon components](../icon-components/components/index.md).
-- search icons for [Iconify plug-ins](../design/index.md).
+API can be used to offer hundreds of thousands of icons in website builders or theme customisers. Host your own API, use API's search engine in custom icon picker to allow users select icons, use icon components in UI to render icons.
 
-## How does it work? {#concept}
+## Hosting API
 
-`include process/api`
+You can host your own Iconify API service. [API script is open source](https://github.com/iconify/api).
 
-## Thousands of icons
+By hosting Iconify API yourself you:
 
-When you are using an icon font, font contains all icons, even ones you do not need. That limits number of icons that a font can have.
+- Have full control over servers instead of relying on third party service.
+- Can choose which icon sets to host or host your own icon sets.
 
-When you are using [Iconify icon component](../icon-components/index.md) that relies on Iconify API, icon component requests data only for icons that are used on the current page. Iconify API sends only data for icons that icon component has requested.
+See [hosting Iconify API](./hosting.md) for more details.
 
-Because icon components do not load icons they do not need, Iconify API can host many icons. Visitors do not waste bandwidth loading icons they do not see.
+## Public API
 
-### Iconify public API
+Iconify project offers public API servers, which host over 60k icons from more than 70 open source icon sets.
 
-By default, Iconify icon components use Iconify public API.
+To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within fraction of a second.
 
-Iconify public API offers over 70 icon sets that include over 60k icons. All icons are from open source icon sets.
+Public API is available at `[url]https://api.iconify.design`.
 
-To improve loading times, API is hosted on multiple servers in different parts of the world. Icons are usually loaded within 1/10 of a second. Iconify icon components also cache loaded icons in browser cache and/or browser storage, so icon data needs to be loaded only once.
+It is a public service, servers are free to use, but please do keep in mind that running those servers is not free. If you are using public API or API software, [please consider supporting Iconify](https://iconify.design/sponsors/) to help out with infrastructure, development and maintenance costs.
 
-### Custom API
+### Redundancy
 
-[API is open source](https://github.com/iconify/api.js), which means you can host your own API on your servers. That allows you to have full control over servers or to host your own icon sets.
+Sometimes there are problems with internet connections. It happens. Maybe server has issues, maybe visitor's ISP has issues.
 
-All icons available on Iconify public API are available on GitHub, which means you can easily setup your own Iconify API instead of relying on third party servers.
+In case main API host cannot be reached, Iconify public API has backup host names:
 
-You can also use Iconify API software to host custom or premium icon sets.
+- `[url]https://api.simplesvg.com`
+- `[url]https://api.unisvg.com`
 
-Currently API package does not include search engine. It is in todo list, which is very long because Iconify project is very complex and has no funding, so many things to do and little time to do it. For now search engine functionality is available only at Iconify public API servers.
+Each of backup host names points to half of API servers. For example, in western Europe there are currently 2 servers: in Frankfurt and in London. Main host points to both, one of backup hosts points to server in Frankfurt, another backup host points to server in London. If server in Frankfurt goes down, users that are using that server can be redirected to server in London using one of backup host names.
 
-## Documentation
+Redundancy built in Iconify icon components accounts for that. It tries to connect to main host first, then, if there was no response in reasonable time (timeout is 0.75 seconds), it attempts to connect to one of backup hosts, then to another backup host. Small delay caused by check only affects first query, all further API queries are sent to host that responded.
 
-Available documentation for Iconify API:
+See [building redundant API](./cdn.md) for more details.
 
-- [Hosting Iconify API](./hosting.md) explains how to setup API on your server.
-- [Iconify API providers](./providers.md) explains how to use multiple API servers for more icon choices.
+## Queries
+
+There are 3 types of API queries:
+
+- [Query to retrieve icon data](./icon-data.md), used by Iconify icon components.
+- [Generating SVG on demand](./svg.md), can be used to link to SVG in HTML or CSS.
+- [Search engine queries](./search.md) to list or search icons, can be used to create icon picker, which can be integrated in website or theme builders.
+
+## API providers
+
+Iconify icon components can retrieve icons from multiple API servers.
+
+This allows you to run your own API to serve only custom icons, while using public Iconify API to get data for open source icon sets.
+
+See [Iconify API providers](./providers.md) for details.

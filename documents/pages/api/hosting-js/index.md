@@ -1,44 +1,63 @@
-# Iconify API: Node.js
-
-There are 2 versions of Iconify API:
-
-- Node.js version.
-- [PHP version](../hosting-php/index.md).
+# Hosting Iconify API
 
 This documentation is for the Node.js version of [Iconify API](../index.md).
 
-Node.js version of Iconify API is harder to use, but it is preferred solution. It is slightly faster than the [PHP version](../hosting-php/index.md) because all collections are loaded only once.
+To install API, first clone or download Iconify API from GitHub: [https://github.com/iconify/api](https://github.com/iconify/api).
 
-To install API, first clone or download Iconify API from GitHub: [https://github.com/iconify/api.js](https://github.com/iconify/api.js).
+## How to use it
 
-## Custom icons
+First, you need to install NPM dependencies and run build script:
 
-If you want to host custom icons, add your custom icons in directory `[str]json`. Make sure file name matches icons prefix (for icons with prefix `[str]custom-icons` file should be named `[str]custom-icons.json`).
+```sh
+npm install
+npm run build
+```
+
+Then you can start server:
+
+```sh
+npm run start
+```
+
+By default, server will:
+
+- Automatically load latest icons from [`[npm]@iconify/json`](../../icons/all.md).
+- Serve data on port `[num]3000`.
+
+You can customise API to:
+
+- Serve custom icon sets, loaded from various sources.
+- Run on a different port.
+- Disable search engine if you do not need it, reducing memory usage.
+
+## Port and HTTPS
+
+It is recommended that you do not run API on port `[num]80`. Server can handle pretty much anything, but it is still not as good as a dedicated solution such as nginx.
+
+Run API on obscure port, hidden from outside world with firewall rules, use nginx as reverse proxy.
+
+HTTPS is not supported. It is a very resource intensive process, better handled by a dedicated solution such as nginx. Use nginx to run as HTTP and HTTPS server, forward queries to API HTTP server on hidden port such as default port `[num]3000`.
 
 ## Configuration
 
-API does not require configuring, but if you do want to customize installation, there are several configuration options available.
+There are several ways to change configuration:
 
-See [Node.js API configuration options](./config.md).
+- Editing files in `[file]src/config/`, then rebuilding script. This is required for some advanced options, such as using API with custom icons.
+- Using environment variables, such as `[bash]PORT=3100 npm run start`.
+- Using `[file].env` file to store environment variables.
 
-## Starting API {#start}
+See [Iconify API configuration](./config.md) for details.
 
-After you have configured API, next step depends on how you want to host API.
+## Starting server
 
-### Hosting with Elastic Beanstalk {#beanstalk}
+To start server, run
 
-If you are using Amazon Elastic Beanstalk, there is nothing else to change. Iconify API is ready to be used with EB.
+```sh
+npm run start
+```
 
-Compress directory, log in to AWS console, click `[str]Elastic Beanstalk`.
+### PM2
 
-Select `[str]Web development environment` option, then fill out form. From choice of platforms select `[str]Node.js`, in application code option upload API archive.
+To make sure API runs without interruption, use [pm2](https://github.com/Unitech/PM2/) or similar Node.js process manager to run application.
 
-That's it. It will take few minutes to start. Your API instance will have custom sub-domain name assigned to it, use it to test API.
-
-### Hosting in a custom hosting environment {#custom-hosting}
-
-Setting up hosting in custom hosting environment is a bit harder than in AWS Elastic Beanstalk. It requires installing and configuring server software.
-
-Due to complexity, this section is split into separate document.
-
-See [hosting Iconify API in custom environment](./custom.md).
+It will automatically restart API if something goes wrong and will automatically start API if server is restarted. Sometimes host server might restart for whatever reason, this will make sure API is always running.

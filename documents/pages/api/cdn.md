@@ -4,7 +4,7 @@ navigation: ./hosting.md
 standalone: true
 ```
 
-# Custom budget CDN for Iconify API
+# Custom budget CDN
 
 This tutorial is a part of [Iconify API hosting instructions](./hosting.md).
 
@@ -16,9 +16,9 @@ This tutorial is intended to be used if you are setting up your custom [Iconify 
 
 This tutorial is intended for stateless CDN.
 
-Stateless means every request does not have a state. That is, request does not depend on previous request, so if visitor is connected to different edge server than he visited before, it wouldn't make any difference.
+Stateless means every request does not depend on previous request, so if visitor is connected to different edge server than he visited before, it wouldn't make any difference.
 
-Iconify API is stateless. It does not allow visitors to store anything, it does not track anything, it does not send any cookies. There is no central server and each API server is separate from other servers.
+Iconify API is stateless. It does not allow visitors to store anything, it does not track anything, it does not send any cookies. There is no central server and each API server works separately from other servers.
 
 ## Setting up edge servers
 

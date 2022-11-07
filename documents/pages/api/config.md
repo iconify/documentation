@@ -24,7 +24,7 @@ Your users can do whatever they want: overwrite default API provider or add new 
 
 ## Example
 
-For example, you have setup your Iconify API server at `[url]https://iconify.my-awesome-icons.tld`.
+For example, you have setup your Iconify API server at `[url]https://iconify.myproject.tld`.
 
 One of icon sets you host has prefix `[icon]material-icons` and it has icon `[icon]home`.
 
@@ -38,7 +38,7 @@ Users can overwrite default API provider, like this:
 import { addAPIProvider } from '@iconify/react';
 
 addAPIProvider('', {
-	resources: ['https://iconify.my-awesome-icons.tld'],
+	resources: ['https://iconify.myproject.tld'],
 });
 ```
 
@@ -61,7 +61,7 @@ Users can also set any id for your API:
 import { addAPIProvider } from '@iconify/react';
 
 addAPIProvider('awesome-icons', {
-	resources: ['https://iconify.my-awesome-icons.tld'],
+	resources: ['https://iconify.myproject.tld'],
 });
 ```
 
@@ -90,12 +90,12 @@ Instead of using `[func]addAPIProvider()`, users can use global variable `[var]I
 	IconifyProviders = {
 		// For overwriting public API
 		'': {
-			resources: ['https://iconify.my-awesome-icons.tld'],
+			resources: ['https://iconify.myproject.tld'],
 		},
 
 		// For creating alternative API provider
 		// 'awesome-icons': {
-		// 	resources: ['https://iconify.my-awesome-icons.tld'],
+		// 	resources: ['https://iconify.myproject.tld'],
 		// },
 	};
 </script>
@@ -113,12 +113,12 @@ Similar example for SVG framework:
 		IconifyProviders = {
 			// For overwriting public API
 			// '': {
-			// 	resources: ['https://iconify.my-awesome-icons.tld'],
+			// 	resources: ['https://iconify.myproject.tld'],
 			// },
 
 			// For creating alternative API provider
 			'awesome-icons': {
-				resources: ['https://iconify.my-awesome-icons.tld'],
+				resources: ['https://iconify.myproject.tld'],
 			},
 		};
 	</script>
