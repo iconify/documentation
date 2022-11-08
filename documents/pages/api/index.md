@@ -54,11 +54,9 @@ See [building redundant API](./cdn.md) for more details.
 
 ## Queries
 
-There are 3 types of API queries:
+Iconify API can be used to render SVG, to retrieve icon data, to browse and search icons.
 
-- [Query to retrieve icon data](./icon-data.md), used by Iconify icon components.
-- [Generating SVG on demand](./svg.md), can be used to link to SVG in HTML or CSS.
-- [Search engine queries](./search.md) to list or search icons, can be used to create icon picker, which can be integrated in website or theme builders.
+For full list of supported queries, their parameters and API responses see [Iconify API queries documentation](./queries.md).
 
 ## API providers
 
