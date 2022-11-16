@@ -4,6 +4,8 @@ replacements:
     value: '${counters.icons-short}'
   - code: '70 icon sets'
     value: '${counters.sets} icon sets'
+  - code: '70 open source'
+    value: '${counters.sets} open source'
 ```
 
 # Iconify API

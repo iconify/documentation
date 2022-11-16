@@ -29,6 +29,7 @@
         ./collections.html: List of Icon Sets
         ./collection.html: List of Icons
         ./search.html: Search Icons
+        ./keywords.html: Keywords
     ./providers.html:
       title: API Providers
     ./config.html:

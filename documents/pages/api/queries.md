@@ -23,7 +23,7 @@ If list of icons is enabled, custom icon pickers can use the following queries t
 If search engine is enabled, icon pickers can implement search functionality using these queries:
 
 - [`[url]/search?query={keyword}`](./search.md) returns list of icons that match keyword.
-- `[url]/keywords?prefix={keyword}` or `[url]/keywords?keyword={keyword}` returns list of keywords that contain requested keyword, which can be used for autocomplete.
+- [`[url]/keywords?prefix={keyword}`](./keywords.md) or [`[url]/keywords?keyword={keyword}`](./keywords.md) returns list of keywords that contain requested keyword, which can be used for autocomplete.
 
 Maintenance queries:
 
