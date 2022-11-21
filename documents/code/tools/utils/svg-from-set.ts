@@ -30,11 +30,10 @@ renderData = {
  */
 
 // Generate attributes for SVG element
-const svgAttributes: Record<string, string> = {
-	'xmlns': 'http://www.w3.org/2000/svg',
-	'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+const svgAttributes = {
+	xmlns: 'http://www.w3.org/2000/svg',
 	...renderData.attributes,
-};
+} as Record<string, string>;
 const svgAttributesStr = Object.keys(svgAttributes)
 	.map(
 		(attr) =>

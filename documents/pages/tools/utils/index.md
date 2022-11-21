@@ -18,19 +18,9 @@ npm install @iconify/utils@next --save
 
 ## Examples
 
-This is an example of using Iconify Utils to generate SVG from icon set:
+Documentation for each function below includes code samples.
 
-```yaml
-src: tools/utils/svg-from-set.ts
-title: 'demo.ts'
-```
-
-This is an example of using Iconify Utils to generate SVG from icon data:
-
-```yaml
-src: tools/utils/svg-from-icon.ts
-title: 'demo.ts'
-```
+In addition to that, [there are several bigger code samples for specific commonly used tasks](./examples/index.md) to help you figure out what functions to use.
 
 ## Functions
 

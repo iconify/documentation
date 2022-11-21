@@ -523,6 +523,7 @@
     ./utils/:
       title: Iconify Utils
       children:
+        ./examples/: Examples
         ./functions.html:
           title: Icon Sets
           separator: true
