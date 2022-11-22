@@ -21,10 +21,11 @@ Options that can be changed with environment variables and their default values 
 - `[bash]HOST=0.0.0.0`: IP address or hostname HTTP server listens on.
 - `[bash]PORT=3000`: port HTTP server listens on.
 - `[bash]REDIRECT_INDEX=https://iconify.design/`: redirect for `[url]/` route. API does not serve any pages, so index page redirects to main website.
-- `[bash]STATUS_REGION=`: custom text to add to `[url]/version` route response. Iconify API is ran on network of servers, visitor is routed to closest server. It is used to tell which server user is connected to.
+- `[bash]STATUS_REGION=`: custom text to add to [`[url]/version`](../version.md) route response. Iconify API is ran on network of servers, visitor is routed to closest server. It is used to tell which server user is connected to.
 - `[bash]CACHE_ROOT_DIR=cache`: cache directory, relative to app directory, without trailing `[str]/`.
-- `[bash]ENABLE_ICON_LISTS=true`: enables `[url]/collections` route that lists icon sets and `[url]/collection?prefix=whatever` route to get list of icons. Used by icon pickers. Disable it if you are using API only to serve icon data.
-- `[bash]ENABLE_SEARCH_ENGINE=true`: enables `[url]/search` route. Requires `[bash]ENABLE_ICON_LISTS=true`.
+- `[bash]ENABLE_VERSION=true`: enables [`[url]/version`](../version.md) route that shows API version and value of `[prop]STATUS_REGION`. Disable it if you are using API only to serve icon data.
+- `[bash]ENABLE_ICON_LISTS=true`: enables [`[url]/collections`](../collections.md) route that lists icon sets and `[url]/collection?prefix=whatever` route to get list of icons. Used by icon pickers. Disable it if you are using API only to serve icon data.
+- `[bash]ENABLE_SEARCH_ENGINE=true`: enables [`[url]/search`](../search.md) route. Requires `[bash]ENABLE_ICON_LISTS=true`.
 - `[bash]ALLOW_FILTER_ICONS_BY_STYLE=true`: allows searching for icons based on fill or stroke, such as adding `[url]style=fill` to search query. This feature uses a bit of memory, so it can be disabled. Requires `[bash]ENABLE_SEARCH_ENGINE=true`.
 
 ## Updating icons

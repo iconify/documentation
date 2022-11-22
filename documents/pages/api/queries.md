@@ -27,7 +27,7 @@ If search engine is enabled, icon pickers can implement search functionality usi
 
 Maintenance queries:
 
-- `[url]/version` shows API version as plain text, unless disabled. If you are running multiple API servers, like public Iconify API does, this can be used to check which server visitor is connected to.
+- [`[url]/version`](./version.md) shows API version as plain text, unless disabled. If you are running multiple API servers, like public Iconify API does, this can be used to check which server visitor is connected to.
 - `[url]/update` updates icon sets from its source without restarting API. This can be used to automatically keep API up to date using GitHub hooks or similar methods.
 
 ### API versions

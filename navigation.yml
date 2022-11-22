@@ -30,6 +30,7 @@
         ./collection.html: List of Icons
         ./search.html: Search Icons
         ./keywords.html: Keywords
+        ./version.html: API Version
     ./providers.html:
       title: API Providers
     ./config.html:
