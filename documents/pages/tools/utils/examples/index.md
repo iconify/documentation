@@ -1,5 +1,8 @@
 ```yaml
 title: Iconify Utils Code Examples
+types:
+  IconifyJSON: '../../../types/iconify-json.md'
+  IconifyIcon: '../../../types/iconify-icon.md'
 ```
 
 # Code examples for Iconify Utils
@@ -20,3 +23,9 @@ Examples of generating a single SVG file:
 
 - [Export SVG from icon set](./export-svg-from-icon-set.md).
 - [Export SVG from icon data](./export-svg-from-data.md).
+
+## Advanced import / export {#advanced}
+
+Iconify Utils is a basic package that parses `[type]IconifyJSON` and `[type]IconifyIcon` data. It is not meant for more complex stuff.
+
+For more complex stuff, such as importing icons, validating icon code, changing palette, cleaning up, exporting to various formats, see [Iconify Tools package](../../tools2/index.md).

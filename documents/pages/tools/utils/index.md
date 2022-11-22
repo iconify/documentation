@@ -1,5 +1,8 @@
 ```yaml
 title: Iconify Utils
+types:
+  IconifyJSON: '../../types/iconify-json.md'
+  IconifyIcon: '../../types/iconify-icon.md'
 ```
 
 # Iconify Utils
@@ -25,3 +28,9 @@ In addition to that, [there are several bigger code samples for specific commonl
 ## Functions
 
 `include tools/utils/functions-list`
+
+## Advanced usage {#advanced}
+
+Iconify Utils is a basic package that parses `[type]IconifyJSON` and `[type]IconifyIcon` data. It is not meant for more complex stuff.
+
+For more complex stuff, such as importing icons, validating icon code, changing palette, cleaning up, exporting to various formats, see [Iconify Tools package](../tools2/index.md).
