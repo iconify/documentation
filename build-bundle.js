@@ -21,7 +21,7 @@ const preloadIcons = {
 		'document-list',
 		'document-code',
 		'image-twotone',
-		'twitter',
+		'mastodon',
 		'discord',
 		// Breadcrumbs
 		'chevron-small-double-left',
