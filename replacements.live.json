@@ -2,6 +2,6 @@
 	"mode": "production",
 	"html": {
 		"footer": "",
-		"ad": ""
+		"ad": "<script async type=\"text/javascript\" src=\"https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign\" id=\"_carbonads_js\"></script>"
 	}
 }
