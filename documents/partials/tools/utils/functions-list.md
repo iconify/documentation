@@ -37,6 +37,8 @@ functions:
   stringToColor: './string-to-color.md'
   compareColors: './compare-colors.md'
   colorToString: './color-to-string.md'
+  getIconCSS: './get-icon-css.md'
+  getIconsCSS: './get-icons-css.md'
 ```
 
 Icon sets are stored in `[type]IconifyJSON` format. Functions for working with icon sets:
@@ -68,6 +70,8 @@ Functions for rendering icon:
 - `[func]iconToSVG(icon, customisations)` generates data needed to render SVG. It does not generate full SVG, only content and list of attributes to add to SVG element, making it easy to use in custom components.
 - `[func]calculateSize(size, ratio)` calculates icon dimensions. It is used when building icons using `[func]iconToSVG()`.
 - `[func]replaceIDs(content)` replaces IDs in SVG with unique IDs. IDs used in elements like masks and they must be unique, so multiple icons displayed on the same page using same IDs will result in chaos. This function prevents that chaos.
+- `[func]getIconCSS(icon)` generates stylesheet for using icon as background image or mask image.
+- `[func]getIconsCSS(iconSet, names)` generates stylesheet for using multiple icons from same icon set as background images or mask images.
 
 Functions for working with icon names:
 
@@ -75,8 +79,12 @@ Functions for working with icon names:
 - `[func]stringToIcon(value)` converts icon name, such as `[str]mdi-light:home` into an `[type]IconifyIconName` object and optionally validates it.
 - `[func]validateIconName(icon)` validates `[type]IconifyIconName` object.
 
-There are also reusable functions for working with colors. They do not really belong to this package, however, they are used by few projects and making a separate package just for colors did not make much sense, so these functions were moved to Iconify Utils package:
+Functions for working with colors:
 
 - `[func]stringToColor(value)` converts string to `[type]Color` object, returns `null` on error. This can be used to validate user input. It supports color keywords, hexadecimal colors, RGB, HSL, LAB and LCH colors. Variables are not supported because this is meant for parsing SVGs, which should not reference any external variables.
 - `[func]compareColors(color1, color2)` compares colors. It also converts RGB to HSL if needed.
 - `[func]colorToString(color)` converts `[type]Color` object to string. Combined with `[func]stringToColor()`, this can be used to validate and clean up user input.
+
+Functions for working with emojis are split in separate documents:
+
+- TODO

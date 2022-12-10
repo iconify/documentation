@@ -559,6 +559,12 @@
         ./icon-to-svg.html: iconToSVG()
         ./calculate-size.html: calculateSize()
         ./replace-ids.html: replaceIDs()
+        ./functions.html#css:
+          title: CSS
+          separator: true
+          clickable: false
+        ./get-icon-css.html: getIconCSS()
+        ./get-icons-css.html: getIconsCSS()
         ./functions.html#icon-name:
           title: Icon Name
           separator: true
