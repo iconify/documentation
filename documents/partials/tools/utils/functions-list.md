@@ -84,7 +84,3 @@ Functions for working with colors:
 - `[func]stringToColor(value)` converts string to `[type]Color` object, returns `null` on error. This can be used to validate user input. It supports color keywords, hexadecimal colors, RGB, HSL, LAB and LCH colors. Variables are not supported because this is meant for parsing SVGs, which should not reference any external variables.
 - `[func]compareColors(color1, color2)` compares colors. It also converts RGB to HSL if needed.
 - `[func]colorToString(color)` converts `[type]Color` object to string. Combined with `[func]stringToColor()`, this can be used to validate and clean up user input.
-
-Functions for working with emojis are split in separate documents:
-
-- TODO
