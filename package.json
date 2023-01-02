@@ -13,18 +13,18 @@
 	"author": "Iconify OÜ",
 	"license": "Apache 2.0",
 	"devDependencies": {
-		"@iconify/json": "^2.1.145",
-		"@iconify/tools": "^2.1.2",
+		"@iconify/json": "^2.2.1",
+		"@iconify/tools": "^2.2.0-beta.4",
 		"@types/cheerio": "^0.22.31",
 		"@types/markdown-it": "^12.2.3",
-		"@types/node": "^18.11.9",
+		"@types/node": "^18.11.18",
 		"cheerio": "^1.0.0-rc.12",
 		"highlight.js": "^11.7.0",
 		"highlightjs-svelte": "^1.0.6",
 		"iconify-icon": "^1.0.2",
 		"markdown-it": "^13.0.1",
 		"node-sass": "^8.0.0",
-		"typescript": "^4.9.3",
-		"yaml": "^2.1.3"
+		"typescript": "^4.9.4",
+		"yaml": "^2.2.1"
 	}
 }
