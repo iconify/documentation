@@ -12,7 +12,7 @@ types:
 
 This function is part of [Iconify Utils package](./index.md).
 
-Function `[func]getIconsCSS()` generates stylesheet for several icons from an icon to render them as background or mask images.
+Function `[func]getIconsCSS()` generates stylesheet for several icons from an icon set to render them as background or mask images.
 
 It generates code multiple icons from an icon set, splitting common code and icon specific code. To generate code for one icon without splitting code, see `[func]getIconCSS()`.
 
