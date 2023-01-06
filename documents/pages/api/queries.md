@@ -12,6 +12,7 @@ This tutorial is for developers that want to create their own tools to access Ic
 Iconify API supports the following basic queries:
 
 - [`[url]/{prefix}/{icon}.svg`](./svg.md) dynamically generates SVG.
+- [`[url]/{prefix}.css?icons={icons}`](./css.md) dynamically generates CSS for icons.
 - [`[url]/{prefix}.json?icons={icons}`](./icon-data.md) retrieves icon data.
 - [`[url]/last-modified?prefixes={prefixes}`](./last-modified.md) returns last modification time of requested icon sets, which can be used to invalidate old icon data cache.
 

@@ -151,7 +151,7 @@ import { Icon } from 'astro-icon';
 
 For more information see [Astro Icon GitHub repository](https://github.com/natemoo-re/astro-icon).
 
-## Icon Finder
+<!-- ## Icon Finder
 
 [Iconify Icon Finder](../icon-finder/index.md) is currently in development.
 
@@ -159,4 +159,4 @@ Icon Finder is a component for searching icons. It can be used add icon search f
 
 It uses [Iconify API](../api/index.md) to get list of icons, icon data and to search for icons.
 
-Early development version of Icon Finder is used in [Figma plug-in](../design/figma/index.md), [Sketch plug-in](../design/sketch/index.md) and [icon sets website](https://icon-sets.iconify.design/).
+Early development version of Icon Finder is used in [Figma plug-in](../design/figma/index.md), [Sketch plug-in](../design/sketch/index.md) and [icon sets website](https://icon-sets.iconify.design/). -->

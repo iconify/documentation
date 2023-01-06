@@ -24,6 +24,7 @@
       title: API Queries
       children:
         ./svg.html: Generate SVG
+        ./css.html: Generate CSS
         ./icon-data.html: Icon Data
         ./last-modified.html: Last Modified
         ./collections.html: List of Icon Sets

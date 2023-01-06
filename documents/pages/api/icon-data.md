@@ -24,7 +24,7 @@ How does loading icon data on demand work?
 
 To load data for icons, use the following API query: `[url]/{prefix}.json?icons={icons}`, where:
 
-- `[str]{prefix}` is icon set prefix. To request icons from different icon sets, send separate queries for each icon set.
+- `[str]{prefix}` is icon set prefix. To request icons from multiple icon sets, send separate queries for each icon set.
 - `[str]{icons}` is list of icon names, separated by comma.
 
 Response is `[type]IconifyJSON` object.

@@ -1,21 +1,29 @@
 ```yaml
 title: SVG in CSS
+functions:
+  getIconCSS: '../tools/utils/get-icon-css.md'
+  getIconsCSS: '../tools/utils/get-icons-css.md'
 ```
 
 # How to use SVG in CSS
 
-If you are migrating from font, you might be used to adding icons by adding pseudo elements to stylesheet, something like this:
+You can use icons without any components.
 
-```css
-.test:after {
-	content: '\f015';
-	font-family: SomeIconFont;
-}
+Icon can be used as a background or mask image for any element, such as `[tag]span`. Then all you have to do in HTML is create a `[tag]span` tag with class name(s) used for icon:
+
+```html
+<span class="icon--mdi icon--mdi--home"></span>
 ```
 
-It can be done with SVG too!
+Iconify offers several options to generate stylesheet:
 
-## Usage
+- [Iconify API](../api/css.md). Dynamically generates CSS for icons. You can download CSS file or link to API.
+- [UnoCSS](./unocss.md) automatically generates stylesheet during build process.
+- For advanced users, [Iconify Utils](../tools/utils/index.md) offers `[func]getIconCSS()` and `[func]getIconsCSS()` functions. You can use it in your build process to generate CSS for icons.
+
+## Details
+
+How does it work?
 
 There are several ways to use SVG in CSS:
 
@@ -45,7 +53,7 @@ You can use SVG as `[prop]content` in pseudo-selector:
 
 ```css
 /* SVG as pseudo element's content */
-.test:after {
+.test::after {
 	content: url('https://api.iconify.design/bi/bell-fill.svg?height=16');
 }
 ```
@@ -64,7 +72,7 @@ You can use SVG as background image:
 
 ```css
 /* SVG as pseudo element's background image */
-.test:after {
+.test::after {
 	content: '';
 	width: 1em;
 	height: 1em;
@@ -95,7 +103,7 @@ Mask, combined with background color set to `[prop]currentColor`, can be used to
 
 ```css
 /* SVG as pseudo element's mask image */
-.test:after {
+.test::after {
 	content: '';
 	width: 1em;
 	height: 1em;
@@ -157,9 +165,3 @@ demo: true
 demoTitle: 'Demo:'
 class: css-demo-palette css-demo-common
 ```
-
-## Iconify API
-
-You can use Iconify API to dynamically generate images for stylesheet.
-
-See [Iconify API documentation](../api/svg.md).

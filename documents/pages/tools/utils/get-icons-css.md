@@ -47,7 +47,7 @@ Options object has the following properties:
 - `[prop]iconSelector`, `[type]string`. Selector for icon, defaults to `[str].icon--{prefix}--{name}`. Variable `[str]{prefix}` is replaced with icon set prefix, `[str]{name}` with icon name.
 - `[prop]commonSelector`, `[type]string`. Common selector for icons, defaults to `[str].icon--{prefix}`. Set it to empty to disable common code (see one of examples below). Variable `[str]{prefix}` is replaced with icon set prefix.
 - `[prop]overrideSelector`, `[type]string`. Selector that mixes `[prop]iconSelector` and `[prop]commonSelector` to generate icon specific style that overrides common style. See below. Default value is `[str].icon--{prefix}.icon--{prefix}--{name}`.
-- `[prop]pseudoSelector`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon--{prefix}--{name}:after`.
+- `[prop]pseudoSelector`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon--{prefix}--{name}::after`.
 - `[prop]varName`, `[type]string`. Name for variable to use for icon, defaults to `[str]svg` for monotone icons, `null` for icons with palette. Set to `null` to disable.
 - `[prop]forceSquare`, `[type]boolean`. Forces icon to have width of `[num]1em`.
 - `[prop]mode`: `[str]mask` or `[str]background`. Forces icon to render as mask image or background image. If not set, mode will be detected from icon content: icons that contain `[prop]currentColor` will be rendered as mask image, other icons as background image.
@@ -273,15 +273,15 @@ This example shows why `[prop]overrideSelector` is an option and how to render i
 
 ```json
 {
-	"iconSelector": ".icon--{prefix}--{name}:after",
-	"commonSelector": ".icon--{prefix}:after",
-	"overrideSelector": ".icon--{prefix}.icon--{prefix}--{name}:after",
+	"iconSelector": ".icon--{prefix}--{name}::after",
+	"commonSelector": ".icon--{prefix}::after",
+	"overrideSelector": ".icon--{prefix}.icon--{prefix}--{name}::after",
 	"pseudoSelector": true
 }
 ```
 
 ```css
-.icon--fa6-solid:after {
+.icon--fa6-solid::after {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
@@ -293,12 +293,12 @@ This example shows why `[prop]overrideSelector` is an option and how to render i
 	mask-image: var(--svg);
 }
 
-.icon--fa6-solid.icon--fa6-solid--angle-left:after {
+.icon--fa6-solid.icon--fa6-solid--angle-left::after {
 	width: 0.63em;
 	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' width='320' height='512'%3E%3Cpath fill='%23000' d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
 }
 
-.icon--fa6-solid.icon--fa6-solid--arrow-left:after {
+.icon--fa6-solid.icon--fa6-solid--arrow-left::after {
 	width: 0.88em;
 	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' width='448' height='512'%3E%3Cpath fill='%23000' d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H109.3l105.3-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
 }
