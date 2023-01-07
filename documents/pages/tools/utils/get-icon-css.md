@@ -29,6 +29,8 @@ include: common/css-demo
 
 Icons with palette are rendered as background image.
 
+You can also use `[prop]color` option to convert monotone icon to icon with palette. See `[str]Color option` section below.
+
 ## Usage
 
 Function has the following parameters:
@@ -46,6 +48,7 @@ Options object has the following properties:
 - `[prop]pseudoSelector`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon-home:after`.
 - `[prop]varName`, `[type]string`. Name for variable to use for icon, defaults ti `[str]svg`. Set to `null` to disable.
 - `[prop]forceSquare`, `[type]boolean`. Forces icon to have width of `[num]1em`.
+- `[prop]color`: `[type]string`. Sets color for monotone icons. Also renders icons as background images.
 - `[prop]mode`: `[str]mask` or `[str]background`. Forces icon to render as mask image or background image. If not set, mode will be detected from icon content: icons that contain `[prop]currentColor` will be rendered as mask image, other icons as background image.
 - `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
 
@@ -63,7 +66,7 @@ Example of generated stylesheet:
 	mask: no-repeat center / 100%;
 	-webkit-mask-image: var(--svg);
 	mask-image: var(--svg);
-	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='%23000' d='M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z'/%3E%3C/svg%3E");
+	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z'/%3E%3C/svg%3E");
 }
 ```
 
@@ -71,6 +74,16 @@ That code can be used in HTML with any element, such as `[tag]span` with class n
 
 ```html
 <span class="icon"></span>
+```
+
+## Color option
+
+```yaml
+include: tools/utils/css-color
+```
+
+```html
+<span class="icon" style="color: var(--icon-color)"></span>
 ```
 
 ## Examples

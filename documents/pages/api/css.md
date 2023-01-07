@@ -29,7 +29,7 @@ hint: /mdi.css?icons=account-box,account-cash,account,home
 src: api/mdi.css
 ```
 
-Using icons in HTML is easy: use a placeholder elememt with class names for icon set and for icon:
+Using icons in HTML is easy: use a placeholder element with 2 class names: class name for an icon set and class name for icon:
 
 ```html
 <span class="icon--openmoji icon--openmoji--axe"></span>
@@ -38,6 +38,10 @@ Using icons in HTML is easy: use a placeholder elememt with class names for icon
 ```html
 <span class="icon--mdi icon--mdi--account"></span>
 ```
+
+Why 2 classes? This allows splitting common style in separate rule, reducing duplication and making it easier to target all icons from an icon set.
+
+If you want to reference icons with 1 simple class, you can use `[prop]selector` and `[prop]common` options. See examples below.
 
 ### Options
 
@@ -50,6 +54,7 @@ Optional parameters:
 - `[prop]pseudoSelector` or `[prop]pseudo`, `[type]boolean`. Set it to `true` if selector for icon is a pseudo-selector, such as `[str].icon--{prefix}--{name}::after`.
 - `[prop]varName` or `[prop]var`. Name for variable to use for icon, defaults to `[str]svg` for monotone icons, `null` for icons with palette. Set to `null` to disable.
 - `[prop]forceSquare` or `[prop]square`, `[type]boolean`. Forces icon to have width of `[num]1em`.
+- `[prop]color`. Sets color for monotone icons. Also renders icons as background images.
 - `[prop]mode`: `[str]mask` or `[str]background`. Forces icon to render as mask image or background image. If not set, mode will be detected from icon content: icons that contain `[prop]currentColor` will be rendered as mask image, other icons as background image.
 - `[prop]format`. Stylesheet formatting option. Matches options used in Sass. Supported values: `[str]expanded`, `[str]compact`, `[str]compressed`.
 
@@ -64,7 +69,13 @@ There are two types of icons:
 
 Monotone icons are rendered as mask image with background color set to `[prop]currentColor`. That means icon will use same color as text.
 
-To change icon color, simply change text color.
+To change icon color, simply change text color:
+
+```html
+<span class="icon--mdi icon--mdi--home" style="color: gray"></span>
+```
+
+Result:
 
 ```yaml
 include: common/css-demo
@@ -73,6 +84,18 @@ include: common/css-demo
 Icons with hardcoded palette are rendered as background image.
 
 You can force background or mask mode by adding `[prop]mode` parameter: `[url]&mode=background` or `[url]&mode=mask`
+
+You can also use `[prop]color` parameter to convert monotone icons to icons with palette: `[url]&color=green`.
+
+#### CSS variables
+
+```yaml
+include: tools/utils/css-color
+```
+
+```html
+<span class="icon--mdi icon--mdi--home" style="color: var(--icon-color)"></span>
+```
 
 ### More examples
 
@@ -90,6 +113,13 @@ CSS for one icon with a pseudo selector, using `[prop]selector` and `[prop]selec
 ```yaml
 hint: /material-symbols.css?icons=check-box-outline-rounded&selector=.checkbox-checked::after&pseudo=1
 src: api/checkbox.css
+```
+
+Same as above, but sets icon color to green:
+
+```yaml
+hint: /material-symbols.css?icons=check-box-outline-rounded&selector=.checkbox-checked::after&pseudo=1&color=green
+src: api/checkbox-color.css
 ```
 
 CSS for mutliple icons with pseudo selectors requires multiple parameters. It requires using at least `[prop]icon` and `[prop]pseudo` parameters, optionally with `[prop]common` and `[prop]override` parameters:
