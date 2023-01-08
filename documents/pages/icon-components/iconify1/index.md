@@ -36,6 +36,7 @@ To add an icon, write placeholder `[tag]span` (or it could be any other inline D
 ```yaml
 src: iconify1/index-sample0.html
 demo: true
+demoFirst: false
 ```
 
 To change an icon, write a different icon name in the `[attr]data-icon` attribute instead of `[str]"fa-solid:home"`.
@@ -86,6 +87,7 @@ Element also must have a `[prop]data-icon` attribute with icon name as value.
 ```yaml
 src: iconify1/index-sample1.html
 demo: true
+demoFirst: false
 ```
 
 Icon name syntax is `[attr]data-icon="prefix:icon-name"` or `[attr]data-icon="prefix-icon-name"`. Second syntax can be used if prefix does not contain `[str]"-"`, it is kept for compatibility with icon fonts.
@@ -104,6 +106,7 @@ title: 'HTML:'
 css: iconify/index-color.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-index-color
 ```
@@ -122,6 +125,7 @@ title: 'HTML:'
 css: iconify1/index-size-em.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-size-em
 ```
@@ -136,6 +140,7 @@ title: 'HTML:'
 css: iconify1/index-size-attr.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-size-attr
 ```
@@ -150,6 +155,7 @@ title: 'HTML:'
 css: iconify1/index-size-fail.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-size-fail
 ```
@@ -166,6 +172,7 @@ To flip an icon, add `[attr]data-flip` attribute:
 src: iconify1/index-transform-flip.html
 title: 'HTML:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-transform-flip
 ```
@@ -184,6 +191,7 @@ To rotate an icon, add `[attr]data-rotate` attribute:
 src: iconify1/index-transform-rotate.html
 title: 'HTML:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-transform-rotate
 ```
@@ -206,6 +214,7 @@ title: 'HTML:'
 css: iconify1/index-transform-rotate-comparison.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-index-transform-rotate-comparison
 ```
@@ -234,6 +243,7 @@ To render icon inline, simply write a placeholder using an inline tag, such as `
 ```yaml
 src: iconify1/index-inline.html
 demo: true
+demoFirst: false
 ```
 
 This will force the Iconify SVG framework to add `[prop]vertical-align` style to `[tag]svg` element to align it like icon font glyph:
@@ -258,6 +268,7 @@ There are two ways to force block mode:
 ```yaml
 src: iconify1/index-block.html
 demo: true
+demoFirst: false
 ```
 
 This will force the Iconify SVG framework to not add `[attr]vertical-align` style to `[tag]svg` element, so browsers render it like an image:

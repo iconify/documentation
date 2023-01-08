@@ -141,6 +141,7 @@ title: 'HTML:'
 css: common/css-rotation.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: css-rotation css-demo-common
 ```
@@ -157,6 +158,7 @@ title: 'HTML:'
 css: common/css-flip.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: css-flip css-demo-common
 ```

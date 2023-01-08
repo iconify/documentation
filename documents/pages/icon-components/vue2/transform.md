@@ -17,6 +17,7 @@ Example:
 ```yaml
 src: icon-components/common/rotate-comparison.vue
 demo: icon-components/common/rotate-comparison.html
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 replacements:
@@ -41,6 +42,7 @@ replacements:
 src: icon-components/common/flip.vue
 hint: Using "flip" attribute
 demo: icon-components/common/flip.html
+demoFirst: false
 extra:
   - src: icon-components/common/flip-alt.vue
     hint: Using "horizontalFlip" and "verticalFlip" attributes
@@ -56,6 +58,7 @@ replacements:
 ```yaml
 src: icon-components/common/rotate.vue
 demo: icon-components/common/rotate.html
+demoFirst: false
 replacements:
   - search: iconify/vue
     replace: iconify/vue2

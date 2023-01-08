@@ -43,6 +43,7 @@ title: 'HTML:'
 css: iconify1/rtl-demo.css
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 demoHint: 'Arrow will always point left, even in RTL languages'
 ```

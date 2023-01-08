@@ -19,6 +19,7 @@ title: 'HTML:'
 css: iconify/inline-block.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
@@ -39,6 +40,7 @@ Example:
 src: icon-components/common/inline-block2.html
 title: 'HTML:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```

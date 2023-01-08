@@ -28,5 +28,6 @@ Function returns icon data with type `[type]IconifyIcon`, `null` on error.
 src: tools/utils/get-icon.ts
 title: 'usage.ts'
 demo: tools/utils/get-icon.html
+demoFirst: false
 demoTitle: 'Result:'
 ```

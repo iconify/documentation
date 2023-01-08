@@ -16,6 +16,7 @@ title: 'HTML:'
 css: iconify/inline-block.scss
 cssTitle: 'Stylesheet:'
 demo: icon-components/common/inline-block.html
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
@@ -28,6 +29,7 @@ class: iconify-inline-block
 src: icon-components/react-with-api/inline-block2.jsx
 title: 'HTML:'
 demo: icon-components/common/inline-block2.jsx
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```

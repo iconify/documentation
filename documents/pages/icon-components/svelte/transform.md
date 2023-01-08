@@ -17,6 +17,7 @@ Example:
 ```yaml
 src: icon-components/common/rotate-comparison.svelte
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -31,6 +32,7 @@ class: highlight-box
 src: icon-components/common/flip.svelte
 hint: Using "flip" attribute
 demo: true
+demoFirst: false
 extra:
   - src: icon-components/common/flip-alt.svelte
     hint: Using "hFlip" and "vFlip" attributes
@@ -43,6 +45,7 @@ extra:
 ```yaml
 src: icon-components/common/rotate.svelte
 demo: true
+demoFirst: false
 ```
 
 ## Rotate and flip

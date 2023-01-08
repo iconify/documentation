@@ -22,6 +22,7 @@ To rotate icon add `[attr]data-rotate` attribute. Value can be in degrees: `[att
 ```yaml
 src: iconify1/transformations-rotate.html
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: sample-big
 ```
@@ -37,6 +38,7 @@ To flip icon add `[attr]data-flip` attribute. Value is `[str]horizontal` or `[st
 ```yaml
 src: iconify1/transformations-flip.html
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: sample-big
 ```

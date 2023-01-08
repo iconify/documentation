@@ -14,6 +14,7 @@ title: 'HTML:'
 css: iconify/inline-block.scss
 cssTitle: 'Stylesheet:'
 demo: icon-components/common/inline-block.html
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 replacements:
@@ -29,6 +30,7 @@ replacements:
 src: icon-components/common/inline-block2.vue
 title: 'HTML:'
 demo: icon-components/common/inline-block2.html
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 replacements:

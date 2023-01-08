@@ -19,6 +19,7 @@ Example:
 ```yaml
 src: icon-components/react-with-api/rotate-comparison.jsx
 demo: icon-components/common/rotate-comparison.html
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -33,6 +34,7 @@ class: highlight-box
 src: icon-components/react-with-api/flip.jsx
 hint: Using "flip" attribute
 demo: icon-components/common/flip.html
+demoFirst: false
 extra:
   - src: icon-components/react-with-api/flip-alt.jsx
     hint: Using "hFlip" and "vFlip" attributes
@@ -45,6 +47,7 @@ extra:
 ```yaml
 src: icon-components/react-with-api/rotate.jsx
 demo: icon-components/common/rotate.html
+demoFirst: false
 ```
 
 ## Rotate and flip

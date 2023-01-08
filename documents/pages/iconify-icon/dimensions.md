@@ -16,6 +16,7 @@ title: 'HTML:'
 css: icon/size.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: icon-size
 ```
@@ -63,6 +64,7 @@ In an example above, all icons only use `[prop]height`.
 ```yaml
 src: icon-components/icon/alignment.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -80,6 +82,7 @@ To cut parts of icon, add `[attr]preserveAspectRatio="xMidYMid slice"` to icon:
 ```yaml
 src: icon-components/icon/alignment-slice.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -100,6 +103,7 @@ Examples of aligning wide icon:
 ```yaml
 src: icon-components/icon/alignment-horizontal.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -109,6 +113,7 @@ Examples of aligning tall icon with slice enabled:
 ```yaml
 src: icon-components/icon/alignment-horizontal-slice.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -129,6 +134,7 @@ Examples of aligning tall icon:
 ```yaml
 src: icon-components/icon/alignment-vertical.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -138,6 +144,7 @@ Examples of aligning wide icon with slice enabled:
 ```yaml
 src: icon-components/icon/alignment-vertical-slice.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
@@ -151,6 +158,7 @@ One of alignments will have no effect. For example, if icon is too tall, horizon
 ```yaml
 src: icon-components/icon/alignment-both.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```

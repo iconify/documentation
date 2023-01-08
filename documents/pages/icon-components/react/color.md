@@ -16,6 +16,7 @@ title: 'JSX:'
 css: components/color.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: components-color
 ```

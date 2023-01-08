@@ -16,6 +16,7 @@ title: 'HTML:'
 css: iconify/index-color.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-index-color
 ```

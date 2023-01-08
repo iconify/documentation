@@ -39,6 +39,7 @@ To add an icon, write placeholder `[tag]span` (or it could be any other inline D
 ```yaml
 src: icon-components/iconify/index-sample0.html
 demo: true
+demoFirst: false
 ```
 
 To change an icon, write a different icon name in the `[attr]data-icon` attribute instead of `[str]"fa-solid:home"`.
@@ -89,6 +90,7 @@ Element also must have a `[prop]data-icon` attribute with icon name as value.
 ```yaml
 src: icon-components/iconify/index-sample1.html
 demo: true
+demoFirst: false
 ```
 
 Icon name syntax is `[attr]data-icon="prefix:icon-name"` or `[attr]data-icon="prefix-icon-name"`. Second syntax can be used if prefix does not contain `[str]"-"`, it is kept for compatibility with icon fonts.

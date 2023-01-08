@@ -21,6 +21,7 @@ So what do SVG animations look like?
 ```yaml
 src: articles/animations/image-twotone.svg
 demo: true
+demoFirst: false
 class: restart-animation
 ```
 

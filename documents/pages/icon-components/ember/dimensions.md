@@ -16,6 +16,7 @@ title: 'JSX:'
 css: components/size.scss
 cssTitle: 'Stylesheet:'
 demo: icon-components/common/size.html
+demoFirst: false
 demoTitle: 'Demo:'
 class: components-size
 ```
@@ -60,6 +61,7 @@ In an example above, all icons only use `[prop]height`.
 ```yaml
 src: icon-components/ember/alignment.hbs
 demo: icon-components/common/alignment.html
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```

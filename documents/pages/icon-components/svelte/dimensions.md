@@ -14,6 +14,7 @@ include: icon-components/components/size-intro
 src: icon-components/common/size.svelte
 title: 'Svelte:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: components-size
 ```
@@ -62,6 +63,7 @@ In an example above, all icons only use `[prop]height`.
 ```yaml
 src: icon-components/common/alignment.jsx
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```

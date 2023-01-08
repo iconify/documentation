@@ -34,6 +34,7 @@ You can change that behaviour by adding `[attr]data-inline` attribute:
 src: iconify1/inline-block2.html
 title: 'HTML:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```

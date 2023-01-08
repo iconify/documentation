@@ -18,6 +18,7 @@ title: 'HTML:'
 css: iconify1/size-demo.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-size-demo
 ```
@@ -81,6 +82,7 @@ title: 'HTML:'
 css: iconify1/size-demo-fixed-height.css
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-size-demo-fixed-size
 ```
@@ -99,6 +101,7 @@ title: 'HTML:'
 css: iconify1/size-demo-fixed-width.css
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-size-demo-fixed-size
 ```
@@ -122,6 +125,7 @@ title: 'HTML:'
 css: iconify1/size-demo-fixed-size.css
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify1-size-demo-fixed-size
 ```
@@ -161,6 +165,7 @@ You can mix those options by separating them with comma or space: `[attr]data-al
 src: iconify1/size-demo-align.html
 title: 'Horizontal alignment example:'
 demo: true
+demoFirst: false
 class: iconify1-size-demo-fixed-size
 ```
 
@@ -172,6 +177,7 @@ Horizontal alignment with crop makes sense only when icon is too tall, therefore
 src: iconify1/size-demo-align2.html
 title: 'Vertical alignment example:'
 demo: true
+demoFirst: false
 class: iconify1-size-demo-fixed-size
 ```
 

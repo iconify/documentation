@@ -41,6 +41,7 @@ title: 'HTML:'
 css: common/css-demo.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: css-demo css-demo-common
 ```
@@ -150,6 +151,7 @@ title: 'HTML:'
 css: common/css-demo-monotone.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: css-demo-monotone css-demo-common
 ```
@@ -162,6 +164,7 @@ title: 'HTML:'
 css: common/css-demo-palette.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: css-demo-palette css-demo-common
 ```

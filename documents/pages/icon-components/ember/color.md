@@ -16,6 +16,7 @@ title: 'Template:'
 css: components/color.scss
 cssTitle: 'Stylesheet:'
 demo: icon-components/common/color.html
+demoFirst: false
 demoTitle: 'Demo:'
 class: components-color
 ```

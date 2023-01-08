@@ -33,6 +33,7 @@ It is designed to be as easy to use as possible.
 ```yaml
 src: icon-components/icon/usage.html
 demo: true
+demoFirst: false
 class: sample-big
 ```
 
@@ -138,6 +139,7 @@ To change color (color can be changed only for monotone icons) or size, use styl
 ```yaml
 src: icon-components/icon/color-size.html
 demo: true
+demoFirst: false
 class: sample-big
 ```
 
@@ -146,6 +148,7 @@ You can also change size using `[attr]width` and/or `[attr]height` attributes:
 ```yaml
 src: icon-components/icon/size.html
 demo: true
+demoFirst: false
 ```
 
 If only one size attribute is set, another attribute is calculated using icon's width/height ratio.
@@ -155,6 +158,7 @@ You can also transform icon. Unlike CSS transformations, these transformations a
 ```yaml
 src: icon-components/icon/transform.html
 demo: true
+demoFirst: false
 ```
 
 ### Attributes list

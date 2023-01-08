@@ -26,6 +26,7 @@ Function returns `[tag]svg` element, `null` if icon is not available.
 src: icon-components/iconify/render-svg.js
 title: 'Code:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 extra:
   - src: icon-components/iconify/render-svg.html

@@ -16,6 +16,7 @@ title: 'HTML:'
 css: iconify/size-demo.scss
 cssTitle: 'Stylesheet:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 class: iconify2-size-demo
 ```
@@ -28,6 +29,7 @@ You can also set dimensions by using `[attr]data-width` and `[attr]data-height` 
 src: icon-components/iconify/size-demo-data.html
 title: 'HTML:'
 demo: true
+demoFirst: false
 demoTitle: 'Demo:'
 ```
 
@@ -50,6 +52,7 @@ In examples above, all icons only use `[prop]height`.
 ```yaml
 src: icon-components/common/alignment.html
 demo: true
+demoFirst: false
 demoHint: Using box-shadow to show icon dimensions
 class: highlight-box
 ```
