@@ -13,6 +13,14 @@ For description of types and short explanation of TypeScript see [types document
 
 This article describes `[type]IconifyJSON` type.
 
+## Usage
+
+Icon set in `[type]IconifyJSON` is created by Iconify Tools or loaded from pre-parsed JSON file.
+
+See [Iconify Utils documentation](../tools/utils/index.md) for parsing icon sets and [icon sets package documentation](../icons/all.md).
+
+See [Iconify Tools documentation](../tools/tools2/index.md) for creating custom icon sets.
+
 ## Structure
 
 Type `[type]IconifyJSON` is an object that has the following required properties.

@@ -3,6 +3,8 @@ title: Iconify Icon Type
 types:
   IconifyAlias: './iconify-alias.md'
   IconifyJSON: './iconify-json.md'
+functions:
+  getIconData: '../tools/utils/get-icon-data.md'
 ```
 
 # IconifyIcon type
@@ -12,6 +14,12 @@ All Iconify libraries share common object structures. They are described as type
 For description of types and short explanation of TypeScript see [types documentation](./index.md).
 
 This article describes `[type]IconifyIcon` type.
+
+## Usage
+
+Icon data in `[type]IconifyIcon` type is usually extracted from `[type]IconifyJSON` icon set.
+
+See `[func]getIconData()` function from Iconify Utils.
 
 ## Structure
 
