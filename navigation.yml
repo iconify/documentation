@@ -522,6 +522,7 @@
           children:
             ./import-mdi.html: Import MDI
             ./import-fa-pro.html: FontAwesome Pro
+        ./tags.html: Import Limitations
     ./utils/:
       title: Iconify Utils
       children:

@@ -49,6 +49,8 @@ Documentation from importing icons:
 - [Importing all SVG in directory](./import/directory.md).
 - [Importing icons from Figma](./import/figma/index.md).
 
+Before using Iconify Tools, you should be aware that package is opinionated. Certain tags are not allowed and will fail import. See [SVG import limitations](./tags.md).
+
 ## Cleanup and validation
 
 Cleaning up and validating icons is the first thing you should do after importing icons if icons come from:

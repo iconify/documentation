@@ -22,6 +22,8 @@ functions:
 
 All functions listed below are asynchronous. Most functions create `[type]IconSet` instances.
 
+Before using Iconify Tools, you should be aware that package is opinionated. Certain tags are not allowed and will fail import. See [SVG import limitations](../tags.md).
+
 ### Async
 
 `include tools/tools2/async`
