@@ -35,6 +35,25 @@ demoTitle: 'Demo:'
 
 In this example, first icon has height of `[num]24px`, second icon has height of `[num]36px` (`[num]2 * 18px`), third icon has height `[num]72px`.
 
+## Keywords "none" and "unset" {#unset}
+
+```yaml
+include: icon-components/components/size-unset
+```
+
+```yaml
+src: icon-components/iconify/size-unset.html
+demo: icon-components/common/size-unset.html
+demoFirst: false
+class: 'icon-size icon-size--unset'
+```
+
+```yaml
+include: icon-components/components/size-unset-footer
+```
+
+These keywords can only be used with `[attr]data-width` and `[attr]data-height`. If you set them as `[attr]width` or `[attr]height`, it will not work.
+
 ## Setting only width or height
 
 In examples above, all icons only use `[prop]height`.

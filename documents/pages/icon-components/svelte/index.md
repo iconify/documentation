@@ -34,8 +34,6 @@ replacements:
     replace: Svelte
 ```
 
-`include notices/web-component/notice`
-
 ## Installation
 
 If you are using NPM:

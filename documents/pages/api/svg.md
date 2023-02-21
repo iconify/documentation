@@ -59,7 +59,7 @@ Examples:
 }
 ```
 
-See [how to use icons in CSS](../icon-components/css.md) on various ways to use icons in CSS.
+See [how to use icons in CSS](../usage/css/index.md) on various ways to use icons in CSS.
 
 ### Color
 
@@ -112,13 +112,16 @@ Numbers without units are treated as pixels, so `[url]width=24` and `[url]width=
 
 If you specify only one size attribute, other attribute is calculated using width/height ratio of icon. For example, if original icon is 512x1024, setting `[prop]?height=16` will result in SVG containing `[attr]width="8"`.
 
-There is special keyword auto that sets dimensions to original dimensions of icon:
+There are several special keywords:
+
+- `[str]auto` sets dimensions to value from `[prop]viewBox`.
+- `[str]unset` or `[str]none` remove dimensions.
 
 ```raw
-https://api.iconify.design/fa-solid/home.svg?height=auto
+https://api.iconify.design/fa-solid/home.svg?height=unset
 ```
 
-No need to set both width and height to `[str]auto`, one parameter is enough (see above about width/height ratio).
+No need to set both width and height to special keyword, one parameter is enough (see above about width/height ratio).
 
 ### Transformations
 

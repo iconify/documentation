@@ -37,12 +37,6 @@ Tools package contains the following functions:
 - Validating icons, cleaning up content, optimising icons.
 - Exporting icons to `[type]IconifyJSON` icon sets and several NPM packages.
 
-This package works only in node environment, not usable for browser oriented packages.
+It is used to maintain available open source icon sets.
 
-Main purpose is to generate [Iconify icon sets](../icons/index.md). Tools are used to retrieve icons from various sources, clean them up, then export icon set, then it can be used by various components with help of [Iconify Utils](./utils/index.md).
-
-## Old libraries
-
-[Iconify JSON Tools](./json/index.md) is similar to [Iconify Utils](./utils/index.md), but has been deprecated. Switch to [Iconify Utils](./utils/index.md).
-
-[Iconify Tools v1](./node/index.md) is an older version of [Iconify Tools](./tools2/index.md).
+This package is designed to work only in Node.js. It is not usable in browser.

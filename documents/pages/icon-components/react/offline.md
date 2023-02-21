@@ -17,6 +17,8 @@ See [icon bundles for Iconify for React](../../icon-components/bundles/react.md)
 
 Additionally, if you do not want to include API functionality, you can import component without API support. It is a bit smaller than full component.
 
+`include notices/deprecated-offline`
+
 In your code replace:
 
 ```js
@@ -37,6 +39,8 @@ Offline component has only the following functions available:
 ```yaml
 src: icon-components/common/offline.jsx
 ```
+
+Do not mix `[str]@iconify/react'` and `[str]@iconify/react/dist/offline` in the same project! These are separate bundles.
 
 ## Available icons
 

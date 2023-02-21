@@ -2,7 +2,7 @@
 import { icons } from '@iconify-json/mdi-light';
 
 // Various functions from Iconify Utils
-import { getIconData, iconToSVG, replaceIDs } from '@iconify/utils';
+import { getIconData, iconToSVG, iconToHTML } from '@iconify/utils';
 
 // Get ful data for 'mdi-light:home'
 const iconData = getIconData(icons, 'home');
@@ -29,35 +29,8 @@ renderData = {
 
  */
 
-// Generate attributes for SVG element
-const svgAttributes = {
-	xmlns: 'http://www.w3.org/2000/svg',
-	...renderData.attributes,
-} as Record<string, string>;
-const svgAttributesStr = Object.keys(svgAttributes)
-	.map(
-		(attr) =>
-			// No need to check attributes for special characters, such as quotes,
-			// they cannot contain anything that needs escaping.
-			`${attr}="${svgAttributes[attr as keyof typeof svgAttributes]}"`
-	)
-	.join(' ');
-
 // Generate SVG
-const svg = `<svg ${svgAttributesStr}>${renderData.body}</svg>`;
-
-/*
-
-Many icons have elements with unique IDs, such as masks. IDs are meant to be unique.
-If generated icon is embedded in HTML, it cannot have IDs that might be present in
-another icon. To solve that, replace IDs in content with randomly generated IDs
-using replaceIDs():
-
-const svg = `<svg ${svgAttributesStr}>${replaceIDs(renderData.body)}</svg>`;
-
-Uncomment import for replaceIDs() at start of this example.
-
- */
+const svg = iconToHTML(renderData.body, renderData.attributes);
 
 // Log SVG
 console.log(svg);

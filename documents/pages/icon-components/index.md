@@ -1,64 +1,130 @@
 ```yaml
-title: Iconify Icon Components
+title: Icons on Demand
 replacements:
+  - code: '60,000'
+    value: '${counters.icons}'
   - code: '60k'
     value: '${counters.icons-short}'
 ```
 
-# Iconify icon components
+# Icons on demand
 
-Icon components render icons.
+Iconify ecosystem has a unique feature: [Iconify API](../api/index.md).
 
-Components are available for multiple frameworks.
+It can be used to [load icon data on demand](../api/icon-data.md) and is used by Iconify icon components.
 
-`include notices/web-component/components`
+[Skip to list of available components](#components) if you want to skip long explanation of how it all works.
 
-## Source independent {#sources}
+## How does it work? {#process}
 
-`include icon-components/sources/heading`
+Iconify icon components are very easy to use. All developer has to specify is an icon name:
 
-Icon components do not include data for icons.
+```yaml
+src: icon-components/icon/usage.html
+demo: true
+demoFirst: false
+class: sample-big
+```
 
-### API support {#with-api}
+Unlike [regular icon components](../usage/svg/index.md), Iconify icon components do not bundle icon data. They load only data for icons used on currently viewed page at run time.
 
-`include icon-components/sources/with-api`
+```yaml
+include: process/api
+replacements:
+  - search: '"./"'
+    replace: '"#components"'
+```
 
-### Usage without API {#without-api}
+### Advantages
 
-`include icon-components/sources/without-api`
+Loading icon data on demand has its advantages and disadvantages over using [regular icon components](../usage/svg/index.md).
 
-## SVG framework
+Advantages:
 
-[Iconify SVG framework](./svg-framework/index.md) was designed as replacement for outdated icon fonts.
+- Very easy to use.
+- If you are using many icons on various pages, bundle size is smaller because icon data is loaded only as needed.
+- Can be used with customisable themes, where developer doesn't know which icons theme is using.
+- Small HTML. Icons are loaded only in browser, not server side rendered.
 
-It offers all the advantages of icons fonts:
+Disadvantages:
 
-- Syntax is very simple and similar to icon fonts: `[html]<span class="iconify" data-icon="mdi:home"></span>`.
-- You can change size and color by changing `[attr]font-size` and `[attr]color` in stylesheet.
+- Requires access to Iconify API, making it unusable for offline applications. You can host your own API instance, but it is not trivial.
+- Icons might not render instantly. Even though there are multiple layers of caching icon data, there is a few milliseconds delay in rendering.
 
-It does not have disadvantages of icons fonts:
+## Components
 
-- SVG framework renders pixel-perfect SVG, not blurred glyphs.
-- Only icons that are used on page are loaded. This means no bandwidth wasted on loading icons you do not need. This also made it possible to offer over 60k icons.
+There are several options:
 
-For more details, see [Iconify SVG framework](./svg-framework/index.md).
+- [Web component](#web-component), usable in HTML with or without UI frameworks.
+- ["SVG Framework"](#svg-framework), usable in HTML without UI frameworks.
+- [Components for UI frameworks](#ui-frameworks): React, Vue, Svelte, Ember.
 
-## Component frameworks
+### Web component {#web-component}
 
-Iconify offers icon components for several popular component frameworks:
+Best option by far is web component. It is the most modern iteration, works with all UI frameworks and works great with server side rendering.
 
-`include icon-components/components`
+Usage is very simple:
 
-If you are using framework not listed above, you can use [web component](../iconify-icon/index.md) that works with all modern frameworks. Web component is also preferred if you are using server side rendering.
+```html
+<iconify-icon icon="mdi:home"></iconify-icon>
+```
 
-All icon components support loading icon data on demand from [Iconify API](../api/index.md).
+See [Iconify icon web component documentation](../iconify-icon/index.md).
 
-If you want to use component offline, all components also support various options to render icons without API: [icon bundles](../icon-components/bundles/index.md), [icon components](../icons/icons.md).
+#### Shadow DOM
 
-## Components vs SVG Framework
+Web component renders icon in Shadow DOM, separating it from main document.
 
-`include icon-components/components-vs-framework`
+That has its advantages and disadvantages over other components.
 
-## Repositories
+Advantages:
 
-`include icon-components/github`
+- Separates icon from main DOM, so main DOM doesn't become bloated.
+- No conflicts with unique ids, which are used in some icons in masks, clip paths, animations and few other elements.
+- Works wonderfully with SSR, much better than UI framework native components: no ID conflicts, render is independant from framework rendering, so it doesn't cause any issues with hydration.
+
+Disadvantages:
+
+- Accessing icon content, such as changing `[prop]stroke-width`, is not always possible. Depends on use case.
+- Cannot render icon without `[prop]width` and `[prop]height`, making it impossible to resize icon with those properties. Icon can be resized only with `[prop]font-size`.
+
+If these disadvantages are unacceptable for your project, use "SVG framework" or one of UI framework specific components listed below.
+
+### SVG framework {#svg-framework}
+
+SVG framework is an older iteration of web component. It was the first package developed in early stages of Iconify project.
+
+Before end of 2020, web components were not usable because too many users were still using older browsers that do not support them, more specifically MS Edge and various old mobile browsers.
+
+Usage is simple:
+
+```html
+<span class="iconify" data-icon="mdi:home"></span>
+```
+
+SVG framework finds all such elements in HTML and replaces them with `[tag]svg` elements.
+
+This often causes problems with various UI frameworks, so SVG framework is not usable inside React/Vue/Svelte/etc... components.
+
+See [SVG framework documentation](./svg-framework/index.md).
+
+### UI frameworks {#ui-frameworks}
+
+Iconify offers components native to various UI frameworks:
+
+- [React](./react/index.md) (warning: when using with Next.js, wrap it in client-only component!)
+- [Vue 3](./vue/index.md)
+- [Vue 2](./vue2/index.md)
+- [Svelte](./svelte/index.md)
+- [Ember](./ember/index.md)
+
+Usage is as any other component:
+
+```jsx
+<Icon icon="mdi:home" />
+```
+
+These components behave differently than web component:
+
+- To avoid SSR errors, icons are rendered only after component is mounted. Otherwise it breaks hydration.
+- Icons can be rendered without `[prop]width` and `[prop]height` attributes, making it easy to style in CSS.

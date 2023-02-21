@@ -197,7 +197,43 @@
 	@import './samples/common/css-flip';
 }
 
+@import './samples/common/icon-types';
+
+// Usage
+.usage-css-demo {
+	display: flex;
+	@import './samples/usage/css-demo-bg';
+	@import './samples/usage/css-demo-mask';
+
+	// Set color for main demo, spacing between different types
+	.background-demo + .mask-demo {
+		margin-left: 8px;
+	}
+	span {
+		color: palette('blue', 400);
+		transition: color 0.3s ease;
+
+		&:nth-child(3n + 1) {
+			color: palette('green', 400);
+		}
+		&:nth-child(3n + 2) {
+			color: palette('purple', 400);
+		}
+	}
+	&:hover span {
+		color: palette($link-hover-palette, $link-hover-shade);
+	}
+}
+
 // Icon
 .icon-size {
 	@import './samples/icon/size';
+
+	&--unset.code-demo {
+		display: flex;
+	}
+}
+
+.vertical-align-demo {
+	@import './samples/usage/vertical-align';
 }

@@ -28,3 +28,5 @@ There are several ways to get icon data:
 
 - You can build [icon bundles](../icon-components/bundles/index.md) for icons that are used in your application, making icon data available offline.
 - You can use [individual icon packages](../icons/icons.md), which is similar to icon bundles, but import icons one by one and are easier to use.
+
+However, best option is to [use a different component or use icons in CSS](../usage/index.md). Iconify icon component is not meant to be used offline, that's what many other icon components are designed to do.

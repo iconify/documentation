@@ -37,23 +37,26 @@ export function defaultTheme(file: string): Theme | null {
 
 	const dir2 = parts.shift();
 	switch (dir) {
-		// Components
-		case 'develop':
+		// Using icons
+		case 'usage':
+		case 'develop': // unused
 		case 'implementations':
 		case 'iconify-icon':
 		case 'icon-components':
-		case 'icon-finder':
-		case 'integrate':
+		case 'icon-finder': // unused
+		case 'integrate': // unused
+		case 'design':
 			if (dir2 === 'iconify1') {
 				return 'legacy';
 			}
 			return 'develop';
 
 		// Plugins
-		case 'design':
-			return 'design';
+		// case 'design':
+		// 	return 'design';
 
 		// Icons
+		case 'icon-sets':
 		case 'icons':
 		case 'sources':
 			return 'icons';
@@ -67,7 +70,7 @@ export function defaultTheme(file: string): Theme | null {
 			if (dir2 === 'node' || dir2 === 'json') {
 				return 'legacy';
 			}
-		case 'code':
+		case 'code': // unused
 		case 'types':
 			return 'code';
 

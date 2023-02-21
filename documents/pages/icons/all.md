@@ -19,26 +19,38 @@ functions:
 
 # Iconify icon sets package
 
-There are several packages available that contain all icons, see [icon sets documentation](./index.md).
-
-This article describes full icons package.
-
-You can get the latest version of package from the following sources:
+You can get the latest version of open source icon data from the following sources:
 
 - From GitHub: [https://github.com/iconify/icon-sets](https://github.com/iconify/icon-sets)
 - From NPM: `[npm]@iconify/json`
 - From Packagist: `[packagist]iconify/json`
 
-## Files in big package
+You can also get smaller packages, but it is not covered in this document. See [icon data documentation](./icon-data.md).
 
-Icon sets package contains the following files:
+## Contents
 
-- `[file]collections.json` contains list of available icon sets. It is a simple object, where key is prefix, value is information about icon set in `[type]IconifyInfo` format.
-- `[file]collections.md` contains the same information as `[file]collections.json`, but in easily readable format.
-- `[file]json/` directory contains JSON files for each icon set in `[type]IconifyJSON` format, such as `[file]json/mdi.json`.
-- `[file]lib/` and `[file]dist/` directories contain simple helper functions for PHP and Node.js. See below.
+Package contains:
 
-Icon set files contain all icon set data, including info and metadata. If you want to get minimal version without extra stuff, use small packages instead.
+- List of icon sets in `[file]collections.json`.
+- Icon sets in `[file]json/{prefix}.json`, where `[str]{prefix}` is icon set prefix, such as `[file]json/mdi-light.json`.
+- Helper functions for PHP and Node.js
+- Misc files, such as package definition files, README, human readable list of icon sets.
+
+## Icon sets list
+
+Icon sets list is stored in `[file]collections.json`.
+
+Contents are a simple object, where key is icon set prefix, value is icon set information in `[type]IconifyInfo` format. Information includes icon set name, author information, license, number of files and 3 sample files to display.
+
+Additionally, `[file]collections.md` contains the same data, but in human readable format.
+
+## Icon sets
+
+Each icon has is stored in one file, located in directory `[file]json/`. File name matches icon set prefix, which you can find as key in icon sets list in `[file]collections.json`.
+
+Contents are stored in `[type]IconifyJSON` format.
+
+Icon set files contain all icon set data, including info and metadata. If you want to get minimal version without extra stuff, use [small packages instead](./json.md).
 
 ## Maintenance
 
@@ -51,7 +63,7 @@ If you are using [Iconify API](../api/index.md), you do not need to do anything 
 For reading icon sets, you can use:
 
 - [Iconify Utils](../tools/utils/index.md) for JavaScript.
-- [Iconify JSON Tools](../tools/json/index.md) for PHP (also available for JavaScript, but deprecated).
+- [Iconify JSON Tools](../tools/json/index.md) for PHP, deprecated and unmaintained.
 
 ## Helper functions {#helpers}
 
@@ -102,4 +114,4 @@ Do you know a good open source icon set that is missing in Iconify icon sets? [O
 
 ## Licences
 
-All icon sets available in Iconify collections are released under free or open source licence, which allows redistribution. See each icon set's information block for details.
+All icon sets available in Iconify collections are released under free or open source licence, which allows redistribution. See each icon set's info for details.

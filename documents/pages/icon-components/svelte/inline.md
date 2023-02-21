@@ -1,33 +1,24 @@
 ```yaml
-title: Inline Icons in Iconify for Svelte
+title: Vertical Alignment in Iconify for Svelte
 ```
 
-# Inline icons
+# Vertical alignment
 
 This tutorial is part of [Iconify for Svelte tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
 
-```yaml
-src: icon-components/common/inline-block.svelte
-title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: true
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
-
-## Syntax
+## Inline attribute
 
 `include icon-components/components/inline-basic`
 
 ```yaml
-src: icon-components/common/inline-block2.svelte
+src: icon-components/common/inline.svelte
 title: 'HTML:'
 demo: true
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
+
+`include icon-components/vertical-align-footer`

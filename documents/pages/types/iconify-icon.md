@@ -5,6 +5,7 @@ types:
   IconifyJSON: './iconify-json.md'
 functions:
   getIconData: '../tools/utils/get-icon-data.md'
+  defaultIconProps: '../tools/utils/default-icon-props.md'
 ```
 
 # IconifyIcon type
@@ -19,7 +20,7 @@ This article describes `[type]IconifyIcon` type.
 
 Icon data in `[type]IconifyIcon` type is usually extracted from `[type]IconifyJSON` icon set.
 
-See `[func]getIconData()` function from Iconify Utils.
+To extract icon data in your code, use `[func]getIconData()` function from Iconify Utils.
 
 ## Structure
 
@@ -40,13 +41,11 @@ Example of a basic icon:
 
 Body contains contents of `[tag]svg`, without `[tag]svg` tag.
 
-Why not store entire `[tag]svg`? Because:
+It does not include `[tag]svg` tag because:
 
-- Contents can be manipulated, such as rotating or flipping an icon. This is much easier to do when there is no need to strip `[tag]svg` tag.
+- Contents can be manipulated, such as rotating or flipping an icon. This is much easier to do when there is no need to parse an entire `[tag]svg`.
 - It gives components full control over `[tag]svg` tag, allowing addition/removal of custom attributes.
 - Makes it easy to use in various frameworks (such as React, Vue, Svelte), where `[tag]svg` element is created using framework's native code and content is set as its property.
-
-What if you need to set custom attributes to `[tag]svg`? You shouldn't need to do that. Components should have full control over `[tag]svg`, setting all events, ids, titles, customizing `[attr]viewBox`, appending additional shapes. If you want to set something like `[attr]fill` or `[attr]stroke`, wrap contents in `[tag]g` tag with those attributes.
 
 ## Optional properties {#iconify-optional}
 
@@ -63,3 +62,5 @@ Example of typical icon data:
 	"height": 24
 }
 ```
+
+In your code you can get default values from `[var]defaultIconProps` constant from [Iconify Utils](../tools/utils/index.md).

@@ -17,19 +17,13 @@ All types are described with TypeScript.
 
 If you are not familiar with TypeScript, but are familiar with JavaScript, it should not be hard to understand this documentation because it is mostly just basic types.
 
-Few things that you need to know to understand types:
-
-### object
-
-Some Iconify code is written in PHP, yet refers to this documentation for description of types.
-
-Object in JavaScript is the same as associative array in PHP. That is every entry has unique key and value.
+Few basic TypeScript concepts you need to know to understand documentation:
 
 ### Record
 
 Type `[type]Record<string, number>` is an object, where key is `[type]string`, value is `[type]number`.
 
-For PHP developers it is an associative array.
+For PHP developers it is the same as associative array.
 
 ### unknown
 
@@ -47,12 +41,12 @@ This means one type extends another type. In the example above, type `[type]Foo`
 
 There are two main types that are used in Iconify ecosystem:
 
-Type `[type]IconifyIcon` is used for representing one icon.
-
-Type `[type]IconifyJSON` is used for representing an entire icon set. It stores icons, aliases and various metadata.
+- `[type]IconifyIcon` is used for data for one icon.
+- `[type]IconifyJSON` is used for an entire icon set. It stores icon data, aliases and various metadata.
 
 ## Additional types
 
-Type `[type]IconifyAlias` is used for icon aliases.
+These types are used in `[type]IconifyJSON` type:
 
-Type `[type]IconifyInfo` is used for icon set information.
+- `[type]IconifyAlias` is used for icon aliases.
+- `[type]IconifyInfo` is used for icon set information.

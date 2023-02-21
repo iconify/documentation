@@ -1,33 +1,24 @@
 ```yaml
-title: Inline Icons in Iconify for Ember
+title: Vertical Alignment in Iconify for Ember
 ```
 
-# Inline icons
+# Vertical alignment
 
 This tutorial is part of [Iconify for Ember tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
+
+## Inline attribute
+
+Instead of adding `[prop]vertical-align` to each icon, icon component has a property `[prop]inline`. Adding `[prop]inline` property to icon component is identical to setting `[html]style="vertical-align: -0.125em"`:
 
 ```yaml
-src: icon-components/ember/inline-block.hbs
+src: icon-components/ember/inline.hbs
 title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: icon-components/common/inline-block.html
+demo: icon-components/common/inline.html
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
 
-## Syntax
-
-`include icon-components/components/inline-basic`
-
-```yaml
-src: icon-components/ember/inline-block2.hbs
-title: 'HTML:'
-demo: icon-components/common/inline-block2.html
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
+`include icon-components/vertical-align-footer`

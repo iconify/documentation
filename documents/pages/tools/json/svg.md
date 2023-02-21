@@ -42,7 +42,7 @@ The `[class]SVG` class has one function: `[func]getSVG()`. It returns `[tag]svg`
 
 Function `[func]getSVG()` has one parameter: custom properties array. Possible array properties:
 
-- `[prop]inline`, `[type]boolean or string`. If `[bool]true` or `[str]"true"` or `[str]"1"`, function will add `[prop]vertical-align` to style, making it behave like a glyph. See inline vs block article (TODO).
+- `[prop]inline`, `[type]boolean or string`. If `[bool]true` or `[str]"true"` or `[str]"1"`, function will add `[prop]vertical-align` to style, making it behave like a glyph.
 - `[prop]width` and `[prop]height` are dimensions of icon. If only one dimension is set, another dimension will be set using icon's width/height ratio. Value can be `[type]string` (such as `[str]"1em"`, `[str]"24px"` or a `[type]number`). If value is `[str]"auto"`, icon's original dimensions will be used. If both `[prop]width` and `[prop]height` are not set, `[prop]height` defaults to `[str]"1em"`.
 - `[prop]hFlip` and `[prop]vFlip`. If `[bool]true` or `[str]"true"` or `[str]"1"` (`[type]string` or `[type]boolean`), icon will be flipped horizontally and/or vertically.
 - `[prop]flip`, `[type]string` is an alternative to `[prop]hFlip` and `[prop]vFlip`. Value can be `[str]"horizontal"`, `[str]"vertical"` or `[str]"horizontal,vertical"`.

@@ -43,20 +43,25 @@ export function createLegacyRedirect(
 	redirect?: string
 ): void {
 	// Redirect /implementations/ to /icon-components/
-
 	if (currentFile.indexOf(implementationsTarget) === 0) {
 		// Create alias
-		if (redirect !== void 0) {
-			throw new Error(
-				`Cannot handle redirects for redirects yet. Update src/legacy-redirects.ts code. Attempted to redirect from "${currentFile}" to "${implementationsTarget}"`
-			);
-		}
-
 		const legacyFile = currentFile.replace(
 			implementationsTarget,
 			implementationsSource
 		);
-		const relativePath = absoluteToRelative(legacyFile, currentFile);
+		let relativePath = absoluteToRelative(legacyFile, currentFile);
+
+		// Check for redirect
+		if (redirect !== void 0) {
+			if (redirect.indexOf('../') === 0) {
+				// Relative path is the same: redirect to redirect
+				relativePath = redirect;
+			} else {
+				throw new Error(
+					`Cannot handle complex redirects for redirects yet. Update src/legacy-redirects.ts code. Attempted to redirect from "${currentFile}" to "${implementationsTarget}, which redirects to "${redirect}"`
+				);
+			}
+		}
 
 		const html = generateRedirect(legacyFile, relativePath);
 		write(paths.html + legacyFile, html);

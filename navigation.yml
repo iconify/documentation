@@ -1,99 +1,101 @@
 /icons/:
   title: Icons
   children:
-    ./all.html: All Icon Sets
-    ./json.html: Individual Icon Sets
-    ./icons.html: Individual Icons
-    ./collections.html: Icon Sets List
-    # ./custom.html: Custom Icons
-/api/:
-  title: Iconify API
-  children:
-    ./hosting.html:
-      title: Hosting API
+    ./icon-basics.html: Icon Basics
+    ./icon-set-basics.html: Icon Set Basics
+    ./icon-data.html:
+      title: Icon Data
       children:
-        ./hosting-php/:
-          title: PHP API
-          hidden: true
-        ./hosting-js/:
-          title: Node.js API
+        ./all.html: All Icons
+        ./collections.html: Icon Sets List
+        ./json.html: Individual Icon Sets
+        ./icons.html: Individual Icons
+    ./custom.html: Custom Icon Sets
+/usage/:
+  title: Usage
+  children:
+    ./css/:
+      title: SVG in CSS
+      children:
+        ./no-code/: No Code
+        # ./#tools:
+        #   title: 'JavaScript'
+        #   separator: true
+        #   clickable: false
+        ./utils/: Iconify Utils
+        ./tailwind/:
+          title: Tailwind CSS
           children:
-            ./config.html: Configuration
-            ./headers.html: HTTP Headers
-    ./queries.html:
-      title: API Queries
+            ./options.html: Plugin Options
+            ./clean.html: Clean Class Names
+        ./unocss/: UnoCSS
+    ./svg/:
+      title: SVG in HTML
       children:
-        ./svg.html: Generate SVG
-        ./css.html: Generate CSS
-        ./icon-data.html: Icon Data
-        ./last-modified.html: Last Modified
-        ./collections.html: List of Icon Sets
-        ./collection.html: List of Icons
-        ./search.html: Search Icons
-        ./keywords.html: Keywords
-        ./version.html: API Version
-    ./providers.html:
-      title: API Providers
-    ./config.html:
-      title: Using custom API
-/develop/:
-  title: Components
-  children:
-    /iconify-icon/:
-      title: Icon Web Component
-      children:
-        # Wrappers
-        ./index.html#wrappers:
-          title: Wrappers for
-          separator: true
-          clickable: false
-        ./react.html: React
-        ./solid.html: Solid
-        # Properties
-        ./index.html#attributes:
-          title: Attributes
-          separator: true
-          clickable: false
-        ./color.html: Icon Color
-        ./dimensions.html: Icon Dimensions
-        ./transform.html: Transformations
-        ./inline.html: Inline Icons
-        ./modes.html: Rendering Modes
-        ./without-api.html:
-          title: Use Without API
-          separator: true
-        ./index.html#functions:
-          title: Functions
-          separator: true
-          clickable: false
-        # Getting icons
-        ./icon-exists.html: iconExists()
-        ./list-icons.html: listIcons()
-        ./get-icon.html: getIcon()
-        # Adding icons
-        ./add-icon.html: addIcon()
-        ./add-collection.html: addCollection()
-        # API
-        ./load-icons.html: loadIcons()
-        ./load-icon.html: loadIcon()
-        ./enable-cache.html: enableCache()
-        ./disable-cache.html: disableCache()
-        # Rendering icons
-        ./build-icon.html: buildIcon()
-        # Internal
-        ./set-fetch.html: setFetch()
+        ./no-code/: No Code
+        # ./#tools:
+        #   title: 'JavaScript'
+        #   separator: true
+        #   clickable: false
+        ./utils/: Iconify Utils
+        ./unplugin/: Unplugin Icons
+        ./astro/: Astro Icon
     /icon-components/:
-      title: Icon Components
-      headline: One icon framework to replace them all.
+      title: Icons on Demand
       children:
+        /iconify-icon/:
+          title: Web Component
+          children:
+            # Wrappers
+            ./index.html#wrappers:
+              title: Wrappers for
+              separator: true
+              clickable: false
+            ./react.html: React
+            ./solid.html: Solid
+            # Properties
+            ./index.html#attributes:
+              title: Attributes
+              separator: true
+              clickable: false
+            ./color.html: Icon Color
+            ./dimensions.html: Icon Dimensions
+            ./transform.html: Transformations
+            ./inline.html: Vertical Alignment
+            ./modes.html: Rendering Modes
+            ./without-api.html:
+              title: Use Without API
+              separator: true
+            ./index.html#functions:
+              title: Functions
+              separator: true
+              clickable: false
+            # Getting icons
+            ./icon-exists.html: iconExists()
+            ./list-icons.html: listIcons()
+            ./get-icon.html: getIcon()
+            # Adding icons
+            ./add-icon.html: addIcon()
+            ./add-collection.html: addCollection()
+            # API
+            ./load-icons.html: loadIcons()
+            ./load-icon.html: loadIcon()
+            ./enable-cache.html: enableCache()
+            ./disable-cache.html: disableCache()
+            # Rendering icons
+            ./build-icon.html: buildIcon()
+            # Internal
+            ./set-fetch.html: setFetch()
         ./svg-framework/:
           title: SVG Framework
           children:
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./without-api.html: No API
+            ./inline.html: Vertical Alignment
+            ./without-api.html:
+              title: No API
+              hidden: true
             ./functions.html:
               title: Functions
               children:
@@ -147,17 +149,16 @@
             ./svg-data.html:
               title: Getting SVG Data
               hidden: true
-        ./components/:
-          title: Icon Components
-          hidden: true
         ./react/:
           title: React
           children:
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./offline.html: Offline Use
+            ./inline.html: Vertical Alignment
+            ./offline.html:
+              title: Offline Use
+              hidden: true
             ./functions.html:
               title: Functions
               separator: true
@@ -186,7 +187,7 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
+            ./inline.html: Vertical Alignment
             ./functions.html:
               title: Functions
               separator: true
@@ -210,8 +211,10 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./offline.html: Offline Use
+            ./inline.html: Vertical Alignment
+            ./offline.html:
+              title: Offline Use
+              hidden: true
             ./functions.html:
               title: Functions
               separator: true
@@ -239,8 +242,10 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./offline.html: Offline Use
+            ./inline.html: Vertical Alignment
+            ./offline.html:
+              title: Offline Use
+              hidden: true
             ./functions.html:
               title: Functions
               separator: true
@@ -268,8 +273,10 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./offline.html: Offline Use
+            ./inline.html: Vertical Alignment
+            ./offline.html:
+              title: Offline Use
+              hidden: true
             ./functions.html:
               title: Functions
               separator: true
@@ -297,8 +304,10 @@
             ./color.html: Icon Color
             ./dimensions.html: Icon Dimensions
             ./transform.html: Transformations
-            ./inline.html: Inline Icons
-            ./offline.html: Offline Use
+            ./inline.html: Vertical Alignment
+            ./offline.html:
+              title: Offline Use
+              hidden: true
             ./functions.html:
               title: Functions
               separator: true
@@ -340,54 +349,14 @@
             ./vue2.html: Vue 2
             ./svelte.html: Svelte
             ./ember.html: Ember
-    /icon-components/unplugin-icons.html: Unplugin Icons
-    /icon-components/unocss.html: UnoCSS
-    /icon-components/css.html: SVG in CSS
-    /icon-finder/:
-      title: Icon Finder
-      wip: true
+    /design/:
+      title: UI Design
+      headline: One icon plugin to replace them all.
       children:
-        ./packages/:
-          title: Packages
-          hidden: true
-          children:
-            ./core/:
-              title: Core
-              children:
-                ./core.html: IconFinderCore
-                ./render.html: Render Callback
-                ./routes.html: Routes
-                ./blocks.html: Blocks
-                ./actions.html:
-                  title: Actions
-                  wip: true
-                ./custom-view.html: Custom View
-                ./config.html: Core Configuration
-                ./registry.html: Registry
-                ./router.html: Router
-                ./types.html: Types
-                ./node-js.html: Node.js Usage
-            ./base-svelte/:
-              title: Svelte Components
-              wip: true
-              children:
-                ./components-config.html: Configuration
-                ./wrapper.html: Wrapper
-                ./callback.html: Callback
-                ./types.html: Types
-                ./examples.html: Project Forks
-/design/:
-  title: Plugins
-  headline: One icon plugin to replace them all.
-  children:
-    ./figma/:
-      title: Figma Plugin
-    ./sketch/:
-      title: Sketch Plugin
-    ./adobe-xd/:
-      title: Adobe XD Plugin
-      wip: true
-      hidden: true
+        ./figma/:
+          title: Figma Plugin
+        ./sketch/:
+          title: Sketch Plugin
 /tools/:
   title: Libraries
   children:
@@ -399,7 +368,7 @@
           title: IconifyJSON
           children:
             ./iconify-json-metadata.html: Metadata
-        ./iconify-alias.html: IconifyAlias
+            ./iconify-alias.html: IconifyAlias
         ./iconify-info.html: IconifyInfo
     ./node/:
       title: Iconify Tools v1
@@ -559,6 +528,7 @@
           separator: true
           clickable: false
         ./icon-to-svg.html: iconToSVG()
+        ./icon-to-html.html: iconToHTML()
         ./calculate-size.html: calculateSize()
         ./replace-ids.html: replaceIDs()
         ./functions.html#css:
@@ -588,8 +558,39 @@
         ./collection.html: Collection Class
         ./svg.html: SVG Class
         ./export.html: Export Icons
+/api/:
+  title: API
+  children:
+    ./queries.html:
+      title: API Queries
+      children:
+        ./svg.html: Generate SVG
+        ./css.html: Generate CSS
+        ./icon-data.html: Icon Data
+        ./last-modified.html: Last Modified
+        ./collections.html: List of Icon Sets
+        ./collection.html: List of Icons
+        ./search.html: Search Icons
+        ./keywords.html: Keywords
+        ./version.html: API Version
+    ./hosting.html:
+      title: Hosting API
+      children:
+        ./hosting-php/:
+          title: PHP API
+          hidden: true
+        ./hosting-js/:
+          title: Node.js API
+          children:
+            ./config.html: Configuration
+            ./headers.html: HTTP Headers
+    ./providers.html:
+      title: API Providers
+    ./config.html:
+      title: Components Config
 /articles/:
   title: Articles
+  hidden: true
   children:
     ./add-icon-set/: Add Icon Set to Iconify
     ./cleaning-up-icons/:

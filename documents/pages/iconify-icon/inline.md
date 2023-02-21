@@ -1,40 +1,24 @@
 ```yaml
-title: Inline Icons in Iconify Icon Web Component
+title: Vertical Alignment in Iconify Icon Web Component
 ```
 
-# Inline icons
+# Vertical alignment
 
 This tutorial is part of [Iconify Icon web component tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
+
+## Inline attribute
+
+`include icon-components/components/inline-basic`
 
 ```yaml
-src: icon-components/icon/inline-block.html
-title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: true
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
-
-## Syntax
-
-By default, icon is treated as block icon. It has no custom `[prop]vertical-align`, so you can add it as necessary in a stylesheet.
-
-You can change that behaviour by:
-
-- Adding `[attr]inline` attribute.
-- Adding `[prop]vertical-align` style with value `[num]-0.125em`.
-
-Example:
-
-```yaml
-src: icon-components/icon/inline-block2.html
+src: icon-components/icon/inline.html
 title: 'HTML:'
 demo: true
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
+
+`include icon-components/vertical-align-footer`

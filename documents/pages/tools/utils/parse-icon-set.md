@@ -13,7 +13,7 @@ functions:
 
 This function is part of [Iconify Utils package](./index.md).
 
-Function `[func]parseIconSet()` parses icon set, calling custom function for every icon.
+Functions `[func]parseIconSet()` and `[func]parseIconSetAsync()` parse icon set, calling custom function for every icon.
 
 ## Usage
 
@@ -22,7 +22,7 @@ Function has the following parameters:
 - `[prop]data`, `[type]IconifyJSON`. Icon set data.
 - `[prop]callback`, `[type]function`. Callback, called for each icon found in icon set.
 
-Function returns list of parsed icons as `[type]string[]`.
+Function returns names of parsed icons as `[type]string[]`.
 
 ### Callback
 
@@ -31,7 +31,19 @@ Callback function has 2 parameters:
 - `[prop]name`, `[type]string`. Icon name.
 - `[prop]data`, `[type]IconifyIcon | null`. Icon data, `null` if icon is invalid.
 
-Callback is called for each entry in icon set: all icons and all aliases.
+Callback is called for each entry in icon set: all icons, aliases and all entries in `[prop]not_found` property.
+
+If `[prop]data` parameter in callback is `null`, icon is invalid or missing.
+
+## parseIconSetAsync
+
+Function `[func]parseIconSetAsync()` is identical to `[func]parseIconSet()`, except that it is asynchronous and callback is also an asynchronous function:
+
+```js
+await parseIconSetAsync(iconSet, async (name, data) => {
+	// do async stuff
+});
+```
 
 ## Example
 

@@ -1,6 +1,8 @@
 ```yaml
 title: Iconify for Sketch
 replacements:
+  - code: '60k'
+    value: '${counters.icons-short}'
   - code: '60,000'
     value: '${counters.icons}'
   - code: '70+'
@@ -55,19 +57,10 @@ Importing multiple icons:
 
 ## Available icons
 
-By default, it offers all icons available on [Iconify API](../../api/index.md) to Sketch projects.
-
-Plug-in is open source and can be customised. You can:
-
-- Configure Icon Finder to display only your icon set.
-- Configure Icon Finder to use different Iconify API end point.
-
-All you need to do is change Icon Finder configuration and rebuild plug-in. See [Svelte components package of Iconify Icon Finder documentation](../../icon-finder/packages/base-svelte/index.md).
+You can browse and import iver 60k open source icons hosted on [Iconify API](../../api/index.md) to Sketch projects.
 
 ## Source code
 
 All source code is available at [Iconify for Sketch repository](https://github.com/iconify/iconify-sketch).
-
-Iconify for Sketch is based on [Svelte components package of Iconify Icon Finder](../../icon-finder/packages/base-svelte/index.md).
 
 To build it, install all necessary dependencies and run `[bash]npm run build`. Build script will generate `[file]iconify.sketchplugin` that you can install.

@@ -1,6 +1,0 @@
-- Vue 2
-- Vue 3
-- React
-- Preact
-- Svelte
-- Solid

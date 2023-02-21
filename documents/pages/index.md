@@ -9,67 +9,88 @@ replacements:
     value: '${counters.sets} icon sets'
   - code: '80 open source'
     value: '${counters.sets} open source'
-types:
-  IconifyJSON: './types/iconify-json.md'
 ```
 
 # Iconify documentation
 
-Iconify is the most versatile icon framework. It was originally designed to replace outdated icon fonts with [modern SVG framework](./icon-components/svg-framework/index.md), while offering ease of use that icon fonts are famous for. Since then Iconify has evolved. It offers more icons than any other solution and various native components for web app frameworks.
+Iconify is a set of tools for developers and designers, created to make it easy to work with different icon sets in a consistent way.
 
-This documentation is split into several parts.
+It includes:
+
+- Tools for importing, exporting and organising icons.
+- Over 60k icons from more than 80 open source icon sets, all cleaned up, optimised and kept up to date.
+- Components for various frameworks that work with that icon data.
+- Plugins for UI developers.
+- Public API to browse, search icon sets and retrieve icon data. It also generates SVG and CSS on demand.
 
 ## Icons
 
-Iconify offers more than 80 open source icon sets with over 60,000 icons. All icons are pre-processed and stored in `[type]IconifyJSON` format.
+[Icons section of documentation](./icons/index.md) explains the following:
 
-Data for icons is open source and is available for everyone as big package that contains everything or small packages.
+- [Icon basics](./icons/icon-basics.md): naming rules, types of icons, cleanup.
+- [Icon set basics](./icons/icon-set-basics.md): what are icon sets, data format, naming, how to parse them.
+- [Where to get icon data](./icons/icon-data.md) for over 80 open source icon sets.
+- [Building custom icon sets](./icons/custom.md).
 
-You can use it in your own icon components, to export raw SVG.
+## How to use icons
 
-See [icons section](./icons/index.md) for list of various packages and formats.
+Iconify ecosystem offers many ways to use icons, for both coders and designers.
 
-[Browse icons](https://icon-sets.iconify.design) to see what is available.
+For using icons in HTML, there are several viable options:
 
-If you have designed an icon set, [consider adding it to Iconify](./articles/add-icon-set/index.md).
+`include usage/options/html`
 
-## API
+For designers, Iconify ecosystem offers several ways to easily import icons in various design tools:
 
-In addition to offering open source icon data as packages, Iconify has public API.
+`include usage/options/design`
 
-API is used to:
+You can browse all available icons and copy code or SVG on the following webites:
 
-- provide icon data on demand, which is used by [Iconify icon components](./icon-components/components/index.md).
-- browse and search icons, which is used by [Iconify plug-ins](./design/index.md).
+`include usage/options/websites`
 
-## Components
+Find icon you want, select it, copy code sample or SVG to clipboard, paste it in your project.
 
-Having 60k+ icons is not really helpful without ability to use them in your projects.
+See [how to use icons](./usage/index.md) for more details.
 
-There are various ways to use icons:
+## Advanced usage
 
-`include icon-components/list/main`
+This section is for advanced usage, getting deeper in Iconify ecosystem.
 
-Iconify is supported by a growing community. In addition to Iconify icon components, there are now more ways to use icons, created by amazing open source developers:
+### Libraries
 
-`include icon-components/list/community`
+There are several Node.js packages that Iconify ecosystem is built on. You can use them in your libraries or build process to import/export icon sets, validate and clean up icons, generate SVG and CSS and more.
 
-Want to create your own icon component? See "Libraries" section below. Most components listed above use functions from [Iconify Utils](./tools/utils/index.md) to generate icons.
+#### Types
 
-In addition to icon components, [Icon Finder](./icon-finder/index.md) is in development.
+Before using any tools, you need to understand data structures used in Iconify ecosystem.
 
-## Plugins
+See [Iconify types documentation](./types/index.md).
 
-In addition to icon data and components, Iconify offers plug-ins for popular software for UI design:
+#### Utils
 
-`include design/plugins`
+[Iconify Utils](./tools/utils/index.md) contains reusable functions for:
 
-Plugins are based on upcoming [Icon Finder](./icon-finder/index.md) and they use [Iconify API](./api/index.md) to search for icons and to dynamically load icon data.
+- working with icon sets
+- working with icons
+- generating SVG, CSS
 
-## Libraries
+as well as some helper functions.
 
-Libraries section contains documentation for various tools that are used to develop and maintain Iconify:
+This package is designed to work in any environment. It is used by all Iconify packages, including icon components, API, plugins.
 
-- [Iconify Types](./types/index.md) describes various formats used in Iconify projects.
-- [Iconify Tools](./tools/tools2/index.md) is a library that can import icons from various sources, process them and export to multiple formats.
-- [Iconify Utils](./tools/utils/index.md) is a set of reusable functions for working with icon sets and icon data.
+#### Tools
+
+[Iconify Tools](./tools/tools2/index.md) is designed to import, export and process icon data.
+
+It is used to maintain available open source icon sets.
+
+This package is designed to work only in Node.js. It is not usable in browser.
+
+### API
+
+[Iconify API](./api/index.md) is an open source hosted (or self-hosted) service, indented for developers. It is used to:
+
+- Provide icon data on demand, which made it possible to create [Iconify icon components](./icon-components/index.md) that load icons on demand.
+- [Generate SVG](./api/svg.md), which developers can link to in HTML or stylesheet.
+- [Generate CSS](./api/css.md) to render icons as background or mask images.
+- Provide data for hosted icons, including search functionality. This can be used to create icon pickers and is currently used by [Iconify plug-ins for various UI design tools](./design/index.md).

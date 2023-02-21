@@ -261,10 +261,8 @@ export function renderCode(context: MDContext, md: md) {
 	 */
 	function highlightCode(lang: string, str: string) {
 		let code: string;
-		if (lang === 'raw') {
-			// Raw code
-			code = str;
-		} else {
+
+		function highlight(lang: string, str: string): string {
 			// Check for language
 			if (!hljs.getLanguage(lang)) {
 				throw new Error(
@@ -310,6 +308,32 @@ export function renderCode(context: MDContext, md: md) {
 					}
 					break;
 			}
+			return code;
+		}
+
+		switch (lang) {
+			case 'raw':
+				// Raw code
+				code = str;
+				break;
+
+			case 'astro': {
+				// Highlight chunks separately
+				const chunks = str.split('---');
+				if (chunks.length !== 3 || chunks.shift().trim() !== '') {
+					throw new Error(`Bad Astro code in ${context.filename}`);
+				}
+				const separator = '<span class="hljs-comment">---</span>';
+				code = `${separator}\n${highlight(
+					'js',
+					chunks[0].trim()
+				)}\n${separator}\n\n${highlight('vue', chunks[1].trim())}`;
+				break;
+			}
+
+			default:
+				// Run default function
+				code = highlight(lang, str);
 		}
 
 		// Replace tabs, spaces and new lines

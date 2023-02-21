@@ -4,6 +4,8 @@ types:
   IconifyIconCustomisations: './icon-customisations.md'
   IconifyIcon: '../../types/iconify-icon.md'
   IconifyIconBuildResult: './icon-to-svg.md#build-result'
+functions:
+  iconToHTML: './icon-to-html.md'
 ```
 
 # iconToSVG()
@@ -11,8 +13,6 @@ types:
 This function is part of [Iconify Utils package](./index.md).
 
 Function `[func]iconToSVG()` generates data required to render SVG.
-
-It is used by all [Iconify Icon components](../../icon-components/index.md).
 
 ## Usage
 
@@ -30,7 +30,9 @@ Result is an object with the following properties:
 - `[prop]body`, `[type]string`. Icon content.
 - `[prop]attributes`, `[type]object`. Attributes for `[tag]svg` element.
 
-Result does not include attributes that are common to all `[tag]svg` elements, such as `[prop]xmlns`.
+Attributes list in result does not include `[prop]xmlns` because it is identical in all SVG. It always includes `[prop]viewBox`, usually includes `[prop]width` and `[prop]height`.
+
+You can use `[func]iconToHTML()` to convert result to string.
 
 ### Examples of result
 
@@ -50,4 +52,17 @@ Result does not include attributes that are common to all `[tag]svg` elements, s
 ```yaml
 src: tools/utils/get-icon.ts
 title: 'example.ts'
+```
+
+## Icon dimensions
+
+By default, resulting attributes include `[prop]width` and `[prop]height`, where `[prop]height` is set to `[str]1em`.
+
+If you want to remove dimensions, set `[prop]height` to `[str]unset` or `[str]none` in `[prop]customisations` parameter:
+
+```js
+const result = iconToSVG(data, {
+	// Setting only height will also remove width
+	height: 'unset',
+});
 ```

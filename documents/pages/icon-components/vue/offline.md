@@ -17,6 +17,8 @@ See [icon bundles for Iconify for Vue](../../icon-components/bundles/vue.md) doc
 
 Additionally, if you do not want to include API functionality, you can import component without API support. It is a bit smaller than full component.
 
+`include notices/deprecated-offline`
+
 In your code replace:
 
 ```js
@@ -37,6 +39,8 @@ Offline component has only the following functions available:
 ```yaml
 src: icon-components/common/offline.vue
 ```
+
+Do not mix `[str]@iconify/vue'` and `[str]@iconify/vue/dist/offline` in the same project! These are separate bundles.
 
 ## Available icons
 

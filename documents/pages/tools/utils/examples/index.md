@@ -24,6 +24,12 @@ Examples of generating a single SVG file:
 - [Export SVG from icon set](./export-svg-from-icon-set.md).
 - [Export SVG from icon data](./export-svg-from-data.md).
 
+## Export CSS
+
+Examples to export icons as CSS:
+
+- [Generate CSS for selected icons](./generate-css.md).
+
 ## Advanced import / export {#advanced}
 
 Iconify Utils is a basic package that parses `[type]IconifyJSON` and `[type]IconifyIcon` data. It is not meant for more complex stuff.

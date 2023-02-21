@@ -6,7 +6,7 @@ types:
 
 # Icon data on demand
 
-Main feature of [Iconify icon components](../icon-components/components/index.md) is ability to load icon data on demand.
+Main feature of [Iconify icon components](../icon-components/index.md) is ability to load icon data on demand.
 
 Instead of bundling icons, developer passes icon name to icon component, data for used icons is loaded from Iconify API. This approach has the following advantages:
 

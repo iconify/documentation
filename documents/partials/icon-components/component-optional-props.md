@@ -1,6 +1,6 @@
 Optional properties:
 
-- `[prop]inline`, `[type]boolean` toggles inline or block mode.
+- `[prop]inline`, `[type]boolean` changes vertical alignment.
 - `[prop]width`, `[type]string | number` icon width.
 - `[prop]height`, `[type]string | number` icon height.
 - `[prop]hFlip`, `[type]boolean` flips icon horizontally.

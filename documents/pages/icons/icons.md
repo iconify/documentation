@@ -8,15 +8,22 @@ functions:
 
 # Split icon packages
 
-There are several packages available that contain all icons, see [icon sets documentation](./index.md).
+For developer's convenience, [full icon sets package](./all.md) is also available as smaller packages.
 
-This article describes split icons packages.
+This documentation is for packages that contain many files, one per icon. These packages can be used if you need to import only few icons without parsing whole icon set.
+
+Be aware that some packages might contain many files, which some file systems cannot handle.
 
 ## Packages
 
-Each icon set is available as a separate NPM package. Package name is `[npm]@iconify-icons/{prefix}`, where `[str]{prefix}` is icon set prefix.
+There are 2 versions of packages available on NPM:
 
-These packages are available only on NPM. They are automatically generated from [big icon sets package](./all.md) whenever it is updated.
+- `[npm]@iconify-icons/{prefix}` that contains data as ES modules for modern development.
+- `[npm]@iconify/icons-{prefix}` that contains icon data as CommonJS for legacy code.
+
+Replace `[str]{prefix}` with an icon set prefix.
+
+Packages are automatically generated from [big icon sets package](./all.md) whenever it is updated.
 
 ## Contents
 
@@ -47,23 +54,18 @@ Example of React component using icon from such package:
 src: icon-components/common/offline.jsx
 ```
 
-## CommonJS packages
+### CommonJS packages
 
-Packages `[npm]@iconify-icons/{prefix}` use ES modules.
-
-However, some outdated software still does not support ES modules. To support that software, CommonJS packages are also available. They are identical to ES modules, but icon files export CommonJS:
+For older software use CommonJS packages. Replace `[func]import` with `[func]require()`:
 
 ```js
 const mdiHome = require('@iconify/icons-mdi/home');
 ```
 
-Format for icon data packages:
-
-- ES package: `[npm]@iconify-icons/{prefix}`
-- CommonJS package: `[npm]@iconify/icons-{prefix}`
-
-where `[str]{prefix}` is an icon set prefix. Use ES package whenever possible, switch to CommonJS package if your bundler does not support ES modules or if you need to use it in Node.js.
-
 ## Creating packages
 
 If you want to create a package for your icon set, see `[func]exportIconPackage()` of [Iconify Tools](../tools/tools2/index.md).
+
+## Icon sets list
+
+If you need to get list of available open source icon sets, see [icon sets list package](./collections.md).

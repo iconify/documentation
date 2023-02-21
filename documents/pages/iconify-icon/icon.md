@@ -10,7 +10,7 @@ functions:
 
 This tutorial is part of [Iconify Icon web component tutorial](./index.md).
 
-When using [icon components](../icon-components/components/index.md), you can pass icon data to component instead of icon name, like this:
+When using [Iconify icon components](../icon-components/index.md), you can pass icon data to component instead of icon name, like this:
 
 ```jsx
 import { Icon } from '@iconify/react';

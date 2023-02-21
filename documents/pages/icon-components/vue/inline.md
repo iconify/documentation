@@ -1,33 +1,24 @@
 ```yaml
-title: Inline Icons in Iconify for Vue
+title: Vertical Alignment in Iconify for Vue
 ```
 
-# Inline icons
+# Vertical alignment
 
 This tutorial is part of [Iconify for Vue tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
 
-```yaml
-src: icon-components/common/inline-block.vue
-title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: true
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
-
-## Syntax
+## Inline attribute
 
 `include icon-components/components/inline-basic`
 
 ```yaml
-src: icon-components/common/inline-block2.vue
+src: icon-components/common/inline.vue
 title: 'HTML:'
 demo: true
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
+
+`include icon-components/vertical-align-footer`

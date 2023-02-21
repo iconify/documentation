@@ -13,16 +13,20 @@ replacements:
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 
-Iconify SVG framework retrieves icon data from Iconify API. That makes it very easy to use because developer does not need to prepare icon data. Downside is, visitor must be online to retrieve icon data.
+Retrieving icon data from Iconify API requires visitor to be online and relies on third party service. What if you want to use SVG framework offline or on local network?
 
-However, SVG framework can also work without API.
+## Hosting
+
+You can [host your own Iconify API](../../api/hosting.md).
 
 ## Bundle without API
 
-Iconify SVG framework offers bundle without API support. You do not need to use it, you can use full bundle without relying on API, however there are advantages of using bundle without API support:
+`include notices/deprecated-offline`
+
+Iconify SVG framework offers bundle without API support. Difference from full bundle:
 
 - It is smaller than full bundle.
-- You will immediately see missing icons. If you use full bundle, some icons could be left in `[prop]localStorage` or `[prop]sessionStorage` cache. Bundle without API does not support storage.
+- You will immediately see missing icons, which cannot be used without API. If you use full bundle, some icons could be left in `[prop]localStorage` or `[prop]sessionStorage` cache. Bundle without API does not support storage.
 
 To switch from full bundle to bundle without API support, add `[str].without-api` to script URL:
 
@@ -35,6 +39,8 @@ If you are using NPM package `[npm]@iconify/iconify@2`, import `[file]dist/iconi
 ```js
 import Iconify from '@iconify/iconify/dist/iconify.without-api.min.js';
 ```
+
+Do not mix `[str]iconify.without-api.min.js` and `[str]iconify.min.js` in the same project! These are separate bundles.
 
 ## Adding icons
 

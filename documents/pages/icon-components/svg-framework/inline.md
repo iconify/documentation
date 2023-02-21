@@ -1,5 +1,5 @@
 ```yaml
-title: Inline Icons in Iconify SVG Framework
+title: Vertical Alignment in Iconify SVG Framework
 replacements:
   - code: '/2/2.0.0/'
     value: '/${svg-framework.version.major}/${svg-framework.version.full}/'
@@ -7,40 +7,27 @@ replacements:
     value: '${counters.icons-short}'
 ```
 
-# Inline icons
+# Vertical alignment
 
 This tutorial is part of [Iconify SVG Framework tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
 
-```yaml
-src: icon-components/common/inline-block.html
-title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: true
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
+## Inline attribute
 
-## Syntax
-
-By default, icon is treated as block icon. It has no custom `[prop]vertical-align`, so you can add it as necessary in a stylesheet.
-
-You can change that behaviour by:
+To add `[prop]vertical-align` to icon, there are has several options:
 
 - Adding `[str]iconify-inline` to class list (or replacing `[str]iconify` with `[str]iconify-inline`).
 - Adding `[attr]data-inline` attribute.
 - Adding `[prop]vertical-align` style with value `[num]-0.125em`.
 
-Example:
-
 ```yaml
-src: icon-components/common/inline-block2.html
+src: icon-components/common/inline.html
 title: 'HTML:'
 demo: true
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
+
+`include icon-components/vertical-align-footer`

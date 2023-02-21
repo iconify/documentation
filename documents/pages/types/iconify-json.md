@@ -3,6 +3,10 @@ title: Iconify JSON Type
 types:
   IconifyIcon: './iconify-icon.md'
   IconifyAlias: './iconify-alias.md'
+functions:
+  getIconData: '../tools/utils/get-icon-data.md'
+  parseIconSet: '../tools/utils/parse-icon-set.md'
+  defaultIconProps: '../tools/utils/default-icon-props.md'
 ```
 
 # IconifyJSON type
@@ -54,6 +58,8 @@ Object `[prop]icons` contains data for icons.
 Key is icon name. Value is icon data, where `[prop]body` is required and other properties are optional:
 
 `include types/iconify-optional`
+
+In your code you can get default values from `[var]defaultIconProps` constant from [Iconify Utils](../tools/utils/index.md).
 
 ### Alias
 
@@ -125,7 +131,7 @@ extra:
     title: 'Merged "house-32" icon as IconifyIcon:'
 ```
 
-### Default values
+### Default dimensions
 
 If most icons in an icon set have the same dimensions, it does not make sense to list them all for each icon:
 
@@ -222,3 +228,12 @@ In all examples above, `[prop]width` and `[prop]height` are used to demonstrate 
 This is optional data that has no effect on rendering icons, so it was moved to a separate document.
 
 See [IconifyJSON metadata](./iconify-json-metadata.md) for details.
+
+## Functions
+
+To parse icon sets, [Iconify Utils](../tools/utils/index.md) offers the following functions:
+
+- `[func]parseIconSet()` parses an entire icon set, calling custom function for every icon.
+- `[func]getIconData()` extracts data for an icon in `[type]IconifyIcon` format.
+
+To create convert icons to icon sets, use [Iconify Tools](../tools/tools2/index.md).

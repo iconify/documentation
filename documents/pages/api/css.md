@@ -67,21 +67,21 @@ There are two types of icons:
 - Monotone icons, which use `[prop]currentColor` for color.
 - Icons with hardcoded palette, where colors cannot be changed.
 
-Monotone icons are rendered as mask image with background color set to `[prop]currentColor`. That means icon will use same color as text.
+You can use both types in CSS.
 
-To change icon color, simply change text color:
+Icons with hardcoded palette are rendered as background images:
+
+`include common/icon-types-palette`
+
+Monotone icons are rendered as mask images with background color set to `[prop]currentColor`:
+
+`include common/icon-types-monotone`
+
+Using `[prop]currentColor` as background color makes it easy to change icon color by changing text color:
 
 ```html
-<span class="icon--mdi icon--mdi--home" style="color: gray"></span>
+<span class="icon--bi icon--bi--bell-fill" style="color: green"></span>
 ```
-
-Result:
-
-```yaml
-include: common/css-demo
-```
-
-Icons with hardcoded palette are rendered as background image.
 
 You can force background or mask mode by adding `[prop]mode` parameter: `[url]&mode=background` or `[url]&mode=mask`
 

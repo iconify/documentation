@@ -172,7 +172,7 @@ Required attribute:
 Optional attributes:
 
 - `[prop]mode`, `[type]string` sets icon rendering mode. Seee [rendering modes](./modes.md).
-- `[prop]inline`, `[type]boolean` toggles inline or block mode. See [inline mode](./inline.md).
+- `[prop]inline`, `[type]boolean` changes vertical alignment. See [vertical alignment](./inline.md).
 - `[prop]width`, `[type]string | number` icon width. See [icon dimensions](./dimensions.md).
 - `[prop]height`, `[type]string | number` icon height. See [icon dimensions](./dimensions.md).
 - `[prop]flip`, `[type]string` flip icon. See [icon transformations](./transform.md).

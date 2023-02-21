@@ -18,6 +18,7 @@ functions:
   expandIconSet: './expand-icon-set.md'
   convertIconSetInfo: './convert-info.md'
   parseIconSet: './parse-icon-set.md'
+  parseIconSetAsync: './parse-icon-set.md'
   mergeIconData: './merge-icon-data.md'
   defaultIconProps: './default-icon-props.md'
   mergeCustomisations: './merge-customisations.md'
@@ -29,6 +30,7 @@ functions:
   flipFromString: './flip-from-string.md'
   defaultIconCustomisations: './default-icon-customisations.md'
   iconToSVG: './icon-to-svg.md'
+  iconToHTML: './icon-to-html.md'
   calculateSize: './calculate-size.md'
   replaceIDs: './replace-ids.md'
   matchIconName: './match-name.md'
@@ -51,6 +53,7 @@ Icon sets are stored in `[type]IconifyJSON` format. Functions for working with i
 - `[func]expandIconSet(data)` is the opposite of function above.
 - `[func]convertIconSetInfo(data)` converts legacy icon set format to correct `[type]IconifyInfo` type.
 - `[func]parseIconSet(data, callback)` parses icon set, calling `[attr]callback` function for every icon. Can be used to extract all icons from icon set. Validate icon set before parsing it.
+- `[func]parseIconSetAsync(data, callback)` is async version of `[func]parseIconSet()`, where both function and callback are asynchronous.
 
 Functions for working with `[type]IconifyIcon` format that represents one icon:
 
@@ -68,6 +71,7 @@ When rendering icon, customisations can be applied to it. For example, changing 
 Functions for rendering icon:
 
 - `[func]iconToSVG(icon, customisations)` generates data needed to render SVG. It does not generate full SVG, only content and list of attributes to add to SVG element, making it easy to use in custom components.
+- `[func]iconToHTML(body, attributes)` converts result of `[func]iconToSVG()` to SVG string.
 - `[func]calculateSize(size, ratio)` calculates icon dimensions. It is used when building icons using `[func]iconToSVG()`.
 - `[func]replaceIDs(content)` replaces IDs in SVG with unique IDs. IDs used in elements like masks and they must be unique, so multiple icons displayed on the same page using same IDs will result in chaos. This function prevents that chaos.
 - `[func]getIconCSS(icon)` generates stylesheet for using icon as background image or mask image.

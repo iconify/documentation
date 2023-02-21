@@ -11,19 +11,17 @@ functions:
 
 # Individual icon sets
 
-There are several packages available that contain all icons, see [icon sets documentation](./index.md).
-
-This article describes individual icons packages.
+For developer's convenience, [full icon sets package](./all.md) is also available as smaller packages, one package per icon set.
 
 ## Packages
 
-Each icon set is available as a separate NPM package. Package name is `[npm]@iconify-json/{prefix}`, where `[str]{prefix}` is icon set prefix.
+Packages are published as `[npm]@iconify-json/{prefix}`, where `[str]{prefix}` is icon set prefix.
 
 These packages are available only on NPM. They are automatically generated from [big icon sets package](./all.md) whenever it is updated.
 
 ## Contents
 
-Each package contains one icon set, split in several files:
+Unlike full package, where all data for icon set is stored in one file, indivudual icon sets split data in several files, so you can load only data you need:
 
 - `[file]icons.json` contains icon set in `[type]IconifyJSON` format, without any metadata.
 - `[file]info.json` contains icon set information in `[type]IconifyInfo` format.
@@ -37,9 +35,9 @@ import { icons as mdiIcons } from '@iconify-json/mdi';
 import { icons as mdiLightIcons } from '@iconify-json/mdi-light';
 ```
 
-However, code above uses JSON modules. It works fine when using bundlers or when using CommonJS. When using ES modules, importing JSON files requires running script with `[str]--experimental-json-modules` flag.
+Code samples above use JSON modules. It works fine when using bundlers or when using CommonJS. When using ES modules, older versions of Node.js require running script with `[str]--experimental-json-modules` flag.
 
-Alternative is to use `[func]require()`:
+If you are using older Node.js and cannot import JSON files, you can use `[func]require()`:
 
 ```js
 const mdiIcons = require('@iconify-json/mdi/icons.json');
@@ -56,19 +54,9 @@ In [big icon sets package](./all.md), all JSON files contain an entire icon set:
 
 In small packages that data is split into several files, as described above. If you only want icon data, it is better to read `[file]icons.json` from multiple small packages because they are smaller.
 
-## Collections list
+## Icon sets list
 
-Small packages contain only one icon set. How to know which icon sets are available?
-
-List of icon sets is available in `[npm]@iconify/collections` package.
-
-Package contains `[file]collections.json` with list of all icon sets, same as `[file]collections.json` in `[npm]@iconify/json` package.
-
-You can import collections list directly from `[file]@iconify/collections/collections.json` as default import or use named import:
-
-```js
-import { collections } from '@iconify/collections';
-```
+If you need to get list of available open source icon sets, see [icon sets list package](./collections.md).
 
 ## Reading data {#tools}
 

@@ -1,35 +1,26 @@
 ```yaml
-title: Inline Icons in Iconify for React with API
+title: Vertical Alignment in Iconify for React with API
 ```
 
-# Inline icons
+# Vertical alignment
 
 `include notices/react-with-api`
 
 This tutorial is part of [Iconify for React with API tutorial](./index.md).
 
-`include icon-components/inline-intro`
+`include icon-components/vertical-align-intro`
 
-```yaml
-src: icon-components/react-with-api/inline-block.jsx
-title: 'HTML:'
-css: iconify/inline-block.scss
-cssTitle: 'Stylesheet:'
-demo: icon-components/common/inline-block.html
-demoFirst: false
-demoTitle: 'Demo:'
-class: iconify-inline-block
-```
-
-## Syntax
+## Inline attribute
 
 `include icon-components/components/inline-react`
 
 ```yaml
-src: icon-components/react-with-api/inline-block2.jsx
+src: icon-components/react-with-api/inline.jsx
 title: 'HTML:'
-demo: icon-components/common/inline-block2.jsx
+demo: icon-components/common/inline.html
 demoFirst: false
 demoTitle: 'Demo:'
 class: iconify-inline-block
 ```
+
+`include icon-components/vertical-align-footer`

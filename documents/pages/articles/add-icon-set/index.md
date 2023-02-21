@@ -10,7 +10,7 @@ If you have created an icon set, please consider sharing it with Iconify communi
 
 What are the benefits of publishing an icon set to Iconify?
 
-- Icons become available to thousands of users that use projects that get icon data from Iconify: [Iconify icon components](../../iconify-icon/index.md), [UnoCSS](../../icon-components/unocss.md), [Unplugin Icons](../../icon-components/unplugin-icons.md) and other projects.
+- Icons become available to thousands of users that [use projects that get icon data from Iconify](../../usage/index.md).
 - Iconify is open source, all icon sets are also open source and they are used by many open source projects. Do you feel like contributing to open source projects?
 - Each icon set has an information section, which includes author name and link to repository. It is shown on websites that list icons, it is shown in Figma and Sketch plugin. It might get you some visitors, followers and links for search engines.
 
@@ -55,8 +55,8 @@ Not all icon sets are the same. There are good and bad icon sets. Bad icon sets 
 
 Most common reasons:
 
-- Icon set should be useful to community. If icon set is specific to your website, it is not really useful to other developers.
-- Icons, not pictures. Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of vector images with high details, that are meant to be used as large images are not acceptable.
+- Icon set should be useful to community. If icon set is specific to your website, such as your website logos, it is not really useful to other developers.
+- Icons, not illustrations. Icon sets must contain only icons, which can be used as a small icon, not as a large image. Collections of vector images with high details, that are meant to be used as large images are not acceptable.
 - No icons exported from fonts. Icons exported from fonts are almost always badly aligned, not following any logical grid system. They are very low quality and not usable as SVG.
 
 ## Design tips

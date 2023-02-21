@@ -113,7 +113,7 @@ export function build() {
 			const target = urlToFile(url);
 			if (files.indexOf(target) === -1) {
 				hasInvalidLinks = true;
-				console.error('Invalid link:', url);
+				console.error('Invalid link:', url, 'in', file);
 			} else {
 				const navigationListItem = navigationURLs[url];
 				if (navigationListItem === void 0) {

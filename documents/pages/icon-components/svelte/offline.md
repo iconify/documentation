@@ -17,6 +17,8 @@ See [icon bundles for Iconify for Svelte](../../icon-components/bundles/react.md
 
 Additionally, if you do not want to include API functionality, you can import component without API support. It is a bit smaller than full component.
 
+`include notices/deprecated-offline`
+
 In your code replace:
 
 ```js
@@ -43,6 +45,8 @@ Offline component has only the following functions available:
 ```yaml
 src: icon-components/common/offline.svelte
 ```
+
+Do not mix `[str]@iconify/svelte` and `[str]@iconify/svelte/dist/OfflineIcon.svelte` in the same project! These are separate bundles.
 
 ## Available icons
 

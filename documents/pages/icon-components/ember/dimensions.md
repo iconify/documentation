@@ -21,6 +21,8 @@ demoTitle: 'Demo:'
 class: components-size
 ```
 
+If you want to control icon size with `[prop]width` and `[prop]height` in CSS, see [how to remove icon dimensions](#unset) section below.
+
 ## Units
 
 ```yaml
@@ -42,6 +44,23 @@ include: icon-components/components/size-auto
 
 ```vue
 <IconifyIcon @icon="mdi: home;" height="auto" />
+```
+
+## Keywords "none" and "unset" {#unset}
+
+```yaml
+include: icon-components/components/size-unset
+```
+
+```yaml
+src: icon-components/ember/size-unset.hbs
+demo: icon-components/common/size-unset.html
+demoFirst: false
+class: 'icon-size icon-size--unset'
+```
+
+```yaml
+include: icon-components/components/size-unset-footer
 ```
 
 ## Setting only width or height

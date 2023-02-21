@@ -27,14 +27,17 @@ Icon dimensions, which has type `[type]IconifyIconSizeCustomisations`, have 2 pr
 
 Type `[type]IconifyIconSize` is alias for `[type]null | string | number`. Possible values are:
 
-- `[type]null` not set.
 - `[type]number` number in pixels.
 - `[type]string` number with units, such as `[str]1em`.
-- `[str]auto` is a special keyword, which sets dimension to value from icon's `[attr]viewBox`. So if icon has `[attr]viewBox="0 0 24 24"`, setting `[prop]width` to `[str]auto` sets it to `[num]24`.
+
+There are several special keywords:
+
+- `[str]auto` sets dimension to value from icon's `[attr]viewBox`. So if icon has `[attr]viewBox="0 0 24 24"`, setting `[prop]width` to `[str]auto` sets it to `[num]24`.
+- `[str]unset` and `[str]none` tell function to skip attribute. This makes it easy to use `[prop]width` and `[prop]height` in CSS.
 
 When calculating icon dimensions, setting one dimension (usually `[attr]height`) is enough. Another dimension will be automatically calculated using icon's proportions.
 
-If both `[prop]width` and `[prop]height` are not set (or `null`), by default `[prop]height` will be set to `[str]1em`.
+If both `[prop]width` and `[prop]height` are not set or `null`, by default `[prop]height` will be set to `[str]1em`.
 
 ## Transformations
 

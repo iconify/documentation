@@ -5,6 +5,7 @@ standalone: true
 functions:
   getIconData: '../get-icon-data.md'
   iconToSVG: '../icon-to-svg.md'
+  iconToHTML: '../icon-to-html.md'
   replaceIDs: '../replace-ids.md'
 types:
   IconifyJSON: '../../../types/iconify-json.md'
@@ -24,13 +25,26 @@ src: tools/utils/svg-from-set.ts
 title: 'demo.ts'
 ```
 
+## Async example
+
+This is another example that:
+
+- Uses asynchronous functions to parse icon sets.
+- Uses `[npm]@iconify/json` as source.
+- Written in modern JavaScript, not TypeScript.
+
+```yaml
+src: usage/svg-utils.js
+title: 'demo.js'
+```
+
 ## Functions
 
 Functions used in this code sample:
 
 - `[func]getIconData()` to extract data for one icon from icon set.
 - `[func]iconToSVG()` to generate attributes and HTML for SVG.
-- `[func]replaceIDs()` to create unique IDs, though it is commented out. Use it if you are embedding output in HTML.
+- `[func]iconToHTML()` to convert result of `[func]iconToSVG()` to string.
 
 ## Source
 
@@ -58,3 +72,16 @@ const icons = JSON.parse(readFileSync('whatever.json', 'utf8')) as IconifyJSON;
 Example outputs SVG to console.
 
 If you need to write it to a file, use file system function, such as `[func]writeFileSync()` or one of its asynchronous counterparts.
+
+## Icon size
+
+In this example all generated icons have `[prop]height="1em"`.
+
+You can remove that by adding customisations as second parameter to `[func]iconToSVG()`:
+
+```js
+const renderData = iconToSVG(iconData, {
+	// 'unset' removes dimensions from icon
+	height: 'unset',
+});
+```
