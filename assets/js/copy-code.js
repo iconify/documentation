@@ -12,35 +12,46 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	function copyCode(node, code) {
 		const rawCode = atob(code).trim();
 
-		const parentNode = node.parentNode;
-		const textarea = document.createElement('textarea');
-		textarea.value = rawCode;
-		textarea.style.height = 0;
-		parentNode.insertBefore(textarea, node);
+		function fallback() {
+			const parentNode = node.parentNode;
+			const textarea = document.createElement('textarea');
+			textarea.value = rawCode;
+			textarea.style.height = 0;
+			parentNode.insertBefore(textarea, node);
 
-		textarea.focus();
-		textarea.select();
+			textarea.focus();
+			textarea.select();
 
-		let copied = false;
-		try {
-			// Modern way
-			if (!document.execCommand || !document.execCommand('copy')) {
-				// Ancient way
-				if (window.clipboardData) {
-					window.clipboardData.setData('Text', rawCode);
-					copied = true;
+			try {
+				// Modern way
+				if (!document.execCommand || !document.execCommand('copy')) {
+					// Ancient way
+					if (window.clipboardData) {
+						window.clipboardData.setData('Text', rawCode);
+					}
 				}
-			} else {
-				copied = true;
-			}
-		} catch (err) {}
+			} catch (err) {}
 
-		// Remove textarea on next tick
-		setTimeout(() => {
-			parentNode.removeChild(textarea);
-		});
+			// Remove textarea on next tick
+			setTimeout(() => {
+				parentNode.removeChild(textarea);
+			});
+		}
 
-		return copied;
+		try {
+			navigator.clipboard
+				.writeText(rawCode)
+				.then(() => {
+					// Success
+				})
+				.catch((err) => {
+					// Failed: use fallback
+					fallback();
+				});
+		} catch (err) {
+			// Failed: use fallback
+			fallback();
+		}
 	}
 
 	// Find all code nodes
@@ -69,12 +80,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		// Mark div as parsed and add button
 		node.classList.add(withButtonClass);
 
-		const buttonNode = document.createElement('a');
-		buttonNode.setAttribute('href', '#');
-		buttonNode.setAttribute('title', 'Copy to clipboard');
-		buttonNode.addEventListener('click', (event) => {
-			event.preventDefault();
-			if (copyCode(node, code)) {
+		let buttonNode;
+		node.addEventListener('mouseenter', () => {
+			buttonNode = document.createElement('a');
+			buttonNode.setAttribute('href', '#');
+			buttonNode.setAttribute('title', 'Copy to clipboard');
+			buttonNode.addEventListener('click', (event) => {
+				event.preventDefault();
+				copyCode(node, code);
+
 				// Show notice
 				const noticeNode = document.createElement('div');
 				noticeNode.className = noticeClass;
@@ -86,18 +100,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				setTimeout(() => {
 					node.removeChild(noticeNode);
 				}, 2000);
-			}
+			});
+
+			buttonNode.className = buttonClass;
+			buttonNode.innerHTML =
+				'<iconify-icon icon="line-md:clipboard-arrow"></iconify-icon>';
+
+			node.appendChild(buttonNode);
 		});
 
-		buttonNode.className = buttonClass;
-		buttonNode.innerHTML =
-			'<iconify-icon icon="line-md:clipboard-arrow"></iconify-icon>';
-
-		node.appendChild(buttonNode);
-
-		// Restart animations on hover
-		node.addEventListener('mouseenter', () => {
-			restartAnimations(node);
+		node.addEventListener('mouseleave', () => {
+			node.removeChild(buttonNode);
 		});
 	});
 });
