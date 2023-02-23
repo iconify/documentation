@@ -80,8 +80,51 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		// Mark div as parsed and add button
 		node.classList.add(withButtonClass);
 
-		let buttonNode;
-		node.addEventListener('mouseenter', () => {
+		// Get trigger node
+		let triggerNode = node;
+		if (triggerNode.parentElement.classList.contains('code-block')) {
+			triggerNode = triggerNode.parentElement;
+		}
+
+		// Timer to hide animation and button element
+		let cannotHide = null;
+		let isHover = false;
+		let buttonNode = null;
+		let hidingNode = null;
+
+		function removeNode() {
+			hidingNode = buttonNode;
+			buttonNode = null;
+			hidingNode.classList.add(buttonClass + '--hiding');
+			setTimeout(() => {
+				if (hidingNode) {
+					node.removeChild(hidingNode);
+					hidingNode = null;
+				}
+			}, 500);
+		}
+
+		function triggerRemoveNode() {
+			if (!isHover && !cannotHide) {
+				removeNode();
+			}
+		}
+
+		function addButton() {
+			if (cannotHide) {
+				// Already exists
+				return;
+			}
+
+			if (hidingNode) {
+				// Already hiding: reuse old node
+				buttonNode = hidingNode;
+				hidingNode = null;
+				buttonNode.classList.remove(buttonClass + '--hiding');
+				return;
+			}
+
+			// Create button
 			buttonNode = document.createElement('a');
 			buttonNode.setAttribute('href', '#');
 			buttonNode.setAttribute('title', 'Copy to clipboard');
@@ -107,10 +150,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				'<iconify-icon icon="line-md:clipboard-arrow"></iconify-icon>';
 
 			node.appendChild(buttonNode);
+
+			// Allow hiding after animation is complete
+			cannotHide = setTimeout(() => {
+				// Allow hiding
+				cannotHide = null;
+				if (!isHover) {
+					removeNode();
+				}
+			}, 1500);
+		}
+
+		triggerNode.addEventListener('mouseenter', () => {
+			isHover = true;
+			addButton();
 		});
 
-		node.addEventListener('mouseleave', () => {
-			node.removeChild(buttonNode);
+		triggerNode.addEventListener('mouseleave', () => {
+			isHover = false;
+			triggerRemoveNode();
 		});
 	});
 });

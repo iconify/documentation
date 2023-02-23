@@ -84,14 +84,17 @@
 		padding: 4px;
 		font-size: $icon-size;
 		line-height: 1em;
-		display: none;
 
 		// color: $text-muted-color;
 		background: rgba($code-background, 0.5);
 		border-radius: 3px;
 
 		transition: color 0.2s ease;
-		transition-property: color, background-color;
+		transition-property: color, background-color, opacity;
+
+		&--hiding {
+			opacity: 0;
+		}
 
 		iconify-icon {
 			display: block;
@@ -132,12 +135,6 @@
 			line-height: 1em;
 			margin-right: 4px;
 		}
-	}
-
-	// Hover button
-	&-content:hover &-copy,
-	&-title:hover + &-content &-copy {
-		display: block;
 	}
 }
 
