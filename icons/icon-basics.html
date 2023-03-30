@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Getting Started: Icons</title>
+		
+	</head>
+	<body class="website-docs theme-icons">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icons</a>
+<a href="./icon-set-basics.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Icon Set Basics</a>
+</div>
+<h1>Icon Basics</h1>
+<p>Main goal of Iconify is to make icons easy to use.</p>
+<p>This requires modifying icons, so they can be used the same way regardless of icon set. This means icons are not always identical to source.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="icon-names" class="heading--2">Icon names <a href="#icon-names" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To make icons easy to use regardless of their source, all icons follow the same naming convention.</p><p>Allowed characters in icon names are &quot;<span class="hljs-string">a-z</span>&quot;, numbers and &quot;<span class="hljs-string">-</span>&quot;. Hyphen cannot be used at start or end of name, 2 hyphens in a row &quot;<span class="hljs-string">--</span>&quot; are not allowed.</p><p>Examples of valid icon names: &quot;<span class="hljs-string">home-outline</span>&quot;, &quot;<span class="hljs-string">1st-place-medal</span>&quot;, &quot;<span class="hljs-string">camera-with-flash</span>&quot;.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="colors" class="heading--2">Colors <a href="#colors" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are 2 types of icons in Iconify ecosystem:</p><ul>
+<li>Icons with hardcoded palette, such as emojis. Colors cannot be changed.</li>
+<li>Monotone icons. They have only one color that can be changed.</li>
+</ul><section class="content-section content-section--3"><H1 id="hardcoded-palette" class="heading--3">Hardcoded palette <a href="#hardcoded-palette" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Colors in icons with hardcoded palette cannot be changed.</p><p>Examples:</p><div class="icon-types icon-types--palette">
+	<p class="icon-types-18">
+		<iconify-icon icon="twemoji:clapper-board"></iconify-icon>
+		<a href="https://icon-sets.iconify.design/twemoji/clapper-board/" target="_blank">twemoji:clapper-board</a>
+	</p>
+	<p class="icon-types-18">
+		<iconify-icon icon="twemoji:loudspeaker"></iconify-icon>
+		<a href="https://icon-sets.iconify.design/twemoji/loudspeaker/" target="_blank">twemoji:loudspeaker</a>
+	</p>
+</div></section><section class="content-section content-section--3"><H1 id="monotone-icons" class="heading--3">Monotone icons <a href="#monotone-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>All monotone icons use <span class="hljs-inline-prop">currentColor</span> for color.</p><p>This makes it easy to change icon color by changing text color in CSS, similar to how icon fonts behave.</p><p>Examples:</p><div class="icon-types icon-types--monotone">
+	<p>
+		<iconify-icon icon="bi:bell-fill"></iconify-icon>
+		<iconify-icon icon="bi:bell-fill"></iconify-icon>
+		<iconify-icon icon="bi:bell-fill"></iconify-icon>
+		<a href="https://icon-sets.iconify.design/bi/bell-fill/" target="_blank">bi:bell-fill</a>
+	</p>
+	<p class="icon-types-24">
+		<iconify-icon icon="line-md:beer-alt-twotone-loop"></iconify-icon>
+		<iconify-icon icon="line-md:beer-alt-twotone-loop"></iconify-icon>
+		<iconify-icon icon="line-md:beer-alt-twotone-loop"></iconify-icon>
+		<a href="https://icon-sets.iconify.design/line-md/beer-alt-twotone-loop/" target="_blank">line-md:beer-alt-twotone-loop</a>
+	</p>
+	<p class="icon-types-24">
+		<iconify-icon icon="mdi:material-design"></iconify-icon>
+		<iconify-icon icon="mdi:material-design"></iconify-icon>
+		<iconify-icon icon="mdi:material-design"></iconify-icon>
+		<a href="https://icon-sets.iconify.design/mdi/material-design/" target="_blank">mdi:material-design</a>
+	</p>
+</div><p>Hover samples above to see color change.</p><p>Why not <span class="hljs-inline-prop">fill</span>? Main reason is because many icons use <span class="hljs-inline-prop">stroke</span> for color. Using <span class="hljs-inline-prop">fill</span> to set color is bad practice because it limits your icons to only icons that use <span class="hljs-inline-prop">fill</span>. It also prevents icons from being used as mask images because background color cannot be set to fill color.</p></section><section class="content-section content-section--3"><H1 id="mixing-currentcolor-and-custom-colors" class="heading--3">Mixing currentColor and custom colors <a href="#mixing-currentcolor-and-custom-colors" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>While it is possible to mix monotone and hardcoded palette, it is a very bad idea. Icon with mix of <span class="hljs-inline-prop">currentColor</span> and hardcoded colors is unusable because:</p><ul>
+<li>It cannot be used in CSS. If it is used as a background image, <span class="hljs-inline-prop">currentColor</span> becomes black. If it is used as a mask image, custom palette disappears.</li>
+<li>It works only with a specific color scheme, usually designed only for white background.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="bad-elements" class="heading--2">Bad elements <a href="#bad-elements" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icons that contain the following are not allowed:</p><ul>
+<li>Scripts and event listeners. They can be harmful or badly coded, thus they do not belong in public icons.</li>
+<li>Raster images. They don&apos;t scale, so they do not belong in vector icons.</li>
+<li>External resources. Icon should not rely on something hosted elsewhere.</li>
+<li>Text. Texts are rendered differently in different browsers and operating systems. Icons should look identical to all visitors. Convert text to shapes.</li>
+</ul><p>Additionally, everything that does not affect icon rendering is removed. Many bad editors leave a lot of junk code in generated SVG, all of that is removed.</p><p>This is done during import process for open source icon sets using <a href="../tools/">Iconify Tools</a>. Custom icon sets might not follow same guidelines.</p><section class="content-section content-section--3"><H1 id="icon-cleanup" class="heading--3">Icon cleanup <a href="#icon-cleanup" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For more details about icon cleanup and code samples, see <a href="../articles/cleaning-up-icons/">icons clean up process</a>.</p></section></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="padding" class="heading--2">Padding <a href="#padding" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There is also visual difference between many icon sets. Main difference is padding: some icon sets have padding, some don&apos;t.</p><p>The purpose of padding is to make different shapes visually similar.</p><p>Examples:</p><div class="icon-types icon-types--padding">
+	<p class="icon-types-24">
+		<iconify-icon icon="mdi:account"></iconify-icon>
+		<iconify-icon icon="mdi:account-edit"></iconify-icon>
+		<iconify-icon icon="mdi:account-off"></iconify-icon>
+		<iconify-icon icon="ic:baseline-keyboard-arrow-left"></iconify-icon>
+		<iconify-icon icon="ic:baseline-keyboard-double-arrow-left"></iconify-icon>
+		<iconify-icon icon="ic:twotone-subdirectory-arrow-left"></iconify-icon>
+		Icons with padding
+	</p>
+	<p class="icon-types-24">
+		<iconify-icon icon="grommet-icons:aid-option"></iconify-icon>
+		<iconify-icon icon="grommet-icons:checkbox-selected"></iconify-icon>
+		<iconify-icon icon="grommet-icons:checkmark"></iconify-icon>
+		Icons with no or very little padding
+	</p>
+</div><p>Well designed icons do have padding because:</p><ul>
+<li>It makes icons visually look similar.</li>
+<li>Allows variations of icons, such as sliced icon, without resizing main shape.</li>
+<li>In some applications pixels at icon edges might render incorrectly or be cut by overflow. Padding prevents icon from breaking.</li>
+</ul><p>When designing such icons, designers usually follow an icon grid. Consider using similar grid if you are creating your own icons.</p><p>Example grid used by Material Design Icons:</p><div class="icon-types icon-types--grid">
+	<div class="grid1"></div>
+	<div class="grid2"></div>
+</div><p>Grid is pixel perfect, edges of all shapes and curves are placed on pixels. When shapes are pixel perfect, icon looks sharp.</p></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="format" class="heading--2">Format <a href="#format" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Data for icons is extracted from icon sets in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> format.</p></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active"><a href="./icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

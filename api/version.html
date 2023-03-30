@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>API Version Query</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./keywords.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Keywords</a>
+<a href="./hosting.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Hosting API</a>
+</div>
+<h1>API version query</h1>
+<p>API query <span class="hljs-inline-link">/version</span> shows:</p>
+<ul>
+<li>API version.</li>
+<li>Which server you are connected to, if <span class="hljs-inline-prop">STATUS_REGION</span> environment variable is set.</li>
+</ul>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="region" class="heading--2">Region <a href="#region" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Purpose of this query is to be able to tell which server you are connected to, but without exposing actual location of server, which can help debug error. This is used in networks when many servers are running.</p><p>For example, public Iconify API servers are running multiple servers, placed in various locations all over the world. DNS is configured to redirect visitor to the closest server using AWS Route53 latency routing. This guarantees smallest possible response time. See <a href="./cdn.html">building budged CDN article</a> for details.</p><p>If something goes wrong, it would be nice to know which server is causing problems, but without exposing actual IP address of server and <span class="hljs-inline-link">/version</span> query solves that.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="query" class="heading--2">Query <a href="#query" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API query is <span class="hljs-inline-link">/version</span>.</p><p>There are no parameters.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="response" class="heading--2">Response <a href="#response" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Response plain text, showing version number.</p></section>
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Basic response:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeSBBUEkgdmVyc2lvbiAzLjAuMC1iZXRhLjEK"><code class="highlight hljs">Iconify API version 3.0.0-beta.1<br>
+</code></div></div></div><p>Response with <span class="hljs-inline-prop">STATUS_REGION=DE</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="SWNvbmlmeSBBUEkgdmVyc2lvbiAzLjAuMC1iZXRhLjEgKERFKQo="><code class="highlight hljs">Iconify API version 3.0.0-beta.1 (DE)<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="configuration" class="heading--2">Configuration <a href="#configuration" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>In <a href="./hosting-js/">Node.js version of API</a> you can configure result of this API query.</p><p>Query can be enabled or disabled using environment variable <span class="hljs-inline-prop">ENABLE_VERSION</span>. Possible values: <span class="hljs-literal">true</span> or <span class="hljs-literal">false</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="RU5BQkxFX1ZFUlNJT049ZmFsc2UK"><code class="highlight hljs">ENABLE_VERSION=false<br>
+</code></div></div></div><p>You can also set it in <span class="hljs-inline-file">src/config/app.ts</span> in <span class="hljs-inline-var">enableVersion</span> property, then rebuild API.</p><p>Region value can be set using <span class="hljs-inline-prop">STATUS_REGION</span> environment variable. Value is a string:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="U1RBVFVTX1JFR0lPTj1BUEkxCg=="><code class="highlight hljs">STATUS_REGION=API1<br>
+</code></div></div></div><p>You can also set it in <span class="hljs-inline-file">src/config/app.ts</span> in <span class="hljs-inline-var">statusRegion</span> property, then rebuild API.</p></section>
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./queries.html">API Queries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./svg.html">Generate SVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./css.html">Generate CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./last-modified.html">Last Modified</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collections.html">List of Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collection.html">List of Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./search.html">Search Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./keywords.html">Keywords</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./version.html">API Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

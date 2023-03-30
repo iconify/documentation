@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>List of icons</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./collections.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> List of Icon Sets</a>
+<a href="./search.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Search Icons</a>
+</div>
+<h1>List of icons</h1>
+<p>You can get list of icon in an icon set sets using <span class="hljs-inline-link">/collection</span> API query.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="query" class="heading--2">Query <a href="#query" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API query is <span class="hljs-inline-link">/collection</span>.</p><p>Required parameter:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon set prefix.</li>
+</ul><p>Optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">info</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If enabled, response will include icon set information.</li>
+<li><span class="hljs-inline-prop">chars</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If enabled, response will include characters map. Characters map exists only in icon sets that were imported from icon fonts.</li>
+</ul></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="response" class="heading--2">Response <a href="#response" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Response is a complex object with the following required properties:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> - icon set prefix.</li>
+<li><span class="hljs-inline-prop">total</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span> - total number of visible icons.</li>
+</ul><p>Then there are many optional properties.</p><section class="content-section content-section--3"><H1 id="icons" class="heading--3">Icons <a href="#icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Properties that are relevant for list of icons:</p><ul>
+<li><span class="hljs-inline-prop">uncategorized</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span> - list of icon names that aren&apos;t in any category.</li>
+<li><span class="hljs-inline-prop">categories</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">string</span>[]&gt;</span> - list of icons sorted by categories. Key is category title, value is list of icon names that belong to that category.</li>
+<li><span class="hljs-inline-prop">hidden</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span> - list of hidden icons. Usually icons are marked as hidden if at some point they were removed from icon set. To prevent user apps from breaking, icons are never deleted, they are marked as hidden instead, but still can be used in apps.</li>
+<li><span class="hljs-inline-prop">aliases</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">string</span>&gt;</span> - list of aliases. Key is alias, value is parent icon name.</li>
+</ul><p>To get list of all icon names that should be shown, use the following logic:</p><ul>
+<li>Get values from <span class="hljs-inline-prop">uncategorized</span> property, if it exsts.</li>
+<li>Traverse all categories from <span class="hljs-inline-prop">categories</span> property, if it exsts. One icon can exist in multiple categories, so check for duplicates, easiest way to do that is to use <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Set</span></span> class in JavaScript instead of <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Array</span></span>.</li>
+</ul><p>To get all icon names, add to result above:</p><ul>
+<li>Keys of <span class="hljs-inline-prop">aliases</span> object, if it exists. Should not be displayed in icons list because they are duplicate names for other icons.</li>
+<li>Values from <span class="hljs-inline-prop">hidden</span> property, if it exists. Should not be displayed in icons list because these are hidden icons. To prevent user apps from breaking, icons are never deleted, they are marked as hidden instead, but still can be used in apps.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="other-properties" class="heading--3">Other properties <a href="#other-properties" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Other optional properties:</p><ul>
+<li><span class="hljs-inline-prop">info</span>, <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-info.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> - icon set information, set if <span class="hljs-inline-prop">info</span> parameter was enabled.</li>
+<li><span class="hljs-inline-prop">title</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> - icon set name, usually a duplicate of <span class="hljs-inline-prop">info.name</span>.</li>
+<li><span class="hljs-inline-prop">chars</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">string</span>&gt;</span> - characters map, where key is character as hexadecimal string, value is icon name. It exists only for icon sets that were imported from icon fonts. It can be used to allow user to search icon name by character code.</li>
+<li><span class="hljs-inline-prop">themes</span>, <span class="hljs-inline-prop">prefixes</span> and <span class="hljs-inline-prop">suffixes</span> - icon set themes. Property <span class="hljs-inline-prop">themes</span> is deprecated, so it can be ignored.</li>
+</ul><p>See <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> type and <a href="../types/iconify-json-metadata.html">metadata documentation</a>.</p><p>Only icon sets that have info can be browsed. If you want to hide an icon set, do not set info object when importing it.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="simple-example" class="heading--2">Simple example <a href="#simple-example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>This is a basic icon set, without categories or any extra metadata:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJInByZWZpeCI6ICJtZGktbGlnaHQiLAoJInRvdGFsIjogMjY3LAoJInRpdGxlIjogIk1hdGVyaWFsIERlc2lnbiBMaWdodCIsCgkidW5jYXRlZ29yaXplZCI6IFsKCQkiYWNjb3VudCIsCgkJImFjY291bnQtYWxlcnQiLAoJCSJhbGFybSIsCgkJImFsYXJtLXBsdXMiLAoJCSJhbGVydCIsCgkJImFsZXJ0LWNpcmNsZSIsCgkJImFsZXJ0LW9jdGFnb24iLAoJCSJhcnJhbmdlLWJyaW5nLWZvcndhcmQiLAoJCSJhcnJhbmdlLWJyaW5nLXRvLWZyb250IiwKCQkiYXJyYW5nZS1zZW5kLWJhY2t3YXJkIiwKCQkiYXJyYW5nZS1zZW5kLXRvLWJhY2siLAoJCSJhcnJvdy1kb3duIiwKCQkiYXJyb3ctZG93bi1jaXJjbGUiLAoJCSJhcnJvdy1sZWZ0IiwKCQkiYXJyb3ctbGVmdC1jaXJjbGUiLAoJCSJhcnJvdy1yaWdodCIsCgkJImFycm93LXJpZ2h0LWNpcmNsZSIsCgkJImFycm93LXVwIiwKCQkiYXJyb3ctdXAtY2lyY2xlIiwKCgkJInZpZXctZGFzaGJvYXJkIiwKCQkidmlldy1tb2R1bGUiLAoJCSJ2b2x1bWUiLAoJCSJ2b2x1bWUtbWludXMiLAoJCSJ2b2x1bWUtbXV0ZSIsCgkJInZvbHVtZS1vZmYiLAoJCSJ2b2x1bWUtcGx1cyIsCgkJIndhbGxldCIsCgkJIndpZmkiLAoJCSJ4bWwiCgldCn0K"><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;mdi-light&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">267</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Material Design Light&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;uncategorized&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-alert&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alarm&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alarm-plus&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert-octagon&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrange-bring-forward&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrange-bring-to-front&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrange-send-backward&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrange-send-to-back&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-down&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-down-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-left&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-left-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-right&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-right-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-up&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-up-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;view-dashboard&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;view-module&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;volume&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;volume-minus&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;volume-mute&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;volume-off&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;volume-plus&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;wallet&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;wifi&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;xml&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">]</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div><div class="code-block-hint">/collection?prefix=mdi-light&amp;pretty=1</div></div></div><p>Actual API response is a lot bigger. Example was reduced.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="categories-example" class="heading--2">Categories example <a href="#categories-example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icon set in example below:</p><ul>
+<li>uses categories to sort icons (<span class="hljs-inline-prop">categories</span> can be combined with <span class="hljs-inline-prop">uncategorized</span> from example above, so check both properties to get all icons).</li>
+<li>has hidden icons.</li>
+<li>has aliases.</li>
+<li>has <a href="../types/iconify-json-metadata.html">theme suffixes</a>.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJInByZWZpeCI6ICJsaW5lLW1kIiwKCSJ0b3RhbCI6IDM5NSwKCSJ0aXRsZSI6ICJNYXRlcmlhbCBMaW5lIEljb25zIiwKCSJjYXRlZ29yaWVzIjogewoJCSJBY2NvdW50IjogWwoJCQkiYWNjb3VudCIsCgkJCSJhY2NvdW50LWFkZCIsCgkJCSJhY2NvdW50LWFsZXJ0IiwKCQkJImFjY291bnQtZGVsZXRlIiwKCQkJImFjY291bnQtcmVtb3ZlIiwKCQkJImFjY291bnQtc21hbGwiCgkJXSwKCQkiQWxlcnRzIjogWwoJCQkiYWxlcnQiLAoJCQkiYWxlcnQtY2lyY2xlIiwKCQkJImFsZXJ0LWNpcmNsZS10d290b25lIiwKCQkJImFsZXJ0LXR3b3RvbmUiLAoJCQkiYmVsbCIsCgkJCSJiZWxsLXR3b3RvbmUiLAoJCQkicXVlc3Rpb24iLAoJCQkicXVlc3Rpb24tY2lyY2xlIiwKCQkJInF1ZXN0aW9uLWNpcmNsZS10d290b25lIgoJCV0sCgkJIkZvb2QgYW5kIERyaW5rIjogWwoJCQkiYmVlciIsCgkJCSJiZWVyLWFsdC1maWxsZWQiLAoJCQkiYmVlci1hbHQtZmlsbGVkLWxvb3AiLAoJCQkiYmVlci1hbHQtdHdvdG9uZSIsCgkJCSJiZWVyLWFsdC10d290b25lLWxvb3AiLAoJCQkiYmVlci1maWxsZWQiLAoJCQkiYmVlci1sb29wIiwKCQkJImJlZXItdHdvdG9uZSIsCgkJCSJiZWVyLXR3b3RvbmUtbG9vcCIsCgkJCSJjb2ZmZWUiLAoJCQkiY29mZmVlLWFycm93IiwKCQkJImNvZmZlZS1hcnJvdy1maWxsZWQiLAoJCQkiY29mZmVlLWFycm93LXR3b3RvbmUiLAoJCQkiY29mZmVlLWZpbGxlZCIsCgkJCSJjb2ZmZWUtaGFsZi1lbXB0eS10d290b25lLWxvb3AiLAoJCQkiY29mZmVlLWxvb3AiLAoJCQkiY29mZmVlLXR3b3RvbmUiLAoJCQkiY29mZmVlLXR3b3RvbmUtbG9vcCIKCQldCgl9LAoJImhpZGRlbiI6IFsiaWNvbmlmeTIiXSwKCSJhbGlhc2VzIjogewoJCSJiZWVyLWFsdC1zb2xpZCI6ICJiZWVyLWFsdC1maWxsZWQiLAoJCSJiZWVyLWFsdC1zb2xpZC1sb29wIjogImJlZXItYWx0LWZpbGxlZC1sb29wIiwKCQkiYmVlci1zb2xpZCI6ICJiZWVyLWZpbGxlZCIsCgkJImNoZWNrLWxpc3QtMy1zb2xpZCI6ICJjaGVjay1saXN0LTMtZmlsbGVkIiwKCQkiZ3JpZC0zLXNvbGlkIjogImdyaWQtMy1maWxsZWQiLAoJCSJsaXN0LTMtc29saWQiOiAibGlzdC0zLWZpbGxlZCIKCX0sCgkic3VmZml4ZXMiOiB7CgkJIiI6ICJPdXRsaW5lIEFuaW1hdGlvbiIsCgkJIm91dCI6ICJFcmFzZSBBbmltYXRpb24iLAoJCSJsb29wIjogIkxvb3BpbmcgQW5pbWF0aW9uIiwKCQkidHJhbnNpdGlvbiI6ICJUcmFuc2l0aW9uIEJldHdlZW4gSWNvbnMiCgl9Cn0K"><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;line-md&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">395</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Material Line Icons&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;categories&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;Account&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-add&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-alert&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-delete&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-remove&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;account-small&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;Alerts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert-circle-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;alert-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;bell&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;bell-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;question&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;question-circle&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;question-circle-twotone&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;Food and Drink&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-alt-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-alt-filled-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-alt-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-alt-twotone-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;beer-twotone-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-arrow&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-arrow-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-arrow-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-half-empty-twotone-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-twotone&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;coffee-twotone-loop&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;hidden&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;iconify2&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;aliases&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;beer-alt-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;beer-alt-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;beer-alt-solid-loop&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;beer-alt-filled-loop&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;beer-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;beer-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;check-list-3-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;check-list-3-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;grid-3-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;grid-3-filled&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;list-3-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;list-3-filled&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;suffixes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Outline Animation&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;out&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Erase Animation&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;loop&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Looping Animation&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;transition&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Transition Between Icons&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div><div class="code-block-hint">/collection?prefix=line-md&amp;pretty=1</div></div></div><p>Actual API response is a lot bigger. Example was reduced.</p><section class="content-section content-section--3"><H1 id="error-response" class="heading--3">Error response <a href="#error-response" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If icon set is not found or cannot be browsed, server returns <span class="hljs-number">404</span> HTTP error.</p><p>If browsing icons is disabled, route is not handled, server returns <span class="hljs-number">404</span> HTTP error.</p></section></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="type" class="heading--2">Type <a href="#type" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Type for API response:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHR5cGUgeyBJY29uaWZ5SW5mbywgSWNvbmlmeUpTT04gfSBmcm9tICdAaWNvbmlmeS90eXBlcyc7CgpleHBvcnQgaW50ZXJmYWNlIEFQSXYyQ29sbGVjdGlvblJlc3BvbnNlIHsKCS8vIEljb24gc2V0IHByZWZpeAoJcHJlZml4OiBzdHJpbmc7CgoJLy8gTnVtYmVyIG9mIGljb25zIChkdXBsaWNhdGUgb2YgaW5mbz8udG90YWwpCgl0b3RhbDogbnVtYmVyOwoKCS8vIEljb24gc2V0IHRpdGxlLCBpZiBhdmFpbGFibGUgKGR1cGxpY2F0ZSBvZiBpbmZvPy5uYW1lKQoJdGl0bGU/OiBzdHJpbmc7CgoJLy8gSWNvbiBzZXQgaW5mbwoJaW5mbz86IEljb25pZnlJbmZvOwoKCS8vIExpc3Qgb2YgaWNvbnMgd2l0aG91dCBjYXRlZ29yaWVzCgl1bmNhdGVnb3JpemVkPzogc3RyaW5nW107CgoJLy8gTGlzdCBvZiBpY29ucywgc29ydGVkIGJ5IGNhdGVnb3J5CgljYXRlZ29yaWVzPzogUmVjb3JkPHN0cmluZywgc3RyaW5nW10+OwoKCS8vIExpc3Qgb2YgaGlkZGVuIGljb25zCgloaWRkZW4/OiBzdHJpbmdbXTsKCgkvLyBMaXN0IG9mIGFsaWFzZXMsIGtleSA9IGFsaWFzLCB2YWx1ZSA9IHBhcmVudCBpY29uCglhbGlhc2VzPzogUmVjb3JkPHN0cmluZywgc3RyaW5nPjsKCgkvLyBDaGFyYWN0ZXJzLCBrZXkgPSBjaGFyYWN0ZXIsIHZhbHVlID0gaWNvbiBuYW1lCgljaGFycz86IFJlY29yZDxzdHJpbmcsIHN0cmluZz47CgoJLy8gVGhlbWVzCgl0aGVtZXM/OiBJY29uaWZ5SlNPTlsndGhlbWVzJ107CglwcmVmaXhlcz86IEljb25pZnlKU09OWydwcmVmaXhlcyddOwoJc3VmZml4ZXM/OiBJY29uaWZ5SlNPTlsnc3VmZml4ZXMnXTsKfQo="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">IconifyInfo</span>, <span class="hljs-title class_">IconifyJSON</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/types&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">APIv2CollectionResponse</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Icon set prefix</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">prefix</span>: <span class="hljs-built_in">string</span>;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Number of icons (duplicate of info?.total)</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">total</span>: <span class="hljs-built_in">number</span>;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Icon set title, if available (duplicate of info?.name)</span><br>
+ &#xa0; &#xa0;title?: <span class="hljs-built_in">string</span>;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Icon set info</span><br>
+ &#xa0; &#xa0;info?: <span class="hljs-title class_">IconifyInfo</span>;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// List of icons without categories</span><br>
+ &#xa0; &#xa0;uncategorized?: <span class="hljs-built_in">string</span>[];<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// List of icons, sorted by category</span><br>
+ &#xa0; &#xa0;categories?: <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>[]&gt;;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// List of hidden icons</span><br>
+ &#xa0; &#xa0;hidden?: <span class="hljs-built_in">string</span>[];<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// List of aliases, key = alias, value = parent icon</span><br>
+ &#xa0; &#xa0;aliases?: <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Characters, key = character, value = icon name</span><br>
+ &#xa0; &#xa0;chars?: <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Themes</span><br>
+ &#xa0; &#xa0;themes?: <span class="hljs-title class_">IconifyJSON</span>[<span class="hljs-string">&apos;themes&apos;</span>];<br>
+ &#xa0; &#xa0;prefixes?: <span class="hljs-title class_">IconifyJSON</span>[<span class="hljs-string">&apos;prefixes&apos;</span>];<br>
+ &#xa0; &#xa0;suffixes?: <span class="hljs-title class_">IconifyJSON</span>[<span class="hljs-string">&apos;suffixes&apos;</span>];<br>
+}<br>
+</code></div></div></div></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./queries.html">API Queries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./svg.html">Generate SVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./css.html">Generate CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./last-modified.html">Last Modified</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collections.html">List of Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./collection.html">List of Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./search.html">Search Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./keywords.html">Keywords</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./version.html">API Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

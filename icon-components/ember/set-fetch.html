@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Iconify for Ember Function: setFetch</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./replace-ids.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> replaceIDs()</a>
+<a href="../bundles/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Icon Bundles</a>
+</div>
+<h1>Iconify for Ember function: setFetch</h1>
+<p>This tutorial is part of <a href="./#functions">Iconify for Ember functions tutorial</a>.</p>
+<p>Function <span class="hljs-function">setFetch()</span> can be used to load Fetch API implementation.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="why" class="heading--2">Why is it needed? <a href="#why" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>When using icon component in a browser, it relies on <span class="hljs-function">fetch()</span> to retrieve data from Iconify API.</p><p>All modern browsers support it.</p><p>Currently Node.js does not natively support Fetch API. It is available in Node.js version 17 using flag &quot;<span class="hljs-string">--experimental-fetch</span>&quot;, but without it Fetch API is not available. That means icon component cannot retrieve icon data from Iconify API when used on a server side in Node.js environment.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameter:</p><ul>
+<li><span class="hljs-inline-prop">fetch</span>. Function <span class="hljs-function">fetch()</span>.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="steps" class="heading--2">Steps <a href="#steps" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><ol>
+<li>Install <span class="hljs-inline-package hljs-linkable">cross-fetch</span> (if you are using CommonJS) or <span class="hljs-inline-package hljs-linkable">node-fetch</span> (if you are using modules) as dependency.</li>
+<li>Use internal <span class="hljs-function">setFetch()</span> function to set third party Fetch API before using any icon component functions.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgX2FwaSB9IGZyb20gJ0BpY29uaWZ5L3N2ZWx0ZSc7CmltcG9ydCBmZXRjaCBmcm9tICdjcm9zcy1mZXRjaCc7Ci8vICBpbXBvcnQgZmV0Y2ggZnJvbSAnbm9kZS1mZXRjaCc7CgovLyBTZXQgRmV0Y2ggQVBJIGJlZm9yZSBkb2luZyBhbnl0aGluZwpfYXBpLnNldEZldGNoKGZldGNoKTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { _api } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/ember/components/iconify-icon&apos;</span>;<br>
+<span class="hljs-keyword">import</span> fetch <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;cross-fetch&apos;</span>;<br>
+<span class="hljs-comment">// &#xa0;import fetch from &apos;node-fetch&apos;;</span><br>
+<br>
+<span class="hljs-comment">// Set Fetch API before doing anything</span><br>
+_api.<span class="hljs-title function_">setFetch</span>(fetch);<br>
+</code></div></div></div><p>This code must be added only to script that runs on server side, not bundled for client side use. Browsers already support Fetch API, so this code is not needed in browsers.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../iconify-icon/">Web Component</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Ember<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Vertical Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icon.html">loadIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./build-icon.html">buildIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./set-fetch.html">setFetch()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator"><a href="../bundles/">Icon Bundles</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Sending API Query</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./compare.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Compare Directories</a>
+<a href="./download-file.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Download File</a>
+</div>
+<h1>Sending API query</h1>
+<p>This tutorial is part of <a href="./">package functions documentation</a> in <a href="../">Iconify Tools</a>.</p>
+<p>Function <span class="hljs-function">sendAPIQuery()</span> is a wrapper for <span class="hljs-function">fetch</span> with caching.</p>
+<p>It is used by functions that retrieve text data from remote sources, such as <a href="../import/figma/" title="importFromFigma() documentation"><span class="hljs-function hljs-linkable">importFromFigma()</span></a> and <a href="./github.html" title="downloadGitHubRepo() documentation"><span class="hljs-function hljs-linkable">downloadGitHubRepo()</span></a>.</p>
+<p>To retrieve binary files, see <a href="./download-file.html" title="downloadFile() documentation"><span class="hljs-function hljs-linkable">downloadFile()</span></a>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">query</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">APIQueryParams</span></span>. URI and parameters.</li>
+<li><span class="hljs-inline-prop">cache</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">APICacheOptions</span></span>. Cache options.</li>
+</ul><p>Function returns:</p><ul>
+<li>Content as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> on success.</li>
+<li>Error as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span> on error.</li>
+</ul><p>Function is asynchronous. That means you need to handle it as <span class="hljs-class">Promise</span> instance, usually by adding <span class="inline-code inline-code--js"><span class="hljs-keyword">await</span></span> before function call.</p><section class="content-section content-section--3"><H1 id="apiqueryparams" class="heading--3">APIQueryParams <a href="#apiqueryparams" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">APIQueryParams</span></span> object has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">uri</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Base URI.</li>
+<li><span class="hljs-inline-prop">params</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">URLSearchParams</span></span>. Optional parameters.</li>
+<li><span class="hljs-inline-prop">header</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">string</span>&gt;</span>. Optional headers.</li>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgcGFyYW1zID0gewoJdXJpOiAnaHR0cHM6Ly9hcGkud2hhdGV2ZXIuY29tL3NvbWUtZmlsZS8nLAoJcGFyYW1zOiBuZXcgVVJMU2VhcmNoUGFyYW1zKHsKCQl2ZXJzaW9uOiAnMTIzJywKCX0pLAoJaGVhZGVyczogewoJCUFjY2VwdDogJ2FwcGxpY2F0aW9uL2pzb24nLAoJfSwKfTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> params = {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">uri</span>: <span class="hljs-string">&apos;https://api.whatever.com/some-file/&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">params</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>({<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">version</span>: <span class="hljs-string">&apos;123&apos;</span>,<br>
+ &#xa0; &#xa0;}),<br>
+ &#xa0; &#xa0;<span class="hljs-attr">headers</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-title class_">Accept</span>: <span class="hljs-string">&apos;application/json&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+};<br>
+</code></div></div></div></section><section class="content-section content-section--3"><H1 id="apicacheoptions" class="heading--3">APICacheOptions <a href="#apicacheoptions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">APICacheOptions</span></span> object has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">dir</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Directory where cache should be stored.</li>
+<li><span class="hljs-inline-prop">ttl</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. How long can data be cached, in seconds.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="cache-management" class="heading--2">Cache management <a href="#cache-management" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If <span class="hljs-inline-prop">cache</span> property is not set, data is not cached.</p><p>If <span class="hljs-inline-prop">cache</span> property is set, function will generate unique hash for query, will check if file with that hash already exists, if it has not expired. On success it will return cached data instead of fetching new data.</p><p>You can purge cache at any time using <span class="hljs-function">clearAPICache()</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgY2xlYXJBUElDYWNoZSB9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzL2xpYi9kb3dubG9hZC9hcGkvY2FjaGUnOwoKY29uc3QgY2FjaGVEaXIgPSAnY2FjaGUnOwoKLy8gQXN5bmNocm9ub3VzIGZ1bmN0aW9uLCBzbyB3cmFwcGluZyBpdCBpbiBhbm9ueW1vdXMgYXN5bmMgZnVuY3Rpb24uCi8vIE5vdCBuZWVkZWQgZm9yIE5vZGUgMTcrIHRoYXQgc3VwcG9ydHMgdG9wIGxldmVsIGF3YWl0LgooYXN5bmMgKCkgPT4gewoJYXdhaXQgY2xlYXJBUElDYWNoZShjYWNoZURpcik7Cn0pKCk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { clearAPICache } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools/lib/download/api/cache&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> cacheDir = <span class="hljs-string">&apos;cache&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Asynchronous function, so wrapping it in anonymous async function.</span><br>
+<span class="hljs-comment">// Not needed for Node 17+ that supports top level await.</span><br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">clearAPICache</span>(cacheDir);<br>
+})();<br>
+</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">example.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgc2VuZEFQSVF1ZXJ5IH0gZnJvbSAnQGljb25pZnkvdG9vbHMnOwppbXBvcnQgdHlwZSB7IEFQSUNhY2hlT3B0aW9ucyB9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzL2xpYi9kb3dubG9hZC9hcGkvdHlwZXMnOwoKLy8gMyBkYXlzIGNhY2hlCmNvbnN0IHR0bCA9IDYwICogNjAgKiAyNCAqIDM7CmNvbnN0IGRpciA9ICdjYWNoZS9hcGknOwpjb25zdCBvcHRpb25zOiBBUElDYWNoZU9wdGlvbnMgPSB7CglkaXIsCgl0dGwsCn07CgooYXN5bmMgKCkgPT4gewoJY29uc3QgZGF0YSA9IGF3YWl0IHNlbmRBUElRdWVyeSgKCQl7CgkJCXVyaTogJ2h0dHBzOi8vYXBpLmljb25pZnkuZGVzaWduL2NvbGxlY3Rpb25zJywKCQl9LAoJCW9wdGlvbnMKCSk7Cgljb25zb2xlLmxvZyh0eXBlb2YgZGF0YSA9PT0gJ3N0cmluZycgPyBKU09OLnBhcnNlKGRhdGEpIDogZGF0YSk7Cn0pKCk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { sendAPIQuery } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">APICacheOptions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools/lib/download/api/types&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// 3 days cache</span><br>
+<span class="hljs-keyword">const</span> ttl = <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span> * <span class="hljs-number">3</span>;<br>
+<span class="hljs-keyword">const</span> dir = <span class="hljs-string">&apos;cache/api&apos;</span>;<br>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">options</span>: <span class="hljs-title class_">APICacheOptions</span> = {<br>
+ &#xa0; &#xa0;dir,<br>
+ &#xa0; &#xa0;ttl,<br>
+};<br>
+<br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">sendAPIQuery</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;{<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">uri</span>: <span class="hljs-string">&apos;https://api.iconify.design/collections&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;options<br>
+ &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&apos;string&apos;</span> ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(data) : data);<br>
+})();<br>
+</code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-set/">IconSet Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Managing Packages<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Download Packages:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./git.html">Git Repository</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./github.html">GitHub API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./gitlab.html">GitLab API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./npm.html">NPM Package</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Versions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./bump-version.html">Increase Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./npm-version.html">NPM Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./package-version.html">Package Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./git-repo-hash.html">Git Repo Hash</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./github-commit.html">GitHub Last Commit</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./gitlab-commit.html">GitLab Last Commit</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Other:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./compare.html">Compare Directories</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./api-query.html">Send API Query</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./download-file.html">Download File</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

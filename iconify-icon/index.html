@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Iconify Icon Web Component</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../icon-components/" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icons on Demand</a>
+<a href="./react.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> React</a>
+</div>
+<h1>Iconify Icon web component</h1>
+<p>Iconify Icon is a web component renders icons.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>It is designed to be as easy to use as possible.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PGljb25pZnktaWNvbiBpY29uPSJtZGk6aG9tZSI+PC9pY29uaWZ5LWljb24+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo sample-big"><iconify-icon icon="mdi:home"></iconify-icon>
+</div></div></div></div><section class="content-section content-section--3"><H1 id="supported-frameworks" class="heading--3">Supported frameworks <a href="#supported-frameworks" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Web component can be used in HTML without any UI framework. See usage examples below.</p><p>It also works great with all modern frameworks that support web components:</p><ul>
+<li>Svelte and SvelteKit/Sapper.</li>
+<li>Vue 2 and Vue 3. Requires custom config when used in Nuxt (see below).</li>
+<li>Lit.</li>
+<li>Ember.</li>
+<li>React and Next, but with small differences, such as using <span class="hljs-inline-prop">class</span> instead of <span class="hljs-inline-prop">className</span>. <a href="./react.html">Wrapper fixes it</a>.</li>
+</ul><p>However, some UI frameworks require custom wrappers:</p><ul>
+<li>Solid. See <a href="./solid.html">Iconify icon web component for Solid</a>.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="icon-data-on-demand" class="heading--2">Icon data on demand <a href="#icon-data-on-demand" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Instead of embedding an entire icon, all you need to do is provide an icon name in <span class="hljs-inline-prop">icon</span> attribute.</p><p>Web component will retrieve icon data from <a href="../api/">Iconify API</a>, then will render SVG in shadow DOM.</p><p>There are over 150k icons available from many open source icon sets.</p><p>Don&apos;t want to rely on third party API servers? You can <a href="./without-api.html">use web component without API</a> or you can <a href="../api/hosting.html">host your own Iconify API</a>. You can also use it with your own icons.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="shadow-dom" class="heading--2">Shadow DOM <a href="#shadow-dom" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icon is rendered in shadow DOM. What does that mean?</p><ul>
+<li>HTML for icon is hidden, not part of main document.</li>
+<li>It simplifies hydration when web component is used in a UI framework with server side rendering. See below.</li>
+<li>Stylesheet used in document does not affect icons, preventing potential conflicts.</li>
+</ul><p>In some cases this can be a disadvantage, for example, if you do want to access icon content to perform CSS or JavaScript based animations. If you do not want a web component that uses shadow DOM, take a look at <a href="../icon-components/">Iconify icon components</a>.</p><section class="content-section content-section--3"><H1 id="ssr" class="heading--3">SSR hydration <a href="#ssr" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>One of issues web component solves is hydration, which is used by many modern UI frameworks.</p><p>Server side rendering is becoming more and more popular, hydration is complex and can easily be broken by a mismatched DOM.</p><p>What is hydration? It happens when bare document is generated on server, sent to browser, in browser UI framework makes it interactive by attaching event liseners to HTML generated on server instead of rendering new application. It is actually more complex than that, see various articles on SSR hydration.</p><p>There are several issues with hydrating icons:</p><ul>
+<li>Icons might have unique IDs in elements, such as masks and clip paths. Using multiple icons on the same page requires using different IDs (or randomising them), which usually breaks hydration process.</li>
+<li>Dynamically loaded icon data cannot be rendered before hydration ends. This can be solved by rendering icon only after component has been mounted, but that might cause rendering delays and other issues.</li>
+</ul><p>Shadow DOM used by web components solves hydration problems. When UI framework renders icon on server, it only renders <span class="hljs-inline-tag hljs-linkable">&lt;iconify-icon&gt;</span> element. During hydration process, UI framework only checks <span class="hljs-inline-tag hljs-linkable">&lt;iconify-icon&gt;</span> element, but not actual icon. This means:</p><ul>
+<li>Server side can generate only <span class="inline-code inline-code--html"><span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span></span>, reducing document size.</li>
+<li>Web component can load icon data and render it immediately and independant from UI framework, not waiting for UI framework to mount component.</li>
+<li>No issues with duplicate unique IDs. Each icon has its own document, so no need to change IDs of icon elements.</li>
+<li>Faster hydration. Icons can be complex, not checking icon content means less work for UI framework.</li>
+</ul><p>Using shadow DOM to render icon leads to better experience for developers. No need to configure anything, no need to worry about icon data, no need to worry about conflicts. It just works.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="icon-font" class="heading--2">Why not use icon font? <a href="#icon-font" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Shadow DOM used by web component has big advantages over usual SVGs or framework specific components, but what about icon fonts?</p><p>Do not use icon fonts!!!</p><ul>
+<li>Icon fonts are ugly. Browser renders icons using font rendering methods, which causes blurred icon edges and icons lose their sharpness.</li>
+<li>Icons rendered from icon fonts are often hard to align, resulting in misaligned icons.</li>
+<li>Browsers load huge fonts just to render few icons. This can be solved by using custom icon fonts, but doesn&apos;t solve other issues.</li>
+<li>No colored icons, only monotone. No SVG animations.</li>
+</ul><p>Icon fonts do not belong in modern web. They were a great solution when Internet Explorer was popular, web components did not exist and SVG support was buggy. Those bad times are over.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="registering-web-component" class="heading--2">Registering web component <a href="#registering-web-component" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For web component to work, it needs to be registered. <span class="hljs-inline-package hljs-linkable">iconify-icon</span> package does that automatically. All you need to do is include it on page.</p><p>If you are building a project with a bundler, you can include the script by installing <span class="hljs-inline-package hljs-linkable">iconify-icon</span> as a dependency and importing it in your project:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0ICdpY29uaWZ5LWljb24nOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;iconify-icon&apos;</span>;<br>
+</code></div></div></div><p>If you are not using bundles or want icon web component to be imported separately, add script to your document:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi9pY29uaWZ5LWljb24vMS4wLjcvaWNvbmlmeS1pY29uLm1pbi5qcyI+PC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div><p>or</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vaWNvbmlmeS1pY29uQDEuMC43L2Rpc3QvaWNvbmlmeS1pY29uLm1pbi5qcyI+PC9zY3JpcHQ+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div><section class="content-section content-section--3"><H1 id="nuxt" class="heading--3">Nuxt <a href="#nuxt" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>When using component with Nuxt, you need to tell it that <span class="hljs-inline-tag hljs-linkable">&lt;iconify-icon&gt;</span> is a web component.</p><p>Example of <span class="hljs-inline-file">nuxt.config.ts</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgZGVmaW5lTnV4dENvbmZpZyB9IGZyb20gJ251eHQzJzsKCmV4cG9ydCBkZWZhdWx0IGRlZmluZU51eHRDb25maWcoewoJdnVlOiB7CgkJY29tcGlsZXJPcHRpb25zOiB7CgkJCWlzQ3VzdG9tRWxlbWVudDogKHRhZykgPT4gdGFnID09PSAnaWNvbmlmeS1pY29uJywKCQl9LAoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { defineNuxtConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nuxt3&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineNuxtConfig</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">vue</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">compilerOptions</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">isCustomElement</span>: <span class="hljs-function">(<span class="hljs-params">tag</span>) =&gt;</span> tag === <span class="hljs-string">&apos;iconify-icon&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;},<br>
+});<br>
+</code></div></div></div></section></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="attributes" class="heading--2">Attributes <a href="#attributes" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are several attributes to customise icon appearance.</p><p>To change color (color can be changed only for monotone icons) or size, use style:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PGljb25pZnktaWNvbgoJaWNvbj0ibWRpOmFsZXJ0IgoJc3R5bGU9ImNvbG9yOiAjYmEzMzI5OyBmb250LXNpemU6IDQ4cHgiCj48L2ljb25pZnktaWNvbj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:alert&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: #ba3329; font-size: 48px&quot;</span><br>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo sample-big"><iconify-icon icon="mdi:alert" style="color: #ba3329; font-size: 48px"></iconify-icon>
+</div></div></div></div><p>You can also change size using <span class="hljs-inline-prop">width</span> and/or <span class="hljs-inline-prop">height</span> attributes:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+QWxsIGljb25zIGJlbG93IGFyZSAzNngzNjo8L3A+CjxpY29uaWZ5LWljb24gaWNvbj0iY2lsOmxvY29tb3RpdmUiIGhlaWdodD0iMzYiPjwvaWNvbmlmeS1pY29uPgo8aWNvbmlmeS1pY29uIGljb249ImNpbDpwYXBlci1wbGFuZSIgd2lkdGg9IjM2Ij48L2ljb25pZnktaWNvbj4KPGljb25pZnktaWNvbgoJaWNvbj0iY2lsOnRydWNrIgoJc3R5bGU9ImZvbnQtc2l6ZTogMThweCIKCWhlaWdodD0iMmVtIgo+PC9pY29uaWZ5LWljb24+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>All icons below are 36x36:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:locomotive&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;36&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:paper-plane&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;36&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:truck&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 18px&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;2em&quot;</span><br>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>All icons below are 36x36:</p>
+<iconify-icon icon="cil:locomotive" height="36"></iconify-icon>
+<iconify-icon icon="cil:paper-plane" width="36"></iconify-icon>
+<iconify-icon icon="cil:truck" style="font-size: 18px" height="2em"></iconify-icon>
+</div></div></div></div><p>If only one size attribute is set, another attribute is calculated using icon&apos;s width/height ratio.</p><p>You can also transform icon. Unlike CSS transformations, these transformations are done inside icon, which also affects icon&apos;s <span class="hljs-inline-prop">viewBox</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+Tm8gdHJhbnNmb3JtYXRpb25zOiA8aWNvbmlmeS1pY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiPjwvaWNvbmlmeS1pY29uPjwvcD4KPHA+CglIb3Jpem9udGFsIGZsaXA6Cgk8aWNvbmlmeS1pY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIGZsaXA9Imhvcml6b250YWwiPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJVmVydGljYWwgZmxpcDoKCTxpY29uaWZ5LWljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgZmxpcD0idmVydGljYWwiPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBhbmQgdmVydGljYWwgZmxpcCAoc2FtZSBhcyAxODDCsCByb3RhdGlvbik6Cgk8aWNvbmlmeS1pY29uCgkJaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIKCQlmbGlwPSJob3Jpem9udGFsLHZlcnRpY2FsIgoJPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJOTDCsCByb3RhdGlvbjoKCTxpY29uaWZ5LWljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgcm90YXRlPSI5MGRlZyI+PC9pY29uaWZ5LWljb24+CjwvcD4KPHA+CgkxODDCsCByb3RhdGlvbjoKCTxpY29uaWZ5LWljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgcm90YXRlPSIxODBkZWciPjwvaWNvbmlmeS1pY29uPgo8L3A+CjxwPgoJMjcwwrAgcm90YXRpb246Cgk8aWNvbmlmeS1pY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIHJvdGF0ZT0iMjcwZGVnIj48L2ljb25pZnktaWNvbj4KPC9wPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>No transformations: <span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Horizontal flip:<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Vertical flip:<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Horizontal and vertical flip (same as 180&#xb0; rotation):<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span><br>
+ &#xa0; &#xa0;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;90&#xb0; rotation:<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;180&#xb0; rotation:<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;270&#xb0; rotation:<br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">iconify-icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;270deg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iconify-icon</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>No transformations: <iconify-icon icon="bi:check2-circle"></iconify-icon></p>
+<p>
+	Horizontal flip:
+	<iconify-icon icon="bi:check2-circle" flip="horizontal"></iconify-icon>
+</p>
+<p>
+	Vertical flip:
+	<iconify-icon icon="bi:check2-circle" flip="vertical"></iconify-icon>
+</p>
+<p>
+	Horizontal and vertical flip (same as 180&#xb0; rotation):
+	<iconify-icon icon="bi:check2-circle" flip="horizontal,vertical"></iconify-icon>
+</p>
+<p>
+	90&#xb0; rotation:
+	<iconify-icon icon="bi:check2-circle" rotate="90deg"></iconify-icon>
+</p>
+<p>
+	180&#xb0; rotation:
+	<iconify-icon icon="bi:check2-circle" rotate="180deg"></iconify-icon>
+</p>
+<p>
+	270&#xb0; rotation:
+	<iconify-icon icon="bi:check2-circle" rotate="270deg"></iconify-icon>
+</p>
+</div></div></div></div><section class="content-section content-section--3"><H1 id="attributes-list" class="heading--3">Attributes list <a href="#attributes-list" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>All attributes are also available as properties, so you can access them easy in JavaScript when working with elements.</p><p>Required attribute:</p><ul>
+<li><span class="hljs-inline-prop">icon</span>, <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a> | <span class="hljs-inline-type hljs-linkable">string</span></span> icon name or icon data. Because attributes can only be strings, if you want to provide <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> data, you need to either use property or <span class="inline-code inline-code--js"><span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>()</span> it. See <a href="./icon.html">icon data</a>.</li>
+</ul><p>Optional attributes:</p><ul>
+<li><span class="hljs-inline-prop">mode</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> sets icon rendering mode. Seee <a href="./modes.html">rendering modes</a>.</li>
+<li><span class="hljs-inline-prop">inline</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> changes vertical alignment. See <a href="./inline.html">vertical alignment</a>.</li>
+<li><span class="hljs-inline-prop">width</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">number</span></span> icon width. See <a href="./dimensions.html">icon dimensions</a>.</li>
+<li><span class="hljs-inline-prop">height</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">number</span></span> icon height. See <a href="./dimensions.html">icon dimensions</a>.</li>
+<li><span class="hljs-inline-prop">flip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> flip icon. See <a href="./transform.html">icon transformations</a>.</li>
+<li><span class="hljs-inline-prop">rotate</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span> | <span class="hljs-inline-type hljs-linkable">string</span></span> rotates icon. See <a href="./transform.html">icon transformations</a>.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="functions" class="heading--2">Functions <a href="#functions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For advanced developers, web component offers several functions to control it.</p><p>These functions can be used to load custom icons, get icon data, preload icons from API, configure custom API and so on. See functions list below.</p><p>Functions can be imported from:</p><ul>
+<li><span class="hljs-inline-package hljs-linkable">iconify-icon</span> package, which also bundles web component. Usable in browser and Node.js.</li>
+<li>Web component class as static methods, which is available after component is registered.</li>
+<li><span class="hljs-inline-tag hljs-linkable">&lt;iconify-icon&gt;</span> node as methods, which are available after component is registered and new elements are created.</li>
+</ul><p>First method is the most reliable because it is a simple import. It is used in all examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgbG9hZEljb24gfSBmcm9tICdpY29uaWZ5LWljb24nOwoKY29uc3QgbmFtZSA9ICdtZGk6aG9tZSc7CmxvYWRJY29uKG5hbWUpCgkudGhlbigoZGF0YSkgPT4gewoJCWNvbnNvbGUubG9nKCdMb2FkZWQgZGF0YSBmb3InLCBuYW1lKTsKCX0pCgkuY2F0Y2goY29uc29sZS5lcnJvcik7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { loadIcon } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;iconify-icon&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&apos;mdi:home&apos;</span>;<br>
+<span class="hljs-title function_">loadIcon</span>(name)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Loaded data for&apos;</span>, name);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-variable language_">console</span>.<span class="hljs-property">error</span>);<br>
+</code></div></div></div><p>For second method, class can be retrieved from custom elements registry:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgSWNvbmlmeUljb24gPSB3aW5kb3cuY3VzdG9tRWxlbWVudHMuZ2V0KCdpY29uaWZ5LWljb24nKTsKCmNvbnN0IG5hbWUgPSAnbWRpOmhvbWUnOwpJY29uaWZ5SWNvbi5sb2FkSWNvbihuYW1lKQoJLnRoZW4oKGRhdGEpID0+IHsKCQljb25zb2xlLmxvZygnTG9hZGVkIGRhdGEgZm9yJywgbmFtZSk7Cgl9KQoJLmNhdGNoKGNvbnNvbGUuZXJyb3IpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">IconifyIcon</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">customElements</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">&apos;iconify-icon&apos;</span>);<br>
+<br>
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&apos;mdi:home&apos;</span>;<br>
+<span class="hljs-title class_">IconifyIcon</span>.<span class="hljs-title function_">loadIcon</span>(name)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Loaded data for&apos;</span>, name);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-variable language_">console</span>.<span class="hljs-property">error</span>);<br>
+</code></div></div></div><p>Third method can be used after creating a new icon element or accessing an existing element:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgSWNvbmlmeUljb24gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdpY29uaWZ5LWljb24nKTsKCmNvbnN0IG5hbWUgPSAnbWRpOmhvbWUnOwpJY29uaWZ5SWNvbi5sb2FkSWNvbihuYW1lKQoJLnRoZW4oKGRhdGEpID0+IHsKCQljb25zb2xlLmxvZygnTG9hZGVkIGRhdGEgZm9yJywgbmFtZSk7Cgl9KQoJLmNhdGNoKGNvbnNvbGUuZXJyb3IpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> <span class="hljs-title class_">IconifyIcon</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&apos;iconify-icon&apos;</span>);<br>
+<br>
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&apos;mdi:home&apos;</span>;<br>
+<span class="hljs-title class_">IconifyIcon</span>.<span class="hljs-title function_">loadIcon</span>(name)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Loaded data for&apos;</span>, name);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-variable language_">console</span>.<span class="hljs-property">error</span>);<br>
+</code></div></div></div><p>Functions are split in several groups (click function name to see more details and examples):</p><section class="content-section content-section--3"><H1 id="instance" class="heading--3">Instance functions <a href="#instance" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>These functions are available only on web component nodes:</p><ul>
+<li><span class="hljs-function">restartAnimation()</span>. Restarts SVG animation, useful if you want to restart animation on hover event, as shown in right side navigation of this website.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="getting-icons" class="heading--3">Check available icons <a href="#getting-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are several functions in this section:</p><ul>
+<li><a href="./icon-exists.html" title="iconExists() documentation"><span class="hljs-function hljs-linkable">iconExists(name)</span></a>. Checks if icon data is available, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>.</li>
+<li><a href="./list-icons.html" title="listIcons() documentation"><span class="hljs-function hljs-linkable">listIcons()</span></a>. Lists available icons, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>.</li>
+<li><a href="./get-icon.html" title="getIcon() documentation"><span class="hljs-function hljs-linkable">getIcon(name)</span></a>. Returns icon data, returns <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> object.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="adding-icons" class="heading--3">Adding icons <a href="#adding-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Functions for adding icons to component:</p><ul>
+<li><a href="./add-icon.html" title="addIcon() documentation"><span class="hljs-function hljs-linkable">addIcon()</span></a>. Adds one icon.</li>
+<li><a href="./add-collection.html" title="addCollection() documentation"><span class="hljs-function hljs-linkable">addCollection()</span></a>. Adds an icon set.</li>
+</ul><p>Note: icons added to component with these functions are not stored in cache. Component caches only icons retrieved from API.</p></section><section class="content-section content-section--3"><H1 id="helper" class="heading--3">Helper functions <a href="#helper" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><ul>
+<li><span class="hljs-function">calculateSize()</span>. Calculates icon size. It is used to calculate <span class="hljs-inline-prop">width</span> if only <span class="hljs-inline-prop">height</span> is set and vice versa.</li>
+<li><a href="./build-icon.html" title="buildIcon() documentation"><span class="hljs-function hljs-linkable">buildIcon(icon, customisations?)</span></a>. Generates data used by icon component. This can be used if you prefer to generate <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> yourself. Data includes attributes for <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> and inner HTML.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="api" class="heading--3">API functions <a href="#api" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><ul>
+<li><a href="./load-icons.html" title="loadIcons() documentation"><span class="hljs-function hljs-linkable">loadIcons(icons, callback?)</span></a>. Loads icons from API, calls optional callback when either all or part of icons have been loaded.</li>
+<li><a href="./load-icon.html" title="loadIcon() documentation"><span class="hljs-function hljs-linkable">loadIcon(icon)</span></a>. Loads one icon from API, returns <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Promise</span></span>.</li>
+<li><a href="./enable-cache.html" title="enableCache() documentation"><span class="hljs-function hljs-linkable">enableCache()</span></a>. Enables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./disable-cache.html" title="disableCache() documentation"><span class="hljs-function hljs-linkable">disableCache()</span></a>. Disables caching in <span class="hljs-inline-prop">localStorage</span> and <span class="hljs-inline-prop">sessionStorage</span>.</li>
+<li><a href="./add-api-provider.html" title="addAPIProvider() documentation"><span class="hljs-function hljs-linkable">addAPIProvider()</span></a>. Adds custom API provider. See <a href="../api/providers.html">API providers documentation</a>.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="internal" class="heading--3">Internal API functions <a href="#internal" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are several internal API functions that are exposed. They are intended to be used by developers that need more control over component. For example, it is used in Sketch and Figma plug-ins. Use them carefully.</p><p>All internal API functions are exposed as properties of <span class="hljs-inline-var">_api</span> object:</p><ul>
+<li><span class="hljs-function">getAPI()</span>. Returns internal API module.</li>
+<li><span class="hljs-function">getAPIConfig()</span>. Returns API configuration.</li>
+<li><span class="hljs-function">setAPIModule(provider)</span>. Sets API module for provider. This is experimental function intended for custom API providers that use custom module for retrieving data from API.</li>
+<li><a href="./set-fetch.html" title="setFetch() documentation"><span class="hljs-function hljs-linkable">setFetch(fetch)</span></a>. Set custom Fetch API.</li>
+<li><span class="hljs-function">getFetch()</span>. Returns used <span class="hljs-function">fetch()</span> function, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">null</span></span> if Fetch API is not available.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../icon-components/">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Web Component<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Wrappers for:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./solid.html">Solid</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Attributes:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Vertical Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./modes.html">Rendering Modes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./without-api.html">Use Without API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icon.html">loadIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./build-icon.html">buildIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-fetch.html">setFetch()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator"><a href="../icon-components/bundles/">Icon Bundles</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

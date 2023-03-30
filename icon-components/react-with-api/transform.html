@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Transforming Icon in Iconify for React with API</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./dimensions.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icon Dimensions</a>
+<a href="./inline.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Vertical Alignment</a>
+</div>
+<h1>Transformations</h1>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>
+		<span class="hljs-inline-package hljs-linkable">@iconify/react-with-api</span>
+		has been deprecated.
+	</p>
+	<p>
+		Switch to <a href="../../iconify-icon/">Iconify Icon web component</a>.
+	</p>
+</div><p>This tutorial is part of <a href="./">Iconify for React with API tutorial</a>.</p>
+<p>An icon can be rotated and flipped horizontally and/or vertically. All transformations are done relative to the center of the icon.</p>
+<p>There are two types of transformations:</p>
+<ul>
+<li>Horizontal and vertical flip.</li>
+<li>Rotation by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</li>
+</ul>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="css" class="heading--2">CSS vs Iconify transformations <a href="#css" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>These are not CSS transformations, transformations are applied inside SVG.</p><p>What&apos;s the difference from CSS transformations?</p><ul>
+<li>If you rotate an icon by 90 degrees in CSS, icon&apos;s bounding box remains the same. 16x24 icon still takes space for 16x24, but might overlap elements around it.</li>
+<li>If you rotate an icon by 90 degrees in SVG Framework, icon&apos;s dimensions swap places. 16x24 icon becomes 24x16 icon and it does not affect elements around it.</li>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglUZXN0IGljb24gPElubGluZUljb24gaWNvbj0iZmEtcmVndWxhcjpoYW5kc2hha2UiIHJvdGF0ZT0iOTBkZWciIC8+IHdpdGggdGV4dCBhcm91bmQgaXQKPC9wPgo8cD4KCVRlc3QgaWNvbiA8SW5saW5lSWNvbiBpY29uPSJmYS1yZWd1bGFyOmhhbmRzaGFrZSIgc3R5bGU9e3sgdHJhbnNmb3JtOiAncm90YXRlKDkwZGVnKScgfX0gLz4gd2l0aCB0ZXh0IGFyb3VuZCBpdAo8L3A+Cg=="><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Test icon <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span> with text around it<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Test icon <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;fa-regular:handshake&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">transform:</span> &apos;<span class="hljs-attr">rotate</span>(<span class="hljs-attr">90deg</span>)&apos; }} /&gt;</span> with text around it<br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--with-hint"><div class="code-demo highlight-box"><p>
+	Test icon
+	<iconify-icon inline icon="fa-regular:handshake" rotate="90deg"></iconify-icon>
+	with text around it
+</p>
+<p>
+	Test icon
+	<iconify-icon inline icon="fa-regular:handshake" style="transform: rotate(90deg)"></iconify-icon>
+	with text around it
+</p>
+</div></div><div class="code-block-hint">Using box-shadow to show icon dimensions</div></div></div><p>In example above, first icon is rotated using <span class="hljs-inline-prop">rotate</span> attribute, second icon is rotated using CSS. First icon kept its 1em height, second icon became taller than it should be.</p><p>Sometimes you do want behaviour that CSS transformations provide. Then you can still use CSS transformations by adding it to style.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="flip" class="heading--2">Flip <a href="#flip" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You can flip icon horizontally and/or vertically.</p><p>One way to do that is to add <span class="hljs-inline-prop">flip</span> attribute with comma separated values. Possible values:</p><ul>
+<li>&quot;<span class="hljs-string">horizontal</span>&quot;: flip icon horizontally.</li>
+<li>&quot;<span class="hljs-string">vertical</span>&quot;: flip icon vertically.</li>
+</ul><p>You can also do that by setting <span class="hljs-inline-prop">hFlip</span> and / or <span class="hljs-inline-prop">vFlip</span> attributes to <span class="hljs-literal">true</span>.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHA+CglObyBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiAvPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBmbGlwPSJob3Jpem9udGFsIiAvPgo8L3A+CjxwPgoJVmVydGljYWwgZmxpcDogPElubGluZUljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgZmxpcD0idmVydGljYWwiIC8+CjwvcD4KPHA+CglCb3RoIChvciAxODDCsCByb3RhdGlvbik6IDxJbmxpbmVJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIGZsaXA9Imhvcml6b250YWwsdmVydGljYWwiIC8+CjwvcD4K"><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;No flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Horizontal flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Vertical flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;vertical&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Both (or 180&#xb0; rotation): <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></div><div class="code-block-hint">Using &quot;flip&quot; attribute</div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="PHA+CglObyBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiAvPgo8L3A+CjxwPgoJSG9yaXpvbnRhbCBmbGlwOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBoRmxpcD17dHJ1ZX0gLz4KPC9wPgo8cD4KCVZlcnRpY2FsIGZsaXA6IDxJbmxpbmVJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIHZGbGlwPXt0cnVlfSAvPgo8L3A+CjxwPgoJQm90aCAob3IgMTgwwrAgcm90YXRpb24pOiA8SW5saW5lSWNvbiBpY29uPSJiaTpjaGVjazItY2lyY2xlIiBoRmxpcD17dHJ1ZX0gdkZsaXA9e3RydWV9IC8+CjwvcD4K"><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;No flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Horizontal flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">hFlip</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Vertical flip: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">vFlip</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;Both (or 180&#xb0; rotation): <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">hFlip</span>=<span class="hljs-string">{true}</span> <span class="hljs-attr">vFlip</span>=<span class="hljs-string">{true}</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></div><div class="code-block-hint">Using &quot;hFlip&quot; and &quot;vFlip&quot; attributes</div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>No flip: <iconify-icon inline icon="bi:check2-circle"></iconify-icon></p>
+<p>
+	Horizontal flip:
+	<iconify-icon inline icon="bi:check2-circle" flip="horizontal"></iconify-icon>
+</p>
+<p>
+	Vertical flip:
+	<iconify-icon inline icon="bi:check2-circle" flip="vertical"></iconify-icon>
+</p>
+<p>
+	Both (or 180&#xb0; rotation):
+	<iconify-icon inline icon="bi:check2-circle" flip="horizontal,vertical"></iconify-icon>
+</p>
+</div></div></div></div></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="rotation" class="heading--2">Rotation <a href="#rotation" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You can rotate icon by <span class="hljs-number">90</span>, <span class="hljs-number">180</span> and <span class="hljs-number">270</span> degrees.</p><p>To do that, add <span class="hljs-inline-prop">rotate</span> attribute. Possible values:</p><ul>
+<li>&quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">1</span>&quot;: rotate by <span class="hljs-number">90</span> degrees.</li>
+<li>&quot;<span class="hljs-string">180deg</span>&quot;, &quot;<span class="hljs-string">2</span>&quot;: rotate by <span class="hljs-number">180</span> degrees.</li>
+<li>&quot;<span class="hljs-string">270deg</span>&quot;, &quot;<span class="hljs-string">3</span>&quot;: rotate by <span class="hljs-number">270</span> degrees.</li>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHA+CglObyByb3RhdGlvbjogPElubGluZUljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgLz4KPC9wPgo8cD4KCTkwwrAgcm90YXRpb246IDxJbmxpbmVJY29uIGljb249ImJpOmNoZWNrMi1jaXJjbGUiIHJvdGF0ZT0iOTBkZWciIC8+CjwvcD4KPHA+CgkxODDCsCByb3RhdGlvbjogPElubGluZUljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgcm90YXRlPSIxODBkZWciIC8+CjwvcD4KPHA+CgkyNzDCsCByb3RhdGlvbjogPElubGluZUljb24gaWNvbj0iYmk6Y2hlY2syLWNpcmNsZSIgcm90YXRlPXszfSAvPgo8L3A+Cg=="><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;No rotation: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;90&#xb0; rotation: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;90deg&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;180&#xb0; rotation: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">&quot;180deg&quot;</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>
+ &#xa0; &#xa0;270&#xb0; rotation: <span class="hljs-tag">&lt;<span class="hljs-name">InlineIcon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;bi:check2-circle&quot;</span> <span class="hljs-attr">rotate</span>=<span class="hljs-string">{3}</span> /&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><div class="code-demo"><p>No rotation: <iconify-icon inline icon="bi:check2-circle"></iconify-icon></p>
+<p>
+	90&#xb0; rotation:
+	<iconify-icon inline icon="bi:check2-circle" rotate="90deg"></iconify-icon>
+</p>
+<p>
+	180&#xb0; rotation:
+	<iconify-icon inline icon="bi:check2-circle" rotate="180deg"></iconify-icon>
+</p>
+<p>
+	270&#xb0; rotation:
+	<iconify-icon inline icon="bi:check2-circle" rotate="270deg"></iconify-icon>
+</p>
+</div></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="rotate-and-flip" class="heading--2">Rotate and flip <a href="#rotate-and-flip" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You can use both rotation and flip on an icon. The icon is flipped first, then rotated.</p></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../iconify-icon/">Web Component</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React with API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Vertical Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator"><a href="../bundles/">Icon Bundles</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

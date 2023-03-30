@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Open Source Icon Data</title>
+		
+	</head>
+	<body class="website-docs theme-icons">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./icon-set-basics.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icon Set Basics</a>
+<a href="./all.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> All Icons</a>
+</div>
+<h1>Icon data</h1>
+<p>There are over 150,000 open source icons available, which you can use in your projects.</p>
+<p>All these icons are:</p>
+<ul>
+<li>Open source.</li>
+<li>Validated and cleaned up.</li>
+<li>Automatically kept up to date.</li>
+</ul>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="sources" class="heading--2">Where to get them? <a href="#sources" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To make it easier for developers to work with icons, there are several ways to get data for icons.</p><p>Main source of icon sets is <a href="https://github.com/iconify/icon-sets" target="_blank">iconify/icon-sets</a> repository on GitHub. Icon sets are stored in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</p><p>In addition to git repository, icon sets are available as:</p><ul>
+<li>Big NPM package <span class="hljs-inline-package hljs-linkable">@iconify/json</span>, which is identical to git repository.</li>
+<li>Packagist package <span class="hljs-inline-package hljs-linkable">iconify/json</span> for PHP developers.</li>
+<li>NPM package <span class="hljs-inline-package hljs-linkable">@iconify/collections</span> that contains only list of available icon sets (file <span class="hljs-inline-file">collections.json</span> from big package).</li>
+<li>Smaller NPM packages <span class="hljs-inline-package hljs-linkable">@iconify-json/*</span> that contain only one icon set per package in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</li>
+<li>Smaller NPM packages <span class="hljs-inline-package hljs-linkable">@iconify-icons/*</span> and <span class="hljs-inline-package hljs-linkable">@iconify/icons-*</span> that contain only one icon set per package, data for each icon in separate file in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> format.</li>
+<li><a href="../api/">Iconify API</a> that can be used to retrieve icon data on demand.</li>
+</ul><p>Below is description of each of those sources.</p><section class="content-section content-section--3"><H1 id="all-icons" class="heading--3">All icons <a href="#all-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You can get the latest version of package from the following sources:</p><ul>
+<li>From GitHub: <a href="https://github.com/iconify/icon-sets" target="_blank">https://github.com/iconify/icon-sets</a>.</li>
+<li>From NPM: <span class="hljs-inline-package hljs-linkable">@iconify/json</span>.</li>
+<li>From Packagist: <span class="hljs-inline-package hljs-linkable">iconify/json</span>.</li>
+</ul><p>Package is big and might take a while to download.</p><p>See <a href="./all.html">big icons package documentation</a> for list of files, functions and usage examples.</p></section><section class="content-section content-section--3"><H1 id="collections" class="heading--3">Icon set list <a href="#collections" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If you want to get list of all available icon sets, it is:</p><ul>
+<li>included in big package listed above as <span class="hljs-inline-file">collections.json</span>.</li>
+<li>available icon sets is available as NPM package <span class="hljs-inline-package hljs-linkable">@iconify/collections</span>.</li>
+</ul><p>See <a href="./collections.html">icon sets list</a> for more details.</p></section><section class="content-section content-section--3"><H1 id="json" class="heading--3">Individual icon sets <a href="#json" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Each icon set is also published as a separate NPM package <span class="hljs-inline-package hljs-linkable">@iconify-json/{prefix}</span> (where &quot;<span class="hljs-string">{prefix}</span>&quot; is an icon set prefix).</p><p>See <a href="./json.html">split icon sets packages</a> for more details.</p></section><section class="content-section content-section--3"><H1 id="icons" class="heading--3">Individual icons <a href="#icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are also packages for each icon set <span class="hljs-inline-package hljs-linkable">@iconify-icons/{prefix}</span>, where each icon is stored in a separate file <span class="hljs-inline-package hljs-linkable">@iconify-icons/{prefix}/{name}</span> (where &quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix, &quot;<span class="hljs-string">{name}</span>&quot; is icon name) in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> format.</p><p>This makes it easy to bundle data for individual icons or load them from a server one icon at a time.</p><p>See <a href="./icons.html">individual icon packages</a> for details.</p></section><section class="content-section content-section--3"><H1 id="api" class="heading--3">API <a href="#api" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p><a href="../api/">Iconify API</a> is very different from all other sources.</p><p>Other sources are various packages you can use during build time. Using them requires knowing which icons you are using, so build tools would extract data only for icons that you need. You cannot use them at run time because they are too big.</p><p>API is intended to be used when you don&apos;t know which icons you need. <a href="../icon-components/">Several icon components</a> retrieve icon data from API as needed, then render icon.</p><div class="docs-process">
+	<dl>
+		<dt>
+			<p>
+				<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>&lt;Icon icon=&quot;mdi:home&quot; /&gt;</code></div></div></div>
+				<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>&lt;iconify-icon icon=&quot;mdi:alert&quot; /&gt;</code></div></div></div>
+			</p>
+		</dt>
+		<dd>
+			Developer passes icon name as attribute for
+			<a href="../icon-components/">icon component</a>.
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--0">
+	<div class="animated-set animated-set--second animated-set--clouds">
+		<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<iconify-icon class="animated-arrow" height="auto" icon="assets:animation-arrow"></iconify-icon>
+		<iconify-icon class="animated-arrow animated-arrow--2" height="auto" icon="assets:animation-arrow"></iconify-icon>
+		<p>Icon Names</p>
+	</div>
+	<div class="animated-set animated-set--first animated-set--computers">
+		<iconify-icon class="icon1" icon="line-md:laptop-twotone"></iconify-icon>
+		<iconify-icon class="iconify icon2" icon="line-md:computer-twotone"></iconify-icon>
+		<iconify-icon class="iconify icon3" icon="line-md:laptop-twotone"></iconify-icon>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>Component requests data for icons from Iconify API.</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--1">
+	<div class="animated-set animated-set--first animated-set--clouds">
+		<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<iconify-icon class="animated-arrow" height="auto" icon="assets:animation-arrow" flip="horizontal"></iconify-icon>
+		<spaiconify-icon class="animated-arrow animated-arrow--2" height="auto" icon="assets:animation-arrow" flip="horizontal">
+		<p>Icon Data</p>
+	</spaiconify-icon></div>
+	<div class="animated-set animated-set--second animated-set--computers">
+		<iconify-icon class="icon1" icon="line-md:laptop-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:computer-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:laptop-twotone"></iconify-icon>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>API sends data for requested icons.</p>
+			<p>
+				API hosts thousands of icons, but sends only data for icons that were
+				requested.
+			</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>
+				&lt;svg width=&quot;1em&quot; height=&quot;1em&quot; viewBox=&quot;0 0 24 24&quot;
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;
+			</code></div></div></div>
+			<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>
+				&lt;iconify-icon icon=&quot;mdi:alert&quot;&gt;<span class="hljs-comment">#shadow-root</span>&lt;svg width=&quot;1em&quot; height=&quot;1em&quot; viewBox=&quot;0 0 24 24&quot;
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;&lt;/iconify-icon&gt;
+			</code></div></div></div>
+		</dt>
+		<dd>Component renders SVG using data retrieved from Iconify API.</dd>
+	</dl>
+</div><p>There are several downsides of using API to get icon data:</p><ul>
+<li>Requires visitor to be online. Not usable in offline applications.</li>
+<li>Relies on third party service, though you can host your own Iconify API instances.</li>
+<li>Overhead in icon components that loads icon data on demand.</li>
+</ul><p>API also provides list of available icon sets and icons, which can be used to build applications for browsing and searching icons, such as various plugins and icon pickers.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./icon-data.html">Icon Data<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./all.html">All Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collections.html">Icon Sets List</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./json.html">Individual Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icons.html">Individual Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

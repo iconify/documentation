@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Importing icons with Iconify Tools</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Iconify Tools v1</a>
+<a href="./export.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Exporting Icons</a>
+</div>
+<h1>Importing icons with Iconify Tools</h1>
+<p>Iconify Tools is a NPM package for manipulating icons. See <a href="./">Iconify Tools documentation</a>.</p>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>
+		This documentation is for version 1 of Iconify Tools. It was developed
+		during early Iconify development, before Iconify development switched to
+		TypeScript, so it is not fully compatible with TypeScript.
+	</p>
+	<p>
+		Documentation for
+		<a href="../tools2/">updated Iconify Tools is available here</a>.
+	</p>
+</div><p>There are several importers available in Iconify Tools. Some import one file, some import collections.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="import-svg" class="heading--2">Importing one SVG file <a href="#import-svg" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbXBvcnRTVkcoJ3BhdGgtdG8tZmlsZS5zdmcnKQoJLnRoZW4oKHN2ZykgPT4gewoJCS8vIFNWRyB3YXMgaW1wb3J0ZWQKCQkvLyBWYXJpYWJsZSAnc3ZnJyBpcyBhbiBpbnN0YW5jZSBvZiBTVkcgY2xhc3MKCQljb25zb2xlLmxvZyhzdmcudG9TdHJpbmcoKSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportSVG</span>(<span class="hljs-string">&apos;path-to-file.svg&apos;</span>)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// SVG was imported</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;svg&apos; is an instance of SVG class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(svg.<span class="hljs-title function_">toString</span>());<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+<section class="content-section content-section--2"><H1 id="import-dir" class="heading--2">Importing directory <a href="#import-dir" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbXBvcnREaXIoJ2RpcmVjdG9yeScpCgkudGhlbigoY29sbGVjdGlvbikgPT4gewoJCS8vIENvbGxlY3Rpb24gd2FzIGltcG9ydGVkCgkJLy8gVmFyaWFibGUgJ2NvbGxlY3Rpb24nIGlzIGFuIGluc3RhbmNlIG9mIENvbGxlY3Rpb24gY2xhc3MKCQljb25zb2xlLmxvZygnRm91bmQgaWNvbnM6ICcgKyBjb2xsZWN0aW9uLmtleXMoKS5qb2luKCcsICcpKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportDir</span>(<span class="hljs-string">&apos;directory&apos;</span>)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Collection was imported</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;collection&apos; is an instance of Collection class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found icons: &apos;</span> + collection.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>));<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>There are several options available for importing directory, options should be passed as second parameter to <span class="hljs-function">ImportDir()</span> function:</p><ul>
+<li><span class="hljs-inline-prop">&apos;include-subdirs&apos;</span> check subdirectories, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Default = <span class="hljs-literal">true</span>.</li>
+<li><span class="hljs-inline-prop">keywordCallback</span> custom callback to get image name from file. It is a function with 2 arguments: <span class="inline-code inline-code--js"><span class="hljs-keyword">function</span>(<span class="hljs-params">file_without_extension, filename</span>)</span>. Function should return <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. See default function in <span class="hljs-inline-file">src/import/dir.js</span> for example.</li>
+<li><span class="hljs-inline-prop">ignoreDuplicates</span> if <span class="hljs-literal">true</span>, when files with duplicate keywords are found script will log an error message.</li>
+<li><span class="hljs-inline-prop">ignoreFiles</span> array of files to ignore. Values are keywords, not file names.</li>
+<li><span class="hljs-inline-prop">contentCallback</span> callback to change content. Use it if content contains some weird stuff you need to remove before importing SVG. <span class="inline-code inline-code--js"><span class="hljs-keyword">function</span>(<span class="hljs-params">content</span>)</span>. Function should return modified content as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbXBvcnREaXIoJ2RpcmVjdG9yeScsIHsKCQknaW5jbHVkZS1zdWJkaXJzJzogZmFsc2UsCgkJJ2lnbm9yZUZpbGVzJzogWydiYWQtaWNvbiddLAoJCSdrZXl3b3JkQ2FsbGJhY2snOiAoZmlsZSwgZmlsZW5hbWUpID0+ICdwcmVmaXgtJyArIGZpbGUsCgl9KQoJLnRoZW4oKGNvbGxlY3Rpb24pID0+IHsKCQkvLyBDb2xsZWN0aW9uIHdhcyBpbXBvcnRlZAoJCS8vIFZhcmlhYmxlICdjb2xsZWN0aW9uJyBpcyBpbnN0YW5jZSBvZiBDb2xsZWN0aW9uIGNsYXNzCgkJY29uc29sZS5sb2coJ0ZvdW5kIGljb25zOiAnICsgY29sbGVjdGlvbi5rZXlzKCkuam9pbignLCAnKSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportDir</span>(<span class="hljs-string">&apos;directory&apos;</span>, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;include-subdirs&apos;</span>: <span class="hljs-literal">false</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;ignoreFiles&apos;</span>: [<span class="hljs-string">&apos;bad-icon&apos;</span>],<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;keywordCallback&apos;</span>: <span class="hljs-function">(<span class="hljs-params">file, filename</span>) =&gt;</span> <span class="hljs-string">&apos;prefix-&apos;</span> + file,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Collection was imported</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;collection&apos; is instance of Collection class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found icons: &apos;</span> + collection.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>));<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="import-web-icon" class="heading--2">Importing WebIcon <a href="#import-web-icon" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>WebIcon format is one big SVG image that contains multiple images.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbXBvcnRXZWJJY29uKCdwYXRoLXRvLWZpbGUuc3ZnJykKCS50aGVuKChjb2xsZWN0aW9uKSA9PiB7CgkJLy8gQ29sbGVjdGlvbiB3YXMgaW1wb3J0ZWQKCQkvLyBWYXJpYWJsZSAnY29sbGVjdGlvbicgaXMgYW4gaW5zdGFuY2Ugb2YgQ29sbGVjdGlvbiBjbGFzcwoJCWNvbnNvbGUubG9nKCdGb3VuZCBpY29uczogJyArIGNvbGxlY3Rpb24ua2V5cygpLmpvaW4oJywgJykpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportWebIcon</span>(<span class="hljs-string">&apos;path-to-file.svg&apos;</span>)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Collection was imported</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;collection&apos; is an instance of Collection class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found icons: &apos;</span> + collection.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>));<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+
+<section class="content-section content-section--2"><H1 id="import-font" class="heading--2">Importing SVG font <a href="#import-font" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are many popular glyph fonts that are not available as individual files. This importer will import SVG font as collection. It will not import keywords though for each icon because that is different for every collection and should be done separately.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbXBvcnRGb250KCdwYXRoLXRvLWZpbGUuc3ZnJykKCS50aGVuKChjb2xsZWN0aW9uKSA9PiB7CgkJLy8gQ29sbGVjdGlvbiB3YXMgaW1wb3J0ZWQKCQkvLyBWYXJpYWJsZSAnY29sbGVjdGlvbicgaXMgYW4gaW5zdGFuY2Ugb2YgQ29sbGVjdGlvbiBjbGFzcwoJCWNvbnNvbGUubG9nKCdGb3VuZCBpY29uczogJyArIGNvbGxlY3Rpb24ua2V5cygpLmpvaW4oJywgJykpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportFont</span>(<span class="hljs-string">&apos;path-to-file.svg&apos;</span>)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Collection was imported</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;collection&apos; is an instance of Collection class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found icons: &apos;</span> + collection.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>));<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>There are several options available for importing SVG font, options should be passed as second parameter to <span class="hljs-function">ImportFont</span>
+function:</p><ul>
+<li><span class="hljs-inline-prop">ignoreCharacters</span> list of characters to ignore, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>.</li>
+<li><span class="hljs-inline-prop">characterChanges</span> changes for each character, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">object</span></span>. Object key is character&apos;s hexadecimal code, value is list of changes for that character.</li>
+<li><span class="hljs-inline-prop">fontChanges</span> changes for all characters.</li>
+</ul><p>Keys for <span class="hljs-inline-prop">characterChanges</span> and <span class="hljs-inline-prop">fontChanges</span> objects are similar:</p><ul>
+<li><span class="hljs-inline-prop">height</span>, <span class="hljs-inline-prop">width</span> are custom height and width.</li>
+<li><span class="hljs-inline-prop">left</span>, <span class="hljs-inline-prop">bottom</span> are custom left and bottom indexes. Why bottom instead of top? SVG fonts flip icons vertically, so height is counted from bottom.</li>
+</ul><p>Each value can be a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span> or a <span class="inline-code inline-code--js"><span class="hljs-keyword">function</span>(<span class="hljs-params">oldValue</span>)</span> that should return new value.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMuSW1wb3J0Rm9udCgncGF0aC10by1maWxlLnN2ZycsIHsKICAgIGZvbnRDaGFuZ2VzOiB7CiAgICAgICAgaGVpZ2h0ID0gaGVpZ2h0ID0+IE1hdGguY2VpbChoZWlnaHQgLyAxNikgKiAxNiAvLyBSb3VuZCB1cCBoZWlnaHQgdG8gMTZweCBncmlkCiAgICB9LAogICAgY2hhcmFjdGVyQ2hhbmdlczogewogICAgICAgIGYxOWM6IHsgd2lkdGg6IDE5MjAgfSwKICAgICAgICBmMGZjOiB7IGxlZnQ6IDY0LCB3aWR0aDogMTYwMCB9LAogICAgfQp9KS50aGVuKGNvbGxlY3Rpb24gPT4gewogICAgLy8gQ29sbGVjdGlvbiB3YXMgaW1wb3J0ZWQKICAgIC8vIFZhcmlhYmxlICdjb2xsZWN0aW9uJyBpcyBpbnN0YW5jZSBvZiBDb2xsZWN0aW9uIGNsYXNzCiAgICBjb25zb2xlLmxvZygnRm91bmQgaWNvbnM6ICcgKyBjb2xsZWN0aW9uLmtleXMoKS5qb2luKCcsICcpKTsKfSkuY2F0Y2goZXJyID0+IHsKICAgIGNvbnNvbGUuZXJyb3IoZXJyKTsKfSk7Cg=="><code class="highlight hljs">tools.<span class="hljs-title class_">ImportFont</span>(<span class="hljs-string">&apos;path-to-file.svg&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">fontChanges</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;height = <span class="hljs-function"><span class="hljs-params">height</span> =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">ceil</span>(height / <span class="hljs-number">16</span>) * <span class="hljs-number">16</span> <span class="hljs-comment">// Round up height to 16px grid</span><br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">characterChanges</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f19c</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1920</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f0fc</span>: { <span class="hljs-attr">left</span>: <span class="hljs-number">64</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">1600</span> },<br>
+ &#xa0; &#xa0;}<br>
+}).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">collection</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Collection was imported</span><br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Variable &apos;collection&apos; is instance of Collection class</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found icons: &apos;</span> + collection.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>));<br>
+}).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+});<br>
+</code></div></div></div><p>If you are going to crop images after import, there is no point in worrying about fixing characters. Crop will fix it (unless font is really badly messed up).</p></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Few examples that show how to import and optimize icons:</p><ul>
+<li><a href="./import-mdi.html">Converting SVG set to Iconify JSON format</a>.</li>
+<li><a href="./import-fa-pro.html">Converting FontAwesome Pro to Iconify JSON format</a>.</li>
+</ul></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Tools v1<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./import.html">Importing Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./export.html">Exporting Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./manipulation.html">Manipulating Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./examples.html">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

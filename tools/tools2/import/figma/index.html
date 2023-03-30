@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../../assets/style.css?2603" />
+		<title>Importing icons from Figma</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../directory.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Directory</a>
+<a href="../../export/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Export</a>
+</div>
+<h1>Importing icons from Figma</h1>
+<p>This function is part of <a href="../">import functions</a> in <a href="../../">Iconify Tools</a>.</p>
+<p>Function <span class="hljs-function">importFromFigma()</span> imports SVG files from a Figma file.</p>
+<p>It creates <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> instance, which <a href="../../export/">can be exported to various formats</a>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="requirements" class="heading--2">Requirements <a href="#requirements" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To import Figma file you need to have:</p><ul>
+<li>Figma file ID. See <a href="./file-id.html">how to get Figma file ID</a> article.</li>
+<li>Access to document.</li>
+<li>Figma API access token. See <a href="./token.html">how to get Figma API access token</a> article.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="limitations" class="heading--2">Limitations <a href="#limitations" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Import function has few limitations on Figma document structure:</p><p>Icon must be one of the following Figma node types:</p><ul>
+<li>Frame</li>
+<li>Component</li>
+<li>Instance of a component</li>
+</ul><p>Parent layers can only be the following Figma node types:</p><ul>
+<li>Page (in some Figma documentation it is called Canvas)</li>
+<li>Frame</li>
+<li>Group</li>
+</ul><p>Icons cannot be:</p><ul>
+<li>Placed inside components or component instances</li>
+<li>Shapes without frame or component container</li>
+</ul><p>Icons cannot contain:</p><ul>
+<li>Raster images</li>
+<li>Text. Convert text to shapes</li>
+</ul></section>
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameter:</p><ul>
+<li><span class="hljs-inline-prop">options</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">object</span></span>. Options.</li>
+</ul><p>Function returns:</p><ul>
+<li><span class="hljs-inline-type hljs-linkable"><a href="./types.html#result" title="FigmaImportResult documentation"><span class="hljs-inline-type hljs-linkable">FigmaImportResult</span></a></span> object on success.</li>
+<li>&quot;<span class="hljs-string">not_modified</span>&quot; string if file has not been modified since last run (can be returned only if <span class="hljs-inline-prop">ifModifiedSince</span> option is set).</li>
+</ul><p>In case of error, import might throw an exception, which you can catch using <span class="hljs-function">try</span> and <span class="hljs-function">catch</span>.</p><p>Function is asynchronous. That means you need to handle it as <span class="hljs-class">Promise</span> instance, usually by adding <span class="inline-code inline-code--js"><span class="hljs-keyword">await</span></span> before function call.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="options" class="heading--2">Options <a href="#options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Options object has many properties, most are not required.</p><p>Required options used in all parts of import process are:</p><ul>
+<li><span class="hljs-inline-prop">file</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Figma file ID. See <a href="./file-id.html">how to get Figma file ID</a> article.</li>
+<li><span class="hljs-inline-prop">token</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Figma API access token. See <a href="./token.html">how to get Figma API access token</a> article.</li>
+</ul><p>Required option used when traversing document:</p><ul>
+<li><span class="hljs-inline-prop">iconNameForNode</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback that checks if node is an icon.</li>
+</ul><p>Required option used when generating icon set:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Prefix for imported icon set. It is used in <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> instance when exporting to <span class="hljs-inline-type hljs-linkable"><a href="../../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>.</li>
+</ul><p>Other options are split in several groups:</p><section class="content-section content-section--3"><H1 id="cache-options" class="heading--3">Cache options <a href="#cache-options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>These options are for caching data:</p><ul>
+<li><span class="hljs-inline-prop">cacheDir</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Directory where cache should be stored. Use it to avoid retrieving same files every time you run your script.</li>
+<li><span class="hljs-inline-prop">cacheAPITTL</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. TTL for API queries cache, in seconds. Used only if <span class="hljs-inline-prop">cacheDir</span> is set, default value is 3 days.</li>
+<li><span class="hljs-inline-prop">cacheSVGTTL</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. TTL for SVG cache, in seconds. Used only if <span class="hljs-inline-prop">cacheDir</span> is set, default value is 30 days.</li>
+</ul><p>If you are expecting to run your script more than once, it is a good idea to cache API responses to avoid retrieving the same data multiple times. Set <span class="hljs-inline-prop">cacheDir</span> to a writable directory.</p><p>TTL options usually do not need changing from default values. Each SVG has unique link, so if icon changes, it will have new cache file, so TTL for icons can be high.</p><p>If you set cache options, also consider setting <span class="hljs-inline-prop">ifModifiedSince</span> option to <span class="hljs-literal">true</span>. This will tell import function to retrieve shallow copy of document from Figma, bypassing cache, then comparing if document in Figma has been updated since last cache. If document has been updated, function will clear cache.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgb3B0aW9ucyA9IHsKCS8vIC4uLiBvdGhlciBvcHRpb25zIGhlcmUKCWNhY2hlRGlyOiAnY2FjaGUvYXBpJywKCWlmTW9kaWZpZWRTaW5jZTogdHJ1ZSwKfTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> options = {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// ... other options here</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">cacheDir</span>: <span class="hljs-string">&apos;cache/api&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">ifModifiedSince</span>: <span class="hljs-literal">true</span>,<br>
+};<br>
+</code></div></div></div></section><section class="content-section content-section--3"><H1 id="options-for-retrieving-figma-document" class="heading--3">Options for retrieving Figma document <a href="#options-for-retrieving-figma-document" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>These options are used when retrieving document:</p><ul>
+<li><span class="hljs-inline-prop">version</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Document version. Set it to parse specific version of document.</li>
+<li><span class="hljs-inline-prop">ifModifiedSince</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span> | <span class="hljs-inline-type hljs-linkable">Date</span> | <span class="hljs-inline-type hljs-linkable">true</span></span>. If set, function will check if document has been updated.</li>
+</ul><section class="content-section content-section--4"><H1 id="ifmodifiedsince" class="heading--4">ifModifiedSince <a href="#ifmodifiedsince" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">ifModifiedSince</span> is used when you want to retrieve data only if icon set has been updated.</p><p>Value can be one of the following:</p><ul>
+<li>Last modification time as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. You can get it from <span class="hljs-inline-prop">lastModified</span> property of parse result.</li>
+<li>Last modification time as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Date</span></span>.</li>
+<li><span class="hljs-literal">true</span>. This is special value, it compares time to time stored in cached data (see <span class="hljs-inline-prop">cacheDir</span> option above).</li>
+</ul><p>If Figma document has not been modified, function will return string &quot;<span class="hljs-string">not_modified</span>&quot;.</p><p>If option is not set, function cannot return &quot;<span class="hljs-string">not_modified</span>&quot;.</p></section></section><section class="content-section content-section--3"><H1 id="options-for-finding-icons-in-figma-document" class="heading--3">Options for finding icons in Figma document <a href="#options-for-finding-icons-in-figma-document" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function cannot reliably detect which element is an icon and which is not.</p><p>These options tell function where to look for icons:</p><ul>
+<li><span class="hljs-inline-prop">ids</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. Array of node IDs to check. Useful if you know your document structure and want to limit Figma API query to specific nodes.</li>
+<li><span class="hljs-inline-prop">depth</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Depth of nodes tree to retrieve from API. See below.</li>
+<li><span class="hljs-inline-prop">pages</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. List of page names that should be checked for icons.</li>
+<li><span class="hljs-inline-prop">filterParentNode</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback to filter parent nodes. Alternative to <span class="hljs-inline-prop">pages</span> property, but also checks child nodes, such as frames and groups.</li>
+<li><span class="hljs-inline-prop">iconNameForNode</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Required. Callback that checks if node is an icon.</li>
+</ul><section class="content-section content-section--4"><H1 id="depth" class="heading--4">depth <a href="#depth" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">depth</span> tells function how deep it should scan Figma document. Scanning large documents results in slow parsing, so it is recommended to set this option.</p><p>Value is number of layers to reach icons.</p><p>For example, if icons are placed directly on page without parent group, depth value is <span class="hljs-number">2</span>.</p><p><img src="https://docs.iconify.design/assets/images/tools/figma_depth_2.png" alt="Figma tree depth: 2"></p><p>If icons are placed using the following tree:</p><ul>
+<li>Page.</li>
+<li>Container frame or group.</li>
+<li>Icon frame or component or component instance.</li>
+</ul><p>Then depth value is <span class="hljs-number">3</span>.</p><p><img src="https://docs.iconify.design/assets/images/tools/figma_depth_3.png" alt="Figma tree depth: 3"></p></section><section class="content-section content-section--4"><H1 id="pages" class="heading--4">pages <a href="#pages" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">pages</span> tells function which pages of Figma document contain icons. Value is list of page titles.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgb3B0aW9ucyA9IHsKCS8vIC4uLiBvdGhlciBvcHRpb25zIGhlcmUKCXBhZ2VzOiBbJ0ljb25zJ10sCn07Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> options = {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// ... other options here</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">pages</span>: [<span class="hljs-string">&apos;Icons&apos;</span>],<br>
+};<br>
+</code></div></div></div><p>If you set option <span class="hljs-inline-prop">pages</span>, option <span class="hljs-inline-prop">filterParentNode</span> is ignored.</p></section><section class="content-section content-section--4"><H1 id="filterparentnode" class="heading--4">filterParentNode <a href="#filterparentnode" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">filterParentNode</span> is a callback function that filters potential parent nodes.</p><p>If possible, it should be used to filter parent nodes, otherwise parser might unexpectedly find and export nodes that match icon, but are on wrong page, that you forgot about.</p><p>It is an alternative to <span class="hljs-inline-prop">pages</span> option. This option is ignored if <span class="hljs-inline-prop">pages</span> option is set.</p><p>Callback has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">node</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#parent-node-data" title="FigmaParentNodeData documentation"><span class="hljs-inline-type hljs-linkable">FigmaParentNodeData</span></a></span>. Node to check.</li>
+<li><span class="hljs-inline-prop">document</span> is Figma document structure, as returned by Figma API. TypeScript interface for document is limited because currently Figma does not provide typings for API responses.</li>
+</ul><p>Callback should return:</p><ul>
+<li><span class="hljs-literal">true</span> if node is a valid parent node.</li>
+<li><span class="hljs-literal">false</span> if node should be ignored.</li>
+</ul><p>Callback can be asynchronous.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgb3B0aW9ucyA9IHsKCS8vIC4uLiBvdGhlciBvcHRpb25zIGhlcmUKCgkvLyAzIGxldmVsczogcGFnZSAnSWNvbnMnIC0+IGZyYW1lICdSZWd1bGFyIC0+IGljb24KCWRlcHRoOiAzLAoKCS8vIEltcG9ydCBpY29ucyBvbmx5IGZyb20gJ0ljb25zJyAtPiAnUmVndWxhcicKCWZpbHRlclBhcmVudE5vZGU6IChub2RlcykgPT4gewoJCXN3aXRjaCAobm9kZXMubGVuZ3RoKSB7CgkJCWNhc2UgMTogewoJCQkJLy8gUGFnZTogJ0ljb25zJwoJCQkJY29uc3Qgbm9kZSA9IG5vZGVzWzBdOwoJCQkJcmV0dXJuIG5vZGUubmFtZSA9PT0gJ0ljb25zJzsKCQkJfQoKCQkJY2FzZSAyOiB7CgkJCQkvLyBGcmFtZTogJ1JlZ3VsYXInCgkJCQljb25zdCBub2RlID0gbm9kZXNbMV07CgkJCQlyZXR1cm4gbm9kZS5uYW1lID09PSAnUmVndWxhcic7CgkJCX0KCQl9CgkJcmV0dXJuIGZhbHNlOwoJfSwKfTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> options = {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// ... other options here</span><br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// 3 levels: page &apos;Icons&apos; -&gt; frame &apos;Regular -&gt; icon</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">depth</span>: <span class="hljs-number">3</span>,<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Import icons only from &apos;Icons&apos; -&gt; &apos;Regular&apos;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">filterParentNode</span>: <span class="hljs-function">(<span class="hljs-params">nodes</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">switch</span> (nodes.<span class="hljs-property">length</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Page: &apos;Icons&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> node = nodes[<span class="hljs-number">0</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span> === <span class="hljs-string">&apos;Icons&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Frame: &apos;Regular&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> node = nodes[<span class="hljs-number">1</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span> === <span class="hljs-string">&apos;Regular&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>
+ &#xa0; &#xa0;},<br>
+};<br>
+</code></div></div></div></section><section class="content-section content-section--4"><H1 id="iconnamefornode" class="heading--4">iconNameForNode <a href="#iconnamefornode" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">iconNameForNode</span> is a callback that checks if node is an icon.</p><p>Function should return:</p><ul>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> icon name if icon should be exported from node. Name is used when adding icon to <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> instance.</li>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">null</span></span> if node is not a valid icon.</li>
+</ul><p>Callback parameters are:</p><ul>
+<li><span class="hljs-inline-prop">node</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#import-node-data" title="FigmaImportNodeData documentation"><span class="hljs-inline-type hljs-linkable">FigmaImportNodeData</span></a></span>. Information about node.</li>
+<li><span class="hljs-inline-prop">nodes</span> is an object that contains number of nodes and list of nodes that callback has marked as icons.</li>
+<li><span class="hljs-inline-prop">document</span> is Figma document structure, as returned by Figma API. TypeScript interface for document is limited because currently Figma does not provide typings for API responses.</li>
+</ul><p>Example of callback:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3Qgb3B0aW9ucyA9IHsKCS8vIC4uLiBvdGhlciBvcHRpb25zIGhlcmUKCWljb25OYW1lRm9yTm9kZTogKG5vZGUpID0+IHsKCQlpZiAoCgkJCS8vIEljb25zIGFyZSBzdG9yZWQgYWZ0ZXIgMiBwYXJlbnRzOiBwYWdlIC0+IGNvbnRhaW5lciBmcmFtZSAtPiBpY29uCgkJCW5vZGUucGFyZW50cy5sZW5ndGggIT09IDIgfHwKCQkJLy8gSWNvbnMgdXNlIGZyYW1lcwoJCQlub2RlLnR5cGUgIT09ICdGUkFNRScgfHwKCQkJLy8gSWNvbiBzaG91bGQgYmUgMzJ4MzIKCQkJbm9kZS53aWR0aCAhPT0gMzIgfHwKCQkJbm9kZS5oZWlnaHQgIT09IDMyCgkJKSB7CgkJCXJldHVybiBudWxsOwoJCX0KCgkJLy8gUmV0dXJuIG5vZGUgbmFtZSBhcyBrZXl3b3JkIGZvciBpY29uCgkJcmV0dXJuIG5vZGUubmFtZTsKCX0sCn07Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> options = {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// ... other options here</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">iconNameForNode</span>: <span class="hljs-function">(<span class="hljs-params">node</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icons are stored after 2 parents: page -&gt; container frame -&gt; icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">parents</span>.<span class="hljs-property">length</span> !== <span class="hljs-number">2</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icons use frames</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">type</span> !== <span class="hljs-string">&apos;FRAME&apos;</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icon should be 32x32</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">width</span> !== <span class="hljs-number">32</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">height</span> !== <span class="hljs-number">32</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Return node name as keyword for icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span>;<br>
+ &#xa0; &#xa0;},<br>
+};<br>
+</code></div></div></div><p>Callback can be asynchronous.</p></section></section><section class="content-section content-section--3"><H1 id="options-for-generating-svg" class="heading--3">Options for generating SVG <a href="#options-for-generating-svg" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>These options are identical to export settings when you export SVG from Figma:</p><ul>
+<li><span class="hljs-inline-prop">includeID</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Set to <span class="hljs-literal">true</span> to include <span class="hljs-inline-prop">id</span> attributes for all SVG elements (disabled by default).</li>
+<li><span class="hljs-inline-prop">simplifyStroke</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Simplifies inside/outside strokes and use stroke attribute if possible instead of <span class="hljs-inline-tag hljs-linkable">&lt;mask&gt;</span> (enabled by default).</li>
+<li><span class="hljs-inline-prop">useAbsoluteBounds</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Use the full dimensions of the node regardless of whether or not it is cropped or the space around it is empty. Use this to export text nodes without cropping (disabled by default).</li>
+</ul></section><section class="content-section content-section--3"><H1 id="options-for-importing-icons" class="heading--3">Options for importing icons <a href="#options-for-importing-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function imports icons to <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> instance. These options are for customising import:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Required. Prefix for icon set. It is used in <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> instance when exporting to <span class="hljs-inline-type hljs-linkable"><a href="../../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>.</li>
+<li><span class="hljs-inline-prop">beforeImportingIcon</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback to call before importing each icon.</li>
+<li><span class="hljs-inline-prop">afterImportingIcon</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback to call after importing each icon.</li>
+</ul><p>Callback functions are identical, the only difference is one is called before importing icon, another one is used after importing icons.</p><p>Callbacks have the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">item</span>, <span class="hljs-inline-type hljs-linkable"><a href="./types.html#icon-node" title="FigmaIconNode documentation"><span class="hljs-inline-type hljs-linkable">FigmaIconNode</span></a></span>. Item that is about to be imported or was imported. In <span class="hljs-inline-prop">beforeImportingIcon</span> callback you can change its contents.</li>
+<li><span class="hljs-inline-prop">iconSet</span>, <span class="hljs-inline-type hljs-linkable"><a href="../../icon-set/" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span>. Icon set instance.</li>
+</ul><p>Callbacks don&apos;t need to return anything.</p><p>Callbacks can be asynchronous.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>The following example imports simple icon set from Figma, where all icons have color &quot;<span class="hljs-string">#2e4454</span>&quot;, then replaces color with &quot;<span class="hljs-string">currentColor</span>&quot;.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">example.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgaW1wb3J0RnJvbUZpZ21hLCBwYXJzZUNvbG9ycyB9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzJzsKCi8qKgogKiBJbXBvcnRhbnQ6IHNldCAndG9rZW4nIG9wdGlvbiBiZWZvcmUgcnVubmluZyB0aGlzIGNvZGUuIFRva2VuIGlzIG1hbmRhdG9yeS4KICoKICogWW91IGNhbiBnZXQgeW91ciBBUEkgdG9rZW4gZnJvbSBGaWdtYSBhY2NvdW50IHBhZ2UuIERvIG5vdCBzaGFyZSB5b3VyIEFQSSB0b2tlbiB3aXRoIGFueW9uZSEKICovCgovLyBDYWNoZSBkaXJlY3RvcnkuIFVzZWQgdG8gYXZvaWQgcmV0cmlldmluZyBzYW1lIGZpbGVzIG11bHRpcGxlIHRpbWVzLgpjb25zdCBjYWNoZURpciA9ICdjYWNoZS9xdWlsbCc7CgooYXN5bmMgKCkgPT4gewoJY29uc3QgcmVzdWx0ID0gYXdhaXQgaW1wb3J0RnJvbUZpZ21hKHsKCQkvLyBJY29uIHNldCBwcmVmaXgsIHVzZWQgZm9yIGNyZWF0aW5nIGljb24gc2V0IGluc3RhbmNlLgoJCXByZWZpeDogJ3F1aWxsJywKCgkJLy8gQ29tbXVuaXR5IGxpbms6IGh0dHBzOi8vd3d3LmZpZ21hLmNvbS9jb21tdW5pdHkvZmlsZS8xMDM0NDMyMDU0Mzc3NTMzMDUyL1F1aWxsLUljb25zZXQKCQkvLyBDb21tdW5pdHkgbGluayBkb2VzIG5vdCBoYXZlIGRvY3VtZW50IElEIGFuZCBjYW5ub3QgYmUgdXNlZC4gVG8gcGFyc2UgYSBjb21tdW5pdHkgZmlsZSwKCQkvLyBlaXRoZXIgY29weSBsaW5rIGZyb20gZmlsZSAoaWYgeW91IGFyZSBhdXRob3IpIG9yIGR1cGxpY2F0ZSBpdC4KCgkJLy8gRmlnbWEgZG9jdW1lbnQuIEdldCBkb2N1bWVudCBpZCBieSBjbGlja2luZyAiU2hhcmUiIGJ1dHRvbiB3aGVuIGVkaXRpbmcgaXQsCgkJLy8gY2xpY2sgIkNvcHkgbGluayIgYW5kIGdldCBpZCBmcm9tIGxpbmsuCgkJZmlsZTogJzlsdmM3SkdocXBObnBGM09LOWtqbkcnLAoKCQkvLyBGaWdtYSBBUEkgdG9rZW4uIFlvdSBjYW4gZ2V0IGl0IGZyb20geW91ciBGaWdtYSBhY2NvdW50IHNldHRpbmdzLgoJCXRva2VuOiAnJywgLy8gcHJvY2Vzcy5lbnYuRklHTUFfQVBJX1RPS0VOLAoKCQkvLyBJZiBlbmFibGVkLCB3aWxsIHN0b3AgaW1wb3J0IHByb2Nlc3MgaWYgRmlnbWEgZG9jdW1lbnQgaGFzIG5vdCBiZWVuIHVwZGF0ZWQgc2luY2UgbGFzdCBwYXJzZS4KCQkvLyBpZk1vZGlmaWVkU2luY2U6IHRydWUsCgoJCS8vIERpcmVjdG9yeSBmb3IgY2FjaGUKCQljYWNoZURpciwKCgkJLy8gRGVwdGggb2YgbGF5ZXJzIHRyZWUgd2hlcmUgaWNvbnMgYXJlIGxvY2F0ZWQuCgkJLy8gMiA9IHBhZ2UgLT4gaWNvbgoJCS8vIDMgPSBwYWdlIC0+IGZyYW1lL2dyb3VwIC0+IGljb24KCQlkZXB0aDogMywKCgkJLy8gRnVuY3Rpb24gdG8gZmlsdGVyIHBhcmVudCBsYXllcnMuIFVzZWQgdG8gYXZvaWQgc2Nhbm5pbmcgcGFnZXMgYW5kIG5vZGVzCgkJLy8gdGhhdCBkbyBub3QgY29udGFpbiBpY29ucyBmb3IgZXhwb3J0LgoJCWZpbHRlclBhcmVudE5vZGU6IChub2RlcykgPT4gewoJCQlzd2l0Y2ggKG5vZGVzLmxlbmd0aCkgewoJCQkJY2FzZSAxOiB7CgkJCQkJLy8gUGFnZTogJ0ljb25zJwoJCQkJCWNvbnN0IG5vZGUgPSBub2Rlc1swXTsKCQkJCQlyZXR1cm4gbm9kZS5uYW1lID09PSAnSWNvbnMnOwoJCQkJfQoKCQkJCWNhc2UgMjogewoJCQkJCS8vIEZyYW1lOiAnUmVndWxhcicKCQkJCQljb25zdCBub2RlID0gbm9kZXNbMV07CgkJCQkJcmV0dXJuIG5vZGUubmFtZSA9PT0gJ1JlZ3VsYXInOwoJCQkJfQoJCQl9CgkJCXJldHVybiBmYWxzZTsKCQl9LAoKCQkvLyBDaGVjayBpZiBub2RlIGlzIGFuIGljb24uIFJldHVybnMgaWNvbiBuYW1lIG9uIHN1Y2Nlc3MsIG51bGwgb24gZmFpbHVyZS4KCQlpY29uTmFtZUZvck5vZGU6IChub2RlKSA9PiB7CgkJCWlmICgKCQkJCS8vIEljb25zIGFyZSBzdG9yZWQgYWZ0ZXIgMiBwYXJlbnRzOiBwYWdlIC0+IGNvbnRhaW5lciBmcmFtZSAtPiBpY29uCgkJCQlub2RlLnBhcmVudHMubGVuZ3RoICE9PSAyIHx8CgkJCQkvLyBJY29ucyB1c2UgZnJhbWVzCgkJCQlub2RlLnR5cGUgIT09ICdGUkFNRScgfHwKCQkJCS8vIEljb24gc2hvdWxkIGJlIDMyeDMyCgkJCQlub2RlLndpZHRoICE9PSAzMiB8fAoJCQkJbm9kZS5oZWlnaHQgIT09IDMyCgkJCSkgewoJCQkJcmV0dXJuIG51bGw7CgkJCX0KCgkJCS8vIFJldHVybiBub2RlIG5hbWUgYXMga2V5d29yZCBmb3IgaWNvbgoJCQlyZXR1cm4gbm9kZS5uYW1lOwoJCX0sCgl9KTsKCgkvKgoJLy8gJ25vdF9tb2RpZmllZCcgY2FuIGJlIHJldHVybmVkIG9ubHkgaWYgJ2lmTW9kaWZpZWRTaW5jZScgb3B0aW9uIHdhcyBzZXQsIHNvIHVuY29tbWVudCBpZk1vZGlmaWVkU2luY2Ugb3B0aW9uCgkvLyBhbmQgdGhpcyBjb2RlLCBvdGhlcndpc2UgVHlwZVNjcmlwdCB3aWxsIGNvbXBsYWluIHRoYXQgcmVzdWx0IGNhbm5vdCBiZSAnbm90X21vZGlmaWVkJwoJaWYgKHJlc3VsdCA9PT0gJ25vdF9tb2RpZmllZCcpIHsKCQkvLyBUaGlzIHJlc3VsdCBpcyBwb3NzaWJsZSBpZiBpZk1vZGlmaWVkU2luY2Ugb3B0aW9uIGlzIHNldAoJCWNvbnNvbGUubG9nKCdOb3QgbW9kaWZpZWQnKTsKCQlyZXR1cm47Cgl9CgkqLwoKCWNvbnN0IGljb25TZXQgPSByZXN1bHQuaWNvblNldDsKCgkvLyBDaGVjayBjb2xvcnMgaW4gaWNvbnMKCWF3YWl0IGljb25TZXQuZm9yRWFjaChhc3luYyAobmFtZSkgPT4gewoJCWNvbnN0IHN2ZyA9IGljb25TZXQudG9TVkcobmFtZSk7CgkJaWYgKCFzdmcpIHsKCQkJcmV0dXJuOwoJCX0KCgkJYXdhaXQgcGFyc2VDb2xvcnMoc3ZnLCB7CgkJCS8vIENoYW5nZSBkZWZhdWx0IGNvbG9yIHRvICdjdXJyZW50Q29sb3InCgkJCWRlZmF1bHRDb2xvcjogJ2N1cnJlbnRDb2xvcicsCgoJCQkvLyBDYWxsYmFjayB0byBwYXJzZSBlYWNoIGNvbG9yCgkJCWNhbGxiYWNrOiAoYXR0ciwgY29sb3JTdHIpID0+IHsKCQkJCXN3aXRjaCAoY29sb3JTdHIudG9Mb3dlckNhc2UoKSkgewoJCQkJCWNhc2UgJyMyZTQ0NTQnOgoJCQkJCQkvLyBDaGFuZ2UgdG8gY3VycmVudENvbG9yCgkJCQkJCXJldHVybiAnY3VycmVudENvbG9yJzsKCgkJCQkJY2FzZSAnbm9uZSc6CgkJCQkJCXJldHVybiBjb2xvclN0cjsKCQkJCX0KCgkJCQkvLyBTaG91bGQgbm90IGhhcHBlbgoJCQkJY29uc29sZS5lcnJvcihgVW5leHBlY3RlZCAke2F0dHJ9ICIke2NvbG9yU3RyfSIgaW4gJHtuYW1lfWApOwoJCQkJcmV0dXJuIGNvbG9yU3RyOwoJCQl9LAoJCX0pOwoKCQkvLyBVcGRhdGUgaWNvbiBpbiBpY29uIHNldAoJCWljb25TZXQuZnJvbVNWRyhuYW1lLCBzdmcpOwoJfSk7CgoJLy8gRXhwb3J0IGljb24gc2V0IGluIEljb25pZnlKU09OIGZvcm1hdAoJY29uc29sZS5sb2coaWNvblNldC5leHBvcnQoKSk7Cgljb25zb2xlLmxvZygnRm91bmQnLCBpY29uU2V0LmNvdW50KCksICdpY29ucycpOwp9KSgpOwo="><code class="highlight hljs"><span class="hljs-keyword">import</span> { importFromFigma, parseColors } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Important: set &apos;token&apos; option before running this code. Token is mandatory.<br>
+ *<br>
+ * You can get your API token from Figma account page. Do not share your API token with anyone!<br>
+ */</span><br>
+<br>
+<span class="hljs-comment">// Cache directory. Used to avoid retrieving same files multiple times.</span><br>
+<span class="hljs-keyword">const</span> cacheDir = <span class="hljs-string">&apos;cache/quill&apos;</span>;<br>
+<br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> importFromFigma({<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icon set prefix, used for creating icon set instance.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;quill&apos;</span>,<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Community link: https://www.figma.com/community/file/1034432054377533052/Quill-Iconset</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Community link does not have document ID and cannot be used. To parse a community file,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// either copy link from file (if you are author) or duplicate it.</span><br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Figma document. Get document id by clicking &quot;Share&quot; button when editing it,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// click &quot;Copy link&quot; and get id from link.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">file</span>: <span class="hljs-string">&apos;9lvc7JGhqpNnpF3OK9kjnG&apos;</span>,<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Figma API token. You can get it from your Figma account settings.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">token</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-comment">// process.env.FIGMA_API_TOKEN,</span><br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// If enabled, will stop import process if Figma document has not been updated since last parse.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// ifModifiedSince: true,</span><br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Directory for cache</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;cacheDir,<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Depth of layers tree where icons are located.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// 2 = page -&gt; icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// 3 = page -&gt; frame/group -&gt; icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">depth</span>: <span class="hljs-number">3</span>,<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Function to filter parent layers. Used to avoid scanning pages and nodes</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// that do not contain icons for export.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">filterParentNode</span>: <span class="hljs-function">(<span class="hljs-params">nodes</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">switch</span> (nodes.<span class="hljs-property">length</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Page: &apos;Icons&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> node = nodes[<span class="hljs-number">0</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span> === <span class="hljs-string">&apos;Icons&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Frame: &apos;Regular&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> node = nodes[<span class="hljs-number">1</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span> === <span class="hljs-string">&apos;Regular&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Check if node is an icon. Returns icon name on success, null on failure.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">iconNameForNode</span>: <span class="hljs-function">(<span class="hljs-params">node</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icons are stored after 2 parents: page -&gt; container frame -&gt; icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">parents</span>.<span class="hljs-property">length</span> !== <span class="hljs-number">2</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icons use frames</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">type</span> !== <span class="hljs-string">&apos;FRAME&apos;</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Icon should be 32x32</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">width</span> !== <span class="hljs-number">32</span> ||<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;node.<span class="hljs-property">height</span> !== <span class="hljs-number">32</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Return node name as keyword for icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> node.<span class="hljs-property">name</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">/*<br>
+ &#xa0; &#xa0;// &apos;not_modified&apos; can be returned only if &apos;ifModifiedSince&apos; option was set, so uncomment ifModifiedSince option<br>
+ &#xa0; &#xa0;// and this code, otherwise TypeScript will complain that result cannot be &apos;not_modified&apos;<br>
+ &#xa0; &#xa0;if (result === &apos;not_modified&apos;) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;// This result is possible if ifModifiedSince option is set<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;console.log(&apos;Not modified&apos;);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;return;<br>
+ &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;*/</span><br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> iconSet = result.<span class="hljs-property">iconSet</span>;<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Check colors in icons</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">await</span> iconSet.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">async</span> (name) =&gt; {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> svg = iconSet.<span class="hljs-title function_">toSVG</span>(name);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!svg) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">parseColors</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Change default color to &apos;currentColor&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">defaultColor</span>: <span class="hljs-string">&apos;currentColor&apos;</span>,<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Callback to parse each color</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">attr, colorStr</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">switch</span> (colorStr.<span class="hljs-title function_">toLowerCase</span>()) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;#2e4454&apos;</span>:<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Change to currentColor</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-string">&apos;currentColor&apos;</span>;<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">case</span> <span class="hljs-string">&apos;none&apos;</span>:<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> colorStr;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Should not happen</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">`Unexpected <span class="hljs-subst">&#x24;{attr}</span> &quot;<span class="hljs-subst">&#x24;{colorStr}</span>&quot; in <span class="hljs-subst">&#x24;{name}</span>`</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> colorStr;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Update icon in icon set</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;iconSet.<span class="hljs-title function_">fromSVG</span>(name, svg);<br>
+ &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Export icon set in IconifyJSON format</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iconSet.<span class="hljs-title function_">export</span>());<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found&apos;</span>, iconSet.<span class="hljs-title function_">count</span>(), <span class="hljs-string">&apos;icons&apos;</span>);<br>
+})();<br>
+</code></div></div></div></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../icon-set/">IconSet Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../icon/cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../icon/">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Import<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../json.html">IconifyJSON</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svg.html">Single SVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../directory.html">Directory</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./">Figma</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Rendering Modes in Iconify Icon Web Component</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./inline.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Vertical Alignment</a>
+<a href="./without-api.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Use Without API</a>
+</div>
+<h1>Rendering modes</h1>
+<p>This tutorial is part of <a href="./">Iconify Icon web component tutorial</a>.</p>
+<p>Web component supports several icon rendering modes.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="modes" class="heading--2">Modes <a href="#modes" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>There are 4 modes supported by web component:</p><ul>
+<li>&quot;<span class="hljs-string">svg</span>&quot;: renders <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element.</li>
+<li>&quot;<span class="hljs-string">style</span>&quot;: uses either &quot;<span class="hljs-string">bg</span>&quot; or &quot;<span class="hljs-string">mask</span>&quot; mode, depending on icon palette.</li>
+<li>&quot;<span class="hljs-string">bg</span>&quot;: renders <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span> element with icon as background image. Usable only for icons that have palette.</li>
+<li>&quot;<span class="hljs-string">mask</span>&quot;: renders <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span> element with icon as mask image. Usable only for icons that do not have palette.</li>
+</ul><p>Demo showing 2 icons (one monotone, one with palette) rendered with 4 modes:</p><div class="modes-demo">
+	<p>
+		<span>svg:</span>
+		<iconify-icon class="success" icon="mdi:home" mode="svg"></iconify-icon>
+		<iconify-icon class="success" icon="noto:paintbrush" mode="svg"></iconify-icon>
+	</p>
+	<p>
+		<span>style:</span>
+		<iconify-icon class="success" icon="mdi:home" mode="style"></iconify-icon>
+		<iconify-icon class="success" icon="noto:paintbrush" mode="style"></iconify-icon>
+	</p>
+	<p>
+		<span>bg:</span>
+		<iconify-icon class="error" icon="mdi:home" mode="bg"></iconify-icon>
+		<iconify-icon class="success" icon="noto:paintbrush" mode="bg"></iconify-icon>
+		<small>monotone icon shown as black</small>
+	</p>
+	<p>
+		<span>mask:</span>
+		<iconify-icon class="success" icon="mdi:home" mode="mask"></iconify-icon>
+		<iconify-icon class="error" icon="noto:paintbrush" mode="mask"></iconify-icon>
+		<small>icon with palette loses color</small>
+	</p>
+</div><section class="content-section content-section--3"><H1 id="code-samples" class="heading--3">Code samples <a href="#code-samples" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>What do these modes actually look like in DOM?</p><p>Examples for <span class="hljs-inline-icon">mdi:home</span> (used in modes demo above) icon:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">svg mode:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHN2ZwoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJd2lkdGg9IjFlbSIKCWhlaWdodD0iMWVtIgoJdmlld0JveD0iMCAwIDI0IDI0Igo+Cgk8cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMCAyMHYtNmg0djZoNXYtOGgzTDEyIDNMMiAxMmgzdjhoNVoiPjwvcGF0aD4KPC9zdmc+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">width</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 24 24&quot;</span><br>
+&gt;</span><br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">bg mode:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNwYW4KCXN0eWxlPSIKCQktLXN2ZzogdXJsKCdkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPVwnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcJyB3aWR0aD1cJzI0XCcgaGVpZ2h0PVwnMjRcJyB2aWV3Qm94PVwnMCAwIDI0IDI0XCclM0UlM0NwYXRoIGZpbGw9XCdjdXJyZW50Q29sb3JcJyBkPVwnTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1WlwnLyUzRSUzQy9zdmclM0UnKTsKCQl3aWR0aDogMWVtOwoJCWhlaWdodDogMWVtOwoJCWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50OwoJCWJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXN2Zyk7CgkJYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDsKCQliYWNrZ3JvdW5kLXNpemU6IDEwMCUgMTAwJTsKCSIKPjwvc3Bhbj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;--svg: url(&apos;data:image/svg+xml,%3Csvg xmlns=\&apos;http://www.w3.org/2000/svg\&apos; width=\&apos;24\&apos; height=\&apos;24\&apos; viewBox=\&apos;0 0 24 24\&apos;%3E%3Cpath fill=\&apos;currentColor\&apos; d=\&apos;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z\&apos;/%3E%3C/svg%3E&apos;);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;width: 1em;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;height: 1em;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;background-color: transparent;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;background-image: var(--svg);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;background-repeat: no-repeat;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;background-size: 100% 100%;<br>
+ &#xa0; &#xa0;&quot;</span><br>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">mask mode:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNwYW4KCXN0eWxlPSIKCQktLXN2ZzogdXJsKCdkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPVwnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcJyB3aWR0aD1cJzI0XCcgaGVpZ2h0PVwnMjRcJyB2aWV3Qm94PVwnMCAwIDI0IDI0XCclM0UlM0NwYXRoIGZpbGw9XCdjdXJyZW50Q29sb3JcJyBkPVwnTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1WlwnLyUzRSUzQy9zdmclM0UnKTsKCQl3aWR0aDogMWVtOwoJCWhlaWdodDogMWVtOwoJCWJhY2tncm91bmQtY29sb3I6IGN1cnJlbnRjb2xvcjsKCQktd2Via2l0LW1hc2staW1hZ2U6IHZhcigtLXN2Zyk7CgkJLXdlYmtpdC1tYXNrLXJlcGVhdDogbm8tcmVwZWF0OwoJCS13ZWJraXQtbWFzay1zaXplOiAxMDAlIDEwMCU7CgkJbWFzay1pbWFnZTogdmFyKC0tc3ZnKTsKCQltYXNrLXJlcGVhdDogbm8tcmVwZWF0OwoJCW1hc2stc2l6ZTogMTAwJSAxMDAlOwoJIgo+PC9zcGFuPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">style</span>=<span class="hljs-string">&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;--svg: url(&apos;data:image/svg+xml,%3Csvg xmlns=\&apos;http://www.w3.org/2000/svg\&apos; width=\&apos;24\&apos; height=\&apos;24\&apos; viewBox=\&apos;0 0 24 24\&apos;%3E%3Cpath fill=\&apos;currentColor\&apos; d=\&apos;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z\&apos;/%3E%3C/svg%3E&apos;);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;width: 1em;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;height: 1em;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;background-color: currentcolor;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;-webkit-mask-image: var(--svg);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;-webkit-mask-repeat: no-repeat;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;-webkit-mask-size: 100% 100%;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;mask-image: var(--svg);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;mask-repeat: no-repeat;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;mask-size: 100% 100%;<br>
+ &#xa0; &#xa0;&quot;</span><br>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div></div></section></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="why" class="heading--2">Why not just render SVG? <a href="#why" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You are probably wondering, why is it even needed? Isn&apos;t <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> enough?</p><p>Rendering icon as <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> works for most icons, but it does not always work for icons that use SVG animations.</p><p>SVG animations cannot start until document is ready. It might seem like a small thing, but animations not rendering quickly enough can cause bad user experience. This issue can be caused by small things, such as statistics script failing to load or ad code loading slowly. If at least one server that page is loading resources from is unreachable, it might break all animated SVGs on page. Async and defer attributes do not help. Issue can even be caused by script in an iframe.</p><section class="content-section content-section--3"><H1 id="delay-demo" class="heading--3">Animation delay demo <a href="#delay-demo" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Below is an <span class="hljs-inline-tag hljs-linkable">&lt;iframe&gt;</span> that shows icon rendering issue. It contains animated icon, rendered as <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> and as background image. Both icons render instantly, but animation in <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> does not start for few seconds because document is still loading.</p><div class="delay-demo-wrapper">
+	<iframe src="../delay-demo.html" class="delay-demo"></iframe>
+</div><p>To make things worse, this demo, which is in <span class="hljs-inline-tag hljs-linkable">&lt;iframe&gt;</span>, affects the main document. Logo on this page is rendered as <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> and it contains animations. Refresh this page to see how slow script in a frame prevents SVG animations in unrelated icons in the main document.</p></section></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="backgrounds-and-masks" class="heading--2">Backgrounds and masks <a href="#backgrounds-and-masks" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Background images cannot use <span class="hljs-inline-prop">currentColor</span>, but they do keep icon&apos;s palette, so icons with palette can be rendered as background image.</p><p>But what to do if icon uses <span class="hljs-inline-prop">currentColor</span>? Solution is to use icon as mask and set background color to <span class="hljs-inline-prop">currentColor</span>.</p><p>Combination of background and mask images make it possible to use almost all SVGs as URLs. The only icons that cannot be rendered correctly are icons that mix <span class="hljs-inline-prop">currentColor</span> and hardcoded palette.</p><p>See <a href="https://antfu.me/posts/icons-in-pure-css" target="_blank">Icons in Pure CSS article by Anthony Fu</a> that explains it in more details.</p><section class="content-section content-section--3"><H1 id="svg-animations" class="heading--3">SVG animations <a href="#svg-animations" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>When icon has animations, animations start immediately if it is rendered as mask or background, solving animation delay issue mentioned few sections above.</p><p>However, there is another issue: browser cache in Chrome. Image is rendered as URL. If URL is already in browser cache, Chrome does not restart animation. That means consequent renders of the same animated icons can bug out.</p><div class="delay-demo-wrapper">
+	<iframe src="../delay-demo-freeze.html" class="delay-demo"></iframe>
+</div><p>So there are issues with SVG animations when used as background or mask too. Web component solves it by adding random commented out content to icon, which causes it to bypass browser cache.</p><div class="delay-demo-wrapper delay-demo-wrapper--short">
+	<iframe src="../delay-demo-icon.html" class="delay-demo"></iframe>
+</div></section></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="choices" class="heading--2">Which mode to use? <a href="#choices" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Web component will automatically use best mode:</p><ul>
+<li>If icon has SVG animations, &quot;<span class="hljs-string">style</span>&quot; to render animations immediately.</li>
+<li>Otherwise &quot;<span class="hljs-string">svg</span>&quot;, which renders slightly faster in most browsers.</li>
+</ul></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../icon-components/">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Web Component<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Wrappers for:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./solid.html">Solid</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Attributes:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Vertical Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./modes.html">Rendering Modes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator"><a href="./without-api.html">Use Without API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icon.html">loadIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./build-icon.html">buildIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-fetch.html">setFetch()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-components/ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator"><a href="../icon-components/bundles/">Icon Bundles</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

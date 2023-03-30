@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Iconify API Configuration: PHP</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><h1>Iconify API configuration</h1>
+<p>This tutorial is a part of <a href="./">Iconify API installation instructions</a> for PHP. This part of tutorial explains API configuration options.</p>
+<p>Configuration is stored in file <span class="hljs-inline-file">config.php</span>. It is used only for customized values, so you do not need to store entire configuration.</p>
+<p>Default configuration is stored in <span class="hljs-inline-file">config-default.php</span>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="main-options" class="heading--2 heading--empty">Main options <a href="#main-options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><section class="content-section content-section--3"><H1 id="region-and-env-region" class="heading--3">region and env-region <a href="#region-and-env-region" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Region is used as server identification. If you are running multiple Iconify API instances, by setting different <span class="hljs-inline-prop">region</span> values you can check which server you are connected to.</p><p>How to check region? Open <span class="hljs-inline-link">/version</span> end point in browser: <span class="hljs-inline-link">https://api.iconify.design/version</span>. That page will show you API version, language (Node or PHP) and region.</p><p>Additionally, region can be set using environment variable &quot;<span class="hljs-string">region</span>&quot;.</p></section><section class="content-section content-section--3"><H1 id="custom-icons-dir" class="heading--3">custom-icons-dir <a href="#custom-icons-dir" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Directory where custom icon sets are stored.</p><p>Icon sets must be stored in <a href="../../types/iconify-json.html">Iconify JSON format</a>.</p><p>Filename must match prefix, for example <span class="hljs-inline-icon">awesome-icons:home</span> should be stored in <span class="hljs-inline-file">awesome-icons.json</span>.</p><p>Default directory name is &quot;<span class="hljs-string">json</span>&quot; relative to root directory.</p></section><section class="content-section content-section--3"><H1 id="serve-default-icons" class="heading--3">serve-default-icons <a href="#serve-default-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If disabled, API will not load the default Iconify icon sets.</p></section><section class="content-section content-section--3"><H1 id="index-page" class="heading--3">index-page <a href="#index-page" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>URL to redirect browser to when browsing <span class="hljs-inline-link">/</span>. Redirection is permanent.</p></section><section class="content-section content-section--3"><H1 id="cache-dir" class="heading--3">cache-dir <a href="#cache-dir" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Directory for caching files. This cache is used to speed up loading icon sets.</p><p>Cache directory must be writable by PHP process!</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="JGNvbmZpZyA9IFsKICAgICdjYWNoZS1kaXInID0+IF9fRElSX18gLiAnL2NhY2hlJwpdOw=="><code class="highlight hljs"><span class="hljs-variable">&#x24;config</span> = [<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;cache-dir&apos;</span> =&gt; <span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/cache&apos;</span><br>
+];</code></div></div></div></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="browser-cache" class="heading--2">Browser cache <a href="#browser-cache" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Cache configuration is stored in <span class="hljs-inline-prop">cache</span> array.</p><p>Array properties:</p><ul>
+<li><span class="hljs-inline-prop">timeout</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Cache timeout in seconds.</li>
+<li><span class="hljs-inline-prop">min-refresh</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Minimum page refresh timeout. Usually the same as <span class="hljs-inline-prop">timeout</span> value.</li>
+<li><span class="hljs-inline-prop">private</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Set to <span class="hljs-literal">true</span> if page cache should be treated as private.</li>
+</ul><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="JGNvbmZpZyA9IFsKICAgICdjYWNoZScgPT4gWwogICAgICAgICd0aW1lb3V0JyA9PiA2MDQ4MDAsCiAgICAgICAgJ21pbi1yZWZyZXNoJyA9PiA2MDQ4MDAsCiAgICAgICAgJ3ByaXZhdGUnID0+IGZhbHNlCiAgICBdCl07"><code class="highlight hljs"><span class="hljs-variable">&#x24;config</span> = [<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;cache&apos;</span> =&gt; [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;timeout&apos;</span> =&gt; <span class="hljs-number">604800</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;min-refresh&apos;</span> =&gt; <span class="hljs-number">604800</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;private&apos;</span> =&gt; <span class="hljs-literal">false</span><br>
+ &#xa0; &#xa0;]<br>
+];</code></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="sync" class="heading--2">Synchronizing icon sets with Git <a href="#sync" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API can pull collections from Git service. This can be used to push collections to server whenever it is updated without manual work.</p><p>There are two collections available: &quot;<span class="hljs-string">iconify</span>&quot; and &quot;<span class="hljs-string">custom</span>&quot;.</p><p>All configuration options are in <span class="hljs-inline-prop">sync</span> object.</p><p>To synchronize repository send GET request to <span class="hljs-inline-link">/sync?repo=iconify&amp;key=your-sync-key</span> Replace <span class="hljs-inline-prop">repo</span> with &quot;<span class="hljs-string">custom</span>&quot; to synchronize custom repository and <span class="hljs-inline-prop">key</span> with value of <span class="hljs-inline-prop">sync.secret</span>.</p><p>Server will respond identically with &quot;<span class="hljs-string">ok</span>&quot; message after small delay regardless of status to prevent visitors from trying to guess your secret key.</p><p>Sync function is meant to be used with GitHub web hooks function. To avoid synchronizing icon sets too often, synchronization is delayed by <span class="hljs-number">60</span> seconds (configure <span class="hljs-inline-prop">sync.sync-delay</span> option to change it). This way when there are multiple commits submitted within a minute, synchronization is done only once 60 seconds after the first commit.</p><p>Sync object properties:</p><ul>
+<li><span class="hljs-inline-prop">secret</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Secret key. This is a required option.</li>
+<li><span class="hljs-inline-prop">versions</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Location of <span class="hljs-inline-file">versions.json</span> file that stores information about the latest synchronized repositories.</li>
+<li><span class="hljs-inline-prop">storage</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Location of directory where repositories will be stored.</li>
+<li><span class="hljs-inline-prop">git</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Git command. You can change it if you need to customize command that is executed to clone repository. &quot;<span class="hljs-string">{repo}</span>&quot; will be replaced with repository URL, &quot;<span class="hljs-string">{target}</span>&quot; will be replaced with target directory.</li>
+<li><span class="hljs-inline-prop">iconify</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. URL of Iconify repository.</li>
+<li><span class="hljs-inline-prop">custom</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. URL of the custom repository.</li>
+<li><span class="hljs-inline-prop">custom-dir</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Location of JSON files in custom repository, relative to root directory of repository.</li>
+</ul><p>Never change <span class="hljs-inline-prop">sync</span> configuration in <span class="hljs-inline-file">config-default.php</span>! Change it only in <span class="hljs-inline-file">config.php</span>. Otherwise, it might be committed by mistake to a public repository, allowing everyone to see your secret words.</p><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="JGNvbmZpZyA9IFsKICAgICdzeW5jJyA9PiBbCiAgICAgICAgJ2N1c3RvbScgPT4gJ2h0dHBzOi8vZ2l0aHViLmNvbS9jeWJlcmFsaWVuL2FuaW1hdGVkLWljb25zLmdpdCcsCiAgICAgICAgJ2N1c3RvbS1kaXInID0+ICdmaW5hbCcsCiAgICAgICAgJ3NlY3JldCcgPT4gJ3Rlc3QnIC8vIERvIG5vdCBzdG9yZSB0aGlzIGluIGNvbmZpZy5waHAgISEhCiAgICBdCl07"><code class="highlight hljs"><span class="hljs-variable">&#x24;config</span> = [<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;sync&apos;</span> =&gt; [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;custom&apos;</span> =&gt; <span class="hljs-string">&apos;https://github.com/cyberalien/animated-icons.git&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;custom-dir&apos;</span> =&gt; <span class="hljs-string">&apos;final&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;secret&apos;</span> =&gt; <span class="hljs-string">&apos;test&apos;</span> <span class="hljs-comment">// Do not store this in config.php !!!</span><br>
+ &#xa0; &#xa0;]<br>
+];</code></div></div></div><section class="content-section content-section--3"><H1 id="custom-dir" class="heading--3">custom-dir <a href="#custom-dir" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Property <span class="hljs-inline-prop">sync.custom-dir</span> points to the location of JSON files in custom repository, relative to root directory of repository.</p><p>For example, if JSON files are located in directory &quot;<span class="hljs-string">json</span>&quot; in your repository (like they are in Iconify repository), set <span class="hljs-inline-prop">sync.custom-dir</span> value to &quot;<span class="hljs-string">json</span>&quot;.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../hosting.html">Hosting API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./">PHP API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../hosting-js/">Node.js API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

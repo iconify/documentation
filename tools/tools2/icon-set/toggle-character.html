@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Assign character to icon in icon set</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./chars.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> chars()</a>
+<a href="./list-category.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> listCategory()</a>
+</div>
+<h1>toggleCharacter()</h1>
+<p>This function is part of <span class="hljs-inline-type hljs-linkable"><a href="./" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> class in <a href="../">Iconify Tools</a>.</p>
+<p>Function <span class="hljs-function">toggleCharacter()</span> adds character to icon or removes it.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">iconName</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon name.</li>
+<li><span class="hljs-inline-prop">char</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Character as hexadecimal string, such as &quot;<span class="hljs-string">f001</span>&quot;.</li>
+<li><span class="hljs-inline-prop">add</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If <span class="hljs-literal">true</span>, character will be added to icon. If <span class="hljs-literal">false</span>, character will be removed from icon.</li>
+</ul><p>Function returns <span class="hljs-literal">true</span> on success, <span class="hljs-literal">false</span> on failure.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="character-map" class="heading--2">Character map <a href="#character-map" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>What is the purpose of characters map?</p><p>It is used to generate icon fonts. Each icon in an icon font has a character assigned to it. Even when using ligatures, ligatures point to a character, so character is needed.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="chars" class="heading--2">How to find all characters? <a href="#chars" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You can get list of all assigned characters by using <a href="./chars.html" title="chars() documentation"><span class="hljs-function hljs-linkable">chars()</span></a> method.</p><p>If you want to know characters assigned to an icon, use code like this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgaXRlbSA9IGljb25TZXQuZW50cmllc1snc29tZS1pY29uJ107Ci8vIFNldDxzdHJpbmc+CmNvbnNvbGUubG9nKGl0ZW0uY2hhcnMpOwo="><code class="highlight hljs"><span class="hljs-keyword">const</span> item = iconSet.<span class="hljs-property">entries</span>[<span class="hljs-string">&apos;some-icon&apos;</span>];<br>
+<span class="hljs-comment">// Set&lt;string&gt;</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(item.<span class="hljs-property">chars</span>);<br>
+</code></div></div></div><p>It is safe to modify characters directly in <a href="./entries.html" title="entries() documentation"><span class="hljs-function hljs-linkable">entries</span></a> property.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">chars-example.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgYmxhbmtJY29uU2V0IH0gZnJvbSAnQGljb25pZnkvdG9vbHMnOwoKLy8gQ3JlYXRlIGljb24gc2V0LCBhZGQgZmV3IGljb25zIGFuZCBjaGFyYWN0ZXJzCmNvbnN0IGljb25TZXQgPSBibGFua0ljb25TZXQoJ3Rlc3QtcHJlZml4Jyk7CgppY29uU2V0LnNldEljb24oJ2FkZCcsIHsKCWJvZHk6ICc8cGF0aCBkPSJNMTQgN3YxSDh2Nkg3VjhIMVY3aDZWMWgxdjZoNnoiLz4nLAp9KTsKaWNvblNldC50b2dnbGVDaGFyYWN0ZXIoJ2FkZCcsICdmMDAxJywgdHJ1ZSk7CgppY29uU2V0LnNldEljb24oJ3RyaWFuZ2xlLWxlZnQnLCB7Cglib2R5OiAnPGcgZmlsbD0iY3VycmVudENvbG9yIj48cGF0aCBkPSJNMTAuNDQgMmwuNTYuNDEzdjExLjE5NGwtLjU0LjM5M0w1IDguMzczdi0uODI3TDEwLjQ0IDJ6Ii8+PC9nPicsCn0pOwppY29uU2V0LnRvZ2dsZUNoYXJhY3RlcigndHJpYW5nbGUtbGVmdCcsICdmMDAyJywgdHJ1ZSk7CgppY29uU2V0LnNldFZhcmlhdGlvbigndHJpYW5nbGUtcmlnaHQnLCAndHJpYW5nbGUtbGVmdCcsIHsKCWhGbGlwOiB0cnVlLAp9KTsKaWNvblNldC50b2dnbGVDaGFyYWN0ZXIoJ3RyaWFuZ2xlLXJpZ2h0JywgJ2YwMDMnLCB0cnVlKTsKCi8vIFNldCBjaGFyYWN0ZXIgZm9yIGljb24gdGhhdCBkb2VzIG5vdCBleGlzdCAod2lsbCBmYWlsKQppY29uU2V0LnRvZ2dsZUNoYXJhY3Rlcignd2hhdGV2ZXInLCAnZjAwNScsIHRydWUpOwoKLy8gRXhwb3J0IGNoYXJhY3RlcnMgbWFwCmNvbnNvbGUubG9nKGljb25TZXQuY2hhcnMoKSk7CgovLyBDaGFyYWN0ZXJzIG1hcCBpcyBhbHNvIGV4cG9ydGVkIGluIGV4cG9ydCgpOgpjb25zb2xlLmxvZyhpY29uU2V0LmV4cG9ydCgpKTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { blankIconSet } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Create icon set, add few icons and characters</span><br>
+<span class="hljs-keyword">const</span> iconSet = <span class="hljs-title function_">blankIconSet</span>(<span class="hljs-string">&apos;test-prefix&apos;</span>);<br>
+<br>
+iconSet.<span class="hljs-title function_">setIcon</span>(<span class="hljs-string">&apos;add&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M14 7v1H8v6H7V8H1V7h6V1h1v6h6z&quot;/&gt;&apos;</span>,<br>
+});<br>
+iconSet.<span class="hljs-title function_">toggleCharacter</span>(<span class="hljs-string">&apos;add&apos;</span>, <span class="hljs-string">&apos;f001&apos;</span>, <span class="hljs-literal">true</span>);<br>
+<br>
+iconSet.<span class="hljs-title function_">setIcon</span>(<span class="hljs-string">&apos;triangle-left&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;g fill=&quot;currentColor&quot;&gt;&lt;path d=&quot;M10.44 2l.56.413v11.194l-.54.393L5 8.373v-.827L10.44 2z&quot;/&gt;&lt;/g&gt;&apos;</span>,<br>
+});<br>
+iconSet.<span class="hljs-title function_">toggleCharacter</span>(<span class="hljs-string">&apos;triangle-left&apos;</span>, <span class="hljs-string">&apos;f002&apos;</span>, <span class="hljs-literal">true</span>);<br>
+<br>
+iconSet.<span class="hljs-title function_">setVariation</span>(<span class="hljs-string">&apos;triangle-right&apos;</span>, <span class="hljs-string">&apos;triangle-left&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">hFlip</span>: <span class="hljs-literal">true</span>,<br>
+});<br>
+iconSet.<span class="hljs-title function_">toggleCharacter</span>(<span class="hljs-string">&apos;triangle-right&apos;</span>, <span class="hljs-string">&apos;f003&apos;</span>, <span class="hljs-literal">true</span>);<br>
+<br>
+<span class="hljs-comment">// Set character for icon that does not exist (will fail)</span><br>
+iconSet.<span class="hljs-title function_">toggleCharacter</span>(<span class="hljs-string">&apos;whatever&apos;</span>, <span class="hljs-string">&apos;f005&apos;</span>, <span class="hljs-literal">true</span>);<br>
+<br>
+<span class="hljs-comment">// Export characters map</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iconSet.<span class="hljs-title function_">chars</span>());<br>
+<br>
+<span class="hljs-comment">// Characters map is also exported in export():</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iconSet.<span class="hljs-title function_">export</span>());<br>
+</code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">IconSet Class<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Icons:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list.html">list()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./for-each.html">forEach()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./exists.html">exists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./count.html">count()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./remove.html">remove()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./rename.html">rename()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-item.html">setItem()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-icon.html">setIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-variation.html">setVariation()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-alias.html">setAlias()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-tree.html">getTree()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./entries.html">entries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Importing/Exporting:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./prefix.html">prefix</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./resolve.html">resolve()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load.html">load()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./export.html">export()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./to-svg.html">toSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./from-svg.html">fromSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./to-string.html">toString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Metadata:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./info.html">info</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./chars.html">chars()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./toggle-character.html">toggleCharacter()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-category.html">listCategory()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./toggle-category.html">toggleCategory()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./categories.html">categories</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./check-theme.html">checkTheme()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./themes.html">suffixes/prefixes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Other:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./merge.html">mergeIconSets()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

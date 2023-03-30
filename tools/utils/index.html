@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Iconify Utils</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../tools2/" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Iconify Tools</a>
+<a href="./examples/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Examples</a>
+</div>
+<h1>Iconify Utils</h1>
+<p>Iconify Utils is a set of reusable functions that are used by various Iconify icon components and related packages:</p>
+<ul>
+<li>Parsing Iconify icon sets in <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</li>
+<li>Exporting icons from <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> format (can be extracted from icon set) as SVG.</li>
+<li>Parsing and validating icon names.</li>
+<li>Parsing and validating colors.</li>
+<li>Parsing emoji sequences, generating regular expressions to find emojis in text.</li>
+</ul>
+<p>Library is written in TypeScript, is available as ES modules for modern development and CommonJS for older scripts.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="installation" class="heading--2">Installation <a href="#installation" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To install library run:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bnBtIGluc3RhbGwgQGljb25pZnkvdXRpbHNAbmV4dCAtLXNhdmUK"><code class="highlight hljs">npm install @iconify/utils@next --save<br>
+</code></div></div></div></section>
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Documentation for each function below includes code samples.</p><p>In addition to that, <a href="./examples/">there are several bigger code samples for specific commonly used tasks</a> to help you figure out what functions to use.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="functions" class="heading--2">Functions <a href="#functions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icon sets are stored in <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format. Functions for working with icon sets:</p><ul>
+<li><a href="./validate-icon-set.html" title="validateIconSet() documentation"><span class="hljs-function hljs-linkable">validateIconSet(data)</span></a> validates icon set. If you are not sure if source is a valid icon set, run this function to validate icon set. It will convert data to correct <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> and will attempt to fix errors.</li>
+<li><a href="./quickly-validate-icon-set.html" title="quicklyValidateIconSet() documentation"><span class="hljs-function hljs-linkable">quicklyValidateIconSet(data)</span></a> same as above, but does basic validation. Use it if you do not care about metadata being invalid, if you do not want to attempt to fix errors in icon set, or if you want to reduce bundle size.</li>
+<li><a href="./get-icons.html" title="getIcons() documentation"><span class="hljs-function hljs-linkable">getIcons(data, icons)</span></a> extracts few icons from icon set. Can be used to reduce icon set to few icons that are used by your project.</li>
+<li><a href="./get-icon-data.html" title="getIconData() documentation"><span class="hljs-function hljs-linkable">getIconData(data, icon)</span></a> extracts data for one icon from icon set.</li>
+<li><a href="./minify-icon-set.html" title="minifyIconSet() documentation"><span class="hljs-function hljs-linkable">minifyIconSet(data)</span></a> minifies icon set, removing redundant data. Used to reduce file size.</li>
+<li><a href="./expand-icon-set.html" title="expandIconSet() documentation"><span class="hljs-function hljs-linkable">expandIconSet(data)</span></a> is the opposite of function above.</li>
+<li><a href="./convert-info.html" title="convertIconSetInfo() documentation"><span class="hljs-function hljs-linkable">convertIconSetInfo(data)</span></a> converts legacy icon set format to correct <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-info.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> type.</li>
+<li><a href="./parse-icon-set.html" title="parseIconSet() documentation"><span class="hljs-function hljs-linkable">parseIconSet(data, callback)</span></a> parses icon set, calling <span class="hljs-inline-prop">callback</span> function for every icon. Can be used to extract all icons from icon set. Validate icon set before parsing it.</li>
+<li><a href="./parse-icon-set.html" title="parseIconSetAsync() documentation"><span class="hljs-function hljs-linkable">parseIconSetAsync(data, callback)</span></a> is async version of <a href="./parse-icon-set.html" title="parseIconSet() documentation"><span class="hljs-function hljs-linkable">parseIconSet()</span></a>, where both function and callback are asynchronous.</li>
+</ul><p>Functions for working with <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> format that represents one icon:</p><ul>
+<li><a href="./merge-icon-data.html" title="mergeIconData() documentation"><span class="hljs-function hljs-linkable">mergeIconData(icon, alias)</span></a> merges data for icon and alias. Used by functions that extract icon data from icon set.</li>
+<li><a href="./default-icon-props.html" title="defaultIconProps() documentation"><span class="hljs-function hljs-linkable">defaultIconProps</span></a> contains default values for optional properties to <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> object.</li>
+</ul><p>When rendering icon, customisations can be applied to it. For example, changing dimensions, rotating or flipping icon. They are represented by <span class="hljs-inline-type hljs-linkable"><a href="./icon-customisations.html" title="IconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">IconCustomisations</span></a></span> type. Functions for working with customisations:</p><ul>
+<li><a href="./merge-customisations.html" title="mergeCustomisations() documentation"><span class="hljs-function hljs-linkable">mergeCustomisations(defaultIconCustomisations, custom)</span></a> function converts object to <span class="hljs-inline-type hljs-linkable"><a href="./icon-customisations.html" title="FullIconCustomisations documentation"><span class="hljs-inline-type hljs-linkable">FullIconCustomisations</span></a></span> type. It also validates types, so it can be used to clean up user input.</li>
+<li><a href="./default-icon-customisations.html" title="defaultIconCustomisations() documentation"><span class="hljs-function hljs-linkable">defaultIconCustomisations</span></a> exported from <span class="hljs-inline-file">lib/customisations/defaults</span> contains default customisations.</li>
+<li><a href="./to-boolean.html" title="toBoolean() documentation"><span class="hljs-function hljs-linkable">toBoolean(name, value, defaultValue)</span></a> converts various strings to boolean. Used by icon components to clean up parameters that can be boolean or string.</li>
+<li><a href="./rotate-from-string.html" title="rotateFromString() documentation"><span class="hljs-function hljs-linkable">rotateFromString(value)</span></a> converts various methods of rotating icon (such as &quot;<span class="hljs-string">90deg</span>&quot; or &quot;<span class="hljs-string">25%</span>&quot;) to a number.</li>
+<li><a href="./flip-from-string.html" title="flipFromString() documentation"><span class="hljs-function hljs-linkable">flipFromString(customisations, value)</span></a> applies flip string (such as <span class="hljs-inline-attr">flip</span>=<span class="hljs-string">&quot;horizontal,vertical&quot;</span>) to customisations.</li>
+</ul><p>Functions for rendering icon:</p><ul>
+<li><a href="./icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG(icon, customisations)</span></a> generates data needed to render SVG. It does not generate full SVG, only content and list of attributes to add to SVG element, making it easy to use in custom components.</li>
+<li><a href="./icon-to-html.html" title="iconToHTML() documentation"><span class="hljs-function hljs-linkable">iconToHTML(body, attributes)</span></a> converts result of <a href="./icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a> to SVG string.</li>
+<li><a href="./calculate-size.html" title="calculateSize() documentation"><span class="hljs-function hljs-linkable">calculateSize(size, ratio)</span></a> calculates icon dimensions. It is used when building icons using <a href="./icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a>.</li>
+<li><a href="./replace-ids.html" title="replaceIDs() documentation"><span class="hljs-function hljs-linkable">replaceIDs(content)</span></a> replaces IDs in SVG with unique IDs. IDs used in elements like masks and they must be unique, so multiple icons displayed on the same page using same IDs will result in chaos. This function prevents that chaos.</li>
+<li><a href="./get-icon-css.html" title="getIconCSS() documentation"><span class="hljs-function hljs-linkable">getIconCSS(icon)</span></a> generates stylesheet for using icon as background image or mask image.</li>
+<li><a href="./get-icons-css.html" title="getIconsCSS() documentation"><span class="hljs-function hljs-linkable">getIconsCSS(iconSet, names)</span></a> generates stylesheet for using multiple icons from same icon set as background images or mask images.</li>
+</ul><p>Functions for working with icon names:</p><ul>
+<li><a href="./match-name.html" title="matchIconName() documentation"><span class="hljs-function hljs-linkable">matchIconName</span></a> constant is a regular expression to test parts of icon name.</li>
+<li><a href="./string-to-icon.html" title="stringToIcon() documentation"><span class="hljs-function hljs-linkable">stringToIcon(value)</span></a> converts icon name, such as &quot;<span class="hljs-string">mdi-light:home</span>&quot; into an <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a></span> object and optionally validates it.</li>
+<li><a href="./validate-icon.html" title="validateIconName() documentation"><span class="hljs-function hljs-linkable">validateIconName(icon)</span></a> validates <span class="hljs-inline-type hljs-linkable"><a href="./icon-name.html" title="IconifyIconName documentation"><span class="hljs-inline-type hljs-linkable">IconifyIconName</span></a></span> object.</li>
+</ul><p>Functions for working with colors:</p><ul>
+<li><a href="./string-to-color.html" title="stringToColor() documentation"><span class="hljs-function hljs-linkable">stringToColor(value)</span></a> converts string to <span class="hljs-inline-type hljs-linkable"><a href="./color.html" title="Color documentation"><span class="hljs-inline-type hljs-linkable">Color</span></a></span> object, returns <span class="hljs-literal">null</span> on error. This can be used to validate user input. It supports color keywords, hexadecimal colors, RGB, HSL, LAB and LCH colors. Variables are not supported because this is meant for parsing SVGs, which should not reference any external variables.</li>
+<li><a href="./compare-colors.html" title="compareColors() documentation"><span class="hljs-function hljs-linkable">compareColors(color1, color2)</span></a> compares colors. It also converts RGB to HSL if needed.</li>
+<li><a href="./color-to-string.html" title="colorToString() documentation"><span class="hljs-function hljs-linkable">colorToString(color)</span></a> converts <span class="hljs-inline-type hljs-linkable"><a href="./color.html" title="Color documentation"><span class="hljs-inline-type hljs-linkable">Color</span></a></span> object to string. Combined with <a href="./string-to-color.html" title="stringToColor() documentation"><span class="hljs-function hljs-linkable">stringToColor()</span></a>, this can be used to validate and clean up user input.</li>
+</ul></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="advanced" class="heading--2">Advanced usage <a href="#advanced" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Iconify Utils can do only basic parsing of <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> and <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-icon.html" title="IconifyIcon documentation"><span class="hljs-inline-type hljs-linkable">IconifyIcon</span></a></span> data. It is not meant for more complex stuff.</p><p>For more complex stuff, such as importing icons, validating icon code, changing palette, cleaning up, exporting to various formats, see <a href="../tools2/">Iconify Tools package</a>.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Utils<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon Sets:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./validate-icon-set.html">validateIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./quickly-validate-icon-set.html">quicklyValidateIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icons.html">getIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icon-data.html">getIconData()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./minify-icon-set.html">minifyIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./expand-icon-set.html">expandIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./convert-info.html">convertIconSetInfo()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./parse-icon-set.html">parseIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./merge-icon-data.html">mergeIconData()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./default-icon-props.html">defaultIconProps</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Customisations:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./merge-customisations.html">mergeCustomisations()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./default-icon-customisations.html">defaultIconCustomisations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./to-boolean.html">toBoolean()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./rotate-from-string.html">rotateFromString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./flip-from-string.html">flipFromString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">SVG:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-to-svg.html">iconToSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-to-html.html">iconToHTML()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./calculate-size.html">calculateSize()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">CSS:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icon-css.html">getIconCSS()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icons-css.html">getIconsCSS()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon Name:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./match-name.html">matchName</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./string-to-icon.html">stringToIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./validate-icon.html">validateIconName()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Colors:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./string-to-color.html">stringToColor()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./compare-colors.html">compareColors()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./color-to-string.html">colorToString()</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Manipulating icons with Iconify Tools</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./export.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Exporting Icons</a>
+<a href="./examples.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Examples</a>
+</div>
+<h1>Manipulating icons with Iconify Tools</h1>
+<p>Iconify Tools is a NPM package for manipulating icons. See <a href="./">Iconify Tools documentation</a>.</p>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>
+		This documentation is for version 1 of Iconify Tools. It was developed
+		during early Iconify development, before Iconify development switched to
+		TypeScript, so it is not fully compatible with TypeScript.
+	</p>
+	<p>
+		Documentation for
+		<a href="../tools2/">updated Iconify Tools is available here</a>.
+	</p>
+</div><p>Most functions require SVG to be optimized. Therefore, before doing anything else, you should optimize icon.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="svgo" class="heading--2">SVGO optimization <a href="#svgo" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">SVGO</span> optimizes icon.</p><p>Parameters:</p><ol>
+<li><span class="hljs-class">SVG</span> instance.</li>
+<li>Optional options object.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5TVkdPKHN2ZykKCS50aGVuKChzdmcpID0+IHsKCQkvLyBzdmcgdmFyaWFibGUgaXMgdGhlIHNhbWUgYXMgaW4gYXJndW1lbnQuIE9wdGltaXplciBkb2VzIG5vdCBjcmVhdGUgbmV3IGluc3RhbmNlIG9mIFNWRyBjbGFzcwoJCWNvbnNvbGUubG9nKCdPcHRpbWl6ZWQgU1ZHOicsIHN2Zy50b1N0cmluZygpKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">SVGO</span>(svg)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// svg variable is the same as in argument. Optimizer does not create new instance of SVG class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Optimized SVG:&apos;</span>, svg.<span class="hljs-title function_">toString</span>());<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Want to optimize an entire collection? Use collection&apos;s <span class="hljs-function">promiseAll</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29sbGVjdGlvbgoJLnByb21pc2VBbGwoKHN2ZykgPT4gdG9vbHMuU1ZHTyhzdmcpKQoJLnRoZW4oKHJlc3VsdHMpID0+IHsKCQljb25zb2xlLmxvZygnT3B0aW1pemVkIGVudGlyZSBjb2xsZWN0aW9uJyk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">collection<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">promiseAll</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> tools.<span class="hljs-title function_">SVGO</span>(svg))<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Optimized entire collection&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Some of available options (second parameter):</p><ul>
+<li><span class="hljs-inline-prop">mergePaths</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Merges SVG paths to reduce icon size. The default value is <span class="hljs-literal">false</span>.</li>
+<li><span class="hljs-inline-prop">convertShapeToPath</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Converts SVG shapes to paths. The default value is <span class="hljs-literal">true</span>.</li>
+<li><span class="hljs-inline-prop">plugins</span>. List of SVGO plug-ins. If set, it will override default plug-ins list and options mentioned above are ignored.</li>
+<li><span class="hljs-inline-prop">doublePass</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If enabled, runs optimization process twice. Sometimes running optimization twice improves result. The default value is <span class="hljs-literal">false</span>.</li>
+</ul></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="crop" class="heading--2">Cropping images <a href="#crop" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">Crop</span> removes empty spaces around icon content.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew.</p><p>Parameters:</p><ol>
+<li><span class="hljs-class">SVG</span> instance or <span class="hljs-class">Collection</span> instance.</li>
+</ol><p>How to crop one icon:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5Dcm9wKHN2ZykKCS50aGVuKChzdmcpID0+IHsKCQljb25zb2xlLmxvZygnQ3JvcHBlZCBTVkc6ICcgKyBzdmcudG9TdHJpbmcoKSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">Crop</span>(svg)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Cropped SVG: &apos;</span> + svg.<span class="hljs-title function_">toString</span>());<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>How to crop entire collection:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5Dcm9wKGNvbGxlY3Rpb24pCgkudGhlbigoY29sbGVjdGlvbikgPT4gewoJCWNvbnNvbGUubG9nKCdDcm9wcGVkICcgKyBzdmcubGVuZ3RoKCkgKyAnIGltYWdlcycpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">Crop</span>(collection)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">collection</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Cropped &apos;</span> + svg.<span class="hljs-title function_">length</span>() + <span class="hljs-string">&apos; images&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>How does <span class="hljs-function">Crop()</span> function work? By drawing SVG on canvas and checking all 4 sides for transparent pixels. First it appends space on all sides of SVG, until all sides have nothing but empty pixels. Then it slowly cuts all sides until it reaches pixels that aren&apos;t empty. Process doesn&apos;t take long because script checks pixels in bulk by zooming in.</p><p>When it crops <span class="hljs-class">SVG</span> or <span class="hljs-class">Collection</span> instance (like in examples above), each <span class="hljs-class">SVG</span> instance receives additional properties that you might want to use later: <span class="hljs-inline-prop">_cropData</span>. <span class="hljs-inline-prop">_cropData</span> is an object with list of cropped edges: <span class="hljs-inline-prop">left</span>, <span class="hljs-inline-prop">top</span>, <span class="hljs-inline-prop">right</span>, <span class="hljs-inline-prop">bottom</span>.</p></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="tags" class="heading--2">Tags validation <a href="#tags" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">Tags</span> checks elements used in SVG, changes stylesheet into inline style and removes useless attributes.</p><p>Stylesheet parser is very simple, it parses only the basic stylesheets that are generated by some image editors. If SVG contains fishy elements that aren&apos;t vector images, such as bitmaps or scripts, it will reject with error message.</p><p>Important! Before running this function, you need to optimize SVG using <span class="hljs-function">tools.SVGO()</span>.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5UYWdzKHN2ZykKCS50aGVuKChzdmcpID0+IHsKCQljb25zb2xlLmxvZygnQ2xlYW5lZCB1cCB0YWdzIGluIFNWRzogJyArIHN2Zy50b1N0cmluZygpKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">Tags</span>(svg)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Cleaned up tags in SVG: &apos;</span> + svg.<span class="hljs-title function_">toString</span>());<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>This function is used for cleaning up SVG that contain a lot of junk code.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="get-palette" class="heading--2">Extracting palette from SVG <a href="#get-palette" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">GetPalette</span> extracts list of colors used in icon.</p><p>This is useful if you don&apos;t know if SVG is colored or monotone.</p><p>Result is object with 2 properties:</p><ul>
+<li><span class="hljs-inline-prop">colors</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>: array of colors.</li>
+<li><span class="hljs-inline-prop">notices</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>: array of error messages.</li>
+</ul><p>Usage:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMuR2V0UGFsZXR0ZShzdmcpLnRoZW4ocmVzdWx0ID0+IHsKICAgIGNvbnNvbGUubG9nKCdDb2xvcnMgdXNlZCBpbiBTVkc6ICcgKyByZXN1bHQuY29sb3JzLmpvaW4oJywgJyk7CiAgICBpZiAocmVzdWx0Lm5vdGljZXMubGVuZ3RoKSB7CiAgICAgICAgcmVzdWx0Lm5vdGljZXMuZm9yRWFjaChub3RpY2UgPT4gY29uc29sZS53YXJuKG5vdGljZSkpOwogICAgfQp9KS5jYXRjaChlcnIgPT4gewogICAgY29uc29sZS5lcnJvcihlcnIpOwp9KTsK"><code class="highlight hljs">tools.<span class="hljs-title class_">GetPalette</span>(svg).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Colors used in SVG: &apos;</span> + result.<span class="hljs-property">colors</span>.<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>);<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (result.<span class="hljs-property">notices</span>.<span class="hljs-property">length</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;result.<span class="hljs-property">notices</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">notice</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(notice));<br>
+ &#xa0; &#xa0;}<br>
+}).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+});<br>
+</code></div></div></div><p>To use it with entire icon set, use <span class="hljs-class">Collection</span>&apos;s <span class="hljs-function">promiseAll</span> function:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29sbGVjdGlvbi5wcm9taXNlQWxsKHN2ZyA9PiB0b29scy5HZXRQYWxldHRlKHN2ZykpLnRoZW4ocmVzdWx0ID0+IHsKICAgIE9iamVjdC5rZXlzKHJlc3VsdHMpLmZvckVhY2goa2V5ID0+IHsKICAgICAgICBjb25zb2xlLmxvZygnQ29sb3JzIGZvdW5kIGluIGltYWdlICcgKyBrZXkgKyAnOiAnICsgcmVzdWx0W2tleV0uY29sb3JzLmpvaW4oJywgJyk7CiAgICB9KTsKfSkuY2F0Y2goZXJyID0+IHsKICAgIGNvbnNvbGUuZXJyb3IoZXJyKTsKfSk7Cg=="><code class="highlight hljs">collection.<span class="hljs-title function_">promiseAll</span>(<span class="hljs-function"><span class="hljs-params">svg</span> =&gt;</span> tools.<span class="hljs-title class_">GetPalette</span>(svg)).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(results).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Colors found in image &apos;</span> + key + <span class="hljs-string">&apos;: &apos;</span> + result[key].<span class="hljs-property">colors</span>.<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;, &apos;</span>);<br>
+ &#xa0; &#xa0;});<br>
+}).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+});<br>
+</code></div></div></div></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="change-palette" class="heading--2">Replacing palette in SVG <a href="#change-palette" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">ChangePalette</span> changes colors in SVG and adds colors to shapes that are missing colors.</p><p>Parameters:</p><ol>
+<li><span class="hljs-class">SVG</span> instance.</li>
+<li>Color changes, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">object</span></span> or <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>.</li>
+</ol><p>Color changes object is a list of key/value pairs, where key is the old color, value is the new color.</p><p>Colors that are formatted differently are treated differently. For example, &quot;<span class="hljs-string">#fff</span>&quot;, &quot;<span class="hljs-string">#ffffff</span>&quot; and &quot;<span class="hljs-string">white</span>&quot; are considered to be different colors. Use <span class="hljs-function">GetPalette</span> before changing palette to get list of colors because that function will also treat those colors as separate colors and will return them in the same format as in SVG.</p><p>Reserved keywords in color changes object:</p><ul>
+<li><span class="hljs-inline-prop">add</span>: color to add to shapes that are missing color. This is used when shape has <span class="hljs-inline-prop">fill</span> or <span class="hljs-inline-prop">stroke</span>, but does not have color value.</li>
+<li><span class="hljs-inline-prop">default</span>: default replacement for colors that aren&apos;t listed in color changes.</li>
+</ul><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5DaGFuZ2VQYWxldHRlKHN2ZywgewoJCScjZmY4MDAwJzogJyMwMDgwZmYnLAoJCScjMTIzJzogJyMyMzQnLAoJfSkKCS50aGVuKChzdmcpID0+IHsKCQkvLyBWYXJpYWJsZSAic3ZnIiBpbiByZXN1bHQgaXMgdGhlIHNhbWUgYXMgaW4gZmlyc3QgcGFyYW1ldGVyIG9mIENoYW5nZVBhbGV0dGUuCgkJLy8gRnVuY3Rpb24gY2hhbmdlcyBleGlzdGluZyBTVkcgaW5zdGFuY2UKCQljb25zb2xlLmxvZygnQ2hhbmdlZCBwYWxldHRlJyk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ChangePalette</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;#ff8000&apos;</span>: <span class="hljs-string">&apos;#0080ff&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;#123&apos;</span>: <span class="hljs-string">&apos;#234&apos;</span>,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Variable &quot;svg&quot; in result is the same as in first parameter of ChangePalette.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Function changes existing SVG instance</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Changed palette&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Code above will change &quot;<span class="hljs-string">#ff8000</span>&quot; to &quot;<span class="hljs-string">#0080ff</span>&quot; and &quot;<span class="hljs-string">#123</span>&quot; to &quot;<span class="hljs-string">#234</span>&quot;.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5DaGFuZ2VQYWxldHRlKHN2ZywgJ3JlZCcpCgkudGhlbigoc3ZnKSA9PiB7CgkJY29uc29sZS5sb2coJ0FkZGVkIHBhbGV0dGUgdG8gZWxlbWVudHMgd2l0aG91dCBwYWxldHRlJyk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ChangePalette</span>(svg, <span class="hljs-string">&apos;red&apos;</span>)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Added palette to elements without palette&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Code above will add color &quot;<span class="hljs-string">red</span>&quot; to all elements that do not have color. It is identical to this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5DaGFuZ2VQYWxldHRlKHN2ZywgewoJCWFkZDogJ3JlZCcsCgl9KQoJLnRoZW4oKHN2ZykgPT4gewoJCWNvbnNvbGUubG9nKCdBZGRlZCBwYWxldHRlIHRvIGVsZW1lbnRzIHdpdGhvdXQgcGFsZXR0ZScpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ChangePalette</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">add</span>: <span class="hljs-string">&apos;red&apos;</span>,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Added palette to elements without palette&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>You can also change all colors by using keyword &quot;<span class="hljs-string">default</span>&quot;:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5DaGFuZ2VQYWxldHRlKHN2ZywgewoJCWRlZmF1bHQ6ICdncmVlbicsCgl9KQoJLnRoZW4oKHN2ZykgPT4gewoJCWNvbnNvbGUubG9nKCdDaGFuZ2VkIGFsbCBjb2xvcnMgdG8gZ3JlZW4nKTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ChangePalette</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">default</span>: <span class="hljs-string">&apos;green&apos;</span>,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Changed all colors to green&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Or you can combine all those attributes:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5DaGFuZ2VQYWxldHRlKHN2ZywgewoJCSdkZWZhdWx0JzogJ2dyZWVuJywKCQknYWRkJzogJyMwMDAnLAoJCScjMTIzJzogJyMyMzQnLAoJfSkKCS50aGVuKChzdmcpID0+IHsKCQljb25zb2xlLmxvZygKCQkJJ0NoYW5nZWQgYWxsIGNvbG9ycyB0byBncmVlbiwgZXhjZXB0IGZvciAjMTIzIHRoYXQgd2FzIGNoYW5nZWQgdG8gIzIzNCwgYWRkZWQgYmxhY2sgY29sb3IgdG8gZWxlbWVudHMgd2l0aG91dCBjb2xvcicKCQkpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ChangePalette</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;default&apos;</span>: <span class="hljs-string">&apos;green&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;add&apos;</span>: <span class="hljs-string">&apos;#000&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;#123&apos;</span>: <span class="hljs-string">&apos;#234&apos;</span>,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;Changed all colors to green, except for #123 that was changed to #234, added black color to elements without color&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Primary use of this function in Iconify is to replace all colors in monotone icons with &quot;<span class="hljs-string">currentColor</span>&quot; keyword and add it to shapes that are missing color values:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29sbGVjdGlvbgoJLnByb21pc2VBbGwoKHN2ZykgPT4KCQl0b29scy5DaGFuZ2VQYWxldHRlKHN2ZywgewoJCQlkZWZhdWx0OiAnY3VycmVudENvbG9yJywKCQkJYWRkOiAnY3VycmVudENvbG9yJywKCQl9KQoJKQoJLnRoZW4oKCkgPT4gewoJCWNvbnNvbGUubG9nKCdDaGFuZ2VkIGNvbG9yIHRvIGN1cnJlbnRDb2xvcicpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">collection<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">promiseAll</span>(<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;tools.<span class="hljs-title class_">ChangePalette</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">default</span>: <span class="hljs-string">&apos;currentColor&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">add</span>: <span class="hljs-string">&apos;currentColor&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Changed color to currentColor&apos;</span>);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="index-shapes" class="heading--2">Indexing shapes <a href="#index-shapes" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">IndexShapes</span> is used to add unique numbers to each shape and count shapes.</p><p>This function is intended to be used when calculating stroke animations.</p><p>Parameters:</p><ol>
+<li><span class="hljs-class">SVG</span> instance.</li>
+<li>Options object.</li>
+</ol><p>Options object properties:</p><ul>
+<li><span class="hljs-inline-prop">ignoreTags</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. List of tags to ignore.</li>
+<li><span class="hljs-inline-prop">shapeTags</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. List of tags that are considered to be shapes.</li>
+<li><span class="hljs-inline-prop">shapeStartIndex</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Index for first shape, default is <span class="hljs-number">0</span>.</li>
+<li><span class="hljs-inline-prop">shapeAttribute</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Attribute to add to tags, default value is &quot;<span class="hljs-string">data-shape-index</span>&quot;.</li>
+<li><span class="hljs-inline-prop">shapeAttributeValue</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Value for attribute mentioned above. Keyword &quot;<span class="hljs-string">{index}</span>&quot; is replaced by index number. The default value is &quot;<span class="hljs-string">{index}</span>&quot;.</li>
+<li><span class="hljs-inline-prop">remove</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If true, function will remove attributes instead of adding attributes.</li>
+<li><span class="hljs-inline-prop">shapeCallback</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>. Callback to call for each shape. See <span class="hljs-inline-file">src/shapes/options.js</span> for details.</li>
+<li><span class="hljs-inline-prop">returnNodes</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. If true, function will return nodes as array instead of returning number of nodes.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5JbmRleFNoYXBlcyhzdmcsIHsKCQkvLyBBdHRyaWJ1dGUgdG8gc2V0CgkJc2hhcGVBdHRyaWJ1dGU6ICdkYXRhLXNoYXBlLWluZGV4JywKCQkvLyBBdHRyaWJ1dGUgdmFsdWUuIHtpbmRleH0gaXMgcmVwbGFjZWQgd2l0aCBpbmRleCwgaW5jcmVtZW50aW5nIHdpdGggZWFjaCBzaGFwZQoJCXNoYXBlQXR0cmlidXRlVmFsdWU6ICd7aW5kZXh9JywKCX0pCgkudGhlbigoc2hhcGVzQ291bnQpID0+IHsKCQljb25zb2xlLmxvZygKCQkJJ0FkZGVkIGRhdGEtc2hhcGUtaW5kZXggYXR0cmlidXRlIHRvICcgKyBzaGFwZXNDb3VudCArICcgc2hhcGVzLicKCQkpOwoJfSkKCS5jYXRjaCgoZXJyKSA9PiB7CgkJY29uc29sZS5lcnJvcihlcnIpOwoJfSk7Cg=="><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">IndexShapes</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Attribute to set</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">shapeAttribute</span>: <span class="hljs-string">&apos;data-shape-index&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Attribute value. {index} is replaced with index, incrementing with each shape</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">shapeAttributeValue</span>: <span class="hljs-string">&apos;{index}&apos;</span>,<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">shapesCount</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;Added data-shape-index attribute to &apos;</span> + shapesCount + <span class="hljs-string">&apos; shapes.&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="shape-length" class="heading--2">Getting shape lengths <a href="#shape-length" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <span class="hljs-function">ShapeLength</span> returns lengths of all shapes as well as all shapes as <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">cheerio</span></span> objects.</p><p>Important: this function requires PhantomJS to be installed and accessible from command line! PhantomJS has been deprecated for a while, but you can still install it using HomeBrew.</p><p>Parameters:</p><ol>
+<li><span class="hljs-class">SVG</span> instance.</li>
+</ol><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="dG9vbHMKCS5TaGFwZUxlbmd0aChzdmcpCgkudGhlbigocmVzdWx0cykgPT4gewoJCWNvbnNvbGUubG9nKCdGb3VuZCAnICsgcmVzdWx0cy5sZW5ndGggKyAnIHNoYXBlczonKTsKCQlyZXN1bHRzLmZvckVhY2goKHJlc3VsdCkgPT4gewoJCQljb25zb2xlLmxvZygKCQkJCSdTaGFwZSAnICsKCQkJCQlyZXN1bHQuJG5vZGUuZ2V0KDApLnRhZ05hbWUgKwoJCQkJCScgaGFzIGxlbmd0aCBvZiAnICsKCQkJCQlyZXN1bHQubGVuZ3RoCgkJCSk7CgkJfSk7Cgl9KQoJLmNhdGNoKChlcnIpID0+IHsKCQljb25zb2xlLmVycm9yKGVycik7Cgl9KTsK"><code class="highlight hljs">tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ShapeLength</span>(svg)<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Found &apos;</span> + results.<span class="hljs-property">length</span> + <span class="hljs-string">&apos; shapes:&apos;</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;results.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;Shape &apos;</span> +<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;result.<span class="hljs-property">&#x24;node</span>.<span class="hljs-title function_">get</span>(<span class="hljs-number">0</span>).<span class="hljs-property">tagName</span> +<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos; has length of &apos;</span> +<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;result.<span class="hljs-property">length</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div></section>
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Tools v1<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./import.html">Importing Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./export.html">Exporting Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./manipulation.html">Manipulating Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./examples.html">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

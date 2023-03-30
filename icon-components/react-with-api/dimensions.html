@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Changing Icon Dimensions in Iconify for React with API</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./color.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icon Color</a>
+<a href="./transform.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Transformations</a>
+</div>
+<h1>Icon dimensions</h1>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>
+		<span class="hljs-inline-package hljs-linkable">@iconify/react-with-api</span>
+		has been deprecated.
+	</p>
+	<p>
+		Switch to <a href="../../iconify-icon/">Iconify Icon web component</a>.
+	</p>
+</div><p>This tutorial is part of <a href="./">Iconify for React with API tutorial</a>.</p>
+<p>By default, icon height is set to &quot;<span class="hljs-string">1em</span>&quot;, icon width is changed dynamically based on the icon&apos;s width to height ratio.</p>
+<p>This makes it easy to change icon size by changing <span class="hljs-inline-prop">font-size</span> in the stylesheet or in style, just like icon fonts:</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">JSX:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiB9IGZyb20gJ0BpY29uaWZ5L3JlYWN0LXdpdGgtYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBzaXplRGVtbygpIHsKCXJldHVybiAoCgkJPGRpdj4KCQkJPEljb24gaWNvbj0iY2lsOmxvY29tb3RpdmUiIC8+CgkJCTxJY29uIGljb249ImNpbDpwYXBlci1wbGFuZSIgc3R5bGU9e3sgZm9udFNpemU6ICczNnB4JyB9fSAvPgoJCQk8SWNvbiBpY29uPSJjaWw6dHJ1Y2siIGNsYXNzTmFtZT0iYmlnLWljb24iIC8+CgkJPC9kaXY+CgkpOwp9Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Icon</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">sizeDemo</span>(<span class="hljs-params"></span>) {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> (<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:locomotive&quot;</span> /&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:paper-plane&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">fontSize:</span> &apos;<span class="hljs-attr">36px</span>&apos; }} /&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;cil:truck&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;big-icon&quot;</span> /&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
+ &#xa0; &#xa0;);<br>
+}<br>
+</code></div></div><div class="code-block code-block--css code-block--with-title"><div class="code-block-title">Stylesheet:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="c3ZnIHsKCWZvbnQtc2l6ZTogMjRweDsKCWxpbmUtaGVpZ2h0OiAxZW07Cn0KCi5iaWctaWNvbiB7Cglmb250LXNpemU6IDcycHg7Cn0K"><code class="highlight hljs">svg {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">24px</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">line-height</span>: <span class="hljs-number">1em</span>;<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.big-icon</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">font-size</span>: <span class="hljs-number">72px</span>;<br>
+}<br>
+</code></div></div><div class="code-block code-block--demo code-block--with-title"><div class="code-block-title">Demo:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint"><div class="code-demo components-size"><iconify-icon class="iconify" icon="cil:locomotive"></iconify-icon>
+<iconify-icon class="iconify" icon="cil:paper-plane" style="font-size: 36px"></iconify-icon>
+<iconify-icon class="iconify big-icon" icon="cil:truck"></iconify-icon>
+</div></div></div></div><script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="units" class="heading--2">Units <a href="#units" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Size can be a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> with or without units or a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. If value is a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span> or <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> without units, it will be treated by browser as pixels.</p><p>Examples of <span class="hljs-number">24px</span> icon:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Ly8gTnVtYmVyCjxJY29uIGljb249Im1kaTpob21lIiBoZWlnaHQ9ezI0fSAvPgovLyBTdHJpbmcgd2l0aG91dCB1bml0cwo8SWNvbiBpY29uPSJtZGk6aG9tZSIgaGVpZ2h0PSIyNCIgLz4KLy8gU3RyaW5nIHdpdGggdW5pdHMKPEljb24gaWNvbj0ibWRpOmhvbWUiIGhlaWdodD0iMjRweCIgLz4KLy8gU3RyaW5nIHdpdGggdW5pdHMsIGZvbnQtc2l6ZSBpcyAxNnB4CjxJY29uIGljb249Im1kaTpob21lIiBoZWlnaHQ9IjEuNWVtIiAvPgo="><code class="highlight hljs"><span class="hljs-comment">// Number</span><br>
+&lt;<span class="hljs-title class_">Icon</span> icon=<span class="hljs-string">&quot;mdi:home&quot;</span> height={<span class="hljs-number">24</span>} /&gt;<br>
+<span class="hljs-comment">// String without units</span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;24&quot;</span> /&gt;</span></span><br>
+<span class="hljs-comment">// String with units</span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;24px&quot;</span> /&gt;</span></span><br>
+<span class="hljs-comment">// String with units, font-size is 16px</span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1.5em&quot;</span> /&gt;</span></span><br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="auto" class="heading--2">Keyword &quot;auto&quot; <a href="#auto" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Special keyword &quot;<span class="hljs-string">auto</span>&quot; sets size to value from <span class="hljs-inline-prop">viewBox</span>. This makes it easy to render an icon as it was originally designed.</p><p>It is enough to set one dimension to &quot;<span class="hljs-string">auto</span>&quot;, other dimension will be set to &quot;<span class="hljs-string">auto</span>&quot; too, unless you specify otherwise.</p><p>For example, if <span class="hljs-inline-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 24 24&quot;</span> and <span class="hljs-inline-prop">height</span> is set to &quot;<span class="hljs-string">auto</span>&quot;, <span class="hljs-inline-prop">height</span> will be set to <span class="hljs-number">24</span>.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb24gaWNvbj0ibWRpOmhvbWUiIGhlaWdodD0iYXV0byIgLz4K"><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;mdi:home&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;auto&quot;</span> /&gt;</span></span></code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="setting-only-width-or-height" class="heading--2">Setting only width or height <a href="#setting-only-width-or-height" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>In an example above, all icons only use <span class="hljs-inline-prop">height</span>.</p><p>What happens when only one dimension is set?</p><ul>
+<li>If width is not set, but height is set, width is calculated using icon&apos;s width/height ratio.</li>
+<li>If height is not set, but width is set, height is calculated using icon&apos;s height/width ratio.</li>
+<li>If no dimensions are set in attributes, height is set to &quot;<span class="hljs-string">1em</span>&quot; and width is calculated using icon&apos;s width/height ratio. Then icon behaves like text and can be resized using <span class="hljs-inline-prop">font-size</span> in stylesheet.</li>
+</ul><section class="content-section content-section--3"><H1 id="example" class="heading--3">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Many icons are square. For such icons if you set one dimension, other dimension will have the same value.</p><p>However, there are many icons that are not square. For example, icons imported from icon fonts and Font Awesome.</p><p>This is data for <span class="hljs-inline-icon">fa-regular:address-book</span>:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">fa-regular:address-book</div><div class="code-block-content code-block-content--with-title code-block-content--with-hint" data-raw-code="ewoJImJvZHkiOiAiPHBhdGggZD1cIk00MzYgMTYwYzYuNiAwIDEyLTUuNCAxMi0xMnYtNDBjMC02LjYtNS40LTEyLTEyLTEyaC0yMFY0OGMwLTI2LjUtMjEuNS00OC00OC00OEg0OEMyMS41IDAgMCAyMS41IDAgNDh2NDE2YzAgMjYuNSAyMS41IDQ4IDQ4IDQ4aDMyMGMyNi41IDAgNDgtMjEuNSA0OC00OHYtNDhoMjBjNi42IDAgMTItNS40IDEyLTEydi00MGMwLTYuNi01LjQtMTItMTItMTJoLTIwdi02NGgyMGM2LjYgMCAxMi01LjQgMTItMTJ2LTQwYzAtNi42LTUuNC0xMi0xMi0xMmgtMjB2LTY0aDIwem0tNjggMzA0SDQ4VjQ4aDMyMHY0MTZ6TTIwOCAyNTZjMzUuMyAwIDY0LTI4LjcgNjQtNjRzLTI4LjctNjQtNjQtNjRzLTY0IDI4LjctNjQgNjRzMjguNyA2NCA2NCA2NHptLTg5LjYgMTI4aDE3OS4yYzEyLjQgMCAyMi40LTguNiAyMi40LTE5LjJ2LTE5LjJjMC0zMS44LTMwLjEtNTcuNi02Ny4yLTU3LjZjLTEwLjggMC0xOC43IDgtNDQuOCA4Yy0yNi45IDAtMzMuNC04LTQ0LjgtOGMtMzcuMSAwLTY3LjIgMjUuOC02Ny4yIDU3LjZ2MTkuMmMwIDEwLjYgMTAgMTkuMiAyMi40IDE5LjJ6XCIgZmlsbD1cImN1cnJlbnRDb2xvclwiLz4iLAoJIndpZHRoIjogNDQ4LAoJImhlaWdodCI6IDUxMgp9Cg=="><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;path d=\&quot;M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-68 304H48V48h320v416zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6c-10.8 0-18.7 8-44.8 8c-26.9 0-33.4-8-44.8-8c-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">448</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">512</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div><div class="code-block-hint">Icon size is 448 x 512</div></div></div><p>If you do not set any dimensions, <span class="hljs-inline-prop">height</span> will be set to &quot;<span class="hljs-string">1em</span>&quot; and <span class="hljs-inline-prop">width</span> will be set to <span class="hljs-number">448 / 512</span> = &quot;<span class="hljs-string">0.875em</span>&quot;. However, values that have more than 2 numbers after decimal point are rounded up, so actual <span class="hljs-inline-prop">width</span> will be &quot;<span class="hljs-string">0.88em</span>&quot;:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZwoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCglhcmlhLWhpZGRlbj0idHJ1ZSIKCWZvY3VzYWJsZT0iZmFsc2UiCglyb2xlPSJpbWciCgljbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1mYS1yZWd1bGFyIgoJd2lkdGg9IjAuODhlbSIKCWhlaWdodD0iMWVtIgoJcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIKCXZpZXdCb3g9IjAgMCA0NDggNTEyIgo+Cgk8cGF0aCBkPSIuLi4iIGZpbGw9ImN1cnJlbnRDb2xvciI+PC9wYXRoPgo8L3N2Zz4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">focusable</span>=<span class="hljs-string">&quot;false&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">role</span>=<span class="hljs-string">&quot;img&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify iconify--fa-regular&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">width</span>=<span class="hljs-string">&quot;0.88em&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">preserveAspectRatio</span>=<span class="hljs-string">&quot;xMidYMid meet&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 448 512&quot;</span><br>
+&gt;</span><br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;...&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>If you set <span class="hljs-inline-prop">width</span> to <span class="hljs-number">56</span>, but do not set <span class="hljs-inline-prop">height</span>, <span class="hljs-inline-prop">height</span> will be set to <span class="hljs-number">56 * 512 / 448</span> = <span class="hljs-number">64</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNjQiIC4uLj4uLi48L3N2Zz4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;64&quot;</span> <span class="hljs-attr">...</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><p>If you set both values: <span class="hljs-inline-prop">width</span> to <span class="hljs-number">56</span> and <span class="hljs-inline-prop">height</span> to <span class="hljs-number">128</span>, values will be as you set them (also see &quot;<span class="hljs-string">Alignment</span>&quot; section below):</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iMTI4IiAuLi4+Li4uPC9zdmc+Cg=="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;56&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;128&quot;</span> <span class="hljs-attr">...</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div></section></section>
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="alignment" class="heading--2">Alignment <a href="#alignment" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>What if you set both <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> and its ratio doesn&apos;t match icon&apos;s width/height ratio?</p><p>For example, what will happen if icon is 24x24, but you set one dimension to <span class="hljs-number">40</span> and other dimension to <span class="hljs-number">24</span>?</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PEljb24gaWNvbj0iamFtOmluZm8iIHdpZHRoPSI0MCIgaGVpZ2h0PSIyNCIgLz4KPEljb24gaWNvbj0iamFtOmluZm8iIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCIgLz4="><code class="highlight hljs"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;jam:info&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;40&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;24&quot;</span> /&gt;</span></span><br>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;jam:info&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;24&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;40&quot;</span> /&gt;</span></span></code></div></div><div class="code-block code-block--demo"><div class="code-block-content code-block-content--without-title code-block-content--with-hint"><div class="code-demo highlight-box"><iconify-icon icon="jam:info" width="40" height="24"></iconify-icon>
+<iconify-icon icon="jam:info" width="24" height="40"></iconify-icon>
+</div></div><div class="code-block-hint">Using box-shadow to show icon dimensions</div></div></div><p>SVG do not behave like other images. When you set wrong width/height ratio for other image formats, images get stretched. When you do that for SVG, bounding box is changed and image is aligned inside that bounding box.</p><p>In an example above, one icon is too wide and other icon is too tall. Browser will move icons to centre instead of stretching icon.</p></section>
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../iconify-icon/">Web Component</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">React with API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./color.html">Icon Color</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./dimensions.html">Icon Dimensions</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./transform.html">Transformations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./inline.html">Vertical Alignment</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Functions:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./icon-exists.html">iconExists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-icons.html">listIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-icon.html">getIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-icon.html">addIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./add-collection.html">addCollection()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load-icons.html">loadIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./enable-cache.html">enableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./disable-cache.html">disableCache()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator"><a href="../bundles/">Icon Bundles</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

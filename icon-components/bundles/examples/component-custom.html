@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Icon Bundle Examples: Components</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><h1>Bundling custom icons for Iconify components</h1>
+<p>This article is a part of <a href="./">Iconify icon bundles code examples</a>.</p>
+<p>These examples show how to create icon bundles for Iconify components from custom icon sets. These are very basic examples, for more advanced stuff look in <a href="./">code examples list</a>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="instructions" class="heading--2">Instructions <a href="#instructions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>This example assumes you have converted custom icon set to <span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format. If not, see <a href="./component-custom-tools.html">similar example that uses Iconify Tools</a>.</p><p>Installation:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="IyBOb2RlLmpzCm5wbSBpbnN0YWxsIC0tc2F2ZS1kZXYgQGljb25pZnkvdXRpbHMKIyBQSFAKY29tcG9zZXIgcmVxdWlyZSBpY29uaWZ5L2pzb24tdG9vbHMK"><code class="highlight hljs"><span class="hljs-comment"># Node.js</span><br>
+npm install --save-dev @iconify/utils<br>
+<span class="hljs-comment"># PHP</span><br>
+composer require iconify/json-tools<br>
+</code></div></div></div><p>PHP version assumes you are using Composer to manage dependencies.</p><p>Usage:</p><ul>
+<li>Change value of <span class="hljs-inline-var">component</span> to correct component. See below.</li>
+<li>If you want script to output CommonJS code (that uses <span class="hljs-function">require()</span>), set <span class="hljs-inline-var">commonJS</span> to <span class="hljs-literal">true</span>.</li>
+<li>Change value of <span class="hljs-inline-var">target</span> to correct location of bundle.</li>
+<li>Change value of <span class="hljs-inline-var">sources</span> to correct location of JSON files.</li>
+<li>Change list of icons in variable <span class="hljs-inline-var">icons</span> to icons you want to bundle.</li>
+<li>Run script.</li>
+</ul><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Values for variable <span class="hljs-inline-var">component</span> are package names for components:</p><ul>
+<li>&quot;<span class="hljs-string">@iconify/react</span>&quot; to build a bundle for <a href="../../react/">Iconify for React</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/vue</span>&quot; to build a bundle for <a href="../../vue/">Iconify for Vue 3</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/vue2</span>&quot; to build a bundle for <a href="../../vue2/">Iconify for Vue 2</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/svelte</span>&quot; to build a bundle for <a href="../../svelte/">Iconify for Svelte</a>.</li>
+<li>&quot;<span class="hljs-string">@iconify/ember/components/iconify-icon</span>&quot; to build a bundle for <a href="../../ember/">Iconify for Ember</a>.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="add-collection" class="heading--2">Bundle script <a href="#add-collection" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Example below create JavaScript files with icon data loaded with <span class="hljs-function">addCollection</span> function that is imported from a component package.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IFNWRyBGcmFtZXdvcmsuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgaWNvbiBzZXRzLgogKiBGb3IgYnVuZGxpbmcgY3VzdG9tIGljb25zIHNlZSBvdGhlciBjb2RlIGV4YW1wbGVzIGluIGRvY3VtZW50YXRpb24uCiAqLwppbXBvcnQgeyByZWFkRmlsZVN5bmMsIHdyaXRlRmlsZVN5bmMsIG1rZGlyU3luYyB9IGZyb20gJ2ZzJzsKaW1wb3J0IHsgZGlybmFtZSB9IGZyb20gJ3BhdGgnOwoKLy8gSW5zdGFsbGF0aW9uOiBucG0gaW5zdGFsbCAtLXNhdmUtZGV2IEBpY29uaWZ5L3V0aWxzIEBpY29uaWZ5L2pzb24KaW1wb3J0IHsgZ2V0SWNvbnMsIHN0cmluZ1RvSWNvbiwgbWluaWZ5SWNvblNldCB9IGZyb20gJ0BpY29uaWZ5L3V0aWxzJzsKCi8vIEljb25pZnkgY29tcG9uZW50ICh0aGlzIGNoYW5nZXMgaW1wb3J0IHN0YXRlbWVudCBpbiBnZW5lcmF0ZWQgZmlsZSkKLy8gQXZhaWxhYmxlIG9wdGlvbnM6ICdAaWNvbmlmeS9yZWFjdCcgZm9yIFJlYWN0LCAnQGljb25pZnkvdnVlJyBmb3IgVnVlIDMsICdAaWNvbmlmeS92dWUyJyBmb3IgVnVlIDIsICdAaWNvbmlmeS9zdmVsdGUnIGZvciBTdmVsdGUKY29uc3QgY29tcG9uZW50ID0gJ0BpY29uaWZ5L3JlYWN0JzsKCi8vIFNldCB0byB0cnVlIHRvIHVzZSByZXF1aXJlKCkgaW5zdGVhZCBvZiBpbXBvcnQKY29uc3QgY29tbW9uSlMgPSBmYWxzZTsKCi8vIEZpbGUgdG8gc2F2ZSBidW5kbGUgdG8KY29uc3QgdGFyZ2V0ID0gJ2Fzc2V0cy9pY29ucy1idW5kbGUuanMnOwoKLy8gSlNPTiBmaWxlcyBsb2NhdGlvbi4gRmlsZW5hbWUgaW5zaWRlIGRpcmVjdG9yeSBtdXN0IG1hdGNoIHByZWZpeC4gRm9yIGV4YW1wbGUsIGZvciAibGluZS1tZCIgcHJlZml4IGljb25zIHNob3VsZCBiZSBzdG9yZWQgaW4gImxpbmUtbWQuanNvbiIKY29uc3Qgc291cmNlID0gJ2pzb24nOwoKLy8gSWNvbnMgdG8gYnVuZGxlLCBhcnJheQpjb25zdCBpY29uc1RvQnVuZGxlID0gWwoJJ2xpbmUtbWQ6aG9tZS10d290b25lLWFsdCcsCgknbGluZS1tZDpnaXRodWInLAoJJ2xpbmUtbWQ6aW1hZ2UtdHdvdG9uZScsCgknb2N0aWNvbjpib29rLTI0JywKCSdvY3RpY29uOmNvZGUtc3F1YXJlLTI0JywKXTsKCi8vIE9yZ2FuaXplIGljb25zIGJ5IHByZWZpeApjb25zdCBzb3J0ZWRJY29ucyA9IG9yZ2FuaXplSWNvbnNMaXN0KGljb25zVG9CdW5kbGUpOwoKLy8gTG9hZCBpY29ucyBkYXRhCmxldCBvdXRwdXQgPSBjb21tb25KUwoJPyAiY29uc3QgeyBhZGRDb2xsZWN0aW9uIH0gPSByZXF1aXJlKCciICsgY29tcG9uZW50ICsgIicpO1xuXG4iCgk6ICJpbXBvcnQgeyBhZGRDb2xsZWN0aW9uIH0gZnJvbSAnIiArIGNvbXBvbmVudCArICInO1xuXG4iOwoKT2JqZWN0LmtleXMoc29ydGVkSWNvbnMpLmZvckVhY2goKHByZWZpeCkgPT4gewoJY29uc3QgaWNvbnNMaXN0ID0gc29ydGVkSWNvbnNbcHJlZml4XTsKCgkvLyBMb2FkIGljb24gc2V0Cgljb25zdCBmaWxlbmFtZSA9IGAke3NvdXJjZX0vJHtwcmVmaXh9Lmpzb25gOwoJY29uc3QgaWNvblNldCA9IEpTT04ucGFyc2UocmVhZEZpbGVTeW5jKGZpbGVuYW1lLCAndXRmOCcpKTsKCgkvLyBHZXQgZGF0YSBmb3IgYWxsIGljb25zIGFzIHN0cmluZwoJY29uc3QgZGF0YSA9IGdldEljb25zKGljb25TZXQsIGljb25zTGlzdCwgdHJ1ZSk7CglpZiAoIWRhdGEpIHsKCQl0aHJvdyBuZXcgRXJyb3IoYENvdWxkIG5vdCBnZXQgaWNvbnMgZm9yICIke3ByZWZpeH0iIGljb24gc2V0LmApOwoJfQoJaWYgKGRhdGEubm90X2ZvdW5kPy5sZW5ndGgpIHsKCQl0aHJvdyBuZXcgRXJyb3IoCgkJCWBDb3VsZCBub3QgZmluZCBpY29ucyBpbiAiJHtwcmVmaXh9IiBpY29uIHNldDogJHtkYXRhLm5vdF9mb3VuZC5qb2luKAoJCQkJJywgJwoJCQkpfWAKCQkpOwoJfQoJbWluaWZ5SWNvblNldChkYXRhKTsKCglvdXRwdXQgKz0gJ2FkZENvbGxlY3Rpb24oJyArIEpTT04uc3RyaW5naWZ5KGRhdGEpICsgJyk7XG4nOwp9KTsKCi8vIFNhdmUgdG8gZmlsZQpjb25zdCBkaXIgPSBkaXJuYW1lKHRhcmdldCk7CnRyeSB7Cglta2RpclN5bmMoZGlyLCB7CgkJcmVjdXJzaXZlOiB0cnVlLAoJfSk7Cn0gY2F0Y2ggKGVycikgewoJLy8KfQp3cml0ZUZpbGVTeW5jKHRhcmdldCwgb3V0cHV0LCAndXRmOCcpOwoKY29uc29sZS5sb2coYFNhdmVkICR7dGFyZ2V0fSAoJHtvdXRwdXQubGVuZ3RofSBieXRlcylgKTsKCi8qKgogKiBTb3J0IGljb24gbmFtZXMgYnkgcHJlZml4CiAqLwpmdW5jdGlvbiBvcmdhbml6ZUljb25zTGlzdChpY29uczogc3RyaW5nW10pOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmdbXT4gewoJY29uc3Qgc29ydGVkOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmdbXT4gPSBPYmplY3QuY3JlYXRlKG51bGwpOwoJaWNvbnMuZm9yRWFjaCgoaWNvbikgPT4gewoJCWNvbnN0IGl0ZW0gPSBzdHJpbmdUb0ljb24oaWNvbik7CgkJaWYgKCFpdGVtKSB7CgkJCXJldHVybjsKCQl9CgoJCWNvbnN0IHByZWZpeCA9IGl0ZW0ucHJlZml4OwoJCWNvbnN0IHByZWZpeExpc3QgPSBzb3J0ZWRbcHJlZml4XSA/IHNvcnRlZFtwcmVmaXhdIDogKHNvcnRlZFtwcmVmaXhdID0gW10pOwoKCQljb25zdCBuYW1lID0gaXRlbS5uYW1lOwoJCWlmIChwcmVmaXhMaXN0LmluZGV4T2YobmFtZSkgPT09IC0xKSB7CgkJCXByZWZpeExpc3QucHVzaChuYW1lKTsKCQl9Cgl9KTsKCglyZXR1cm4gc29ydGVkOwp9Cg=="><code class="highlight hljs"><span class="hljs-comment">/**<br>
+ * This is a simple example for creating icon bundles for Iconify SVG Framework.<br>
+ *<br>
+ * It bundles only icons from Iconify icon sets.<br>
+ * For bundling custom icons see other code examples in documentation.<br>
+ */</span><br>
+<span class="hljs-keyword">import</span> { readFileSync, writeFileSync, mkdirSync } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { dirname } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;path&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Installation: npm install --save-dev @iconify/utils @iconify/json</span><br>
+<span class="hljs-keyword">import</span> { getIcons, stringToIcon, minifyIconSet } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/utils&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Iconify component (this changes import statement in generated file)</span><br>
+<span class="hljs-comment">// Available options: &apos;@iconify/react&apos; for React, &apos;@iconify/vue&apos; for Vue 3, &apos;@iconify/vue2&apos; for Vue 2, &apos;@iconify/svelte&apos; for Svelte</span><br>
+<span class="hljs-keyword">const</span> component = <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Set to true to use require() instead of import</span><br>
+<span class="hljs-keyword">const</span> commonJS = <span class="hljs-literal">false</span>;<br>
+<br>
+<span class="hljs-comment">// File to save bundle to</span><br>
+<span class="hljs-keyword">const</span> target = <span class="hljs-string">&apos;assets/icons-bundle.js&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// JSON files location. Filename inside directory must match prefix. For example, for &quot;line-md&quot; prefix icons should be stored in &quot;line-md.json&quot;</span><br>
+<span class="hljs-keyword">const</span> source = <span class="hljs-string">&apos;json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Icons to bundle, array</span><br>
+<span class="hljs-keyword">const</span> iconsToBundle = [<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:home-twotone-alt&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:github&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:image-twotone&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;octicon:book-24&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;octicon:code-square-24&apos;</span>,<br>
+];<br>
+<br>
+<span class="hljs-comment">// Organize icons by prefix</span><br>
+<span class="hljs-keyword">const</span> sortedIcons = <span class="hljs-title function_">organizeIconsList</span>(iconsToBundle);<br>
+<br>
+<span class="hljs-comment">// Load icons data</span><br>
+<span class="hljs-keyword">let</span> output = commonJS<br>
+ &#xa0; &#xa0;? <span class="hljs-string">&quot;const { addCollection } = require(&apos;&quot;</span> + component + <span class="hljs-string">&quot;&apos;);\n\n&quot;</span><br>
+ &#xa0; &#xa0;: <span class="hljs-string">&quot;import { addCollection } from &apos;&quot;</span> + component + <span class="hljs-string">&quot;&apos;;\n\n&quot;</span>;<br>
+<br>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(sortedIcons).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">prefix</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> iconsList = sortedIcons[prefix];<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Load icon set</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> filename = <span class="hljs-string">`<span class="hljs-subst">&#x24;{source}</span>/<span class="hljs-subst">&#x24;{prefix}</span>.json`</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> iconSet = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title function_">readFileSync</span>(filename, <span class="hljs-string">&apos;utf8&apos;</span>));<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Get data for all icons as string</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> data = <span class="hljs-title function_">getIcons</span>(iconSet, iconsList, <span class="hljs-literal">true</span>);<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!data) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`Could not get icons for &quot;<span class="hljs-subst">&#x24;{prefix}</span>&quot; icon set.`</span>);<br>
+ &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (data.<span class="hljs-property">not_found</span>?.<span class="hljs-property">length</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">`Could not find icons in &quot;<span class="hljs-subst">&#x24;{prefix}</span>&quot; icon set: <span class="hljs-subst">&#x24;{data.not_found.join(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;, &apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;)}</span>`</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;<span class="hljs-title function_">minifyIconSet</span>(data);<br>
+<br>
+ &#xa0; &#xa0;output += <span class="hljs-string">&apos;addCollection(&apos;</span> + <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data) + <span class="hljs-string">&apos;);\n&apos;</span>;<br>
+});<br>
+<br>
+<span class="hljs-comment">// Save to file</span><br>
+<span class="hljs-keyword">const</span> dir = <span class="hljs-title function_">dirname</span>(target);<br>
+<span class="hljs-keyword">try</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-title function_">mkdirSync</span>(dir, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">recursive</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0;});<br>
+} <span class="hljs-keyword">catch</span> (err) {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">//</span><br>
+}<br>
+<span class="hljs-title function_">writeFileSync</span>(target, output, <span class="hljs-string">&apos;utf8&apos;</span>);<br>
+<br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Saved <span class="hljs-subst">&#x24;{target}</span> (<span class="hljs-subst">&#x24;{output.length}</span> bytes)`</span>);<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Sort icon names by prefix<br>
+ */</span><br>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">organizeIconsList</span>(<span class="hljs-params">icons: <span class="hljs-built_in">string</span>[]</span>): <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>[]&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> <span class="hljs-attr">sorted</span>: <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>[]&gt; = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(<span class="hljs-literal">null</span>);<br>
+ &#xa0; &#xa0;icons.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">icon</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> item = <span class="hljs-title function_">stringToIcon</span>(icon);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!item) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> prefix = item.<span class="hljs-property">prefix</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> prefixList = sorted[prefix] ? sorted[prefix] : (sorted[prefix] = []);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> name = item.<span class="hljs-property">name</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (prefixList.<span class="hljs-title function_">indexOf</span>(name) === -<span class="hljs-number">1</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;prefixList.<span class="hljs-title function_">push</span>(name);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> sorted;<br>
+}<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PD9waHAKLyoqCiAqIFRoaXMgaXMgYSBzaW1wbGUgZXhhbXBsZSBmb3IgY3JlYXRpbmcgaWNvbiBidW5kbGVzIGZvciBJY29uaWZ5IGNvbXBvbmVudHMuCiAqCiAqIEl0IGJ1bmRsZXMgb25seSBpY29ucyBmcm9tIEljb25pZnkgSlNPTiBmaWxlcy4KICogRm9yIG1vcmUgYWR2YW5jZWQgZXhhbXBsZXMgc2VlIG90aGVyIGNvZGUgZXhhbXBsZXMgaW4gZG9jdW1lbnRhdGlvbi4KICoKICogU2VlIEljb25pZnkgVG9vbHMgZG9jdW1lbnRhdGlvbiBvbiBob3cgdG8gY29udmVydCBjdXN0b20gaWNvbnMgdG8gSWNvbmlmeSBKU09OIGZvcm1hdDoKICogaHR0cHM6Ly9kb2NzLmljb25pZnkuZGVzaWduL3Rvb2xzL25vZGUvaW1wb3J0Lmh0bWwKICovCgpyZXF1aXJlICcuL3ZlbmRvci9hdXRvbG9hZC5waHAnOwoKLy8gSW5zdGFsbGF0aW9uOiBjb21wb3NlciByZXF1aXJlIGljb25pZnkvanNvbi10b29scwp1c2UgSWNvbmlmeVxKU09OVG9vbHNcQ29sbGVjdGlvbjsKCi8vIEljb25pZnkgY29tcG9uZW50ICh0aGlzIGNoYW5nZXMgaW1wb3J0IHN0YXRlbWVudCBpbiBnZW5lcmF0ZWQgZmlsZSkKLy8gQXZhaWxhYmxlIG9wdGlvbnM6ICdAaWNvbmlmeS9yZWFjdCcgZm9yIFJlYWN0LCAnQGljb25pZnkvdnVlJyBmb3IgVnVlIDMsICdAaWNvbmlmeS92dWUyJyBmb3IgVnVlIDIsICdAaWNvbmlmeS9zdmVsdGUnIGZvciBTdmVsdGUKJGNvbXBvbmVudCA9ICdAaWNvbmlmeS9yZWFjdCc7CgovLyBTZXQgdG8gdHJ1ZSB0byB1c2UgcmVxdWlyZSgpIGluc3RlYWQgb2YgaW1wb3J0CiRjb21tb25KUyA9IGZhbHNlOwoKLy8gRmlsZSB0byBzYXZlIGJ1bmRsZSB0bwokdGFyZ2V0ID0gJ2Fzc2V0cy9pY29ucy1idW5kbGUuanMnOwoKLy8gSlNPTiBmaWxlcyBsb2NhdGlvbi4gRmlsZW5hbWUgaW5zaWRlIGRpcmVjdG9yeSBtdXN0IG1hdGNoIHByZWZpeC4gRm9yIGV4YW1wbGUsIGZvciAibGluZS1tZCIgcHJlZml4IGljb25zIHNob3VsZCBiZSBzdG9yZWQgaW4gImxpbmUtbWQuanNvbiIKJHNvdXJjZSA9ICdqc29uJzsKCi8vIEljb25zIHRvIGJ1bmRsZSwgYXJyYXkKJGljb25zID0gWwogICAgJ2xpbmUtbWQ6aG9tZS10d290b25lLWFsdCcsCiAgICAnbGluZS1tZDpnaXRodWInLAogICAgJ2xpbmUtbWQ6aW1hZ2UtdHdvdG9uZScsCiAgICAnb2N0aWNvbjpib29rLTI0JywKICAgICdvY3RpY29uOmNvZGUtc3F1YXJlLTI0JywKXTsKCi8vIE9yZ2FuaXplIGljb25zIGJ5IHByZWZpeAokaWNvbnMgPSBvcmdhbml6ZUljb25zTGlzdCgkaWNvbnMpOwoKLy8gTG9hZCBpY29ucyBkYXRhCiRvdXRwdXQgPSAkY29tbW9uSlMgPyAiY29uc3QgeyBhZGRDb2xsZWN0aW9uIH0gPSByZXF1aXJlKCckY29tcG9uZW50Jyk7XG5cbiIgOiAiaW1wb3J0IHsgYWRkQ29sbGVjdGlvbiB9IGZyb20gJyRjb21wb25lbnQnO1xuXG4iOwpmb3JlYWNoICgkaWNvbnMgYXMgJHByZWZpeCA9PiAkaWNvbnNMaXN0KSB7CiAgICAvLyBMb2FkIGljb24gc2V0CiAgICAkY29sbGVjdGlvbiA9IG5ldyBDb2xsZWN0aW9uKCRwcmVmaXgpOwogICAgaWYgKCEkY29sbGVjdGlvbi0+bG9hZEZyb21GaWxlKCRzb3VyY2UgLiAnLycgLiAkcHJlZml4IC4gJy5qc29uJykpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoJ0Nhbm5vdCBmaW5kIGZpbGUgIicgLiAkcHJlZml4IC4gJy5qc29uIicpOwogICAgfQoKICAgIC8vIE1ha2Ugc3VyZSBhbGwgaWNvbnMgZXhpc3QKICAgIGZvcmVhY2ggKCRpY29uc0xpc3QgYXMgJG5hbWUpIHsKICAgICAgICBpZiAoISRjb2xsZWN0aW9uLT5pY29uRXhpc3RzKCRuYW1lKSkgewogICAgICAgICAgICAvLyBVbmNvbW1lbnQgbmV4dCBsaW5lIHRvIHRocm93IGVycm9yIGlmIGFuIGljb24gZG9lcyBub3QgZXhpc3QKICAgICAgICAgICAgLy8gdGhyb3cgbmV3IEVycm9yKCdDb3VsZCBub3QgZmluZCBpY29uOiAiJyAuICRwcmVmaXggLiAnOicgLiAkbmFtZSAuICciJyk7CiAgICAgICAgICAgIGVjaG8gJ0NvdWxkIG5vdCBmaW5kIGljb246ICInLCAkcHJlZml4LCAnOicsICRuYW1lLCAiXCJcbiI7CiAgICAgICAgfQogICAgfQoKICAgIC8vIEdldCBkYXRhIGZvciBhbGwgaWNvbnMgYXMgc3RyaW5nCiAgICAkb3V0cHV0IC49ICRjb2xsZWN0aW9uLT5zY3JpcHRpZnkoWwogICAgICAgICdpY29ucycgPT4gJGljb25zTGlzdCwKICAgICAgICAnY2FsbGJhY2snID0+ICdhZGRDb2xsZWN0aW9uJywKICAgICAgICAnb3B0aW1pemUnID0+IHRydWUsCiAgICBdKTsKfQoKLy8gU2F2ZSB0byBmaWxlCmZpbGVfcHV0X2NvbnRlbnRzKCR0YXJnZXQsICRvdXRwdXQpOwoKZWNobyAnU2F2ZWQgJywgJHRhcmdldCwgJyAoJywgc3RybGVuKCRvdXRwdXQpLCAiIGJ5dGVzKVxuIjsKCi8qKgogKiBPcmdhbml6ZSBpY29ucyBsaXN0IGJ5IHByZWZpeAogKgogKiBSZXN1bHQgaXMgYW4gb2JqZWN0LCB3aGVyZSBrZXkgaXMgcHJlZml4LCB2YWx1ZSBpcyBhcnJheSBvZiBpY29uIG5hbWVzCiAqLwpmdW5jdGlvbiBvcmdhbml6ZUljb25zTGlzdCgkaWNvbnMpCnsKICAgICRyZXN1bHRzID0gW107CgogICAgZm9yZWFjaCAoJGljb25zIGFzICRzdHIpIHsKICAgICAgICAvLyBTcGxpdCBpY29uIHRvIHByZWZpeCBhbmQgbmFtZQogICAgICAgICRpY29uID0gc3RyaW5nVG9JY29uKCRzdHIpOwogICAgICAgIGlmICgkaWNvbiA9PT0gbnVsbCB8fCAkaWNvblsncHJvdmlkZXInXSAhPT0gJycpIHsKICAgICAgICAgICAgLy8gSW52YWxpZCBuYW1lIG9yIGljb24gbmFtZSBoYXMgcHJvdmlkZXIuCiAgICAgICAgICAgIC8vIEFsbCBpY29ucyBpbiB0aGlzIGV4YW1wbGUgYXJlIGZyb20gSWNvbmlmeSwgc28gcHJvdmlkZXJzIGFyZSBub3Qgc3VwcG9ydGVkLgogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoJ0ludmFsaWQgaWNvbiBuYW1lOiAnIC4gJHN0cik7CiAgICAgICAgfQoKICAgICAgICAkcHJlZml4ID0gJGljb25bJ3ByZWZpeCddOwogICAgICAgICRuYW1lID0gJGljb25bJ25hbWUnXTsKCiAgICAgICAgLy8gQWRkIGljb24gdG8gcmVzdWx0cwogICAgICAgIGlmICghaXNzZXQoJHJlc3VsdHNbJHByZWZpeF0pKSB7CiAgICAgICAgICAgICRyZXN1bHRzWyRwcmVmaXhdID0gWyRuYW1lXTsKICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgfQogICAgICAgIGlmICghaW5fYXJyYXkoJG5hbWUsICRyZXN1bHRzWyRwcmVmaXhdKSkgewogICAgICAgICAgICAkcmVzdWx0c1skcHJlZml4XVtdID0gJG5hbWU7CiAgICAgICAgfQogICAgfQoKICAgIHJldHVybiAkcmVzdWx0czsKfQoKLyoqCiAqIENvbnZlcnQgaWNvbiBuYW1lIGZyb20gc3RyaW5nIHRvIG9iamVjdC4KICoKICogT2JqZWN0IHByb3BlcnRpZXM6CiAqIC0gcHJvdmlkZXIgKGlnbm9yZWQgaW4gdGhpcyBleGFtcGxlKQogKiAtIHByZWZpeAogKiAtIG5hbWUKICoKICogVGhpcyBmdW5jdGlvbiB3YXMgY29udmVydGVkIHRvIFBIUCBmcm9tIEBpY29uaWZ5L3V0aWxzL3NyYy9pY29uL25hbWUudHMKICogU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9pY29uaWZ5L2ljb25pZnkvYmxvYi9tYWluL3BhY2thZ2VzL3V0aWxzL3NyYy9pY29uL25hbWUudHMKICovCmZ1bmN0aW9uIHN0cmluZ1RvSWNvbigkdmFsdWUpCnsKICAgICRwcm92aWRlciA9ICcnOwogICAgJGNvbG9uU2VwYXJhdGVkID0gZXhwbG9kZSgnOicsICR2YWx1ZSk7CgogICAgLy8gQ2hlY2sgZm9yIHByb3ZpZGVyIHdpdGggY29ycmVjdCAnQCcgYXQgc3RhcnQKICAgIGlmIChzdWJzdHIoJHZhbHVlLCAwLCAxKSA9PT0gJ0AnKSB7CiAgICAgICAgLy8gRmlyc3QgcGFydCBpcyBwcm92aWRlcgogICAgICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpIDwgMiB8fCBjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMykgewogICAgICAgICAgICAvLyAiQHByb3ZpZGVyOnByZWZpeDpuYW1lIiBvciAiQHByb3ZpZGVyOnByZWZpeC1uYW1lIgogICAgICAgICAgICByZXR1cm4gbnVsbDsKICAgICAgICB9CiAgICAgICAgJHByb3ZpZGVyID0gc3Vic3RyKGFycmF5X3NoaWZ0KCRjb2xvblNlcGFyYXRlZCksIDEpOwogICAgfQoKICAgIC8vIENoZWNrIHNwbGl0IGJ5IGNvbG9uOiAicHJlZml4Om5hbWUiLCAicHJvdmlkZXI6cHJlZml4Om5hbWUiCiAgICBpZiAoY291bnQoJGNvbG9uU2VwYXJhdGVkKSA+IDMgfHwgIWNvdW50KCRjb2xvblNlcGFyYXRlZCkpIHsKICAgICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgIGlmIChjb3VudCgkY29sb25TZXBhcmF0ZWQpID4gMSkgewogICAgICAgIC8vICJwcmVmaXg6bmFtZSIKICAgICAgICAkbmFtZSA9IGFycmF5X3BvcCgkY29sb25TZXBhcmF0ZWQpOwogICAgICAgICRwcmVmaXggPSBhcnJheV9wb3AoJGNvbG9uU2VwYXJhdGVkKTsKICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAvLyBBbGxvdyBwcm92aWRlciB3aXRob3V0ICdAJzogInByb3ZpZGVyOnByZWZpeDpuYW1lIgogICAgICAgICAgICAncHJvdmlkZXInID0+IGNvdW50KCRjb2xvblNlcGFyYXRlZCkgPiAwID8gJGNvbG9uU2VwYXJhdGVkWzBdIDogJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiAkcHJlZml4LAogICAgICAgICAgICAnbmFtZScgPT4gJG5hbWUsCiAgICAgICAgXTsKICAgIH0KCiAgICAvLyBBdHRlbXB0IHRvIHNwbGl0IGJ5IGh5cGhlbjogInByZWZpeC1uYW1lIgogICAgJGh5cGhlblNlcGFyYXRlZCA9IGV4cGxvZGUoJy0nLCAkY29sb25TZXBhcmF0ZWRbMF0pOwogICAgaWYgKGNvdW50KCRoeXBoZW5TZXBhcmF0ZWQpID4gMSkgewogICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICdwcm92aWRlcicgPT4gJHByb3ZpZGVyLAogICAgICAgICAgICAncHJlZml4JyA9PiBhcnJheV9zaGlmdCgkaHlwaGVuU2VwYXJhdGVkKSwKICAgICAgICAgICAgJ25hbWUnID0+IGltcGxvZGUoJy0nLCAkaHlwaGVuU2VwYXJhdGVkKSwKICAgICAgICBdOwogICAgfQoKICAgIHJldHVybiBudWxsOwp9Cg=="><code class="highlight hljs"><span class="hljs-meta">&lt;?php</span><br>
+<span class="hljs-comment">/**<br>
+ * This is a simple example for creating icon bundles for Iconify components.<br>
+ *<br>
+ * It bundles only icons from Iconify JSON files.<br>
+ * For more advanced examples see other code examples in documentation.<br>
+ *<br>
+ * See Iconify Tools documentation on how to convert custom icons to Iconify JSON format:<br>
+ * https://docs.iconify.design/tools/node/import.html<br>
+ */</span><br>
+<br>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&apos;./vendor/autoload.php&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Installation: composer require iconify/json-tools</span><br>
+<span class="hljs-keyword">use</span> <span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">Collection</span>;<br>
+<br>
+<span class="hljs-comment">// Iconify component (this changes import statement in generated file)</span><br>
+<span class="hljs-comment">// Available options: &apos;@iconify/react&apos; for React, &apos;@iconify/vue&apos; for Vue 3, &apos;@iconify/vue2&apos; for Vue 2, &apos;@iconify/svelte&apos; for Svelte</span><br>
+<span class="hljs-variable">&#x24;component</span> = <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Set to true to use require() instead of import</span><br>
+<span class="hljs-variable">&#x24;commonJS</span> = <span class="hljs-literal">false</span>;<br>
+<br>
+<span class="hljs-comment">// File to save bundle to</span><br>
+<span class="hljs-variable">&#x24;target</span> = <span class="hljs-string">&apos;assets/icons-bundle.js&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// JSON files location. Filename inside directory must match prefix. For example, for &quot;line-md&quot; prefix icons should be stored in &quot;line-md.json&quot;</span><br>
+<span class="hljs-variable">&#x24;source</span> = <span class="hljs-string">&apos;json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Icons to bundle, array</span><br>
+<span class="hljs-variable">&#x24;icons</span> = [<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:home-twotone-alt&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:github&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;line-md:image-twotone&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;octicon:book-24&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;octicon:code-square-24&apos;</span>,<br>
+];<br>
+<br>
+<span class="hljs-comment">// Organize icons by prefix</span><br>
+<span class="hljs-variable">&#x24;icons</span> = <span class="hljs-title function_ invoke__">organizeIconsList</span>(<span class="hljs-variable">&#x24;icons</span>);<br>
+<br>
+<span class="hljs-comment">// Load icons data</span><br>
+<span class="hljs-variable">&#x24;output</span> = <span class="hljs-variable">&#x24;commonJS</span> ? <span class="hljs-string">&quot;const { addCollection } = require(&apos;<span class="hljs-subst">&#x24;component</span>&apos;);\n\n&quot;</span> : <span class="hljs-string">&quot;import { addCollection } from &apos;<span class="hljs-subst">&#x24;component</span>&apos;;\n\n&quot;</span>;<br>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">&#x24;icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">&#x24;prefix</span> =&gt; <span class="hljs-variable">&#x24;iconsList</span>) {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Load icon set</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;collection</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Collection</span>(<span class="hljs-variable">&#x24;prefix</span>);<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!<span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">loadFromFile</span>(<span class="hljs-variable">&#x24;source</span> . <span class="hljs-string">&apos;/&apos;</span> . <span class="hljs-variable">&#x24;prefix</span> . <span class="hljs-string">&apos;.json&apos;</span>)) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Cannot find file &quot;&apos;</span> . <span class="hljs-variable">&#x24;prefix</span> . <span class="hljs-string">&apos;.json&quot;&apos;</span>);<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Make sure all icons exist</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">&#x24;iconsList</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">&#x24;name</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!<span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">iconExists</span>(<span class="hljs-variable">&#x24;name</span>)) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Uncomment next line to throw error if an icon does not exist</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// throw new Error(&apos;Could not find icon: &quot;&apos; . &#x24;prefix . &apos;:&apos; . &#x24;name . &apos;&quot;&apos;);</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Could not find icon: &quot;&apos;</span>, <span class="hljs-variable">&#x24;prefix</span>, <span class="hljs-string">&apos;:&apos;</span>, <span class="hljs-variable">&#x24;name</span>, <span class="hljs-string">&quot;\&quot;\n&quot;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Get data for all icons as string</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;output</span> .= <span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">scriptify</span>([<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;icons&apos;</span> =&gt; <span class="hljs-variable">&#x24;iconsList</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;callback&apos;</span> =&gt; <span class="hljs-string">&apos;addCollection&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;optimize&apos;</span> =&gt; <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0;]);<br>
+}<br>
+<br>
+<span class="hljs-comment">// Save to file</span><br>
+<span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">&#x24;target</span>, <span class="hljs-variable">&#x24;output</span>);<br>
+<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Saved &apos;</span>, <span class="hljs-variable">&#x24;target</span>, <span class="hljs-string">&apos; (&apos;</span>, <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">&#x24;output</span>), <span class="hljs-string">&quot; bytes)\n&quot;</span>;<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Organize icons list by prefix<br>
+ *<br>
+ * Result is an object, where key is prefix, value is array of icon names<br>
+ */</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">organizeIconsList</span>(<span class="hljs-params"><span class="hljs-variable">&#x24;icons</span></span>)<br>
+</span>{<br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;results</span> = [];<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">&#x24;icons</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">&#x24;str</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Split icon to prefix and name</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;icon</span> = <span class="hljs-title function_ invoke__">stringToIcon</span>(<span class="hljs-variable">&#x24;str</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-variable">&#x24;icon</span> === <span class="hljs-literal">null</span> || <span class="hljs-variable">&#x24;icon</span>[<span class="hljs-string">&apos;provider&apos;</span>] !== <span class="hljs-string">&apos;&apos;</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Invalid name or icon name has provider.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// All icons in this example are from Iconify, so providers are not supported.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Invalid icon name: &apos;</span> . <span class="hljs-variable">&#x24;str</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;prefix</span> = <span class="hljs-variable">&#x24;icon</span>[<span class="hljs-string">&apos;prefix&apos;</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;name</span> = <span class="hljs-variable">&#x24;icon</span>[<span class="hljs-string">&apos;name&apos;</span>];<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Add icon to results</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">&#x24;results</span>[<span class="hljs-variable">&#x24;prefix</span>])) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;results</span>[<span class="hljs-variable">&#x24;prefix</span>] = [<span class="hljs-variable">&#x24;name</span>];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">continue</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">&#x24;name</span>, <span class="hljs-variable">&#x24;results</span>[<span class="hljs-variable">&#x24;prefix</span>])) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;results</span>[<span class="hljs-variable">&#x24;prefix</span>][] = <span class="hljs-variable">&#x24;name</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-variable">&#x24;results</span>;<br>
+}<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Convert icon name from string to object.<br>
+ *<br>
+ * Object properties:<br>
+ * - provider (ignored in this example)<br>
+ * - prefix<br>
+ * - name<br>
+ *<br>
+ * This function was converted to PHP from @iconify/utils/src/icon/name.ts<br>
+ * See https://github.com/iconify/iconify/blob/main/packages/utils/src/icon/name.ts<br>
+ */</span><br>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringToIcon</span>(<span class="hljs-params"><span class="hljs-variable">&#x24;value</span></span>)<br>
+</span>{<br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;provider</span> = <span class="hljs-string">&apos;&apos;</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;colonSeparated</span> = <span class="hljs-title function_ invoke__">explode</span>(<span class="hljs-string">&apos;:&apos;</span>, <span class="hljs-variable">&#x24;value</span>);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Check for provider with correct &apos;@&apos; at start</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">&#x24;value</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) === <span class="hljs-string">&apos;@&apos;</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// First part is provider</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>) &lt; <span class="hljs-number">2</span> || <span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>) &gt; <span class="hljs-number">3</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// &quot;@provider:prefix:name&quot; or &quot;@provider:prefix-name&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;provider</span> = <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-title function_ invoke__">array_shift</span>(<span class="hljs-variable">&#x24;colonSeparated</span>), <span class="hljs-number">1</span>);<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Check split by colon: &quot;prefix:name&quot;, &quot;provider:prefix:name&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>) &gt; <span class="hljs-number">3</span> || !<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>)) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
+ &#xa0; &#xa0;}<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>) &gt; <span class="hljs-number">1</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// &quot;prefix:name&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;name</span> = <span class="hljs-title function_ invoke__">array_pop</span>(<span class="hljs-variable">&#x24;colonSeparated</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable">&#x24;prefix</span> = <span class="hljs-title function_ invoke__">array_pop</span>(<span class="hljs-variable">&#x24;colonSeparated</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Allow provider without &apos;@&apos;: &quot;provider:prefix:name&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; <span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;colonSeparated</span>) &gt; <span class="hljs-number">0</span> ? <span class="hljs-variable">&#x24;colonSeparated</span>[<span class="hljs-number">0</span>] : <span class="hljs-variable">&#x24;provider</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; <span class="hljs-variable">&#x24;prefix</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;name&apos;</span> =&gt; <span class="hljs-variable">&#x24;name</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;];<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Attempt to split by hyphen: &quot;prefix-name&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;hyphenSeparated</span> = <span class="hljs-title function_ invoke__">explode</span>(<span class="hljs-string">&apos;-&apos;</span>, <span class="hljs-variable">&#x24;colonSeparated</span>[<span class="hljs-number">0</span>]);<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;hyphenSeparated</span>) &gt; <span class="hljs-number">1</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;provider&apos;</span> =&gt; <span class="hljs-variable">&#x24;provider</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;prefix&apos;</span> =&gt; <span class="hljs-title function_ invoke__">array_shift</span>(<span class="hljs-variable">&#x24;hyphenSeparated</span>),<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;name&apos;</span> =&gt; <span class="hljs-title function_ invoke__">implode</span>(<span class="hljs-string">&apos;-&apos;</span>, <span class="hljs-variable">&#x24;hyphenSeparated</span>),<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;];<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>
+}<br>
+</code></div></div></div><p>Bundle generated by script above must be imported in your application:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0ICcuL2ljb25zLWJ1bmRsZS5qcyc7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./icons-bundle.js&apos;</span>;<br>
+</code></div></div></div><p>If you are using <span class="hljs-function">require()</span> and have set <span class="hljs-inline-var">commonJS</span> to <span class="hljs-literal">true</span>, use this code:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="cmVxdWlyZSgnLi9pY29ucy1idW5kbGUuanMnKTsK"><code class="highlight hljs"><span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./icons-bundle.js&apos;</span>);<br>
+</code></div></div></div></section>
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../../iconify-icon/">Web Component</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--separator docs-navigation-link--toggle"><a href="../">Icon Bundles<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../wrapper.html">Wrapper Function</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../api.html">Using Iconify API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../utils.html">Using Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../json-tools.html">Using JSON Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Usage:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svg-framework.html">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../react.html">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../svelte.html">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="../ember.html">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

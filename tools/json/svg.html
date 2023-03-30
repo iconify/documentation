@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>SVG class in Iconify JSON Tools</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./collection.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Collection Class</a>
+<a href="./export.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Export Icons</a>
+</div>
+<h1>SVG class in Iconify JSON Tools</h1>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>This article is for deprecated Iconify JSON Tools.</p>
+	<p>
+		Iconify JSON Tools has been replced with
+		<a href="../utils/">Iconify Utils</a>
+	</p>
+</div><p>Iconify JSON Tools is a lightweight library for working with icon sets in Iconify JSON format. See <a href="./">Iconify JSON Tools documentation</a>.</p>
+<p>SVG class represents an icon.</p>
+<p>To include it use this code:</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Y29uc3QgeyBTVkcgfSA9IHJlcXVpcmUoJ0BpY29uaWZ5L2pzb24tdG9vbHMnKTsK"><code class="highlight hljs"><span class="hljs-keyword">const</span> { <span class="hljs-variable constant_">SVG</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/json-tools&apos;</span>);<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="dXNlIFxJY29uaWZ5XEpTT05Ub29sc1xTVkc7"><code class="highlight hljs"><span class="hljs-keyword">use</span> \<span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">SVG</span>;</code></div></div></div><script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="initializing" class="heading--2">Initializing <a href="#initializing" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To create new <span class="hljs-class">SVG</span> instance, you need to provide full icon data.</p><section class="content-section content-section--3"><H1 id="loading-from-collection" class="heading--3">Loading from collection <a href="#loading-from-collection" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>This example creates <span class="hljs-class">SVG</span> instance with data retrieved from a collection:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gSW1wb3J0IENvbGxlY3Rpb24gYW5kIFNWRyBjbGFzc2VzCmNvbnN0IHsgU1ZHLCBDb2xsZWN0aW9uIH0gPSByZXF1aXJlKCdAaWNvbmlmeS9qc29uLXRvb2xzJyk7CgovLyBDcmVhdGUgQ29sbGVjdGlvbiBpbnN0YW5jZSBhbmQgbG9hZCBNYXRlcmlhbCBEZXNpZ24gSWNvbnMKbGV0IGNvbGxlY3Rpb24gPSBuZXcgQ29sbGVjdGlvbigpOwpjb2xsZWN0aW9uLmxvYWRJY29uaWZ5Q29sbGVjdGlvbignbWRpJyk7CgovLyBDcmVhdGUgU1ZHIGluc3RhbmNlIHdpdGggJ21kaTpob21lJyBpY29uIGRhdGEKbGV0IHN2ZyA9IG5ldyBTVkcoY29sbGVjdGlvbi5nZXRJY29uRGF0YSgnaG9tZScpKTsKCi8vIEdlbmVyYXRlIGFuZCBlY2hvIDxzdmc+CmNvbnNvbGUubG9nKHN2Zy5nZXRTVkcoe30pKTsK"><code class="highlight hljs"><span class="hljs-comment">// Import Collection and SVG classes</span><br>
+<span class="hljs-keyword">const</span> { <span class="hljs-variable constant_">SVG</span>, <span class="hljs-title class_">Collection</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/json-tools&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Create Collection instance and load Material Design Icons</span><br>
+<span class="hljs-keyword">let</span> collection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Collection</span>();<br>
+collection.<span class="hljs-title function_">loadIconifyCollection</span>(<span class="hljs-string">&apos;mdi&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Create SVG instance with &apos;mdi:home&apos; icon data</span><br>
+<span class="hljs-keyword">let</span> svg = <span class="hljs-keyword">new</span> <span class="hljs-title function_">SVG</span>(collection.<span class="hljs-title function_">getIconData</span>(<span class="hljs-string">&apos;home&apos;</span>));<br>
+<br>
+<span class="hljs-comment">// Generate and echo &lt;svg&gt;</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(svg.<span class="hljs-title function_">getSVG</span>({}));<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PD9waHAKCi8vIEltcG9ydCBDb2xsZWN0aW9uIGFuZCBTVkcgY2xhc3Nlcwp1c2UgXEljb25pZnlcSlNPTlRvb2xzXENvbGxlY3Rpb247CnVzZSBcSWNvbmlmeVxKU09OVG9vbHNcU1ZHOwoKLy8gQ3JlYXRlIENvbGxlY3Rpb24gaW5zdGFuY2UgYW5kIGxvYWQgTWF0ZXJpYWwgRGVzaWduIEljb25zCiRjb2xsZWN0aW9uID0gbmV3IENvbGxlY3Rpb24oKTsKJGNvbGxlY3Rpb24tPmxvYWRJY29uaWZ5Q29sbGVjdGlvbignbWRpJyk7CgovLyBDcmVhdGUgU1ZHIGluc3RhbmNlIHdpdGggJ21kaTpob21lJyBpY29uIGRhdGEKJHN2ZyA9IG5ldyBTVkcoJGNvbGxlY3Rpb24tPmdldEljb25EYXRhKCdob21lJykpOwoKLy8gR2VuZXJhdGUgYW5kIGVjaG8gPHN2Zz4KZWNobyAkc3ZnLT5nZXRTVkcoKTs="><code class="highlight hljs"><span class="hljs-meta">&lt;?php</span><br>
+<br>
+<span class="hljs-comment">// Import Collection and SVG classes</span><br>
+<span class="hljs-keyword">use</span> \<span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">Collection</span>;<br>
+<span class="hljs-keyword">use</span> \<span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">SVG</span>;<br>
+<br>
+<span class="hljs-comment">// Create Collection instance and load Material Design Icons</span><br>
+<span class="hljs-variable">&#x24;collection</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Collection</span>();<br>
+<span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">loadIconifyCollection</span>(<span class="hljs-string">&apos;mdi&apos;</span>);<br>
+<br>
+<span class="hljs-comment">// Create SVG instance with &apos;mdi:home&apos; icon data</span><br>
+<span class="hljs-variable">&#x24;svg</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">SVG</span>(<span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">getIconData</span>(<span class="hljs-string">&apos;home&apos;</span>));<br>
+<br>
+<span class="hljs-comment">// Generate and echo &lt;svg&gt;</span><br>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">&#x24;svg</span>-&gt;<span class="hljs-title function_ invoke__">getSVG</span>();</code></div></div></div></section></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="get-svg" class="heading--2">Getting &lt;svg&gt; <a href="#get-svg" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>The <span class="hljs-class">SVG</span> class has one function: <span class="hljs-function">getSVG()</span>. It returns <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> string.</p><p>Function <span class="hljs-function">getSVG()</span> has one parameter: custom properties array. Possible array properties:</p><ul>
+<li><span class="hljs-inline-prop">inline</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span> or <span class="hljs-inline-type hljs-linkable">string</span></span>. If <span class="hljs-literal">true</span> or &quot;<span class="hljs-string">true</span>&quot; or &quot;<span class="hljs-string">1</span>&quot;, function will add <span class="hljs-inline-prop">vertical-align</span> to style, making it behave like a glyph.</li>
+<li><span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> are dimensions of icon. If only one dimension is set, another dimension will be set using icon&apos;s width/height ratio. Value can be <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> (such as &quot;<span class="hljs-string">1em</span>&quot;, &quot;<span class="hljs-string">24px</span>&quot; or a <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>). If value is &quot;<span class="hljs-string">auto</span>&quot;, icon&apos;s original dimensions will be used. If both <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> are not set, <span class="hljs-inline-prop">height</span> defaults to &quot;<span class="hljs-string">1em</span>&quot;.</li>
+<li><span class="hljs-inline-prop">hFlip</span> and <span class="hljs-inline-prop">vFlip</span>. If <span class="hljs-literal">true</span> or &quot;<span class="hljs-string">true</span>&quot; or &quot;<span class="hljs-string">1</span>&quot; (<span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> or <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>), icon will be flipped horizontally and/or vertically.</li>
+<li><span class="hljs-inline-prop">flip</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> is an alternative to <span class="hljs-inline-prop">hFlip</span> and <span class="hljs-inline-prop">vFlip</span>. Value can be &quot;<span class="hljs-string">horizontal</span>&quot;, &quot;<span class="hljs-string">vertical</span>&quot; or &quot;<span class="hljs-string">horizontal,vertical</span>&quot;.</li>
+<li><span class="hljs-inline-prop">rotate</span> is for rotating icon. Value can be in degrees &quot;<span class="hljs-string">90deg</span>&quot; (only 90, 180 and 270 degrees rotations are available), percentages &quot;<span class="hljs-string">25%</span>&quot; (25%, 50% and 75% are aliases of &quot;<span class="hljs-string">90deg</span>&quot;, &quot;<span class="hljs-string">180deg</span>&quot; and &quot;<span class="hljs-string">270deg</span>&quot;) or number 1-3 (1 = &quot;<span class="hljs-string">90deg</span>&quot;, 2 = &quot;<span class="hljs-string">180deg</span>&quot;, 3 = &quot;<span class="hljs-string">270deg</span>&quot;).</li>
+<li><span class="hljs-inline-prop">align</span> is for icon alignment. This is useful if you have custom <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> set. Unlike other images, SVG keep aspect ratio (unless stated otherwise) when scaled. Value is comma or space separated string with possible strings (example: &quot;<span class="hljs-string">left,top,crop</span>&quot;):
+<ul>
+<li>&quot;<span class="hljs-string">left</span>&quot;, &quot;<span class="hljs-string">right</span>&quot;, &quot;<span class="hljs-string">center</span>&quot; are for horizontal alignment.</li>
+<li>&quot;<span class="hljs-string">top</span>&quot;, &quot;<span class="hljs-string">middle</span>&quot;, &quot;<span class="hljs-string">bottom</span>&quot; are for vertical alignment.</li>
+<li>&quot;<span class="hljs-string">crop</span>&quot; crop parts that go outside of boundaries.</li>
+<li>&quot;<span class="hljs-string">meet</span>&quot; scale icon down to fit entire icon (opposite of &quot;<span class="hljs-string">crop</span>&quot;).</li>
+</ul>
+</li>
+<li><span class="hljs-inline-prop">color</span> sets custom color string to replace &quot;<span class="hljs-string">currentColor</span>&quot;, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. This is useful when using icon as background image because background image cannot use &quot;<span class="hljs-string">currentColor</span>&quot;.</li>
+<li><span class="hljs-inline-prop">box</span> adds a bounding box. If <span class="hljs-literal">true</span> or &quot;<span class="hljs-string">true</span>&quot; or &quot;<span class="hljs-string">1</span>&quot; (<span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> or <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>), icon will include extra rectangle matching its <span class="hljs-inline-prop">viewBox</span>. This is useful to export icon to editor making icon easier to scale or place into its position in sketch because often editors ignore <span class="hljs-inline-prop">viewBox</span>.</li>
+</ul><p>All properties, except for <span class="hljs-inline-prop">box</span> are similar to attributes used for icons in Iconify SVG Framework and various Iconify components and behave exactly the same way.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="c3ZnLmdldFNWRyh7CgloZWlnaHQ6ICcyNHB4JywKfSk7CnN2Zy5nZXRTVkcoewoJaGVpZ2h0OiAnMjRweCcsCgl3aWR0aDogJzI0cHgnLAoJYWxpZ246ICdjZW50ZXIsbWlkZGxlLG1lZXQnLAoJY29sb3I6ICcjZmY4MDAwJywKCXJvdGF0ZTogJzkwZGVnJywgLy8gc2FtZSBhcyAicm90YXRlOiAxIiBvciAicm90YXRlOiAnMjUlJyIKCWZsaXA6ICdob3Jpem9udGFsJywgLy8gc2FtZSBhcyAiaEZsaXA6IHRydWUiCglib3g6IHRydWUsCn0pOwpzdmcuZ2V0U1ZHKHsKCWhlaWdodDogJ2F1dG8nLCAvLyBoZWlnaHQgYW5kIHdpZHRoIHdpbGwgYmUgc2V0IGZyb20gdmlld0JveCBhdHRyaWJ1dGUsIHVzaW5nIG9yaWdpbmFsIGljb24ncyBkaW1lbnNpb25zCn0pOwo="><code class="highlight hljs">svg.<span class="hljs-title function_">getSVG</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-string">&apos;24px&apos;</span>,<br>
+});<br>
+svg.<span class="hljs-title function_">getSVG</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-string">&apos;24px&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">width</span>: <span class="hljs-string">&apos;24px&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">align</span>: <span class="hljs-string">&apos;center,middle,meet&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">color</span>: <span class="hljs-string">&apos;#ff8000&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">rotate</span>: <span class="hljs-string">&apos;90deg&apos;</span>, <span class="hljs-comment">// same as &quot;rotate: 1&quot; or &quot;rotate: &apos;25%&apos;&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">flip</span>: <span class="hljs-string">&apos;horizontal&apos;</span>, <span class="hljs-comment">// same as &quot;hFlip: true&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">box</span>: <span class="hljs-literal">true</span>,<br>
+});<br>
+svg.<span class="hljs-title function_">getSVG</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-string">&apos;auto&apos;</span>, <span class="hljs-comment">// height and width will be set from viewBox attribute, using original icon&apos;s dimensions</span><br>
+});<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JwpdKTsKJHN2Zy0+Z2V0U1ZHKFsKICAgICdoZWlnaHQnID0+ICcyNHB4JywKICAgICd3aWR0aCcgPT4gJzI0cHgnLAogICAgJ2FsaWduJyA9PiAnY2VudGVyLG1pZGRsZSxtZWV0JywKICAgICdjb2xvcicgPT4gJyNmZjgwMDAnLAogICAgJ3JvdGF0ZScgPT4gJzkwZGVnJywgLy8gc2FtZSBhcyAiJ3JvdGF0ZScgPT4gIDEiIG9yICIncm90YXRlJyA9PiAnMjUlJyIKICAgICdmbGlwJyA9PiAnaG9yaXpvbnRhbCcsIC8vIHNhbWUgYXMgIidoRmxpcCcgPT4gdHJ1ZSIKICAgICdib3gnID0+IHRydWUKXSk7CiRzdmctPmdldFNWRyhbCiAgICAnaGVpZ2h0JyA9PiAnYXV0bycgLy8gaGVpZ2h0IGFuZCB3aWR0aCB3aWxsIGJlIHNldCBmcm9tIHZpZXdCb3ggYXR0cmlidXRlLCB1c2luZyBvcmlnaW5hbCBpY29uJ3MgZGltZW5zaW9ucwpdKTs="><code class="highlight hljs"><span class="hljs-variable">&#x24;svg</span>-&gt;<span class="hljs-title function_ invoke__">getSVG</span>([<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span><br>
+]);<br>
+<span class="hljs-variable">&#x24;svg</span>-&gt;<span class="hljs-title function_ invoke__">getSVG</span>([<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;width&apos;</span> =&gt; <span class="hljs-string">&apos;24px&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;align&apos;</span> =&gt; <span class="hljs-string">&apos;center,middle,meet&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;color&apos;</span> =&gt; <span class="hljs-string">&apos;#ff8000&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;rotate&apos;</span> =&gt; <span class="hljs-string">&apos;90deg&apos;</span>, // same <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;&apos;rotate&apos; =&gt; &#xa0;1&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&apos;rotate&apos; =&gt; &apos;25%&apos;&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;flip&apos;</span> =&gt; <span class="hljs-string">&apos;horizontal&apos;</span>, // same <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;&apos;hFlip&apos; =&gt; true&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;box&apos;</span> =&gt; <span class="hljs-literal">true</span><br>
+]);<br>
+<span class="hljs-variable">&#x24;svg</span>-&gt;<span class="hljs-title function_ invoke__">getSVG</span>([<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;height&apos;</span> =&gt; <span class="hljs-string">&apos;auto&apos;</span> // height <span class="hljs-keyword">and</span> width will be set <span class="hljs-keyword">from</span> viewBox attribute, using original icon<span class="hljs-string">&apos;s dimensions<br>
+]);</span></code></div></div></div></section>
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../utils/">Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify JSON Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collection.html">Collection Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./svg.html">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./export.html">Export Icons</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

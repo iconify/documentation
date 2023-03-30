@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Iconify API Providers</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./hosting.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Hosting API</a>
+<a href="./config.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Components Config</a>
+</div>
+<h1>Iconify API providers</h1>
+<p>If you are publishing icons, you can host your own Iconify API server that includes only your icons and give access to it to other users. Iconify icon components can retrieve icon data from multiple independent Iconify API servers.</p>
+<p>How is it done?</p>
+<div class="api-namespaces">
+	<div class="api-namespaces-sources">
+		<div class="api-namespaces-set api-namespaces-set--clouds api-namespaces-set--1 ns--1">
+			<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+			<p>Public API</p>
+		</div>
+		<div class="api-namespaces-set api-namespaces-set--clouds api-namespaces-set--2 ns--2">
+			<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+			<p>@my-icons</p>
+		</div>
+		<div class="api-namespaces-set api-namespaces-set--clouds api-namespaces-set--3 ns--3">
+			<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+			<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+			<p>@icons8</p>
+		</div>
+	</div>
+	<div class="api-namespaces-impl">
+		<div class="api-namespaces-set api-namespaces-set--computers">
+			<iconify-icon class="icon1" icon="line-md:laptop-twotone"></iconify-icon>
+			<iconify-icon class="icon2" icon="line-md:computer-twotone"></iconify-icon>
+			<iconify-icon class="icon3" icon="line-md:laptop-twotone"></iconify-icon>
+		</div>
+	</div>
+	<div class="api-namespaces-arrows">
+		<div class="api-namespaces-arrow api-namespaces-arrow--1 ns--1">
+			<iconify-icon icon="assets:long-arrow"></iconify-icon>
+			<p>mdi-light:home</p>
+		</div>
+		<div class="api-namespaces-arrow api-namespaces-arrow--2 ns--2">
+			<iconify-icon icon="assets:long-arrow"></iconify-icon>
+			<p>@my-icons:line-24:home</p>
+		</div>
+		<div class="api-namespaces-arrow api-namespaces-arrow--3 ns--3">
+			<iconify-icon icon="assets:long-arrow"></iconify-icon>
+			<p>@icons8:ios:home</p>
+		</div>
+	</div>
+</div><script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="provider-in-icon-name" class="heading--2">Provider in icon name <a href="#provider-in-icon-name" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icon names in Iconify icon components have 3 parts:</p><div class="api-icon-name">
+	<table>
+		<thead>
+			<tr>
+				<td>@api-provider</td>
+				<td>:</td>
+				<td>icon-prefix</td>
+				<td>:</td>
+				<td>icon-name</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<iconify-icon inline icon="line-md:navigation-left-up"></iconify-icon>
+					provider
+				</td>
+				<td></td>
+				<td>
+					<iconify-icon inline icon="line-md:navigation-left-up"></iconify-icon>
+					prefix
+				</td>
+				<td></td>
+				<td>
+					<iconify-icon inline icon="line-md:navigation-left-up"></iconify-icon>
+					name
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<ul>
+		<li>
+			<span class="api-icon-name-provider">provider</span> points to API source.
+			Starts with &quot;<span class="hljs-string">@</span>&quot;, can be empty (empty
+			value is used for public Iconify API).
+		</li>
+		<li>
+			<span class="api-icon-name-prefix">prefix</span> is name of icon set.
+		</li>
+		<li><span class="api-icon-name-name">name</span> is name of icon.</li>
+	</ul>
+</div><p>All parts are separated by &quot;<span class="hljs-string">:</span>&quot;, provider is optional and can be skipped if empty.</p><p>Examples:</p><ul>
+<li><span class="hljs-inline-icon">@my-icons:line-24:home</span>: icon is retrieved from provider &quot;<span class="hljs-string">my-icons</span>&quot;. Icon name for that provider is <span class="hljs-inline-icon">line-24:home</span>.</li>
+<li><span class="hljs-inline-icon">mdi-light:home</span>: icon does not have provider, so provider is empty. Empty value is used for public Iconify API.</li>
+</ul><p>Provider naming rules are the same as for prefix and name, but with exception that it can be empty:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="L15bYS16MC05XSsoLVthLXowLTldKykqJC8K"><code class="highlight hljs">/^[a-z0-<span class="hljs-number">9</span>]+(-[a-z0-<span class="hljs-number">9</span>]+)*&#x24;/<br>
+</code></div></div></div><p>That regular expression means name must start with character or number, followed by mix of characters, numbers and hyphen. Other characters are not allowed.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="adding-api-provider" class="heading--2">Adding API provider <a href="#adding-api-provider" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>All icon components have function <span class="hljs-function">addAPIProvider()</span>. For SVG framework it is <span class="hljs-function">Iconify.addAPIProvider()</span>, for other components you need to import it from component.</p><p>Example for <a href="../icon-components/react/">React component</a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgYWRkQVBJUHJvdmlkZXIgfSBmcm9tICdAaWNvbmlmeS9yZWFjdCc7CgphZGRBUElQcm92aWRlcignbG9jYWwnLCB7CgkvLyBBcnJheSBvZiBob3N0IG5hbWVzLgoJLy8gTXV0bGlwbGUgaG9zdHMgYWxsb3cgcmVkdW5kYW5jeTogaWYgb25lIGhvc3QgaXMgZG93biwgY29tcG9uZW50IHdpbGwgcXVlcnkgYW5vdGhlciBob3N0LgoJcmVzb3VyY2VzOiBbJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAwMCddLAp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { addAPIProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react&apos;</span>;<br>
+<br>
+<span class="hljs-title function_">addAPIProvider</span>(<span class="hljs-string">&apos;local&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Array of host names.</span><br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Mutliple hosts allow redundancy: if one host is down, component will query another host.</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">resources</span>: [<span class="hljs-string">&apos;http://localhost:3000&apos;</span>],<br>
+});<br>
+</code></div></div></div><p>Function has 2 parameters:</p><ul>
+<li>provider, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Provider name. You can also overwrite configuration for default provider by using empty string.</li>
+<li>config, <span class="hljs-inline-type hljs-linkable"><a href="./providers.html#api-config" title="APIConfig documentation"><span class="hljs-inline-type hljs-linkable">APIConfig</span></a></span>. API configuration.</li>
+</ul><p>For more details see <a href="../icon-components/svg-framework/add-api-provider.html">addAPIProvider documentation from SVG framework</a>.</p><section class="content-section content-section--3"><H1 id="iconifyproviders" class="heading--3">IconifyProviders <a href="#iconifyproviders" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Sometimes using function <span class="hljs-function">addAPIProvider()</span> is not simple. For example, if you are using SVG framework that is placed at the end of file before <span class="hljs-inline-tag hljs-linkable">&lt;/body&gt;</span>.</p><p>There is alternative solution: assigning API providers to global variable <span class="hljs-inline-var">IconifyProviders</span> before loading SVG framework. When SVG framework loads, it checks if variable exists and automatically imports all providers from it.</p><p>Format is simple: it is an object, where key is provider name, value is configuration. Example, which does the same as example above:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCUljb25pZnlQcm92aWRlcnMgPSB7CgkJbG9jYWw6IHsKCQkJcmVzb3VyY2VzOiBbJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAwMCddLAoJCX0sCgl9Owo8L3NjcmlwdD4KPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8zLzMuMS4wL2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><br>
+ &#xa0; &#xa0;<span class="hljs-title class_">IconifyProviders</span> = {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">local</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">resources</span>: [<span class="hljs-string">&apos;http://localhost:3000&apos;</span>],<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;};<br>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/3/3.1.0/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div><p>Components also support it, but components are usually bundled, so you should be able to use <span class="hljs-function">addAPIProvider()</span> instead of polluting global variables.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="using-api-provider" class="heading--2">Using API provider <a href="#using-api-provider" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>After you add configuration for API provider, which is one simple function call, you can use icons from that API provider.</p><p>All you have to do is add provider to icon name. Provider in icon name must match first paramter to <span class="hljs-function">addAPIProvider()</span>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNwYW4gY2xhc3M9Imljb25pZnkiIGRhdGEtaWNvbj0iQGljb25zODppb3MtZ2x5cGhzOmNvbG9yLWRyb3BwZXIiPjwvc3Bhbj4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconify&quot;</span> <span class="hljs-attr">data-icon</span>=<span class="hljs-string">&quot;@icons8:ios-glyphs:color-dropper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgSWNvbiwgYWRkQVBJUHJvdmlkZXIgfSBmcm9tICdAaWNvbmlmeS9yZWFjdC13aXRoLWFwaSc7CgovLyBUaGlzIHNob3VsZCBiZSBkb25lIG9ubHkgb25jZSBpbiBtYWluIGFwcCwgbm90IGV2ZXJ5IHRpbWUgeW91IHVzZSBpdAphZGRBUElQcm92aWRlcigndGVzdCcsIHsKCXJlc291cmNlczogWydodHRwOi8vbG9jYWxob3N0OjMwMDAnXSwKfSk7CgovLyBTYW1wbGUgY29tcG9uZW50CmV4cG9ydCBmdW5jdGlvbiBzaG93QWxlcnQoKSB7CglyZXR1cm4gKAoJCTxkaXY+CgkJCTxJY29uIGljb249IkB0ZXN0Om1hdGVyaWFsLWljb25zOmFsZXJ0IiAvPiBJbXBvcnRhbnQgc3R1ZmYhCgkJPC9kaXY+CgkpOwp9Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;<br>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Icon</span>, addAPIProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/react-with-api&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// This should be done only once in main app, not every time you use it</span><br>
+<span class="hljs-title function_">addAPIProvider</span>(<span class="hljs-string">&apos;test&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">resources</span>: [<span class="hljs-string">&apos;http://localhost:3000&apos;</span>],<br>
+});<br>
+<br>
+<span class="hljs-comment">// Sample component</span><br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">showAlert</span>(<span class="hljs-params"></span>) {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> (<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;@test:material-icons:alert&quot;</span> /&gt;</span> Important stuff!<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>
+ &#xa0; &#xa0;);<br>
+}<br>
+</code></div></div></div></section>
+
+
+<section class="content-section content-section--2"><H1 id="authentication" class="heading--2">Authentication <a href="#authentication" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Currently Iconify does not offer authentication options.</p><p>If you want to use API providers functionality to host premium icon sets or restrict access, you should add your own authentication logic to both API and clients. Doing that might be tricky due to lack of documentation for internal code, if you need any help, <a href="https://github.com/iconify/iconify/issues" target="_blank">open an issue at Iconify GitHub repository</a>.</p><p>It is on a roadmap for premium edition of Iconify API software, which should make hosting premium icon sets very easy. However, that functionality is far away due to lack of development resources. You can help by <a href="https://github.com/iconify/iconify" target="_blank">sponsoring Iconify on GitHub</a> (click &quot;Sponsor&quot; button).</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="api-config" class="heading--2">API Config <a href="#api-config" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Type <span class="hljs-inline-type hljs-linkable"><a href="./providers.html#api-config" title="APIConfig documentation"><span class="hljs-inline-type hljs-linkable">APIConfig</span></a></span> passed to <span class="hljs-function">addAPIProvider()</span>, is an object.</p><p>Properties:</p><ul>
+<li><span class="hljs-inline-prop">resources</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. List of host names, required. Must start with &quot;<span class="hljs-string">https://</span>&quot; or &quot;<span class="hljs-string">http://</span>&quot;, should not contain path.</li>
+<li><span class="hljs-inline-prop">path</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Path to root directory. Default value is &quot;<span class="hljs-string">/</span>&quot;.</li>
+<li><span class="hljs-inline-prop">rotate</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Timeout before the next host is used, in milliseconds. Default value is <span class="hljs-number">750</span>.</li>
+<li><span class="hljs-inline-prop">timeout</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Timeout before the API query is considered failed, in milliseconds. Default value is <span class="hljs-number">5000</span>.</li>
+</ul><p>Examples:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgYWRkQVBJUHJvdmlkZXIgfSBmcm9tICdAaWNvbmlmeS9zdmVsdGUnOwoKLy8gT3ZlcnJpZGUgZGVmYXVsdCBBUEkgcHJvdmlkZXIgd2l0aCBJY29uaWZ5IEFQSSBob3N0ZWQgYXQgJ2h0dHBzOi8vaWNvbmlmeS5teS1wcm9qZWN0LmNvbScKYWRkQVBJUHJvdmlkZXIoJycsIHsKCXJlc291cmNlczogWydodHRwczovL2ljb25pZnkubXktcHJvamVjdC5jb20nXSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { addAPIProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/svelte&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Override default API provider with Iconify API hosted at &apos;https://iconify.my-project.com&apos;</span><br>
+<span class="hljs-title function_">addAPIProvider</span>(<span class="hljs-string">&apos;&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">resources</span>: [<span class="hljs-string">&apos;https://iconify.my-project.com&apos;</span>],<br>
+});<br>
+</code></div></div></div><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNjcmlwdD4KCS8vIERlZmluZSBnbG9iYWwgdmFyaWFibGUKCUljb25pZnlQcm92aWRlcnMgPSB7CgkJLy8gRW1wdHkgcHJlZml4OiBvdmVyd3JpdGUgZGVmYXVsdCBBUEkgcHJvdmlkZXIgY29uZmlndXJhdGlvbgoJCScnOiB7CgkJCS8vIFVzZSBjdXN0b20gQVBJIGZpcnN0LCB1c2UgSWNvbmlmeSBwdWJsaWMgQVBJIGFzIGJhY2t1cAoJCQlyZXNvdXJjZXM6IFsKCQkJCSdodHRwczovL2ljb25pZnkubXktcHJvamVjdC5jb20nLAoJCQkJJ2h0dHBzOi8vYXBpLmljb25pZnkuZGVzaWduJywKCQkJXSwKCQkJLy8gV2FpdCBmb3IgMSBzZWNvbmQgYmVmb3JlIHN3aXRjaGluZyBBUEkgaG9zdHMKCQkJcm90YXRlOiAxMDAwLAoJCX0sCgl9Owo8L3NjcmlwdD4KPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5pY29uaWZ5LmRlc2lnbi8zLzMuMS4wL2ljb25pZnkubWluLmpzIj48L3NjcmlwdD4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Define global variable</span><br>
+ &#xa0; &#xa0;<span class="hljs-title class_">IconifyProviders</span> = {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Empty prefix: overwrite default API provider configuration</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Use custom API first, use Iconify public API as backup</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">resources</span>: [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;https://iconify.my-project.com&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;https://api.iconify.design&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;],<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Wait for 1 second before switching API hosts</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">rotate</span>: <span class="hljs-number">1000</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;};<br>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://code.iconify.design/3/3.1.0/iconify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>
+</code></div></div></div></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="provider-name" class="heading--2">Provider name <a href="#provider-name" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Provider name is specific to your code. It is used only to associate icon with API configuration. Actual API server has no effect on what you call provider.</p><p>That means you can change it to whatever you want. Make sure you are using the same provider id in all your code.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active"><a href="./providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

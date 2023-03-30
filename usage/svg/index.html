@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>How to embed SVG in HTML</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../css/" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> SVG in CSS</a>
+<a href="./no-code/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> No Code</a>
+</div>
+<h1>How to embed SVG in HTML</h1>
+<p>Using SVG in HTML requires embedding HTML in documents.</p>
+<p><a href="#tools">Skip to list of available tools</a> if you want to skip long explanation of how it all works.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="advantages" class="heading--2">Advantages <a href="#advantages" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>It has advantages and disadvantages over <a href="../css/">using SVG in CSS</a>.</p><p>Advantages:</p><ul>
+<li>You can easily target elements inside icons, such as changing <span class="hljs-inline-prop">stroke-width</span> or controlling SVG animations.</li>
+</ul><p>However, it also has big disadvantages:</p><ul>
+<li>There can be multiple entries for each icon. While this can be solved with SVG sprites, it is not always possible.</li>
+<li>Deep DOM tree and large document size.</li>
+</ul></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>All you have to do is insert <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> elements in your HTML wherever you want to use it.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00WiIvPgo8L3N2Zz4K"><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;1em&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1em&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 24 24&quot;</span>&gt;</span><br>
+ &#xa0; &#xa0;<span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;currentColor&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z&quot;</span>/&gt;</span><br>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br>
+</code></div></div></div><section class="content-section content-section--3"><H1 id="external-images" class="heading--3">External images <a href="#external-images" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>One possible solution to deep DOM tree and large document size is linking to external SVG files using <span class="hljs-inline-tag hljs-linkable">&lt;img&gt;</span> or <span class="hljs-inline-tag hljs-linkable">&lt;picture&gt;</span> tags.</p><p>However, it cannot be used for monotone icons. It is not possible to change color of external image without generating separate images for each used color. That makes external images unusable in Iconify ecosystem.</p><p>A workaround is to use icons as external mask images in CSS. See <a href="../css/">how to use SVG in CSS</a>.</p></section></section>
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="tools" class="heading--2">Tools <a href="#tools" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>How to get SVG to add to your documents?</p><section class="content-section content-section--3"><H1 id="components" class="heading--3">Components <a href="#components" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For many frameworks there are components that handle embedding SVG in HTML:</p><ul>
+<li><a href="./unplugin/">Unplugin Icons</a> for React, Vue, Svelte, Solid, Astro, Qwik.</li>
+<li><a href="./astro/">Astro Icon</a> for Astro.</li>
+<li><a href="https://github.com/edge-js/edge-iconify" target="_blank">Edge Iconify</a> for Edge template engine.</li>
+<li><a href="https://github.com/cawa-93/iconify-prerendered" target="_blank">Iconify Prerendered</a> is another option for Vue developers.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="functions" class="heading--3">Functions <a href="#functions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Not using any frameworks, but want to automate process?</p><p><a href="../../tools/utils/">Iconify Utils</a> offers easy to use functions that generate SVG.</p><p>See <a href="./utils/">how to export SVG with Iconify Utils</a>.</p></section><section class="content-section content-section--3"><H1 id="no-code" class="heading--3">No code <a href="#no-code" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If you do not want to use any components, you can get SVG at one of the following websites:</p><ul>
+<li><a href="https://icon-sets.iconify.design/" target="_blank">Iconify icon sets</a> - official website.</li>
+<li><a href="https://icones.js.org/" target="_blank">Icones</a> - alternative website created by Anthony Fu.</li>
+</ul><p>Find icon you want to use, select it, copy SVG to clipboard, paste it to HTML.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="custom-components" class="heading--2">Custom components <a href="#custom-components" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Want to build a custom component that generates SVG?</p><p>Currently you&apos;ll need to use JavaScript for that. There are no usable libraries for other programming languages.</p><section class="content-section content-section--3"><H1 id="javascript" class="heading--3">JavaScript <a href="#javascript" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p><a href="../../tools/utils/">Iconify Utils</a> package includes all functions you need. Process of generating SVG is simple:</p><ul>
+<li>Locate icon set file.</li>
+<li>Read it and parse JSON.</li>
+<li>Use <a href="../../tools/utils/icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a> to generate SVG content and attributes.</li>
+<li>Create SVG element from it. See below.</li>
+</ul><p>Code samples that should help you:</p><ul>
+<li>See <a href="./utils/">Iconify Utils documentation for SVG</a>.</li>
+<li>See <a href="../../tools/utils/parse-icon-set.html" title="parseIconSet() documentation"><span class="hljs-function hljs-linkable">parseIconSet()</span></a> or <a href="../../tools/utils/get-icon-data.html" title="getIconData() documentation"><span class="hljs-function hljs-linkable">getIconData()</span></a> to extract icon data from icon set.</li>
+<li>See <a href="../../tools/utils/icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a> documentation.</li>
+<li>Source code for <a href="https://github.com/iconify/iconify/tree/main/plugins/tailwind" target="_blank">Iconify for Tailwind CSS</a> for code to locate and load icon sets.</li>
+</ul><section class="content-section content-section--4"><H1 id="icon-to-svg" class="heading--4">Convert iconToSVG result to SVG <a href="#icon-to-svg" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function <a href="../../tools/utils/icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a> does not return full SVG, it returns attributes for <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element and contents.</p><p>This is done on purpose. Many frameworks, such as React, expect you to use framework specific code to create elements.</p><p>So, for React, you need to create element like this:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgZGF0YSA9IGljb25Ub1NWRyhpY29uLCB7fSk7CgpyZXR1cm4gUmVhY3QuY3JlYXRlRWxlbWVudCgnc3ZnJywgewoJLy8gTWFuZGF0b3J5IGF0dHJpYnV0ZXMKCXhtbG5zOiAnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLAoJeG1sbnNYbGluazogJ2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnLAoJLy8gd2lkdGgsIGhlaWdodCwgdmlld0JveAoJLi4uZGF0YS5hdHRyaWJ1dGVzLAoJLy8gaW5uZXJIVE1MCglkYW5nZXJvdXNseVNldElubmVySFRNTDogewoJCV9faHRtbDogZGF0YS5ib2R5LAoJfSwKfSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> data = <span class="hljs-title function_">iconToSVG</span>(icon, {});<br>
+<br>
+<span class="hljs-keyword">return</span> <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&apos;svg&apos;</span>, {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Mandatory attributes</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">xmlns</span>: <span class="hljs-string">&apos;http://www.w3.org/2000/svg&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">xmlnsXlink</span>: <span class="hljs-string">&apos;http://www.w3.org/1999/xlink&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// width, height, viewBox</span><br>
+ &#xa0; &#xa0;...data.<span class="hljs-property">attributes</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// innerHTML</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">dangerouslySetInnerHTML</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">__html</span>: data.<span class="hljs-property">body</span>,<br>
+ &#xa0; &#xa0;},<br>
+});<br>
+</code></div></div></div><p>For other frameworks that use native ways to create elements, use similar framework specific code.</p><p>If framework does not have some way to set <span class="hljs-inline-prop">innerHTML</span>, which is required to set contents of <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span>, this code cannot be used. You&apos;ll need to find a way to to convert HTML string to tree of components.</p><p>If you want to create full <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element as string, you can use <a href="../../tools/utils/icon-to-html.html" title="iconToHTML() documentation"><span class="hljs-function hljs-linkable">iconToHTML()</span></a> function to convert result of <a href="../../tools/utils/icon-to-svg.html" title="iconToSVG() documentation"><span class="hljs-function hljs-linkable">iconToSVG()</span></a> to string:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Y29uc3QgZGF0YSA9IGljb25Ub1NWRyhpY29uLCB7fSk7CgpyZXR1cm4gaWNvblRvSFRNTChkYXRhLmJvZHksIGRhdGEuYXR0cmlidXRlcyk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> data = <span class="hljs-title function_">iconToSVG</span>(icon, {});<br>
+<br>
+<span class="hljs-keyword">return</span> <span class="hljs-title function_">iconToHTML</span>(data.<span class="hljs-property">body</span>, data.<span class="hljs-property">attributes</span>);<br>
+</code></div></div></div><p>See <a href="./utils/">Iconify Utils examples</a>.</p></section></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">SVG in HTML<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./no-code/">No Code</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./utils/">Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./unplugin/">Unplugin Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./astro/">Astro Icon</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

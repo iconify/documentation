@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Color Type</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><h1>Color type</h1>
+<p><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Color</span></span> type is used in <a href="./">Iconify Utils</a> in functions for parsing colors.</p>
+<p>You can find this type in <span class="hljs-inline-file">src/colors/types.ts</span> of <a href="https://github.com/iconify/iconify/tree/main/packages/utils" target="_blank">Iconify Utils source code</a>.</p>
+<p>Type is an object, with <span class="hljs-inline-prop">type</span> property showing what color type it is, then optional properties for that type.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="rgb" class="heading--2">RGB <a href="#rgb" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>RGB color, usually converted from hexadecimal color like &quot;<span class="hljs-string">#ff8080</span>&quot;, color keyword &quot;<span class="hljs-string">red</span>&quot; or RGBA color like &quot;<span class="hljs-string">rgba(255, 128, 128, 0.5)</span>&quot;.</p><p>It has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">rgb</span>&quot;.</li>
+<li><span class="hljs-inline-prop">r</span>, <span class="hljs-inline-prop">g</span>, <span class="hljs-inline-prop">b</span> red, green and blue color components (0 - 255).</li>
+<li><span class="hljs-inline-prop">alpha</span> alpha (0 - 1).</li>
+</ul></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="hsl" class="heading--2">HSL <a href="#hsl" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>HSL color, usually converted from HSL or HSLA color like &quot;<span class="hljs-string">hsla(90, 50%, 50%, 0.5)</span>&quot;.</p><p>It has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">hsl</span>&quot;.</li>
+<li><span class="hljs-inline-prop">h</span> hue that can be any number, but usually is in 0 - 360 range.</li>
+<li><span class="hljs-inline-prop">s</span>, <span class="hljs-inline-prop">l</span> saturation and lightness components (0 - 100).</li>
+<li><span class="hljs-inline-prop">alpha</span> alpha (0 - 1).</li>
+</ul></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="lab" class="heading--2">LAB <a href="#lab" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Lab color, currently being implemented by browsers, is converted from color strings like &quot;<span class="hljs-string">lab(50% 50 50 / 1)</span>&quot;.</p><p>It has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">lab</span>&quot;.</li>
+<li><span class="hljs-inline-prop">l</span> lightness (0 - 100).</li>
+<li><span class="hljs-inline-prop">a</span>, <span class="hljs-inline-prop">b</span> are distances along <span class="hljs-inline-prop">a</span> and <span class="hljs-inline-prop">b</span> axis in Lab color space.</li>
+<li><span class="hljs-inline-prop">alpha</span> alpha (0 - 1).</li>
+</ul></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="lch" class="heading--2">LCH <a href="#lch" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>LCH color, currently being implemented by browsers, is converted from color strings like &quot;<span class="hljs-string">lch(50% 50 50 / 1)</span>&quot;.</p><p>It has the following properties:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">lab</span>&quot;.</li>
+<li><span class="hljs-inline-prop">l</span> lightness (0 - 100).</li>
+<li><span class="hljs-inline-prop">c</span> chroma, usually in 0 - 230 range, but it can be higher.</li>
+<li><span class="hljs-inline-prop">h</span> hue angle.</li>
+<li><span class="hljs-inline-prop">alpha</span> alpha (0 - 1).</li>
+</ul></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="keywords" class="heading--2">Keywords <a href="#keywords" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Several keywords have their own types that represent special colors.</p><p>They exist because functions for parsing colors can be used for cleaning up and parsing various icons, where finding values like &quot;<span class="hljs-string">currentColor</span>&quot; and &quot;<span class="hljs-string">none</span>&quot; could be important.</p><section class="content-section content-section--3"><H1 id="transparent" class="heading--3">transparent <a href="#transparent" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Transparent color has special type with only one property:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">transparent</span>&quot;.</li>
+</ul><p>When converting transparent colors like &quot;<span class="hljs-string">rgba(0, 0, 0, 0)</span>&quot;, convertion function will return <span class="hljs-inline-prop">transparent</span> type, making it easier to compare various colors.</p></section><section class="content-section content-section--3"><H1 id="none" class="heading--3">none <a href="#none" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>&quot;<span class="hljs-string">none</span>&quot; also has special type with only one property:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">none</span>&quot;.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="currentcolor" class="heading--3">currentColor <a href="#currentcolor" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>&quot;<span class="hljs-string">currentColor</span>&quot; also has special type with only one property:</p><ul>
+<li><span class="hljs-inline-prop">type</span> = &quot;<span class="hljs-string">current</span>&quot;.</li>
+</ul></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="other-colors" class="heading--2">Other colors <a href="#other-colors" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>This type is meant for parsing colors in SVG, not full color parsing, so it is limited only to simple colors and keywords that are important when parsing icons.</p></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--selected docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Utils<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon Sets:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./validate-icon-set.html">validateIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./quickly-validate-icon-set.html">quicklyValidateIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icons.html">getIcons()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icon-data.html">getIconData()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./minify-icon-set.html">minifyIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./expand-icon-set.html">expandIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./convert-info.html">convertIconSetInfo()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./parse-icon-set.html">parseIconSet()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./merge-icon-data.html">mergeIconData()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./default-icon-props.html">defaultIconProps</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Customisations:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./merge-customisations.html">mergeCustomisations()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./default-icon-customisations.html">defaultIconCustomisations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./to-boolean.html">toBoolean()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./rotate-from-string.html">rotateFromString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./flip-from-string.html">flipFromString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">SVG:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-to-svg.html">iconToSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-to-html.html">iconToHTML()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./calculate-size.html">calculateSize()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./replace-ids.html">replaceIDs()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">CSS:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icon-css.html">getIconCSS()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./get-icons-css.html">getIconsCSS()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Icon Name:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./match-name.html">matchName</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./string-to-icon.html">stringToIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./validate-icon.html">validateIconName()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--separator docs-navigation-link--section">Colors:</li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./string-to-color.html">stringToColor()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./compare-colors.html">compareColors()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./color-to-string.html">colorToString()</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

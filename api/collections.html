@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>List of icon sets</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./last-modified.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Last Modified</a>
+<a href="./collection.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> List of Icons</a>
+</div>
+<h1>List of icon sets</h1>
+<p>You can get list of available icon sets using <span class="hljs-inline-link">/collections</span> API query.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="query" class="heading--2">Query <a href="#query" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API query is <span class="hljs-inline-link">/collections</span>.</p><p>Optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Icon set prefix if you want to get result only for one icon set.</li>
+<li><span class="hljs-inline-prop">prefixes</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>. Comma separated list of icon set prefixes. You can use partial prefixes that end with &quot;<span class="hljs-string">-</span>&quot;, such as &quot;<span class="hljs-string">mdi-</span>&quot; matches &quot;<span class="hljs-string">mdi-light</span>&quot;.</li>
+</ul><p>Response is an object, where key is icon set prefix, value is <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-info.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> object.</p><p>Only icon sets that have info will be returned. If you want to hide an icon set, do not set info object when importing it.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJImZhNi1zb2xpZCI6IHsKCQkibmFtZSI6ICJGb250IEF3ZXNvbWUgU29saWQiLAoJCSJ0b3RhbCI6IDEzODgsCgkJInZlcnNpb24iOiAiNi4yLjAiLAoJCSJhdXRob3IiOiB7CgkJCSJuYW1lIjogIkRhdmUgR2FuZHkiLAoJCQkidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9Gb3J0QXdlc29tZS9Gb250LUF3ZXNvbWUiCgkJfSwKCQkibGljZW5zZSI6IHsKCQkJInRpdGxlIjogIkNDIEJZIDQuMCIsCgkJCSJzcGR4IjogIkNDLUJZLTQuMCIsCgkJCSJ1cmwiOiAiaHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzQuMC8iCgkJfSwKCQkic2FtcGxlcyI6IFsibG9jYXRpb24tcGluIiwgImdlbSIsICJmb2xkZXIiXSwKCQkiaGVpZ2h0IjogMzIsCgkJImRpc3BsYXlIZWlnaHQiOiAxNiwKCQkiY2F0ZWdvcnkiOiAiR2VuZXJhbCIsCgkJInBhbGV0dGUiOiBmYWxzZQoJfSwKCSJmYTYtcmVndWxhciI6IHsKCQkibmFtZSI6ICJGb250IEF3ZXNvbWUgUmVndWxhciIsCgkJInRvdGFsIjogMTYzLAoJCSJ2ZXJzaW9uIjogIjYuMi4wIiwKCQkiYXV0aG9yIjogewoJCQkibmFtZSI6ICJEYXZlIEdhbmR5IiwKCQkJInVybCI6ICJodHRwczovL2dpdGh1Yi5jb20vRm9ydEF3ZXNvbWUvRm9udC1Bd2Vzb21lIgoJCX0sCgkJImxpY2Vuc2UiOiB7CgkJCSJ0aXRsZSI6ICJDQyBCWSA0LjAiLAoJCQkic3BkeCI6ICJDQy1CWS00LjAiLAoJCQkidXJsIjogImh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIgoJCX0sCgkJInNhbXBsZXMiOiBbIm1lc3NhZ2UiLCAiY2xvY2siLCAiZm9sZGVyIl0sCgkJImhlaWdodCI6IDMyLAoJCSJkaXNwbGF5SGVpZ2h0IjogMTYsCgkJImNhdGVnb3J5IjogIkdlbmVyYWwiLAoJCSJwYWxldHRlIjogZmFsc2UKCX0sCgkiZmE2LWJyYW5kcyI6IHsKCQkibmFtZSI6ICJGb250IEF3ZXNvbWUgQnJhbmRzIiwKCQkidG90YWwiOiA0NjUsCgkJInZlcnNpb24iOiAiNi4yLjAiLAoJCSJhdXRob3IiOiB7CgkJCSJuYW1lIjogIkRhdmUgR2FuZHkiLAoJCQkidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9Gb3J0QXdlc29tZS9Gb250LUF3ZXNvbWUiCgkJfSwKCQkibGljZW5zZSI6IHsKCQkJInRpdGxlIjogIkNDIEJZIDQuMCIsCgkJCSJzcGR4IjogIkNDLUJZLTQuMCIsCgkJCSJ1cmwiOiAiaHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzQuMC8iCgkJfSwKCQkic2FtcGxlcyI6IFsic3RyYXZhIiwgImNzczMiLCAieS1jb21iaW5hdG9yIl0sCgkJImhlaWdodCI6IDMyLAoJCSJkaXNwbGF5SGVpZ2h0IjogMTYsCgkJImNhdGVnb3J5IjogIkJyYW5kcyAvIFNvY2lhbCIsCgkJInBhbGV0dGUiOiBmYWxzZQoJfSwKCSJmYS1zb2xpZCI6IHsKCQkibmFtZSI6ICJGb250IEF3ZXNvbWUgNSBTb2xpZCIsCgkJInRvdGFsIjogMTAwMSwKCQkidmVyc2lvbiI6ICI1LjE1LjQiLAoJCSJhdXRob3IiOiB7CgkJCSJuYW1lIjogIkRhdmUgR2FuZHkiLAoJCQkidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9Gb3J0QXdlc29tZS9Gb250LUF3ZXNvbWUiCgkJfSwKCQkibGljZW5zZSI6IHsKCQkJInRpdGxlIjogIkNDIEJZIDQuMCIsCgkJCSJzcGR4IjogIkNDLUJZLTQuMCIsCgkJCSJ1cmwiOiAiaHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzQuMC8iCgkJfSwKCQkic2FtcGxlcyI6IFsic2VhcmNoLXBsdXMiLCAicGFzdGUiLCAiY29tbWVudC1kb3RzIl0sCgkJImhlaWdodCI6IDMyLAoJCSJkaXNwbGF5SGVpZ2h0IjogMTYsCgkJImNhdGVnb3J5IjogIkFyY2hpdmUgLyBVbm1haW50YWluZWQiLAoJCSJwYWxldHRlIjogZmFsc2UKCX0sCgkiZmEtcmVndWxhciI6IHsKCQkibmFtZSI6ICJGb250IEF3ZXNvbWUgNSBSZWd1bGFyIiwKCQkidG90YWwiOiAxNTEsCgkJInZlcnNpb24iOiAiNS4xNS40IiwKCQkiYXV0aG9yIjogewoJCQkibmFtZSI6ICJEYXZlIEdhbmR5IiwKCQkJInVybCI6ICJodHRwczovL2dpdGh1Yi5jb20vRm9ydEF3ZXNvbWUvRm9udC1Bd2Vzb21lIgoJCX0sCgkJImxpY2Vuc2UiOiB7CgkJCSJ0aXRsZSI6ICJDQyBCWSA0LjAiLAoJCQkic3BkeCI6ICJDQy1CWS00LjAiLAoJCQkidXJsIjogImh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIgoJCX0sCgkJInNhbXBsZXMiOiBbImJlbGwiLCAiY29tbWVudCIsICJoYW5kLXBvaW50LWxlZnQiXSwKCQkiaGVpZ2h0IjogMzIsCgkJImRpc3BsYXlIZWlnaHQiOiAxNiwKCQkiY2F0ZWdvcnkiOiAiQXJjaGl2ZSAvIFVubWFpbnRhaW5lZCIsCgkJInBhbGV0dGUiOiBmYWxzZQoJfSwKCSJmYS1icmFuZHMiOiB7CgkJIm5hbWUiOiAiRm9udCBBd2Vzb21lIDUgQnJhbmRzIiwKCQkidG90YWwiOiA0NTcsCgkJInZlcnNpb24iOiAiNS4xNS40IiwKCQkiYXV0aG9yIjogewoJCQkibmFtZSI6ICJEYXZlIEdhbmR5IiwKCQkJInVybCI6ICJodHRwczovL2dpdGh1Yi5jb20vRm9ydEF3ZXNvbWUvRm9udC1Bd2Vzb21lIgoJCX0sCgkJImxpY2Vuc2UiOiB7CgkJCSJ0aXRsZSI6ICJDQyBCWSA0LjAiLAoJCQkic3BkeCI6ICJDQy1CWS00LjAiLAoJCQkidXJsIjogImh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIgoJCX0sCgkJInNhbXBsZXMiOiBbImFtYXpvbiIsICJjYy12aXNhIiwgImNocm9tZSJdLAoJCSJoZWlnaHQiOiAzMiwKCQkiZGlzcGxheUhlaWdodCI6IDE2LAoJCSJjYXRlZ29yeSI6ICJBcmNoaXZlIC8gVW5tYWludGFpbmVkIiwKCQkicGFsZXR0ZSI6IGZhbHNlCgl9LAoJImZhIjogewoJCSJuYW1lIjogIkZvbnQgQXdlc29tZSA0IiwKCQkidG90YWwiOiA2NzgsCgkJInZlcnNpb24iOiAiNC43LjAiLAoJCSJhdXRob3IiOiB7CgkJCSJuYW1lIjogIkRhdmUgR2FuZHkiLAoJCQkidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9Gb3J0QXdlc29tZS9Gb250LUF3ZXNvbWUvdHJlZS9mYS00IgoJCX0sCgkJImxpY2Vuc2UiOiB7CgkJCSJ0aXRsZSI6ICJPcGVuIEZvbnQgTGljZW5zZSIsCgkJCSJzcGR4IjogIk9GTC0xLjEiLAoJCQkidXJsIjogImh0dHBzOi8vc2NyaXB0cy5zaWwub3JnL2Ntcy9zY3JpcHRzL3BhZ2UucGhwP3NpdGVfaWQ9bnJzaSZpZD1PRkwiCgkJfSwKCQkic2FtcGxlcyI6IFsid3JlbmNoIiwgImJlbGwtbyIsICJ1c2VyLW8iXSwKCQkiY2F0ZWdvcnkiOiAiQXJjaGl2ZSAvIFVubWFpbnRhaW5lZCIsCgkJInBhbGV0dGUiOiBmYWxzZQoJfQp9Cg=="><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa6-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome Solid&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1388</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6.2.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;location-pin&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;gem&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;folder&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;General&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa6-regular&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome Regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">163</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6.2.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;message&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;clock&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;folder&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;General&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa6-brands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome Brands&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">465</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6.2.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;strava&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;css3&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;y-combinator&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Brands / Social&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa-solid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome 5 Solid&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1001</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5.15.4&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;search-plus&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;paste&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;comment-dots&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Archive / Unmaintained&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa-regular&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome 5 Regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">151</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5.15.4&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;bell&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;comment&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;hand-point-left&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Archive / Unmaintained&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa-brands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome 5 Brands&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">457</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;5.15.4&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC BY 4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;CC-BY-4.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;amazon&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;cc-visa&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;chrome&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">32</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;displayHeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">16</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Archive / Unmaintained&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;fa&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Font Awesome 4&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">678</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;4.7.0&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Dave Gandy&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/FortAwesome/Font-Awesome/tree/fa-4&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;license&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Open Font License&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;spdx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;OFL-1.1&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=OFL&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;samples&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;wrench&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;bell-o&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;user-o&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Archive / Unmaintained&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;palette&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div><div class="code-block-hint">/collections?prefixes=fa,fa-,fa6-&amp;pretty=1</div></div></div><section class="content-section content-section--3"><H1 id="error-response" class="heading--3">Error response <a href="#error-response" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If browsing icons is disabled, route is not handled, server returns <span class="hljs-number">404</span> HTTP error.</p></section></section>
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="type" class="heading--2">Type <a href="#type" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHR5cGUgeyBJY29uaWZ5SW5mbyB9IGZyb20gJ0BpY29uaWZ5L3R5cGVzJzsKCmV4cG9ydCB0eXBlIEFQSXYyQ29sbGVjdGlvbnNMaXN0ID0gUmVjb3JkPHN0cmluZywgSWNvbmlmeUluZm8+Owo="><code class="highlight hljs"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">IconifyInfo</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/types&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">APIv2CollectionsList</span> = <span class="hljs-title class_">Record</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-title class_">IconifyInfo</span>&gt;;<br>
+</code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./queries.html">API Queries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./svg.html">Generate SVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./css.html">Generate CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./last-modified.html">Last Modified</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./collections.html">List of Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collection.html">List of Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./search.html">Search Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./keywords.html">Keywords</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./version.html">API Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

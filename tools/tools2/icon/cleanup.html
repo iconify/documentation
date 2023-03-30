@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Cleaning up and validating SVG</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../icon-set/" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> IconSet Class</a>
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Icon Manipulation</a>
+</div>
+<h1>Icon cleanup and validation</h1>
+<p>Cleanup functions are used in <a href="../">Iconify Tools</a> to validate and clean up imported icons.</p>
+<p>Unfortunately many editors leave lots of junk in SVG files, sometimes multiplying icon file size several times.</p>
+<p>SVG files might also contain scripts and links to external resources.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To clean up and validate icon, run <span class="hljs-function">cleanupSVG()</span>.</p><p>Function has only one parameter:</p><ul>
+<li><span class="hljs-inline-prop">svg</span>, <span class="hljs-inline-type hljs-linkable"><a href="../svg/" title="SVG documentation"><span class="hljs-inline-type hljs-linkable">SVG</span></a></span>. Icon instance.</li>
+</ul><p>Function does not return anything, it applies changes to <span class="hljs-inline-type hljs-linkable"><a href="../svg/" title="SVG documentation"><span class="hljs-inline-type hljs-linkable">SVG</span></a></span> instance.</p><p>Clean up function is asynchronous. That means you need to handle it as <span class="hljs-class">Promise</span> instance, usually by adding <span class="inline-code inline-code--js"><span class="hljs-keyword">await</span></span> before function call.</p><p>On error function will throw an exception.</p></section>
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="clean-up-process" class="heading--2">Clean up process <a href="#clean-up-process" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Clean up process runs several functions that do various tasks:</p><ul>
+<li><span class="hljs-function">cleanupInlineStyle()</span> checks inline styles and removes unneeded styles.</li>
+<li><span class="hljs-function">convertStyleToAttrs()</span> converts style to attributes.</li>
+<li><span class="hljs-function">cleanupSVGRoot()</span> cleans up <span class="hljs-inline-tag hljs-linkable">&lt;svg&gt;</span> element.</li>
+<li><span class="hljs-function">checkBadTags()</span> checks icon for bad tags.</li>
+<li><span class="hljs-function">removeBadAttributes()</span> removes bad attributes.</li>
+</ul><p>If you want to, you can run functions listed above, in order listed above. It will be identical to running <span class="hljs-function">cleanupSVG()</span>. All functions are asynchronous.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="optimisation" class="heading--2">Optimisation <a href="#optimisation" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Clean up functions do not optimise icon data, they do not rewrite any shapes. Functions only remove most dead code, making it easier to process icon.</p><p>Optimisation should be done separately. See <a href="./">icon manipulation functions</a>.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="opinionated-validation" class="heading--2">Opinionated validation <a href="#opinionated-validation" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Validation is opinionated. It is intended to be used to produce icons that are available to anyone, therefore it is rather strict.</p><p>Icon validation fails if icon:</p><ul>
+<li>Contains any scripts. Untrusted scripts are dangerous.</li>
+<li>Contains any text. This is heavily opinionated. Reasoning is usually icons that use text are exported by designers not realising that they are using fonts that are not installed on every computer, therefore icon will look different than intended. Convert text to shapes before exporting it from your editor.</li>
+<li>Contains any raster images. Raster images in vector shapes are uncceptable because they do not scale. Icons are meant to scale without limitations.</li>
+</ul></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">cleanup.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgU1ZHLCBjbGVhbnVwU1ZHIH0gZnJvbSAnQGljb25pZnkvdG9vbHMnOwoKY29uc3QgcmVhbGx5QmFkSWNvbiA9IGA8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCIgc3RhbmRhbG9uZT0ibm8iPz4KPCEtLSBDcmVhdGVkIHdpdGggSW5rc2NhcGUgKGh0dHA6Ly93d3cuaW5rc2NhcGUub3JnLykgLS0+Cgo8c3ZnCiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIKICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiCiAgIHdpZHRoPSIyMDQ4IgogICBoZWlnaHQ9IjIwNDgiCiAgIGlkPSJzdmczODkxIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlua3NjYXBlOnZlcnNpb249IjAuOTEgcjEzNzI1IgogICBzb2RpcG9kaTpkb2NuYW1lPSJ0cmFzaC5zdmciCiAgIGlua3NjYXBlOmV4cG9ydC1maWxlbmFtZT0iL2hvbWUvbmlra3UvY2FtdW5kYS9wcm9qZWN0cy9icG1uLmlvL2JwbW4tZm9udC9yYXcvdHJhc2gucG5nIgogICBpbmtzY2FwZTpleHBvcnQteGRwaT0iMC44OCIKICAgaW5rc2NhcGU6ZXhwb3J0LXlkcGk9IjAuODgiPgogIDxkZWZzCiAgICAgaWQ9ImRlZnMzODkzIj4KICAgIDxpbmtzY2FwZTpwYXRoLWVmZmVjdAogICAgICAgZWZmZWN0PSJzcGlybyIKICAgICAgIGlkPSJwYXRoLWVmZmVjdDQwOTQiCiAgICAgICBpc192aXNpYmxlPSJ0cnVlIiAvPgogICAgPGlua3NjYXBlOnBhdGgtZWZmZWN0CiAgICAgICBlZmZlY3Q9InNwaXJvIgogICAgICAgaWQ9InBhdGgtZWZmZWN0NDA5NC0wIgogICAgICAgaXNfdmlzaWJsZT0idHJ1ZSIgLz4KICA8L2RlZnM+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIGlkPSJiYXNlIgogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxLjAiCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAuMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnpvb209IjAuMTc1IgogICAgIGlua3NjYXBlOmN4PSIzMDcuNjcyNjMiCiAgICAgaW5rc2NhcGU6Y3k9IjEwMzAuNzQxNSIKICAgICBpbmtzY2FwZTpkb2N1bWVudC11bml0cz0icHgiCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxLTYiCiAgICAgc2hvd2dyaWQ9ImZhbHNlIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTU5NiIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSI4MDciCiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjkxIgogICAgIGlua3NjYXBlOndpbmRvdy1tYXhpbWl6ZWQ9IjAiCiAgICAgaW5rc2NhcGU6c25hcC1wYWdlPSJmYWxzZSIKICAgICBpbmtzY2FwZTpzbmFwLW9iamVjdC1taWRwb2ludHM9ImZhbHNlIgogICAgIGlua3NjYXBlOnNuYXAtbm9kZXM9ImZhbHNlIgogICAgIGlua3NjYXBlOnNuYXAtdG8tZ3VpZGVzPSJmYWxzZSIKICAgICBpbmtzY2FwZTpzbmFwLWdyaWRzPSJmYWxzZSIgLz4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGEzODk2Ij4KICAgIDxyZGY6UkRGPgogICAgICA8Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+CiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICAgICAgPGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICAgIDxkYzp0aXRsZSAvPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZwogICAgIGlua3NjYXBlOmxhYmVsPSJMYXllciAxIgogICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiCiAgICAgaWQ9ImxheWVyMSIKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDk5NS42Mzc4MykiPgogICAgPGcKICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KDk2Ljc1Mjg5NSwwLDAsOTYuNzUyODk1LDU1LjMyODE1OCwtMTAwODE2LjM0KSIKICAgICAgIGlkPSJsYXllcjEtNiIKICAgICAgIGlua3NjYXBlOmxhYmVsPSJMYXllciAxIgogICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lIj4KICAgICAgPHBhdGgKICAgICAgICAgc3R5bGU9ImNvbG9yOiMwMDAwMDA7Zm9udC1zdHlsZTpub3JtYWw7Zm9udC12YXJpYW50Om5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zdHJldGNoOm5vcm1hbDtmb250LXNpemU6bWVkaXVtO2xpbmUtaGVpZ2h0Om5vcm1hbDtmb250LWZhbWlseTpzYW5zLXNlcmlmO3RleHQtaW5kZW50OjA7dGV4dC1hbGlnbjpzdGFydDt0ZXh0LWRlY29yYXRpb246bm9uZTt0ZXh0LWRlY29yYXRpb24tbGluZTpub25lO3RleHQtZGVjb3JhdGlvbi1zdHlsZTpzb2xpZDt0ZXh0LWRlY29yYXRpb24tY29sb3I6IzAwMDAwMDtsZXR0ZXItc3BhY2luZzpub3JtYWw7d29yZC1zcGFjaW5nOm5vcm1hbDt0ZXh0LXRyYW5zZm9ybTpub25lO2RpcmVjdGlvbjpsdHI7YmxvY2stcHJvZ3Jlc3Npb246dGI7d3JpdGluZy1tb2RlOmxyLXRiO2Jhc2VsaW5lLXNoaWZ0OmJhc2VsaW5lO3RleHQtYW5jaG9yOnN0YXJ0O3doaXRlLXNwYWNlOm5vcm1hbDtjbGlwLXJ1bGU6bm9uemVybztkaXNwbGF5OmlubGluZTtvdmVyZmxvdzp2aXNpYmxlO3Zpc2liaWxpdHk6dmlzaWJsZTtvcGFjaXR5OjE7aXNvbGF0aW9uOmF1dG87bWl4LWJsZW5kLW1vZGU6bm9ybWFsO2NvbG9yLWludGVycG9sYXRpb246c1JHQjtjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM6bGluZWFyUkdCO2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MS4zNDM2Mjk7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOm1pdGVyO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MTtjb2xvci1yZW5kZXJpbmc6YXV0bztpbWFnZS1yZW5kZXJpbmc6YXV0bztzaGFwZS1yZW5kZXJpbmc6YXV0bzt0ZXh0LXJlbmRlcmluZzphdXRvO2VuYWJsZS1iYWNrZ3JvdW5kOmFjY3VtdWxhdGUiCiAgICAgICAgIGQ9Im0gMy40Mjk2ODc1LDEwMzguMzY3MiAxLjMzMjU4NzcsMTIuNzMwOCAxMC41OTEyNDA4LDAgMS4yMjgxODYsLTEyLjcyODQgLTEzLjE1MjA3MzYsMCB6IG0gMS40OTIxODc1LDEuMzQzNyAxMC4xODU1NDcsMCAtMC45NzI2NTYsMTAuMDQxMSAtOC4xNTgyMDM1LDAgeiIKICAgICAgICAgaWQ9InJlY3Q0MDg5IgogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjY2NjY2NjIiAvPgogICAgICA8ZwogICAgICAgICBpZD0iZzQyNzUiCiAgICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDAuOTAxMTEyNjMsMCwxMDMuNDE1MTUpIj4KICAgICAgICA8cGF0aAogICAgICAgICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2MiCiAgICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICAgICAgICBpbmtzY2FwZTpvcmlnaW5hbC1kPSJtIDcuMDMzMzkxOCwxMDQwLjk3OTQgMC45NDMyMjQxLDcuNTA0IgogICAgICAgICAgIGlua3NjYXBlOnBhdGgtZWZmZWN0PSIjcGF0aC1lZmZlY3Q0MDk0IgogICAgICAgICAgIGlkPSJwYXRoNDA5MiIKICAgICAgICAgICBkPSJtIDcuMDMzMzkxOCwxMDQwLjk3OTQgMC45NDMyMjQxLDcuNTA0IgogICAgICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMzQzNjI5O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1vcGFjaXR5OjE7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAvPgogICAgICAgIDxwYXRoCiAgICAgICAgICAgc29kaXBvZGk6bm9kZXR5cGVzPSJjYyIKICAgICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICAgIGlua3NjYXBlOm9yaWdpbmFsLWQ9Im0gMTIuOTkwMjM1LDEwNDAuOTc5NCAtMC45NDMyMjQsNy41MDQiCiAgICAgICAgICAgaW5rc2NhcGU6cGF0aC1lZmZlY3Q9IiNwYXRoLWVmZmVjdDQwOTQtMCIKICAgICAgICAgICBpZD0icGF0aDQwOTItMiIKICAgICAgICAgICBkPSJtIDEyLjk5MDIzNSwxMDQwLjk3OTQgLTAuOTQzMjI0LDcuNTA0IgogICAgICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuMzQzNjI5O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1vcGFjaXR5OjE7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAvPgogICAgICA8L2c+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gNy4yNjM4MzIyLDEwMzUuMTk0IC00LjI4NTQwMjMsMS4yNTQyIDAsMC42Mjc2IDE0LjA2Njc2NTEsMCAwLC0wLjYyNzYgLTQuMzM3NzI2LC0xLjI1NDIgeiIKICAgICAgICAgaWQ9InJlY3Q0MTIxIgogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjY2MiIC8+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJkaXNwbGF5OmlubGluZTtmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjAuNzIyOTEyMjU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgICAgZD0ibSA3LjYyNjk1OTgsMTAzMy44OTI5IDQuNzY5NzA2MiwwIDAsMS43MzcgLTQuNzY5NzA2MiwwIHoiCiAgICAgICAgIGlkPSJyZWN0NDEyMS02IiAvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+YDsKCihhc3luYyAoKSA9PiB7Cgljb25zdCBzdmcgPSBuZXcgU1ZHKHJlYWxseUJhZEljb24pOwoJYXdhaXQgY2xlYW51cFNWRyhzdmcpOwoJY29uc29sZS5sb2coc3ZnLnRvTWluaWZpZWRTdHJpbmcoKSk7Cn0pKCk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">SVG</span>, cleanupSVG } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> reallyBadIcon = <span class="hljs-string">`&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;<br>
+&lt;!-- Created with Inkscape (http://www.inkscape.org/) --&gt;<br>
+<br>
+&lt;svg<br>
+ &#xa0; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;<br>
+ &#xa0; xmlns:cc=&quot;http://creativecommons.org/ns#&quot;<br>
+ &#xa0; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;<br>
+ &#xa0; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;<br>
+ &#xa0; xmlns=&quot;http://www.w3.org/2000/svg&quot;<br>
+ &#xa0; xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;<br>
+ &#xa0; xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;<br>
+ &#xa0; width=&quot;2048&quot;<br>
+ &#xa0; height=&quot;2048&quot;<br>
+ &#xa0; id=&quot;svg3891&quot;<br>
+ &#xa0; version=&quot;1.1&quot;<br>
+ &#xa0; inkscape:version=&quot;0.91 r13725&quot;<br>
+ &#xa0; sodipodi:docname=&quot;trash.svg&quot;<br>
+ &#xa0; inkscape:export-filename=&quot;/home/nikku/camunda/projects/bpmn.io/bpmn-font/raw/trash.png&quot;<br>
+ &#xa0; inkscape:export-xdpi=&quot;0.88&quot;<br>
+ &#xa0; inkscape:export-ydpi=&quot;0.88&quot;&gt;<br>
+ &#xa0;&lt;defs<br>
+ &#xa0; &#xa0; id=&quot;defs3893&quot;&gt;<br>
+ &#xa0; &#xa0;&lt;inkscape:path-effect<br>
+ &#xa0; &#xa0; &#xa0; effect=&quot;spiro&quot;<br>
+ &#xa0; &#xa0; &#xa0; id=&quot;path-effect4094&quot;<br>
+ &#xa0; &#xa0; &#xa0; is_visible=&quot;true&quot; /&gt;<br>
+ &#xa0; &#xa0;&lt;inkscape:path-effect<br>
+ &#xa0; &#xa0; &#xa0; effect=&quot;spiro&quot;<br>
+ &#xa0; &#xa0; &#xa0; id=&quot;path-effect4094-0&quot;<br>
+ &#xa0; &#xa0; &#xa0; is_visible=&quot;true&quot; /&gt;<br>
+ &#xa0;&lt;/defs&gt;<br>
+ &#xa0;&lt;sodipodi:namedview<br>
+ &#xa0; &#xa0; id=&quot;base&quot;<br>
+ &#xa0; &#xa0; pagecolor=&quot;#ffffff&quot;<br>
+ &#xa0; &#xa0; bordercolor=&quot;#666666&quot;<br>
+ &#xa0; &#xa0; borderopacity=&quot;1.0&quot;<br>
+ &#xa0; &#xa0; inkscape:pageopacity=&quot;0.0&quot;<br>
+ &#xa0; &#xa0; inkscape:pageshadow=&quot;2&quot;<br>
+ &#xa0; &#xa0; inkscape:zoom=&quot;0.175&quot;<br>
+ &#xa0; &#xa0; inkscape:cx=&quot;307.67263&quot;<br>
+ &#xa0; &#xa0; inkscape:cy=&quot;1030.7415&quot;<br>
+ &#xa0; &#xa0; inkscape:document-units=&quot;px&quot;<br>
+ &#xa0; &#xa0; inkscape:current-layer=&quot;layer1-6&quot;<br>
+ &#xa0; &#xa0; showgrid=&quot;false&quot;<br>
+ &#xa0; &#xa0; inkscape:window-width=&quot;1596&quot;<br>
+ &#xa0; &#xa0; inkscape:window-height=&quot;807&quot;<br>
+ &#xa0; &#xa0; inkscape:window-x=&quot;0&quot;<br>
+ &#xa0; &#xa0; inkscape:window-y=&quot;91&quot;<br>
+ &#xa0; &#xa0; inkscape:window-maximized=&quot;0&quot;<br>
+ &#xa0; &#xa0; inkscape:snap-page=&quot;false&quot;<br>
+ &#xa0; &#xa0; inkscape:snap-object-midpoints=&quot;false&quot;<br>
+ &#xa0; &#xa0; inkscape:snap-nodes=&quot;false&quot;<br>
+ &#xa0; &#xa0; inkscape:snap-to-guides=&quot;false&quot;<br>
+ &#xa0; &#xa0; inkscape:snap-grids=&quot;false&quot; /&gt;<br>
+ &#xa0;&lt;metadata<br>
+ &#xa0; &#xa0; id=&quot;metadata3896&quot;&gt;<br>
+ &#xa0; &#xa0;&lt;rdf:RDF&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;cc:Work<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; rdf:about=&quot;&quot;&gt;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;&lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;&lt;dc:type<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&gt;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;&lt;dc:title /&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;/cc:Work&gt;<br>
+ &#xa0; &#xa0;&lt;/rdf:RDF&gt;<br>
+ &#xa0;&lt;/metadata&gt;<br>
+ &#xa0;&lt;g<br>
+ &#xa0; &#xa0; inkscape:label=&quot;Layer 1&quot;<br>
+ &#xa0; &#xa0; inkscape:groupmode=&quot;layer&quot;<br>
+ &#xa0; &#xa0; id=&quot;layer1&quot;<br>
+ &#xa0; &#xa0; transform=&quot;translate(0,995.63783)&quot;&gt;<br>
+ &#xa0; &#xa0;&lt;g<br>
+ &#xa0; &#xa0; &#xa0; transform=&quot;matrix(96.752895,0,0,96.752895,55.328158,-100816.34)&quot;<br>
+ &#xa0; &#xa0; &#xa0; id=&quot;layer1-6&quot;<br>
+ &#xa0; &#xa0; &#xa0; inkscape:label=&quot;Layer 1&quot;<br>
+ &#xa0; &#xa0; &#xa0; style=&quot;display:inline&quot;&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;path<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; style=&quot;color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.343629;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; d=&quot;m 3.4296875,1038.3672 1.3325877,12.7308 10.5912408,0 1.228186,-12.7284 -13.1520736,0 z m 1.4921875,1.3437 10.185547,0 -0.972656,10.0411 -8.1582035,0 z&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;rect4089&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; inkscape:connector-curvature=&quot;0&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; sodipodi:nodetypes=&quot;ccccccccccc&quot; /&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;g<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;g4275&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; transform=&quot;matrix(1,0,0,0.90111263,0,103.41515)&quot;&gt;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;&lt;path<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; sodipodi:nodetypes=&quot;cc&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:connector-curvature=&quot;0&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:original-d=&quot;m 7.0333918,1040.9794 0.9432241,7.504&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:path-effect=&quot;#path-effect4094&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;path4092&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; d=&quot;m 7.0333918,1040.9794 0.9432241,7.504&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; style=&quot;fill:none;stroke:#000000;stroke-width:1.343629;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none&quot; /&gt;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;&lt;path<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; sodipodi:nodetypes=&quot;cc&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:connector-curvature=&quot;0&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:original-d=&quot;m 12.990235,1040.9794 -0.943224,7.504&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; inkscape:path-effect=&quot;#path-effect4094-0&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;path4092-2&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; d=&quot;m 12.990235,1040.9794 -0.943224,7.504&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; style=&quot;fill:none;stroke:#000000;stroke-width:1.343629;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none&quot; /&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;/g&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;path<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; style=&quot;fill:#000000;fill-opacity:1;stroke:none&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; d=&quot;m 7.2638322,1035.194 -4.2854023,1.2542 0,0.6276 14.0667651,0 0,-0.6276 -4.337726,-1.2542 z&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;rect4121&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; inkscape:connector-curvature=&quot;0&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; sodipodi:nodetypes=&quot;ccccccc&quot; /&gt;<br>
+ &#xa0; &#xa0; &#xa0;&lt;path<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; style=&quot;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.72291225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; d=&quot;m 7.6269598,1033.8929 4.7697062,0 0,1.737 -4.7697062,0 z&quot;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; id=&quot;rect4121-6&quot; /&gt;<br>
+ &#xa0; &#xa0;&lt;/g&gt;<br>
+ &#xa0;&lt;/g&gt;<br>
+&lt;/svg&gt;`</span>;<br>
+<br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> svg = <span class="hljs-keyword">new</span> <span class="hljs-title function_">SVG</span>(reallyBadIcon);<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">cleanupSVG</span>(svg);<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(svg.<span class="hljs-title function_">toMinifiedString</span>());<br>
+})();<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Result:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjIwNDgiIHZpZXdCb3g9IjAgMCAyMDQ4IDIwNDgiPjxkZWZzIGlkPSJkZWZzMzg5MyI+PC9kZWZzPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsOTk1LjYzNzgzKSI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoOTYuNzUyODk1LDAsMCw5Ni43NTI4OTUsNTUuMzI4MTU4LC0xMDA4MTYuMzQpIiBpZD0ibGF5ZXIxLTYiIGRpc3BsYXk9ImlubGluZSI+PHBhdGggZD0ibSAzLjQyOTY4NzUsMTAzOC4zNjcyIDEuMzMyNTg3NywxMi43MzA4IDEwLjU5MTI0MDgsMCAxLjIyODE4NiwtMTIuNzI4NCAtMTMuMTUyMDczNiwwIHogbSAxLjQ5MjE4NzUsMS4zNDM3IDEwLjE4NTU0NywwIC0wLjk3MjY1NiwxMC4wNDExIC04LjE1ODIwMzUsMCB6IiBpZD0icmVjdDQwODkiIGNvbG9yPSIjMDAwMDAwIiBkaXNwbGF5PSJpbmxpbmUiIHZpc2liaWxpdHk9InZpc2libGUiIG9wYWNpdHk9IjEiIGNvbG9yLWludGVycG9sYXRpb249InNSR0IiIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4zNDM2MjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjQiIHN0cm9rZS1kYXNoYXJyYXk9Im5vbmUiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBzdHJva2Utb3BhY2l0eT0iMSIgY29sb3ItcmVuZGVyaW5nPSJhdXRvIi8+PGcgaWQ9Imc0Mjc1IiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwwLjkwMTExMjYzLDAsMTAzLjQxNTE1KSI+PHBhdGggaWQ9InBhdGg0MDkyIiBkPSJtIDcuMDMzMzkxOCwxMDQwLjk3OTQgMC45NDMyMjQxLDcuNTA0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS4zNDM2MjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjQiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtZGFzaGFycmF5PSJub25lIi8+PHBhdGggc29kaXBvZGk6bm9kZXR5cGVzPSJjYyIgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIgaW5rc2NhcGU6b3JpZ2luYWwtZD0ibSAxMi45OTAyMzUsMTA0MC45Nzk0IC0wLjk0MzIyNCw3LjUwNCIgaW5rc2NhcGU6cGF0aC1lZmZlY3Q9IiNwYXRoLWVmZmVjdDQwOTQtMCIgaWQ9InBhdGg0MDkyLTIiIGQ9Im0gMTIuOTkwMjM1LDEwNDAuOTc5NCAtMC45NDMyMjQsNy41MDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjM0MzYyOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1kYXNoYXJyYXk9Im5vbmUiLz48L2c+PHBhdGggZD0ibSA3LjI2MzgzMjIsMTAzNS4xOTQgLTQuMjg1NDAyMywxLjI1NDIgMCwwLjYyNzYgMTQuMDY2NzY1MSwwIDAsLTAuNjI3NiAtNC4zMzc3MjYsLTEuMjU0MiB6IiBpZD0icmVjdDQxMjEiIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjYyIgZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJtIDcuNjI2OTU5OCwxMDMzLjg5Mjk="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;2048&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;2048&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 2048 2048&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">defs</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;defs3893&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">defs</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;layer1&quot;</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;translate(0,995.63783)&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;matrix(96.752895,0,0,96.752895,55.328158,-100816.34)&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;layer1-6&quot;</span> <span class="hljs-attr">display</span>=<span class="hljs-string">&quot;inline&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m 3.4296875,1038.3672 1.3325877,12.7308 10.5912408,0 1.228186,-12.7284 -13.1520736,0 z m 1.4921875,1.3437 10.185547,0 -0.972656,10.0411 -8.1582035,0 z&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;rect4089&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#000000&quot;</span> <span class="hljs-attr">display</span>=<span class="hljs-string">&quot;inline&quot;</span> <span class="hljs-attr">visibility</span>=<span class="hljs-string">&quot;visible&quot;</span> <span class="hljs-attr">opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">color-interpolation</span>=<span class="hljs-string">&quot;sRGB&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;#000000&quot;</span> <span class="hljs-attr">fill-opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">fill-rule</span>=<span class="hljs-string">&quot;nonzero&quot;</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;none&quot;</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">&quot;1.343629&quot;</span> <span class="hljs-attr">stroke-linecap</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-linejoin</span>=<span class="hljs-string">&quot;miter&quot;</span> <span class="hljs-attr">stroke-miterlimit</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">stroke-dasharray</span>=<span class="hljs-string">&quot;none&quot;</span> <span class="hljs-attr">stroke-dashoffset</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">stroke-opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">color-rendering</span>=<span class="hljs-string">&quot;auto&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;g4275&quot;</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;matrix(1,0,0,0.90111263,0,103.41515)&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;path4092&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m 7.0333918,1040.9794 0.9432241,7.504&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;none&quot;</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;#000000&quot;</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">&quot;1.343629&quot;</span> <span class="hljs-attr">stroke-linecap</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-linejoin</span>=<span class="hljs-string">&quot;miter&quot;</span> <span class="hljs-attr">stroke-miterlimit</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">stroke-opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">stroke-dasharray</span>=<span class="hljs-string">&quot;none&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">sodipodi:nodetypes</span>=<span class="hljs-string">&quot;cc&quot;</span> <span class="hljs-attr">inkscape:connector-curvature</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">inkscape:original-d</span>=<span class="hljs-string">&quot;m 12.990235,1040.9794 -0.943224,7.504&quot;</span> <span class="hljs-attr">inkscape:path-effect</span>=<span class="hljs-string">&quot;#path-effect4094-0&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;path4092-2&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m 12.990235,1040.9794 -0.943224,7.504&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;none&quot;</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;#000000&quot;</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">&quot;1.343629&quot;</span> <span class="hljs-attr">stroke-linecap</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-linejoin</span>=<span class="hljs-string">&quot;miter&quot;</span> <span class="hljs-attr">stroke-miterlimit</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">stroke-opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">stroke-dasharray</span>=<span class="hljs-string">&quot;none&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m 7.2638322,1035.194 -4.2854023,1.2542 0,0.6276 14.0667651,0 0,-0.6276 -4.337726,-1.2542 z&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;rect4121&quot;</span> <span class="hljs-attr">inkscape:connector-curvature</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">sodipodi:nodetypes</span>=<span class="hljs-string">&quot;ccccccc&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;#000000&quot;</span> <span class="hljs-attr">fill-opacity</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;none&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m 7.6269598,1033.8929</span></span></code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-set/">IconSet Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

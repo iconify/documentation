@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Scale SVG</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./paths.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> deOptimisePaths()</a>
+<a href="../import/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Import</a>
+</div>
+<h1>Scaling SVG</h1>
+<p>This function is part of <a href="./">icon manipulation functions</a> in <a href="../">Iconify Tools</a>.</p>
+<p>Function <span class="hljs-function">scaleSVG()</span> changes icon size.</p>
+<p>For most icons this function is not needed, you can change size by changing <span class="hljs-inline-prop">width</span> and <span class="hljs-inline-prop">height</span> properties, but it is available anyway.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameters:</p><ul>
+<li><span class="hljs-inline-prop">svg</span>, <span class="hljs-inline-type hljs-linkable"><a href="../svg/" title="SVG documentation"><span class="hljs-inline-type hljs-linkable">SVG</span></a></span>. Icon instance.</li>
+<li><span class="hljs-inline-prop">scale</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">number</span></span>. Amount to multiply icon dimensions by.</li>
+</ul><p>Function is asynchronous. That means you need to handle it as <span class="hljs-class">Promise</span> instance, usually by adding <span class="inline-code inline-code--js"><span class="hljs-keyword">await</span></span> before function call.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">svgo.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgU1ZHLCBzY2FsZVNWRywgcnVuU1ZHTyB9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzJzsKCihhc3luYyAoKSA9PiB7Cgljb25zdCBzdmcgPSBuZXcgU1ZHKAoJCSc8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwNDgiIGhlaWdodD0iMjA0OCIgdmlld0JveD0iMCAwIDIwNDggMjA0OCI+PHBhdGggZD0ibTM4Ny4xOSA2NDQuMzE3IDEyOC44NzUgMTIzMS43NmgxMDI0LjgwN2wxMTguODEzLTEyMzEuNDdIMzg3LjE5em0xNDQuMzU2IDEzMC4wMzVoOTg1LjQyOGwtOTQuMDQ0IDk3MS40OTZINjMzLjYyeiIgY29sb3I9IiMwMDAiLz48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjM0NCIgZD0ibTcuMDMzIDEwNDAuOTguOTQ0IDcuNTAzbTUuMDEzLTcuNTAzLS45NDMgNy41MDMiIHRyYW5zZm9ybT0ibWF0cml4KDk2Ljc1MjkgMCAwIDg3LjE4NSA1NS4zMjggLTg5ODE1KSIvPjxwYXRoIGQ9Ik03NTguMTQxIDMzNy4zMiAzNDMuNDU4IDQ1OC42NDh2NjAuNzZoMTM2MS4wMjN2LTYwLjc2TDEyODQuNzY3IDMzNy4zMnoiLz48cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI2OS45NTIiIGQ9Ik03OTMuMjYyIDIxMS40NDRoNDYxLjUxMnYxNjguMDZINzkzLjI2MnoiLz48L3N2Zz4nCgkpOwoKCS8vIFJlZHVjZSBzaXplIGJ5IDY0IHRvIGdldCAzMngzMiBpY29uCglhd2FpdCBzY2FsZVNWRyhzdmcsIDEgLyA2NCk7CgoJLy8gT3B0aW1pemUgaWNvbgoJYXdhaXQgcnVuU1ZHTyhzdmcpOwoKCS8vIE91dHB1dCByZXN1bHQKCWNvbnNvbGUubG9nKHN2Zy50b1N0cmluZygpKTsKfSkoKTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">SVG</span>, scaleSVG, runSVGO } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> svg = <span class="hljs-keyword">new</span> <span class="hljs-title function_">SVG</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;2048&quot; height=&quot;2048&quot; viewBox=&quot;0 0 2048 2048&quot;&gt;&lt;path d=&quot;m387.19 644.317 128.875 1231.76h1024.807l118.813-1231.47H387.19zm144.356 130.035h985.428l-94.044 971.496H633.62z&quot; color=&quot;#000&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1.344&quot; d=&quot;m7.033 1040.98.944 7.503m5.013-7.503-.943 7.503&quot; transform=&quot;matrix(96.7529 0 0 87.185 55.328 -89815)&quot;/&gt;&lt;path d=&quot;M758.141 337.32 343.458 458.648v60.76h1361.023v-60.76L1284.767 337.32z&quot;/&gt;&lt;path stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;69.952&quot; d=&quot;M793.262 211.444h461.512v168.06H793.262z&quot;/&gt;&lt;/svg&gt;&apos;</span><br>
+ &#xa0; &#xa0;);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Reduce size by 64 to get 32x32 icon</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">scaleSVG</span>(svg, <span class="hljs-number">1</span> / <span class="hljs-number">64</span>);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Optimize icon</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">runSVGO</span>(svg);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Output result</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(svg.<span class="hljs-title function_">toString</span>());<br>
+})();<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Result:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHBhdGggZD0ibTYuMDUyIDEwLjA3IDIuMDE0IDE5LjI1M2gxNi4wMThsMS44NTctMTkuMjQ4SDYuMDV6bTIuMjU2IDIuMDMzSDIzLjcxbC0xLjQ3IDE1LjE4NUg5LjkwM3oiIGNvbG9yPSIjMDAwIi8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS4zNDQiIGQ9Im03LjAzMyAxMDQwLjk4Ljk0NCA3LjUwM201LjAxMy03LjUwMy0uOTQzIDcuNTAzIiB0cmFuc2Zvcm09Im1hdHJpeCgxLjUxMjIgMCAwIDEuMzYyNyAuODY1IC0xNDAzLjgwOCkiLz48cGF0aCBkPSJNMTEuODUgNS4yNzIgNS4zNjggNy4xN3YuOTVoMjEuMjczdi0uOTVsLTYuNTYtMS44OTd6Ii8+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS4wOTMiIGQ9Ik0xMi4zOTkgMy4zMDVoNy4yMTN2Mi42MjdIMTIuNHoiLz48L3N2Zz4="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;32&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;32&quot;</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 32 32&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m6.052 10.07 2.014 19.253h16.018l1.857-19.248H6.05zm2.256 2.033H23.71l-1.47 15.185H9.903z&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#000&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;none&quot;</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;#000&quot;</span> <span class="hljs-attr">stroke-linecap</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">&quot;1.344&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;m7.033 1040.98.944 7.503m5.013-7.503-.943 7.503&quot;</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;matrix(1.5122 0 0 1.3627 .865 -1403.808)&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M11.85 5.272 5.368 7.17v.95h21.273v-.95l-6.56-1.897z&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">&quot;#000&quot;</span> <span class="hljs-attr">stroke-linecap</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-linejoin</span>=<span class="hljs-string">&quot;round&quot;</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">&quot;1.093&quot;</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;M12.399 3.305h7.213v2.627H12.4z&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-set/">IconSet Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Icon Manipulation<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svgo.html">runSVGO()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./colors.html">parseColors()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./paths.html">deOptimisePaths()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./scale.html">scaleSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

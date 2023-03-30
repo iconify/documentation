@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Iconify API Configuration</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Node.js API</a>
+<a href="./headers.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> HTTP Headers</a>
+</div>
+<h1>Iconify API configuration</h1>
+<p>This tutorial is a part of <a href="./">Iconify API installation instructions</a> for Node.js. This part of tutorial explains API configuration options.</p>
+<p>There are several ways to change configuration:</p>
+<ul>
+<li>Editing files in <span class="hljs-inline-file">src/config/</span>, then rebuilding script. This is required for some advanced options, such as using API with custom icons.</li>
+<li>Using environment variables, such as <span class="inline-code inline-code--bash">PORT=3100 npm run start</span>.</li>
+<li>Using <span class="hljs-inline-file">.env</span> file to store environment variables.</li>
+</ul>
+<p>If your API is already running, after changing configuration you must restart API. Configuration cannot be reloaded without downtime.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="env-options" class="heading--2">Env options <a href="#env-options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Options that can be changed with environment variables and their default values (you can find all of them in <span class="hljs-inline-file">src/config/app.ts</span>):</p><ul>
+<li><span class="inline-code inline-code--bash">HOST=0.0.0.0</span>: IP address or hostname HTTP server listens on.</li>
+<li><span class="inline-code inline-code--bash">PORT=3000</span>: port HTTP server listens on.</li>
+<li><span class="inline-code inline-code--bash">REDIRECT_INDEX=https://iconify.design/</span>: redirect for <span class="hljs-inline-link">/</span> route. API does not serve any pages, so index page redirects to main website.</li>
+<li><span class="inline-code inline-code--bash">STATUS_REGION=</span>: custom text to add to <a href="../version.html"><span class="hljs-inline-link">/version</span></a> route response. Iconify API is ran on network of servers, visitor is routed to closest server. It is used to tell which server user is connected to.</li>
+<li><span class="inline-code inline-code--bash">CACHE_ROOT_DIR=cache</span>: cache directory, relative to app directory, without trailing &quot;<span class="hljs-string">/</span>&quot;.</li>
+<li><span class="inline-code inline-code--bash">ENABLE_VERSION=<span class="hljs-literal">true</span></span>: enables <a href="../version.html"><span class="hljs-inline-link">/version</span></a> route that shows API version and value of <span class="hljs-inline-prop">STATUS_REGION</span>. Disable it if you are using API only to serve icon data.</li>
+<li><span class="inline-code inline-code--bash">ENABLE_ICON_LISTS=<span class="hljs-literal">true</span></span>: enables <a href="../collections.html"><span class="hljs-inline-link">/collections</span></a> route that lists icon sets and <span class="hljs-inline-link">/collection?prefix=whatever</span> route to get list of icons. Used by icon pickers. Disable it if you are using API only to serve icon data.</li>
+<li><span class="inline-code inline-code--bash">ENABLE_SEARCH_ENGINE=<span class="hljs-literal">true</span></span>: enables <a href="../search.html"><span class="hljs-inline-link">/search</span></a> route. Requires <span class="inline-code inline-code--bash">ENABLE_ICON_LISTS=<span class="hljs-literal">true</span></span>.</li>
+<li><span class="inline-code inline-code--bash">ALLOW_FILTER_ICONS_BY_STYLE=<span class="hljs-literal">true</span></span>: allows searching for icons based on fill or stroke, such as adding <span class="hljs-inline-link">style=fill</span> to search query. This feature uses a bit of memory, so it can be disabled. Requires <span class="inline-code inline-code--bash">ENABLE_SEARCH_ENGINE=<span class="hljs-literal">true</span></span>.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="updating-icons" class="heading--2">Updating icons <a href="#updating-icons" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icons are automatically updated when server starts.</p><p>In addition to that, API can update icon sets without restarting server.</p><p>To enable automatic update, you must set <span class="inline-code inline-code--bash">APP_UPDATE_SECRET</span> environment variable. Without it, update will not work.</p><ul>
+<li><span class="inline-code inline-code--bash">ALLOW_UPDATE=<span class="hljs-literal">true</span></span>: enables <span class="hljs-inline-link">/update</span> route.</li>
+<li><span class="inline-code inline-code--bash">UPDATE_REQUIRED_PARAM=secret</span>: key from secret key/value pair. Cannot be empty.</li>
+<li><span class="inline-code inline-code--bash">APP_UPDATE_SECRET=</span>: value from secret key/value pair. Cannot be empty.</li>
+<li><span class="inline-code inline-code--bash">UPDATE_THROTTLE=60</span>: number of seconds to wait before running update.</li>
+</ul><p>To trigger icon sets update, open <span class="hljs-inline-link">/update?foo=bar</span>, where <span class="hljs-inline-prop">foo</span> is value of <span class="inline-code inline-code--bash">UPDATE_REQUIRED_PARAM</span>, <span class="hljs-inline-prop">bar</span> is value of <span class="inline-code inline-code--bash">APP_UPDATE_SECRET</span>.</p><p>Update will not be triggered immediately, it will be ran after <span class="inline-code inline-code--bash">UPDATE_THROTTLE</span> seconds. This is done to prevent multiple checks when update is triggered several times in a row by something like GitHub hooks.</p><p>If update is triggered while update process is already running (as in, source was checked for update, but download is still in progress), another update check will be ran after currently running update ends.</p><p>Response to <span class="hljs-inline-link">/update</span> route is always the same, regardless of outcome. This is done to make it impossible to try to guess key/value pair or even see if route is enabled. To see actual result, you need to check console. Successful request and update process will be logged.</p></section>
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="http-headers" class="heading--2">HTTP headers <a href="#http-headers" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>By default, server sends the following HTTP headers:</p><ul>
+<li>Various CORS headers, allowing access from anywhere.</li>
+<li>Cache headers to cache responses for 604800 seconds (7 days).</li>
+</ul><p>See <a href="./headers.html">how to change HTTP headers in API</a> for more details.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="memory-management" class="heading--2">Memory management <a href="#memory-management" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API does not store all loaded icons in memory. Instead, it splits icon sets into smaller chunks, stores them in cache and loads those chunks from cache when needed. After loading chunk from cache, it is stored in memory for a while. This way, the most used icons are in memory, rarely used icons are not using memory.</p><p>There are two configuration variables that deal with that:</p><ul>
+<li><span class="hljs-inline-var">splitIconSetConfig</span> in <span class="hljs-inline-file">src/config/app.ts</span> that manages splitting big icon sets in smaller chunks.</li>
+<li><span class="hljs-inline-var">storageConfig</span> in <span class="hljs-inline-file">src/config/app.ts</span> that manages cache.</li>
+</ul><p>All properties in those config objects can be changed via environment variables. Convert property to underscore-separated upper case, add &quot;<span class="hljs-string">SPLIT_</span>&quot; prefix for <span class="hljs-inline-var">splitIconSetConfig</span>, &quot;<span class="hljs-string">STORAGE_</span>&quot; prefix for <span class="hljs-inline-var">storageConfig</span>.</p><p>Config values that you might want to change, as environment variables:</p><ul>
+<li><span class="inline-code inline-code--bash">STORAGE_CACHE_DIR={cache}/storage</span>: directory where cache is stored, relative to app directory, without trailing &quot;<span class="hljs-string">/</span>&quot;. Use &quot;<span class="hljs-string">{cache}</span>&quot; to point to root cache directory set in <span class="inline-code inline-code--bash">CACHE_ROOT_DIR</span> variable.</li>
+<li><span class="inline-code inline-code--bash">STORAGE_MAX_COUNT=100</span>: maximum number of stored items in memory. Reduce number if memory usage is too high. Set to <span class="hljs-number">0</span> to disable.</li>
+<li><span class="inline-code inline-code--bash">STORAGE_TIMER=60000</span>: timer to check for expired items.</li>
+</ul><p>If you want to always keep icon data in memory, set <span class="inline-code inline-code--bash">SPLIT_CHUNK_SIZE=0</span> and <span class="inline-code inline-code--bash">STORAGE_MAX_COUNT=0</span>. This is useful to make responses as fast as possible if your API instance does not serve hundreds of thousands of icons.</p></section>
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../hosting.html">Hosting API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Node.js API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./config.html">Configuration</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./headers.html">HTTP Headers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

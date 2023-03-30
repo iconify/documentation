@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>CSS for icons without coding</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="../" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> SVG in CSS</a>
+<a href="../utils/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Iconify Utils</a>
+</div>
+<h1>CSS for icons without coding</h1>
+<p>You can generate CSS for icons without writing any code, using Iconify API.</p>
+<p>If you would rather generate CSS programmatically, <a href="../utils/">consider using Iconify Utils</a>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="api" class="heading--2">API <a href="#api" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Iconify API is an open source hosted (or self-hosted) service for developers. Public Iconify API servers host over 150,000 icons from more than 100 open source icon sets.</p><p>Public API is available at <span class="hljs-inline-link">https://api.iconify.design</span>.</p><p>Among other features, it can generate CSS for icons. Query for CSS is <span class="hljs-inline-link">/{prefix}.css?icons={icons}</span>, where:</p><ul>
+<li>&quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix. To generate CSS for icons from multiple icon sets, send separate queries for each icon set.</li>
+<li>&quot;<span class="hljs-string">{icons}</span>&quot; is list of icon names, separated by comma.</li>
+</ul></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Getting CSS is easy:</p><ul>
+<li>In your browser create URL for Iconify API with correct icons list, as described above (see examples below).</li>
+<li>Select all generated CSS, copy it to clipboard, paste it to a <span class="hljs-inline-file">.css</span> file.</li>
+</ul><p>To use those icons in HTML, use <span class="hljs-inline-tag hljs-linkable">&lt;span&gt;</span> elements with 2 class names: class name for icon set, class name for icon.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="PHNwYW4gY2xhc3M9Imljb24tLW1kaS1saWdodCBpY29uLS1tZGktbGlnaHQtLWFsZXJ0LWNpcmNsZSI+PC9zcGFuPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon--mdi-light icon--mdi-light--alert-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div></div><p>There is a bit of duplication in class names, as both icon set and icon contain same first part. You can change it with options. See below.</p></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="examples" class="heading--2">Examples <a href="#examples" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p><a href="https://api.iconify.design/mdi-light.css?icons=alert-circle,circle,help-circle" target="_blank">/mdi-light.css?icons=alert-circle,circle,help-circle</a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="Lmljb24tLW1kaS1saWdodCB7CglkaXNwbGF5OiBpbmxpbmUtYmxvY2s7Cgl3aWR0aDogMWVtOwoJaGVpZ2h0OiAxZW07CgliYWNrZ3JvdW5kLWNvbG9yOiBjdXJyZW50Q29sb3I7Cgktd2Via2l0LW1hc2s6IG5vLXJlcGVhdCBjZW50ZXIgLyAxMDAlOwoJbWFzazogbm8tcmVwZWF0IGNlbnRlciAvIDEwMCU7Cgktd2Via2l0LW1hc2staW1hZ2U6IHZhcigtLXN2Zyk7CgltYXNrLWltYWdlOiB2YXIoLS1zdmcpOwp9CgouaWNvbi0tbWRpLWxpZ2h0LS1hbGVydC1jaXJjbGUgewoJLS1zdmc6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgd2lkdGg9JzI0JyBoZWlnaHQ9JzI0JyUzRSUzQ3BhdGggZmlsbD0nYmxhY2snIGQ9J00xMS41IDNhOS41IDkuNSAwIDAgMSA5LjUgOS41YTkuNSA5LjUgMCAwIDEtOS41IDkuNUE5LjUgOS41IDAgMCAxIDIgMTIuNUE5LjUgOS41IDAgMCAxIDExLjUgM20wIDFBOC41IDguNSAwIDAgMCAzIDEyLjVhOC41IDguNSAwIDAgMCA4LjUgOC41YTguNSA4LjUgMCAwIDAgOC41LTguNUE4LjUgOC41IDAgMCAwIDExLjUgNE0xMSAxN3YtMmgxdjJoLTFtMC00VjhoMXY1aC0xWicvJTNFJTNDL3N2ZyUzRSIpOwp9CgouaWNvbi0tbWRpLWxpZ2h0LS1jaXJjbGUgewoJLS1zdmc6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgd2lkdGg9JzI0JyBoZWlnaHQ9JzI0JyUzRSUzQ3BhdGggZmlsbD0nYmxhY2snIGQ9J00xMS41IDNhOS41IDkuNSAwIDAgMSA5LjUgOS41YTkuNSA5LjUgMCAwIDEtOS41IDkuNUE5LjUgOS41IDAgMCAxIDIgMTIuNUE5LjUgOS41IDAgMCAxIDExLjUgM20wIDFBOC41IDguNSAwIDAgMCAzIDEyLjVhOC41IDguNSAwIDAgMCA4LjUgOC41YTguNSA4LjUgMCAwIDAgOC41LTguNUE4LjUgOC41IDAgMCAwIDExLjUgNFonLyUzRSUzQy9zdmclM0UiKTsKfQoKLmljb24tLW1kaS1saWdodC0taGVscC1jaXJjbGUgewoJLS1zdmc6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgd2lkdGg9JzI0JyBoZWlnaHQ9JzI0JyUzRSUzQ3BhdGggZmlsbD0nYmxhY2snIGQ9J00xMS41IDRBOC41IDguNSAwIDAgMCAzIDEyLjVhOC41IDguNSAwIDAgMCA4LjUgOC41YTguNSA4LjUgMCAwIDAgOC41LTguNUE4LjUgOC41IDAgMCAwIDExLjUgNG0wLTFhOS41IDkuNSAwIDAgMSA5LjUgOS41YTkuNSA5LjUgMCAwIDEtOS41IDkuNUE5LjUgOS41IDAgMCAxIDIgMTIuNUE5LjUgOS41IDAgMCAxIDExLjUgM00xMSAxN2gxdjJoLTF2LTJtLjUtMTFBMy41IDMuNSAwIDAgMSAxNSA5LjVjMCAuOS0uNyAxLjUtMS40NCAyLjE4bC0uOTMuOWMtLjU5LjY3LS42NiAxLjk1LS42MyAyLjM5VjE1aC0xYzAtLjA1LS4xLTEuOTYuODctMy4wOGwxLjAzLS45OWMuNi0uNTMgMS4xLS45OCAxLjEtMS40M0EyLjUgMi41IDAgMCAwIDExLjUgN0EyLjUgMi41IDAgMCAwIDkgOS41SDhBMy41IDMuNSAwIDAgMSAxMS41IDZaJy8lM0UlM0Mvc3ZnJTNFIik7Cn0K"><code class="highlight hljs"><span class="hljs-selector-class">.icon--mdi-light</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">display</span>: inline-block;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">background-color</span>: currentColor;<br>
+ &#xa0; &#xa0;-webkit-<span class="hljs-attribute">mask</span>: no-repeat center / <span class="hljs-number">100%</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">mask</span>: no-repeat center / <span class="hljs-number">100%</span>;<br>
+ &#xa0; &#xa0;-webkit-<span class="hljs-attribute">mask-image</span>: <span class="hljs-built_in">var</span>(--svg);<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">mask-image</span>: <span class="hljs-built_in">var</span>(--svg);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi-light--alert-circle</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M11.5 3a9.5 9.5 0 0 1 9.5 9.5a9.5 9.5 0 0 1-9.5 9.5A9.5 9.5 0 0 1 2 12.5A9.5 9.5 0 0 1 11.5 3m0 1A8.5 8.5 0 0 0 3 12.5a8.5 8.5 0 0 0 8.5 8.5a8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 11.5 4M11 17v-2h1v2h-1m0-4V8h1v5h-1Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi-light--circle</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M11.5 3a9.5 9.5 0 0 1 9.5 9.5a9.5 9.5 0 0 1-9.5 9.5A9.5 9.5 0 0 1 2 12.5A9.5 9.5 0 0 1 11.5 3m0 1A8.5 8.5 0 0 0 3 12.5a8.5 8.5 0 0 0 8.5 8.5a8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 11.5 4Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi-light--help-circle</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M11.5 4A8.5 8.5 0 0 0 3 12.5a8.5 8.5 0 0 0 8.5 8.5a8.5 8.5 0 0 0 8.5-8.5A8.5 8.5 0 0 0 11.5 4m0-1a9.5 9.5 0 0 1 9.5 9.5a9.5 9.5 0 0 1-9.5 9.5A9.5 9.5 0 0 1 2 12.5A9.5 9.5 0 0 1 11.5 3M11 17h1v2h-1v-2m.5-11A3.5 3.5 0 0 1 15 9.5c0 .9-.7 1.5-1.44 2.18l-.93.9c-.59.67-.66 1.95-.63 2.39V15h-1c0-.05-.1-1.96.87-3.08l1.03-.99c.6-.53 1.1-.98 1.1-1.43A2.5 2.5 0 0 0 11.5 7A2.5 2.5 0 0 0 9 9.5H8A3.5 3.5 0 0 1 11.5 6Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+</code></div><div class="code-block-hint">/mdi-light.css?icons=alert-circle,circle,help-circle</div></div></div><p><a href="https://api.iconify.design/openmoji.css?icons=axe,balance-scale" target="_blank">/openmoji.css?icons=axe,balance-scale</a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="Lmljb24tLW9wZW5tb2ppIHsKCWRpc3BsYXk6IGlubGluZS1ibG9jazsKCXdpZHRoOiAxZW07CgloZWlnaHQ6IDFlbTsKCWJhY2tncm91bmQ6IG5vLXJlcGVhdCBjZW50ZXIgLyAxMDAlOwp9CgouaWNvbi0tb3Blbm1vamktLWF4ZSB7CgliYWNrZ3JvdW5kLWltYWdlOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgNzIgNzInIHdpZHRoPSc3MicgaGVpZ2h0PSc3MiclM0UlM0NwYXRoIGZpbGw9JyUyMzliOWI5YScgZD0nbTcuOTUgMTcuNDdsMTguMTMtNC4yMzdzLjIxNyAyLjUxLjU0MSA0LjIzN2ExOS4xOTYgMTkuMTk2IDAgMCAwIDMuNTYxIDYuNDc0Yy43NTYuNTQtNy40ODIgMTEuODgtMTAuMjQgMTIuNDJjLTQuOTIuOTU0LTEzLjQtMTguMzMtMTEuOTktMTguODl6Jy8lM0UlM0NwYXRoIGZpbGw9JyUyM2E1NzkzOScgZD0nTTM2LjQxIDIzLjI1Yy0xLjE4OS43OTItMi4zNTIuOTIzLTEuNzcxIDIuMjI4YTcuMTI4IDcuMTI4IDAgMCAxIC40MzQgMS4yOTdjLjUwMSAyLjE3MiAxLjUwMyAzLjY3NSA1LjM0NSA1Ljg0N2MzLjQxMiAxLjkyOSAxMC4zOCAxNS41OCAxMS45IDE4LjYxYTIuOTQgMi45NCAwIDAgMSAuMzEgMS4yNTdsLjEzIDUuODQyYTIuOTYzIDIuOTYzIDAgMCAwIC42NjMgMS44MDNsMS44NjMgMi4yOTNhMi45NjMgMi45NjMgMCAwIDAgNC4xMzIuNDZsMy41MDItMi43NTdhMi45NjMgMi45NjMgMCAwIDAgLjcwMy0zLjg2bC0yMS4yNy0zNS4yYy0uODczLTEuNDQ1LS44MS0xLjQxNi0yLjIxNS0uNDh6Jy8lM0UlM0NyZWN0IHdpZHRoPScxMy42MycgaGVpZ2h0PScxMy41MycgeD0nMTQuMTgnIHk9JzI0Ljg0JyBmaWxsPSclMjNkMGNmY2UnIHJ4PScyLjM1OScgcnk9JzIuMzU5JyB0cmFuc2Zvcm09J3JvdGF0ZSgtMzApJy8lM0UlM0NnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS13aWR0aD0nMiclM0UlM0NwYXRoIGQ9J00zNC42NiAyNC43NmMtLjA0LjIwNC0uMDAyLjQ1LjEzOC43NjdhNy4xIDcuMSAwIDAgMSAuNDMyIDEuMjljLjQ5OSAyLjE2MyAxLjQ5NSAzLjY1OSA1LjMxNyA1LjgyYzMuMzk0IDEuOTE5IDEwLjMyIDE1LjUxIDExLjgzIDE4LjUzYy4xOTUuMzg4LjMuODE2LjMxIDEuMjVsLjEyOCA1LjgxNWEyLjk1IDIuOTUgMCAwIDAgLjY2IDEuNzk0bDEuODUyIDIuMjgzYTIuOTQ2IDIuOTQ2IDAgMCAwIDQuMTEuNDU3bDMuNDgzLTIuNzQ0YTIuOTUgMi45NSAwIDAgMCAuNy0zLjg0Mkw0Mi40OCAyMS40NGMtLjMxNS0uNTItLjUyNS0uODA4LS43MzItLjkxOCcvJTNFJTNDcmVjdCB3aWR0aD0nMTMuNTYnIGhlaWdodD0nMTMuNDYnIHg9JzE0LjMyJyB5PScyNS4wNCcgcng9JzIuMzU5JyByeT0nMi4zNTknIHRyYW5zZm9ybT0ncm90YXRlKC0zMC4wMTQpIHNrZXdYKC0uMDI4KScvJTNFJTNDcGF0aCBkPSdtMzEuMDIgMjQuOThsLTkuNDY1IDExLjI0Yy0zLjQ2MyA0LjA0OS0xNy4xNC0xNy42NC0xMi42NS0xOS4yN2wxNy4zNC0zLjAyNicvJTNFJTNDL2clM0UlM0Mvc3ZnJTNFIik7Cn0KCi5pY29uLS1vcGVubW9qaS0tYmFsYW5jZS1zY2FsZSB7CgliYWNrZ3JvdW5kLWltYWdlOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgNzIgNzInIHdpZHRoPSc3MicgaGVpZ2h0PSc3MiclM0UlM0NwYXRoIGZpbGw9JyUyMzlCOUI5QScgZD0nTTQ4LjA2MyA2Mi45MmMwLTMuMzE0LTUuNTk3LTYtMTIuNS02cy0xMi41IDIuNjg2LTEyLjUgNmgyNXonLyUzRSUzQ3BhdGggZmlsbD0nJTIzRDBDRkNFJyBkPSdNMjQuOSA0Ni45NjZjMCAyLjE5My0yLjE5OCAzLjk3Mi00LjkxIDMuOTcycy00LjkxLTEuNzc5LTQuOTEtMy45NzJoOS44MnptMzMtLjA0MWMwIDIuMTk0LTIuMTk4IDMuOTcyLTQuOTEgMy45NzJzLTQuOTEtMS43NzgtNC45MS0zLjk3Mmg5LjgyeicvJTNFJTNDcGF0aCBmaWxsPSdub25lJyBzdHJva2U9JyUyMzAwMCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBzdHJva2UtbWl0ZXJsaW1pdD0nMTAnIHN0cm9rZS13aWR0aD0nMicgZD0nTTE2IDI1LjE3YzIuNjY2IDAgOC45NTQtNS4zMzQgMjAtNS4zMzRzMTQuNjY3IDQgMjAgNS4zMzRtLTIwLTEuMjY0djI4Jy8lM0UlM0NjaXJjbGUgY3g9JzM2JyBjeT0nMTMuODk1JyByPSczJy8lM0UlM0NwYXRoIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS1taXRlcmxpbWl0PScxMCcgc3Ryb2tlLXdpZHRoPScyJyBkPSdNNDggNjEuOTA2YzAtMy4zMTMtNS41OTYtNi0xMi41LTZzLTEyLjUgMi42ODctMTIuNSA2bTMtMTZhNiA2IDAgMCAxLTEyIDBoMTJ6bS02LTE4bC01IDE4aDEwem0wIDB2MThtMzkgMGE2IDYgMCAwIDEtMTIgMGgxMnptLTYtMThsLTUgMThoMTB6bTAgMHYxOCcvJTNFJTNDL3N2ZyUzRSIpOwp9Cg=="><code class="highlight hljs"><span class="hljs-selector-class">.icon--openmoji</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">display</span>: inline-block;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">background</span>: no-repeat center / <span class="hljs-number">100%</span>;<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--openmoji--axe</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 72 72&apos; width=&apos;72&apos; height=&apos;72&apos;%3E%3Cpath fill=&apos;%239b9b9a&apos; d=&apos;m7.95 17.47l18.13-4.237s.217 2.51.541 4.237a19.196 19.196 0 0 0 3.561 6.474c.756.54-7.482 11.88-10.24 12.42c-4.92.954-13.4-18.33-11.99-18.89z&apos;/%3E%3Cpath fill=&apos;%23a57939&apos; d=&apos;M36.41 23.25c-1.189.792-2.352.923-1.771 2.228a7.128 7.128 0 0 1 .434 1.297c.501 2.172 1.503 3.675 5.345 5.847c3.412 1.929 10.38 15.58 11.9 18.61a2.94 2.94 0 0 1 .31 1.257l.13 5.842a2.963 2.963 0 0 0 .663 1.803l1.863 2.293a2.963 2.963 0 0 0 4.132.46l3.502-2.757a2.963 2.963 0 0 0 .703-3.86l-21.27-35.2c-.873-1.445-.81-1.416-2.215-.48z&apos;/%3E%3Crect width=&apos;13.63&apos; height=&apos;13.53&apos; x=&apos;14.18&apos; y=&apos;24.84&apos; fill=&apos;%23d0cfce&apos; rx=&apos;2.359&apos; ry=&apos;2.359&apos; transform=&apos;rotate(-30)&apos;/%3E%3Cg fill=&apos;none&apos; stroke=&apos;%23000&apos; stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-width=&apos;2&apos;%3E%3Cpath d=&apos;M34.66 24.76c-.04.204-.002.45.138.767a7.1 7.1 0 0 1 .432 1.29c.499 2.163 1.495 3.659 5.317 5.82c3.394 1.919 10.32 15.51 11.83 18.53c.195.388.3.816.31 1.25l.128 5.815a2.95 2.95 0 0 0 .66 1.794l1.852 2.283a2.946 2.946 0 0 0 4.11.457l3.483-2.744a2.95 2.95 0 0 0 .7-3.842L42.48 21.44c-.315-.52-.525-.808-.732-.918&apos;/%3E%3Crect width=&apos;13.56&apos; height=&apos;13.46&apos; x=&apos;14.32&apos; y=&apos;25.04&apos; rx=&apos;2.359&apos; ry=&apos;2.359&apos; transform=&apos;rotate(-30.014) skewX(-.028)&apos;/%3E%3Cpath d=&apos;m31.02 24.98l-9.465 11.24c-3.463 4.049-17.14-17.64-12.65-19.27l17.34-3.026&apos;/%3E%3C/g%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--openmoji--balance-scale</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 72 72&apos; width=&apos;72&apos; height=&apos;72&apos;%3E%3Cpath fill=&apos;%239B9B9A&apos; d=&apos;M48.063 62.92c0-3.314-5.597-6-12.5-6s-12.5 2.686-12.5 6h25z&apos;/%3E%3Cpath fill=&apos;%23D0CFCE&apos; d=&apos;M24.9 46.966c0 2.193-2.198 3.972-4.91 3.972s-4.91-1.779-4.91-3.972h9.82zm33-.041c0 2.194-2.198 3.972-4.91 3.972s-4.91-1.778-4.91-3.972h9.82z&apos;/%3E%3Cpath fill=&apos;none&apos; stroke=&apos;%23000&apos; stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-miterlimit=&apos;10&apos; stroke-width=&apos;2&apos; d=&apos;M16 25.17c2.666 0 8.954-5.334 20-5.334s14.667 4 20 5.334m-20-1.264v28&apos;/%3E%3Ccircle cx=&apos;36&apos; cy=&apos;13.895&apos; r=&apos;3&apos;/%3E%3Cpath fill=&apos;none&apos; stroke=&apos;%23000&apos; stroke-linecap=&apos;round&apos; stroke-linejoin=&apos;round&apos; stroke-miterlimit=&apos;10&apos; stroke-width=&apos;2&apos; d=&apos;M48 61.906c0-3.313-5.596-6-12.5-6s-12.5 2.687-12.5 6m3-16a6 6 0 0 1-12 0h12zm-6-18l-5 18h10zm0 0v18m39 0a6 6 0 0 1-12 0h12zm-6-18l-5 18h10zm0 0v18&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+</code></div><div class="code-block-hint">/openmoji.css?icons=axe,balance-scale</div></div></div><p><a href="https://api.iconify.design/mdi.css?icons=account-box,account-cash,account,home" target="_blank">/mdi.css?icons=account-box,account-cash,account,home</a>:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="Lmljb24tLW1kaSB7CglkaXNwbGF5OiBpbmxpbmUtYmxvY2s7Cgl3aWR0aDogMWVtOwoJaGVpZ2h0OiAxZW07CgliYWNrZ3JvdW5kLWNvbG9yOiBjdXJyZW50Q29sb3I7Cgktd2Via2l0LW1hc2s6IG5vLXJlcGVhdCBjZW50ZXIgLyAxMDAlOwoJbWFzazogbm8tcmVwZWF0IGNlbnRlciAvIDEwMCU7Cgktd2Via2l0LW1hc2staW1hZ2U6IHZhcigtLXN2Zyk7CgltYXNrLWltYWdlOiB2YXIoLS1zdmcpOwp9CgouaWNvbi0tbWRpLS1hY2NvdW50LWJveCB7CgktLXN2ZzogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnJTNFJTNDcGF0aCBmaWxsPSdibGFjaycgZD0nTTYgMTdjMC0yIDQtMy4xIDYtMy4xczYgMS4xIDYgMy4xdjFINm05LTlhMyAzIDAgMCAxLTMgM2EzIDMgMCAwIDEtMy0zYTMgMyAwIDAgMSAzLTNhMyAzIDAgMCAxIDMgM00zIDV2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMkg1YTIgMiAwIDAgMC0yIDJaJy8lM0UlM0Mvc3ZnJTNFIik7Cn0KCi5pY29uLS1tZGktLWFjY291bnQtY2FzaCB7CgktLXN2ZzogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnJTNFJTNDcGF0aCBmaWxsPSdibGFjaycgZD0nTTExIDhjMCAyLjIxLTEuNzkgNC00IDRzLTQtMS43OS00LTRzMS43OS00IDQtNHM0IDEuNzkgNCA0bTAgNi43MlYyMEgwdi0yYzAtMi4yMSAzLjEzLTQgNy00YzEuNSAwIDIuODcuMjcgNCAuNzJNMjQgMjBIMTNWM2gxMXYxN20tOC04LjVhMi41IDIuNSAwIDAgMSA1IDBhMi41IDIuNSAwIDAgMS01IDBNMjIgN2EyIDIgMCAwIDEtMi0yaC0zYzAgMS4xMS0uODkgMi0yIDJ2OWEyIDIgMCAwIDEgMiAyaDNjMC0xLjEuOS0yIDItMlY3WicvJTNFJTNDL3N2ZyUzRSIpOwp9CgouaWNvbi0tbWRpLS1hY2NvdW50IHsKCS0tc3ZnOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCclM0UlM0NwYXRoIGZpbGw9J2JsYWNrJyBkPSdNMTIgNGE0IDQgMCAwIDEgNCA0YTQgNCAwIDAgMS00IDRhNCA0IDAgMCAxLTQtNGE0IDQgMCAwIDEgNC00bTAgMTBjNC40MiAwIDggMS43OSA4IDR2Mkg0di0yYzAtMi4yMSAzLjU4LTQgOC00WicvJTNFJTNDL3N2ZyUzRSIpOwp9CgouaWNvbi0tbWRpLS1ob21lIHsKCS0tc3ZnOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCclM0UlM0NwYXRoIGZpbGw9J2JsYWNrJyBkPSdNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzTDIgMTJoM3Y4aDVaJy8lM0UlM0Mvc3ZnJTNFIik7Cn0K"><code class="highlight hljs"><span class="hljs-selector-class">.icon--mdi</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">display</span>: inline-block;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">background-color</span>: currentColor;<br>
+ &#xa0; &#xa0;-webkit-<span class="hljs-attribute">mask</span>: no-repeat center / <span class="hljs-number">100%</span>;<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">mask</span>: no-repeat center / <span class="hljs-number">100%</span>;<br>
+ &#xa0; &#xa0;-webkit-<span class="hljs-attribute">mask-image</span>: <span class="hljs-built_in">var</span>(--svg);<br>
+ &#xa0; &#xa0;<span class="hljs-attribute">mask-image</span>: <span class="hljs-built_in">var</span>(--svg);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi--account-box</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi--account-cash</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi--account</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+<br>
+<span class="hljs-selector-class">.icon--mdi--home</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+</code></div><div class="code-block-hint">/mdi.css?icons=account-box,account-cash,account,home</div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="options" class="heading--2">Options <a href="#options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>API query has optional params that you can use to get different results.</p><p>See <a href="../../../api/css.html">API query documentation</a> for more details.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">SVG in CSS<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./">No Code</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../utils/">Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tailwind/">Tailwind CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../unocss/">UnoCSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

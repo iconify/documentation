@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Options in Iconify for Tailwind CSS</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Tailwind CSS</a>
+<a href="./clean.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Clean Class Names</a>
+</div>
+<h1>Options for Tailwind CSS</h1>
+<p><a href="./">Iconify plugin for Tailwind CSS</a> has several options.</p>
+<p>Options object is passed as parameter to plugin:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="YWRkRHluYW1pY0ljb25TZWxlY3RvcnMoewoJcHJlZml4OiAnaWNvbi1ob3ZlcicsCglvdmVycmlkZU9ubHk6IHRydWUsCn0pOwo="><code class="highlight hljs"><span class="hljs-title function_">addDynamicIconSelectors</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;icon-hover&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">overrideOnly</span>: <span class="hljs-literal">true</span>,<br>
+});<br>
+</code></div></div></div><script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="options" class="heading--2">Options <a href="#options" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Supported options:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span> - prefix for dynamic class names.</li>
+<li><span class="hljs-inline-prop">overrideOnly</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span> - if enabled, removes duplicate CSS.</li>
+<li><span class="hljs-inline-prop">iconSets</span> - icon sets, can be used for location of icon sets or custom icon sets.</li>
+</ul><section class="content-section content-section--3"><H1 id="prefix" class="heading--3">prefix <a href="#prefix" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Option <span class="hljs-inline-prop">prefix</span> sets prefix for dynamic class names.</p><p>Default value is &quot;<span class="hljs-string">icon</span>&quot;.</p><p>For example, if you set it to &quot;<span class="hljs-string">icon-hover</span>&quot;, like in code sample above, you can use icons as &quot;<span class="hljs-string">icon-hover-[mdi-ligh--home]</span>&quot;.</p><p>Value must not include &quot;<span class="hljs-string">-</span>&quot; at the end. Class names will always have &quot;<span class="hljs-string">-</span>&quot; added after prefix. That&apos;s how Tailwind CSS dynamic class names work.</p><p>You can use multiple instances of plugin with different <span class="hljs-inline-prop">prefix</span> values to support different configuration options, like in example below.</p></section><section class="content-section content-section--3"><H1 id="overrideonly" class="heading--3">overrideOnly <a href="#overrideonly" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If enabled, generated CSS will include only rules that override icons.</p><p>For example, with configuration in code example above, plugin will generate the following CSS for &quot;<span class="hljs-string">icon-hover-[mdi-light--arrow-right]</span>&quot;:</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="Lmljb24taG92ZXItXFttZGktbGlnaHQtLWFycm93LXJpZ2h0XF0gewoJLS1zdmc6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgd2lkdGg9JzI0JyBoZWlnaHQ9JzI0JyUzRSUzQ3BhdGggZmlsbD0nYmxhY2snIGQ9J000IDEyaDEyLjI1TDExIDYuNzVsLjY2LS43NWw2LjUgNi41bC02LjUgNi41bC0uNjYtLjc1TDE2LjI1IDEzSDR2LTFaJy8lM0UlM0Mvc3ZnJTNFIik7Cn0K"><code class="highlight hljs"><span class="hljs-selector-class">.icon-hover-</span>\<span class="hljs-selector-attr">[mdi-light--arrow-right\]</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">--svg</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 24 24&apos; width=&apos;24&apos; height=&apos;24&apos;%3E%3Cpath fill=&apos;black&apos; d=&apos;M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4v-1Z&apos;/%3E%3C/svg%3E&quot;</span>);<br>
+}<br>
+</code></div></div></div><p>This can be used, in combination with default selectors to swap icon on hover without duplicating CSS:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Tailwind config:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="LyoqIEB0eXBlIHtpbXBvcnQoJ3RhaWx3aW5kY3NzJykuQ29uZmlnfSAqLwptb2R1bGUuZXhwb3J0cyA9IHsKCXBsdWdpbnM6IFsKCQkvLyBQbHVnaW4gd2l0aCBkeW5hbWljIHNlbGVjdG9ycyBmb3IgJy5pY29uLScKCQlhZGREeW5hbWljSWNvblNlbGVjdG9ycygpLAoJCS8vIFBsdWdpbiB3aXRoIGR5bmFtaWMgc2VsZWN0b3JzIHRoYXQgY29udGFpbnMKCQkvLyBvbmx5IGNzcyBmb3Igb3ZlcnJpZGluZyBpY29uIGZvciAnLmljb24taG92ZXItJwoJCWFkZER5bmFtaWNJY29uU2VsZWN0b3JzKHsKCQkJcHJlZml4OiAnaWNvbi1ob3ZlcicsCgkJCW92ZXJyaWRlT25seTogdHJ1ZSwKCQl9KSwKCV0sCn07Cg=="><code class="highlight hljs"><span class="hljs-comment">/** <span class="hljs-doctag">@type</span> {<span class="hljs-type">import(&apos;tailwindcss&apos;).Config</span>} */</span><br>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">plugins</span>: [<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Plugin with dynamic selectors for &apos;.icon-&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-title function_">addDynamicIconSelectors</span>(),<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Plugin with dynamic selectors that contains</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// only css for overriding icon for &apos;.icon-hover-&apos;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-title function_">addDynamicIconSelectors</span>({<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;icon-hover&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">overrideOnly</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;}),<br>
+ &#xa0; &#xa0;],<br>
+};<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">HTML:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PHNwYW4gY2xhc3M9Imljb24tW21kaS0tYmVsbC1vdXRsaW5lXSBob3ZlcjppY29uLWhvdmVyLVttZGktLWJlbGwtb2ZmXSI+PC9zcGFuPgo="><code class="highlight hljs"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon-[mdi--bell-outline] hover:icon-hover-[mdi--bell-off]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>
+</code></div></div></div></section><section class="content-section content-section--3"><H1 id="iconsets" class="heading--3">iconSets <a href="#iconsets" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>With <span class="hljs-inline-prop">iconSets</span> you can use custom files for icon sets.</p><p>Option is an object, where key is icon set prefix and value is one of the following:</p><ul>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>: location of icon set JSON file in <span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</li>
+<li><span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span>: loaded icon set.</li>
+<li><span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">function</span></span>: callback that returns <span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> icon set. Due to Tailwind plugin system limitations, callback must be synchronous.</li>
+</ul><p>Make sure icon set includes <span class="hljs-inline-prop">info</span> property with <span class="hljs-inline-prop">palette</span> set. This is used by plugin to tell if icon set contains icons with hardcoded palette or monotone icons. Mixed icon sets cannot be used. See <span class="hljs-inline-type hljs-linkable"><a href="../../../types/iconify-info.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> type.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="YWRkRHluYW1pY0ljb25TZWxlY3RvcnMoewoJaWNvblNldHM6IHsKCQl0ZXN0OiAnLi9pY29uLXNldHMvdGVzdC5qc29uJywKCX0sCn0pOwo="><code class="highlight hljs"><span class="hljs-title function_">addDynamicIconSelectors</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">iconSets</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">test</span>: <span class="hljs-string">&apos;./icon-sets/test.json&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+});<br>
+</code></div></div></div></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">SVG in CSS<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../no-code/">No Code</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../utils/">Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Tailwind CSS<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./options.html">Plugin Options</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./clean.html">Clean Class Names</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../unocss/">UnoCSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

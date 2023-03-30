@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Converting icon font to Iconify JSON with Iconify Tools</title>
+		
+	</head>
+	<body class="website-docs theme-legacy">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./import-fa-pro.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> FontAwesome Pro</a>
+<a href="./bundle.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Icons Bundle</a>
+</div>
+<h1>Import SVG font</h1>
+<p>This example shows how to convert SVG font to Iconify JSON format.</p>
+<div class="notice notice--legacy">
+	<iconify-icon inline icon="line-md:alert"></iconify-icon>
+	<p>
+		This documentation is for version 1 of Iconify Tools. It was developed
+		during early Iconify development, before Iconify development switched to
+		TypeScript, so it is not fully compatible with TypeScript.
+	</p>
+	<p>
+		Documentation for
+		<a href="../tools2/">updated Iconify Tools is available here</a>.
+	</p>
+</div><p>As a source, lets take FontAwesome 4 from <a href="https://github.com/FortAwesome/Font-Awesome/tree/fa-4" target="_blank">Font-Awesome 4 GitHub repository</a> that is also available as <span class="hljs-inline-package hljs-linkable">font-awesome</span> NPM package.</p>
+<p>Initialize project by running these commands:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bnBtIGluaXQKbnBtIGluc3RhbGwgQGljb25pZnkvdG9vbHMgLS1zYXZlCm5wbSBpbnN0YWxsIGZvbnQtYXdlc29tZSAtLXNhdmUK"><code class="highlight hljs">npm init<br>
+npm install @iconify/tools --save<br>
+npm install font-awesome --save<br>
+</code></div></div></div><p>Then create file <span class="hljs-inline-file">convert-fa.js</span> and put this content:</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">convert-fa.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="J3VzZSBzdHJpY3QnOwoKY29uc3QgZnMgPSByZXF1aXJlKCdmcycpOwpjb25zdCBwYXRoID0gcmVxdWlyZSgncGF0aCcpOwpjb25zdCB1dGlsID0gcmVxdWlyZSgndXRpbCcpOwpjb25zdCB0b29scyA9IHJlcXVpcmUoJ0BpY29uaWZ5L3Rvb2xzJyk7CgovKgogICAgTG9jYXRlIGRpcmVjdG9yeSB3aGVyZSBmb250IGZpbGVzIGFyZQoKICAgIHJlcXVpcmUucmVzb2x2ZSBsb2NhdGVzIHBhY2thZ2UuanNvbgogICAgcGF0aC5kaXJuYW1lIHJlbW92ZXMgcGFja2FnZS5qc29uIGZyb20gcmVzdWx0LCByZXR1cm5pbmcgb25seSBkaXJlY3RvcnkKKi8KbGV0IGZhRGlyID0gcGF0aC5kaXJuYW1lKHJlcXVpcmUucmVzb2x2ZSgnZm9udC1hd2Vzb21lL3BhY2thZ2UuanNvbicpKTsKCi8vIFRhcmdldCBmaWxlIG5hbWUKbGV0IHRhcmdldCA9IF9fZGlybmFtZSArICcvZmEuanNvbic7CgovLyBWYXJpYWJsZSB0byBzdG9yZSBjb2xsZWN0aW9uCmxldCBjb2xsZWN0aW9uOwoKLy8gT3B0aW9ucyBmb3IgU1ZHTyBvcHRpbWl6YXRpb24KbGV0IFNWR09PcHRpb25zID0gewoJY29udmVydFNoYXBlVG9QYXRoOiB0cnVlLAoJbWVyZ2VQYXRoczogZmFsc2UsCn07CgovKioKICogSW1wb3J0IGZvbnQKICovCnRvb2xzCgkuSW1wb3J0Rm9udChmYURpciArICcvZm9udHMvZm9udGF3ZXNvbWUtd2ViZm9udC5zdmcnLCB7CgkJLyoKICAgICAgICBPbmUgbWFqb3IgZG93bnNpZGUgb2YgaW1wb3J0aW5nIGZvbnRzIGlzIGdseXBocyBhcmUgb2Z0ZW4gbWlzYWxpZ25lZC4KCiAgICAgICAgVGhleSB0ZW5kIHRvIGhhdmUgd3JvbmcgZGltZW5zaW9ucywgc29tZXRpbWVzIGV4dHJhIHNwYWNlIG9uIGxlZnQgb3IgcmlnaHQKICAgICAgICBvciBldmVuIHBhcnQgb2YgaWNvbiBiZWluZyBjdXQuCgogICAgICAgIFRoaXMgaXMgd2h5IGltcG9ydGluZyBmb250IHJlcXVpcmVzIHNvbWUgbWFudWFsIHdvcmsgdG8gZmluZCBjb3JyZWN0IHZhbHVlcy4KCiAgICAgICAgQmVsb3cgaXMgY29uZmlndXJhdGlvbiBmcm9tIEZvbnRBd2Vzb21lIDQgaW1wb3J0IGZ1bmN0aW9uIHVzZWQgdG8gZ2VuZXJhdGUgZmEuanNvbiBmb3IgQGljb25pZnkvanNvbiBwYWNrYWdlLgogICAgICovCgkJZm9udENoYW5nZXM6IHsKCQkJLy8gQWRqdXN0bWVudHMgZm9yIHdlYiBmb250IGNvbmZpZ3VyYXRpb24KCQkJaGVpZ2h0OiAxNzkyLAoJCQlib3R0b206ICh2YWx1ZSkgPT4gTWF0aC5yb3VuZCh2YWx1ZSAvIDE2KSAqIDE2LAoJCQlsZWZ0OiAodmFsdWUpID0+IE1hdGgucm91bmQodmFsdWUgLyAxNikgKiAxNiwKCQkJd2lkdGg6ICh2YWx1ZSkgPT4gTWF0aC5yb3VuZCh2YWx1ZSAvIDE2KSAqIDE2LAoJCX0sCgkJY2hhcmFjdGVyQ2hhbmdlczogewoJCQkvLyBBZGp1c3RtZW50cyBmb3Igd2ViIGZvbnQgY2hhcmFjdGVycwoJCQlmMTljOiB7IHdpZHRoOiAxOTIwIH0sIC8vIGJhbmsKCQkJZjBmYzogeyBsZWZ0OiA2NCwgd2lkdGg6IDE2MDAgfSwgLy8gYmVlcgoJCQlmMWFkOiB7IHdpZHRoOiAxNDA4IH0sIC8vIGJ1aWxkaW5nCgkJCWYxZWM6IHsgd2lkdGg6IDE2NjQgfSwgLy8gY2FsY3VsYXRvcgoJCQlmMjc0OiB7IHdpZHRoOiAxNjY0IH0sIC8vIGNhbGN1bGF0b3ItY2hlY2stbwoJCQlmMjcyOiB7IHdpZHRoOiAxNjY0IH0sIC8vIGNhbGVuZGFyLW1pbnVzLW8KCQkJZjI3MTogeyB3aWR0aDogMTY2NCB9LCAvLyBjYWxlbmRhci1wbHVzLW8KCQkJZjI3MzogeyB3aWR0aDogMTY2NCB9LCAvLyBjYWxlbmRhci10aW1lcy1vCgkJCWYxYjI6IHsgd2lkdGg6IDE2NjQgfSwgLy8gY3ViZQoJCQlmMWIzOiB7IHdpZHRoOiAyMTc2IH0sIC8vIGN1YmVzCgkJCWYyMTA6IHsgd2lkdGg6IDE0MDggfSwgLy8gZGFzaGN1YmUKCQkJZjI4NjogeyB3aWR0aDogMTY2NCB9LCAvLyBmb3J0LWF3ZXNvbWUKCQkJZjBmNDogeyBsZWZ0OiAtNjQsIHdpZHRoOiAxOTg0IH0sCgkJCWYyMWI6IHsgd2lkdGg6IDE0MDggfSwKCQkJZjIxZDogeyB3aWR0aDogMTQwOCB9LAoJCQlmMjJhOiB7IHdpZHRoOiAxMTUyIH0sCgkJCWYyMmI6IHsgd2lkdGg6IDE5MjAgfSwKCQkJZjIyYzogeyB3aWR0aDogMTE1MiB9LAoJCQlmMjJkOiB7IHdpZHRoOiAxMTUyIH0sCgkJCWYyNGU6IHsgd2lkdGg6IDIxNzYgfSwKCQkJZjI1YTogeyB3aWR0aDogMTY2NCB9LAoJCQlmMjZjOiB7IHdpZHRoOiAxOTIwIH0sCgkJCWYwODk6IHsgd2lkdGg6IDE2NjQgfSwKCQkJZjIyNTogeyB3aWR0aDogMTY2NCB9LAoJCQlmMjQ1OiB7IHdpZHRoOiAxMTUyIH0sCgkJCWYyNDY6IHsgd2lkdGg6IDg5NiB9LAoJCQlmMjU2OiB7IHdpZHRoOiAxNjY0IH0sCgkJCWYyNTk6IHsgd2lkdGg6IDE5MjAgfSwKCQl9LAoJfSkKCS50aGVuKChyZXN1bHQpID0+IHsKCQkvLyBDb3B5IHJlZmVyZW5jZSBzbyBpdCBjYW4gYmUgdXNlZCBpbiBjaGFpbiBvZiBwcm9taXNlcwoJCS8vIGNvbGxlY3Rpb24gaXMgaW5zdGFuY2Ugb2YgdG9vbHMuQ29sbGVjdGlvbiBjbGFzcwoJCWNvbGxlY3Rpb24gPSByZXN1bHQ7CgoJCWNvbnNvbGUubG9nKCdJbXBvcnRlZCcsIGNvbGxlY3Rpb24ubGVuZ3RoKCksICdpY29ucy4nKTsKCgkJLy8gT3B0aW1pemUgU1ZHIGZpbGVzCgkJLy8KCQkvLyBjb2xsZWN0aW9uLnByb21pc2VFYWNoKCkgaXRlcmF0ZXMgYWxsIGljb25zIGluIGNvbGxlY3Rpb24gYW5kIHJ1bnMKCQkvLyBwcm9taXNlIGZvciBlYWNoIGljb24sIG9uZSBhdCBhIHRpbWUuCgkJcmV0dXJuIGNvbGxlY3Rpb24ucHJvbWlzZUVhY2goCgkJCShzdmcsIGtleSkgPT4KCQkJCW5ldyBQcm9taXNlKChmdWxmaWxsLCByZWplY3QpID0+IHsKCQkJCQl0b29scwoJCQkJCQkuU1ZHTyhzdmcsIFNWR09PcHRpb25zKQoJCQkJCQkudGhlbigocmVzKSA9PiB7CgkJCQkJCQlmdWxmaWxsKHJlcyk7CgkJCQkJCX0pCgkJCQkJCS5jYXRjaCgoZXJyKSA9PiB7CgkJCQkJCQlyZWplY3QoJ0Vycm9yIG9wdGltaXppbmcgaWNvbiAnICsga2V5ICsgJ1xuJyArIHV0aWwuZm9ybWF0KGVycikpOwoJCQkJCQl9KTsKCQkJCX0pLAoJCQl0cnVlCgkJKTsKCX0pCgkudGhlbigoKSA9PiB7CgkJLy8gQWRkICJjdXJyZW50Q29sb3IiIHRvIGFsbCBzaGFwZXMKCQlyZXR1cm4gY29sbGVjdGlvbi5wcm9taXNlRWFjaCgKCQkJKHN2ZykgPT4gdG9vbHMuQ2hhbmdlUGFsZXR0ZShzdmcsICdjdXJyZW50Q29sb3InKSwKCQkJdHJ1ZQoJCSk7Cgl9KQoJLnRoZW4oKCkgPT4gewoJCS8vIEV4cG9ydCBKU09OIGNvbGxlY3Rpb24KCQljb25zb2xlLmxvZygnRXhwb3J0aW5nIGNvbGxlY3Rpb24gdG8nLCB0YXJnZXQpOwoJCXJldHVybiB0b29scy5FeHBvcnRKU09OKGNvbGxlY3Rpb24sIHRhcmdldCwgewoJCQlvcHRpbWl6ZTogdHJ1ZSwKCQl9KTsKCX0pCgkuY2F0Y2goKGVycikgPT4gewoJCWNvbnNvbGUuZXJyb3IoZXJyKTsKCX0pOwo="><code class="highlight hljs"><span class="hljs-meta">&apos;use strict&apos;</span>;<br>
+<br>
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);<br>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);<br>
+<span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;util&apos;</span>);<br>
+<span class="hljs-keyword">const</span> tools = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/tools&apos;</span>);<br>
+<br>
+<span class="hljs-comment">/*<br>
+ &#xa0; &#xa0;Locate directory where font files are<br>
+<br>
+ &#xa0; &#xa0;require.resolve locates package.json<br>
+ &#xa0; &#xa0;path.dirname removes package.json from result, returning only directory<br>
+*/</span><br>
+<span class="hljs-keyword">let</span> faDir = path.<span class="hljs-title function_">dirname</span>(<span class="hljs-built_in">require</span>.<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&apos;font-awesome/package.json&apos;</span>));<br>
+<br>
+<span class="hljs-comment">// Target file name</span><br>
+<span class="hljs-keyword">let</span> target = __dirname + <span class="hljs-string">&apos;/fa.json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Variable to store collection</span><br>
+<span class="hljs-keyword">let</span> collection;<br>
+<br>
+<span class="hljs-comment">// Options for SVGO optimization</span><br>
+<span class="hljs-keyword">let</span> <span class="hljs-title class_">SVGOOptions</span> = {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">convertShapeToPath</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">mergePaths</span>: <span class="hljs-literal">false</span>,<br>
+};<br>
+<br>
+<span class="hljs-comment">/**<br>
+ * Import font<br>
+ */</span><br>
+tools<br>
+ &#xa0; &#xa0;.<span class="hljs-title class_">ImportFont</span>(faDir + <span class="hljs-string">&apos;/fonts/fontawesome-webfont.svg&apos;</span>, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">/*<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;One major downside of importing fonts is glyphs are often misaligned.<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;They tend to have wrong dimensions, sometimes extra space on left or right<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;or even part of icon being cut.<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;This is why importing font requires some manual work to find correct values.<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;Below is configuration from FontAwesome 4 import function used to generate fa.json for @iconify/json package.<br>
+ &#xa0; &#xa0; */</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">fontChanges</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Adjustments for web font configuration</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-number">1792</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">bottom</span>: <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(value / <span class="hljs-number">16</span>) * <span class="hljs-number">16</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">left</span>: <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(value / <span class="hljs-number">16</span>) * <span class="hljs-number">16</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">width</span>: <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(value / <span class="hljs-number">16</span>) * <span class="hljs-number">16</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">characterChanges</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Adjustments for web font characters</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f19c</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1920</span> }, <span class="hljs-comment">// bank</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f0fc</span>: { <span class="hljs-attr">left</span>: <span class="hljs-number">64</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">1600</span> }, <span class="hljs-comment">// beer</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f1ad</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> }, <span class="hljs-comment">// building</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f1ec</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// calculator</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f274</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// calculator-check-o</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f272</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// calendar-minus-o</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f271</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// calendar-plus-o</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f273</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// calendar-times-o</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f1b2</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// cube</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f1b3</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">2176</span> }, <span class="hljs-comment">// cubes</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f210</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> }, <span class="hljs-comment">// dashcube</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f286</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> }, <span class="hljs-comment">// fort-awesome</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f0f4</span>: { <span class="hljs-attr">left</span>: -<span class="hljs-number">64</span>, <span class="hljs-attr">width</span>: <span class="hljs-number">1984</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f21b</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f21d</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1408</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f22a</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1152</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f22b</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1920</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f22c</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1152</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f22d</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1152</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f24e</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">2176</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f25a</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f26c</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1920</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f089</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f225</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f245</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1152</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f246</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">896</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f256</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1664</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">f259</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1920</span> },<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Copy reference so it can be used in chain of promises</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// collection is instance of tools.Collection class</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;collection = result;<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Imported&apos;</span>, collection.<span class="hljs-title function_">length</span>(), <span class="hljs-string">&apos;icons.&apos;</span>);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Optimize SVG files</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">//</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// collection.promiseEach() iterates all icons in collection and runs</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// promise for each icon, one at a time.</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> collection.<span class="hljs-title function_">promiseEach</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">fulfill, reject</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;tools<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;.<span class="hljs-title function_">SVGO</span>(svg, <span class="hljs-title class_">SVGOOptions</span>)<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-title function_">fulfill</span>(res);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-title function_">reject</span>(<span class="hljs-string">&apos;Error optimizing icon &apos;</span> + key + <span class="hljs-string">&apos;\n&apos;</span> + util.<span class="hljs-title function_">format</span>(err));<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}),<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-literal">true</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Add &quot;currentColor&quot; to all shapes</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> collection.<span class="hljs-title function_">promiseEach</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-function">(<span class="hljs-params">svg</span>) =&gt;</span> tools.<span class="hljs-title class_">ChangePalette</span>(svg, <span class="hljs-string">&apos;currentColor&apos;</span>),<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-literal">true</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;);<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Export JSON collection</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Exporting collection to&apos;</span>, target);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> tools.<span class="hljs-title class_">ExportJSON</span>(collection, target, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">optimize</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0;.<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+ &#xa0; &#xa0;});<br>
+</code></div></div></div><p>Then run:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bm9kZSBjb252ZXJ0LWZhCg=="><code class="highlight hljs">node convert-fa<br>
+</code></div></div></div><p>It will generate file <span class="hljs-inline-file">fa.json</span>.</p>
+<p>There are comments in code above that explain what is going on.</p>
+<p>Process is simple:</p>
+<ol>
+<li><span class="hljs-function">tools.ImportFont()</span> imports SVG font.</li>
+<li><span class="hljs-function">tools.SVGO()</span> is used to optimize icons.</li>
+<li><span class="hljs-function">tools.ChangePalette()</span> is used to add &quot;<span class="hljs-string">currentColor</span>&quot; to all shapes because imported SVG do not have any color values.</li>
+<li><span class="hljs-function">tools.ExportJSON()</span> is used to export collection to JSON file.</li>
+</ol>
+<p>This code does not do one major part of importing font: it does not assign keywords to each icon. Keywords are not stored in font, they should be retrieved from CSS file. Problem with those files is they can be very different for each font, so there is no universal code to get those icon names.</p>
+<p>However, if you do get icon names for each icon, you can use code like this to rename icons:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bGV0IGtleXdvcmRzID0gewoJZjE5YzogJ2JhbmsnLAoJZjBmYzogJ2JlZXInLAoJLy8gYW5kIHRoZSByZXN0IG9mIGtleXdvcmRzCn07CmNvbGxlY3Rpb24uZm9yRWFjaCgoc3ZnLCBrZXkpID0+IHsKCWlmIChrZXl3b3Jkc1trZXldID09PSB2b2lkIDApIHsKCQkvLyBObyBrZXl3b3JkIGZvciBjaGFyYWN0ZXIgLSBkZWxldGUgaXQKCQljb2xsZWN0aW9uLnJlbW92ZShrZXkpOwoJfSBlbHNlIHsKCQljb2xsZWN0aW9uLnJlbmFtZShrZXksIGtleXdvcmRzW2tleV0pOwoJfQp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">let</span> keywords = {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">f19c</span>: <span class="hljs-string">&apos;bank&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">f0fc</span>: <span class="hljs-string">&apos;beer&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// and the rest of keywords</span><br>
+};<br>
+collection.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">svg, key</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (keywords[key] === <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// No keyword for character - delete it</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;collection.<span class="hljs-title function_">remove</span>(key);<br>
+ &#xa0; &#xa0;} <span class="hljs-keyword">else</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;collection.<span class="hljs-title function_">rename</span>(key, keywords[key]);<br>
+ &#xa0; &#xa0;}<br>
+});<br>
+</code></div></div></div></article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Iconify Tools v1<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./import.html">Importing Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./export.html">Exporting Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./manipulation.html">Manipulating Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./examples.html">Examples<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./import-mdi.html">Import MDI</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./import-fa-pro.html">FontAwesome Pro</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./import-font.html">Import Icon Font</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./bundle.html">Icons Bundle</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

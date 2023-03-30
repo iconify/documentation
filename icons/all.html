@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Iconify Icon Sets Package</title>
+		
+	</head>
+	<body class="website-docs theme-icons">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./icon-data.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Icon Data</a>
+<a href="./collections.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Icon Sets List</a>
+</div>
+<h1>Iconify icon sets package</h1>
+<p>You can get the latest version of open source icon data from the following sources:</p>
+<ul>
+<li>From GitHub: <a href="https://github.com/iconify/icon-sets" target="_blank">https://github.com/iconify/icon-sets</a></li>
+<li>From NPM: <span class="hljs-inline-package hljs-linkable">@iconify/json</span></li>
+<li>From Packagist: <span class="hljs-inline-package hljs-linkable">iconify/json</span></li>
+</ul>
+<p>You can also get smaller packages, but it is not covered in this document. See <a href="./icon-data.html">icon data documentation</a>.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="contents" class="heading--2">Contents <a href="#contents" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Package contains:</p><ul>
+<li>List of icon sets in <span class="hljs-inline-file">collections.json</span>.</li>
+<li>Icon sets in <span class="hljs-inline-file">json/{prefix}.json</span>, where &quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix, such as <span class="hljs-inline-file">json/mdi-light.json</span>.</li>
+<li>Helper functions for PHP and Node.js</li>
+<li>Misc files, such as package definition files, README, human readable list of icon sets.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="icon-sets-list" class="heading--2">Icon sets list <a href="#icon-sets-list" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Icon sets list is stored in <span class="hljs-inline-file">collections.json</span>.</p><p>Contents are a simple object, where key is icon set prefix, value is icon set information in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json-metadata.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> format. Information includes icon set name, author information, license, number of files and 3 sample files to display.</p><p>Additionally, <span class="hljs-inline-file">collections.md</span> contains the same data, but in human readable format.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="icon-sets" class="heading--2">Icon sets <a href="#icon-sets" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Each icon has is stored in one file, located in directory <span class="hljs-inline-file">json/</span>. File name matches icon set prefix, which you can find as key in icon sets list in <span class="hljs-inline-file">collections.json</span>.</p><p>Contents are stored in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> format.</p><p>Icon set files contain all icon set data, including info and metadata. If you want to get minimal version without extra stuff, use <a href="./json.html">small packages instead</a>.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="maintenance" class="heading--2">Maintenance <a href="#maintenance" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Package is automatically updated every few days, so it always includes the latest icons. If you want to use the latest icons, all you have to do is keep dependencies in your project up to date.</p><p>If you are using <a href="../api/">Iconify API</a>, you do not need to do anything because changes are automatically pushed to API servers within minutes after being published.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="tools" class="heading--2">Reading data <a href="#tools" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For reading icon sets, you can use:</p><ul>
+<li><a href="../tools/utils/">Iconify Utils</a> for JavaScript.</li>
+<li><a href="../tools/json/">Iconify JSON Tools</a> for PHP, deprecated and unmaintained.</li>
+</ul></section>
+
+
+<section class="content-section content-section--2"><H1 id="helpers" class="heading--2">Helper functions <a href="#helpers" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Package contains simple helper functions for Node.js and PHP.</p><section class="content-section content-section--3"><H1 id="functions-node" class="heading--3">Node.js functions <a href="#functions-node" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>In Node.js version of <span class="hljs-inline-package hljs-linkable">@iconify/json</span> functions are asynchronous:</p><ul>
+<li><span class="hljs-function">lookupCollections()</span> returns list of collections. It is a simple object, where key is prefix, value is information about icon set in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json-metadata.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> format.</li>
+<li><span class="hljs-function">lookupCollection(prefix)</span> loads an icon set. Result is <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> object.</li>
+</ul><p>All functions listed above are asynchronous and require using <span class="hljs-function">await</span> before function name (see example below).</p><p>There are also few synchronous functions:</p><ul>
+<li><span class="hljs-function">locate(prefix)</span> returns location of JSON file for an icon set.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="php-functions" class="heading--3">PHP functions <a href="#php-functions" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>PHP is a synchronous language, so functions for PHP are identical for versions 1 and 2.</p><p>Use <span class="hljs-inline-prop">Iconify\IconsJSON\Finder</span> class that has the following static functions:</p><ul>
+<li><span class="hljs-function">collections()</span> returns list of collections. It is a simple object, where key is prefix, value is information about icon set. For version 1 data is in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json-metadata.html" title="LegacyIconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">LegacyIconifyInfo</span></a></span> format, for version 2 data is in <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json-metadata.html" title="IconifyInfo documentation"><span class="hljs-inline-type hljs-linkable">IconifyInfo</span></a></span> format.</li>
+<li><span class="hljs-function">locate(prefix)</span> returns location of JSON file for an icon set.</li>
+<li><span class="hljs-function">rootDir()</span> returns location of root directory of package.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="example" class="heading--3">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Example:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Ly8gSW5zdGFsbGF0aW9uOiBucG0gaW5zdGFsbCAtLXNhdmUgQGljb25pZnkvanNvbgppbXBvcnQgeyBsb29rdXBDb2xsZWN0aW9ucywgbG9jYXRlIH0gZnJvbSAnQGljb25pZnkvanNvbic7CgooYXN5bmMgKCkgPT4gewoJLy8gR2V0IGxpc3Qgb2YgYWxsIGljb24gc2V0cwoJY29uc3QgaWNvblNldHMgPSBhd2FpdCBsb29rdXBDb2xsZWN0aW9ucygpOwoJY29uc3QgcHJlZml4ZXMgPSBPYmplY3Qua2V5cyhpY29uU2V0cyk7Cgljb25zb2xlLmxvZyhgQXZhaWxhYmxlICR7cHJlZml4ZXMubGVuZ3RofSBpY29uIHNldHNgKTsKCgkvLyBMaXN0IGljb24gc2V0cyBpbiBmb3JtYXQ6ICJwcmVmaXg6IG5hbWUgKHRvdGFsIGljb25zKSIKCWNvbnNvbGUubG9nKAoJCXByZWZpeGVzCgkJCS5tYXAoKHByZWZpeCkgPT4gewoJCQkJY29uc3QgaXRlbSA9IGljb25TZXRzW3ByZWZpeF07CgkJCQkvLyBwcmVmaXg6IG5hbWUgKHRvdGFsIGljb25zKQoJCQkJcmV0dXJuIHByZWZpeCArICc6ICcgKyBpdGVtLm5hbWUgKyAnICgnICsgaXRlbS50b3RhbCArICcgaWNvbnMpJzsKCQkJfSkKCQkJLmpvaW4oJ1xuJykKCSk7CgoJLy8gR2V0IGxvY2F0aW9uIG9mIFRhYmVyIEljb25zIEpTT04gZmlsZQoJY29uc3QgdGFibGVyID0gbG9jYXRlKCd0YWJsZXInKTsKCWNvbnNvbGUubG9nKCdUYWJsZXIgaWNvbnMgSlNPTiBmaWxlIGlzIGxvY2F0ZWQgYXQ6JywgdGFibGVyKTsKfSkoKTsK"><code class="highlight hljs"><span class="hljs-comment">// Installation: npm install --save @iconify/json</span><br>
+<span class="hljs-keyword">import</span> { lookupCollections, locate } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/json&apos;</span>;<br>
+<br>
+(<span class="hljs-keyword">async</span> () =&gt; {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Get list of all icon sets</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> iconSets = <span class="hljs-keyword">await</span> <span class="hljs-title function_">lookupCollections</span>();<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> prefixes = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(iconSets);<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Available <span class="hljs-subst">&#x24;{prefixes.length}</span> icon sets`</span>);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// List icon sets in format: &quot;prefix: name (total icons)&quot;</span><br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;prefixes<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">prefix</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> item = iconSets[prefix];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// prefix: name (total icons)</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> prefix + <span class="hljs-string">&apos;: &apos;</span> + item.<span class="hljs-property">name</span> + <span class="hljs-string">&apos; (&apos;</span> + item.<span class="hljs-property">total</span> + <span class="hljs-string">&apos; icons)&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;})<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;.<span class="hljs-title function_">join</span>(<span class="hljs-string">&apos;\n&apos;</span>)<br>
+ &#xa0; &#xa0;);<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Get location of Taber Icons JSON file</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">const</span> tabler = <span class="hljs-title function_">locate</span>(<span class="hljs-string">&apos;tabler&apos;</span>);<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&apos;Tabler icons JSON file is located at:&apos;</span>, tabler);<br>
+})();<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="PD9waHAKcmVxdWlyZSAnLi92ZW5kb3IvYXV0b2xvYWQucGhwJzsKCi8vIEluc3RhbGxhdGlvbjogY29tcG9zZXIgcmVxdWlyZSBpY29uaWZ5L2pzb24KdXNlIEljb25pZnlcSWNvbnNKU09OXEZpbmRlcjsKCi8vIEdldCBsaXN0IG9mIGFsbCBpY29uIHNldHMKJGljb25TZXRzID0gRmluZGVyOjpjb2xsZWN0aW9ucygpOwokcHJlZml4ZXMgPSBhcnJheV9rZXlzKCRpY29uU2V0cyk7CmVjaG8gJ0F2YWlsYWJsZSAnLCBjb3VudCgkcHJlZml4ZXMpLCAiIGljb24gc2V0c1xuIjsKCi8vIExpc3QgaWNvbiBzZXRzIGluIGZvcm1hdDogInByZWZpeDogbmFtZSAodG90YWwgaWNvbnMpIgplY2hvIGltcGxvZGUoIlxuIiwgYXJyYXlfbWFwKGZ1bmN0aW9uICgkcHJlZml4KSB1c2UgKCRpY29uU2V0cykgewogICAgJGl0ZW0gPSAkaWNvblNldHNbJHByZWZpeF07CiAgICByZXR1cm4gJHByZWZpeCAuICc6ICcgLiAkaXRlbVsnbmFtZSddIC4gJyAoJyAuICRpdGVtWyd0b3RhbCddIC4gJyBpY29ucyknOwp9LCAkcHJlZml4ZXMpKSwgIlxuIjsKCi8vIEdldCBsb2NhdGlvbiBvZiBUYWJlciBJY29ucyBKU09OIGZpbGUKJHRhYmxlciA9IEZpbmRlcjo6bG9jYXRlKCd0YWJsZXInKTsKZWNobyAnVGFibGVyIGljb25zIEpTT04gZmlsZSBpcyBsb2NhdGVkIGF0OiAnLCAkdGFibGVyLCAiXG4iOwo="><code class="highlight hljs"><span class="hljs-meta">&lt;?php</span><br>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&apos;./vendor/autoload.php&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Installation: composer require iconify/json</span><br>
+<span class="hljs-keyword">use</span> <span class="hljs-title">Iconify</span>\<span class="hljs-title">IconsJSON</span>\<span class="hljs-title">Finder</span>;<br>
+<br>
+<span class="hljs-comment">// Get list of all icon sets</span><br>
+<span class="hljs-variable">&#x24;iconSets</span> = <span class="hljs-title class_">Finder</span>::<span class="hljs-title function_ invoke__">collections</span>();<br>
+<span class="hljs-variable">&#x24;prefixes</span> = <span class="hljs-title function_ invoke__">array_keys</span>(<span class="hljs-variable">&#x24;iconSets</span>);<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Available &apos;</span>, <span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">&#x24;prefixes</span>), <span class="hljs-string">&quot; icon sets\n&quot;</span>;<br>
+<br>
+<span class="hljs-comment">// List icon sets in format: &quot;prefix: name (total icons)&quot;</span><br>
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">implode</span>(<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-title function_ invoke__">array_map</span>(function (<span class="hljs-variable">&#x24;prefix</span>) <span class="hljs-keyword">use</span> (<span class="hljs-variable">&#x24;iconSets</span>) {<br>
+ &#xa0; &#xa0;<span class="hljs-variable">&#x24;item</span> = <span class="hljs-variable">&#x24;iconSets</span>[<span class="hljs-variable">&#x24;prefix</span>];<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">return</span> <span class="hljs-variable">&#x24;prefix</span> . <span class="hljs-string">&apos;: &apos;</span> . <span class="hljs-variable">&#x24;item</span>[<span class="hljs-string">&apos;name&apos;</span>] . <span class="hljs-string">&apos; (&apos;</span> . <span class="hljs-variable">&#x24;item</span>[<span class="hljs-string">&apos;total&apos;</span>] . <span class="hljs-string">&apos; icons)&apos;</span>;<br>
+}, <span class="hljs-variable">&#x24;prefixes</span>)), <span class="hljs-string">&quot;\n&quot;</span>;<br>
+<br>
+<span class="hljs-comment">// Get location of Taber Icons JSON file</span><br>
+<span class="hljs-variable">&#x24;tabler</span> = <span class="hljs-title class_">Finder</span>::<span class="hljs-title function_ invoke__">locate</span>(<span class="hljs-string">&apos;tabler&apos;</span>);<br>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;Tabler icons JSON file is located at: &apos;</span>, <span class="hljs-variable">&#x24;tabler</span>, <span class="hljs-string">&quot;\n&quot;</span>;<br>
+</code></div></div></div><p>These helper functions only list and locate icon sets.</p><p>For reading icon sets, you can use <a href="../tools/utils/">Iconify Utils</a> or <a href="../tools/json/">Iconify JSON Tools</a>.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="submit" class="heading--2">Adding icon sets <a href="#submit" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Do you know a good open source icon set that is missing in Iconify icon sets? <a href="https://github.com/iconify/icon-sets/issues" target="_blank">Open an issue on GitHub</a> to request to add it to Iconify icon sets.</p></section>
+
+<section class="content-section content-section--2"><H1 id="licences" class="heading--2">Licences <a href="#licences" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>All icon sets available in Iconify collections are released under free or open source licence, which allows redistribution. See each icon set&apos;s info for details.</p></section>
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./icon-data.html">Icon Data<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./all.html">All Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collections.html">Icon Sets List</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./json.html">Individual Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./icons.html">Individual Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

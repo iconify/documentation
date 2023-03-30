@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../assets/style.css?2603" />
+		<title>Icon data on demand</title>
+		
+	</head>
+	<body class="website-docs theme-api">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./css.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Generate CSS</a>
+<a href="./last-modified.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Last Modified</a>
+</div>
+<h1>Icon data on demand</h1>
+<p>Main feature of <a href="../icon-components/">Iconify icon components</a> is ability to load icon data on demand.</p>
+<p>Instead of bundling icons, developer passes icon name to icon component, data for used icons is loaded from Iconify API. This approach has the following advantages:</p>
+<ul>
+<li>Only icons displayed on page are loaded.</li>
+<li>Easy to use. No bundling required.</li>
+<li>UI can be made configurable, such as allowing user to choose icons using icon picker.</li>
+</ul>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="process" class="heading--2">Process <a href="#process" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>How does loading icon data on demand work?</p><div class="docs-process">
+	<dl>
+		<dt>
+			<p>
+				<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>&lt;Icon icon=&quot;mdi:home&quot; /&gt;</code></div></div></div>
+				<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>&lt;iconify-icon icon=&quot;mdi:alert&quot; /&gt;</code></div></div></div>
+			</p>
+		</dt>
+		<dd>
+			Developer passes icon name as attribute for
+			<a href="../icon-components/">icon component</a>.
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--0">
+	<div class="animated-set animated-set--second animated-set--clouds">
+		<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<iconify-icon class="animated-arrow" height="auto" icon="assets:animation-arrow"></iconify-icon>
+		<iconify-icon class="animated-arrow animated-arrow--2" height="auto" icon="assets:animation-arrow"></iconify-icon>
+		<p>Icon Names</p>
+	</div>
+	<div class="animated-set animated-set--first animated-set--computers">
+		<iconify-icon class="icon1" icon="line-md:laptop-twotone"></iconify-icon>
+		<iconify-icon class="iconify icon2" icon="line-md:computer-twotone"></iconify-icon>
+		<iconify-icon class="iconify icon3" icon="line-md:laptop-twotone"></iconify-icon>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>Component requests data for icons from Iconify API.</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt><div class="api-animation api-animation--1">
+	<div class="animated-set animated-set--first animated-set--clouds">
+		<iconify-icon class="icon1" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:cloud-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:cloud-down-twotone"></iconify-icon>
+		<p>API</p>
+	</div>
+	<div class="animated-arrows">
+		<iconify-icon class="animated-arrow" height="auto" icon="assets:animation-arrow" flip="horizontal"></iconify-icon>
+		<spaiconify-icon class="animated-arrow animated-arrow--2" height="auto" icon="assets:animation-arrow" flip="horizontal">
+		<p>Icon Data</p>
+	</spaiconify-icon></div>
+	<div class="animated-set animated-set--second animated-set--computers">
+		<iconify-icon class="icon1" icon="line-md:laptop-twotone"></iconify-icon>
+		<iconify-icon class="icon2" icon="line-md:computer-twotone"></iconify-icon>
+		<iconify-icon class="icon3" icon="line-md:laptop-twotone"></iconify-icon>
+		<p>Browser</p>
+	</div>
+</div></dt>
+		<dd>
+			<p>API sends data for requested icons.</p>
+			<p>
+				API hosts thousands of icons, but sends only data for icons that were
+				requested.
+			</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>
+				&lt;svg width=&quot;1em&quot; height=&quot;1em&quot; viewBox=&quot;0 0 24 24&quot;
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;
+			</code></div></div></div>
+			<div class="code-blocks"><div class="code-block"><div class="code-block-content code-block-content--without-title code-block-content--without-hint"><code>
+				&lt;iconify-icon icon=&quot;mdi:alert&quot;&gt;<span class="hljs-comment">#shadow-root</span>&lt;svg width=&quot;1em&quot; height=&quot;1em&quot; viewBox=&quot;0 0 24 24&quot;
+				<span class="hljs-comment">...</span>&gt;<span class="hljs-comment">...</span>&lt;/svg&gt;&lt;/iconify-icon&gt;
+			</code></div></div></div>
+		</dt>
+		<dd>Component renders SVG using data retrieved from Iconify API.</dd>
+	</dl>
+</div></section>
+
+<section class="content-section content-section--2"><H1 id="query" class="heading--2">Query <a href="#query" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To load data for icons, use the following API query: <span class="hljs-inline-link">/{prefix}.json?icons={icons}</span>, where:</p><ul>
+<li>&quot;<span class="hljs-string">{prefix}</span>&quot; is icon set prefix. To request icons from multiple icon sets, send separate queries for each icon set.</li>
+<li>&quot;<span class="hljs-string">{icons}</span>&quot; is list of icon names, separated by comma.</li>
+</ul><p>Response is <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> object.</p><div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--with-hint" data-raw-code="ewoJInByZWZpeCI6ICJtZGkiLAoJImljb25zIjogewoJCSJhY2NvdW50LWJveCI6IHsKCQkJImJvZHkiOiAiPHBhdGggZD1cIk02IDE3YzAtMiA0LTMuMSA2LTMuMXM2IDEuMSA2IDMuMXYxSDZtOS05YTMgMyAwIDAgMS0zIDNhMyAzIDAgMCAxLTMtM2EzIDMgMCAwIDEgMy0zYTMgMyAwIDAgMSAzIDNNMyA1djE0YTIgMiAwIDAgMCAyIDJoMTRhMiAyIDAgMCAwIDItMlY1YTIgMiAwIDAgMC0yLTJINWEyIDIgMCAwIDAtMiAyelwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0sCgkJImFjY291bnQtY2FzaCI6IHsKCQkJImJvZHkiOiAiPHBhdGggZD1cIk0xMSA4YzAgMi4yMS0xLjc5IDQtNCA0cy00LTEuNzktNC00czEuNzktNCA0LTRzNCAxLjc5IDQgNG0wIDYuNzJWMjBIMHYtMmMwLTIuMjEgMy4xMy00IDctNGMxLjUgMCAyLjg3LjI3IDQgLjcyTTI0IDIwSDEzVjNoMTF2MTdtLTgtOC41YTIuNSAyLjUgMCAwIDEgNSAwYTIuNSAyLjUgMCAwIDEtNSAwTTIyIDdhMiAyIDAgMCAxLTItMmgtM2MwIDEuMTEtLjg5IDItMiAydjlhMiAyIDAgMCAxIDIgMmgzYzAtMS4xLjktMiAyLTJWN3pcIiBmaWxsPVwiY3VycmVudENvbG9yXCIvPiIKCQl9LAoJCSJhY2NvdW50IjogewoJCQkiYm9keSI6ICI8cGF0aCBkPVwiTTEyIDRhNCA0IDAgMCAxIDQgNGE0IDQgMCAwIDEtNCA0YTQgNCAwIDAgMS00LTRhNCA0IDAgMCAxIDQtNG0wIDEwYzQuNDIgMCA4IDEuNzkgOCA0djJINHYtMmMwLTIuMjEgMy41OC00IDgtNHpcIiBmaWxsPVwiY3VycmVudENvbG9yXCIvPiIKCQl9LAoJCSJob21lIjogewoJCQkiYm9keSI6ICI8cGF0aCBkPVwiTTEwIDIwdi02aDR2Nmg1di04aDNMMTIgM0wyIDEyaDN2OGg1elwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIi8+IgoJCX0KCX0sCgkid2lkdGgiOiAyNCwKCSJoZWlnaHQiOiAyNAp9Cg=="><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;mdi&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;icons&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;account-box&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;path d=\&quot;M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;account-cash&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;path d=\&quot;M11 8c0 2.21-1.79 4-4 4s-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4m0 6.72V20H0v-2c0-2.21 3.13-4 7-4c1.5 0 2.87.27 4 .72M24 20H13V3h11v17m-8-8.5a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 1-5 0M22 7a2 2 0 0 1-2-2h-3c0 1.11-.89 2-2 2v9a2 2 0 0 1 2 2h3c0-1.1.9-2 2-2V7z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;account&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;path d=\&quot;M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;home&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;path d=\&quot;M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z\&quot; fill=\&quot;currentColor\&quot;/&gt;&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">}</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;width&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">24</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;height&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">24</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div><div class="code-block-hint">/mdi.json?icons=account-box,account-cash,account,home&amp;pretty=1</div></div></div><section class="content-section content-section--3"><H1 id="parameters" class="heading--3">Parameters <a href="#parameters" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Query has one required parameter: <span class="hljs-inline-prop">icons</span>, described above.</p><p>There are also optional parameters:</p><ul>
+<li><span class="hljs-inline-prop">pretty</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. Formats response, making it easy to read, like shown in example above.</li>
+</ul></section><section class="content-section content-section--3"><H1 id="error-response" class="heading--3">Error response <a href="#error-response" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>If icon set is not available, server returns <span class="hljs-number">404</span> HTTP error.</p><p>Missing icons are added to <span class="hljs-inline-prop">not_found</span> property of response.</p></section></section>
+
+
+
+
+
+
+
+
+
+
+<section class="content-section content-section--2"><H1 id="type" class="heading--2">Type <a href="#type" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>For full description of response, see <span class="hljs-inline-type hljs-linkable"><a href="../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> type documentation.</p><p>You can import type from <span class="hljs-inline-package hljs-linkable">@iconify/types</span> package.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="limitations" class="heading--2">Limitations <a href="#limitations" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>You cannot request data for multiple icon sets in same query. It is one query per icon set.</p><p>Number of icons per query is not limited, however be aware that browsers have limit on URL length. <a href="../icon-components/">Iconify icon components</a> limit URL length to 500. If URL is longer than 500 characters, API query should be split into multiple queries.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="caching" class="heading--2">Caching <a href="#caching" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To help browser cache responses, it is recommended to have the same URLs for queries. To achive that, sort icon names alphabetically, so instead of <span class="hljs-inline-link">?icons=foo,bar</span> or <span class="hljs-inline-link">?icons=bar,foo</span> component always requests <span class="hljs-inline-link">?icons=bar,foo</span>.</p><p>Additionally, cache responses in <span class="hljs-inline-prop">localStorage</span>.</p></section>
+
+
+<section class="content-section content-section--2"><H1 id="checking-for-update" class="heading--2">Checking for update <a href="#checking-for-update" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To check if icons were updated since last time, no need to retrieve icons again.</p><p>Use <a href="./last-modified.html"><span class="hljs-inline-link">/last-modified</span></a> query. It returns <span class="hljs-inline-prop">lastModified</span> property of icon set, which you can compare to values in cached responses.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="./queries.html">API Queries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./svg.html">Generate SVG</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./css.html">Generate CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--selected docs-navigation-link--active"><a href="./icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./last-modified.html">Last Modified</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collections.html">List of Icon Sets</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./collection.html">List of Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./search.html">Search Icons</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./keywords.html">Keywords</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="./version.html">API Version</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="./config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

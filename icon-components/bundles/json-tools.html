@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../assets/style.css?2603" />
+		<title>Generating Iconify Icon Bundles with JSON Tools</title>
+		
+	</head>
+	<body class="website-docs theme-develop">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./utils.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Using Iconify Utils</a>
+<a href="./examples/" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Examples</a>
+</div>
+<h1>Generating icon bundles with JSON Tools</h1>
+<p>This tutorial is a part of <a href="./">Iconify icon bundles tutorial</a>.</p>
+<p>You can use <a href="../../tools/json/">Iconify JSON Tools</a> to generate data for icon bundles. This method requires some coding, but it can be used to automate bundle creation.</p>
+<p><a href="../../tools/json/">Iconify JSON Tools</a> library is available in Node.js and PHP, so you can choose which programming language to use. See <a href="../../tools/json/">Iconify JSON Tools</a> for installation instructions.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="requirements" class="heading--2">Requirements <a href="#requirements" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Node.js (deprecated, use <a href="./utils.html">Iconify Utils</a> instead) or PHP.</p></section>
+
+<section class="content-section content-section--2"><H1 id="steps" class="heading--2">Steps <a href="#steps" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Logic of creating bundle with Iconify JSON Tools:</p><ol>
+<li>Load icon set.</li>
+<li>Filter icons.</li>
+<li>Convert to string.</li>
+<li>Wrap in a function, see <a href="./wrapper.html">wrapper functions</a> for details.</li>
+</ol></section>
+
+
+<section class="content-section content-section--2"><H1 id="load" class="heading--2">Loading icon set <a href="#load" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>To load an icon set, use functions <span class="hljs-function">loadFromFile</span> or <span class="hljs-function">loadIconifyCollection</span>.</p><p>Documentation for functions:</p><ul>
+<li><a href="../../tools/json/collection.html#load-from-file">loadFromFile() documentation</a>.</li>
+<li><a href="../../tools/json/collection.html#load-iconify">loadIconifyCollection() documentation</a>.</li>
+</ul><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Y29uc3QgeyBDb2xsZWN0aW9uIH0gPSByZXF1aXJlKCdAaWNvbmlmeS9qc29uLXRvb2xzJyk7Cgpjb25zdCBjb2xsZWN0aW9uID0gbmV3IENvbGxlY3Rpb24oKTsKaWYgKCFjb2xsZWN0aW9uLmxvYWRJY29uaWZ5Q29sbGVjdGlvbignbWRpJykpIHsKCWNvbnNvbGUuZXJyb3IoJ0ZhaWxlZCB0byBsb2FkIE1hdGVyaWFsIERlc2lnbiBJY29ucycpOwp9Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> { <span class="hljs-title class_">Collection</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@iconify/json-tools&apos;</span>);<br>
+<br>
+<span class="hljs-keyword">const</span> collection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Collection</span>();<br>
+<span class="hljs-keyword">if</span> (!collection.<span class="hljs-title function_">loadIconifyCollection</span>(<span class="hljs-string">&apos;mdi&apos;</span>)) {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&apos;Failed to load Material Design Icons&apos;</span>);<br>
+}<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="dXNlIFxJY29uaWZ5XEpTT05Ub29sc1xDb2xsZWN0aW9uOwoKJGNvbGxlY3Rpb24gPSBuZXcgQ29sbGVjdGlvbigpOwppZiAoISRjb2xsZWN0aW9uLT5sb2FkSWNvbmlmeUNvbGxlY3Rpb24oJ21kaScpKSB7CiAgICB0aHJvdyBuZXcgXEV4Y2VwdGlvbignRmFpbGVkIHRvIGxvYWQgTWF0ZXJpYWwgRGVzaWduIEljb25zJyk7Cn0="><code class="highlight hljs"><span class="hljs-keyword">use</span> \<span class="hljs-title">Iconify</span>\<span class="hljs-title">JSONTools</span>\<span class="hljs-title">Collection</span>;<br>
+<br>
+<span class="hljs-variable">&#x24;collection</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Collection</span>();<br>
+<span class="hljs-keyword">if</span> (!<span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">loadIconifyCollection</span>(<span class="hljs-string">&apos;mdi&apos;</span>)) {<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">\Exception</span>(<span class="hljs-string">&apos;Failed to load Material Design Icons&apos;</span>);<br>
+}</code></div></div></div></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="filter" class="heading--2">Filter icons <a href="#filter" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>After loading icon set, you need to filter icon data.</p><p>Use <span class="hljs-function">getIcons</span> function. See <a href="../../tools/json/collection.html#get-icons">getIcons() documentation</a>.</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Y29uc3QgZGF0YSA9IGNvbGxlY3Rpb24uZ2V0SWNvbnMoWydhcnJvdy1sZWZ0JywgJ2Fycm93LXJpZ2h0JywgJ2hvbWUnXSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> data = collection.<span class="hljs-title function_">getIcons</span>([<span class="hljs-string">&apos;arrow-left&apos;</span>, <span class="hljs-string">&apos;arrow-right&apos;</span>, <span class="hljs-string">&apos;home&apos;</span>]);<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JGRhdGEgPSAkY29sbGVjdGlvbi0+Z2V0SWNvbnMoWydhcnJvdy1sZWZ0JywgJ2Fycm93LXJpZ2h0JywgJ2hvbWUnXSk7"><code class="highlight hljs"><span class="hljs-variable">&#x24;data</span> = <span class="hljs-variable">&#x24;collection</span>-&gt;<span class="hljs-title function_ invoke__">getIcons</span>([<span class="hljs-string">&apos;arrow-left&apos;</span>, <span class="hljs-string">&apos;arrow-right&apos;</span>, <span class="hljs-string">&apos;home&apos;</span>]);</code></div></div></div><p>Variable <span class="hljs-inline-var">data</span> contains <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> object.</p></section>
+
+
+
+<section class="content-section content-section--2"><H1 id="json" class="heading--2">Export to JSON string <a href="#json" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Then convert <span class="hljs-inline-type hljs-linkable"><a href="../../types/iconify-json.html" title="IconifyJSON documentation"><span class="hljs-inline-type hljs-linkable">IconifyJSON</span></a></span> to <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span></span>:</p><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Node.js</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="Y29uc3Qgc3RyID0gSlNPTi5zdHJpbmdpZnkoZGF0YSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">const</span> str = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data);<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">PHP</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="JHN0ciA9IGpzb25fZW5jb2RlKCRkYXRhKTs="><code class="highlight hljs"><span class="hljs-variable">&#x24;str</span> = <span class="hljs-title function_ invoke__">json_encode</span>(<span class="hljs-variable">&#x24;data</span>);</code></div></div></div></section>
+
+<section class="content-section content-section--2"><H1 id="callback" class="heading--2">Wrap in a callback <a href="#callback" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>This step is different for different Iconify icon components. See <a href="./wrapper.html">wrapper function for icon bundles</a>.</p><p>Also check out <a href="./examples/">code examples</a> for full examples.</p></section>
+
+
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Icons on Demand<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../../iconify-icon/">Web Component</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg-framework/">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../react/">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue/">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../vue2/">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svelte/">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../ember/">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--separator docs-navigation-link--toggle"><a href="./">Icon Bundles<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./wrapper.html">Wrapper Function</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./api.html">Using Iconify API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./utils.html">Using Iconify Utils</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./json-tools.html">Using JSON Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Usage:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svg-framework.html">SVG Framework</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./react.html">React</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue.html">Vue 3</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./vue2.html">Vue 2</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./svelte.html">Svelte</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./ember.html">Ember</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../tools/">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/tools2/">Iconify Tools</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../tools/utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Converting Font Awesome Pro to Iconify JSON</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./import-mdi.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> Import MDI</a>
+<a href="../tags.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> Import Limitations</a>
+</div>
+<h1>Converting Font Awesome Pro to Iconify JSON</h1>
+<p>This example shows how to convert FontAwesome Pro SVG files to Iconify JSON format.</p>
+<p>Example assumes you have access to FontAwesome Pro repository. If you do have a valid license, you should have access to it.</p>
+<p>Create file <span class="hljs-inline-file">convert-fa-pro.ts</span> and put this content:</p>
+<div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">convert-fa-pro.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgcHJvbWlzZXMgYXMgZnMgfSBmcm9tICdmcyc7CmltcG9ydCB7Cglkb3dubG9hZEdpdFJlcG8sCglpbXBvcnREaXJlY3RvcnksCgljbGVhbnVwU1ZHLAoJcGFyc2VDb2xvcnMsCglpc0VtcHR5Q29sb3IsCglydW5TVkdPLAp9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzJzsKaW1wb3J0IHR5cGUgeyBJY29uaWZ5SW5mbyB9IGZyb20gJ0BpY29uaWZ5L3R5cGVzJzsKCi8vIENsb25lIHJlcG9zaXRvcnk/Ci8vIFNldCB0byBmYWxzZSBpZiByZXBvc2l0b3J5IGlzIGFscmVhZHkgdW5wYWNrZWQgdG8gZGlyZWN0b3J5IHNldCBpbiAnZmFSZXBvRGlyJyB2YXJpYWJsZS4KY29uc3QgY2xvbmVGcm9tR2l0SHViID0gdHJ1ZTsKY29uc3QgZmFSZXBvVVJMOiBzdHJpbmcgfCBudWxsID0KCSdnaXRAZ2l0aHViLmNvbTpGb3J0QXdlc29tZS9Gb250LUF3ZXNvbWUtUHJvLmdpdCc7CmNvbnN0IGZhUmVwb0JyYW5jaCA9ICdtYXN0ZXInOwoKLy8gRGlyZWN0b3J5IGZvciBGb250QXdlc29tZSBQcm8gcmVwb3NpdG9yeSAoYXV0b21hdGljYWxseSBkb3dubG9hZGVkIGlmIGluZm9ybWF0aW9uIGFib3ZlIGlzIHNldCkKY29uc3QgZmFSZXBvRGlyID0gJ2ZhLXBybyc7CgovLyBUaGVtZXMgdG8gcGFyc2UKY29uc3QgdGhlbWVzID0gWydicmFuZHMnLCAnZHVvdG9uZScsICdsaWdodCcsICdyZWd1bGFyJywgJ3NvbGlkJ107CgovLyBEaXJlY3RvcnkgdG8gZXhwb3J0IGljb24gc2V0cyB0bwpjb25zdCB0YXJnZXREaXJlY3RvcnkgPSAnanNvbic7CgovLyBJbmZvcm1hdGlvbgpjb25zdCBiYXNlSW5mbzogSWNvbmlmeUluZm8gPSB7CgluYW1lOiAnRm9udCBBd2Vzb21lJywKCWF1dGhvcjogewoJCW5hbWU6ICdGb250IEF3ZXNvbWUnLAoJfSwKCWxpY2Vuc2U6IHsKCQl0aXRsZTogJ0NvbW1lcmNpYWwgTGljZW5zZScsCgkJdXJsOiAnaHR0cHM6Ly9mb250YXdlc29tZS5jb20vbGljZW5zZScsCgl9LAoJaGVpZ2h0OiAzMiwKfTsKCi8vIEJhc2UgcHJlZml4IHdpdGhvdXQgdGhlbWUKY29uc3QgYmFzZVByZWZpeCA9ICdmYS1wcm8tJzsKCi8vIERvIHN0dWZmCihhc3luYyBmdW5jdGlvbiAoKSB7CgkvLyBEb3dubG9hZCByZXBvc2l0b3J5CglsZXQgc291cmNlRGlyID0gZmFSZXBvRGlyOwoJaWYgKGNsb25lRnJvbUdpdEh1YikgewoJCWNvbnN0IGRvd25sb2FkUmVzdWx0ID0gYXdhaXQgZG93bmxvYWRHaXRSZXBvKHsKCQkJdGFyZ2V0OiBmYVJlcG9EaXIsCgkJCXJlbW90ZTogZmFSZXBvVVJMLAoJCQlicmFuY2g6IGZhUmVwb0JyYW5jaCwKCQkJbG9nOiB0cnVlLAoJCX0pOwoJCXNvdXJjZURpciA9IGRvd25sb2FkUmVzdWx0LmNvbnRlbnRzRGlyOwoJfQoKCS8vIENyZWF0ZSBkaXJlY3RvcnkgZm9yIG91dHB1dCBpZiBtaXNzaW5nCgl0cnkgewoJCWF3YWl0IGZzLm1rZGlyKHRhcmdldERpcmVjdG9yeSwgewoJCQlyZWN1cnNpdmU6IHRydWUsCgkJfSk7Cgl9IGNhdGNoIChlcnIpIHsKCQkvLwoJfQoKCS8vIFBhcnNlIGFsbCBjb25maWd1cmVkIHRoZW1lcwoJZm9yIChsZXQgaSA9IDA7IGkgPCB0aGVtZXMubGVuZ3RoOyBpKyspIHsKCQljb25zdCB0aGVtZSA9IHRoZW1lc1tpXTsKCQljb25zdCBzb3VyY2UgPSBzb3VyY2VEaXIgKyAnL3N2Z3MvJyArIHRoZW1lOwoJCWNvbnN0IHByZWZpeCA9IGJhc2VQcmVmaXggKyB0aGVtZTsKCgkJLy8gSW1wb3J0IGljb25zCgkJY29uc3QgaWNvblNldCA9IGF3YWl0IGltcG9ydERpcmVjdG9yeShzb3VyY2UsIHsKCQkJcHJlZml4LAoJCX0pOwoKCQkvLyBTZXQgaW5mbwoJCWNvbnN0IGluZm86IEljb25pZnlJbmZvID0gSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShiYXNlSW5mbykpOwoJCWNvbnN0IHRoZW1lTmFtZSA9IHRoZW1lLnRvVXBwZXJDYXNlKCkuc2xpY2UoMCwgMSkgKyB0aGVtZS5zbGljZSgxKTsKCQlpbmZvLm5hbWUgKz0gJyAnICsgdGhlbWVOYW1lOwoJCWljb25TZXQuaW5mbyA9IGluZm87CgoJCS8vIFZhbGlkYXRlLCBjbGVhbiB1cCwgZml4IHBhbGV0dGUgYW5kIG9wdGltaXNlCgkJYXdhaXQgaWNvblNldC5mb3JFYWNoKGFzeW5jIChuYW1lLCB0eXBlKSA9PiB7CgkJCWlmICh0eXBlICE9PSAnaWNvbicpIHsKCQkJCXJldHVybjsKCQkJfQoKCQkJLy8gR2V0IFNWRyBpbnN0YW5jZSBmb3IgcGFyc2luZwoJCQljb25zdCBzdmcgPSBpY29uU2V0LnRvU1ZHKG5hbWUpOwoJCQlpZiAoIXN2ZykgewoJCQkJLy8gSW52YWxpZCBpY29uCgkJCQlpY29uU2V0LnJlbW92ZShuYW1lKTsKCQkJCXJldHVybjsKCQkJfQoKCQkJLy8gQ2xlYW4gdXAgYW5kIG9wdGltaXNlIGljb25zCgkJCXRyeSB7CgkJCQkvLyBDbGVhbiB1cCBpY29uIGNvZGUKCQkJCWF3YWl0IGNsZWFudXBTVkcoc3ZnKTsKCgkJCQkvLyBSZXBsYWNlIGNvbG9yIHdpdGggY3VycmVudENvbG9yLCBhZGQgaWYgbWlzc2luZwoJCQkJYXdhaXQgcGFyc2VDb2xvcnMoc3ZnLCB7CgkJCQkJZGVmYXVsdENvbG9yOiAnY3VycmVudENvbG9yJywKCQkJCQljYWxsYmFjazogKGF0dHIsIGNvbG9yU3RyLCBjb2xvcikgPT4gewoJCQkJCQlyZXR1cm4gIWNvbG9yIHx8IGlzRW1wdHlDb2xvcihjb2xvcikgPyBjb2xvclN0ciA6ICdjdXJyZW50Q29sb3InOwoJCQkJCX0sCgkJCQl9KTsKCgkJCQkvLyBPcHRpbWlzZQoJCQkJYXdhaXQgcnVuU1ZHTyhzdmcpOwoJCQl9IGNhdGNoIChlcnIpIHsKCQkJCS8vIEludmFsaWQgaWNvbgoJCQkJY29uc29sZS5lcnJvcihgRXJyb3IgcGFyc2luZyAke25hbWV9OmAsIGVycik7CgkJCQlpY29uU2V0LnJlbW92ZShuYW1lKTsKCQkJCXJldHVybjsKCQkJfQoKCQkJLy8gVXBkYXRlIGljb24gZnJvbSBTVkcgaW5zdGFuY2UKCQkJaWNvblNldC5mcm9tU1ZHKG5hbWUsIHN2Zyk7CgkJfSk7CgkJY29uc29sZS5sb2coYEltcG9ydGVkICR7aWNvblNldC5jb3VudCgpfSBpY29ucyBmb3IgJHtpbmZvLm5hbWV9YCk7CgoJCS8vIEV4cG9ydCB0byBJY29uaWZ5SlNPTiwgY29udmVydCB0byBzdHJpbmcKCQljb25zdCBvdXRwdXQgPSBKU09OLnN0cmluZ2lmeShpY29uU2V0LmV4cG9ydCgpLCBudWxsLCAnXHQnKTsKCgkJLy8gU2F2ZSB0byBmaWxlCgkJY29uc3QgdGFyZ2V0ID0gdGFyZ2V0RGlyZWN0b3J5ICsgJy8nICsgcHJlZml4ICsgJy5qc29uJzsKCQlhd2FpdCBmcy53cml0ZUZpbGUodGFyZ2V0LCBvdXRwdXQsICd1dGY4Jyk7CgoJCWNvbnNvbGUubG9nKGBTYXZlZCAke3RhcmdldH0gKCR7b3V0cHV0Lmxlbmd0aH0gYnl0ZXMpYCk7Cgl9Cn0pKCkuY2F0Y2goKGVycikgPT4gewoJY29uc29sZS5lcnJvcihlcnIpOwp9KTsK"><code class="highlight hljs"><span class="hljs-keyword">import</span> { promises <span class="hljs-keyword">as</span> fs } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;<br>
+<span class="hljs-keyword">import</span> {<br>
+ &#xa0; &#xa0;downloadGitRepo,<br>
+ &#xa0; &#xa0;importDirectory,<br>
+ &#xa0; &#xa0;cleanupSVG,<br>
+ &#xa0; &#xa0;parseColors,<br>
+ &#xa0; &#xa0;isEmptyColor,<br>
+ &#xa0; &#xa0;runSVGO,<br>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">IconifyInfo</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/types&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Clone repository?</span><br>
+<span class="hljs-comment">// Set to false if repository is already unpacked to directory set in &apos;faRepoDir&apos; variable.</span><br>
+<span class="hljs-keyword">const</span> cloneFromGitHub = <span class="hljs-literal">true</span>;<br>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">faRepoURL</span>: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span> =<br>
+ &#xa0; &#xa0;<span class="hljs-string">&apos;git@github.com:FortAwesome/Font-Awesome-Pro.git&apos;</span>;<br>
+<span class="hljs-keyword">const</span> faRepoBranch = <span class="hljs-string">&apos;master&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Directory for FontAwesome Pro repository (automatically downloaded if information above is set)</span><br>
+<span class="hljs-keyword">const</span> faRepoDir = <span class="hljs-string">&apos;fa-pro&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Themes to parse</span><br>
+<span class="hljs-keyword">const</span> themes = [<span class="hljs-string">&apos;brands&apos;</span>, <span class="hljs-string">&apos;duotone&apos;</span>, <span class="hljs-string">&apos;light&apos;</span>, <span class="hljs-string">&apos;regular&apos;</span>, <span class="hljs-string">&apos;solid&apos;</span>];<br>
+<br>
+<span class="hljs-comment">// Directory to export icon sets to</span><br>
+<span class="hljs-keyword">const</span> targetDirectory = <span class="hljs-string">&apos;json&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Information</span><br>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">baseInfo</span>: <span class="hljs-title class_">IconifyInfo</span> = {<br>
+ &#xa0; &#xa0;<span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Font Awesome&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">author</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">name</span>: <span class="hljs-string">&apos;Font Awesome&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">license</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Commercial License&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">url</span>: <span class="hljs-string">&apos;https://fontawesome.com/license&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-number">32</span>,<br>
+};<br>
+<br>
+<span class="hljs-comment">// Base prefix without theme</span><br>
+<span class="hljs-keyword">const</span> basePrefix = <span class="hljs-string">&apos;fa-pro-&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Do stuff</span><br>
+(<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Download repository</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">let</span> sourceDir = faRepoDir;<br>
+ &#xa0; &#xa0;<span class="hljs-keyword">if</span> (cloneFromGitHub) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> downloadResult = <span class="hljs-keyword">await</span> <span class="hljs-title function_">downloadGitRepo</span>({<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">target</span>: faRepoDir,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">remote</span>: faRepoURL,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">branch</span>: faRepoBranch,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">log</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;sourceDir = downloadResult.<span class="hljs-property">contentsDir</span>;<br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Create directory for output if missing</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">try</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> fs.<span class="hljs-title function_">mkdir</span>(targetDirectory, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">recursive</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0;} <span class="hljs-keyword">catch</span> (err) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">//</span><br>
+ &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0;<span class="hljs-comment">// Parse all configured themes</span><br>
+ &#xa0; &#xa0;<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; themes.<span class="hljs-property">length</span>; i++) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> theme = themes[i];<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> source = sourceDir + <span class="hljs-string">&apos;/svgs/&apos;</span> + theme;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> prefix = basePrefix + theme;<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Import icons</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> iconSet = <span class="hljs-keyword">await</span> importDirectory(source, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;prefix,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Set info</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> <span class="hljs-attr">info</span>: <span class="hljs-title class_">IconifyInfo</span> = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(baseInfo));<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> themeName = theme.<span class="hljs-title function_">toUpperCase</span>().<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) + theme.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;info.<span class="hljs-property">name</span> += <span class="hljs-string">&apos; &apos;</span> + themeName;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;iconSet.<span class="hljs-property">info</span> = info;<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Validate, clean up, fix palette and optimise</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> iconSet.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">async</span> (name, <span class="hljs-keyword">type</span>) =&gt; {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (<span class="hljs-keyword">type</span> !== <span class="hljs-string">&apos;icon&apos;</span>) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Get SVG instance for parsing</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> svg = iconSet.<span class="hljs-title function_">toSVG</span>(name);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">if</span> (!svg) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Invalid icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;iconSet.<span class="hljs-title function_">remove</span>(name);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Clean up and optimise icons</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">try</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Clean up icon code</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">cleanupSVG</span>(svg);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Replace color with currentColor, add if missing</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">parseColors</span>(svg, {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">defaultColor</span>: <span class="hljs-string">&apos;currentColor&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">attr, colorStr, color</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span> !color || <span class="hljs-title function_">isEmptyColor</span>(color) ? colorStr : <span class="hljs-string">&apos;currentColor&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Optimise</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> <span class="hljs-title function_">runSVGO</span>(svg);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;} <span class="hljs-keyword">catch</span> (err) {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Invalid icon</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">`Error parsing <span class="hljs-subst">&#x24;{name}</span>:`</span>, err);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;iconSet.<span class="hljs-title function_">remove</span>(name);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">return</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;}<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Update icon from SVG instance</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;iconSet.<span class="hljs-title function_">fromSVG</span>(name, svg);<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;});<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Imported <span class="hljs-subst">&#x24;{iconSet.count()}</span> icons for <span class="hljs-subst">&#x24;{info.name}</span>`</span>);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Export to IconifyJSON, convert to string</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> output = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(iconSet.<span class="hljs-title function_">export</span>(), <span class="hljs-literal">null</span>, <span class="hljs-string">&apos;\t&apos;</span>);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-comment">// Save to file</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">const</span> target = targetDirectory + <span class="hljs-string">&apos;/&apos;</span> + prefix + <span class="hljs-string">&apos;.json&apos;</span>;<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-keyword">await</span> fs.<span class="hljs-title function_">writeFile</span>(target, output, <span class="hljs-string">&apos;utf8&apos;</span>);<br>
+<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Saved <span class="hljs-subst">&#x24;{target}</span> (<span class="hljs-subst">&#x24;{output.length}</span> bytes)`</span>);<br>
+ &#xa0; &#xa0;}<br>
+})().<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> {<br>
+ &#xa0; &#xa0;<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>
+});<br>
+</code></div></div></div><p>Assuming that TypeScript is set to compile to <span class="hljs-inline-file">lib</span>, compile file to JavaScript and run it:</p>
+<div class="code-blocks"><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="bm9kZSBsaWIvY29udmVydC1mYS1wcm8K"><code class="highlight hljs">node lib/convert-fa-pro<br>
+</code></div></div></div><p>If you are not using TypeScript, remove types from code. If should not be hard because there aren&apos;t many lines to remove.</p>
+<p>Prepared project is available in <a href="https://github.com/iconify/tools/tree/master/%40iconify-demo/create-bundle" target="_blank">Iconify Tools GitHub repository</a>.</p>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon-set/">IconSet Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">Examples<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./import-mdi.html">Import MDI</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./import-fa-pro.html">FontAwesome Pro</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="../../../assets/images/favicon@192.png"
+			sizes="192x192"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<!-- <link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+		/>
+		<link rel="stylesheet" href="../../../assets/style.css?2603" />
+		<title>Checking themes in icon set</title>
+		
+	</head>
+	<body class="website-docs theme-code">
+		<nav class="navigation navigation--primary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-home">
+					<a href="https://iconify.design/">
+						<span>Iconify.design</span>
+						<iconify-icon
+							mode="svg"
+							width="164"
+							height="40"
+							icon="assets:logo-iconify"
+						></iconify-icon>
+					</a>
+				</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://icon-sets.iconify.design/" title="Browse icons"
+								><iconify-icon icon="line-md:image-twotone"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a href="../../../" title="Iconify Documentation"
+								><iconify-icon icon="line-md:document-code"></iconify-icon
+							></a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://iconify.design/discord"
+								title="Discord"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:discord"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://twitter.com/slava_trushkin"
+								title="Twitter"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:twitter"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://fosstodon.org/@cyberalien"
+								title="Mastodon"
+								target="_blank"
+							>
+								<iconify-icon icon="line-md:mastodon"></iconify-icon>
+							</a>
+						</li>
+						<li class="navigation-link">
+							<a
+								href="https://github.com/iconify"
+								title="Repositories for Iconify script, icons and tools"
+								target="_blank"
+								><iconify-icon icon="line-md:github-loop"></iconify-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<nav class="navigation navigation--secondary" role="navigation">
+			<div class="navigation-content page-width">
+				<div class="navigation-description">Thousands of icons, one unified framework.</div>
+
+				<div class="navigation-block-container">
+					<ul class="navigation-block">
+						<li class="navigation-link">
+							<a href="https://iconify.design/sponsors/">Support Iconify</a>
+						</li>
+						<!-- <li class="navigation-link">
+							<a
+								href="https://icon-sets.iconify.design/"
+								title="Browse all icon sets"
+								>Browse Icons</a
+							>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="content">
+			<div class="page-width page-content docs-container">
+				<article class="docs"><div class="docs-short-navigation">
+<a href="./categories.html" class="docs-short-navigation-link docs-short-navigation-link--prev"><iconify-icon icon="line-md:chevron-small-double-left"></iconify-icon> categories</a>
+<a href="./themes.html" class="docs-short-navigation-link docs-short-navigation-link--next"><iconify-icon icon="line-md:chevron-small-double-right"></iconify-icon> suffixes/prefixes</a>
+</div>
+<h1>checkTheme()</h1>
+<p>This function is part of <span class="hljs-inline-type hljs-linkable"><a href="./" title="IconSet documentation"><span class="hljs-inline-type hljs-linkable">IconSet</span></a></span> class in <a href="../">Iconify Tools</a>.</p>
+<p>Function <span class="hljs-function">checkTheme()</span> finds all icons that belong to theme. It can be used to validate themes to make sure there are no empty or missing themes.</p>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CESI4K3W&placement=iconifydesign" id="_carbonads_js"></script><section class="content-section content-section--2"><H1 id="usage" class="heading--2">Usage <a href="#usage" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><p>Function has the following parameter:</p><ul>
+<li><span class="hljs-inline-prop">prefix</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">boolean</span></span>. What to check. If <span class="hljs-literal">true</span>, function checks <a href="./themes.html" title="prefixes() documentation"><span class="hljs-function hljs-linkable">prefixes</span></a>. If <span class="hljs-literal">false</span>, function checks <a href="./themes.html" title="suffixes() documentation"><span class="hljs-function hljs-linkable">suffixes</span></a>.</li>
+</ul><p>Function returns an object with the following properties:</p><ul>
+<li><span class="hljs-inline-prop">valid</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">Record</span>&lt;<span class="hljs-inline-type hljs-linkable">string</span>, <span class="hljs-inline-type hljs-linkable">string</span>[]&gt;</span>. Icons that match theme. Key is theme name (not title!), value is array of icon names.</li>
+<li><span class="hljs-inline-prop">invalid</span>, <span class="hljs-inline-type hljs-linkable"><span class="hljs-inline-type hljs-linkable">string</span>[]</span>. Icons that do not match any theme.</li>
+</ul></section>
+
+
+
+
+<section class="content-section content-section--2"><H1 id="example" class="heading--2">Example <a href="#example" class="link-back" title="Link to this section"><iconify-icon icon="line-md:hash-small"></iconify-icon></a></H1><div class="code-blocks"><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">example.ts</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="aW1wb3J0IHsgSWNvblNldCB9IGZyb20gJ0BpY29uaWZ5L3Rvb2xzJzsKCi8vIEltcG9ydCBpY29uIHNldApjb25zdCBpY29uU2V0ID0gbmV3IEljb25TZXQoewoJcHJlZml4OiAnY2FyYm9uJywKCWljb25zOiB7CgkJJ2FkZCc6IHsKCQkJYm9keTogJzxwYXRoIGQ9Ik0xNyAxNVY4aC0ydjdIOHYyaDd2N2gydi03aDd2LTJ6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4nLAoJCX0sCgkJJ2Fycm93LWRvd24tcmVndWxhcic6IHsKCQkJYm9keTogJzxwYXRoIGQ9Ik0yNC41OSAxNi41OUwxNyAyNC4xN1Y0aC0ydjIwLjE3bC03LjU5LTcuNThMNiAxOGwxMCAxMGwxMC0xMGwtMS40MS0xLjQxeiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdhcnJvdy1sZWZ0LXJlZ3VsYXInOiB7CgkJCWJvZHk6ICc8cGF0aCBkPSJNMTQgMjZsMS40MS0xLjQxTDcuODMgMTdIMjh2LTJINy44M2w3LjU4LTcuNTlMMTQgNkw0IDE2bDEwIDEweiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdiYWNrLXRvLXRvcC1yZWd1bGFyJzogewoJCQlib2R5OiAnPHBhdGggZD0iTTE2IDE0TDYgMjRsMS40IDEuNGw4LjYtOC42bDguNiA4LjZMMjYgMjR6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz48cGF0aCBkPSJNNCA4aDI0djJINHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknYm9va21hcmstZmlsbGVkJzogewoJCQlib2R5OiAnPHBhdGggZD0iTTI0IDJIOGEyIDIgMCAwIDAtMiAydjI2bDEwLTUuMDU0TDI2IDMwVjRhMiAyIDAgMCAwLTItMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCQknY2FyZXQtZG93bi1yZWd1bGFyJzogewoJCQlib2R5OiAnPHBhdGggZD0iTTI0IDEybC04IDEwbC04LTEweiIgZmlsbD0iY3VycmVudENvbG9yIi8+JywKCQl9LAoJCSdjYXJldC1sZWZ0LXJlZ3VsYXInOiB7CgkJCWJvZHk6ICc8cGF0aCBkPSJNMjAgMjRsLTEwLThsMTAtOHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPicsCgkJfSwKCX0sCglhbGlhc2VzOiB7CgkJJ2FkZC1yZWd1bGFyJzogewoJCQlwYXJlbnQ6ICdhZGQnLAoJCX0sCgkJJ2Fycm93LXVwLXJlZ3VsYXInOiB7CgkJCXBhcmVudDogJ2Fycm93LWRvd24tcmVndWxhcicsCgkJCXZGbGlwOiB0cnVlLAoJCX0sCgkJJ2Fycm93LXJpZ2h0LXJlZ3VsYXInOiB7CgkJCXBhcmVudDogJ2Fycm93LWxlZnQtcmVndWxhcicsCgkJCWhGbGlwOiB0cnVlLAoJCX0sCgkJJ2NhcmV0LXVwLXJlZ3VsYXInOiB7CgkJCXBhcmVudDogJ2NhcmV0LWRvd24tcmVndWxhcicsCgkJCXZGbGlwOiB0cnVlLAoJCX0sCgkJJ2NhcmV0LXJpZ2h0LXJlZ3VsYXInOiB7CgkJCXBhcmVudDogJ2NhcmV0LWxlZnQtcmVndWxhcicsCgkJCWhGbGlwOiB0cnVlLAoJCX0sCgl9LAoJd2lkdGg6IDMyLAoJaGVpZ2h0OiAzMiwKCXByZWZpeGVzOiB7CgkJYXJyb3c6ICdBcnJvd3MnLAoJCWNhcmV0OiAnQ2FyZXRzJywKCX0sCglzdWZmaXhlczogewoJCSdmaWxsZWQnOiAnRmlsbGVkJywKCQkncmVndWxhcic6ICdSZWd1bGFyJywKCQknJzogJ090aGVyJywKCX0sCn0pOwoKLy8gQ2hlY2sgYWxsIHByZWZpeGVzCmNvbnNvbGUubG9nKGljb25TZXQuY2hlY2tUaGVtZSh0cnVlKSk7CgovLyBDaGVjayBhbGwgc3VmZml4ZXMKY29uc29sZS5sb2coaWNvblNldC5jaGVja1RoZW1lKGZhbHNlKSk7Cg=="><code class="highlight hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">IconSet</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@iconify/tools&apos;</span>;<br>
+<br>
+<span class="hljs-comment">// Import icon set</span><br>
+<span class="hljs-keyword">const</span> iconSet = <span class="hljs-keyword">new</span> <span class="hljs-title class_">IconSet</span>({<br>
+ &#xa0; &#xa0;<span class="hljs-attr">prefix</span>: <span class="hljs-string">&apos;carbon&apos;</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">icons</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;add&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;arrow-down-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M24.59 16.59L17 24.17V4h-2v20.17l-7.59-7.58L6 18l10 10l10-10l-1.41-1.41z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;arrow-left-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M14 26l1.41-1.41L7.83 17H28v-2H7.83l7.58-7.59L14 6L4 16l10 10z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;back-to-top-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M16 14L6 24l1.4 1.4l8.6-8.6l8.6 8.6L26 24z&quot; fill=&quot;currentColor&quot;/&gt;&lt;path d=&quot;M4 8h24v2H4z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;bookmark-filled&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M24 2H8a2 2 0 0 0-2 2v26l10-5.054L26 30V4a2 2 0 0 0-2-2z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;caret-down-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M24 12l-8 10l-8-10z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;caret-left-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">body</span>: <span class="hljs-string">&apos;&lt;path d=&quot;M20 24l-10-8l10-8z&quot; fill=&quot;currentColor&quot;/&gt;&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">aliases</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;add-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">parent</span>: <span class="hljs-string">&apos;add&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;arrow-up-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">parent</span>: <span class="hljs-string">&apos;arrow-down-regular&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">vFlip</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;arrow-right-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">parent</span>: <span class="hljs-string">&apos;arrow-left-regular&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">hFlip</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;caret-up-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">parent</span>: <span class="hljs-string">&apos;caret-down-regular&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">vFlip</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;caret-right-regular&apos;</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">parent</span>: <span class="hljs-string">&apos;caret-left-regular&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">hFlip</span>: <span class="hljs-literal">true</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">width</span>: <span class="hljs-number">32</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">height</span>: <span class="hljs-number">32</span>,<br>
+ &#xa0; &#xa0;<span class="hljs-attr">prefixes</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">arrow</span>: <span class="hljs-string">&apos;Arrows&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">caret</span>: <span class="hljs-string">&apos;Carets&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+ &#xa0; &#xa0;<span class="hljs-attr">suffixes</span>: {<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;filled&apos;</span>: <span class="hljs-string">&apos;Filled&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;regular&apos;</span>: <span class="hljs-string">&apos;Regular&apos;</span>,<br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&apos;&apos;</span>: <span class="hljs-string">&apos;Other&apos;</span>,<br>
+ &#xa0; &#xa0;},<br>
+});<br>
+<br>
+<span class="hljs-comment">// Check all prefixes</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iconSet.<span class="hljs-title function_">checkTheme</span>(<span class="hljs-literal">true</span>));<br>
+<br>
+<span class="hljs-comment">// Check all suffixes</span><br>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iconSet.<span class="hljs-title function_">checkTheme</span>(<span class="hljs-literal">false</span>));<br>
+</code></div></div><div class="code-block code-block--src code-block--with-title"><div class="code-block-title">Results:</div><div class="code-block-content code-block-content--with-title code-block-content--without-hint" data-raw-code="ewoJInZhbGlkIjogewoJCSJhcnJvdyI6IFsKCQkJImFycm93LWRvd24tcmVndWxhciIsCgkJCSJhcnJvdy1sZWZ0LXJlZ3VsYXIiLAoJCQkiYXJyb3ctdXAtcmVndWxhciIsCgkJCSJhcnJvdy1yaWdodC1yZWd1bGFyIgoJCV0sCgkJImNhcmV0IjogWwoJCQkiY2FyZXQtZG93bi1yZWd1bGFyIiwKCQkJImNhcmV0LWxlZnQtcmVndWxhciIsCgkJCSJjYXJldC11cC1yZWd1bGFyIiwKCQkJImNhcmV0LXJpZ2h0LXJlZ3VsYXIiCgkJXQoJfSwKCSJpbnZhbGlkIjogWyJhZGQiLCAiYmFjay10by10b3AtcmVndWxhciIsICJib29rbWFyay1maWxsZWQiXQp9Cg=="><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;valid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;arrow&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-down-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-left-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-up-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-right-regular&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;caret&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-down-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-left-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-up-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-right-regular&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;invalid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;add&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;back-to-top-regular&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;bookmark-filled&quot;</span><span class="hljs-punctuation">]</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div></div><div class="code-block code-block--src"><div class="code-block-content code-block-content--without-title code-block-content--without-hint" data-raw-code="ewoJInZhbGlkIjogewoJCSJyZWd1bGFyIjogWwoJCQkiYXJyb3ctZG93bi1yZWd1bGFyIiwKCQkJImFycm93LWxlZnQtcmVndWxhciIsCgkJCSJiYWNrLXRvLXRvcC1yZWd1bGFyIiwKCQkJImNhcmV0LWRvd24tcmVndWxhciIsCgkJCSJjYXJldC1sZWZ0LXJlZ3VsYXIiLAoJCQkiYXJyb3ctdXAtcmVndWxhciIsCgkJCSJhcnJvdy1yaWdodC1yZWd1bGFyIiwKCQkJImNhcmV0LXVwLXJlZ3VsYXIiLAoJCQkiY2FyZXQtcmlnaHQtcmVndWxhciIKCQldLAoJCSJmaWxsZWQiOiBbImJvb2ttYXJrLWZpbGxlZCJdLAoJCSIiOiBbImFkZCJdCgl9LAoJImludmFsaWQiOiBbXQp9Cg=="><code class="highlight hljs"><span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;valid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;regular&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-down-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-left-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;back-to-top-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-down-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-left-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-up-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;arrow-right-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-up-regular&quot;</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-string">&quot;caret-right-regular&quot;</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;filled&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;bookmark-filled&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0; &#xa0; &#xa0;<span class="hljs-attr">&quot;&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;add&quot;</span><span class="hljs-punctuation">]</span><br>
+ &#xa0; &#xa0;<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br>
+ &#xa0; &#xa0;<span class="hljs-attr">&quot;invalid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><br>
+<span class="hljs-punctuation">}</span><br>
+</code></div></div></div></section>
+</article>
+				<nav
+					class="docs-navigation docs-navigation--visible docs-navigation--no-button"
+				>
+					<div class="docs-navigation-button"></div>
+					<div class="docs-navigation-content-wrapper">
+						<div class="docs-navigation-content"><ul class="docs-navigation-section docs-navigation-section--icons">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../icons/">Icons<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-basics.html">Icon Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-set-basics.html">Icon Set Basics</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/icon-data.html">Icon Data</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icons/custom.html">Custom Icon Sets</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--develop">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../usage/">Usage<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/css/">SVG in CSS</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../usage/svg/">SVG in HTML</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../icon-components/">Icons on Demand</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../design/">UI Design</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--code">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--active docs-navigation-link--toggle"><a href="../../">Libraries<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../types/">Iconify Types</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1 docs-navigation-link--active docs-navigation-link--toggle"><a href="../">Iconify Tools<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../svg/">SVG Class</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2 docs-navigation-link--active docs-navigation-link--toggle"><a href="./">IconSet Class<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Icons:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list.html">list()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./for-each.html">forEach()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./exists.html">exists()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./count.html">count()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./remove.html">remove()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./rename.html">rename()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-item.html">setItem()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-icon.html">setIcon()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-variation.html">setVariation()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./set-alias.html">setAlias()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./get-tree.html">getTree()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./entries.html">entries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Importing/Exporting:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./prefix.html">prefix</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./resolve.html">resolve()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./load.html">load()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./export.html">export()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./to-svg.html">toSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./from-svg.html">fromSVG()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./to-string.html">toString()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Metadata:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./info.html">info</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./chars.html">chars()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./toggle-character.html">toggleCharacter()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./list-category.html">listCategory()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./toggle-category.html">toggleCategory()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./categories.html">categories</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--selected docs-navigation-link--active"><a href="./check-theme.html">checkTheme()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./themes.html">suffixes/prefixes</a></li>
+	<li class="docs-navigation-link docs-navigation-link--3 docs-navigation-link--separator docs-navigation-link--section">Other:</li>
+	<li class="docs-navigation-link docs-navigation-link--3"><a href="./merge.html">mergeIconSets()</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/cleanup.html">Cleanup/Validation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../icon/">Icon Manipulation</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../import/">Import</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../export/">Export</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../package/">Managing Packages</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../examples/">Examples</a></li>
+	<li class="docs-navigation-link docs-navigation-link--2"><a href="../tags.html">Import Limitations</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../utils/">Iconify Utils</a></li>
+</ul>
+<ul class="docs-navigation-section docs-navigation-section--api">
+	<li class="docs-navigation-link docs-navigation-link--0 docs-navigation-link--toggle"><a href="../../../api/">API<iconify-icon icon="line-md:chevron-small-down"></iconify-icon></a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/queries.html">API Queries</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/hosting.html">Hosting API</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/providers.html">API Providers</a></li>
+	<li class="docs-navigation-link docs-navigation-link--1"><a href="../../../api/config.html">Components Config</a></li>
+</ul>
+</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<footer>
+			<div class="page-width">
+				<ul class="footer-left-side">
+					<li>
+						<a href="https://iconify.design/" title="Iconify">
+							<iconify-icon icon="line-md:home-twotone-alt"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://iconify.design/news/" title="News">
+							<iconify-icon icon="line-md:document-list"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://icon-sets.iconify.design/" title="Icons">
+							<iconify-icon icon="line-md:image-twotone"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="../../../" title="Documentation">
+							<iconify-icon icon="line-md:document-code"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://iconify.design/discord"
+							title="Discord"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:discord"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://twitter.com/slava_trushkin"
+							title="Twitter"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:twitter"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://fosstodon.org/@cyberalien"
+							title="Mastodon"
+							target="_blank"
+						>
+							<iconify-icon icon="line-md:mastodon"></iconify-icon>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/iconify" title="GitHub" target="_blank">
+							<iconify-icon icon="line-md:github-loop"></iconify-icon>
+						</a>
+					</li>
+				</ul>
+				<ul class="footer-right-side">
+					<li>
+						&copy; 2020 - 2023 Iconify OÜ &bull;
+						<a href="https://iconify.design/about/">About Iconify</a>
+						&bull;
+						<a href="https://iconify.design/privacy/">Privacy Policy</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script src="../../../assets/bundle.js?0393"></script>
+		
+	</body>
+</html>
