@@ -130,6 +130,24 @@ or
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@0.0.4/dist/iconify-icon.min.js"></script>
 ```
 
+### Nuxt
+
+When using component with Nuxt, you need to tell it that `[tag]iconify-icon` is a web component.
+
+Example of `[file]nuxt.config.ts`:
+
+```ts
+import { defineNuxtConfig } from 'nuxt3';
+
+export default defineNuxtConfig({
+	vue: {
+		compilerOptions: {
+			isCustomElement: (tag) => tag === 'iconify-icon',
+		},
+	},
+});
+```
+
 ## Attributes
 
 There are several attributes to customise icon appearance.
