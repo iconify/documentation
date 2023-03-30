@@ -44,7 +44,7 @@ Provider naming rules are the same as for prefix and name, but with exception th
 /^[a-z0-9]+(-[a-z0-9]+)*$/;
 ```
 
-That regular expression means name must start with character or number, followed by mix of characters, numbers and dash. Other charactersx are not allowed.
+That regular expression means name must start with character or number, followed by mix of characters, numbers and hyphen. Other characters are not allowed.
 
 ## Adding API provider
 

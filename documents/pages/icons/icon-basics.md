@@ -19,7 +19,7 @@ This requires modifying icons, so they can be used the same way regardless of ic
 
 To make icons easy to use regardless of their source, all icons follow the same naming convention.
 
-Allowed characters in icon names are `[str]a-z`, numbers and `[str]-`. Dash cannot be used at start or end of name, 2 dashes in a row `[str]--` are not allowed.
+Allowed characters in icon names are `[str]a-z`, numbers and `[str]-`. Hyphen cannot be used at start or end of name, 2 hyphens in a row `[str]--` are not allowed.
 
 Examples of valid icon names: `[str]home-outline`, `[str]1st-place-medal`, `[str]camera-with-flash`.
 

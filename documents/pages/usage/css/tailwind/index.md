@@ -94,7 +94,7 @@ Examples:
 <span class="icon-[carbon--edit-off]"></span>
 ```
 
-Make sure prefix and icon name are separated with 2 dashes: `[str]--`.
+Make sure prefix and icon name are separated with 2 hyphens: `[str]--`.
 
 Why such complex syntax? It is because of Tailwind CSS limitations. It can handle dynamic class names only if they are created in format `[str]rule-[value]`.
 

@@ -110,7 +110,7 @@ function organizeIconsList($icons)
  * - name
  *
  * This function was converted to PHP from @iconify/utils/src/icon/name.ts
- * See https://github.com/iconify/iconify/blob/master/packages/utils/src/icon/name.ts
+ * See https://github.com/iconify/iconify/blob/main/packages/utils/src/icon/name.ts
  */
 function stringToIcon($value)
 {
@@ -143,13 +143,13 @@ function stringToIcon($value)
         ];
     }
 
-    // Attempt to split by dash: "prefix-name"
-    $dashSeparated = explode('-', $colonSeparated[0]);
-    if (count($dashSeparated) > 1) {
+    // Attempt to split by hyphen: "prefix-name"
+    $hyphenSeparated = explode('-', $colonSeparated[0]);
+    if (count($hyphenSeparated) > 1) {
         return [
             'provider' => $provider,
-            'prefix' => array_shift($dashSeparated),
-            'name' => implode('-', $dashSeparated),
+            'prefix' => array_shift($hyphenSeparated),
+            'name' => implode('-', $hyphenSeparated),
         ];
     }
 

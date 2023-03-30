@@ -19,7 +19,7 @@ navigation: './functions.md'
 ```yaml
 src: icon-components/iconify/icon-name.json
 title: 'md:home'
-hint: Because prefix does not contain dash, icon can also be referred as 'md-home'
+hint: Because prefix does not contain hyphen, icon can also be referred as 'md-home'
 ```
 
 ```yaml

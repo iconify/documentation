@@ -50,7 +50,7 @@ Advantages of using `[type]IconifyJSON` to store icon sets:
 
 Each icon set has a prefix. It is unique for each icon set.
 
-Prefix naming rules are the same as icon naming rules: allowed characters are `[str]a-z`, numbers and `[str]-`. Dash cannot be used at start or end of name, 2 dashes in a row `[str]--` are not allowed.
+Prefix naming rules are the same as icon naming rules: allowed characters are `[str]a-z`, numbers and `[str]-`. Hyphen cannot be used at start or end of name, 2 hyphens in a row `[str]--` are not allowed.
 
 Examples of valid prefixes: `[str]mdi`, `[str]mdi-light`, `[str]fluent-emoji-flat`.
 
