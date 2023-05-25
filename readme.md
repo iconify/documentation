@@ -1,3 +1,7 @@
+Important: this repository has been archived. 
+
+Documentation is now part of main website, repository is available at https://github.com/iconify/website
+
 # Iconify Documentation
 
 This repository contains source code for documentation for Iconify.
